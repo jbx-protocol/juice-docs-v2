@@ -4,29 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Treasury',
-    Svg: require('@site/static/img/BANNY.svg').default,
+    title: 'Documentation',
+    Svg: require('@site/static/img/pina.svg').default,
     description: (
       <>
-	Build a community around a project, fund it, and program its spending.
+	Visit the docs to learn about the Juicebox protocol.
       </>
     ),
   },
   {
-    title: 'Flexible',
+    title: 'Blog',
     Svg: require('@site/static/img/BANNY.svg').default,
     description: (
       <>
-	Build a community around a project, fund it, and program its spending.
+	Visit the blog for updates, observations, guides, and resources.
       </>
     ),
   },
   {
-    title: 'Powered by Ethereum',
-    Svg: require('@site/static/img/BANNY.svg').default,
+    title: 'Community',
+    Svg: require('@site/static/img/blueberry.svg').default,
     description: (
       <>
-	Powered by public smart contracts on Ethereum.
+	For more, join the Juicebox Discord server and follow @juiceboxETH on Twitter.
       </>
     ),
   },
