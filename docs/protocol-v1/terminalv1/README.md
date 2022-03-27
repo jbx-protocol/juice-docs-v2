@@ -8,13 +8,9 @@ description: Interfaces the contracts and the user, working as a top-level contr
 
 On this page you'll find the documentation for the constructor and the events, for the read and write functions of the terminal follow the links:
 
-{% content-ref url="read.md" %}
 [read.md](read.md)
-{% endcontent-ref %}
 
-{% content-ref url="write.md" %}
 [write.md](write.md)
-{% endcontent-ref %}
 
 ## Constructor
 
