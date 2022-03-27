@@ -31,6 +31,12 @@ const config = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
+	  blogSidebarTitle: 'All posts',
+	  blogSidebarCount: 'ALL',
+	  feedOptions: {
+		type: 'all',
+		copyright: `Licensed under the MIT License`,
+	  },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
