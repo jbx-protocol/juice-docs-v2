@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'The Juicebox Compendium',
+  title: 'Juicebox Info Center',
   tagline: 'The juiciest repository of knowledge' ,
   url: 'https://info.juicebox.money',
   baseUrl: '/',
@@ -24,13 +24,13 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/jbx-protocol/juice-docs/blob/main',
+          editUrl: 'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/jbx-protocol/juice-blog/blob/main',
+            'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -113,7 +113,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Licensed under The MIT License.`,
       },
       prism: {
         theme: lightCodeTheme,
