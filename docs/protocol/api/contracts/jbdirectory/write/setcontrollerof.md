@@ -1,8 +1,8 @@
 # setControllerOf
 
-Contract:[`JBDirectory`](../)​‌
+Contract:[`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md/)​‌
 
-Interface: [`IJBDirectory`](../../../interfaces/ijbdirectory.md)
+Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -33,8 +33,8 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 * Arguments:
   * `_projectId` is the ID of the project to set a new controller for.
   * `_controller` is the new controller to set.
-* Through the [`requirePermissionAllowingOverride`](../../or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_CONTROLLER`](../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId`, from the project's current controller, or from an allow-listed controller if the project doesn't already have a controller set.
-* The function overrides a function definition from the [`IJBDirectory`](../../../interfaces/ijbdirectory.md) interface.
+* Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_CONTROLLER`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, from the project's current controller, or from an allow-listed controller if the project doesn't already have a controller set.
+* The function overrides a function definition from the [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) interface.
 * The function doesn't return anything
 
 #### Body
@@ -48,11 +48,11 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 
     _Internal references:_
 
-    * [`projects`](../properties/projects.md)
+    * [`projects`](/protocol/api/contracts/jbdirectory/properties/projects.md)
 
     _External references:_
 
-    * [`count`](../../jbprojects/properties/count.md)
+    * [`count`](/protocol/api/contracts/jbprojects/properties/count.md)
 3.  Store the provided controller as the controller of the project.
 
     ```solidity
@@ -62,7 +62,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 
     Internal references:
 
-    * [`controllerOf`](../properties/controllerof.md)
+    * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
 5.  Emit a `SetController` event with the relevant parameters.
 
     ```solidity
@@ -71,7 +71,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 
     _Event references:_
 
-    * [`SetController`](../events/setcontroller.md)
+    * [`SetController`](/protocol/api/contracts/jbdirectory/events/setcontroller.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -121,7 +121,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 {% tab title="Events" %}
 | Name                                              | Data                                                                                                                                                                                                             |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetController`**](../events/setcontroller.md)           | <ul><li><code>int256 indexed projectId</code></li><li><code>[`IJBController`](../../../interfaces/ijbcontroller.md)indexed controller</code></li><li><code>address caller</code></li></ul>                                       |
+| [**`SetController`**](/protocol/api/contracts/jbdirectory/events/setcontroller.md)           | <ul><li><code>int256 indexed projectId</code></li><li><code>[`IJBController`](/protocol/api/interfaces/ijbcontroller.md)indexed controller</code></li><li><code>address caller</code></li></ul>                                       |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

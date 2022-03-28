@@ -23,7 +23,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
   * `_token` is the token the terminal accepts.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBDirectory`](../../../interfaces/ijbdirectory.md) interface.
+* The function overrides a function definition from the [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) interface.
 * The function returns the primary terminal for the project for the specified token.
 
 #### Body
@@ -38,7 +38,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
 
     Internal references:
 
-    * [`_primaryTerminalOf`](../properties/_primaryterminalof.md)
+    * [`_primaryTerminalOf`](/protocol/api/contracts/jbdirectory/properties/_primaryterminalof.md)
 2.  Loop through each of the project's terminals looking for one that uses the same token as the one specified. If one is found, return it.
 
     ```solidity
@@ -51,7 +51,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
 
     Internal references:
 
-    * [`_terminalsOf`](../properties/_terminalsof.md)
+    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
 3.  Return an empty terminal if not found.
 
     ```solidity
