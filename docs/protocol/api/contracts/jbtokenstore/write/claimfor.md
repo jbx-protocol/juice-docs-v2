@@ -1,8 +1,8 @@
 # claimFor
 
-Contract: [`JBTokenStore`](../)​‌
+Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -24,8 +24,8 @@ function claimFor(
   * `_holder` is the owner of the tokens being claimed.
   * `_projectId` is the ID of the project whose tokens are being claimed.
   * `_amount` is the amount of tokens to claim.
-* Through the [`requirePermission`](../../or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.CLAIM`](../../../libraries/jboperations.md) permission by the token holder. 
-* The function overrides a function definition from the [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md) interface.
+* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.CLAIM`](/protocol/api/libraries/jboperations.md) permission by the token holder. 
+* The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
 * The function does't return anything.
 
 ### Body
@@ -39,7 +39,7 @@ function claimFor(
 
     _Internal references:_
 
-    * [`tokenOf`](../properties/tokenof.md)
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
 2.  Make sure the project has a token. If it doesn't, there's nowhere to claim tokens onto.
 
     ```solidity
@@ -55,7 +55,7 @@ function claimFor(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](../properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 4.  Make sure the holder has enough tokens to claim.
 
     ```solidity
@@ -71,7 +71,7 @@ function claimFor(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](../properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 6.  Subtract from the unclaimed token total supply of the project.
 
     ```solidity
@@ -81,7 +81,7 @@ function claimFor(
 
     _Internal references:_
 
-    * [`unclaimedTotalSupplyOf`](../properties/unclaimedtotalsupplyof.md)
+    * [`unclaimedTotalSupplyOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
 7.  Mint the tokens to the holder's wallet.
 
     ```solidity
@@ -91,7 +91,7 @@ function claimFor(
 
     _External references:_
 
-    * [`mint`](../../jbtoken/write/mint.md)
+    * [`mint`](/protocol/api/contracts/jbtoken/write/mint.md)
 8.  Emit a `Claim` event with the relevant parameters.
 
     ```solidity
@@ -100,7 +100,7 @@ function claimFor(
 
     _Event references:_
 
-    * [`Claim`](../events/claim.md)
+    * [`Claim`](/protocol/api/contracts/jbtokenstore/events/claim.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -157,7 +157,7 @@ function claimFor(
 {% tab title="Events" %}
 | Name                              | Data                                                                                                                                                                         |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Claim`**](../events/claim.md)                           | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 initialUnclaimedBalance</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                  |
+| [**`Claim`**](/protocol/api/contracts/jbtokenstore/events/claim.md)                           | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 initialUnclaimedBalance</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                  |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

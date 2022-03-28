@@ -1,8 +1,8 @@
 # issueFor
 
-Contract: [`JBTokenStore`](../)​‌
+Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -26,8 +26,8 @@ function issueFor(
   * `_projectId` is the ID of the project being issued tokens.
   * `_name` is the ERC-20's name.
   * `_symbol` is the ERC-20's symbol.
-* Through the [`onlyController`](../../or-abstract/jbcontrollerutility/modifiers/onlycontroller.md) modifier, the function can only be accessed by the controller of the `_projectId`.
-* The function overrides a function definition from the [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md) interface.
+* Through the [`onlyController`](/protocol/api/contracts/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md) modifier, the function can only be accessed by the controller of the `_projectId`.
+* The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
 * The function returns the token that was issued.
 
 ### Body
@@ -53,8 +53,8 @@ function issueFor(
 
     _Internal references:_
 
-    * [`tokenOf`](../properties/tokenof.md)
-4.  Deploy a new instance of a [`JBToken`](../../jbtoken/) contract. Assign it to the return value.
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
+4.  Deploy a new instance of a [`JBToken`](/protocol/api/contracts/jbtoken/) contract. Assign it to the return value.
 
     ```solidity
     // Deploy the token contract.
@@ -69,7 +69,7 @@ function issueFor(
 
     _Internal references:_
 
-    * [`tokenOf`](../properties/tokenof.md)
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
 6.  Emit an `Issue` event with the relevant parameters.
 
     ```solidity
@@ -78,7 +78,7 @@ function issueFor(
 
     _Event references:_
 
-    * [`Issue`](../events/issue.md)
+    * [`Issue`](/protocol/api/contracts/jbtokenstore/events/issue.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -135,7 +135,7 @@ function issueFor(
 {% tab title="Events" %}
 | Name                              | Data                                                                                                                                                                                                         |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**`Issue`**](../events/issue.md)                           | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBToken`](../../../interfaces/ijbtoken.md)indexed token</code></li><li><code>string name</code></li><li><code>string symbol</code></li><li><code>address caller</code></li></ul>                                                                  |
+| [**`Issue`**](/protocol/api/contracts/jbtokenstore/events/issue.md)                           | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBToken`](/protocol/api/interfaces/ijbtoken.md)indexed token</code></li><li><code>string name</code></li><li><code>string symbol</code></li><li><code>address caller</code></li></ul>                                                                  |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

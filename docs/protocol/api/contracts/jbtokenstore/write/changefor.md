@@ -1,8 +1,8 @@
 # changeFor
 
-Contract: [`JBTokenStore`](../)​‌
+Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -10,7 +10,7 @@ Interface: [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md)
 
 _Only a project's current controller can change its token._
 
-_This contract must have access to all of the token's [`IJBToken`](../../../interfaces/ijbtoken.md) interface functions._
+_This contract must have access to all of the token's [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface functions._
 
 #### Definition
 
@@ -26,8 +26,8 @@ function changeFor(
   * `_projectId` is the ID of the project to which the changed token belongs.
   * `_token` is the new token. Send an empty address to remove the project's current token without adding a new one, if claiming tokens isn't currency required by the project
   * `_newOwner` is an address to transfer the current token's ownership to. This is optional, but it cannot be done later.
-* Through the [`onlyController`](../../or-abstract/jbcontrollerutility/modifiers/onlycontroller.md) modifier, the function can only be accessed by the controller of the `_projectId`.
-* The function overrides a function definition from the [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md) interface.
+* Through the [`onlyController`](/protocol/api/contracts/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md) modifier, the function can only be accessed by the controller of the `_projectId`.
+* The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -42,7 +42,7 @@ function changeFor(
 
     _Internal references:_
 
-    * [`requireClaimFor`](../properties/requireclaimfor.md)
+    * [`requireClaimFor`](/protocol/api/contracts/jbtokenstore/properties/requireclaimfor.md)
 
 2.  Make sure the token has 18 decimals.
 
@@ -53,7 +53,7 @@ function changeFor(
 
     _External references:_
 
-    * [`decimals`](../../../interfaces/ijbtoken.md)
+    * [`decimals`](/protocol/api/interfaces/ijbtoken.md)
 
 3.  Get a reference to the project's current token.
 
@@ -64,7 +64,7 @@ function changeFor(
 
     _Internal references:_
 
-    * [`tokenOf`](../properties/tokenof.md)
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
 4.  Store the provided token as the token of the project.
 
     ```solidity
@@ -74,7 +74,7 @@ function changeFor(
 
     _Internal references:_
 
-    * [`tokenOf`](../properties/tokenof.md)
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
 5.  If there's a current token and a new owner address was provided, transfer the ownership of the current token from this contract to the new owner.
 
     ```solidity
@@ -85,7 +85,7 @@ function changeFor(
 
     _External references:_
 
-    * [`transferOwnership`](../../jbtoken/write/transferownership.md)
+    * [`transferOwnership`](/protocol/api/contracts/jbtoken/write/transferownership.md)
 6.  Emit a `Change` event with the relevant parameters.
 
     ```solidity
@@ -94,7 +94,7 @@ function changeFor(
 
     _Event references:_
 
-    * [`Change`](../events/change.md)
+    * [`Change`](/protocol/api/contracts/jbtokenstore/events/change.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -152,7 +152,7 @@ function changeFor(
 {% tab title="Events" %}
 | Name                                | Data                                                                                                                                                                                |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Change`**](../events/change.md)               | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBToken`](../../../interfaces/ijbtoken.md)indexed newToken</code></li><li><code>[`IJBToken`](../../../interfaces/ijbtoken.md)indexed oldToken</code></li><li><code>address indexed owner</code></li><li><code>address caller</code></li></ul>                                                                                           |
+| [**`Change`**](/protocol/api/contracts/jbtokenstore/events/change.md)               | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBToken`](/protocol/api/interfaces/ijbtoken.md)indexed newToken</code></li><li><code>[`IJBToken`](/protocol/api/interfaces/ijbtoken.md)indexed oldToken</code></li><li><code>address indexed owner</code></li><li><code>address caller</code></li></ul>                                                                                           |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

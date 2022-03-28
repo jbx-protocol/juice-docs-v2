@@ -1,8 +1,8 @@
 # mintFor
 
-Contract: [`JBTokenStore`](../)​‌
+Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -26,8 +26,8 @@ function mintFor(
   * `_projectId` is the ID of the project to which the tokens belong.
   * `_amount` is the amount of tokens to mint.
   * `_preferClaimedTokens` is a flag indicating whether there's a preference for minted tokens to be claimed automatically into the `_holder`s wallet if the project currently has a token contract attached.
-* Through the [`onlyController`](../../or-abstract/jbcontrollerutility/modifiers/onlycontroller.md) modifier, the function can only be accessed by the controller of the `_projectId`.
-* The function overrides a function definition from the [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md) interface.
+* Through the [`onlyController`](/protocol/api/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md) modifier, the function can only be accessed by the controller of the `_projectId`.
+* The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -41,8 +41,8 @@ function mintFor(
 
     _Internal references:_
 
-    * [`tokenOf`](../properties/tokenof.md)
-2.  Check if tokens should be minted using the internal accounting mechanism, or if they should be claimed into the holder's wallet. Tokens should be claimed if the project has issued tokens, and either the project forces tokens to be claimed or if the `_preferClaimedTokens` flag is true. The internal accounting mechanism uses less gas, and tokens issued using it can later be claimed into the holders wallet by anyone who submits a [`claimFor`](claimfor.md) transaction.
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
+2.  Check if tokens should be minted using the internal accounting mechanism, or if they should be claimed into the holder's wallet. Tokens should be claimed if the project has issued tokens, and either the project forces tokens to be claimed or if the `_preferClaimedTokens` flag is true. The internal accounting mechanism uses less gas, and tokens issued using it can later be claimed into the holders wallet by anyone who submits a [`claimFor`](/protocol/api/contracts/jbtokenstore/write/claimfor.md) transaction.
 
     ```solidity
     // Save a reference to whether there exists a token and the caller prefers these claimed tokens or the project requires it.
@@ -52,7 +52,7 @@ function mintFor(
 
     _Internal references:_
 
-    * [`requireClaimFor`](../properties/requireclaimfor.md)
+    * [`requireClaimFor`](/protocol/api/contracts/jbtokenstore/properties/requireclaimfor.md)
 3.  If claimed tokens should be minted, mint the project's token into the holders wallet. Otherwise increment the holder's balance or the unclaimed tokens for the project, and the total supply of unclaimed tokens for the project.
 
     ```solidity
@@ -68,12 +68,12 @@ function mintFor(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](../properties/unclaimedbalanceof.md)
-    * [`unclaimedTotalSupplyOf`](../properties/unclaimedtotalsupplyof.md)
+    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
+    * [`unclaimedTotalSupplyOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
 
     _External references:_
 
-    * [`mint`](../../jbtoken/write/mint.md)
+    * [`mint`](/protocol/api/contracts/jbtoken/write/mint.md)
 4.  Emit a `Mint` event with the relevant parameters.
 
     ```solidity
@@ -82,7 +82,7 @@ function mintFor(
 
     _Event references:_
 
-    * [`Mint`](../events/mint.md)
+    * [`Mint`](/protocol/api/contracts/jbtokenstore/events/mint.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -129,7 +129,7 @@ function mintFor(
 {% tab title="Events" %}
 | Name                            | Data                                                                                                                                                                                                                                                                   |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Mint`**](../events/mint.md)                             | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 amount</code></li><li><code>bool tokensWereClaimed</code></li><li><code>bool preferClaimedTokens</code></li><li><code>address caller</code></li></ul>        |
+| [**`Mint`**](/protocol/api/contracts/jbtokenstore/events/mint.md)                             | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 amount</code></li><li><code>bool tokensWereClaimed</code></li><li><code>bool preferClaimedTokens</code></li><li><code>address caller</code></li></ul>        |
 {% endtab %}
 
 {% tab title="Bug bounty" %}
