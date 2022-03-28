@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`set`](../write/set.md)
+* [`set`](/protocol/api/contracts/jbsplitsstore/write/set.md)
 
 ## Definition
 
@@ -19,5 +19,5 @@ event SetSplit(
 * `projectId` is the ID of the project to which the split belongs.
 * `domain` is the namespace that differentiates different split groups for the projectId.
 * `group` is the property that joins multiple splits into one full group.
-* `split` is a [`JBSplit`](../../../data-structures/jbsplit.md) struct.
+* `split` is a [`JBSplit`](/protocol/api/data-structures/jbsplit.md) struct.
 * `caller` is the address that issued the transaction within which the event was emitted.
