@@ -1,8 +1,8 @@
 # transferFrom
 
-Contract: [`JBToken`](../)​‌
+Contract: [`JBToken`](/protocol/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](../../../interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -26,7 +26,7 @@ function transferFrom(
   * `_from` is the originating address.
   * `_to` is the destination address.
   * `_amount` is the amount of the transfer, as a fixed point number with 18 decimals.
-* The function overrides a function definition from the [`IJBToken`](../../../interfaces/ijbtoken.md) interface.
+* The function overrides a function definition from the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
 ### Body
