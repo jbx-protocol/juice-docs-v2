@@ -1,14 +1,14 @@
 # recordAddedBalanceFor
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
 **Records newly added funds for the project.**
 
-_The msg.sender must be an [`IJBPaymentTerminal`](../../../interfaces/ijbpaymentterminal.md)._
+_The msg.sender must be an [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)._
 #### Definition
 
 ```solidity
@@ -21,7 +21,7 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
 * Arguments:
   * `_projectId` is the ID of the project to which the funds being added belong.
   * `_amount` is the amount of temrinal tokens added, as a fixed point number with the same amount of decimals as its relative terminal.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -37,7 +37,7 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
 
     _Internal references:_
 
-    * [`balanceOf`](../properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/write/properties/balanceof.md)
 {% endtab %}
 
 {% tab title="Code" %}

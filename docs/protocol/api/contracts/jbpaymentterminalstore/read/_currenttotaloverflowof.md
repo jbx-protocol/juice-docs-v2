@@ -1,6 +1,6 @@
 # _currentTotalOverflowOf
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -37,7 +37,7 @@ function _currentTotalOverflowOf(
 
     _Internal references:_
 
-    * [`terminalsOf`](../../jbdirectory/read/terminalsof.md)
+    * [`terminalsOf`](/protocol/api/contracts/jbdirectory/read/terminalsof.md)
 2.  Create references where the total balance across all terminals is be stored in terms of ETH.
 
     ```solidity
@@ -54,7 +54,7 @@ function _currentTotalOverflowOf(
 
     _External references:_
 
-    * [`currentEthOverflowOf`](../../or-abstract/jbpayoutredemptionpaymentterminal/read/currentethoverflowof.md)
+    * [`currentEthOverflowOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/currentethoverflowof.md)
 4.  If the total overflow is to be returned in a currency other than ETH, make the conversion while maintaining 18 decimals of fidelity.
 
     ```solidity
@@ -68,12 +68,12 @@ function _currentTotalOverflowOf(
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
-    * [`JBCurrencies`](../../../libraries/jbcurrencies.md)
+    * [`JBCurrencies`](/protocol/api/libraries/jbcurrencies.md)
       * `.ETH`
 
     _External references:_
 
-    * [`priceFor`](../../jbprices/read/pricefor.md)
+    * [`priceFor`](/protocol/api/contracts/jbprices/read/pricefor.md)
 5.  If the fixed point overflow is to be returned with a number of decimals other than 18, adjust the number accordingly. 
 
     ```solidity
@@ -88,7 +88,7 @@ function _currentTotalOverflowOf(
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
-    * [`JBFixedPointNumber`](../../../libraries/jbfixedpointnumber.md)
+    * [`JBFixedPointNumber`](/protocol/api/libraries/jbfixedpointnumber.md)
       * `.adjustDecimals(...)`
 {% endtab %}
 

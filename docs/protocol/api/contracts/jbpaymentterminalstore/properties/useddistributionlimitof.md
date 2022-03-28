@@ -1,8 +1,8 @@
 # usedDistributionLimitOf
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
 **The amount of funds that a project has distributed from its limit during the current funding cycle for each terminal, in terms of the distribution limit's currency.**
 
@@ -37,4 +37,4 @@ mapping(IJBPaymentTerminal => mapping(uint256 => mapping(uint256 => uint256)))
   * `_projectId` is the ID of the project to get the used distribution limit of.
   * `_fundingCycleNumber` is the number of the funding cycle during which the distribution limit was used.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md) interface.
