@@ -1,8 +1,8 @@
 # setOperator
 
-Contract:[`JBOperatorStore`](../)​‌
+Contract:[`JBOperatorStore`](/protocol/api/contracts/jboperatorstore/README.md)​‌
 
-Interface: [`IJBOperatorStore`](../../../interfaces/ijboperatorstore.md)
+Interface: [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -16,9 +16,9 @@ _Only an address can set its own operators._
  function setOperator(JBOperatorData calldata _operatorData) external override { ... }
 ```
 
-* `_operatorData` is the [JBOperatorData](../../../data-structures/jboperatordata.md) that specifies the params for the operator being set.
+* `_operatorData` is the [JBOperatorData](/protocol/api/data-structures/jboperatordata.md) that specifies the params for the operator being set.
 * The function can be accessed externally by anyone.
-* The function overrides a function definition from the [`IJBOperatorStore`](../../../interfaces/ijboperatorstore.md) interface.
+* The function overrides a function definition from the [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -32,7 +32,7 @@ _Only an address can set its own operators._
 
     _Internal references:_
 
-    * [`_packedPermissions`](../read/_packedpermissions.md)
+    * [`_packedPermissions`](/protocol/api/contracts/jboperatorstore/read/_packedpermissions.md)
 2.  Store the packed permissions as the permissions of the provided operator, on behalf of the `msg.sender`, specifically for the provided domain.
 
      ```solidity
@@ -42,7 +42,7 @@ _Only an address can set its own operators._
 
      _Internal references:_
 
-     * [`permissionsOf`](../properties/permissionsof.md)
+     * [`permissionsOf`](/protocol/api/contracts/jboperatorstore/properties/permissionsof.md)
 3.  Emit a `SetOperator` event with the relevant parameters.
 
      ```solidity
@@ -57,7 +57,7 @@ _Only an address can set its own operators._
 
      _Event references:_
 
-     * [`SetOperator`](../events/setoperator.md)
+     * [`SetOperator`](/protocol/api/contracts/jboperatorstore/events/setoperator.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -92,7 +92,7 @@ function setOperator(JBOperatorData calldata _operatorData) external override {
 {% tab title="Events" %}
 |                                               |                                                                                                                                                                                                                                       |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetOperator`**](../events/setoperator.md) | <ul><li><code>address indexed operator</code></li><li><code>address indexed account</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256[] permissionIndexes</code></li><li><code>uint256 packed</code></li></ul> |
+| [**`SetOperator`**](/protocol/api/contracts/jboperatorstore/events/setoperator.md) | <ul><li><code>address indexed operator</code></li><li><code>address indexed account</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256[] permissionIndexes</code></li><li><code>uint256 packed</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

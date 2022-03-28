@@ -1,8 +1,8 @@
 # hasPermissions
 
-Contract:[`JBOperatorStore`](../)​‌
+Contract:[`JBOperatorStore`](/protocol/api/contracts/jboperatorstore/README.md)​‌
 
-Interface: [`IJBOperatorStore`](../../../interfaces/ijboperatorstore.md)
+Interface: [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -25,7 +25,7 @@ function hasPermissions(
 * `_permissionIndexes` is an array of permission indexes to check for.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBOperatorStore`](../../../interfaces/ijboperatorstore.md) interface.
+* The function overrides a function definition from the [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md) interface.
 * The function returns a flag indicating whether the operator has all specified permissions.
 
 ### Body
@@ -54,7 +54,7 @@ function hasPermissions(
 
     Internal references:
 
-    * [`permissionsOf`](../properties/permissionsof.md)
+    * [`permissionsOf`](/protocol/api/contracts/jboperatorstore/properties/permissionsof.md)
 5.  After the loop, return `true` since the loop checked all specified permissions without returning `false`.
 
     ```solidity
