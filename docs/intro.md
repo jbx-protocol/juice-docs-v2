@@ -23,6 +23,6 @@ Please note that these docs are under active development.
 ### Directory
 
 * [Creating a Juicebox Project](getting-started/create-a-juicebox-project/) is a good starting place.
-* Deployed contract addresses and Etherscan links are on the [Contract Addresses](resources/contract-addresses.md) page.
-* Learn how to create dapps that draw on JB protocol data with the [Integration Guide](developers/integration-guide.md) and [Subgraph](developers/subgraph.md) pages.
+* Deployed contract addresses and Etherscan links are on the [Contract Addresses](/resources/contract-addresses.md) page.
+* Learn how to create dapps that draw on JB protocol data with the [Integration Guide](/developers/integration-guide.md) and [Subgraph](/developers/subgraph.md) pages.
 * Join our [Discord](https://discord.com/invite/5JsDvuyCPd) if you have suggestions or would like to help document the protocol.
