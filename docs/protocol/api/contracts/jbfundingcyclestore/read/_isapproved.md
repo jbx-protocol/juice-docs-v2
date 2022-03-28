@@ -1,6 +1,6 @@
 # _isApproved
 
-Contract:[`JBFundingCycleStore`](../)​
+Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -17,7 +17,7 @@ function _isApproved(uint256 _projectId, JBFundingCycle memory _fundingCycle)
 
 * Arguments:
   * `_projectId` is the ID of the project to which the funding cycle belongs. 
-  * `_fundingCycle` is the [`JBFundingCycle`](../../../data-structures/jbfundingcycle.md) to get an approval flag for.
+  * `_fundingCycle` is the [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md) to get an approval flag for.
 * The view function is private to this contract.
 * The view function does not alter state on the blockchain.
 * The function returns the approval flag.
@@ -34,7 +34,7 @@ function _isApproved(uint256 _projectId, JBFundingCycle memory _fundingCycle)
 
     _Internal references:_
 
-    * [`_ballotStateOf`](_ballotstateof.md)
+    * [`_ballotStateOf`](/protocol/api/contracts/jbfundingcyclestore/read/_ballotstateof.md)
 {% endtab %}
 
 {% tab title="Code" %}

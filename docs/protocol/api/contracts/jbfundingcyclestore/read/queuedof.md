@@ -1,6 +1,6 @@
 # queuedOf
 
-Contract:[`JBFundingCycleStore`](../)​‌
+Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​‌
 
 Interface: `IJBFundingCycleStore`
 
@@ -24,8 +24,8 @@ function queuedOf(uint256 _projectId)
   * `_projectId` is the ID of the project to get the queued funding cycle of.
 * The view function can be accessed externally by anyone, and internally by the contract.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBFundingCycleStore`](../../../interfaces/) interface.
-* The function returns a [`JBFundingCycle`](../../../data-structures/jbfundingcycle.md).
+* The function overrides a function definition from the [`IJBFundingCycleStore`](/protocol/api/interfaces/README.md) interface.
+* The function returns a [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md).
 
 ### Body
 
@@ -38,7 +38,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
 2.  Check to see if there's a standby funding cycle configuration.
 
     ```solidity
@@ -48,7 +48,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_standbyOf`](_getstructfor.md)
+    * [`_standbyOf`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
 3.  If there is a stanby cycle and it is approved, it must be the queued funding cycle for the project. Otherwise get a reference to the funding cycle structure based on the yet-to-be-approved standby configuration.
 
     ```solidity
@@ -65,8 +65,8 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_isApproved`](_isapproved.md)
-    * [`_getStructFor`](_getstructfor.md)
+    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_isapproved.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
 4.  If there is no standby funding cycle, get the last stored funding cycle for the project. If it has already started, a queued funding cycle can be constructed based on the properties of this funding cycle.
 
     ```solidity
@@ -83,8 +83,8 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](_getstructfor.md)
-    * [`latestConfigurationOf`](../properties/latestconfigurationof.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 5.  If the referenced funding cycle has a duration of 0, there can't be a queued funding cycle since configurations with no duration are being made manually instead of on a schedule.
 
     ```solidity
@@ -94,7 +94,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
 6.  If the referenced funding cycle has been approved, return a queued cycle based on it. The mock funding cycle is not allowed to have started already, which is why a `false` flag is passed in.
 
     ```solidity
@@ -105,8 +105,8 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_isApproved`](_getstructfor.md)
-    * [`_mockFundingCycleBasedOn`](_mockfundingcyclebasedon.md)
+    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/_mockfundingcyclebasedon.md)
 7.  Get a reference to the funding cycle that the current eligible cycle is based on which must be the latest approved cycle configuration.
 
     ```solidity
@@ -122,7 +122,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_mockFundingCycleBasedOn`](_mockfundingcyclebasedon.md)
+    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/_mockfundingcyclebasedon.md)
 {% endtab %}
 
 {% tab title="Code" %}

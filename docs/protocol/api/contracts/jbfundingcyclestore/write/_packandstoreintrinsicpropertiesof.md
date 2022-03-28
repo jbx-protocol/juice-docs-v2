@@ -1,6 +1,6 @@
 # _packAndStoreIntrinsicPropertiesOf
 
-Contract:[`JBFundingCycleStore`](../)​
+Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -64,7 +64,7 @@ function _packAndStoreIntrinsicPropertiesOf(
 
     _Internal references:_
 
-    * [`_packedIntrinsicPropertiesOf`](../properties/_packedintrinsicpropertiesof.md)
+    * [`_packedIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_packedintrinsicpropertiesof.md)
 {% endtab %}
 
 {% tab title="Code" %}

@@ -1,6 +1,6 @@
 # _configureIntrinsicPropertiesFor
 
-Contract:[`JBFundingCycleStore`](../)​
+Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -39,9 +39,9 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](../properties/latestconfigurationof.md)
-    * [`_initFor`](_initfor.md)
-    * [`_getStructFor`](../read/_getstructfor.md)
+    * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`_initFor`](/protocol/api/contracts/jbfundingcyclestore/write/_initfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
 2.  If there's no standby funding cycle, get a reference to the project's eligible funding cycle. The configurable funding cycle will have to be initialized based on the eligible cycle.
 
     ```solidity
@@ -51,7 +51,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_eligibleOf`](../read/_eligibleof.md)
+    * [`_eligibleOf`](/protocol/api/contracts/jbfundingcyclestore/read/_eligibleof.md)
 3.  If there is no eligible funding cycle for the project, get a reference instead to the project's latest funding cycle configuration, which may have been initialized long into the past.
 
     ```solidity
@@ -63,7 +63,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](../properties/latestconfigurationof.md)
+    * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 4.  Resolve the funding cycle struct for the currently referenced configuration.
 
     ```solidity
@@ -73,7 +73,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_getStructFor`](../read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
 5.  If the configuration isn't approved, get a reference to the configuration it's based on which must be the latest approved configuration.
 
     ```solidity
@@ -85,9 +85,9 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_isApproved`](../read/_isapproved.md)
-    * [`_getStructFor`](../read/_getstructfor.md)
-6.  At this point, the current configuration being referenced is the funding cycle configuration that the initialized one should be based on. Get a reference to the [`JBFundingCycle`](../../../data-structures/jbfundingcycle.md) for the configuration.
+    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_isapproved.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+6.  At this point, the current configuration being referenced is the funding cycle configuration that the initialized one should be based on. Get a reference to the [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md) for the configuration.
 
     ```solidity
     // Determine the funding cycle to use as the base.
@@ -96,7 +96,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_getStructFor`](../read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
 7.  Get a reference to the time after which the base funding cycle's ballot will be resolved. The funding cycle that will be initialized can start any time after the base funding cycle's ballot's duration is up.
 
     ```solidity
@@ -109,7 +109,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`duration`](../../../interfaces/ijbfundingcycleballot.md)
+    * [`duration`](/protocol/api/interfaces/ijbfundingcycleballot.md)
 8.  Initialize a funding cycle with the correct configuration. Make sure it can only start after the base cycle's ballot has resolved.
 
     ```solidity
@@ -125,7 +125,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_initFor`](./_initfor.md)
+    * [`_initFor`](/protocol/api/contracts/jbfundingcyclestore/write/_initfor.md)
 {% endtab %}
 
 {% tab title="Code" %}

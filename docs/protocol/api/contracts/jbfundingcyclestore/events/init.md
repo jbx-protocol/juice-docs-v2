@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`_initFor`](../write/_initfor.md)
+* [`_initFor`](/protocol/api/contracts/jbfundingcyclestore/write/_initfor.md)
 
 ## Definition
 
