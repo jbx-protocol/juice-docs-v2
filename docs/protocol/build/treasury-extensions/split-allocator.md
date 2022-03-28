@@ -1,9 +1,9 @@
 # Split allocator
 
-Before implementing, learn about allocators [here](../../learn/glossary/allocator.md), and splits [here](../../learn/glossary/splits.md).
+Before implementing, learn about allocators [here](/protocol/learn/glossary/allocator.md), and splits [here](/protocol/learn/glossary/splits.md).
 ### Specs
 
-A contract can become a split allocator by adhering to [`IJBSplitAllocator`](../../api/interfaces/ijbsplitallocator.md):
+A contract can become a split allocator by adhering to [`IJBSplitAllocator`](/protocol/api/interfaces/ijbsplitallocator.md):
 
 ```solidity
 interface IJBSplitAllocator {
@@ -11,7 +11,7 @@ interface IJBSplitAllocator {
 }
 ```
 
-When extending the payout distribution or reserved token distribution functionality with an allocator, the protocol will pass a [`JBSplitAllocationData`](../../api/data-structures/jbsplitallocationdata.md) to the `allocate(...)` function:
+When extending the payout distribution or reserved token distribution functionality with an allocator, the protocol will pass a [`JBSplitAllocationData`](/protocol/api/data-structures/jbsplitallocationdata.md) to the `allocate(...)` function:
 
 ```solidity
 struct JBSplitAllocationData {
@@ -52,11 +52,11 @@ struct JBSplit {
 
 The `msg.sender` to the allocator will either be the payment terminal that facilitated the payout distribution, or the controller that facilitated the reserved tokens distribution.
 
-In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](../../api/contracts/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](../../api/contracts/or-payment-terminals/jbethpaymentterminal/)'s and [`JBERC20PaymentTerminal`](../../api/contracts/or-payment-terminals/jberc20paymentterminal/)'s, the allocator hook gets called while the payouts are being distributed to splits. [View the docs](../../api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_distributetopayoutsplitsof.md). 
+In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal/)'s and [`JBERC20PaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jberc20paymentterminal/)'s, the allocator hook gets called while the payouts are being distributed to splits. [View the docs](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_distributetopayoutsplitsof.md). 
 
-* If the allocation is coming from an ETH payment terminal such as [`JBETHPaymentTerminal`](../../api/contracts/or-payment-terminals/jbethpaymentterminal/), the ETH will be included in the call to `allocate(...)`. 
-* If the allocation is coming from an ERC20 payment terminal such as [`JBERC20PaymentTerminal`](../../api/contracts/or-payment-terminals/jberc20paymentterminal/), the tokens will be pre-approved for the allocator contract to transfer them to it. Make sure to initiate the transfer, and make sure to not leave allocated tokens stuck in the allocator contract.
-* If the allocation is coming from a controller such as [`JBController`](../../api/contracts/or-controllers/jbcontroller/) distributing reserved tokens, the tokens will be minted pre-distributed to the allocator's address. If the split's `preferClaimed` property is `true` and the project has a token a contract attached, the tokens will be minted directly to the allocator contract. Otherwise, they will be allocated in the  [`JBTokenStore`](../../api/contracts/jbtokenstore/) as unclaimed tokens from which the allocator can then [`claimFor(...)`](../../api/contracts/jbtokenstore/write/claimfor.md) itself or [`transferFrom(...)`](../../api/contracts/jbtokenstore/write/transferfrom.md) itself to another address. Make sure to not leave allocated tokens stuck in the allocator contract or unclaimed in the [`JBTokenStore`](../../api/contracts/jbtokenstore/) contract.
+* If the allocation is coming from an ETH payment terminal such as [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal/), the ETH will be included in the call to `allocate(...)`. 
+* If the allocation is coming from an ERC20 payment terminal such as [`JBERC20PaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jberc20paymentterminal/), the tokens will be pre-approved for the allocator contract to transfer them to it. Make sure to initiate the transfer, and make sure to not leave allocated tokens stuck in the allocator contract.
+* If the allocation is coming from a controller such as [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/) distributing reserved tokens, the tokens will be minted pre-distributed to the allocator's address. If the split's `preferClaimed` property is `true` and the project has a token a contract attached, the tokens will be minted directly to the allocator contract. Otherwise, they will be allocated in the  [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/) as unclaimed tokens from which the allocator can then [`claimFor(...)`](/protocol/api/contracts/jbtokenstore/write/claimfor.md) itself or [`transferFrom(...)`](/protocol/api/contracts/jbtokenstore/write/transferfrom.md) itself to another address. Make sure to not leave allocated tokens stuck in the allocator contract or unclaimed in the [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/) contract.
 
 ### Attaching
 
