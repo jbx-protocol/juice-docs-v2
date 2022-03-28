@@ -10,11 +10,13 @@ const config = {
   tagline: 'The juiciest repository of knowledge' ,
   url: 'https://info.juicebox.money',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Juicebox', // Usually your GitHub org/user name.
   projectName: 'Juicebox Protocol', // Usually your repo name.
+
+  plugins: [require.resolve('docusaurus-lunr-search')],
 
   presets: [
     [
