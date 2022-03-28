@@ -1,8 +1,8 @@
 # addFeedFor
 
-Contract:[`JBPrices`](../)​‌
+Contract:[`JBPrices`](/protocol/api/contracts/jbprices/README.md)​‌
 
-Interface: [`IJBPrices`](../../../interfaces/ijbprices.md)
+Interface: [`IJBPrices`](/protocol/api/interfaces/ijbprices.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -23,9 +23,9 @@ function addFeedFor(
 * Arguments:
   * `_currency` is the currency that the price feed is for.
   * `_base` is the currency that the price feed is based on.
-  * `_feed` is the [`IJBPriceFeed`](../../../interfaces/ijbpricefeed.md) contract being added.
+  * `_feed` is the [`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md) contract being added.
 * Through the `onlyOwner` modifier, this function can only be accessed by the address that owns this contract.
-* The function overrides a function definition from the [`IJBPrices`](../../../interfaces/ijbprices.md) interface.
+* The function overrides a function definition from the [`IJBPrices`](/protocol/api/interfaces/ijbprices.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -39,7 +39,7 @@ function addFeedFor(
 
     Internal references:
 
-    * [`feedFor`](../properties/feedfor.md)
+    * [`feedFor`](/protocol/api/contracts/jbprices/properties/feedfor.md)
 2.  Store the provided feed for the currency base pair.
 
     ```solidity
@@ -54,7 +54,7 @@ function addFeedFor(
 
     _Event references:_
 
-    * [`AddFeed`](../events/addfeed.md)
+    * [`AddFeed`](/protocol/api/contracts/jbprices/events/addfeed.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -95,7 +95,7 @@ function addFeedFor(
 {% tab title="Events" %}
 | Name                                  | Data                                                                                                                                                                                                                                                                                           |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddFeed`**](../events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[`IJBPriceFeed`](../../../interfaces/ijbpricefeed.md)feed</code></li></ul> |
+| [**`AddFeed`**](/protocol/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

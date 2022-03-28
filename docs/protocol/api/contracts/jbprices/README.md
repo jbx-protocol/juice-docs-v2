@@ -18,7 +18,7 @@ Ethereum mainnet: _Not yet deployed_
 
 | Name                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBPrices`**](../../interfaces/ijbprices.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+| [**`IJBPrices`**](/protocol/api/interfaces/ijbprices.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
 ### **Inheritance**
 
@@ -41,13 +41,13 @@ constructor(address _owner) {
 
 | Name                               | Data                                                                                                                                                                                    |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddFeed`**](events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[`IJBPriceFeed`](../../interfaces/ijbpricefeed.md)feed</code></li></ul> |
+| [**`AddFeed`**](/protocol/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
 
 ## Properties
 
 | Function                                                          | Definition                                                                                                                                                                                                |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`feedFor`**](properties/feedfor.md)                            | <p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[`IJBPriceFeed`](../../interfaces/ijbpricefeed.md)feed</code></li></ul> |
+| [**`feedFor`**](/protocol/api/contracts/jbprices/properties/feedfor.md)                            | <p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
 
 ## Read
 
@@ -59,4 +59,4 @@ constructor(address _owner) {
 
 | Function                             | Definition                                                                                                                                                                                                                               |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`addFeedFor`**](write/addfeed.md) | <p><strong>Traits</strong></p><ul><li><code>onlyOwner</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li><li><code>[`IJBPriceFeed`](../../interfaces/ijbpricefeed.md)feed</code></li></ul> |
+| [**`addFeedFor`**](/protocol/api/contracts/jbprices/write/addfeed.md) | <p><strong>Traits</strong></p><ul><li><code>onlyOwner</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li><li><code>[`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
