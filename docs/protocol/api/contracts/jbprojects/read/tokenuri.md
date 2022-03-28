@@ -1,6 +1,6 @@
 # tokenURI
 
-Contract: [`JBProjects`](../)​‌
+Contract: [`JBProjects`](/protocol/api/contracts/jbprojects/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -30,7 +30,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 
     _Internal references:_
 
-    * [`tokenUriResolver`](../properties/tokenuriresolver.md)
+    * [`tokenUriResolver`](/protocol/api/contracts/jbprojects/properties/tokenuriresolver.md)
 2.  Resolve the URI for the project.
 
     ```solidity
@@ -40,7 +40,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 
     _External references:_
 
-    * [`getUri`](../../../interfaces/ijbtokenuriresolver.md)
+    * [`getUri`](/protocol/api/interfaces/ijbtokenuriresolver.md)
 
 {% endtab %}
 
