@@ -6,9 +6,7 @@ description: Manages all inflows and outflows of ETH into the protocol ecosystem
 
 ## Overview
 
-### Code
-
-{% embed url="https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBETHPaymentTerminal.sol" %}
+### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBETHPaymentTerminal.sol)
 
 ### **Addresses**
 

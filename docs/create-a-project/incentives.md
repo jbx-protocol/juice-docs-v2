@@ -1,6 +1,7 @@
 ---
-sidebar_position: 7
+sidebar_position: 6
 ---
+import ReactPlayer from 'react-player'
 
 # Incentives
 
@@ -17,6 +18,5 @@ As tokens are redeemed for ETH, the bonding curve continuously increases the val
 In this formula, **x** represents the amount of tokens being redeemed, **s** represents the total token supply, **o** represents the current overflow, and **r** represents the bonding curve rate.
 :::
 
-[Bonding Curve Video](https://youtu.be/dxqc3yMqi5M)
-
+<ReactPlayer controls url='https://youtu.be/dxqc3yMqi5M' />
 

@@ -47,8 +47,4 @@ The abstract [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-ab
 
 Likewise, a project can bring their own contract to serve as its controller. A project's controller is the only contract that has direct access to manipulate its tokens and funding cycles. A project can set its controller from the core [`JBDirectory`](/protocol/api/contracts/jbdirectory/) contract using the [`JBDirectory.setControllerOf(...)`](/protocol/api/contracts/jbdirectory/write/setcontrollerof.md) transaction.
 
-## Visual map
-
-(outdated, needs love)
-
-{% embed url="https://www.figma.com/file/qGZbvt4kWgDJOntra7L960/JBV2" %}
+## [Visual map](www.figma.com/file/qGZbvt4kWgDJOntra7L960/JBV2)

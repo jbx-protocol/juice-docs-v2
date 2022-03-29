@@ -6,9 +6,7 @@ description: Manages and normalizes price feeds.
 
 ## Overview
 
-### Code
-
-{% embed url="https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBPrices.sol" %}
+### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBPrices.sol)
 
 ### **Addresses**
 
