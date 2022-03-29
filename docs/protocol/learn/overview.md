@@ -8,7 +8,7 @@ sidebar_position: 1
   Whichever address owns this NFT has administrative privileges to configure treasury parameters within the Juicebox ecosystem. It can also be used by other Web3 ecosystems to extend functionality to projects.\
   \
   [Learn more about projects](/protocol/learn/glossary/project.md)
-  <br>
+  <br/>
   
 
 * **Configure funding cycles for a project**\
@@ -131,10 +131,10 @@ sidebar_position: 1
 * **Mint tokens**\
   By default, a project starts with 0 tokens and mints them when its treasury receives contributions.\
   A project can mint and distribute more of its own tokens on demand if its current funding cycle isn't configured to pause minting.
-  <br>
+  <br/>
 * **Burn tokens**\
   Anyone can burn a project's tokens, if the project's current funding cycle isn't configured to paused burning.
-  <br>
+  <br/>
 * **Bring-your-own token**\
   A project can bring its own token, as long as it adheres to [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) and uses fixed point accounting with 18 decimals.\
   \
@@ -143,34 +143,34 @@ sidebar_position: 1
   A project can change its token during any of its funding cycles that are explicitly configured to allow changes.\
   \
   By default, the protocol provides a transaction for projects to deploy [`JBToken`](/protocol/api/contracts/jbtoken/) ERC-20 tokens. 
-  <br>
+  <br/>
 * **Splits**\
   A project can pre-program token distributions to splits. The destination of a split can be an Ethereum address, the project ID of another project's Juicebox treasury (the split will allow you to configure the beneficiary of that project's tokens that get minted in response to the contribution), to the `allocate(...)` function of any contract that adheres to [`IJBSplitAllocator`](/protocol/api/interfaces/ijbsplitallocator.md), or to the address that initiated the transaction that distributes tokens to the splits.\
   \
   [Learn more about splits](/protocol/learn/glossary/splits.md)\
   [Learn more about allocators](/protocol/learn/glossary/split-allocator.md)
-  <br>
+  <br/>
 * **Protocol fees**\
   All funds distributed by projects from their treasuries to destinations outside of the juicebox ecosystem will incure a protocol fee. This fee is sent to the JuiceboxDAO treasury which runs on the Juicebox protocol itself (project ID of 1), triggering the same functionality as a payment directly to JuiceboxDAO (by default, minting JBX for the fee payer according to JuiceboxDAO's current funding cycle configuration) from an external source.\
   \
   This fee is adjustable by JuiceboxDAO, with a max value of 5%.\
   \
   Any funds sent from one juicebox treasury to another via splits do not incur fees.
-  <br>
+  <br/>
 * **Custom treasury strategies**\
   Funding cycles can be configured to use an [`IJBFundingCycleDataSource`](/protocol/api/interfaces/ijbfundingcycledatasource.md), [`IJBPayDelegate`](/protocol/api/interfaces/ijbpaydelegate.md), and [`IJBRedemptionDelegate`](/protocol/api/interfaces/ijbredemptiondelegate.md) to extend or override the default protocol's behavior that defines what happens when an address tries to make a payment to the project's treasury, and what happens when someone tries to redeem the project tokens during any particular funding cycle.\
   \
   [Learn more about data sources](/protocol/learn/glossary/data-source.md)\
   [Learn more about delegates](/protocol/learn/glossary/delegate.md)
-  <br>
+  <br/>
 * **Accept multiple tokens**\
   A project can specify any number of payment terminal contracts where it can receive funds denominated in various tokens. This allows projects to create distinct rules for accepting ETH, any ERC-20, or any asset in general.\
   \
   Anyone can roll their own contract that adheres to [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) for projects to use, and a project can migrate funds between terminals that use the same token as it wishes.
-  <br>
+  <br/>
 * **Forkability and migratability**\
   A project can migrate its treasury's controller to any other contract that adheres to [`IJBController`](/protocol/api/interfaces/ijbcontroller.md). This allows a project to evolve into updated or custom treasury dynamics rules over time as it wishes.
-  <br>
+  <br/>
 * **Operators**\
   A project owner can specify addresses that are allowed to operate certain administrative treasury transactions on its behalf.\
   \
