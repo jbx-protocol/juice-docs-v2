@@ -1,6 +1,6 @@
 # _feeAmount
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -32,7 +32,7 @@ function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns 
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
-    * [`JBConstants`](../../../../libraries/jbconstants.md)
+    * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
       * `.MAX_FEE_DISCOUNT`
 2.  Return the amount of tokens from the specified amount that should be paid as a fee.
 

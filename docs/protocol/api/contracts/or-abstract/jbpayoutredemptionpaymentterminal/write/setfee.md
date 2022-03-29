@@ -1,8 +1,8 @@
 # setFee
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -32,7 +32,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
     _Internal references:_
 
-    * [`_FEE_CAP`](../properties/_fee_cap.md)
+    * [`_FEE_CAP`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_fee_cap.md)
 2.  Store the new fee.
 
     ```solidity
@@ -47,7 +47,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
     _Event references:_
 
-    * [`SetFee`](../events/setfee.md)
+    * [`SetFee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfee.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -82,7 +82,7 @@ function setFee(uint256 _fee) external virtual override onlyOwner {
 {% tab title="Events" %}
 | Name                                | Data                                                                           |
 | ----------------------------------- | ------------------------------------------------------------------------------ |
-| [**`SetFee`**](../events/setfee.md)                                                 | <ul><li><code>uint256 fee</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                            |
+| [**`SetFee`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfee.md)                                                 | <ul><li><code>uint256 fee</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                            |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

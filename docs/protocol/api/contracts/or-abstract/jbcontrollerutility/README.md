@@ -20,7 +20,7 @@ description: >-
 
 | Name                                                                      | Description                                                                                                                              |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBControllerUtility`**](../../../interfaces/ijbcontrollerutility.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+| [**`IJBControllerUtility`**](/protocol/api/interfaces/ijbcontrollerutility.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
 ## Constructor
 
@@ -31,10 +31,10 @@ constructor(IJBDirectory _directory) {
 ```
 
 * **Arguments:**
-  * `_directory` is an [`IJBDirectory`](../../../interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
+  * `_directory` is an [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
 
 ## Read
 
 | Function                                   | Definition                                                                                                                                                                                                  |
 | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`directory`**](properties/directory.md) | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>IJBDirectory directory</code></li></ul><p><a href="properties/directory.md">more</a></p> |
+| [**`directory`**](/protocol/api/contracts/or-abstract/jbcontrollerutility/properties/directory.md) | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>IJBDirectory directory</code></li></ul><p><a href="/protocol/api/contracts/or-abstract/jbcontrollerutility/properties/directory.md">more</a></p> |

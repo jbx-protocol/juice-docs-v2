@@ -1,6 +1,6 @@
 # _processFee
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -29,7 +29,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
     _External references:_
 
-    * [`primaryTerminalOf`](../../../jbdirectory/read/primaryterminalof.md)
+    * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
 
 2.  If the protocol's terminal is the same as this terminal, save gas by paying the contract internally.
 
@@ -138,7 +138,7 @@ function _processFee(uint256 _amount, address _beneficiary) private {
 {% tab title="Events" %}
 | Name                                            | Data                                                                                                                                                             |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddToBalance`**](../events/addtobalance.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 value</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
+| [**`AddToBalance`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 value</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

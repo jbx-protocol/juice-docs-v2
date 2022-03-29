@@ -1,6 +1,6 @@
 # _distributeToPayoutSplitsOf
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -19,7 +19,7 @@ function _distributeToPayoutSplitsOf(
 
 * Arguments:
   * `_projectId` is the ID of the project for which payout splits are being distributed.
-  * `_fundingCycle` is the [`JBFundingCycle`](../../../../data-structures/jbfundingcycle.md) during which the distribution is being made.
+  * `_fundingCycle` is the [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md) during which the distribution is being made.
   * `_amount` is the total amount being distributed.
   * `_feeDiscount` is the amount of discount to apply to the fee, out of the MAX_FEE.
 * The function is private to this contract.
@@ -50,11 +50,11 @@ function _distributeToPayoutSplitsOf(
 
     _Internal references:_
 
-    * [`payoutSplitsGroup`](../properties/payoutsplitsgroup.md)
+    * [`payoutSplitsGroup`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/payoutsplitsgroup.md)
 
     _External references:_
 
-    * [`splitsOf`](../../../jbsplitsstore/read/splitsof.md)
+    * [`splitsOf`](/protocol/api/contracts/jbsplitsstore/read/splitsof.md)
 3.  Loop through each split.
 
     ```solidity
@@ -83,7 +83,7 @@ function _distributeToPayoutSplitsOf(
 
         * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
           * `.mulDiv(...)`
-        * [`JBConstants`](../../../../libraries/jbconstants.md)
+        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
           * `.SPLITS_TOTAL_PERCENT`
     3.  If there's at least some funds to send to the payout, determine where they should go, making sure to only debit a fee if the funds are leaving this contract and not going to a feeless terminal. If the split has an `allocator` set, send the funds to its `allocate` function, passing along any relevant params. Otherwise if a `projectId` is specified in the split, send the payout to that project and use the split's `beneficiary` as the address that should receive the project's tokens in return. Otherwise, send the funds directly to the `beneficiary` address from the split if one was provided. If the split didn't give any routing information, send the amount to the messag sender. Decrement the `leftoverAmount` once the split is settled.
 
@@ -192,24 +192,24 @@ function _distributeToPayoutSplitsOf(
 
         _Libraries used:_
 
-        * [`JBConstants`](../../../../libraries/jbconstants.md)
+        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
-        * [`JBTokens`](../../../../libraries/jbtokens.md)
+        * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
           * `.ETH`
 
         _Internal references:_
 
-        * [`decimals`](../properties/decimals.md)
-        * [`isFeelessTerminal`](../properties/isfeelessterminal.md)
-        * [`pay`](pay.md)
-        * [`_pay`](_pay.md)
-        * [`_feeAmount`](../read/_feeamount.md)
-        * [`_transferFrom`](_transferfrom.md)
+        * [`decimals`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/decimals.md)
+        * [`isFeelessTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
+        * [`pay`]/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/(pay.md)
+        * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_pay.md)
+        * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/_feeamount.md)
+        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
 
         _External references:_
 
-        * [`allocate`](../../../../interfaces/ijbsplitallocator.md)
-        * [`primaryTerminalOf`](../../../jbdirectory/read/primaryterminalof.md)
+        * [`allocate`](/protocol/api/interfaces/ijbsplitallocator.md)
+        * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
     3.  Emit a `DistributeToPayoutSplit` event for the split being iterated on with the relevant parameters.
 
         ```solidity
@@ -225,7 +225,7 @@ function _distributeToPayoutSplitsOf(
 
         _Event references:_
 
-        * [`DistributeToPayoutSplit`](../events/distributetopayoutsplit.md)
+        * [`DistributeToPayoutSplit`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -395,7 +395,7 @@ function _distributeToPayoutSplitsOf(
 {% tab title="Events" %}
 | Name                                                                  | Data                                                                                                                                                                                                                                                                                     |
 | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeToPayoutSplit`**](../events/distributetopayoutsplit.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[`JBSplit`](../../../../data-structures/jbsplit.md)split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                           |
+| [**`DistributeToPayoutSplit`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[`JBSplit`](/protocol/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                           |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

@@ -1,6 +1,6 @@
 # _pay
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -59,7 +59,7 @@ function _pay(
         uint256 _tokenCount;
         ```
 
-    2.  Keep a reference to the [`JBTokenAmount`](../../../../data-structures/jbtokenamount.md) structure with info about what's being paid.
+    2.  Keep a reference to the [`JBTokenAmount`](/protocol/api/data-structures/jbtokenamount.md) structure with info about what's being paid.
 
         ```solidity
         // Bundle the amount info into a JBTokenAmount struct.
@@ -82,7 +82,7 @@ function _pay(
 
         _External references:_
 
-        * [`recordPaymentFrom`](../../../jbpaymentterminalstore/write/recordpaymentfrom.md)
+        * [`recordPaymentFrom`](/protocol/api/contracts/jbpaymentterminalstore/write/recordpaymentfrom.md)
 
     4.  Mint tokens if needed. Get a reference to the number of tokens sent to the specified beneificiary as opposed to reserved to be distributed to the project's reserved token splits.
 
@@ -102,8 +102,8 @@ function _pay(
 
         _External references:_
 
-        * [`controllerOf`](../../../jbdirectory/properties/controllerof.md)
-        * [`mintTokensOf`](../../../or-controllers/jbcontroller/write/minttokensof.md)
+        * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
+        * [`mintTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/minttokensof.md)
 
     5.  Make sure the beneficiary is receiving at least as much tokens as the minimum specied.
 
@@ -134,11 +134,11 @@ function _pay(
 
         _External references:_
 
-        * [`didPay`](../../../../interfaces/ijbpaydelegate.md)
+        * [`didPay`](/protocol/api/interfaces/ijbpaydelegate.md)
 
         _Event references:_
 
-        * [`DelegateDidPay`](../events/delegatedidpay.md)
+        * [`DelegateDidPay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/delegatedidpay.md)
 
 3.  Emit a `Pay` event with the relevant parameters.
 
@@ -157,7 +157,7 @@ function _pay(
 
     _Event references:_
 
-    * [`Pay`](../events/pay.md)
+    * [`Pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/pay.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -264,7 +264,7 @@ function _pay(
 {% tab title="Events" %}
 | Name                          | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Pay`**](../events/pay.md)                                         | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 beneficiaryTokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>        |
+| [**`Pay`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/pay.md)                                         | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 beneficiaryTokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>        |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

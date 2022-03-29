@@ -1,6 +1,6 @@
 # _heldFeesOf
 
-Contract:[`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract:[`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 **Fees that are being held to be processed later.** 
 

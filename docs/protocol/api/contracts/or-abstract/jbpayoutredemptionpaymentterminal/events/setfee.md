@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setFee`](../write/setfee.md)
+* [`setFee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfee.md)
 
 ## Definition
 

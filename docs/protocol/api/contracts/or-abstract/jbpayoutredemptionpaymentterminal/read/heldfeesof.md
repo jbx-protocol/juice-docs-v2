@@ -1,8 +1,8 @@
 # heldFeesOf
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -18,7 +18,7 @@ function heldFeesOf(uint256 _projectId) external view override returns (JBFee[] 
   * `_projectId` is the ID of the project for which fees are being held.
 * The view function can be accessed externally by anyone.
 * The function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function returns an array of fees that are being held.
 
 #### Body
@@ -31,7 +31,7 @@ function heldFeesOf(uint256 _projectId) external view override returns (JBFee[] 
 
     _Internal references:_
 
-    * [`_heldFeesOf`](../properties/_heldfeesof.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
 {% endtab %}
 
 {% tab title="Code" %}
