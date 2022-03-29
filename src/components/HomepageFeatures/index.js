@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Blog',
-    Svg: require('@site/static/img/BANNY.svg').default,
+    Svg: require('@site/static/img/apple.svg').default,
     description: (
       <>
 	Visit the blog for updates, observations, guides, and resources.
