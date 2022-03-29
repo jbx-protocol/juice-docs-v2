@@ -6,9 +6,7 @@ description: Manages funding cycle configurations and scheduling.
 
 ## Overview
 
-### Code
-
-{% embed url="https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBFundingCycleStore.sol" %}
+### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBFundingCycleStore.sol)
 
 ### **Addresses**
 

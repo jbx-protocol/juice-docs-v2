@@ -7,9 +7,7 @@ description: >-
 
 Overview
 
-### Code
-
-{% embed url="https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBPaymentTerminalStore.sol" %}
+### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBPaymentTerminalStore.sol)
 
 ### **Addresses**
 

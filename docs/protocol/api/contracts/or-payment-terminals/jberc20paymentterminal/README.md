@@ -6,9 +6,7 @@ description: Manages all inflows and outflows of an ERC20 into the protocol ecos
 
 ## Overview
 
-### Code
-
-{% embed url="https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBERC20PaymentTerminal.sol" %}
+### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBERC20PaymentTerminal.sol)
 
 ### **Addresses**
 

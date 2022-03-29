@@ -6,9 +6,7 @@ description: Generic terminal managing all inflows and outflows of funds into th
 
 ## Overview
 
-### Code
-
-{% embed url="https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/abstract/JBPayoutRedemptionPaymentTerminal.sol" %}
+### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/abstract/JBPayoutRedemptionPaymentTerminal.sol)
 
 ### **Addresses**
 
