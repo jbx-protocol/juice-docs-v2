@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`burnTokensOf`](../write/burntokensof.md)
+* [`burnTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/burntokensof.md)
 
 ## Definition
 

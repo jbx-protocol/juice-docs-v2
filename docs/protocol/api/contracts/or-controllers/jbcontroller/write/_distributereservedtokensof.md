@@ -29,7 +29,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _External references:_
 
-    * [`currentOf`](../../../jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Get a reference to the current total supply of tokens issued for the project.
 
     ```solidity
@@ -39,7 +39,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _External references:_
 
-    * [`totalSupplyOf`](../../../jbtokenstore/read/totalsupplyof.md)
+    * [`totalSupplyOf`](/protocol/api/jbtokenstore/read/totalsupplyof.md)
 3.  Get a reference to the current amount of reserved tokens given the current state of the tracker, the current funding cycle's reserved rate, and the current total token supply.
 
     ```solidity
@@ -53,12 +53,12 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](../../../../libraries/jbfundingcyclemetadataresolver.md)\
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)\
       `.reservedRate(...)`
 
     _Internal references:_
 
-    * [`_reservedTokenAmountFrom`](../read/_reservedtokenamountfrom.md)
+    * [`_reservedTokenAmountFrom`](/protocol/api/contracts/or-controllers/jbcontroller/read/_reservedtokenamountfrom.md)
 4.  Set the tracker to be equal to the new current total token supply, which is the amount stored plus the amount that will be minted and distributed.
 
     ```solidity
@@ -68,7 +68,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](../properties/_processedtokentrackerof.md)
+    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_processedtokentrackerof.md)
 5.  Get a reference to the project's owner.
 
     ```solidity
@@ -90,7 +90,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`_distributeToReservedTokenSplitsOf`](_distributetoreservedtokensplitsof.md)
+    * [`_distributeToReservedTokenSplitsOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/_distributetoreservedtokensplitsof.md)
 7.  If there are any leftover reserved tokens, mint them for the project's owner.
 
     ```solidity
@@ -100,7 +100,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`mintFor`](../../../jbtokenstore/write/mintfor.md)
+    * [`mintFor`](/protocol/api/contracts/jbtokenstore/write/mintfor.md)
 8.  Emit a `DistributeReservedTokens` event with the relevant parameters.
 
     ```solidity
@@ -118,7 +118,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Event references:_
 
-    * [`DistributeReservedTokens`](../events/distributereservedtokens.md)
+    * [`DistributeReservedTokens`](/protocol/api/contracts/or-controllers/jbcontroller/events/distributereservedtokens.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -180,7 +180,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 {% tab title="Events" %}
 | Name                                        | Data                                                                                                                                                                                                                                                       |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeReservedTokens`**](../events/distributereservedtokens.md)             | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 beneficiaryTokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
+| [**`DistributeReservedTokens`**](/protocol/api/contracts/or-controllers/jbcontroller/events/distributereservedtokens.md)             | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 beneficiaryTokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

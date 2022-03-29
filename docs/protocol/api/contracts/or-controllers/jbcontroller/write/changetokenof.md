@@ -1,8 +1,8 @@
 # changeTokenOf
 
-Contract: [`JBController`](../)​‌
+Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](../../../../interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -25,10 +25,10 @@ function changeTokenOf(
 
 * Arguments:
   * `_projectId` is the ID of the project to which the changed token belongs.
-  * `_token` is the new token, which must adhere to the [`IJBToken`](../../../../interfaces/ijbtoken.md) specification.
+  * `_token` is the new token, which must adhere to the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) specification.
   * `_newOwner` is an address to transfer the current token's ownership to. This is optional, but it cannot be done later.
-* Through the [`requirePermission`](../../../or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.CHANGE_TOKEN`](../../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
-* The function overrides a function definition from the [`IJBController`](../../../../interfaces/ijbcontroller.md) interface.
+* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.CHANGE_TOKEN`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -42,7 +42,7 @@ function changeTokenOf(
 
     _External references:_
 
-    * [`currentOf`](../../../jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure the current funding cycle for the project allows changing tokens.
 
     ```solidity
@@ -52,7 +52,7 @@ function changeTokenOf(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](../../../../libraries/jbfundingcyclemetadataresolver.md)\
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)\
       `.changeTokenAllowed(...)`
 3.  Forward the call to the token store.
 

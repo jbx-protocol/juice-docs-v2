@@ -1,8 +1,8 @@
 # directory
 
-Contract: [`JBController`](../)​‌
+Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](../../../../interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 **The directory of terminals and controllers for projects.**
 
@@ -18,4 +18,4 @@ IJBDirectory public immutable override directory;
 
 * The value cannot be changed.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`IJBController`](../../../../interfaces/ijbcontroller.md) interface.
+* The resulting function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
