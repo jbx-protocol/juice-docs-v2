@@ -1,6 +1,6 @@
 # _packedPermissions
 
-Contract:[`JBOperatorStore`](../)​‌
+Contract:[`JBOperatorStore`](/protocol/api/contracts/jboperatorstore/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}

@@ -1,6 +1,6 @@
 # isTerminalOf
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -26,7 +26,7 @@ modifier isTerminalOf(uint256 _projectId) { ... }
 
     _External references:_
 
-    * [`isTerminalOf`](../../../jbdirectory/read/isterminalof.md)
+    * [`isTerminalOf`](/protocol/api/jbdirectory/read/isterminalof.md)
 {% endtab %}
 
 {% tab title="Code" %}

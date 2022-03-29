@@ -1,8 +1,8 @@
 # _addTerminalIfNeeded
 
-Contract:[`JBDirectory`](../)​‌
+Contract:[`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md)​‌
 
-Interface: [`IJBDirectory`](../../../interfaces/ijbdirectory.md)
+Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -31,7 +31,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
     Internal references:
 
-    * [`isTerminalOf`](../read/isterminalof.md)
+    * [`isTerminalOf`](/protocol/api/contracts/jbdirectory/read/isterminalof.md)
 2.  Add the terminal.
 
     ```solidity
@@ -41,7 +41,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
     Internal references:
 
-    * [`_terminalsOf`](../properties/_terminalsof.md)
+    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
 3.  Emit a `AddTerminal` event with the relevant parameters.
 
     ```solidity
@@ -50,7 +50,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
     _Event references:_
 
-    * [`AddTerminal`](../events/addterminal.md)
+    * [`AddTerminal`](/protocol/api/contracts/jbdirectory/events/addterminal.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -77,7 +77,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 {% tab title="Events" %}
 | Name                                          | Data                                                                                                                                                                                                        |
 | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddTerminal`**](../events/addterminal.md) | <ul><li><code>uint256 indexed projectId</code></li><li><a href="../../../interfaces/ijbpaymentterminal.md"><code>IJBPaymentTerminal</code></a><code>indexed terminal</code></li><li><code>address caller</code></li></ul> |
+| [**`AddTerminal`**](/protocol/api/contracts/jbdirectory/events/addterminal.md) | <ul><li><code>uint256 indexed projectId</code></li><li><a href="/protocol/api/interfaces/ijbpaymentterminal.md"><code>IJBPaymentTerminal</code></a><code>indexed terminal</code></li><li><code>address caller</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

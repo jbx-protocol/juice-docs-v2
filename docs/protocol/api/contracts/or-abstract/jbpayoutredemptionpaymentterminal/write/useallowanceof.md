@@ -1,8 +1,8 @@
 # useAllowanceOf
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -35,8 +35,8 @@ function useAllowanceOf(
   * `_currency` is the expected currency of the amount being distributed. Must match the project's current funding cycle's overflow allowance currency.
   * `_minReturnedTokens` is the minimum number of tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same amount of decimals as this terminal.
   * `_beneficiary` is the address to send the funds to.
-* Through the [`requirePermission`](../../../or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.USE_ALLOWANCE`](../../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.USE_ALLOWANCE`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -55,7 +55,7 @@ function useAllowanceOf(
 
     _External references:_
 
-    * [`recordUsedAllowanceOf`](../../../jbpaymentterminalstore/write/recordusedallowanceof.md)
+    * [`recordUsedAllowanceOf`](/protocol/api/contracts/jbpaymentterminalstore/write/recordusedallowanceof.md)
 2.  Make sure the distributed amount is at least as much as the specified minimum.
 
     ```solidity
@@ -153,7 +153,7 @@ function useAllowanceOf(
 
     _Event references:_
 
-    * [`UseAllowance`](../events/useallowance.md)
+    * [`UseAllowance`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/useallowance.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -249,7 +249,7 @@ function useAllowanceOf(
 {% tab title="Events" %}
 | Name                                            | Data                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`UseAllowance`**](../events/useallowance.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                                            |
+| [**`UseAllowance`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/useallowance.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                                            |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

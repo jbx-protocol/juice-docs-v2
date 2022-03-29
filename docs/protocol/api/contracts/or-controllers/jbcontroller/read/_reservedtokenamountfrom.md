@@ -47,7 +47,7 @@ function _reservedTokenAmountFrom(
 
     _Libraries used:_
 
-    * [`JBConstants`](../../../../libraries/jbconstants.md)
+    * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
       * `.MAX_RESERVED_RATE`
 4.  The reserved token amount is the reserved percentage of the unprocessed balance.
 
@@ -64,7 +64,7 @@ function _reservedTokenAmountFrom(
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
-    * [`JBConstants`](../../../../libraries/jbconstants.md)
+    * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
       * `.MAX_RESERVED_RATE`
 {% endtab %}
 

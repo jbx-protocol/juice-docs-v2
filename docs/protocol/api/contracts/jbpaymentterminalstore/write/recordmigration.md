@@ -1,14 +1,14 @@
 # recordMigration
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
 **Records the migration of funds from this store.**
 
-_The msg.sender must be an [`IJBPaymentTerminal`](../../../interfaces/ijbpaymentterminalstore.md)._
+_The msg.sender must be an [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminalstore.md)._
 
 #### Definition
 
@@ -22,7 +22,7 @@ function recordMigration(uint256 _projectId)
 
 * Arguments:
   * `_projectId` is the ID of the project being migrated.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md) interface.
 * The function returns the project's migrated balance, as a fixed point number with the same amount of decimals as its relative terminal.
 
 #### Body
@@ -36,7 +36,7 @@ function recordMigration(uint256 _projectId)
 
     _External references:_
 
-    * [`currentOf`](../../jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure that migrating terminals is allowed by the current funding cycle.
 
     ```solidity
@@ -46,7 +46,7 @@ function recordMigration(uint256 _projectId)
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](../../../libraries/jbfundingcyclemetadataresolver.md)\
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)\
       `.terminalMigrationAllowed(...)`
 3.  Get a reference to the project's current balance. Set this to the value that the function will return.
 
@@ -57,7 +57,7 @@ function recordMigration(uint256 _projectId)
 
     _Internal references:_
 
-    * [`balanceOf`](../properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 4.  Set the project's balance to 0 since funds are moving away from this terminal.
 
     ```solidity
@@ -67,7 +67,7 @@ function recordMigration(uint256 _projectId)
 
     _Internal references:_
 
-    * [`balanceOf`](../properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 {% endtab %}
 
 {% tab title="Code" %}

@@ -1,8 +1,8 @@
 # mintTokensOf
 
-Contract: [`JBController`](../)​‌
+Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](../../../../interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -39,8 +39,8 @@ function mintTokensOf(
   * `_memo` is a memo to pass along to the emitted event.
   * `_preferClaimedTokens` is a flag indicating whether a project's attached token contract should be minted if they have been issued.
   * `_useReservedRate` is whether to use the current funding cycle's reserved rate in the mint calculation.
-* Through the [`requirePermissionAllowingOverride`](../../../or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.MINT`](../../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from one of the project's terminals.
-* The function overrides a function definition from the [`IJBController`](../../../../interfaces/ijbcontroller.md) interface.
+* Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.MINT`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from one of the project's terminals.
+* The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns the amount of tokens minted for the beneficiary.
 
 #### Body
@@ -75,14 +75,14 @@ function mintTokensOf(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](../../../../libraries/jbfundingcyclemetadataresolver.md)\
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)\
       `.reservedRate(...)`
       `.mintPaused(...)`
 
     _External references:_
 
-    * [`currentOf`](../../../jbfundingcyclestore/read/currentof.md)
-    * [`isTerminalOf`](../../../jbdirectory/read/isterminalof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`isTerminalOf`](/protocol/api/contracts/jbdirectory/read/isterminalof.md)
 3.  If the operation should reserve 100% of the minted tokens, the token tracker should be updated to add a difference of the specified token count instead of minting the tokens directly. This will allow a future distribution of reserved tokens to mint the token count to reserved addresses. Otherwise, update the token tracker if there is no intent to reserve tokens alongside the mint and mint the unreserved tokens for the beneficiary.
 
     ```solidity
@@ -114,16 +114,16 @@ function mintTokensOf(
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
-    * [`JBConstants`](../../../../libraries/jbconstants.md)
+    * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
       * `.MAX_RESERVED_RATE`
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](../properties/_processedtokentrackerof.md)
+    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_processedtokentrackerof.md)
 
     _External references:_
 
-    * [`mintFor`](../../../jbtokenstore/write/mintfor.md)
+    * [`mintFor`](/protocol/api/contracts/jbtokenstore/write/mintfor.md)
 4.  Emit a `MintTokens` event with the relevant parameters.
 
     ```solidity
@@ -132,7 +132,7 @@ function mintTokensOf(
 
     _Event references:_
 
-    * [`MintTokens`](../events/minttokens.md)
+    * [`MintTokens`](/protocol/api/contracts/or-controllers/jbcontroller/events/minttokens.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -230,7 +230,7 @@ function mintTokensOf(
 {% tab title="Events" %}
 | Name                                     | Data                                                                                                                                                                                                                                                        |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`MintTokens`**](../events/minttokens.md)                                         | <ul><li><code>address indexed beneficiary</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 beneficairyTokenCount</code></li><li><code>string memo</code></li><li><code>uint256 reservedRate</code></li><li><code>address caller</code></li></ul>                 |
+| [**`MintTokens`**](/protocol/api/contracts/or-controllers/jbcontroller/events/minttokens.md)                                         | <ul><li><code>address indexed beneficiary</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 beneficairyTokenCount</code></li><li><code>string memo</code></li><li><code>uint256 reservedRate</code></li><li><code>address caller</code></li></ul>                 |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

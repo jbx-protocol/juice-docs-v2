@@ -18,7 +18,7 @@ Ethereum mainnet: _Not yet deployed_
 
 | Name                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBPriceFeed`**](../../../interfaces/ijbpricefeed.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+| [**`IJBPriceFeed`**](/protocol/api/interfaces/ijbpricefeed.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
 ## Constructor
 
@@ -35,10 +35,10 @@ constructor(AggregatorV3Interface _feed) {
 
 | Function                                                          | Definition                                                                                                                                                                                                |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`feed`**](properties/feed.md)                            | <p><strong>Returns</strong></p><ul><li><code>[`AggregatorV3Interface`](https://docs.chain.link/docs/price-feeds-api-reference/)feed</code></li></ul> |
+| [**`feed`**](/protocol/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/properties/feed.md)                            | <p><strong>Returns</strong></p><ul><li><code>[`AggregatorV3Interface`](https://docs.chain.link/docs/price-feeds-api-reference/)feed</code></li></ul> |
 
 ## Read
 
 | Function                                 | Definition                                                                                                                                                                                   |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`currentPrice`**](read/currentprice.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _decimals</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 price</code></li></ul> |
+| [**`currentPrice`**](/protocol/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/read/currentprice.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _decimals</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 price</code></li></ul> |

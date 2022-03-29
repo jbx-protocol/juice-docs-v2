@@ -1,8 +1,8 @@
 # set
 
-Contract: [`JBSplitsStore`](../)​‌
+Contract: [`JBSplitsStore`](/protocol/api/contracts/jbsplitsstore/README.md)​‌
 
-Interface: [`IJBSplitsStore`](../../../interfaces/ijbsplitsstore.md)
+Interface: [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -35,9 +35,9 @@ function set(
   * `_projectId` is the ID of the project for which splits are being added.
   * `_domain` is an identifier within which the splits should be considered active.
   * `_group` is an identifier between of splits being set. All splits within this `_group` must add up to within 100%.
-  * `_splits` are the [`JBSplit`](../../../data-structures/jbsplit.md)s to set.
-* Through the [`requirePermissionAllowingOverride`](../../or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_SPLITS`](../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId` , or from the current controller of the `_projectId` of the specified.
-* The function overrides a function definition from the [`IJBSplitsStore`](../../../interfaces/ijbsplitsstore.md) interface.
+  * `_splits` are the [`JBSplit`](/protocol/api/data-structures/jbsplit.md)s to set.
+* Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_SPLITS`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId` , or from the current controller of the `_projectId` of the specified.
+* The function overrides a function definition from the [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -51,7 +51,7 @@ function set(
 
     _Internal references:_
 
-    * [`_getStructsFor`](../read/_getstructsfor.md)
+    * [`_getStructsFor`](/protocol/api/contracts/jbsplitsstore/read/_getstructsfor.md)
     * two
 2.  Loop through each current split to make sure the new splits being set respect any current split bound by a lock constraint.
 
@@ -128,7 +128,7 @@ function set(
 
         _Libraries used:_
 
-        * [`JBConstants`](../../../libraries/jbconstants.md)
+        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
           * `.SPLITS_TOTAL_PERCENT`
     5.  Pack common split properties into a storage slot.
 
@@ -148,7 +148,7 @@ function set(
 
         _Internal references:_
 
-        * [`_packedSplitParts1Of`](../properties/_packedsplitparts1of.md)
+        * [`_packedSplitParts1Of`](/protocol/api/contracts/jbsplitsstore/properties/_packedsplitparts1of.md)
     6.  Pack less common split properties into another storage slot if needed. Otherwise, delete any content in storage at the index being iterated on.
 
        ```solidity
@@ -172,7 +172,7 @@ function set(
 
        _Internal references:_
 
-       * [`_packedSplitParts2Of`](../properties/_packedsplitparts2of.md)
+       * [`_packedSplitParts2Of`](/protocol/api/contracts/jbsplitsstore/properties/_packedsplitparts2of.md)
     7.  For each added split, emit a `SetSplit` event with all relevant parameters.
 
         ```solidity
@@ -181,7 +181,7 @@ function set(
 
         _Event references:_
 
-        * [`SetSplit`](../events/setsplit.md)
+        * [`SetSplit`](/protocol/api/contracts/jbsplitsstore/events/setsplit.md)
 6.  Store the new array length.
 
     ```solidity
@@ -191,7 +191,7 @@ function set(
 
     _Internal references:_
 
-    * [`_splitCountOf`](../properties/_splitcountof.md)
+    * [`_splitCountOf`](/protocol/api/contracts/jbsplitsstore/properties/_splitcountof.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -319,7 +319,7 @@ function set(
 {% tab title="Events" %}
 | Name                                    | Data                                                                                                                                                                                                                 |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetSplit`**](../events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[`JBSplit`](../../../data-structures/jbsplit.md)split</code></li><li><code>address caller</code></li></ul> |
+| [**`SetSplit`**](/protocol/api/contracts/jbsplitsstore/events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[`JBSplit`](/protocol/api/data-structures/jbsplit.md)split</code></li><li><code>address caller</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

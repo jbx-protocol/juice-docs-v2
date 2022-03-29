@@ -1,14 +1,14 @@
 # recordUsedAllowanceOf
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
 **Records newly used allowance funds of a project.**
 
-_The msg.sender must be an [`IJBPaymentTerminal`](../../../interfaces/ijbpaymentterminal.md)._
+_The msg.sender must be an [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)._
 
 #### Definition
 
@@ -30,7 +30,7 @@ function recordUsedAllowanceOf(
   * `_amount` is the amount to use from the allowance, as a fixed point number. 
   * `_currency` is the currency of the `_amount`. Must match the currency of the overflow allowance.
   * `_balanceCurrency` is the currency that the balance is expected to be in terms of.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md) interface.
 * The function returns:
   * `fundingCycle` is the funding cycle during which the withdrawal was made.
   * `usedAmount` is the amount of terminal tokens used, as a fixed point number with the same amount of decimals as its relative terminal.
@@ -46,7 +46,7 @@ function recordUsedAllowanceOf(
 
     _External references:_
 
-    * [`currentOf`](../../jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Get a reference to the new used overflow allowance.
 
     ```solidity
@@ -58,7 +58,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`usedOverflowAllowanceOf`](../properties/usedoverflowallowanceof.md)
+    * [`usedOverflowAllowanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/usedoverflowallowanceof.md)
 3.  Get a reference to the overflow allowance of the project during the current funding cycle configuration, and the currency the overflow allowance is in terms of.
 
     ```solidity
@@ -70,8 +70,8 @@ function recordUsedAllowanceOf(
 
     _External references:_
 
-    * [`controllerOf`](../../jbdirectory/properties/controllerof.md)
-    * [`overflowAllowanceOf`](../../or-controllers/jbcontroller/read/overflowallowanceof.md)
+    * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
+    * [`overflowAllowanceOf`](/protocol/api/contracts/or-controllers/jbcontroller/read/overflowallowanceof.md)
 4.  Make sure there's enough allowance left to accomodate the new used amount.
 
     ```solidity
@@ -101,8 +101,8 @@ function recordUsedAllowanceOf(
 
     _External references:_
 
-    * [`controllerOf`](../../jbdirectory/properties/controllerof.md)
-    * [`distributionLimitOf`](../../or-controllers/jbcontroller/read/distributionlimitof.md)
+    * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
+    * [`distributionLimitOf`](/protocol/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
 
 7.  Calculate how much of the balance will be used. If the currency of the allowance and the balance are the same, no price conversion is necessary. Otherwise, convert the allowance currency to that of the balance. 
 
@@ -124,11 +124,11 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](../properties/_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/properties/_max_fixed_point_fidelity.md)
 
     _External references:_
 
-    * [`priceFor`](../../jbprices/read/pricefor.md)
+    * [`priceFor`](/protocol/api/contracts/jbprices/read/pricefor.md)
 
 8.  Make sure the amount being used is available in overflow.
 
@@ -142,7 +142,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`_overflowDuring`](../read/_overflowduring.md)
+    * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/_overflowduring.md)
 9.  Store the incremented value that tracks how much of a project's allowance was used during the current funding cycle configuration.
 
     ```solidity
@@ -154,7 +154,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`usedOverflowAllowanceOf`](../properties/usedoverflowallowanceof.md)
+    * [`usedOverflowAllowanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/usedoverflowallowanceof.md)
 10. Store the decremented balance.
 
     ```solidity
@@ -166,7 +166,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`balanceOf`](../properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 {% endtab %}
 
 {% tab title="Code" %}

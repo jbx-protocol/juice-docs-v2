@@ -1,8 +1,8 @@
 # burnTokensOf
 
-Contract: [`JBController`](../)​‌
+Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](../../../../interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -37,8 +37,8 @@ function burnTokensOf(
   * `_tokenCount` is the number of tokens to burn.
   * `_memo` is a memo to pass along to the emitted event.
   * `_preferClaimedTokens` is flag indicating whether a project's attached token contract should be burned first if they have been issued.
-* Through the [`requirePermissionAllowingOverride`](../../../or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.BURN`](../../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from one of the project's terminal's delegates.
-* The function overrides a function definition from the [`IJBController`](../../../../interfaces/ijbcontroller.md) interface.
+* Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.BURN`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from one of the project's terminal's delegates.
+* The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -58,7 +58,7 @@ function burnTokensOf(
 
     _External references:_
 
-    * [`currentOf`](../../../jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 3.  Make sure the current funding cycle for the project hasn't paused burning if the request is not coming from one of the project's terminals. If the request is coming from a terminal, allow burning regardless of the pause state because it could be a sub-routine of another operation such as redemption.
 
     ```solidity
@@ -71,12 +71,12 @@ function burnTokensOf(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](../../../../libraries/jbfundingcyclemetadataresolver.md)\
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)\
       `.burnPause(...)`
 
     _External references:_
 
-    * [`isTerminalOf`](../../../jbdirectory/read/isterminalof.md)
+    * [`isTerminalOf`](/protocol/api/contracts/jbdirectory/read/isterminalof.md)
 4.  Update the token tracker so that the correct amount of reserved tokens are still mintable after the burn.
 
     ```solidity
@@ -88,7 +88,7 @@ function burnTokensOf(
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](../properties/_processedtokentrackerof.md)
+    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_processedtokentrackerof.md)
 5.  Burn the tokens.
 
     ```solidity
@@ -98,7 +98,7 @@ function burnTokensOf(
 
     _External references:_
 
-    * [`burnFrom`](../../../jbtokenstore/write/burnfrom.md)
+    * [`burnFrom`](/protocol/api/contracts/jbtokenstore/write/burnfrom.md)
 6.  Emit a `BurnTokens` event with the relevant parameters.
 
     ```solidity
@@ -107,7 +107,7 @@ function burnTokensOf(
 
     _Event references:_
 
-    * [`BurnTokens`](../events/burntokens.md)
+    * [`BurnTokens`](/protocol/api/contracts/or-controllers/jbcontroller/events/burntokens.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -176,7 +176,7 @@ function burnTokensOf(
 {% tab title="Events" %}
 | Name                                        | Data                                                                                                                                                                                                                                                       |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`BurnTokens`**](../events/burntokens.md)                                         | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 tokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                              |
+| [**`BurnTokens`**](/protocol/api/contracts/or-controllers/jbcontroller/events/burntokens.md)                                         | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 tokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                              |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

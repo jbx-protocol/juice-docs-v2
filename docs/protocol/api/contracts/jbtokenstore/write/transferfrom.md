@@ -1,8 +1,8 @@
 # transferFrom
 
-Contract: [`JBTokenStore`](../)​‌
+Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -26,8 +26,8 @@ function transferFrom(
   * `_projectId` is the ID of the project whose tokens are being transferred.
   * `_recipient` is thhe recipient of the tokens.
   * `_amount` is the amount of tokens to transfer.
-* Through the [`requirePermission`](../../or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.TRANSFER`](../../../libraries/jboperations.md) permission by the token holder. 
-* The function overrides a function definition from the [`IJBTokenStore`](../../../interfaces/ijbtokenstore.md) interface.
+* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.TRANSFER`](/protocol/api/libraries/jboperations.md) permission by the token holder. 
+* The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -47,7 +47,7 @@ function transferFrom(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](../properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 3.  Make sure the holder has enough unclaimed tokens to transfer.
 
     ```solidity
@@ -63,7 +63,7 @@ function transferFrom(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](../properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 5.  Add the amount of unclaimed project tokens to the recipient's balance.
 
     ```solidity
@@ -75,7 +75,7 @@ function transferFrom(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](../properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 6.  Emit a `Transfer` event with the relevant parameters.
 
     ```solidity
@@ -84,7 +84,7 @@ function transferFrom(
 
     _Event references:_
 
-    * [`Transfer`](../events/transfer.md)
+    * [`Transfer`](/protocol/api/contracts/jbtokenstore/events/transfer.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -139,7 +139,7 @@ function transferFrom(
 {% tab title="Events" %}
 | Name                                    | Data                                                                                                                                                                                                                        |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Transfer`**](../events/transfer.md)                     | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>address indexed recipient</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                   |
+| [**`Transfer`**](/protocol/api/contracts/jbtokenstore/events/transfer.md)                     | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>address indexed recipient</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                   |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

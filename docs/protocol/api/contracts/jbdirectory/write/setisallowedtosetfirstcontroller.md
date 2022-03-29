@@ -1,8 +1,8 @@
 # setIsAllowedToSetFirstController
 
-Contract:[`JBDirectory`](../)​‌
+Contract:[`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md)​‌
 
-Interface: [`IJBDirectory`](../../../interfaces/ijbdirectory.md)
+Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -26,7 +26,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
   * `_address` is the address to allow or revoke allowance from.
   * `_flag` is whether allowance is being added or revoked.
 * Through the `onlyOwner` modifier, this function can only be accessed by the address that owns this contract.
-* The function overrides a function definition from the [`IJBDirectory`](../../../interfaces/ijbdirectory.md) interface.
+* The function overrides a function definition from the [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) interface.
 * The function returns nothing.
 
 #### Body
@@ -40,7 +40,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 
     Internal references:
 
-    * [`isAllowedToSetFirstController`](../properties/isallowedtosetfirstcontroller.md)
+    * [`isAllowedToSetFirstController`](/protocol/api/contracts/jbdirectory/properties/isallowedtosetfirstcontroller.md)
 2.  Emit a `SetIsAllowedToSetFirstController` event with the relevant parameters.
 
     ```solidity
@@ -49,7 +49,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 
     _Event references:_
 
-    * [`SetIsAllowedToSetFirstController`](../events/setisallowedtosetfirstcontroller.md)
+    * [`SetIsAllowedToSetFirstController`](/protocol/api/contracts/jbdirectory/events/setisallowedtosetfirstcontroller.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -85,7 +85,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 {% tab title="Events" %}
 | Name                                                                          | Data                                                                                          |
 | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [**`SetIsAllowedToSetFirstController`**](../events/setisallowedtosetfirstcontroller.md) | <ul><li><code>address indexed addr</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
+| [**`SetIsAllowedToSetFirstController`**](/protocol/api/contracts/jbdirectory/events/setisallowedtosetfirstcontroller.md) | <ul><li><code>address indexed addr</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

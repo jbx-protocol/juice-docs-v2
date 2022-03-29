@@ -1,8 +1,8 @@
 # distributePayoutsOf
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -33,7 +33,7 @@ function distributePayoutsOf(
   * `_minReturnedTokens` is the minimum number of terminal tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same number of decimals as this terminal.
   * `_memo` is a memo to pass along to the emitted event.
 * The function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function returns doesn't return anything.
 
 #### Body
@@ -52,7 +52,7 @@ function distributePayoutsOf(
 
     _External references:_
 
-    * [`recordDistributionFor`](../../../jbpaymentterminalstore/write/recorddistributionfor.md)
+    * [`recordDistributionFor`](/protocol/api/contracts/jbpaymentterminalstore/write/recorddistributionfor.md)
 2.  Make sure the distributed amount is at least as much as the minimum expected amount.
 
     ```solidity
@@ -94,12 +94,12 @@ function distributePayoutsOf(
 
         _Libraries used:_
 
-        * [`JBConstants`](../../../../libraries/jbconstants.md)
+        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
 
         _Internal references:_
 
-        * [`_currentFeeDiscount`](../read/_currentfeediscount.md)
+        * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/_currentfeediscount.md)
 
     2.  Get a reference to the amount of distributed funds from which fees should be taken.
 
@@ -150,12 +150,12 @@ function distributePayoutsOf(
 
         _Libraries used:_
 
-        * [`JBConstants`](../../../../libraries/jbconstants.md)
+        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
 
         _Internal references:_
 
-        * [`_takeFeeFrom`](./_takefeefrom.md)
+        * [`_takeFeeFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_takefeefrom.md)
 
     6.  Transfer any leftover amount to the project owner if needed.
 
@@ -171,11 +171,11 @@ function distributePayoutsOf(
 
         _Internal references:_
 
-        * [`_feeAmount`](../read/_feeamount.md)
+        * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/_feeamount.md)
 
         _Virtual references:_
 
-        * [`_transferFrom`](./_transferfrom.md)
+        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
 
 5.  Emit a `DistributePayouts` event with the relevant parameters.
 
@@ -196,7 +196,7 @@ function distributePayoutsOf(
 
     _Event references:_
 
-    * [`DistributePayouts`](../events/distributepayouts.md)
+    * [`DistributePayouts`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributepayouts.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -316,7 +316,7 @@ function distributePayoutsOf(
 {% tab title="Events" %}
 | Name                                                 | Data                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributePayouts`**](../events/distributepayouts.md)             | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>uint256 beneficiaryDistributionAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                       |
+| [**`DistributePayouts`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributepayouts.md)             | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>uint256 beneficiaryDistributionAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                       |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

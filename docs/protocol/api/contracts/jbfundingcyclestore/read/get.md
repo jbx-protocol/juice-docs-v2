@@ -1,6 +1,6 @@
 # get
 
-Contract:[`JBFundingCycleStore`](../)​‌
+Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​‌
 
 Interface: `IJBFundingCycleStore`
 
@@ -23,8 +23,8 @@ function get(uint256 _projectId, uint256 _configuration)
   * `_configuration` is the configuration of the funding cycle to get.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBFundingCycleStore`](../../../interfaces/ijbfundingcyclestore.md) interface.
-* The function returns the [`JBFundingCycle`](../../../data-structures/jbfundingcycle.md).
+* The function overrides a function definition from the [`IJBFundingCycleStore`](/protocol/api/interfaces/ijbfundingcyclestore.md) interface.
+* The function returns the [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md).
 
 ### Body
 
@@ -36,7 +36,7 @@ function get(uint256 _projectId, uint256 _configuration)
 
     _Internal references:_
 
-    * [`_getStructFor`](_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
 {% endtab %}
 
 {% tab title="Code" %}

@@ -1,8 +1,8 @@
 # priceFor
 
-Contract:[`JBPrices`](../)​‌
+Contract:[`JBPrices`](/protocol/api/contracts/jbprices/README.md)​‌
 
-Interface: [`IJBPrices`](../../../interfaces/ijbprices.md)
+Interface: [`IJBPrices`](/protocol/api/interfaces/ijbprices.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -24,7 +24,7 @@ function priceFor(
   * `_decimals` is the number of decimals the returned fixed point price should include.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBPrices`](../../../interfaces/ijbprices.md) interface.
+* The function overrides a function definition from the [`IJBPrices`](/protocol/api/interfaces/ijbprices.md) interface.
 * The function returns the price of the currency in terms of the base, as a fixed point number with the specified number of decimals.
 
 ### Body
@@ -44,7 +44,7 @@ function priceFor(
 
     Internal references:
 
-    * [`feedFor`](../properties/feedfor.md)
+    * [`feedFor`](/protocol/api/contracts/jbprices/properties/feedfor.md)
 3.  Make sure there is a feed stored for the currency base pair.
 
     ```solidity

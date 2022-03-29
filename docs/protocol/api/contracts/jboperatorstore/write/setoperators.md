@@ -1,8 +1,8 @@
 # setOperators
 
-Contract:[`JBOperatorStore`](../)​‌
+Contract:[`JBOperatorStore`](/protocol/api/contracts/jboperatorstore/README.md)​‌
 
-Interface: [`IJBOperatorStore`](../../../interfaces/ijboperatorstore.md)
+Interface: [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -16,9 +16,9 @@ _Only an address can set its own operators._
 function setOperators(JBOperatorData[] calldata _operatorData) external override { ... }
 ```
 
-* `_operatorData` are the [JBOperatorData](../../../data-structures/jboperatordata.md) that specify the params for each operator being set.
+* `_operatorData` are the [JBOperatorData](/protocol/api/data-structures/jboperatordata.md) that specify the params for each operator being set.
 * The function can be accessed externally by anyone.
-* The function overrides a function definition from the [`IJBOperatorStore`](../../../interfaces/ijboperatorstore.md) interface.
+* The function overrides a function definition from the [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -100,7 +100,7 @@ function setOperators(JBOperatorData[] calldata _operatorData) external override
 {% tab title="Events" %}
 |                                               |                                                                                                                                                                                                                                       |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetOperator`**](../events/setoperator.md) | <ul><li><code>address indexed operator</code></li><li><code>address indexed account</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256[] permissionIndexes</code></li><li><code>uint256 packed</code></li></ul> |
+| [**`SetOperator`**](/protocol/api/contracts/jboperatorstore/events/setoperator.md) | <ul><li><code>address indexed operator</code></li><li><code>address indexed account</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256[] permissionIndexes</code></li><li><code>uint256 packed</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

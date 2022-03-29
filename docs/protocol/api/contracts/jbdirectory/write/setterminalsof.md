@@ -1,8 +1,8 @@
 # setTerminalsOf
 
-Contract:[`JBDirectory`](../)​‌
+Contract:[`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md)​‌
 
-Interface: [`IJBDirectory`](../../../interfaces/ijbdirectory.md)
+Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -27,8 +27,8 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 * Arguments:
   * `_projectId` is the ID of the project having terminals set.
   * `_terminals` is the terminals to set.
-* Through the [`requirePermissionAllowingOverride`](../../or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_TERMINALS`](../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or by the project's controller.
-* The function overrides a function definition from the [`IJBDirectory`](../../../interfaces/ijbdirectory.md) interface.
+* Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_TERMINALS`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or by the project's controller.
+* The function overrides a function definition from the [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -42,7 +42,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     Internal references:
 
-    * [`_terminalsOf`](../properties/_terminalsof.md)
+    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
 2.  Delete the project's current set of terminals from storage.
 
     ```solidity
@@ -52,7 +52,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     Internal references:
 
-    * [`_terminalsOf`](../properties/_terminalsof.md)
+    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
 
 3.  Make sure the same terminal isn't being set multiple times.
     ```solidity
@@ -76,8 +76,8 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     Internal references:
 
-    * [`_primaryTerminalOf`](../properties/_primaryterminalof.md)
-    * [`_contains`](../read/_contains.md)
+    * [`_primaryTerminalOf`](/protocol/api/contracts/jbdirectory/properties/_primaryterminalof.md)
+    * [`_contains`](/protocol/api/contracts/jbdirectory/read/_contains.md)
 5.  Emit a `SetTerminals` event with the relevant parameters.
 
     ```solidity
@@ -86,7 +86,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     _Event references:_
 
-    * [`SetTerminals`](../events/setterminals.md)
+    * [`SetTerminals`](/protocol/api/contracts/jbdirectory/events/setterminals.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -145,7 +145,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 {% tab title="Events" %}
 | Name                                                                          | Data                                                                                          |
 | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [**`SetTerminals`**](../events/setterminals.md)         | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBPaymentTerminal`](../../../interfaces/ijbpaymentterminal.md)[] indexed terminals</code></li><li><code>address caller</code></li></ul>                                            |
+| [**`SetTerminals`**](/protocol/api/contracts/jbdirectory/events/setterminals.md)         | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)[] indexed terminals</code></li><li><code>address caller</code></li></ul>                                            |
 {% endtab %}
 
 

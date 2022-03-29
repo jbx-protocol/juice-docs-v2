@@ -1,8 +1,8 @@
 # splitsOf
 
-Contract: [`JBSplitsStore`](../)​‌
+Contract: [`JBSplitsStore`](/protocol/api/contracts/jbsplitsstore/README.md)​‌
 
-Interface: [`IJBSplitsStore`](../../../interfaces/ijbsplitsstore.md)
+Interface: [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -24,8 +24,8 @@ function splitsOf(
   * `_group` is the identifying group of the splits.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBSplitsStore`](../../../interfaces/ijbsplitsstore.md) interface.
-* The function returns an array of all [`JBSplit`](../../../data-structures/jbsplit.md)s for the project.
+* The function overrides a function definition from the [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md) interface.
+* The function returns an array of all [`JBSplit`](/protocol/api/data-structures/jbsplit.md)s for the project.
 
 #### Body
 
@@ -37,7 +37,7 @@ function splitsOf(
 
     Internal references:
 
-    * [`_getStructsFor`](_getstructsfor.md)
+    * [`_getStructsFor`](/protocol/api/contracts/jbsplitsstore/read/_getstructsfor.md)
 {% endtab %}
 
 {% tab title="Code" %}

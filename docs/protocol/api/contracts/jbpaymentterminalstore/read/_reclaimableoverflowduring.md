@@ -1,6 +1,6 @@
 # _reclaimableOverflowDuring
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -54,13 +54,13 @@ function _reclaimableOverflowDuring(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](../../../libraries/jbfundingcyclemetadataresolver.md)\
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)\
       `.ballotRedemptionRate(...)`\
       `.redemptionRate(...)`
 
     _External references:_
 
-    * [`currentBallotStateOf`](../../jbfundingcyclestore/read/currentballotstateof.md)
+    * [`currentBallotStateOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentballotstateof.md)
 4.  If the redemption rate is 0%, nothing is claimable regardless of the amount of tokens.
 
     ```solidity
@@ -101,7 +101,7 @@ function _reclaimableOverflowDuring(
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
-    * [`JBConstants`](../../../libraries/jbconstants.md)
+    * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
       * `.MAX_REDEMPTION_RATE`
 {% endtab %}
 

@@ -1,8 +1,8 @@
 # balanceOf
 
-Contract: [`JBToken`](../)​‌
+Contract: [`JBToken`](/protocol/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](../../../interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -19,7 +19,7 @@ function balanceOf(address _account, uint256) external view override returns (ui
   * The `_projectId` parameter is ignored.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBToken`](../../../interfaces/ijbtoken.md) interface.
+* The function overrides a function definition from the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface.
 * The function returns the balance of the `_account` of this ERC20, as a fixed point number with 18 decimals.
 
 ### Body

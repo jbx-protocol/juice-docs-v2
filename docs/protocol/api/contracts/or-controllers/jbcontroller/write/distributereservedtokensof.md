@@ -1,8 +1,8 @@
 # distributeReservedTokensOf
 
-Contract: [`JBController`](../)​‌
+Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](../../../../interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -21,7 +21,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
   * `_projectId` is the ID of the project to which the reserved tokens belong.
   * `_memo` is a memo to pass along to the emitted event.
 * The function can be accessed externally by anyone.
-* The function overrides a function definition from the [`IJBController`](../../../../interfaces/ijbcontroller.md) interface.
+* The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns the amount of minted reserved tokens.
 
 ### Body
@@ -34,7 +34,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`_distributeReservedTokensOf`](_distributereservedtokensof.md)
+    * [`_distributeReservedTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/_distributereservedtokensof.md)
 {% endtab %}
 
 {% tab title="Code" %}

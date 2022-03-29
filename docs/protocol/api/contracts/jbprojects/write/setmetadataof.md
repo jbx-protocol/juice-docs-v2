@@ -1,8 +1,8 @@
 # setMetadataOf
 
-Contract: [`JBProjects`](../)
+Contract: [`JBProjects`](/protocol/api/contracts/jbprojects/README.md)
 
-Interface: [`IJBProjects`](../../../interfaces/ijbprojects.md)
+Interface: [`IJBProjects`](/protocol/api/interfaces/ijbprojects.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -24,8 +24,8 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
 * Arguments:
   * `_projectId` is the ID of the project who's metadata is being changed.
   * `_metadata` is the struct containing metadata content, and domain within which the metadata applies.
-* Through the [`requirePermission`](../../or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.SET_METADATA`](../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
-* The function overrides a function definition from the [`IJBProjects`](../../../interfaces/ijbprojects.md) interface.
+* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.SET_METADATA`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function overrides a function definition from the [`IJBProjects`](/protocol/api/interfaces/ijbprojects.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -39,7 +39,7 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
 
     _Internal references:_
 
-    * [`metadataContentOf`](../properties/metadatacontentof.md)
+    * [`metadataContentOf`](/protocol/api/contracts/jbprojects/properties/metadatacontentof.md)
 2.  Emit a `SetMetadataCid` event with the relevant parameters.
 
     ```solidity
@@ -48,7 +48,7 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
 
     _Event references:_
 
-    * [`SetMetadata`](../events/setmetadata.md)
+    * [`SetMetadata`](/protocol/api/contracts/jbprojects/events/setmetadata.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -82,7 +82,7 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
 {% tab title="Events" %}
 | Name                                             | Data                                                                                                                                        |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetMetadata`**](../events/setmetadata.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`JBProjectMetadata`](../../../data-structures/jbprojectmetadata.md)metadata</code></li><li><code>address caller</code></li></ul>                                                                                                         |
+| [**`SetMetadata`**](/protocol/api/contracts/jbprojects/events/setmetadata.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`JBProjectMetadata`](/protocol/api/data-structures/jbprojectmetadata.md)metadata</code></li><li><code>address caller</code></li></ul>                                                                                                         |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

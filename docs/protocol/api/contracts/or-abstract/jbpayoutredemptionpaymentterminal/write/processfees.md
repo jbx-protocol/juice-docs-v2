@@ -1,8 +1,8 @@
 # processFees
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -28,9 +28,9 @@ function processFees(uint256 _projectId)
 
 * Arguments:
   * `_projectId` is the ID of the project whos held fees should be processed.
-* Through the [`requirePermissionAllowingOverride`](../../../or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.PROCESS_FEES`](../../../../libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from the owner of this contract.
+* Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.PROCESS_FEES`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from the owner of this contract.
 * The function cannot be accessed recursively or while other `nonReentrant` functions in this contract are in progress.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -44,7 +44,7 @@ function processFees(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_heldFeesOf`](../properties/_heldfeesof.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
 2.  Remove all fees.
 
     ```solidity
@@ -54,8 +54,8 @@ function processFees(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_heldFeesOf`](../properties/_heldfeesof.md)
-2.  Iterate through the array. Take fee's for each [`JBFee`](../../../../data-structures/jbfee.md) data structure.
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
+2.  Iterate through the array. Take fee's for each [`JBFee`](/protocol/api/data-structures/jbfee.md) data structure.
 
     ```solidity
     // Process each fee.
@@ -73,7 +73,7 @@ function processFees(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_processFee`](_processfee.md)
+    * [`_processFee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_processfee.md)
 4.  Emit a `ProcessFees` event with the relevant parameters.
 
     ```solidity
@@ -82,7 +82,7 @@ function processFees(uint256 _projectId)
 
     _Event references:_
 
-    * [`ProcessFees`](../events/processfees.md)
+    * [`ProcessFees`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfees.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -133,7 +133,7 @@ function processFees(uint256 _projectId)
 {% tab title="Events" %}
 | Name                                          | Data                                                                                                                                                       |
 | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ProcessFees`**](../events/processfees.md)                         | <ul><li><code>[`JBFee`](../../../../data-structures/jbfee.md)[] fees</code></li><li><code>uint256 indexed projectId</code></li></ul>                                                                                                                                                                                                                                                                                                                         |
+| [**`ProcessFees`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfees.md)                         | <ul><li><code>[`JBFee`](/protocol/api/data-structures/jbfee.md)[] fees</code></li><li><code>uint256 indexed projectId</code></li></ul>                                                                                                                                                                                                                                                                                                                         |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

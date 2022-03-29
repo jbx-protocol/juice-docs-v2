@@ -1,8 +1,8 @@
 # currentOverflowOf
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -25,7 +25,7 @@ function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
   * `_projectId` is the ID of the project to get overflow for.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md) interface.
 * The function returns the current amount of overflow that project has in the specified terminal.
 
 #### Body
@@ -45,11 +45,11 @@ function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
 
     _Internal references:_
 
-    * [`_overflowDuring`](_overflowduring.md)
+    * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/_overflowduring.md)
 
     _External references:_
 
-    * [`currentOf`](../../jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 {% endtab %}
 
 {% tab title="Code" %}

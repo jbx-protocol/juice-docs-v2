@@ -1,8 +1,8 @@
 # currentReclaimableOverflowOf
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -28,7 +28,7 @@ function currentReclaimableOverflowOf(
   * `_overflow` is the amount of overflow to make the calculation with, as a fixed point number.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md) interface.
 * The function returns the amount of overflowed tokens that can be reclaimed, as a fixed point number with the same number of decimals as the provided `_overflow`.
 
 #### Body
@@ -49,7 +49,7 @@ function currentReclaimableOverflowOf(
 
     _External references:_
 
-    * [`currentOf`](../../jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 
 2.  Return the reclaimable overflow using the project's current funding cycle and the provided parameters. 
 
@@ -61,7 +61,7 @@ function currentReclaimableOverflowOf(
 
     _Internal references:_
 
-    * [`_reclaimableOverflowDuring`](_reclaimableoverflowduring.md)
+    * [`_reclaimableOverflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/_reclaimableoverflowduring.md)
 
 {% endtab %}
 

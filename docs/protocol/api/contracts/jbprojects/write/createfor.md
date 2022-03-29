@@ -1,8 +1,8 @@
 # createFor
 
-Contract: [`JBProjects`](../)
+Contract: [`JBProjects`](/protocol/api/contracts/jbprojects/README.md)
 
-Interface: [`IJBProjects`](../../../interfaces/ijbprojects.md)
+Interface: [`IJBProjects`](/protocol/api/interfaces/ijbprojects.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -23,7 +23,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
   * `_owner` is the address that will be the owner of the project.
   * `_metadata` is a struct containing metadata content about the project, and domain within which the metadata applies.
 * The function can be accessed externally by anyone.
-* The function overrides a function definition from the [`IJBProjects`](../../../interfaces/ijbprojects.md) interface.
+* The function overrides a function definition from the [`IJBProjects`](/protocol/api/interfaces/ijbprojects.md) interface.
 * The function returns the token ID of the newly created project.
 
 #### Body
@@ -37,7 +37,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
 
     _Internal references:_
 
-    * [`count`](../properties/count.md)
+    * [`count`](/protocol/api/contracts/jbprojects/properties/count.md)
 2.  Mint a new NFT token belonging to the owner using the projectId as the tokenId.
 
     ```solidity
@@ -58,7 +58,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
 
     _Internal references:_
 
-    * [`metadataContentOf`](../properties/metadatacontentof.md)
+    * [`metadataContentOf`](/protocol/api/contracts/jbprojects/properties/metadatacontentof.md)
 4.  Emit a `Create` event with all relevant parameters.
 
     ```
@@ -67,7 +67,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
 
     _Event references:_
 
-    * [`Create`](../events/create.md)
+    * [`Create`](/protocol/api/contracts/jbprojects/events/create.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -107,7 +107,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
 {% tab title="Events" %}
 | Name                                | Data                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Create`**](../events/create.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>address indexed owner</code></li><li><code>[`JBProjectMetadata`](../../../data-structures/jbprojectmetadata.md)metadata</code></li><li><code>address caller</code></li></ul>                  |{% endtab %}
+| [**`Create`**](/protocol/api/contracts/jbprojects/events/create.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>address indexed owner</code></li><li><code>[`JBProjectMetadata`](/protocol/api/data-structures/jbprojectmetadata.md)metadata</code></li><li><code>address caller</code></li></ul>                  |{% endtab %}
 
 {% tab title="Bug bounty" %}
 | Category          | Description                                                                                                                            | Reward |

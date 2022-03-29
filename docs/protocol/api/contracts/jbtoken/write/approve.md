@@ -1,8 +1,8 @@
 # approve
 
-Contract: [`JBToken`](../)​‌
+Contract: [`JBToken`](/protocol/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](../../../interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -22,7 +22,7 @@ function approve(
   * The `_projectId` parameter is ignored.
   * `_spender` is the address that will be spending tokens on the `msg.sender`s behalf.
   * `_amount` is the amount the `_spender` is allowed to spend.
-* The function overrides a function definition from the [`IJBToken`](../../../interfaces/ijbtoken.md) interface.
+* The function overrides a function definition from the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
 ### Body

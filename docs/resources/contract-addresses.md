@@ -46,13 +46,13 @@ TerminalDirectory Kovan: [`0x71BA69044CbD951AC87124cBEdbC0334AB21F26D`](https://
 
 Mainnet ERC-20 Token: [0x3abf2a4f8452ccc2cf7b4c1e4663147600646f66](https://etherscan.io/token/0x3abf2a4f8452ccc2cf7b4c1e4663147600646f66)
 
-{% hint style="info" %}
+:::note
 To reduce gas fees, newly issued $JBX tokens are stored in the Juicebox [TicketBooth](../protocol-v1/ticketbooth/) contract by default ("staked"). $JBX holders can call the `unstake` function on the TicketBooth contract to mint $JBX ERC-20 tokens to their wallets. In the frontend, this is called `Claim` and can be found under the `Manage` button.
 
 The above ERC-20 contract reflects the total supply of minted ERC-20 $JBX tokens.
 
 To ascertain the total supply of claimed (ERC-20) and unclaimed ("staked") $JBX tokens, call the `totalSupplyOf()` function on the TicketBooth contract above, passing project id `1` as the argument.
-{% endhint %}
+:::
 
 ### Gnosis Multisig
 

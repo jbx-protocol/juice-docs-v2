@@ -1,8 +1,8 @@
 # setFeeGauge
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](../../../../interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -39,7 +39,7 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 
     _Event references:_
 
-    * [`SetFeeGauge`](../events/setfeegauge.md)
+    * [`SetFeeGauge`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -68,7 +68,7 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 {% tab title="Events" %}
 | Name                                          | Data                                                                                                                                                    |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetFeeGauge`**](../events/setfeegauge.md) | <ul><li><code>[`IJBFeeGauge`](../../../../interfaces/ijbfeegauge.md)indexed feeGauge</code></li><li><code>address caller</code></li></ul> |
+| [**`SetFeeGauge`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md) | <ul><li><code>[`IJBFeeGauge`](/protocol/api/interfaces/ijbfeegauge.md)indexed feeGauge</code></li><li><code>address caller</code></li></ul> |
 {% endtab %}
 
 {% tab title="Bug bounty" %}

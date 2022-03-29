@@ -1,8 +1,8 @@
 # totalSupply
 
-Contract: [`JBToken`](../)​‌
+Contract: [`JBToken`](/protocol/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](../../../interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -18,7 +18,7 @@ function totalSupply(uint256) external view override returns (uint256) { ... }
   * The `_projectId` parameter is ignored.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBToken`](../../../interfaces/ijbtoken.md) interface.
+* The function overrides a function definition from the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface.
 * The function returns the total supply of this ERC20, as a fixed point number with 18 decimals.
 
 ### Body

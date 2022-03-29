@@ -1,8 +1,8 @@
 # prepForMigrationOf
 
-Contract: [`JBController`](../)​‌
+Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](../../../../interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -19,7 +19,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external override
 * Arguments:
   * `_projectId` is the ID of the project that will be migrated to this controller.
 * The function can be accessed externally by anyone.
-* The function overrides a function definition from the [`IJBController`](../../../../interfaces/ijbcontroller.md) interface.
+* The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -33,7 +33,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external override
 
     _External references:_
 
-    * [`controllerOf`](../../../jbdirectory/properties/controllerof.md)
+    * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
 2.  Update the processed token tracker to equal the current total supply of tokens. This prevents any inadvertant outstanding reserved tokens from being distributable upon migrating to this controller.
 
     ```solidity
@@ -43,7 +43,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external override
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](../properties/_processedtokentrackerof.md)
+    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_processedtokentrackerof.md)
 3.  Emit a `PrepMigration` event with the relevant parameters.
 
     ```solidity
@@ -52,7 +52,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external override
 
     _Event references:_
 
-    * [`PrepMigration`](../events/prepmigration.md)
+    * [`PrepMigration`](/protocol/api/contracts/or-controllers/jbcontroller/events/prepmigration.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -88,7 +88,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController _from) external ov
 {% tab title="Events" %}
 | Name                                        | Data                                                                                                                                                                                                                                                       |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`PrepMigration`**](../events/prepmigration.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[`IJBController`](../../../../interfaces/ijbcontroller.md)from</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
+| [**`PrepMigration`**](/protocol/api/contracts/or-controllers/jbcontroller/events/prepmigration.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[`IJBController`](/protocol/api/interfaces/ijbcontroller.md)from</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
 {
 
 {% tab title="Bug bounty" %}

@@ -1,14 +1,14 @@
 # recordDistributionFor
 
-Contract: [`JBPaymentTerminalStore`](../../../jbdirectory/write/)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/jbdirectory/write/)​‌
 
-Interface: [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
 **Records newly distributed funds for a project.**
 
-_The msg.sender must be an [`IJBPaymentTerminal`](../../../interfaces/ijbpaymentterminal.md)._
+_The msg.sender must be an [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)._
 
 #### Definition
 
@@ -30,7 +30,7 @@ function recordDistributionFor(
   * `_amount` is the amount to use from the distribution limit, as a fixed point number.
   * `_currency` is the currency of the `_amount`. This must match the project's current funding cycle's currency.
   * `_balanceCurrency` is the currency that the balance is expected to be in terms of.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](../../../interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md) interface.
 * The function returns:
   * `fundingCycle` is the funding cycle during which the withdrawal was made.
   * `distributedAmount` is the amount of terminal tokens distributed, as a fixed point number with the same amount of decimals as its relative terminal.
@@ -46,7 +46,7 @@ function recordDistributionFor(
 
     _External references:_
 
-    * [`currentOf`](../../jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/jbfundingcyclestore/read/currentof.md)
 2.  Make sure the current funding cycle doesn't have distributions paused.
 
     ```solidity
@@ -56,7 +56,7 @@ function recordDistributionFor(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](../../../libraries/jbfundingcyclemetadataresolver.md)\
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)\
       `.distributionsPaused(...)`
 
 3.  Calculate the new total amount that has been distributed during this funding cycle by adding the amount being distributed to the used distribution limit.
@@ -70,7 +70,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`usedDistributionLimitOf`](../properties/useddistributionlimitof.md)
+    * [`usedDistributionLimitOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/useddistributionlimitof.md)
 
 4.  Get a reference to the currrent distribution limit of the project during the current funding cycle, and the currency the distribution limit is in terms of.
 
@@ -83,7 +83,7 @@ function recordDistributionFor(
 
     _External references:_
 
-    * [`distributionLimitOf`](../../or-controllers/jbcontroller/read/distributionlimitof.md)
+    * [`distributionLimitOf`](/protocol/api/or-controllers/jbcontroller/read/distributionlimitof.md)
 
 5.  Make sure the new total amount distributed will be at most the distribution limit.
 
@@ -119,11 +119,11 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](../properties/_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/write/properties/_max_fixed_point_fidelity.md)
 
     _External references:_
 
-    * [`priceFor`](../../jbprices/read/pricefor.md)
+    * [`priceFor`](/protocol/api/contracts/jbprices/read/pricefor.md)
 8.  Make sure the project has access to the amount being distributed.
 
     ```solidity
@@ -134,7 +134,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`balanceOf`](../properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 9.  Store the new used distributed amount.
 
     ```solidity
@@ -146,7 +146,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`usedDistributionLimitOf`](../properties/useddistributionlimitof.md)
+    * [`usedDistributionLimitOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/useddistributionlimitof.md)
 10. Store the decremented balance.
 
     ```solidity
@@ -158,7 +158,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`balanceOf`](../properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 {% endtab %}
 
 {% tab title="Code" %}

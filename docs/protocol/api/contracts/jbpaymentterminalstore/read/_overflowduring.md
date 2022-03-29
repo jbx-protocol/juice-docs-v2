@@ -1,6 +1,6 @@
 # _overflowDuring
 
-Contract: [`JBPaymentTerminalStore`](../)​‌
+Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -39,7 +39,7 @@ function _overflowDuring(
 
     _Internal references:_
 
-    * [`balanceOf`](../properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 2.  If the project has no balance, there can't be any overflow.
 
     ```solidity
@@ -57,7 +57,7 @@ function _overflowDuring(
 
     _External references:_
 
-    * [`distributionLimitOf`](../../or-controllers/jbcontroller/read/distributionlimitof.md)
+    * [`distributionLimitOf`](/protocol/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
 4.  Get a reference to the amount of the funding cycle's target that can still be distributed. This is the difference between its distribution limit and what has already been distributed during this funding cycle.
 
     ```solidity
@@ -68,7 +68,7 @@ function _overflowDuring(
 
     _Internal references:_
 
-    * [`usedDistributionLimitOf`](../properties/useddistributionlimitof.md)
+    * [`usedDistributionLimitOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/useddistributionlimitof.md)
 
 5.  Convert the distribution remaining into the balance's currency using the appropriate price feed. The distribution remaining and balance fixed point numbers should already be using the same number of decimals.
 
@@ -84,16 +84,16 @@ function _overflowDuring(
 
     _Libraries used:_
 
-    * [`JBCurrencies`](../../../libraries/jbcurrencies.md)
+    * [`JBCurrencies`](/protocol/api/libraries/jbcurrencies.md)
       * `.ETH`
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](../properties/_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/properties/_max_fixed_point_fidelity.md)
 
     _External references:_
 
-    * [`priceFor`](../../jbprices/read/pricefor.md)
+    * [`priceFor`](/protocol/api/contracts/jbprices/read/pricefor.md)
 6.  If the current balance of the project is at most the target remaining, there is no overflow. Otherwise the difference between the project's current balance and the remaining distribution limit is the overflow.
 
     ```solidity

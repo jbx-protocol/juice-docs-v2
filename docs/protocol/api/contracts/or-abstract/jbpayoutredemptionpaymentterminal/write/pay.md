@@ -1,8 +1,8 @@
 # pay
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPaymentTerminal`](../../../../interfaces/ijbpaymentterminal.md)
+Interface: [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -31,9 +31,9 @@ function pay(
   * `_memo` is memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate. A data source can alter the memo before emitting in the event and forwarding to the delegate.
   * `_metadata` are bytes to send along to the data source and delegate, if provided.
 * The function can be accessed externally by anyone.
-* Through the [`isTerminalOf`](../modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
+* Through the [`isTerminalOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
 * The function accepts ETH. The transaction reverts if receives ETH but the terminal's token type isn't ETH.
-* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](../../../../interfaces/ijbpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -54,7 +54,7 @@ function pay(
 
     _Virtual references:_
 
-    * [`_transferFrom`](_transferfrom.md)
+    * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 
@@ -74,7 +74,7 @@ function pay(
 
     _Internal references:_
 
-    * [`_pay`](_pay.md)
+    * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_pay.md)
 {% endtab %}
 
 {% tab title="Code" %}

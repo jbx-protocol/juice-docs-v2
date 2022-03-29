@@ -1,6 +1,6 @@
 # _currentFeeDiscount
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](../)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -30,16 +30,16 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
     _Libraries used:_
 
-    * [`JBConstants`](../../../../libraries/jbconstants.md)
+    * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
       * `.MAX_FEE_DISCOUNT`
 
     _External references:_
 
-    * [`primaryTerminalOf`](../../../jbdirectory/read/primaryterminalof.md)
+    * [`primaryTerminalOf`](/protocol/api/jbdirectory/read/primaryterminalof.md)
 
     _Internal references:_
 
-    * [`token`](../properties/token.md)
+    * [`token`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/token.md)
 2.  If there's a gauge, ask it for the discount. Otherwise, there is no discount. If the gauge reverts, set the discount to 0.
 
     ```solidity
@@ -57,11 +57,11 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
     _Internal references:_
 
-    * [`feeGauge`](../properties/feegauge.md)
+    * [`feeGauge`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/feegauge.md)
 
     _External references:_
 
-    * [`currentDiscountFor`](../../../../interfaces/ijbfeegauge.md)
+    * [`currentDiscountFor`](/protocol/api/interfaces/ijbfeegauge.md)
 
 3.  If there gauge provided an invalid discount, set the discount to 0.
 

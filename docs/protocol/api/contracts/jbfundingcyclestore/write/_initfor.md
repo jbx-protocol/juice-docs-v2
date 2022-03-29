@@ -1,6 +1,6 @@
 # _initFor
 
-Contract:[`JBFundingCycleStore`](../)​
+Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
 
 {% tabs %}
 {% tab title="Step by step" %}
@@ -73,10 +73,10 @@ function _initFor(
 
     _Internal references:_
 
-    * [`_packAndStoreIntrinsicPropertiesOf`](_packandstoreintrinsicpropertiesof.md)
-    * [`_deriveStartFrom`](../read/_derivestartfrom.md)
-    * [`_deriveWeightFrom`](../read/_deriveweightfrom.md)
-    * [`_deriveNumberFrom`](../read/_derivenumberfrom.md)
+    * [`_packAndStoreIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/write/_packandstoreintrinsicpropertiesof.md)
+    * [`_deriveStartFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_derivestartfrom.md)
+    * [`_deriveWeightFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_deriveweightfrom.md)
+    * [`_deriveNumberFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_derivenumberfrom.md)
 2.  Store the initialized configuration as the latest of the project.
 
     ```solidity
@@ -86,7 +86,7 @@ function _initFor(
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](../properties/latestconfigurationof.md)
+    * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 3.  Emit an `Init` event with the relevant parameters.
 
     ```solidity
@@ -95,7 +95,7 @@ function _initFor(
 
     _Event references:_
 
-    * [`Init`](../events/init.md)
+    * [`Init`](/protocol/api/contracts/jbfundingcyclestore/events/init.md)
 {% endtab %}
 
 {% tab title="Code" %}
@@ -166,7 +166,7 @@ function _initFor(
 {% tab title="Events" %}
 | Name       | Data                                                                                                                                                      |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Init`**](../events/init.md)           | <ul><li><code>uint256 indexed configuration</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed basedOn</code></li></ul>                                                                                                                                                                                                 |
+| [**`Init`**](/protocol/api/contracts/jbfundingcyclestore/events/init.md)           | <ul><li><code>uint256 indexed configuration</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed basedOn</code></li></ul>                                                                                                                                                                                                 |
 {% endtab %}
 
 {% tab title="Bug bounty" %}
