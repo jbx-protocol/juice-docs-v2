@@ -1,0 +1,50 @@
+{
+  "link.title.Links": {
+    "message": "Links",
+    "description": "The title of the footer links column with title=Links in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.juicebox.money": {
+    "message": "juicebox.money",
+    "description": "The label of footer link with label=juicebox.money linking to https://juicebox.money/"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/jbx-protocol"
+  },
+  "link.item.label.Notion": {
+    "message": "Notion",
+    "description": "The label of footer link with label=Notion linking to https://juicebox.notion.site/Juicebox-Notion-7b2436cec0c145c88b3efa0376c6dba3"
+  },
+  "link.item.label.Discord": {
+    "message": "Discord",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/juicebox"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/juiceboxETH"
+  },
+  "link.item.label.Cryptovoxels Lounge": {
+    "message": "Cryptovoxels Lounge",
+    "description": "The label of footer link with label=Cryptovoxels Lounge linking to https://www.cryptovoxels.com/parcels/6188"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Governance": {
+    "message": "Governance",
+    "description": "The label of footer link with label=Governance linking to https://snapshot.org/#/jbdao.eth"
+  },
+  "copyright": {
+    "message": "Licensed under The MIT License.",
+    "description": "The footer copyright"
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Create a Juicebox Project": {
+    "message": "Create a Juicebox Project",
+    "description": "The label for category Create a Juicebox Project in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Resources": {
+    "message": "Resources",
+    "description": "The label for category Resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Protocol v2": {
+    "message": "Protocol v2",
+    "description": "The label for category Protocol v2 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Learn": {
+    "message": "Learn",
+    "description": "The label for category Learn in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Glossary": {
+    "message": "Glossary",
+    "description": "The label for category Glossary in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Build": {
+    "message": "Build",
+    "description": "The label for category Build in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Treasury Extensions": {
+    "message": "Treasury Extensions",
+    "description": "The label for category Treasury Extensions in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.API": {
+    "message": "API",
+    "description": "The label for category API in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Data Structures": {
+    "message": "Data Structures",
+    "description": "The label for category Data Structures in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Enums": {
+    "message": "Enums",
+    "description": "The label for category Enums in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Libraries": {
+    "message": "Libraries",
+    "description": "The label for category Libraries in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Interfaces": {
+    "message": "Interfaces",
+    "description": "The label for category Interfaces in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Contracts": {
+    "message": "Contracts",
+    "description": "The label for category Contracts in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBProjects": {
+    "message": "JBProjects",
+    "description": "The label for category JBProjects in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Events": {
+    "message": "Events",
+    "description": "The label for category Events in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Properties": {
+    "message": "Properties",
+    "description": "The label for category Properties in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Read": {
+    "message": "Read",
+    "description": "The label for category Read in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Write": {
+    "message": "Write",
+    "description": "The label for category Write in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBTokenStore": {
+    "message": "JBTokenStore",
+    "description": "The label for category JBTokenStore in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBFundingCycleStore": {
+    "message": "JBFundingCycleStore",
+    "description": "The label for category JBFundingCycleStore in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBSplitsStore": {
+    "message": "JBSplitsStore",
+    "description": "The label for category JBSplitsStore in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBPrices": {
+    "message": "JBPrices",
+    "description": "The label for category JBPrices in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBOperatorStore": {
+    "message": "JBOperatorStore",
+    "description": "The label for category JBOperatorStore in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBToken": {
+    "message": "JBToken",
+    "description": "The label for category JBToken in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBDirectory": {
+    "message": "JBDirectory",
+    "description": "The label for category JBDirectory in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBPaymentTerminalStore": {
+    "message": "JBPaymentTerminalStore",
+    "description": "The label for category JBPaymentTerminalStore in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.| Payment terminals": {
+    "message": "| Payment terminals",
+    "description": "The label for category | Payment terminals in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.| Controllers": {
+    "message": "| Controllers",
+    "description": "The label for category | Controllers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBController": {
+    "message": "JBController",
+    "description": "The label for category JBController in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.| Price Feeds": {
+    "message": "| Price Feeds",
+    "description": "The label for category | Price Feeds in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBChainlinkV3PriceFeed": {
+    "message": "JBChainlinkV3PriceFeed",
+    "description": "The label for category JBChainlinkV3PriceFeed in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.| Abstract": {
+    "message": "| Abstract",
+    "description": "The label for category | Abstract in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBControllerUtility": {
+    "message": "JBControllerUtility",
+    "description": "The label for category JBControllerUtility in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Modifiers": {
+    "message": "Modifiers",
+    "description": "The label for category Modifiers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBOperatable": {
+    "message": "JBOperatable",
+    "description": "The label for category JBOperatable in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBPayoutRedemptionPaymentTerminal": {
+    "message": "JBPayoutRedemptionPaymentTerminal",
+    "description": "The label for category JBPayoutRedemptionPaymentTerminal in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Protocol v1": {
+    "message": "Protocol v1",
+    "description": "The label for category Protocol v1 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Ticket Booth": {
+    "message": "Ticket Booth",
+    "description": "The label for category Ticket Booth in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.TerminalV1": {
+    "message": "TerminalV1",
+    "description": "The label for category TerminalV1 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Developers": {
+    "message": "Developers",
+    "description": "The label for category Developers in sidebar tutorialSidebar"
+  }
+}
