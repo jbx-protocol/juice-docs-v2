@@ -46,7 +46,10 @@ const config = {
       }),
     ],
   ],
-
+  i18n: {
+      defaultLocale: 'en',
+      locales: ['en', 'zh', 'ru', 'pt', 'es', 'tr', 'fr', 'ja'],
+  },
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -61,6 +64,10 @@ const config = {
             docId: 'intro',
             position: 'left',
             label: 'Docs',
+          },
+	  {
+	    type: 'localeDropdown',
+            position: 'right',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
 	  {
@@ -127,7 +134,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      
     }),
 };
-
 module.exports = config;
