@@ -101,6 +101,8 @@ function prepForMigrationOf(uint256 _projectId, IJBController _from) external ov
 | [**`PrepMigration`**](/protocol/api/contracts/or-controllers/jbcontroller/events/prepmigration.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[`IJBController`](/protocol/api/interfaces/ijbcontroller.md)from</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
 {
 
+</TabItem>
+
 <TabItem value="Bug bounty" label="Bug bounty">
 
 | Category          | Description                                                                                                                            | Reward |
@@ -110,4 +112,5 @@ function prepForMigrationOf(uint256 _projectId, IJBController _from) external ov
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
 
 </TabItem>
+
 </Tabs>
