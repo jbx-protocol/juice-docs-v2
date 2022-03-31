@@ -1,11 +1,15 @@
 # mintFor
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
 Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Mint new project tokens.**
 
 _Only a project's current controller can mint its tokens._
@@ -83,9 +87,11 @@ function mintFor(
     _Event references:_
 
     * [`Mint`](/protocol/api/contracts/jbtokenstore/events/mint.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -124,19 +130,24 @@ function mintFor(
   emit Mint(_holder, _projectId, _amount, _shouldClaimTokens, _preferClaimedTokens, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                            | Data                                                                                                                                                                                                                                                                   |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`Mint`**](/protocol/api/contracts/jbtokenstore/events/mint.md)                             | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 amount</code></li><li><code>bool tokensWereClaimed</code></li><li><code>bool preferClaimedTokens</code></li><li><code>address caller</code></li></ul>        |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

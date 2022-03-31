@@ -1,11 +1,15 @@
 # recordRedemptionFor
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
 Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Records newly redeemed tokens of a project.**
 
 _Redeems the project's tokens according to values provided by a configured data source. If no data source is configured, redeems tokens along a redemption bonding curve that is a function of the number of tokens being burned._
@@ -208,9 +212,11 @@ function recordRedemptionFor(
     _Internal references:_
 
     * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -325,20 +331,25 @@ function recordRedemptionFor(
       reclaimAmount;
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                                          | Description                                                                                  |
 | ----------------------------------------------- | -------------------------------------------------------------------------------------------- |
 | **`FUNDING_CYCLE_REDEEM_PAUSED`**               | Thrown if the project has configured its current funding cycle to pause redemptions.         |
 | **`INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE`** | Thrown if the project's balance isn't sufficient to fulfill the desired claim.               |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

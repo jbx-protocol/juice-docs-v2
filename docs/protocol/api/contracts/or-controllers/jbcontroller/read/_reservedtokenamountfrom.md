@@ -1,7 +1,11 @@
 # _reservedTokenAmountFrom
 
-{% tabs %}
-{% tab title="Step by step" %}
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Gets the amount of reserved tokens currently tracked for a project given a reserved rate.**
 
 #### Definition
@@ -66,9 +70,11 @@ function _reservedTokenAmountFrom(
       * `.mulDiv(...)`
     * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
       * `.MAX_RESERVED_RATE`
-{% endtab %}
 
-{% tab title="Only code" %}
+</TabItem>
+
+<TabItem value="Only code" label="Only code">
+
 ```solidity
 /**
   @notice
@@ -104,13 +110,16 @@ function _reservedTokenAmountFrom(
     ) - _unprocessedTokenBalanceOf;
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

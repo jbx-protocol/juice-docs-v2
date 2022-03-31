@@ -1,11 +1,15 @@
 # recordDistributionFor
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBPaymentTerminalStore`](/protocol/api/jbdirectory/write/)​‌
 
 Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Records newly distributed funds for a project.**
 
 _The msg.sender must be an [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)._
@@ -159,9 +163,11 @@ function recordDistributionFor(
     _Internal references:_
 
     * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -235,9 +241,11 @@ function recordDistributionFor(
     distributedAmount;
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                                          | Description                                                                                                          |
 | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | **`FUNDING_CYCLE_DISTRIBUTION_PAUSED`**         | Thrown if the project has configured its current funding cycle to pause distributions.                               |
@@ -245,13 +253,16 @@ function recordDistributionFor(
 | **`DISTRIBUTION_AMOUNT_LIMIT_REACHED`**         | Thrown if there isn't enough of a distribution limit for the specified terminal to fulfill the desired distribution. |
 | **`INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE`** | Thrown if the project's balance isn't sufficient to fulfill the desired distribution.                                |
 | **`INADEQUATE_WITHDRAW_AMOUNT`**                | Thrown if the distribution amount is less than the minimum expected.                                                 |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

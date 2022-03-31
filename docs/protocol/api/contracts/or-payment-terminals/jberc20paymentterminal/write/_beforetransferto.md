@@ -1,9 +1,13 @@
 # _beforeTransferTo
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)​‌
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Logic to be triggered before transferring tokens from this terminal.**
 
 # Definition
@@ -30,9 +34,11 @@ function _beforeTransferTo(address, uint256) internal override { ...}
 
     * [`approve`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-approve-address-uint256-)
 
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice
@@ -45,13 +51,16 @@ function _beforeTransferTo(address _to, uint256 _amount) internal override {
   IERC20(token).approve(_to, _amount);
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

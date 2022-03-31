@@ -1,11 +1,15 @@
 # useAllowanceOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Allows a project to send funds from its overflow up to the preconfigured allowance.**
 
 _Only a project's owner or a designated operator can use its allowance._
@@ -154,9 +158,11 @@ function useAllowanceOf(
     _Event references:_
 
     * [`UseAllowance`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/useallowance.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -238,25 +244,32 @@ function useAllowanceOf(
   );
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                       | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
 | **`INADEQUATE_DISTRIBUTION_AMOUNT`** | Thrown if the amount being distributed is less than the specified minimum. |
 
-{% endtab %}
-{% tab title="Events" %}
+
+</TabItem>
+<TabItem value="Events" label="Events">
+
 | Name                                            | Data                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`UseAllowance`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/useallowance.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                                            |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

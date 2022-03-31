@@ -1,11 +1,15 @@
 # changeTokenOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
 Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Swap the current project's token that is minted and burned for another, and transfer ownership of the current token to another address if needed.**
 
 _Only a project's owner or operator can change its token._
@@ -60,9 +64,11 @@ function changeTokenOf(
     // Change the token in the store.
     tokenStore.changeFor(_projectId, _token, _newOwner);
     ```
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -94,19 +100,24 @@ function changeTokenOf(
   tokenStore.changeFor(_projectId, _token, _newOwner);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                         | Description                                                    |
 | ------------------------------ | -------------------------------------------------------------- |
 | **`CHANGE_TOKEN_NOT_ALLOWED`** | Thrown if the project doesn't currently allow changing tokens. |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

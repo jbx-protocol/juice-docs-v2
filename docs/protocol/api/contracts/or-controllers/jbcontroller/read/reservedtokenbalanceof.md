@@ -1,11 +1,15 @@
 # reservedTokenBalanceOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
 Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Gets the amount of reserved tokens that a project has available to distribute.**
 
 ### Definition
@@ -47,9 +51,11 @@ function reservedTokenBalanceOf(uint256 _projectId, uint256 _reservedRate)
     _External references:_
 
     * [`totalSupplyOf`](/protocol/api/contracts/jbtokenstore/read/totalsupplyof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -74,13 +80,16 @@ function reservedTokenBalanceOf(uint256 _projectId, uint256 _reservedRate)
     );
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

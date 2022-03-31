@@ -1,7 +1,11 @@
 # _configure
 
-{% tabs %}
-{% tab title="Step by step" %}
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Configures a funding cycle and stores information pertinent to the configuration.**
 
 #### Definition
@@ -158,9 +162,11 @@ function _configure(
     ```solidity
     return _fundingCycle.configuration;
     ```
-{% endtab %}
 
-{% tab title="Only code" %}
+</TabItem>
+
+<TabItem value="Only code" label="Only code">
+
 ```solidity
 /**
   @notice
@@ -254,9 +260,11 @@ function _configure(
   return _fundingCycle.configuration;
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                               | Description                                                |
 | ------------------------------------ | ---------------------------------------------------------- |
 | **`INVALID_RESERVED_RATE`**          | Thrown if the reserved rate is greater than 100%.          |
@@ -266,19 +274,24 @@ function _configure(
 | **`INVALID_DISTRIBUTION_LIMIT_CURRENCY`** | Thrown if the distribution limit currency is greater than 8 bits. |
 | **`INVALID_OVERFLOW_ALLOWANCE`** | Thrown if the overflow allowance is greater than 248 bits. |
 | **`INVALID_OVERFLOW_ALLOWANCE_CURRENCY`** | Thrown if the overflow allowance currency is greater than 8 bits. |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                                                    | Data                                                                                                                                                                                                                                                                                                                                                          |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`SetFundAccessConstraints`**](/protocol/api/contracts/or-controllers/jbcontroller/events/setfundaccessconstraints.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[`JBFundAccessConstraints`](/protocol/api/data-structures/jbfundaccessconstraints.md)constraints</code></li><li><code>address caller</code></li></ul> |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

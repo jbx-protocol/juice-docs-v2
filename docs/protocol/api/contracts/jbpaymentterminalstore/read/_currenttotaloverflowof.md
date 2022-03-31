@@ -1,9 +1,13 @@
 # _currentTotalOverflowOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Gets the amount that is currently overflowing across all of a project's terminals.**
 
 _This amount changes as the value of the balances changes in relation to the currency being used to measure the project's distribution limits._
@@ -90,9 +94,11 @@ function _currentTotalOverflowOf(
       * `.mulDiv(...)`
     * [`JBFixedPointNumber`](/protocol/api/libraries/jbfixedpointnumber.md)
       * `.adjustDecimals(...)`
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -134,13 +140,16 @@ function _currentTotalOverflowOf(
       : JBFixedPointNumber.adjustDecimals(_totalOverflow18Decimal, 18, _decimals);
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

@@ -1,11 +1,15 @@
 # splitsOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBSplitsStore`](/protocol/api/contracts/jbsplitsstore/README.md)​‌
 
 Interface: [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Get all splits for the specified project ID, within the specified domain, for the specified group.**
 
 #### Definition
@@ -38,9 +42,11 @@ function splitsOf(
     Internal references:
 
     * [`_getStructsFor`](/protocol/api/contracts/jbsplitsstore/read/_getstructsfor.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice 
@@ -60,13 +66,16 @@ function splitsOf(
   return _getStructsFor(_projectId, _domain, _group);
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

@@ -1,11 +1,15 @@
 # balanceOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBToken`](/protocol/api/contracts/jbtoken/README.md)​‌
 
 Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **An account's balance of this ERC20.**
 
 ### Definition
@@ -33,9 +37,11 @@ function balanceOf(address _account, uint256) external view override returns (ui
     _Inherited references:_
 
     * [`balanceOf`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-balanceOf-address-)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice
@@ -49,13 +55,16 @@ function balanceOf(address _account, uint256) external view override returns (ui
   return super.balanceOf(_account);
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

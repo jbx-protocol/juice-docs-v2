@@ -1,11 +1,15 @@
 # mintTokensOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
 Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Mint new token supply into an account, and optionally reserve a supply to be distributed according to the project's current funding cycle configuration.**
 
 _Only a project's owner, a designated operator, or one of its terminals can mint its tokens._
@@ -133,9 +137,11 @@ function mintTokensOf(
     _Event references:_
 
     * [`MintTokens`](/protocol/api/contracts/or-controllers/jbcontroller/events/minttokens.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -218,26 +224,33 @@ function mintTokensOf(
   emit MintTokens(_beneficiary, _projectId, _tokenCount, _memo, _reservedRate, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                                                   | Description                                                                                                                |
 | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **`ZERO_TOKENS_TO_MINT`**                                | Thrown if no tokens are being minted.                                                                                      |
 | **`MINT_PAUSED_AND_NOT_TERMINAL_DELEGATE`**              | Thrown if the request is not being made by a payment terminal, and the project's current funding cycle has paused minting. |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                     | Data                                                                                                                                                                                                                                                        |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`MintTokens`**](/protocol/api/contracts/or-controllers/jbcontroller/events/minttokens.md)                                         | <ul><li><code>address indexed beneficiary</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 beneficairyTokenCount</code></li><li><code>string memo</code></li><li><code>uint256 reservedRate</code></li><li><code>address caller</code></li></ul>                 |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

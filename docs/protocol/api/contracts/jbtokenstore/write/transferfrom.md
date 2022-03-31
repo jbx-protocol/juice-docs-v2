@@ -1,11 +1,15 @@
 # transferFrom
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
 Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Allows a holder to transfer unclaimed tokens to another account.**
 
 _Only a token holder or an operator can transfer its unclaimed tokens._
@@ -85,9 +89,11 @@ function transferFrom(
     _Event references:_
 
     * [`Transfer`](/protocol/api/contracts/jbtokenstore/events/transfer.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -127,26 +133,33 @@ function transferFrom(
   emit Transfer(_holder, _projectId, _recipient, _amount, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                              | Description                                                  |
 | ----------------------------------- | ------------------------------------------------------------ |
 | **`RECIPIENT_ZERO_ADDRESS`**        | Thrown if no recipient was speicified.                       |
 | **`INSUFFICIENT_UNCLAIMED_TOKENS`** | Thrown if the holder doesn't have enough tokens to transfer. |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                    | Data                                                                                                                                                                                                                        |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`Transfer`**](/protocol/api/contracts/jbtokenstore/events/transfer.md)                     | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>address indexed recipient</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                   |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

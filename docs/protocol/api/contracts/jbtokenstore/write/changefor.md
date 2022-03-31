@@ -1,11 +1,15 @@
 # changeFor
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
 Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Swap the current project's token for another, and transfer ownership of the current token to another address if needed.**
 
 _Only a project's current controller can change its token._
@@ -95,9 +99,11 @@ function changeFor(
     _Event references:_
 
     * [`Change`](/protocol/api/contracts/jbtokenstore/events/change.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -140,26 +146,33 @@ function changeFor(
   emit Change(_projectId, _token, oldToken, _newOwner, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                              | Description                                               |
 | ----------------------------------- | --------------------------------------------------------- |
 | **`CANT_REMOVE_TOKEN_IF_ITS_REQUIRED`**    | Thrown if the token is being removed but claiming is required.        |
 | **`TOKENS_MUST_HAVE_18_DECIMALS`**    | Thrown if the token being attached doesn't use 18 decimals.        |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                | Data                                                                                                                                                                                |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`Change`**](/protocol/api/contracts/jbtokenstore/events/change.md)               | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBToken`](/protocol/api/interfaces/ijbtoken.md)indexed newToken</code></li><li><code>[`IJBToken`](/protocol/api/interfaces/ijbtoken.md)indexed oldToken</code></li><li><code>address indexed owner</code></li><li><code>address caller</code></li></ul>                                                                                           |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

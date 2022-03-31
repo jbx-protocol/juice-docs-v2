@@ -1,9 +1,13 @@
 # _deriveStartFrom
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **The date that is the nearest multiple of the specified funding cycle's duration from its end.**
 
 ### Definition
@@ -61,9 +65,11 @@ function _deriveStartFrom(JBFundingCycle memory _baseFundingCycle, uint256 _must
     // Add increments of duration as necessary to satisfy the threshold.
     while (_mustStartAtOrAfter > start) start = start + _baseFundingCycle.duration;
     ```
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice 
@@ -99,13 +105,16 @@ function _deriveStartFrom(JBFundingCycle memory _baseFundingCycle, uint256 _must
   while (_mustStartAtOrAfter > start) start = start + _baseFundingCycle.duration;
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

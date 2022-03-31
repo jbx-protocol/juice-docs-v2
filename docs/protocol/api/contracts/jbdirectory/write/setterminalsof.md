@@ -1,11 +1,15 @@
 # setTerminalsOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md)​‌
 
 Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Set a project's terminals.**
 
 _Only a project owner, an operator, or its controller can set its terminals._
@@ -87,9 +91,11 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
     _Event references:_
 
     * [`SetTerminals`](/protocol/api/contracts/jbdirectory/events/setterminals.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice 
@@ -133,27 +139,34 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
   emit SetTerminals(_projectId, _terminals, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                          | Description                                               |
 | ------------------------------- | --------------------------------------------------------- |
 | **`ADD_TERMINAL_ZERO_ADDRESS`** | Thrown if a provided terminal to add is the zero address. |
 | **`DUPLICATE_TERMINALS`** | Thrown if the same terminal is being set multiple times. |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                                                          | Data                                                                                          |
 | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | [**`SetTerminals`**](/protocol/api/contracts/jbdirectory/events/setterminals.md)         | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)[] indexed terminals</code></li><li><code>address caller</code></li></ul>                                            |
-{% endtab %}
+
+</TabItem>
 
 
-{% tab title="Bug bounty" %}
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

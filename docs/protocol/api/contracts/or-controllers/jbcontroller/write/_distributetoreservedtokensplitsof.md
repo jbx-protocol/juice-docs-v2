@@ -1,7 +1,11 @@
 # _distributeToReservedTokenSplitsOf
 
-{% tabs %}
-{% tab title="Step by step" %}
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Distribute tokens to the splits according to the specified funding cycle configuration.**
 
 #### Definition
@@ -142,9 +146,11 @@ function _distributeToReservedTokenSplitsOf(
     _Event references:_
 
     * [`DistributeToReservedTokenSplit`](/protocol/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md)
-{% endtab %}
 
-{% tab title="Only code" %}
+</TabItem>
+
+<TabItem value="Only code" label="Only code">
+
 ```solidity
 /**
   @notice
@@ -228,19 +234,24 @@ function _distributeToReservedTokenSplitsOf(
   }
 }
 ```
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                                                                | Data                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`DistributeToReservedTokenSplit`**](/protocol/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[`JBSplit`](/protocol/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

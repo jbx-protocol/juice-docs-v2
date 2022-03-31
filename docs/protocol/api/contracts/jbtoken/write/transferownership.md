@@ -1,11 +1,15 @@
 # transferOwnership
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBToken`](/protocol/api/contracts/jbtoken/README.md)​‌
 
 Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Transfer ownership of this contract to another address.**
 
 _Only the owner of this contract can transfer it._
@@ -37,9 +41,11 @@ function transferOwnership(address _newOwner)
     _Inherited references:_
 
     * [`transferOwnership`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-transferOwnership-address-)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice
@@ -59,13 +65,16 @@ function transferOwnership(address _newOwner)
   return super.transferOwnership(_newOwner);
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

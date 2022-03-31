@@ -1,11 +1,15 @@
 # hasPermission
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBOperatorStore`](/protocol/api/contracts/jboperatorstore/README.md)​‌
 
 Interface: [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Whether or not an operator has the permission to take a certain action pertaining to the specified domain.**
 
 ### Definition
@@ -44,9 +48,11 @@ function hasPermissions(
     Internal references:
 
     * [`permissionsOf`](/protocol/api/contracts/jboperatorstore/properties/permissionsof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice 
@@ -70,19 +76,24 @@ function hasPermission(
   return (((permissionsOf[_operator][_account][_domain] >> _permissionIndex) & 1) == 1);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                               | Description                                                               |
 | ------------------------------------ | ------------------------------------------------------------------------- |
 | **`PERMISSION_INDEX_OUT_OF_BOUNDS`** | Thrown if the provided index is more than whats supported in a `uint256`. |
-{% endtab %}
 
-{% tab title="" %}
+</TabItem>
+
+<TabItem value="" label="">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

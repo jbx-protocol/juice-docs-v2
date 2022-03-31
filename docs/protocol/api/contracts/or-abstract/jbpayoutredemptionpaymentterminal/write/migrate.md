@@ -1,11 +1,15 @@
 # migrate
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Allows a project owner to migrate its funds and operations to a new terminal of the same token type.**
 
 _Only a project's owner or a designated operator can migrate it._
@@ -81,9 +85,11 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
     _Event references:_
 
     * [`Migrate`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/migrate.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -122,25 +128,32 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
   emit Migrate(_projectId, _to, _balance, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                             | Description                                                                           |
 | ---------------------------------- | ------------------------------------------------------------------------------------- |
 | **`TERMINAL_TOKENS_INCOMPATIBLE`** | Thrown if the terminal being migrated to doesn't use the same token as this terminal. |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                       | Data                                                                                                                                                                                                                                               |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`Migrate`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/migrate.md)                                 | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)indexed to</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                 |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

@@ -1,11 +1,15 @@
 # queuedOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​‌
 
 Interface: `IJBFundingCycleStore`
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **The funding cycle that's next up for the specified project.**
 
 _If a queued funding cycle of the project is not found, returns an empty funding cycle with all properties set to 0._
@@ -123,9 +127,11 @@ function queuedOf(uint256 _projectId)
     _Internal references:_
 
     * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/_mockfundingcyclebasedon.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice 
@@ -182,13 +188,16 @@ function queuedOf(uint256 _projectId)
   return _mockFundingCycleBasedOn(fundingCycle, false);
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

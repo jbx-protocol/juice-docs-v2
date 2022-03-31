@@ -1,11 +1,15 @@
 # setControllerOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md/)​‌
 
 Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Update the controller that manages how terminals interact with the ecosystem.**
 
 _A controller can be set if:_
@@ -72,9 +76,11 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
     _Event references:_
 
     * [`SetController`](/protocol/api/contracts/jbdirectory/events/setcontroller.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -110,25 +116,32 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
   emit SetController(_projectId, _controller, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                            | Description                                                      |
 | --------------------------------- | ---------------------------------------------------------------- |
 | **`INVALID_PROJECT_ID`**          | Thrown if the provided project doesn't yet exist.                |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                              | Data                                                                                                                                                                                                             |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`SetController`**](/protocol/api/contracts/jbdirectory/events/setcontroller.md)           | <ul><li><code>int256 indexed projectId</code></li><li><code>[`IJBController`](/protocol/api/interfaces/ijbcontroller.md)indexed controller</code></li><li><code>address caller</code></li></ul>                                       |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>
