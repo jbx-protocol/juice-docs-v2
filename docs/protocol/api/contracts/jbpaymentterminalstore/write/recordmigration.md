@@ -1,11 +1,15 @@
 # recordMigration
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
 
 Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Records the migration of funds from this store.**
 
 _The msg.sender must be an [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminalstore.md)._
@@ -68,9 +72,11 @@ function recordMigration(uint256 _projectId)
     _Internal references:_
 
     * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -102,19 +108,24 @@ function recordMigration(uint256 _projectId)
   balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] = 0;
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                  | Description                                                                  |
 | ----------------------- | ---------------------------------------------------------------------------- |
 | **`PAYMENT_TERMINAL_MIGRATION_NOT_ALLOWED`** | Thrown if the project's current funding cycle disallows terminal migrations. |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

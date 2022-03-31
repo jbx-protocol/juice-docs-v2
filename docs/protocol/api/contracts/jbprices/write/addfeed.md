@@ -1,11 +1,15 @@
 # addFeedFor
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBPrices`](/protocol/api/contracts/jbprices/README.md)​‌
 
 Interface: [`IJBPrices`](/protocol/api/interfaces/ijbprices.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Add a price feed for a currency in terms of the provided base currency.**
 
 _Current feeds can't be modified._
@@ -55,9 +59,11 @@ function addFeedFor(
     _Event references:_
 
     * [`AddFeed`](/protocol/api/contracts/jbprices/events/addfeed.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice 
@@ -84,25 +90,32 @@ function addFeedFor(
   emit AddFeed(_currency, _base, _feed);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                          | Description                                                            |
 | ------------------------------- | ---------------------------------------------------------------------- |
 | **`PRICE_FEED_ALREADY_EXISTS`** | Thrown if the specified currency already has an associated price feed. |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                  | Data                                                                                                                                                                                                                                                                                           |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`AddFeed`**](/protocol/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

@@ -1,9 +1,13 @@
 # _getStructFor
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Unpack a funding cycle's packed stored values into an easy-to-work-with funding cycle struct.**
 
 ### Definition
@@ -78,9 +82,11 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
     _Internal references:_
 
     * [`_metadataOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_metadataof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice 
@@ -124,13 +130,16 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
   fundingCycle.metadata = _metadataOf[_projectId][_configuration];
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

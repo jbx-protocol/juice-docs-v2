@@ -1,11 +1,15 @@
 # currentPrice
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBChainlinkV3PriceFeed`](/protocol/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/README.md)​‌
 
 Interface: [`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Gets the current price from the feed, normalized to the specified number of decimals.**
 
 ### Definition
@@ -58,9 +62,11 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
 
     * [`JBFixedPointNumber`](/protocol/api/libraries/jbfixedpointnumber.md)
       * `.adjustDecimals(...)`
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice 
@@ -81,13 +87,16 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
   return uint256(_price).adjustDecimals(_feedDecimals, _decimals);
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

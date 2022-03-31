@@ -1,11 +1,15 @@
 # issueFor
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
 Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Issues an project's ERC-20 tokens that'll be used when claiming tokens.**
 
 _Deploys a project's ERC-20 token contract._
@@ -79,9 +83,11 @@ function issueFor(
     _Event references:_
 
     * [`Issue`](/protocol/api/contracts/jbtokenstore/events/issue.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -122,27 +128,34 @@ function issueFor(
   emit Issue(_projectId, token, _name, _symbol, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                     | Description                                        |
 | -------------------------- | -------------------------------------------------- |
 | **`EMPTY_NAME`**           | Thrown if a name wasn't specified for the token.   |
 | **`EMPTY_SYMBOL`**         | Thrown if a symbol wasn't specified for the token. |
 | **`PROJECT_ALREADY_HAS_TOKEN`** | Thrown if the project already has a token.  |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                              | Data                                                                                                                                                                                                         |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [**`Issue`**](/protocol/api/contracts/jbtokenstore/events/issue.md)                           | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBToken`](/protocol/api/interfaces/ijbtoken.md)indexed token</code></li><li><code>string name</code></li><li><code>string symbol</code></li><li><code>address caller</code></li></ul>                                                                  |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

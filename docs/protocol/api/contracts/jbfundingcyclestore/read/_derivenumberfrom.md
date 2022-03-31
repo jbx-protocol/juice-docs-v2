@@ -1,9 +1,13 @@
 # _deriveNumberFrom
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **The number of the next funding cycle given the specified funding cycle.**
 
 ### Definition
@@ -42,9 +46,11 @@ function _deriveNumberFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
     // Find the number of base cycles that fit in the start distance.
     return _baseFundingCycle.number + (_startDistance / _baseFundingCycle.duration);
     ```
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice 
@@ -70,13 +76,16 @@ function _deriveNumberFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
   return _baseFundingCycle.number + (_startDistance / _baseFundingCycle.duration);
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

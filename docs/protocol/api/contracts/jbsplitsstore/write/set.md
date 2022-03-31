@@ -1,11 +1,15 @@
 # set
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBSplitsStore`](/protocol/api/contracts/jbsplitsstore/README.md)​‌
 
 Interface: [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Sets a project's splits.**
 
 _Only the owner or operator of a project, or the current controller contract of the project, can set its splits._
@@ -192,9 +196,11 @@ function set(
     _Internal references:_
 
     * [`_splitCountOf`](/protocol/api/contracts/jbsplitsstore/properties/_splitcountof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /** 
   @notice 
@@ -304,9 +310,11 @@ function set(
   _splitCountOf[_projectId][_domain][_group] = _splits.length;
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                                       | Description                                                                     |
 | -------------------------------------------- | ------------------------------------------------------------------------------- |
 | **`PREVIOUS_LOCKED_SPLITS_NOT_INCLUDED`**    | Thrown if the splits that are being set override some splits that are locked.   |
@@ -314,19 +322,24 @@ function set(
 | **`INVALID_SPLIT_PERCENT`**                  | Thrown if the split has specified a percent of 0.                               |
 | **`INVALID_TOTAL_PERCENT`**                  | Thrown if the split percents add up more than 100%.                             |
 | **`INVALID_LOCKED_UNTIL`**                   | Thrown if the split has a lockedUntil that wont fit in its packed storage slot. |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                    | Data                                                                                                                                                                                                                 |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`SetSplit`**](/protocol/api/contracts/jbsplitsstore/events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[`JBSplit`](/protocol/api/data-structures/jbsplit.md)split</code></li><li><code>address caller</code></li></ul> |
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

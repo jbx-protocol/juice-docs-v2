@@ -1,11 +1,15 @@
 # prepForMigrationOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
 Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Allows other controllers to signal to this one that a migration is expected for the specified project.**
 
 _This controller should not yet be the project's controller._
@@ -53,9 +57,11 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external override
     _Event references:_
 
     * [`PrepMigration`](/protocol/api/contracts/or-controllers/jbcontroller/events/prepmigration.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice
@@ -77,25 +83,34 @@ function prepForMigrationOf(uint256 _projectId, IJBController _from) external ov
   emit PreppedMigration(_projectId, _from, msg.sender);
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                                   | Description                                                         |
 | ---------------------------------------- | ------------------------------------------------------------------- |
 | **`CANT_MIGRATE_TO_CURRENT_CONTROLLER`** | Thrown if the controller is the current controller for the project. |
-{% endtab %}
 
-{% tab title="Events" %}
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
 | Name                                        | Data                                                                                                                                                                                                                                                       |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`PrepMigration`**](/protocol/api/contracts/or-controllers/jbcontroller/events/prepmigration.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[`IJBController`](/protocol/api/interfaces/ijbcontroller.md)from</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
 {
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+
+</Tabs>

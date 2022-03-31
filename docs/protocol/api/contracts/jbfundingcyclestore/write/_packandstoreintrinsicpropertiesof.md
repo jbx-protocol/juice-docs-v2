@@ -1,9 +1,13 @@
 # _packAndStoreIntrinsicPropertiesOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **Efficiently stores a funding cycle's provided intrinsic properties.**
 
 ### Definition
@@ -65,9 +69,11 @@ function _packAndStoreIntrinsicPropertiesOf(
     _Internal references:_
 
     * [`_packedIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_packedintrinsicpropertiesof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```solidity
 /**
   @notice 
@@ -104,13 +110,16 @@ function _packAndStoreIntrinsicPropertiesOf(
   _packedIntrinsicPropertiesOf[_projectId][_configuration] = packed;
 }
 ```
-{% endtab %}
 
-{% tab title="Bug bounty" %}
+</TabItem>
+
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>
