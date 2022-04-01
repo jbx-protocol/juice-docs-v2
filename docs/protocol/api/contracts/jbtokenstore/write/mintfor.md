@@ -30,7 +30,7 @@ function mintFor(
   * `_projectId` is the ID of the project to which the tokens belong.
   * `_amount` is the amount of tokens to mint.
   * `_preferClaimedTokens` is a flag indicating whether there's a preference for minted tokens to be claimed automatically into the `_holder`s wallet if the project currently has a token contract attached.
-* Through the [`onlyController`](/protocol/api/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md) modifier, the function can only be accessed by the controller of the `_projectId`.
+* Through the [`onlyController`](/protocol/api/contracts/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md) modifier, the function can only be accessed by the controller of the `_projectId`.
 * The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
 * The function doesn't return anything.
 
