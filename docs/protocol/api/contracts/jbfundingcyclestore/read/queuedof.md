@@ -109,7 +109,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_isapproved.md)
     * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/_mockfundingcyclebasedon.md)
 7.  Get a reference to the funding cycle that the current eligible cycle is based on which must be the latest approved cycle configuration.
 
@@ -117,7 +117,19 @@ function queuedOf(uint256 _projectId)
     // Get the funding cycle of its base funding cycle, which carries the last approved configuration.
     fundingCycle = _getStructFor(_projectId, fundingCycle.basedOn);
     ```
-8.  Return a funding cycle based on the one current referenced, which must be the last approved cycle. The mock funding cycle is not allowed to have started already, which is why a `false` flag is passed in.
+
+8.  If the base has a duration of 0, it must still be current and there must not be a queued cycle.
+
+    ```solidity
+    // There's no queued if the base, which must still be the current, has a duration of 0.
+    if (fundingCycle.duration == 0) return _getStructFor(0, 0);
+    ```
+
+    _Internal references:_
+
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+
+9.  Return a funding cycle based on the one current referenced, which must be the last approved cycle. The mock funding cycle is not allowed to have started already, which is why a `false` flag is passed in.
 
     ```solidity
     // Return a mock of the next up funding cycle.
@@ -183,6 +195,9 @@ function queuedOf(uint256 _projectId)
 
   // Get the funding cycle of its base funding cycle, which carries the last approved configuration.
   fundingCycle = _getStructFor(_projectId, fundingCycle.basedOn);
+
+  // There's no queued if the base, which must still be the current, has a duration of 0.
+  if (fundingCycle.duration == 0) return _getStructFor(0, 0);
 
   // Return a mock of the next up funding cycle.
   return _mockFundingCycleBasedOn(fundingCycle, false);
