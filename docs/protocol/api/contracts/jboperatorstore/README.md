@@ -7,7 +7,7 @@ description: >-
 
 ## Overview
 
-### [Code](https://github.com/jbx-protocol/juice-juicehouse/blob/version/2.2/packages/hardhat/contracts/JBOperatorStore.sol)
+### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBOperatorStore.sol)
 
 ### **Addresses**
 

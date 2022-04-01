@@ -48,6 +48,10 @@ function addToBalanceOf(
     // If the terminal's token is ETH, override `_amount` with msg.value.
     else _amount = msg.value;
     ```
+
+    _Virtual references:_
+
+    * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
 2.  Record the added funds.
 
     ```solidity
