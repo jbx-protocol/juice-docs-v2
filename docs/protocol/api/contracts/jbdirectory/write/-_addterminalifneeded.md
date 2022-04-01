@@ -14,10 +14,10 @@ Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
 
 ### Definition
 
+
 ```solidity
 function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) private { ... }
 ```
-
 * Arguments:
   * `_projectId` is the ID of the project having a terminal added.
   * `_terminal` is the terminal to add.
@@ -25,9 +25,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 * The function doesn't return anything.
 
 ### Body
-
 1.  Nothing to do if the terminal is already a terminal of the project.
-
     ```solidity
     // Check that the terminal has not already been added.
     if (isTerminalOf(_projectId, _terminal)) return;
@@ -36,8 +34,40 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
     Internal references:
 
     * [`isTerminalOf`](/protocol/api/contracts/jbdirectory/read/isterminalof.md)
-2.  Add the terminal.
 
+2.  Get a reference to the project's current funding cycle.
+
+    ```solidity
+    // Get a reference to the project's current funding cycle.
+    JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
+    ```
+
+    _Internal references:_
+
+    * [`fundingCycleStore`](/protocol/api/contracts/jbdirectory/properties/fundingcyclestore.md)
+
+    _External references:_
+
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
+
+3.  Make sure the project's current funding cycle is set to allow setting its terminals, or the request to set the controller is coming from the project's current controller.
+
+    ```solidity
+    // Setting terminals must be allowed if not called from the current controller.
+    if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
+      revert SET_TERMINALS_NOT_ALLOWED();
+    ```
+
+    _Libraries used:_
+
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)<br/>
+      `.setTerminalsAllowed(...)`
+
+    _Internal references:_
+
+    * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
+
+4.  Add the terminal.
     ```solidity
     // Add the new terminal.
     _terminalsOf[_projectId].push(_terminal);
@@ -46,7 +76,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
     Internal references:
 
     * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
-3.  Emit a `AddTerminal` event with the relevant parameters.
+5.  Emit a `AddTerminal` event with the relevant parameters.
 
     ```solidity
     emit AddTerminal(_projectId, _terminal, msg.sender);
@@ -72,6 +102,12 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
   // Check that the terminal has not already been added.
   if (isTerminalOf(_projectId, _terminal)) return;
 
+  // Get a reference to the project's current funding cycle.
+  JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
+  // Setting terminals must be allowed if not called from the current controller.
+  if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
+    revert SET_TERMINALS_NOT_ALLOWED();
+
   // Add the new terminal.
   _terminalsOf[_projectId].push(_terminal);
 
@@ -79,6 +115,12 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 }
 ```
 
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+| String                          | Description                                               |
+| ------------------------------- | --------------------------------------------------------- |
+| **`SET_TERMINALS_NOT_ALLOWED`**          | Thrown if the provided project isn't currently allowed to set its terminals.                |
 </TabItem>
 
 <TabItem value="Events" label="Events">

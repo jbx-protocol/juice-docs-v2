@@ -29,14 +29,22 @@ Ethereum mainnet: _Not yet deployed_
 ## Constructor
 
 ```solidity
-constructor(IJBOperatorStore _operatorStore, IJBProjects _projects) JBOperatable(_operatorStore) {
-  projects = _projects;
-}
+  constructor(
+    IJBOperatorStore _operatorStore,
+    IJBProjects _projects,
+    IJBFundingCycleStore _fundingCycleStore,
+    address _owner
+  ) JBOperatable(_operatorStore) {
+    projects = _projects;
+    fundingCycleStore = _fundingCycleStore;
+    _transferOwnership(_owner);
+  }
 ```
 
 * **Arguments:**
   * `_operatorStore` is an [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
   * `_projects` is an [`IJBProjects`](/protocol/api/interfaces/ijbprojects.md) contract which mints ERC-721's that represent project ownership and transfers.
+  * `_fundingCycleStore` is an [`IJBFundingCycleStore`](/protocol/api/interfaces/ijbfundingcyclestore.md) contract storing all funding cycle configurations.
   * `_owner` is the address that will own the contract.
 
 ## Events
@@ -48,12 +56,12 @@ constructor(IJBOperatorStore _operatorStore, IJBProjects _projects) JBOperatable
 | [**`SetTerminals`**](/protocol/api/contracts/jbdirectory/events/setterminals.md)         | <ul><li><code>uint256 indexed projectId</code></li><li><code>[IJBPaymentTerminal](/protocol/api/interfaces/ijbpaymentterminal.md)[] indexed terminals</code></li><li><code>address caller</code></li></ul>                                            |
 | [**`SetPrimaryTerminal`**](/protocol/api/contracts/jbdirectory/events/setprimaryterminal.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>address indexed token</code></li><li><code>[IJBPaymentTerminal](/protocol/api/interfaces/ijbpaymentterminal.md) indexed terminal</code></li><li><code>address caller</code></li></ul> |
 | [**`SetIsAllowedToSetFirstController`**](/protocol/api/contracts/jbdirectory/events/setisallowedtosetfirstcontroller.md) | <ul><li><code>address indexed addr</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
-
 ## Properties
 
 | Function                                                                                   | Definition                                                                                                                                                                                                         |
 | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [**`projects`**](/protocol/api/contracts/jbdirectory/properties/projects.md) | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBProjects](/protocol/api/interfaces/ijbprojects.md) projects</code></li></ul> |
+| [**`fundingCycleStore`**](/protocol/api/contracts/jbdirectory/properties/fundingcyclestore.md)            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBFundingCycleStore](/protocol/api/interfaces/ijbfundingcyclestore.md) fundingCycleStore</code></li></ul>                                                                             |
 | [**`controllerOf`**](/protocol/api/contracts/jbdirectory/properties/controllerof.md)                                           | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBController](/protocol/api/interfaces/ijbcontroller.md) controllerOf</code></li></ul> |
 | [**`isAllowedToSetFirstController`**](/protocol/api/contracts/jbdirectory/properties/isallowedtosetfirstcontroller.md)                                           | <p><strong>Params</strong></p><ul><li><code>address _address</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool isAllowedToSetFirstController</code></li></ul> |
 
