@@ -138,6 +138,14 @@ function pay(
 
 </TabItem>
 
+<TabItem value="Errors" label="Errors">
+
+| String                                       | Description                                                                     |
+| -------------------------------------------- | ------------------------------------------------------------------------------- |
+| **`NO_MSG_VALUE_ALLOWED`**    | Thrown if ETH was sent to a non-ETH terminal.   |
+
+</TabItem>
+
 <TabItem value="Bug bounty" label="Bug bounty">
 
 | Category          | Description                                                                                                                            | Reward |
