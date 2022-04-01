@@ -28,6 +28,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
   * `_projectId` is the ID of the project being migrated.
   * `_to` is the terminal contract that will gain the project's funds.
 * Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.MIGRATE_TERMINAL`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function can be overriden by inheriting contracts.
 * The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function doesn't return anything.
 

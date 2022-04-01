@@ -37,6 +37,7 @@ function distributePayoutsOf(
   * `_minReturnedTokens` is the minimum number of terminal tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same number of decimals as this terminal.
   * `_memo` is a memo to pass along to the emitted event.
 * The function can be accessed externally by anyone.
+* The function can be overriden by inheriting contracts.
 * The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function returns doesn't return anything.
 

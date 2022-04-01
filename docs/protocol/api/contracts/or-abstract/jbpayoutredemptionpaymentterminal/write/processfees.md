@@ -33,6 +33,7 @@ function processFees(uint256 _projectId)
 * Arguments:
   * `_projectId` is the ID of the project whos held fees should be processed.
 * Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.PROCESS_FEES`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from the owner of this contract.
+* The function can be overriden by inheriting contracts.
 * The function cannot be accessed recursively or while other `nonReentrant` functions in this contract are in progress.
 * The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function doesn't return anything.

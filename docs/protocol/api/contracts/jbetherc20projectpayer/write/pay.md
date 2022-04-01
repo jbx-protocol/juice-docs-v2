@@ -38,6 +38,7 @@ function pay(
   * `_memo` is a memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate.  A data source can alter the memo before emitting in the event and forwarding to the delegate.
   * `_metadata` are bytes to send along to the data source and delegate, if provided.
 * The function can be accessed externally by anyone.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md) interface.
 * The function doesn't return anything.
 

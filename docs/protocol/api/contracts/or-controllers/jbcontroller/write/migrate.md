@@ -17,6 +17,7 @@ _Only a project's owner or a designated operator can migrate it._
 ```solidity
 function migrate(uint256 _projectId, IJBController _to)
   external
+  virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.MIGRATE_CONTROLLER) { ... }
 ```
@@ -25,6 +26,7 @@ function migrate(uint256 _projectId, IJBController _to)
   * `_projectId` is the ID of the project that will be migrated from this controller.
   * `_to` is the controller to which the project is migrating.
 * Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.MIGRATE_CONTROLLER`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function can be overriden by inheriting contracts.
 * The function doesn't return anything.
 
 ### Body
@@ -123,6 +125,7 @@ function migrate(uint256 _projectId, IJBController _to)
 */
 function migrate(uint256 _projectId, IJBController _to)
   external
+  virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.MIGRATE_CONTROLLER)
 {

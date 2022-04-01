@@ -21,7 +21,7 @@ function setDefaultValues(
   bool _preferClaimedTokens,
   string memory _memo,
   bytes memory _metadata
-) external override onlyOwner { ... }
+) external virtual override onlyOwner { ... }
 ```
 
 * Arguments:
@@ -31,6 +31,7 @@ function setDefaultValues(
   * `_memo` is the memo that'll be used. 
   * `_metadata` is the metadata that'll be sent. 
 * Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md) interface.
 * The function doesn't return anything.
 
@@ -127,7 +128,7 @@ function setDefaultValues(
   bool _preferClaimedTokens,
   string memory _memo,
   bytes memory _metadata
-) external override onlyOwner {
+) external virtual override onlyOwner {
   // Set the default project ID if it has changed.
   if (_projectId != defaultProjectId) defaultProjectId = _projectId;
 

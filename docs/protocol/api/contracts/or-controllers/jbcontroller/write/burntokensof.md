@@ -25,6 +25,7 @@ function burnTokensOf(
   bool _preferClaimedTokens
 )
   external
+  virtual
   override
   nonReentrant
   requirePermissionAllowingOverride(
@@ -42,6 +43,7 @@ function burnTokensOf(
   * `_memo` is a memo to pass along to the emitted event.
   * `_preferClaimedTokens` is flag indicating whether a project's attached token contract should be burned first if they have been issued.
 * Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.BURN`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from one of the project's terminal's delegates.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function doesn't return anything.
 
@@ -139,6 +141,7 @@ function burnTokensOf(
   bool _preferClaimedTokens
 )
   external
+  virtual
   override
   requirePermissionAllowingOverride(
     _holder,

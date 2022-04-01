@@ -25,6 +25,7 @@ function issueFor(
   string calldata _symbol
 )
   external
+  virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.ISSUE)
   returns (IJBToken token) { ... }
@@ -35,6 +36,7 @@ function issueFor(
   * `_name` is the ERC20's name.
   * `_symbol` is the ERC20's symbol.
 * Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.ISSUE`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns the address of the token that was issued.
 
@@ -72,6 +74,7 @@ function issueTokenFor(
   string calldata _symbol
 )
   external
+  virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.ISSUE)
   returns (IJBToken token)
