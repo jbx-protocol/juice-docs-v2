@@ -27,7 +27,7 @@ function launchProjectFor(
   JBFundAccessConstraints[] calldata _fundAccessConstraints,
   IJBPaymentTerminal[] calldata _terminals,
   string calldata _memo
-) external override returns (uint256 projectId) { ... }
+) external virtual override returns (uint256 projectId) { ... }
 ```
 
 * Arguments:
@@ -41,6 +41,7 @@ function launchProjectFor(
   * `_terminals` is an array of [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) payment terminals to add for the project.
   * `_memo` is a memo to pass along to the emitted event.
 * The function can be accessed externally by anyone.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns the ID of the project that was launched.
 
@@ -140,7 +141,7 @@ function launchProjectFor(
   JBFundAccessConstraints[] calldata _fundAccessConstraints,
   IJBPaymentTerminal[] calldata _terminals,
   string calldata _memo
-) external override returns (uint256 projectId) {
+) external virtual override returns (uint256 projectId) {
   // Mint the project into the wallet of the message sender.
   projectId = projects.createFor(_owner, _projectMetadata);
 

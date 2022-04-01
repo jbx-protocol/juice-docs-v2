@@ -17,12 +17,13 @@ _This controller should not yet be the project's controller._
 ### Definition
 
 ```solidity
-function prepForMigrationOf(uint256 _projectId, IJBController) external override { ... }
+function prepForMigrationOf(uint256 _projectId, IJBController) external virtual override { ... }
 ```
 
 * Arguments:
   * `_projectId` is the ID of the project that will be migrated to this controller.
 * The function can be accessed externally by anyone.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function doesn't return anything.
 
@@ -73,7 +74,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external override
   @param _projectId The ID of the project that will be migrated to this controller.
   @param _from The controller being migrated from.
 */
-function prepForMigrationOf(uint256 _projectId, IJBController _from) external override {
+function prepForMigrationOf(uint256 _projectId, IJBController _from) external virtual override {
   // This controller must not be the project's current controller.
   if (directory.controllerOf(_projectId) == this) revert CANT_MIGRATE_TO_CURRENT_CONTROLLER();
 

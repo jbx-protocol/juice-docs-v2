@@ -27,6 +27,7 @@ function addToBalanceOf(
   * `_amount` is the amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
   * `_memo` is a memo to pass along to the emitted event.
 * The function can be accessed externally by anyone.
+* The function can be overriden by inheriting contracts.
 * Through the [`isTerminalOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
 * The function accepts ETH. The transaction reverts if receives ETH but the terminal's token type isn't ETH.
 * The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) interface.
@@ -48,6 +49,10 @@ function addToBalanceOf(
     // If the terminal's token is ETH, override `_amount` with msg.value.
     else _amount = msg.value;
     ```
+
+    _Virtual references:_
+
+    * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
 2.  Record the added funds.
 
     ```solidity

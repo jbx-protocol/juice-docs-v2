@@ -27,6 +27,7 @@ function reconfigureFundingCyclesOf(
   string calldata _memo
 )
   external
+  virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.RECONFIGURE)
   returns (uint256 configuration) { ... }
@@ -40,6 +41,7 @@ function reconfigureFundingCyclesOf(
   * `_groupedSplits` is an array of [`JBGroupedSplits`](/protocol/api/data-structures/jbgroupedsplits.md) data structures containing splits to set for any number of groups. The core protocol makes use of groups defined in [`JBSplitsGroups`](/protocol/api/libraries/jbsplitsgroups.md).
   * `_fundAccessConstraints` is an array of [`JBFundAccessConstraints`](/protocol/api/data-structures/jbfundaccessconstraints.md) data structures containing amounts that a project can use from its treasury for each payment terminal. Amounts are fixed point numbers using the same number of decimals as the accompanying terminal. The `distributionLimit` applies for each funding cycle, and the `overflowAllowance` applies for the entirety of the configuration.
 * Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.RECONFIGURE`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns the configuration of the funding cycle that was successfully updated.
 
@@ -104,6 +106,7 @@ function reconfigureFundingCyclesOf(
   string calldata _memo
 )
   external
+  virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.RECONFIGURE)
   returns (uint256 configuration)

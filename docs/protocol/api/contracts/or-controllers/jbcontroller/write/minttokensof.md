@@ -26,6 +26,7 @@ function mintTokensOf(
   bool _useReservedRate
 )
   external
+  virtual
   override
   requirePermissionAllowingOverride(
     projects.ownerOf(_projectId),
@@ -44,6 +45,7 @@ function mintTokensOf(
   * `_preferClaimedTokens` is a flag indicating whether a project's attached token contract should be minted if they have been issued.
   * `_useReservedRate` is whether to use the current funding cycle's reserved rate in the mint calculation.
 * Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.MINT`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from one of the project's terminals.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns the amount of tokens minted for the beneficiary.
 
@@ -168,6 +170,7 @@ function mintTokensOf(
   bool _useReservedRate
 )
   external
+  virtual
   override
   requirePermissionAllowingOverride(
     projects.ownerOf(_projectId),

@@ -7,7 +7,7 @@ description: >-
 
 ## Overview
 
-### [Code](https://github.com/jbx-protocol/juice-juicehouse/blob/version/2.2/packages/hardhat/contracts/JBProjects.sol)
+### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBProjects.sol)
 
 ### **Addresses**
 
@@ -66,6 +66,6 @@ constructor(IJBOperatorStore _operatorStore)
 
 | Function                                                                                                     | Definition                                                                                                                                                                                                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`createFor`**](/protocol/api/contracts/jbprojects/write/createfor.md)                                                                        | <p><strong>Params</strong></p><ul><li><code>address _owner</code></li><li><code>[`JBProjectMetadata`](/protocol/api/data-structures/jbprojectmetadata.md) _metadata</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 projectId</code></li></ul>                                             |
+| [**`createFor`**](/protocol/api/contracts/jbprojects/write/createfor.md)                                                                        | <p><strong>Params</strong></p><ul><li><code>address _owner</code></li><li><code>[JBProjectMetadata](/protocol/api/data-structures/jbprojectmetadata.md) _metadata</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 projectId</code></li></ul>                                             |
 | [**`setMetadataOf`**](/protocol/api/contracts/jbprojects/write/setmetadataof.md) | <p><strong>Traits</strong></p><ul><li><code>[`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>[`JBProjectMetadata`](/protocol/api/data-structures/jbprojectmetadata.md) _metadata</code></li></ul>                                                                                                                          |
 | [**`setTokenUriResolver`**](/protocol/api/contracts/jbprojects/write/settokenuriresolver.md) | <p><strong>Traits</strong></p><ul><li><code>[`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>[`IJBTokenUriResolver`](/protocol/api/interfaces/ijbtokenuriresolver.md) _newResolver</code></li></ul>                                                                                                                          |

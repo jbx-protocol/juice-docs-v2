@@ -30,6 +30,7 @@ function launchFundingCyclesFor(
   string calldata _memo
 )
   external
+  virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.RECONFIGURE)
   returns (uint256 configuration) { ... }
@@ -45,6 +46,7 @@ function launchFundingCyclesFor(
   * `_terminals` is an array of [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) payment terminals to add for the project.
   * `_memo` is a memo to pass along to the emitted event.
 * Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.RECONFIGURE`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns the configuration of the funding cycle that was successfully updated.
 
@@ -145,6 +147,7 @@ function launchFundingCyclesFor(
   string calldata _memo
 )
   external
+  virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.RECONFIGURE)
   returns (uint256 configuration)

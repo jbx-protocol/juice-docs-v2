@@ -35,6 +35,7 @@ function pay(
   * `_memo` is memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate. A data source can alter the memo before emitting in the event and forwarding to the delegate.
   * `_metadata` are bytes to send along to the data source and delegate, if provided.
 * The function can be accessed externally by anyone.
+* The function can be overriden by inheriting contracts.
 * Through the [`isTerminalOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
 * The function accepts ETH. The transaction reverts if receives ETH but the terminal's token type isn't ETH.
 * The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) interface.
