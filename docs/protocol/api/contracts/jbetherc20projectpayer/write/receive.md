@@ -10,7 +10,9 @@ Interface: [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md)
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
 
-**Received funds are paid to the project.**
+**Received funds are paid to the default project ID using the stored default properties.**
+
+_This function is called automatically when the contract receives an ETH payment._
 
 #### Definition
 
@@ -50,7 +52,11 @@ receive() external payable virtual override { ... }
 
 ```solidity
 /** 
-  Received funds are paid to the project.
+  @notice
+  Received funds are paid to the default project ID using the stored default properties.
+
+  @dev
+  This function is called automatically when the contract receives an ETH payment.
 */
 receive() external payable virtual override {
   _pay(
