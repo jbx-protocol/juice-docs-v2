@@ -14,6 +14,8 @@
   --ifm-color-primary-lighter: #FFECBB;
   --ifm-color-primary-lightest: #FBF9F6;
   --ifm-code-font-size: 95%;
+  /* sidebar width - should later be made dynamic */
+  --doc-sidebar-width: 350px !important;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
