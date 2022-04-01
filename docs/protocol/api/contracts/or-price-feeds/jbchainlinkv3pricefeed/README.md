@@ -33,7 +33,7 @@ constructor(AggregatorV3Interface _feed) {
 
 | Function                                                          | Definition                                                                                                                                                                                                |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`feed`**](/protocol/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/properties/feed.md)                            | <p><strong>Returns</strong></p><ul><li><code>[`AggregatorV3Interface`](https://docs.chain.link/docs/price-feeds-api-reference/)feed</code></li></ul> |
+| [**`feed`**](/protocol/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/properties/feed.md)                            | <p><strong>Returns</strong></p><ul><li><code>[`AggregatorV3Interface`](https://docs.chain.link/docs/price-feeds-api-reference/) feed</code></li></ul> |
 
 ## Read
 

@@ -47,7 +47,7 @@ constructor(
 
 | Name                                 | Data                                                                                                                                                                                                                 |
 | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetSplit`**](/protocol/api/contracts/jbsplitsstore/events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[`JBSplit`](/protocol/api/data-structures/jbsplit.md)split</code></li><li><code>address caller</code></li></ul> |
+| [**`SetSplit`**](/protocol/api/contracts/jbsplitsstore/events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[`JBSplit`](/protocol/api/data-structures/jbsplit.md) split</code></li><li><code>address caller</code></li></ul> |
 
 ## Properties
 
