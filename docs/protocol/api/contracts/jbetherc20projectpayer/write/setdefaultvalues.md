@@ -25,7 +25,7 @@ function setDefaultValues(
 ```
 
 * Arguments:
-  * `_projectId` is the ID of the project to forward funds to.
+  * `_projectId` is the ID of the project whose treasury should be forwarded this contract's received payments.
   * `_beneficiary` is the address that'll receive the project's tokens. 
   * `_preferClaimedTokens` is a flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet. 
   * `_memo` is the memo that'll be used. 
@@ -66,7 +66,7 @@ function setDefaultValues(
 
     _Internal references:_
 
-    * [`defaultPreferClaimedTokens`](/protocol/api/contracts/jbetherc20projectpayer/properties/defaultclaimedtokenpreference.md)
+    * [`defaultPreferClaimedTokens`](/protocol/api/contracts/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
 4.  Set the default memo if it has changed.
 
     ```solidity
@@ -115,7 +115,7 @@ function setDefaultValues(
   @notice 
   Sets the default values that determine how to interact with a protocol treasury when this contract receives ETH directly.
 
-  @param _projectId The ID of the project to forward funds to.
+  @param _projectId The ID of the project whose treasury should be forwarded this contract's received payments.
   @param _beneficiary The address that'll receive the project's tokens. 
   @param _preferClaimedTokens A flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet. 
   @param _memo The memo that'll be used. 
