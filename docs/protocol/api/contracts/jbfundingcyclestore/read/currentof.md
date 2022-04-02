@@ -63,7 +63,7 @@ function currentOf(uint256 _projectId)
 4.  If there's a candidate funding cycle configuration, check to see if it is approved. If so, return the funding cycle as the current funding cycle of the project. Otherwise, get a reference to the funding cycle that the candidate is based on. A current funding cycle will be one derived from this reference.
 
     ```solidity
-    // If a standby funding cycle exists...
+    // If an eligible funding cycle exists...
     if (_fundingCycleConfiguration > 0) {
       // Resolve the funding cycle for the eligible configuration.
       _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
@@ -124,7 +124,19 @@ function currentOf(uint256 _projectId)
     _Internal references:_
 
     * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
-8.  Return a funding cycle based on the one currently referenced. The mock funding cycle is allowed to have started already, which is why a `true` flag is passed in.
+
+8.  If the base has a duration of 0, it must still be current.
+
+    ```solidity
+    // If the base has no duration, it's still the current one.
+    if (_fundingCycle.duration == 0) return _fundingCycle;
+    ```
+
+    _Internal references:_
+
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+
+9.  Return a funding cycle based on the one currently referenced. The mock funding cycle is allowed to have started already, which is why a `true` flag is passed in.
 
     ```solidity
     // Return a mock of the current funding cycle.
@@ -166,7 +178,7 @@ function currentOf(uint256 _projectId)
   // Keep a reference to the eligible funding cycle.
   JBFundingCycle memory _fundingCycle;
 
-  // If a standby funding cycle exists...
+  // If an eligible funding cycle exists...
   if (_fundingCycleConfiguration > 0) {
     // Resolve the funding cycle for the eligible configuration.
     _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
@@ -196,6 +208,10 @@ function currentOf(uint256 _projectId)
 
   // The funding cycle to base a current one on.
   _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
+
+  // If the base has no duration, it's still the current one.
+  if (_fundingCycle.duration == 0) return _fundingCycle;
+
 
   // Return a mock of the current funding cycle.
   return _mockFundingCycleBasedOn(_fundingCycle, true);

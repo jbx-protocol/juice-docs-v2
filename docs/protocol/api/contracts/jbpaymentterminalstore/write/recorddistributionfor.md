@@ -108,7 +108,7 @@ function recordDistributionFor(
 
     ```solidity
     // Convert the amount to the balance's currency.
-    distributedAmount = (_currency == _balanceCurrency) ? _amount : distributedAmount = PRBMath
+    distributedAmount = (_currency == _balanceCurrency) ? _amount : PRBMath
       .mulDiv(
         _amount,
         10**_MAX_FIXED_POINT_FIDELITY, // Use _MAX_FIXED_POINT_FIDELITY to keep as much of the `_amount.value`'s fidelity as possible when converting.
@@ -219,7 +219,7 @@ function recordDistributionFor(
   if (_currency != _distributionLimitCurrencyOf) revert CURRENCY_MISMATCH();
 
   // Convert the amount to the balance's currency.
-  distributedAmount = (_currency == _balanceCurrency) ? _amount : distributedAmount = PRBMath
+  distributedAmount = (_currency == _balanceCurrency) ? _amount : PRBMath
     .mulDiv(
       _amount,
       10**_MAX_FIXED_POINT_FIDELITY, // Use _MAX_FIXED_POINT_FIDELITY to keep as much of the `_amount.value`'s fidelity as possible when converting.

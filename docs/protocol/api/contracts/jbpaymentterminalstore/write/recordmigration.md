@@ -44,7 +44,7 @@ function recordMigration(uint256 _projectId)
 2.  Make sure that migrating terminals is allowed by the current funding cycle.
 
     ```solidity
-    // Migration must be allowed
+    // Migration must be allowed.
     if (!_fundingCycle.terminalMigrationAllowed()) revert PAYMENT_TERMINAL_MIGRATION_NOT_ALLOWED();
     ```
 
@@ -98,7 +98,7 @@ function recordMigration(uint256 _projectId)
   // Get a reference to the project's current funding cycle.
   JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
 
-  // Migration must be allowed
+  // Migration must be allowed.
   if (!_fundingCycle.terminalMigrationAllowed()) revert PAYMENT_TERMINAL_MIGRATION_NOT_ALLOWED();
 
   // Return the current balance.

@@ -62,7 +62,7 @@ function _distributeToPayoutSplitsOf(
 3.  Loop through each split.
 
     ```solidity
-    //Transfer between all splits.
+    // Transfer between all splits.
     for (uint256 _i = 0; _i < _splits.length; _i++) { ... }
     ```
 
@@ -181,7 +181,7 @@ function _distributeToPayoutSplitsOf(
             // This distribution is eligible for a fee since the funds are leaving the ecosystem.
             feeEligibleDistributionAmount += _payoutAmount;
 
-            // If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the msg.sender
+            // If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the msg.sender.
             _transferFrom(
               address(this),
               _split.beneficiary != address(0) ? _split.beneficiary : payable(msg.sender),
@@ -264,7 +264,7 @@ function _distributeToPayoutSplitsOf(
     payoutSplitsGroup
   );
 
-  //Transfer between all splits.
+  // Transfer between all splits.
   for (uint256 _i = 0; _i < _splits.length; _i++) {
     // Get a reference to the split being iterated on.
     JBSplit memory _split = _splits[_i];
@@ -367,7 +367,7 @@ function _distributeToPayoutSplitsOf(
         // This distribution is eligible for a fee since the funds are leaving the ecosystem.
         feeEligibleDistributionAmount += _payoutAmount;
 
-        // If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the msg.sender
+        // If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the msg.sender.
         _transferFrom(
           address(this),
           _split.beneficiary != address(0) ? _split.beneficiary : payable(msg.sender),
