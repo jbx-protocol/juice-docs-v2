@@ -41,7 +41,7 @@ function splitsOf(
 
     Internal references:
 
-    * [`_getStructsFor`](/protocol/api/contracts/jbsplitsstore/read/_getstructsfor.md)
+    * [`_getStructsFor`](/protocol/api/contracts/jbsplitsstore/read/-_getstructsfor.md)
 
 </TabItem>
 

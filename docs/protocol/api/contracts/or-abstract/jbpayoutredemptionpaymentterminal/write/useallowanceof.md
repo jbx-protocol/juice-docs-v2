@@ -72,6 +72,7 @@ function useAllowanceOf(
 
     ```solidity
     // Define variables that will be needed outside the scoped section below.
+    // Keep a reference to the fee amount that was paid.
     uint256 _feeAmount;
 
     // Scoped section prevents stack too deep. `_projectOwner`, `_feeDiscount`, and `_netAmount` only used within scope.
@@ -203,7 +204,8 @@ function useAllowanceOf(
       currency // The balance is in terms of this terminal's currency.
     );
 
-  // The amount being withdrawn must be at least as much as was expected.
+  // Define variables that will be needed outside the scoped section below.
+  // Keep a reference to the fee amount that was paid.
   if (_distributedAmount < _minReturnedTokens) revert INADEQUATE_DISTRIBUTION_AMOUNT();
 
   // Define variables that will be needed outside the scoped section below.

@@ -43,7 +43,7 @@ function currentOf(uint256 _projectId)
     _Internal references:_
 
     * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 2.  Get a reference to the configuration of an eligible funding cycle if there is one. This eligible cycle might not yet be approved.
 
     ```solidity
@@ -53,7 +53,7 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_eligibleOf`](/protocol/api/contracts/jbfundingcyclestore/read/_eligibleof.md)
+    * [`_eligibleOf`](/protocol/api/contracts/jbfundingcyclestore/read/-_eligibleof.md)
 3.  Create a reference to a funding cycle.
 
     ```solidity
@@ -63,7 +63,7 @@ function currentOf(uint256 _projectId)
 4.  If there's a candidate funding cycle configuration, check to see if it is approved. If so, return the funding cycle as the current funding cycle of the project. Otherwise, get a reference to the funding cycle that the candidate is based on. A current funding cycle will be one derived from this reference.
 
     ```solidity
-    // If a standby funding cycle exists...
+    // If an eligible funding cycle exists...
     if (_fundingCycleConfiguration > 0) {
       // Resolve the funding cycle for the eligible configuration.
       _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
@@ -80,8 +80,8 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
-    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_isapproved.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
 5.  If there's not a candidate funding cycle configuration, get a reference the latest stored funding cycle for the project. If it's not approved or if it hasn't yet started, get a reference to the cycle it's based on. A current funding cycle will be one derived from this reference.
 
     ```solidity
@@ -102,8 +102,8 @@ function currentOf(uint256 _projectId)
     _Internal references:_
 
     * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
-    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_isapproved.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
 6.  If the current referenced configuration is 0, there must not be a current cycle so return an empty one.
 
     ```solidity
@@ -113,7 +113,7 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 7.  Create the funding cycle structure using the current reference. The current funding cycle will be one based on this reference.
 
     ```solidity
@@ -123,8 +123,20 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
-8.  Return a funding cycle based on the one currently referenced. The mock funding cycle is allowed to have started already, which is why a `true` flag is passed in.
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+
+8.  If the base has a duration of 0, it must still be current.
+
+    ```solidity
+    // If the base has no duration, it's still the current one.
+    if (_fundingCycle.duration == 0) return _fundingCycle;
+    ```
+
+    _Internal references:_
+
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+
+9.  Return a funding cycle based on the one currently referenced. The mock funding cycle is allowed to have started already, which is why a `true` flag is passed in.
 
     ```solidity
     // Return a mock of the current funding cycle.
@@ -133,7 +145,7 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/_mockfundingcyclebasedon.md)
+    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/-_mockfundingcyclebasedon.md)
 
 </TabItem>
 
@@ -166,7 +178,7 @@ function currentOf(uint256 _projectId)
   // Keep a reference to the eligible funding cycle.
   JBFundingCycle memory _fundingCycle;
 
-  // If a standby funding cycle exists...
+  // If an eligible funding cycle exists...
   if (_fundingCycleConfiguration > 0) {
     // Resolve the funding cycle for the eligible configuration.
     _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
@@ -196,6 +208,10 @@ function currentOf(uint256 _projectId)
 
   // The funding cycle to base a current one on.
   _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
+
+  // If the base has no duration, it's still the current one.
+  if (_fundingCycle.duration == 0) return _fundingCycle;
+
 
   // Return a mock of the current funding cycle.
   return _mockFundingCycleBasedOn(_fundingCycle, true);

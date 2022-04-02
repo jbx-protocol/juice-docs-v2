@@ -77,10 +77,10 @@ function _initFor(
 
     _Internal references:_
 
-    * [`_packAndStoreIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/write/_packandstoreintrinsicpropertiesof.md)
-    * [`_deriveStartFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_derivestartfrom.md)
-    * [`_deriveWeightFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_deriveweightfrom.md)
-    * [`_deriveNumberFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_derivenumberfrom.md)
+    * [`_packAndStoreIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/write/-_packandstoreintrinsicpropertiesof.md)
+    * [`_deriveStartFrom`](/protocol/api/contracts/jbfundingcyclestore/read/-_derivestartfrom.md)
+    * [`_deriveWeightFrom`](/protocol/api/contracts/jbfundingcyclestore/read/-_deriveweightfrom.md)
+    * [`_deriveNumberFrom`](/protocol/api/contracts/jbfundingcyclestore/read/-_derivenumberfrom.md)
 2.  Store the initialized configuration as the latest of the project.
 
     ```solidity

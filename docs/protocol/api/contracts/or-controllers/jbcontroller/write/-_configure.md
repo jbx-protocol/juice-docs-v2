@@ -151,8 +151,8 @@ function _configure(
 
     _Internal references:_
 
-    * [`_packedDistributionLimitDataOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_packeddistributionlimitdataof.md)
-    * [`_packedOverflowAllowanceDataOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_packedoverflowallowancedataof.md)
+    * [`_packedDistributionLimitDataOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_packeddistributionlimitdataof.md)
+    * [`_packedOverflowAllowanceDataOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_packedoverflowallowancedataof.md)
 
     _Event references:_
 

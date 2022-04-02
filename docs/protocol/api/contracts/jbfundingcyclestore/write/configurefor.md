@@ -80,7 +80,7 @@ function configureFor(
 
     _Internal references:_
 
-    * [`_configureIntrinsicpropertiesFor`](/protocol/api/contracts/jbfundingcyclestore/write/_configureintrinsicpropertiesfor.md)
+    * [`_configureIntrinsicpropertiesFor`](/protocol/api/contracts/jbfundingcyclestore/write/-_configureintrinsicpropertiesfor.md)
 6.  Store all of the user configuration properties provided. These properties can all be packed into one `uint256` storage slot. No need to store if the resulting stored value would be 0 since the storage slot defaults to 0.
 
     ```solidity
@@ -107,7 +107,7 @@ function configureFor(
 
     _Internal references:_
 
-    * [`_packedUserPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_packeduserpropertiesof.md)
+    * [`_packedUserPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/-_packeduserpropertiesof.md)
 7.  Store the provided metadata for the configuration. No need to store if the value is 0 since the storage slot defaults to 0.
 
     ```solidity
@@ -117,7 +117,7 @@ function configureFor(
 
     _Internal references:_
 
-    * [`_metadataOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_metadataof.md)
+    * [`_metadataOf`](/protocol/api/contracts/jbfundingcyclestore/properties/-_metadataof.md)
 8.  Emit a `Configure` event with the relevant parameters.
 
     ```solidity
@@ -136,7 +136,7 @@ function configureFor(
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 
 </TabItem>
 

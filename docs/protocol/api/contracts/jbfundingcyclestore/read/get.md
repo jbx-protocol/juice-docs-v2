@@ -40,7 +40,7 @@ function get(uint256 _projectId, uint256 _configuration)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 
 </TabItem>
 

@@ -38,7 +38,7 @@ function _isApproved(uint256 _projectId, JBFundingCycle memory _fundingCycle)
 
     _Internal references:_
 
-    * [`_ballotStateOf`](/protocol/api/contracts/jbfundingcyclestore/read/_ballotstateof.md)
+    * [`_ballotStateOf`](/protocol/api/contracts/jbfundingcyclestore/read/-_ballotstateof.md)
 
 </TabItem>
 
