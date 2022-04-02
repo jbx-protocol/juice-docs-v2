@@ -56,8 +56,8 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
 
     _Internal references:_
 
-    * [`_reservedTokenAmountFrom`](/protocol/api/contracts/or-controllers/jbcontroller/read/_reservedtokenamountfrom.md)
-    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_processedtokentrackerof.md)
+    * [`_reservedTokenAmountFrom`](/protocol/api/contracts/or-controllers/jbcontroller/read/-_reservedtokenamountfrom.md)
+    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
 
 3.  Return the sum of the total supply and the reserved tokens.
 

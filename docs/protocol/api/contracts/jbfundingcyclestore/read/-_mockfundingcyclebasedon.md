@@ -53,7 +53,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
 
     _Internal references:_
 
-    * [`_deriveStartFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_derivestartfrom.md)
+    * [`_deriveStartFrom`](/protocol/api/contracts/jbfundingcyclestore/read/-_derivestartfrom.md)
 3.  Find the correct number for the mock funding cycle.
 
     ```solidity
@@ -63,7 +63,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
 
     _Internal references:_
 
-    * [`_deriveNumberFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_derivenumberfrom.md)
+    * [`_deriveNumberFrom`](/protocol/api/contracts/jbfundingcyclestore/read/-_derivenumberfrom.md)
 4.  Return a [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md) with the aggregated configuration.
 
     ```solidity
@@ -83,7 +83,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
 
     _Internal references:_
 
-    * [`_deriveWeightFrom`](/protocol/api/contracts/jbfundingcyclestore/read/_deriveweightfrom.md)
+    * [`_deriveWeightFrom`](/protocol/api/contracts/jbfundingcyclestore/read/-_deriveweightfrom.md)
 
 </TabItem>
 

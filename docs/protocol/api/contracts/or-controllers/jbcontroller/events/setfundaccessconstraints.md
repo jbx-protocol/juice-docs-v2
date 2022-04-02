@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`_configure`](/protocol/api/contracts/or-controllers/jbcontroller/write/_configure.md)
+* [`_configure`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_configure.md)
 
 ## Definition
 

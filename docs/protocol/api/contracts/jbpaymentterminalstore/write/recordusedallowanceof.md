@@ -128,7 +128,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/properties/_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
 
     _External references:_
 
@@ -146,7 +146,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/_overflowduring.md)
+    * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/-_overflowduring.md)
 9.  Store the incremented value that tracks how much of a project's allowance was used during the current funding cycle configuration.
 
     ```solidity

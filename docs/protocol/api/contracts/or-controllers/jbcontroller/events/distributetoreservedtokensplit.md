@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`_distributeToReservedTokenSplitsOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/_distributetoreservedtokensplitsof.md)
+* [`_distributeToReservedTokenSplitsOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_distributetoreservedtokensplitsof.md)
 
 ## Definition
 

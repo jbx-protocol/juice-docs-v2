@@ -93,7 +93,7 @@ function _overflowDuring(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/properties/_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
 
     _External references:_
 

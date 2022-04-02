@@ -80,7 +80,7 @@ function pay(
 
     _Internal references:_
 
-    * [`_pay`](/protocol/api/contracts/jbetherc20projectpayer/write/_pay.md)
+    * [`_pay`](/protocol/api/contracts/jbetherc20projectpayer/write/-_pay.md)
     
 </TabItem>
 

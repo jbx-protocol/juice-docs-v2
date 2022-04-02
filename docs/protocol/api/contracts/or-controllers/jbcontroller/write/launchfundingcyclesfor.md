@@ -89,7 +89,7 @@ function launchFundingCyclesFor(
 
     _Internal references:_
 
-    * [`_configure`](/protocol/api/contracts/or-controllers/jbcontroller/write/_configure.md)
+    * [`_configure`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_configure.md)
 4.  If terminals were provided, add them to the list of terminals the project can accept funds through.
 
     ```solidity

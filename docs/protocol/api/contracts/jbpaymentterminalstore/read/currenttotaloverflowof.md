@@ -41,7 +41,7 @@ function currentTotalOverflowOf(
 
     _Internal references:_
 
-    * [`_currentTotalOverflowOf`](/protocol/api/contracts/jbpaymentterminalstore/read/_currenttotaloverflowof.md)
+    * [`_currentTotalOverflowOf`](/protocol/api/contracts/jbpaymentterminalstore/read/-_currenttotaloverflowof.md)
 
 </TabItem>
 

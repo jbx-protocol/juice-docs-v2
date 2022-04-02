@@ -68,7 +68,7 @@ function _packAndStoreIntrinsicPropertiesOf(
 
     _Internal references:_
 
-    * [`_packedIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_packedintrinsicpropertiesof.md)
+    * [`_packedIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/-_packedintrinsicpropertiesof.md)
 
 </TabItem>
 

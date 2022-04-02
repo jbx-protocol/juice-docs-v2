@@ -63,7 +63,7 @@ function reconfigureFundingCyclesOf(
 
     _Internal references:_
 
-    * [`_configure`](/protocol/api/contracts/or-controllers/jbcontroller/write/_configure.md)
+    * [`_configure`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_configure.md)
 5.  Emit a `ReconfigureFundingCycles` event with the relevant parameters.
 
     ```solidity

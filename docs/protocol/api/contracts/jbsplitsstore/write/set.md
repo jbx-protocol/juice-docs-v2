@@ -55,7 +55,7 @@ function set(
 
     _Internal references:_
 
-    * [`_getStructsFor`](/protocol/api/contracts/jbsplitsstore/read/_getstructsfor.md)
+    * [`_getStructsFor`](/protocol/api/contracts/jbsplitsstore/read/-_getstructsfor.md)
     * two
 2.  Loop through each current split to make sure the new splits being set respect any current split bound by a lock constraint.
 
@@ -152,7 +152,7 @@ function set(
 
         _Internal references:_
 
-        * [`_packedSplitParts1Of`](/protocol/api/contracts/jbsplitsstore/properties/_packedsplitparts1of.md)
+        * [`_packedSplitParts1Of`](/protocol/api/contracts/jbsplitsstore/properties/-_packedsplitparts1of.md)
     6.  Pack less common split properties into another storage slot if needed. Otherwise, delete any content in storage at the index being iterated on.
 
        ```solidity
@@ -176,7 +176,7 @@ function set(
 
        _Internal references:_
 
-       * [`_packedSplitParts2Of`](/protocol/api/contracts/jbsplitsstore/properties/_packedsplitparts2of.md)
+       * [`_packedSplitParts2Of`](/protocol/api/contracts/jbsplitsstore/properties/-_packedsplitparts2of.md)
     7.  For each added split, emit a `SetSplit` event with all relevant parameters.
 
         ```solidity
@@ -195,7 +195,7 @@ function set(
 
     _Internal references:_
 
-    * [`_splitCountOf`](/protocol/api/contracts/jbsplitsstore/properties/_splitcountof.md)
+    * [`_splitCountOf`](/protocol/api/contracts/jbsplitsstore/properties/-_splitcountof.md)
 
 </TabItem>
 

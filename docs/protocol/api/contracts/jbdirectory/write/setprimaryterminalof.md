@@ -55,7 +55,7 @@ function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
 
     Internal references:
 
-    * [`_addTerminalIfNeeded`](/protocol/api/contracts/jbdirectory/write/_addterminalifneeded.md)
+    * [`_addTerminalIfNeeded`](/protocol/api/contracts/jbdirectory/write/-_addterminalifneeded.md)
 3.  Store the new terminal as the primary.
 
     ```solidity
@@ -65,7 +65,7 @@ function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
 
     Internal references:
 
-    * [`_primaryTerminalOf`](/protocol/api/contracts/jbdirectory/properties/_primaryterminalof.md)
+    * [`_primaryTerminalOf`](/protocol/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
 4.  Emit a `SetPrimaryTerminal` event with the relevant parameters.
 
     ```solidity

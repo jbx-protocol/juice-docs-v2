@@ -85,7 +85,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     _Internal references:_
 
-    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
+    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/-_terminalsof.md)
 5.  Delete the project's current set of terminals from storage.
 
     ```solidity
@@ -95,7 +95,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     _Internal references:_
 
-    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
+    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/-_terminalsof.md)
 
 6.  Make sure the same terminal isn't being set multiple times.
     ```solidity
@@ -119,8 +119,8 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     _Internal references:_
 
-    * [`_primaryTerminalOf`](/protocol/api/contracts/jbdirectory/properties/_primaryterminalof.md)
-    * [`_contains`](/protocol/api/contracts/jbdirectory/read/_contains.md)
+    * [`_primaryTerminalOf`](/protocol/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
+    * [`_contains`](/protocol/api/contracts/jbdirectory/read/-_contains.md)
 8.  Emit a `SetTerminals` event with the relevant parameters.
 
     ```solidity

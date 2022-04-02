@@ -39,7 +39,7 @@ function _getStructsFor(
 
     _Internal references:_
 
-    * [`_splitCountOf`](/protocol/api/contracts/jbsplitsstore/properties/_splitcountof.md)
+    * [`_splitCountOf`](/protocol/api/contracts/jbsplitsstore/properties/-_splitcountof.md)
 2.  Inititalize an array with length equal to the number of splits expected.
 
     ```solidity
@@ -83,8 +83,8 @@ function _getStructsFor(
 
     _Internal references:_
 
-    * [`_packedSplitParts1Of`](/protocol/api/contracts/jbsplitsstore/properties/_packedsplitparts1of.md)
-    * [`_packedSplitParts2Of`](/protocol/api/contracts/jbsplitsstore/properties/_packedsplitparts2of.md)
+    * [`_packedSplitParts1Of`](/protocol/api/contracts/jbsplitsstore/properties/-_packedsplitparts1of.md)
+    * [`_packedSplitParts2Of`](/protocol/api/contracts/jbsplitsstore/properties/-_packedsplitparts2of.md)
 4.  Return the array of splits.
 
     ```solidity

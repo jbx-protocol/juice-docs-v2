@@ -40,7 +40,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`_distributeReservedTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/_distributereservedtokensof.md)
+    * [`_distributeReservedTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_distributereservedtokensof.md)
 
 </TabItem>
 

@@ -46,7 +46,7 @@ function distributionLimitOf(
 
     _Internal references:_
 
-    * [`_packedDistributionLimitDataOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_packeddistributionlimitdataof.md)
+    * [`_packedDistributionLimitDataOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_packeddistributionlimitdataof.md)
 2.  Return the distribution limit, which is in the first 248 bits, and the currency the distribution limit is in terms of, which is in the last 8 bits.
 
     ```solidity

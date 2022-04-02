@@ -46,7 +46,7 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 3.  Return the ballot state of the latest funding cycle configuration as is determined by the current configuration and the funding cycle it's based on.
 
     ```solidity
@@ -55,7 +55,7 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
 
     _Internal references:_
 
-    * [`_ballotStateOf`](/protocol/api/contracts/jbfundingcyclestore/read/_ballotstateof.md)
+    * [`_ballotStateOf`](/protocol/api/contracts/jbfundingcyclestore/read/-_ballotstateof.md)
 
 </TabItem>
 

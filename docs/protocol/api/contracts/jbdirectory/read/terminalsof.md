@@ -35,7 +35,7 @@ function terminalsOf(uint256 _projectId)
 
     Internal references:
 
-    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
+    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/-_terminalsof.md)
 
 </TabItem>
 
