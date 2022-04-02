@@ -56,7 +56,7 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
 
     _Internal references:_
 
-    * [`_packedIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_packedintrinsicpropertiesof.md)
+    * [`_packedIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/-_packedintrinsicpropertiesof.md)
 4.  Get the stored user properties of the funding cycle. Populate the struct values by unpacking the `uint256`.
 
     ```solidity
@@ -72,7 +72,7 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
 
     _Internal references:_
 
-    * [`_packedUserPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_packeduserpropertiesof.md)
+    * [`_packedUserPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/-_packeduserpropertiesof.md)
 5.  Populate the metadata property of the struct by reading from what's stored.
 
     ```solidity
@@ -81,7 +81,7 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
 
     _Internal references:_
 
-    * [`_metadataOf`](/protocol/api/contracts/jbfundingcyclestore/properties/_metadataof.md)
+    * [`_metadataOf`](/protocol/api/contracts/jbfundingcyclestore/properties/-_metadataof.md)
 
 </TabItem>
 

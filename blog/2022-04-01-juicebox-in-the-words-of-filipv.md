@@ -15,7 +15,7 @@ tags: [dao, interview]
 
 I got started through a tweet that I saw; I was on twitter, managing another account, and I saw a tweet from Nicholas asking for help with social media.
 
-So I joined the discord server and it was pretty sweet… people were really nice… I said in the server that I wanted to do social media, and somebody asked me to help with governance issues, and one thing led to another and now I’m doing quite a bit of stuff.
+So I joined the discord server and it was pretty sweet… people were really nice… I said in the server that I wanted to do social media, and [9birdy9](https://twitter.com/elliot_paschal) asked me to help with governance issues, and one thing led to another and now I’m doing quite a bit of stuff.
 
 Since I got here, back in November 2021, JB has grown a lot. That’s led to a few things– one is that the culture has evolved, it’s gotten a bit more serious and formal, but we’ve also had a really large demographic shift as the Chinese community has taken greater interest in JB. The team has grown, and I feel like we’ve moved into a higher gear work-wise, and become more efficient as a team.
 

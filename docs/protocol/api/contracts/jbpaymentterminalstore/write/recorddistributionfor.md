@@ -123,7 +123,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/write/properties/_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/write/properties/-_max_fixed_point_fidelity.md)
 
     _External references:_
 

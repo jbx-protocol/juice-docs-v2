@@ -11,7 +11,7 @@
 
 * There are two types of delegates: [`IJBPayDelegate`](/protocol/api/interfaces/ijbpaydelegate.md)s and [`IJBRedemptionDelegate`](/protocol/api/interfaces/ijbredemptiondelegate.md)s. Any contract that adheres to these interfaces can be used as a delegate in a project's funding cycles.
 * A delegate contract can be specified by the funding cycle's [`dataSource`](data-source.md).
-* The [`IJBPayDelegate`](/protocol/api/interfaces/ijbpaydelegate.md)'s `didPay(...)` hook is triggered in [`JBPayoutRedemptionPaymentTerminal._pay(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_pay.md), and the [`IJBRedemptionDelegate`](/protocol/api/interfaces/ijbredemptiondelegate.md)'s `didRedeem(...)` hook is triggered in [`JBPayoutRedemptionPaymentTerminal.redeemTokensOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md).
+* The [`IJBPayDelegate`](/protocol/api/interfaces/ijbpaydelegate.md)'s `didPay(...)` hook is triggered in [`JBPayoutRedemptionPaymentTerminal._pay(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md), and the [`IJBRedemptionDelegate`](/protocol/api/interfaces/ijbredemptiondelegate.md)'s `didRedeem(...)` hook is triggered in [`JBPayoutRedemptionPaymentTerminal.redeemTokensOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md).
 * The redemption delegate hook is called before funds are dispersed.
 * [Get started building pay delegates](/protocol/build/treasury-extensions/pay-delegate.md).
 * [Get started building redemption delegates](/protocol/build/treasury-extensions/redemption-delegate.md).

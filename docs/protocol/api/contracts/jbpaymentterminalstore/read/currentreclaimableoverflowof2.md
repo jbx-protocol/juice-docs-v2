@@ -65,7 +65,7 @@ function currentReclaimableOverflowOf(
 
     _Internal references:_
 
-    * [`_reclaimableOverflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/_reclaimableoverflowduring.md)
+    * [`_reclaimableOverflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/-_reclaimableoverflowduring.md)
 
 
 </TabItem>

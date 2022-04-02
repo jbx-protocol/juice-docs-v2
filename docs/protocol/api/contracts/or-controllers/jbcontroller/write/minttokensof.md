@@ -125,7 +125,7 @@ function mintTokensOf(
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_processedtokentrackerof.md)
+    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
 
     _External references:_
 

@@ -49,7 +49,7 @@ function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
 
     _Internal references:_
 
-    * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/_overflowduring.md)
+    * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/-_overflowduring.md)
 
     _External references:_
 

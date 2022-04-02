@@ -42,7 +42,7 @@ function setOperators(JBOperatorData[] calldata _operatorData) external override
 
         Internal references:
 
-        * [`_packedPermissions`](../read/_packedpermissions.md)
+        * [`_packedPermissions`](/protocol/api/contracts/jboperatorstore/read/-_packedpermissions.md)
     2.  Store the packed permissions as the permissions of the provided operator, on behalf of the `msg.sender`, specifically for the provided domain.
 
         ```solidity

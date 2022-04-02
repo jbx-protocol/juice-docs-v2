@@ -106,8 +106,8 @@ function recordRedemptionFor(
 
         _Internal references:_
 
-        * [`_currentTotalOverflowOf`](/protocol/api/contracts/jbpaymentterminalstore/read/_currenttotaloverflowof.md)
-        * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/_overflowduring.md)
+        * [`_currentTotalOverflowOf`](/protocol/api/contracts/jbpaymentterminalstore/read/-_currenttotaloverflowof.md)
+        * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/-_overflowduring.md)
 
     2.  Get a reference to the total outstanding supply of project tokens.
 
@@ -149,7 +149,7 @@ function recordRedemptionFor(
 
         _Internal references:_
 
-        * [`_reclaimableOverflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/_reclaimableoverflowduring.md)
+        * [`_reclaimableOverflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/-_reclaimableoverflowduring.md)
 
     4.  If the project's current funding cycle is configured to use a data source when making redemptions, ask the data source for the parameters that should be used throughout the rest of the function given provided contextual values in a [`JBRedeemParamsData`](/protocol/api/data-structures/jbredeemparamsdata.md) structure. Otherwise default parameters are used.
 

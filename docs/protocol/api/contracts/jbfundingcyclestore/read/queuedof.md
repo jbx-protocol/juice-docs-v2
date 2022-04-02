@@ -42,7 +42,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 2.  Check to see if there's a standby funding cycle configuration.
 
     ```solidity
@@ -52,7 +52,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_standbyOf`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_standbyOf`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 3.  If there is a stanby cycle and it is approved, it must be the queued funding cycle for the project. Otherwise get a reference to the funding cycle structure based on the yet-to-be-approved standby configuration.
 
     ```solidity
@@ -69,8 +69,8 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_isapproved.md)
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 4.  If there is no standby funding cycle, get the last stored funding cycle for the project. If it has already started, a queued funding cycle can be constructed based on the properties of this funding cycle.
 
     ```solidity
@@ -87,7 +87,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
     * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 5.  If the referenced funding cycle has a duration of 0, there can't be a queued funding cycle since configurations with no duration are being made manually instead of on a schedule.
 
@@ -98,7 +98,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 6.  If the referenced funding cycle has been approved, return a queued cycle based on it. The mock funding cycle is not allowed to have started already, which is why a `false` flag is passed in.
 
     ```solidity
@@ -109,8 +109,8 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/_isapproved.md)
-    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/_mockfundingcyclebasedon.md)
+    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
+    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/-_mockfundingcyclebasedon.md)
 7.  Get a reference to the funding cycle that the current eligible cycle is based on which must be the latest approved cycle configuration.
 
     ```solidity
@@ -127,7 +127,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/_getstructfor.md)
+    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 
 9.  Return a funding cycle based on the one current referenced, which must be the last approved cycle. The mock funding cycle is not allowed to have started already, which is why a `false` flag is passed in.
 
@@ -138,7 +138,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/_mockfundingcyclebasedon.md)
+    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/-_mockfundingcyclebasedon.md)
 
 </TabItem>
 

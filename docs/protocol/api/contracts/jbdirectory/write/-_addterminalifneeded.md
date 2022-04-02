@@ -75,7 +75,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
     Internal references:
 
-    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/_terminalsof.md)
+    * [`_terminalsOf`](/protocol/api/contracts/jbdirectory/properties/-_terminalsof.md)
 5.  Emit a `AddTerminal` event with the relevant parameters.
 
     ```solidity

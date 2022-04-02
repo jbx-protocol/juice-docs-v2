@@ -48,7 +48,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external virtual 
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/_processedtokentrackerof.md)
+    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
 3.  Emit a `PrepMigration` event with the relevant parameters.
 
     ```solidity
