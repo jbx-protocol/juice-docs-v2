@@ -2,6 +2,8 @@
 sidebar_position: 4
 ---
 
+# Risks 
+
 export const Highlight = ({children, color}) => (
   <span
     style={{
@@ -13,8 +15,6 @@ export const Highlight = ({children, color}) => (
     {children}
   </span>
 );
-
-# Risks 
 
 The following are risks that everyone should be aware of before interacting with the protocol. The protocol's design exposes these risks in consequence to its normal operating procedures. Most risks boil down to the trust. 
 
