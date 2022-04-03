@@ -28,9 +28,9 @@ The following are risks that everyone should be aware of before interacting with
 
      A non-zero distribution limit allocates a portion of the treasury for distribution to payout splits.
      
-    <Highlight color="#009933"><em><strong>Used productively, this can be used to withdraw funds to a community safe, distribute funds to contributors, channel funds to other projects operating treasuries on the protocol, and more.</strong></em></Highlight><br/><br/>
+    <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to withdraw funds to a community safe, distribute funds to contributors, channel funds to other projects operating treasuries on the protocol, and more.<br/><br/>
      
-     <Highlight color="#ff3300"><em><strong>Used maliciously, this can be used to rug the entire treasury into an arbitrary wallet.</strong></em></Highlight><br/><br/>
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to rug the entire treasury into an arbitrary wallet.<br/><br/>
 
    * **Setting an overflow allowance limit** 
      
@@ -38,9 +38,9 @@ The following are risks that everyone should be aware of before interacting with
 
      A non-zero overflow allowance gives the project owner access to a portion of the community's funds for on-demaind distribution to arbitrary addresses.
      
-     <Highlight color="#009933"><em><strong>Used productively, this can be used to manage discretionary spending.</strong></em></Highlight><br/><br/>
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to manage discretionary spending.<br/><br/>
 
-     <Highlight color="#ff3300"><em><strong>Used maliciously, this can be used to rug the entire treasury into an arbitrary wallet.</strong></em></Highlight><br/><br/>
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to rug the entire treasury into an arbitrary wallet.<br/><br/>
 
    * **Allowing on-demand token minting** 
 
@@ -48,19 +48,9 @@ The following are risks that everyone should be aware of before interacting with
 
      If token minting is allowed, an arbitrary number of tokens can be minted and distributed by the project owner, diluting the redemption value of all outstanding tokens.
      
-     <Highlight color="#009933"><em><strong>Used productively, this can be used to premint tokens to members, or satisfy other agreed upon inflationary treasury strategies.</strong></em></Highlight><br/><br/>
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to premint tokens to members, or satisfy other agreed upon inflationary treasury strategies.<br/><br/>
 
-     <Highlight color="#ff3300"><em><strong>Used maliciously, this can be used to mint exorbenant amount of tokens and redeem them to reclaim treasury funds into an arbitrary wallet.</strong></em></Highlight><br/><br/>
-
-   * **Allowing changing of project tokens** 
-
-     While changing tokens isn't allowed, the current project token will be used to satisfy redemptions and new issuance for the duration of the funding cycle. 
-
-     If changing tokens is allowed, a new token can replace the role of a previous token for new issuance and redemptions. 
-     
-     <Highlight color="#009933"><em><strong>Used productively, this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, dettach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.</strong></em></Highlight><br/><br/>
-
-     <Highlight color="#ff3300"><em><strong>Used maliciously, this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.</strong></em></Highlight><br/><br/>
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to mint exorbenant amount of tokens and redeem them to reclaim treasury funds into an arbitrary wallet.<br/><br/>
 
    * **Allowing changing of project tokens** 
 
@@ -68,9 +58,19 @@ The following are risks that everyone should be aware of before interacting with
 
      If changing tokens is allowed, a new token can replace the role of a previous token for new issuance and redemptions. 
      
-     <Highlight color="#009933"><em><strong>Used productively, this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, dettach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.</strong></em></Highlight><br/><br/>
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, dettach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.<br/><br/>
 
-     <Highlight color="#ff3300"><em><strong>Used maliciously, this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.</strong></em></Highlight><br/><br/>
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.<br/><br/>
+
+   * **Allowing changing of project tokens** 
+
+     While changing tokens isn't allowed, the current project token will be used to satisfy redemptions and new issuance for the duration of the funding cycle. 
+
+     If changing tokens is allowed, a new token can replace the role of a previous token for new issuance and redemptions. 
+     
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, dettach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.<br/><br/>
+
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.<br/><br/>
 
    * **Setting custom treasury extension implementations** 
 
