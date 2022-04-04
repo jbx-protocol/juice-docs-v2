@@ -1,7 +1,20 @@
 ---
 sidebar_position: 4
 ---
+
 # Risks 
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
 
 The following are risks that everyone should be aware of before interacting with the protocol. The protocol's design exposes these risks in consequence to its normal operating procedures. Most risks boil down to the trust. 
 
@@ -17,9 +30,9 @@ The following are risks that everyone should be aware of before interacting with
 
      A non-zero distribution limit allocates a portion of the treasury for distribution to payout splits.
      
-     _Used productively, this can be used to withdraw funds to a community safe, distribute funds to contributors, channel funds to other projects operating treasuries on the protocol, and more._
+    <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to withdraw funds to a community safe, distribute funds to contributors, channel funds to other projects operating treasuries on the protocol, and more.<br/><br/>
      
-     **Used maliciously, this can be used to rug the entire treasury into an arbitrary wallet.**
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to rug the entire treasury into an arbitrary wallet.<br/><br/>
 
    * **Setting an overflow allowance limit** 
      
@@ -27,19 +40,19 @@ The following are risks that everyone should be aware of before interacting with
 
      A non-zero overflow allowance gives the project owner access to a portion of the community's funds for on-demaind distribution to arbitrary addresses.
      
-     _Used productively, this can be used to manage discretionary spending._
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to manage discretionary spending.<br/><br/>
 
-     **Used maliciously, this can be used to rug the entire treasury into an arbitrary wallet.**
-  
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to rug the entire treasury into an arbitrary wallet.<br/><br/>
+
    * **Allowing on-demand token minting** 
 
      While token minting isn't allowed, the only way for new project tokens to be minted and distributed is for the project to receive new funds into its treasury. Tokens will get minted in accordance to the current funding cycle's values. 
 
      If token minting is allowed, an arbitrary number of tokens can be minted and distributed by the project owner, diluting the redemption value of all outstanding tokens.
      
-     _Used productively, this can be used to premint tokens to members, or satisfy other agreed upon inflationary treasury strategies._
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to premint tokens to members, or satisfy other agreed upon inflationary treasury strategies.<br/><br/>
 
-     **Used maliciously, this can be used to mint exorbenant amount of tokens and redeem them to reclaim treasury funds into an arbitrary wallet.**
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to mint exorbenant amount of tokens and redeem them to reclaim treasury funds into an arbitrary wallet.<br/><br/>
 
    * **Allowing changing of project tokens** 
 
@@ -47,9 +60,9 @@ The following are risks that everyone should be aware of before interacting with
 
      If changing tokens is allowed, a new token can replace the role of a previous token for new issuance and redemptions. 
      
-     _Used productively, this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, dettach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury._
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, dettach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.<br/><br/>
 
-     **Used maliciously, this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.**
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.<br/><br/>
 
    * **Custom treasury extensions** 
     
@@ -57,9 +70,9 @@ The following are risks that everyone should be aware of before interacting with
 
      If a project has attached a data source, delegate, split allocator, or ballot contract to a funding cycle, the protocol will access information from them and call functionality within them at specific moments during the execution of various transactions within the regular operation of the protocol.
      
-     _Used productively, this can be used to customize what happens when a treasury receives funds, under what conditions funds can leave a treasury, and under what conditions reconfigurations can take effect._
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to customize what happens when a treasury receives funds, under what conditions funds can leave a treasury, and under what conditions reconfigurations can take effect.<br/><br/>
 
-     **Used maliciously, this can be used to mint excess tokens, rug the entire treasury into an arbitrary wallet, trick users into compromising their individual wallets, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs into otherwise productive extension designs. Do not interact with a project that is using an untrusted extension.**
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to mint excess tokens, rug the entire treasury into an arbitrary wallet, trick users into compromising their individual wallets, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs into otherwise productive extension designs. Do not interact with a project that is using an untrusted extension.<br/><br/>
 
    * **Add and remove payment terminals** 
 
@@ -67,9 +80,9 @@ The following are risks that everyone should be aware of before interacting with
 
      If setting payment terminals is allowed, projects can begin managing inflows and outflows of funds from new contracts, or remove current contracts where they are doing so.
      
-     _Used productively, this can be used to begin accepting new tokens into a treasury, or creating totally custom treasury behavior._
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to begin accepting new tokens into a treasury, or creating totally custom treasury behavior.<br/><br/>
 
-     **Used maliciously, this can be used to cut off a community of token holders from their treasury, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs. Do not interact with a projects using untrusted payment terminals.**
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to cut off a community of token holders from their treasury, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs. Do not interact with a projects using untrusted payment terminals.<br/><br/>
 
    * **Setting the controller** 
 
@@ -77,9 +90,9 @@ The following are risks that everyone should be aware of before interacting with
 
      If setting the controller is allowed, projects can bring new rules according to which it'll operate.
      
-     _Used productively, this can be used to creating totally custom treasury behavior._
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to creating totally custom treasury behavior.<br/><br/>
 
-     **Used maliciously, this can be used to cut off a community of token holders from their treasury, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs. Do not interact with a projects using an untrusted controller.**
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to cut off a community of token holders from their treasury, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs. Do not interact with a projects using an untrusted controller.<br/><br/>
 
    * **Migrating funds between terminals** 
 
@@ -87,11 +100,9 @@ The following are risks that everyone should be aware of before interacting with
 
      If migrating funds between terminals is allowed, a project can move its funds from one terminal to another.
      
-     _Used productively, this can be used to move a treasury into a totally custom environment, or to trusted upgraded versions of the protocol._
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to move a treasury into a totally custom environment, or to trusted upgraded versions of the protocol.<br/><br/>
 
-     **Used maliciously, this can be used to cut off a community of token holders from their treasury, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs.**
-
-
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to cut off a community of token holders from their treasury, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs.<br/><br/>
 
 3. If a project enters a funding cycle with a different reserved rate than the preceding cycle while still having outstanding reserved tokens to distribute, the quantity of distributable tokens will change to reflect the new reserved rate.
  
