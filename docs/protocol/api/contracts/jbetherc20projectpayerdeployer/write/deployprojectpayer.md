@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayerDpeloyer`](/protocol/api/contracts/jbetherc20projectpayerdeployer/README.md)
+Contract: [`JBETHERC20ProjectPayerDeployer`](/protocol/api/contracts/jbetherc20projectpayerdeployer/README.md)
 
 Interface: [`IJBETHERC20ProjectPayerDeployer`](/protocol/api/interfaces/ijbetherc20projectpayerdeployer.md)
 
@@ -76,7 +76,7 @@ function deployProjectPayer(
 
     _Event references:_
 
-    * [`DeployProjectPayer`](/protocol/api/contracts/jbetherc20projectpayer/events/deployprojectpayer.md)
+    * [`DeployProjectPayer`](/protocol/api/contracts/jbetherc20projectpayerdeployer/events/deployprojectpayer.md)
 
 </TabItem>
 
@@ -137,7 +137,7 @@ function deployProjectPayer(
 
 | Name                                | Data                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DeployProjectPayer`**](/protocol/api/contracts/jbetherc20projectpayerdeployer/events/deployprojectpayer.md)                                                                          | <ul><li><code>[IJBProjectPayer](/protocol/api/interfaces/ijbprojectPayer.md) indexed projectPayer</code></li><li><code>uint256 indexed defaultProjectId</code></li><li><code>address indexed defaultBeneficiary</code></li><li><code>bool defaultPreferClaimedTokens</code></li><li><code>string defaultMemo</code></li><li><code>bytes defaultMetadata</code></li><li><code>[IJBDirectory](/protocol/api/interfaces/ijbdirectory.md) directory</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DeployProjectPayer`**](/protocol/api/contracts/jbetherc20projectpayerdeployer/events/deployprojectpayer.md)                                                                          | <ul><li><code>[IJBProjectPayer](/protocol/api/interfaces/ijbprojectpayer.md) indexed projectPayer</code></li><li><code>uint256 indexed defaultProjectId</code></li><li><code>address indexed defaultBeneficiary</code></li><li><code>bool defaultPreferClaimedTokens</code></li><li><code>string defaultMemo</code></li><li><code>bytes defaultMetadata</code></li><li><code>[IJBDirectory](/protocol/api/interfaces/ijbdirectory.md) directory</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 
