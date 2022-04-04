@@ -39,7 +39,7 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
     _External references:_
 
-    * [`primaryTerminalOf`](/protocol/api/jbdirectory/read/primaryterminalof.md)
+    * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
 
     _Internal references:_
 

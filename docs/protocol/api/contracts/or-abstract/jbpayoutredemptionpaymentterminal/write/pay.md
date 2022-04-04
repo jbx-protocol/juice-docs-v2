@@ -59,7 +59,7 @@ function pay(
 
     _Virtual references:_
 
-    * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
+    * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 
@@ -79,7 +79,7 @@ function pay(
 
     _Internal references:_
 
-    * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_pay.md)
+    * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
 
 </TabItem>
 

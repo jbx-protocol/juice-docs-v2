@@ -72,7 +72,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     _Virtual references:_
 
-    * [`_beforeTransferTo`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_beforetransferto.md)
+    * [`_beforeTransferTo`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
 
     _Internal references:_
 

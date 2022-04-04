@@ -49,7 +49,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
         _Internal references:_
 
-        * [`_pay`](_pay.md)
+        * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
 
 3.  Otherwise if the terminal is different, transfer the fee over.
 
@@ -65,7 +65,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
         _Virtual references:_
 
-        * [`_beforeTransferTo`](_beforetransferto.md)
+        * [`_beforeTransferTo`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
 
     4.  Get a reference to the ETH amount that should be attached to the transaction. Only attach anything if the token being paid is ETH.
 
@@ -91,7 +91,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
         _External references:_
 
-        * [`pay`](pay.md)
+        * [`pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
 
 
 </TabItem>
