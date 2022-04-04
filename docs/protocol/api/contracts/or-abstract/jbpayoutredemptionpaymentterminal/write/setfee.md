@@ -37,7 +37,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
     _Internal references:_
 
-    * [`_FEE_CAP`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_fee_cap.md)
+    * [`_FEE_CAP`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_fee_cap.md)
 2.  Store the new fee.
 
     ```solidity

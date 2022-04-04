@@ -33,7 +33,7 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
 
     _Internal references:_
 
-    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 2.  Delete all of the project's held fees. These will be repopulated if they were not refunded.
 
     ```solidity
@@ -43,7 +43,7 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
 
     _Internal references:_
 
-    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 3.  Loop through each held fee, decrementing the amount as held fees are refunded. If the entire refund amount has been refunded, add the fee structure back into the project's held fees so that they can be processed or refunded later. If the amount left is greater than the fee structure's amount, decrement the refunded amount and leave the fee structure out of the project's held fees. If only some of the fee structure's amount is needed to cover the rest of the remaining amount, set the amount to 0 after adding the fee structure back into the project's held fees having subtracted the remaining refund amount.
 
     ```solidity
@@ -62,7 +62,7 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
 
     _Internal references:_
 
-    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 
 </TabItem>
 

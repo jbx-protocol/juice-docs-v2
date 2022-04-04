@@ -42,7 +42,7 @@ function _takeFeeFrom(
 
     _Internal references:_
 
-    * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/_feeamount.md)
+    * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
 2.  If the funding cycle is configured to hold fees, add a [`JBFee`](/protocol/api/data-structures/jbfee.md) data structure to the project's stored held fees to be either processed or refunded later. Otherwise, take the fee.
 
     ```solidity
@@ -53,8 +53,8 @@ function _takeFeeFrom(
 
     _Internal references:_
 
-    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
-    * [`_processFee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_processfee.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
+    * [`_processFee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_processfee.md)
 
 
 </TabItem>
