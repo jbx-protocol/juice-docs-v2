@@ -48,10 +48,21 @@ function changeFor(
 
     * [`requireClaimFor`](/protocol/api/contracts/jbtokenstore/properties/requireclaimfor.md)
 
-2.  Make sure the token has 18 decimals.
+2.  Make sure the token being changed to isn't being used by another project.
 
     ```solidity
-    // Can't add a token that doesn't use 18 decimals.
+    // Can't change to a token already in use.
+    if (projectOf[_token] != 0) revert TOKEN_ALREADY_IN_USE();
+    ```
+
+    _Internal references:_
+
+    * [`projectOf`](/protocol/api/contracts/jbtokenstore/properties/projectof.md)
+
+3.  Make sure the token has 18 decimals.
+
+    ```solidity
+    // Can't change to a token that doesn't use 18 decimals.
     if (_token.decimals() != 18) revert TOKENS_MUST_HAVE_18_DECIMALS();
     ```
 
@@ -59,7 +70,7 @@ function changeFor(
 
     * [`decimals`](/protocol/api/interfaces/ijbtoken.md)
 
-3.  Get a reference to the project's current token.
+4.  Get a reference to the project's current token.
 
     ```solidity
     // Get a reference to the current token for the project.
@@ -69,7 +80,7 @@ function changeFor(
     _Internal references:_
 
     * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
-4.  Store the provided token as the token of the project.
+5.  Store the provided token as the token of the project.
 
     ```solidity
     // Store the new token.
@@ -79,7 +90,27 @@ function changeFor(
     _Internal references:_
 
     * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
-5.  If there's a current token and a new owner address was provided, transfer the ownership of the current token from this contract to the new owner.
+6.  Store the project the new token is being used for.
+
+    ```solidity
+    // Store the project for the new token.
+    projectOf[_token] = _projectId;
+    ```
+
+    _Internal references:_
+
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
+7.  Reset the project for the project's old token.
+
+    ```solidity
+    // Reset the project for the old token.
+    projectOf[oldToken] = 0;
+    ```
+
+    _Internal references:_
+
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
+8.  If there's a current token and a new owner address was provided, transfer the ownership of the current token from this contract to the new owner.
 
     ```solidity
     // If there's a current token and a new owner was provided, transfer ownership of the old token to the new owner.
@@ -90,7 +121,7 @@ function changeFor(
     _External references:_
 
     * [`transferOwnership`](/protocol/api/contracts/jbtoken/write/transferownership.md)
-6.  Emit a `Change` event with the relevant parameters.
+9.  Emit a `Change` event with the relevant parameters.
 
     ```solidity
     emit Change(_projectId, _token, oldToken, _newOwner, msg.sender);
@@ -130,7 +161,10 @@ function changeFor(
   if (_token == IJBToken(address(0)) && requireClaimFor[_projectId])
     revert CANT_REMOVE_TOKEN_IF_ITS_REQUIRED();
 
-  // Can't add a token that doesn't use 18 decimals.
+  // Can't change to a token already in use.
+  if (projectOf[_token] != 0) revert TOKEN_ALREADY_IN_USE();
+
+  // Can't change to a token that doesn't use 18 decimals.
   if (_token.decimals() != 18) revert TOKENS_MUST_HAVE_18_DECIMALS();
 
   // Get a reference to the current token for the project.
@@ -138,6 +172,12 @@ function changeFor(
 
   // Store the new token.
   tokenOf[_projectId] = _token;
+
+  // Store the project for the new token.
+  projectOf[_token] = _projectId;
+
+  // Reset the project for the old token.
+  projectOf[oldToken] = 0;
 
   // If there's a current token and a new owner was provided, transfer ownership of the old token to the new owner.
   if (_newOwner != address(0) && oldToken != IJBToken(address(0)))
@@ -154,6 +194,7 @@ function changeFor(
 | String                              | Description                                               |
 | ----------------------------------- | --------------------------------------------------------- |
 | **`CANT_REMOVE_TOKEN_IF_ITS_REQUIRED`**    | Thrown if the token is being removed but claiming is required.        |
+| **`TOKEN_ALREADY_IN_USE`**    | Thrown if the token being attached is already being used by another project.        |
 | **`TOKENS_MUST_HAVE_18_DECIMALS`**    | Thrown if the token being attached doesn't use 18 decimals.        |
 
 </TabItem>

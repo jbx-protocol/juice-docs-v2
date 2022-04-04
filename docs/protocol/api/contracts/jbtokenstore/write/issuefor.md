@@ -74,7 +74,17 @@ function issueFor(
     _Internal references:_
 
     * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
-6.  Emit an `Issue` event with the relevant parameters.
+6.  Store the project the token is being used for.
+
+    ```solidity
+    // Store the project for the token.
+    projectOf[token] = _projectId;
+    ```
+
+    _Internal references:_
+
+    * [`projectOf`](/protocol/api/contracts/jbtokenstore/properties/projectof.md)
+7.  Emit an `Issue` event with the relevant parameters.
 
     ```solidity
     emit Issue(_projectId, token, _name, _symbol, msg.sender);
@@ -124,6 +134,9 @@ function issueFor(
 
   // Store the token contract.
   tokenOf[_projectId] = token;
+
+  // Store the project for the token.
+  projectOf[token] = _projectId;
 
   emit Issue(_projectId, token, _name, _symbol, msg.sender);
 }
