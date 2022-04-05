@@ -41,7 +41,7 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
 
     _Internal references:_
 
-    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/write/properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 
 </TabItem>
 

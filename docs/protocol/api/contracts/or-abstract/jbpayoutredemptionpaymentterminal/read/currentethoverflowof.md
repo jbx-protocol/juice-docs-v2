@@ -38,7 +38,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
     _External references:_
 
-    * [`currentOverflowOf`](/protocol/api/jbpaymentterminalstore/read/currentoverflowof.md)
+    * [`currentOverflowOf`](/protocol/api/contracts/jbpaymentterminalstore/read/currentoverflowof.md)
 2.  If this terminal's fixed point accounting doesn't have 18 decimals, adjust the overflow to have 18 decimals.
 
     ```solidity
@@ -74,7 +74,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
     _External references:_
 
-    * [`priceFor`](/protocol/api/jbprices/read/pricefor.md)
+    * [`priceFor`](/protocol/api/contracts/jbprices/read/pricefor.md)
 
 </TabItem>
 

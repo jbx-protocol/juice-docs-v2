@@ -26,7 +26,7 @@ modifier isTerminalOf(uint256 _projectId) { ... }
 
     _External references:_
 
-    * [`isTerminalOf`](/protocol/api/jbdirectory/read/isterminalof.md)
+    * [`isTerminalOf`](/protocol/api/contracts/jbdirectory/read/isterminalof.md)
 {% endtab %}
 
 {% tab title="Code" %}

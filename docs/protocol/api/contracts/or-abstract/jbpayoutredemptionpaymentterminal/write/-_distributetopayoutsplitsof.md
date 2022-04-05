@@ -206,9 +206,9 @@ function _distributeToPayoutSplitsOf(
         * [`decimals`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/decimals.md)
         * [`isFeelessTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
         * [`pay`]/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/(pay.md)
-        * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_pay.md)
-        * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/_feeamount.md)
-        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
+        * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
+        * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
+        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 
         _External references:_
 

@@ -43,7 +43,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _External references:_
 
-    * [`totalSupplyOf`](/protocol/api/jbtokenstore/read/totalsupplyof.md)
+    * [`totalSupplyOf`](/protocol/api/contracts/jbtokenstore/read/totalsupplyof.md)
 3.  Get a reference to the current amount of reserved tokens given the current state of the tracker, the current funding cycle's reserved rate, and the current total token supply.
 
     ```solidity

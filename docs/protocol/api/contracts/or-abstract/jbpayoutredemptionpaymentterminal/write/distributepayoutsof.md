@@ -105,7 +105,7 @@ function distributePayoutsOf(
 
         _Internal references:_
 
-        * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/_currentfeediscount.md)
+        * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
     2.  Get a reference to the amount of distributed funds from which fees should be taken.
 
@@ -129,7 +129,7 @@ function distributePayoutsOf(
 
         _Internal references:_
 
-        * [`_distributeToPayoutSplitsOf`](./_distributetopayoutsplitsof.md)
+        * [`_distributeToPayoutSplitsOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_distributetopayoutsplitsof.md)
 
     4.  Add the leftover distribution amount to the amount from which fees should be taken since those funds will be leaving the ecosystem to the project owner's address.
 
@@ -161,7 +161,7 @@ function distributePayoutsOf(
 
         _Internal references:_
 
-        * [`_takeFeeFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_takefeefrom.md)
+        * [`_takeFeeFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
 
     6.  Transfer any leftover amount to the project owner if needed.
 
@@ -177,11 +177,11 @@ function distributePayoutsOf(
 
         _Internal references:_
 
-        * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/_feeamount.md)
+        * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
 
         _Virtual references:_
 
-        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
+        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 
 5.  Emit a `DistributePayouts` event with the relevant parameters.
 

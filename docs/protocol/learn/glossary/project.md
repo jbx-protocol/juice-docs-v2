@@ -3,7 +3,7 @@
 #### What everyone needs to know
 
 * Each project within the Juicebox protocol is represented as an ERC-721 NFT.
-* Whoever is the owner of a project's NFT has access to [admin functionality](protocol/api/learn/glossary/operator.md) for that project within the protocol, which ultimately gives it control over the project's funds.
+* Whoever is the owner of a project's NFT has access to [admin functionality](protocol/learn/glossary/operator.md) for that project within the protocol, which ultimately gives it control over the project's funds.
 
 #### What you'll want to know if you're building
 

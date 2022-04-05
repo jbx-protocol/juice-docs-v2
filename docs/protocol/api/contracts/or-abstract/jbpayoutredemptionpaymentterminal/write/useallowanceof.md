@@ -102,12 +102,12 @@ function useAllowanceOf(
 
         _Libraries used:_
 
-        * [`JBConstants`](../../../../libraries/jbconstants.md)
+        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
 
         _Internal references:_
 
-        * [`_currentFeeDiscount`](../read/_currentfeediscount.md)
+        * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
     3.  Take the fee if needed.
 
@@ -120,12 +120,12 @@ function useAllowanceOf(
 
         _Libraries used:_
 
-        * [`JBConstants`](../../../../libraries/jbconstants.md)
+        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
 
         _Internal references:_
 
-        * [`_takeFeeFrom`](./_takefeefrom.md)
+        * [`_takeFeeFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
 
     4.  Send the net amount to the beneficiary if needed.
 
@@ -139,7 +139,7 @@ function useAllowanceOf(
 
         _Virtual references:_
 
-        * [`_transferFrom`](./_transferfrom.md)
+        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 
 4.  Emit a `UseAllowance` event with the relevant parameters.
 

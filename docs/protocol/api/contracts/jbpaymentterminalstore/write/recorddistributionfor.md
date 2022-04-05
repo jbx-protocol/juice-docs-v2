@@ -50,7 +50,7 @@ function recordDistributionFor(
 
     _External references:_
 
-    * [`currentOf`](/protocol/api/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure the current funding cycle doesn't have distributions paused.
 
     ```solidity
@@ -87,7 +87,7 @@ function recordDistributionFor(
 
     _External references:_
 
-    * [`distributionLimitOf`](/protocol/api/or-controllers/jbcontroller/read/distributionlimitof.md)
+    * [`distributionLimitOf`](/protocol/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
 
 5.  Make sure the new total amount distributed will be at most the distribution limit.
 
@@ -123,7 +123,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/write/properties/-_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
 
     _External references:_
 

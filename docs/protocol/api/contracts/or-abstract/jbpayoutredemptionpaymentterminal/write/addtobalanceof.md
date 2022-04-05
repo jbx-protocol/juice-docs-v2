@@ -52,7 +52,7 @@ function addToBalanceOf(
 
     _Virtual references:_
 
-    * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_transferfrom.md)
+    * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 2.  Record the added funds.
 
     ```solidity
@@ -72,7 +72,7 @@ function addToBalanceOf(
 
     _Internal references:_
 
-    * [`_refundHeldFees`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_refundheldfees.md)
+    * [`_refundHeldFees`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_refundheldfees.md)
 4.  Emit a `AddToBalance` event with the relevant parameters.
 
     ```solidity

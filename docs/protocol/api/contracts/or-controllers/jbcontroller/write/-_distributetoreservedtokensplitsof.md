@@ -51,7 +51,7 @@ function _distributeToReservedTokenSplitsOf(
 
     _External references:_
 
-    * [`splitsOf`](/protocol/api/jbsplitsstore/read/splitsof.md)
+    * [`splitsOf`](/protocol/api/contracts/jbsplitsstore/read/splitsof.md)
 3.  Loop through each split.
 
     ```solidity

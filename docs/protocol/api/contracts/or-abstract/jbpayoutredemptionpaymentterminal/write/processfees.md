@@ -49,7 +49,7 @@ function processFees(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 2.  Remove all fees.
 
     ```solidity
@@ -59,7 +59,7 @@ function processFees(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 2.  Iterate through the array. Take fee's for each [`JBFee`](/protocol/api/data-structures/jbfee.md) data structure.
 
     ```solidity
@@ -78,7 +78,7 @@ function processFees(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_processFee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/_processfee.md)
+    * [`_processFee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_processfee.md)
 4.  Emit a `ProcessFees` event with the relevant parameters.
 
     ```solidity

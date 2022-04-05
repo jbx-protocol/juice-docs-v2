@@ -35,7 +35,7 @@ function heldFeesOf(uint256 _projectId) external view override returns (JBFee[] 
 
     _Internal references:_
 
-    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/_heldfeesof.md)
+    * [`_heldFeesOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 
 </TabItem>
 
