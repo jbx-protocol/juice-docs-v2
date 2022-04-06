@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+# Intro
+
 :::tip
 Please note that these docs are under active development.
 :::
@@ -18,7 +20,7 @@ Looking for guides to launch and program a treasury? See the [Build](/build/gett
 
 Looking for an outline of the protocol's API, or a deep dive on each line of code? Click around in the [API](/api/contracts/) section. There are bug bounties posted for each documented function.
 
-Documentation for Juicebox Protocol V1 (live on mainnet since July 2021) is available [here](/protocol-v1/).
+Documentation for Juicebox Protocol V1 (live on mainnet since July 2021) is available [here](/docs/protocol-v1/).
 
 Reach out to contributors of the DAO on Discord to call attention to something that could be made more clear. You can also submit PR's directly to the documentation repo [here](https://github.com/jbx-protocol/juice-docs).
 

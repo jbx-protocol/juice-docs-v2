@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBPrices`](/protocol/api/contracts/jbprices/README.md)​‌
+Contract:[`JBPrices`](/api/contracts/jbprices/README.md)​‌
 
-Interface: [`IJBPrices`](/protocol/api/interfaces/ijbprices.md)
+Interface: [`IJBPrices`](/api/interfaces/ijbprices.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -27,9 +27,9 @@ function addFeedFor(
 * Arguments:
   * `_currency` is the currency that the price feed is for.
   * `_base` is the currency that the price feed is based on.
-  * `_feed` is the [`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md) contract being added.
+  * `_feed` is the [`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md) contract being added.
 * Through the `onlyOwner` modifier, this function can only be accessed by the address that owns this contract.
-* The function overrides a function definition from the [`IJBPrices`](/protocol/api/interfaces/ijbprices.md) interface.
+* The function overrides a function definition from the [`IJBPrices`](/api/interfaces/ijbprices.md) interface.
 * The function doesn't return anything.
 
 ### Body
@@ -43,7 +43,7 @@ function addFeedFor(
 
     Internal references:
 
-    * [`feedFor`](/protocol/api/contracts/jbprices/properties/feedfor.md)
+    * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 2.  Store the provided feed for the currency base pair.
 
     ```solidity
@@ -58,7 +58,7 @@ function addFeedFor(
 
     _Event references:_
 
-    * [`AddFeed`](/protocol/api/contracts/jbprices/events/addfeed.md)
+    * [`AddFeed`](/api/contracts/jbprices/events/addfeed.md)
 
 </TabItem>
 
@@ -105,7 +105,7 @@ function addFeedFor(
 
 | Name                                  | Data                                                                                                                                                                                                                                                                                           |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddFeed`**](/protocol/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
+| [**`AddFeed`**](/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
 
 </TabItem>
 

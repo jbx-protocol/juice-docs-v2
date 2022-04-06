@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayer`](/protocol/api/contracts/jbetherc20projectpayer/README.md)
+Contract: [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -50,11 +50,11 @@ function _pay(
 
     _Internal references:_
 
-    * [`directory`](/protocol/api/contracts/jbetherc20projectpayer/properties/directory.md)
+    * [`directory`](/api/contracts/jbetherc20projectpayer/properties/directory.md)
 
     _External references:_
 
-    * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
+    * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
 2.  Make sure there is a terminal to make a payment towards.
 
     ```solidity
@@ -71,7 +71,7 @@ function _pay(
 
     _External references:_
 
-    * [`decimals`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/decimals.md)
+    * [`decimals`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/decimals.md)
 
 4.  If the token being paid is an ERC20, approve the terminal to spend the amount of tokens from this terminal.
 
@@ -112,8 +112,8 @@ function _pay(
 
     _External references:_
 
-    * [`pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
-    * [`addToBalance`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
+    * [`pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
+    * [`addToBalance`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
     
 </TabItem>
 

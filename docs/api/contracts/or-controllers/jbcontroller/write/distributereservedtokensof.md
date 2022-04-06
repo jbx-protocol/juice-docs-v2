@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
+Contract: [`JBController`](/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -27,7 +27,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
   * `_memo` is a memo to pass along to the emitted event.
 * The function can be accessed externally by anyone.
 * The function can be overriden by inheriting contracts.
-* The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
+* The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function returns the amount of minted reserved tokens.
 
 ### Body
@@ -40,7 +40,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`_distributeReservedTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_distributereservedtokensof.md)
+    * [`_distributeReservedTokensOf`](/api/contracts/or-controllers/jbcontroller/write/-_distributereservedtokensof.md)
 
 </TabItem>
 

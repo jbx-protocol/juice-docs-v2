@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)
+Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -24,7 +24,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
   * `_projectId` is the ID of the project to which the ETH overflow belongs.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
 * The function returns the current amount of ETH overflow that project has in this terminal, as a fixed point number with 18 decimals.
 
 ### Body
@@ -38,7 +38,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
     _External references:_
 
-    * [`currentOverflowOf`](/protocol/api/contracts/jbpaymentterminalstore/read/currentoverflowof.md)
+    * [`currentOverflowOf`](/api/contracts/jbpaymentterminalstore/read/currentoverflowof.md)
 2.  If this terminal's fixed point accounting doesn't have 18 decimals, adjust the overflow to have 18 decimals.
 
     ```solidity
@@ -50,7 +50,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
     _Libraries used:_
 
-    * [`JBFixedPointNumber`](/protocol/api/libraries/jbfixedpointnumber.md)
+    * [`JBFixedPointNumber`](/api/libraries/jbfixedpointnumber.md)
       * `.adjustDecimals(...)`
 
 3.  If this terminal's currency isn't ETH, convert the overflow to ETH. Return the 18 decimal ETH fixed point overflow value.
@@ -74,7 +74,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
     _External references:_
 
-    * [`priceFor`](/protocol/api/contracts/jbprices/read/pricefor.md)
+    * [`priceFor`](/api/contracts/jbprices/read/pricefor.md)
 
 </TabItem>
 

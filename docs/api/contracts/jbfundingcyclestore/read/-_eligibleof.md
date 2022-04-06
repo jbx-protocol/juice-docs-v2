@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
+Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -37,7 +37,7 @@ function _eligibleOf(uint256 _projectId) private view returns (uint256 configura
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 2.  Get the struct for the latest funding cycle.
 
     ```solidity
@@ -47,7 +47,7 @@ function _eligibleOf(uint256 _projectId) private view returns (uint256 configura
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 3.  If the latest is expired, return an empty funding cycle since there can't be a stored eligible cycle.
 
     ```solidity
@@ -72,7 +72,7 @@ function _eligibleOf(uint256 _projectId) private view returns (uint256 configura
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 6.  If the base is expired, return an empty funding cycle since there can't be a stored eligible cycle.
 
     ```solidity

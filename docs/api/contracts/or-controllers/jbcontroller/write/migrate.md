@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
+Contract: [`JBController`](/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -25,7 +25,7 @@ function migrate(uint256 _projectId, IJBController _to)
 * Arguments:
   * `_projectId` is the ID of the project that will be migrated from this controller.
   * `_to` is the controller to which the project is migrating.
-* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.MIGRATE_CONTROLLER`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.MIGRATE_CONTROLLER`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
 * The function can be overriden by inheriting contracts.
 * The function doesn't return anything.
 
@@ -40,7 +40,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     _External references:_
 
-    * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
+    * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
 2.  Get a reference to the current funding cycle for the project.
 
     ```solidity
@@ -50,7 +50,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     _External references:_
 
-    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 3.  Make sure the project's current funding cycle is configured to allow controller migrations.
 
     ```solidity
@@ -60,7 +60,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)\
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
       `.controllerMigrationAllowed(...)`
 4.  Distribute any outstanding reserved tokens. There are reserved tokens to be distributed if the tracker does not equal the token's total supply.
 
@@ -72,12 +72,12 @@ function migrate(uint256 _projectId, IJBController _to)
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
-    * [`_distributeReservedTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_distributereservedtokensof.md)
+    * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
+    * [`_distributeReservedTokensOf`](/api/contracts/or-controllers/jbcontroller/write/-_distributereservedtokensof.md)
 
     _External references:_
 
-    * [`totalSupplyOf`](/protocol/api/contracts/jbtokenstore/read/totalsupplyof.md)
+    * [`totalSupplyOf`](/api/contracts/jbtokenstore/read/totalsupplyof.md)
 5.  Let the new controller know that a migration to it is happening.
 
     ```solidity
@@ -87,7 +87,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     _External references:_
 
-    * [`prepForMigrationOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/prepformigrationof.md)
+    * [`prepForMigrationOf`](/api/contracts/or-controllers/jbcontroller/write/prepformigrationof.md)
 6.  Set the new controller of the project.
 
     ```solidity
@@ -97,7 +97,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     _External references:_
 
-    * [`setControllerOf`](/protocol/api/contracts/jbdirectory/write/setcontrollerof.md)
+    * [`setControllerOf`](/api/contracts/jbdirectory/write/setcontrollerof.md)
 7.  Emit a `Migrate` event with the relevant parameters.
 
     ```solidity
@@ -106,7 +106,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     _Event references:_
 
-    * [`Migrate`](/protocol/api/contracts/or-controllers/jbcontroller/events/migrate.md)
+    * [`Migrate`](/api/contracts/or-controllers/jbcontroller/events/migrate.md)
 
 </TabItem>
 
@@ -167,7 +167,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
 | Name                                                                                | Data                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Migrate`**](/protocol/api/contracts/or-controllers/jbcontroller/events/migrate.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[`IJBController`](/protocol/api/interfaces/ijbcontroller.md)to</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
+| [**`Migrate`**](/api/contracts/or-controllers/jbcontroller/events/migrate.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[`IJBController`](/api/interfaces/ijbcontroller.md)to</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
 
 </TabItem>
 

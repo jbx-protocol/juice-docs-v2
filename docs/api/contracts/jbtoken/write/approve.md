@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBToken`](/protocol/api/contracts/jbtoken/README.md)​‌
+Contract: [`JBToken`](/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -26,7 +26,7 @@ function approve(
   * The `_projectId` parameter is ignored.
   * `_spender` is the address that will be spending tokens on the `msg.sender`s behalf.
   * `_amount` is the amount the `_spender` is allowed to spend.
-* The function overrides a function definition from the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface.
+* The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
 ### Body

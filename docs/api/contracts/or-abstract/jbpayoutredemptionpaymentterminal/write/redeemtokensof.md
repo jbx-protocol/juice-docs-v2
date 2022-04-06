@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -41,9 +41,9 @@ function redeemTokensOf(
   * `_beneficiary` is the address to send the terminal tokens to.
   * `_memo` is a memo to pass along to the emitted event.
   * `_metadata` are bytes to send along to the data source and delegate, if provided.
-* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.REDEEM`](/protocol/api/libraries/jboperations.md) permission by the token holder.
+* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.REDEEM`](/api/libraries/jboperations.md) permission by the token holder.
 * The function can be overriden by inheriting contracts.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function returns the amount of terminal tokens that the tokens were redeemed for, as a fixed point number with the same amount of decimals as this terminal.
 
 #### Body
@@ -91,7 +91,7 @@ function redeemTokensOf(
 
         _External references:_
 
-        * [`recordRedemptionFor`](/protocol/api/contracts/jbpaymentterminalstore/write/recordredemptionfor.md)
+        * [`recordRedemptionFor`](/api/contracts/jbpaymentterminalstore/write/recordredemptionfor.md)
 
     3.  Make sure the amount of terminal tokens being reclaimed is at least as much as the specified minimum.
 
@@ -116,8 +116,8 @@ function redeemTokensOf(
 
         _External references:_
 
-        * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
-        * [`burnTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/burntokensof.md)
+        * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
+        * [`burnTokensOf`](/api/contracts/or-controllers/jbcontroller/write/burntokensof.md)
 
     5.  If a delegate was provided, callback to its `didRedeem` function, and emit an event with the relevant parameters..
 
@@ -140,11 +140,11 @@ function redeemTokensOf(
 
         _External references:_
 
-        * [`didRedeem`](/protocol/api/interfaces/ijbredemptiondelegate.md)
+        * [`didRedeem`](/api/interfaces/ijbredemptiondelegate.md)
 
         _Event references:_
 
-        * [`DelegateDidRedeem`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/delegatedidredeem.md)
+        * [`DelegateDidRedeem`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/delegatedidredeem.md)
 
 4.  If an amount is being reclaimed, send the funds to the beneficiary.
 
@@ -171,7 +171,7 @@ function redeemTokensOf(
 
     _Event references:_
 
-    * [`RedeemTokens`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md)
+    * [`RedeemTokens`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md)
 
 </TabItem>
 
@@ -293,7 +293,7 @@ function redeemTokensOf(
 
 | Name                                           | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`RedeemTokens`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address holder</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 claimedAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
+| [**`RedeemTokens`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address holder</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 claimedAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

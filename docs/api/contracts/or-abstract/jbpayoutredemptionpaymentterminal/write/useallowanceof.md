@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -39,9 +39,9 @@ function useAllowanceOf(
   * `_currency` is the expected currency of the amount being distributed. Must match the project's current funding cycle's overflow allowance currency.
   * `_minReturnedTokens` is the minimum number of tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same amount of decimals as this terminal.
   * `_beneficiary` is the address to send the funds to.
-* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.USE_ALLOWANCE`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.USE_ALLOWANCE`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
 * The function can be overriden by inheriting contracts.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -60,7 +60,7 @@ function useAllowanceOf(
 
     _External references:_
 
-    * [`recordUsedAllowanceOf`](/protocol/api/contracts/jbpaymentterminalstore/write/recordusedallowanceof.md)
+    * [`recordUsedAllowanceOf`](/api/contracts/jbpaymentterminalstore/write/recordusedallowanceof.md)
 2.  Make sure the distributed amount is at least as much as the specified minimum.
 
     ```solidity
@@ -102,12 +102,12 @@ function useAllowanceOf(
 
         _Libraries used:_
 
-        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
+        * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
 
         _Internal references:_
 
-        * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
+        * [`_currentFeeDiscount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
     3.  Take the fee if needed.
 
@@ -120,12 +120,12 @@ function useAllowanceOf(
 
         _Libraries used:_
 
-        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
+        * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
 
         _Internal references:_
 
-        * [`_takeFeeFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
+        * [`_takeFeeFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
 
     4.  Send the net amount to the beneficiary if needed.
 
@@ -139,7 +139,7 @@ function useAllowanceOf(
 
         _Virtual references:_
 
-        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
+        * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 
 4.  Emit a `UseAllowance` event with the relevant parameters.
 
@@ -159,7 +159,7 @@ function useAllowanceOf(
 
     _Event references:_
 
-    * [`UseAllowance`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/useallowance.md)
+    * [`UseAllowance`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/useallowance.md)
 
 </TabItem>
 
@@ -262,7 +262,7 @@ function useAllowanceOf(
 
 | Name                                            | Data                                                                                                                                                                                                                                                                                                                                                                |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`UseAllowance`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/useallowance.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                                            |
+| [**`UseAllowance`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/useallowance.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                                            |
 
 </TabItem>
 

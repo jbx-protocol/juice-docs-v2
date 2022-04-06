@@ -1,9 +1,9 @@
 # Pay delegate
 
-Before implementing, learn about delegates [here](/protocol/learn/glossary/delegate.md).
+Before implementing, learn about delegates [here](/learn/glossary/delegate.md).
 ### Specs
 
-A contract can become a treasury pay delegate by adhering to [`IJBPayDelegate`](/protocol/api/interfaces/ijbpaydelegate.md):
+A contract can become a treasury pay delegate by adhering to [`IJBPayDelegate`](/api/interfaces/ijbpaydelegate.md):
 
 ```solidity
 interface IJBPayDelegate {
@@ -11,7 +11,7 @@ interface IJBPayDelegate {
 }
 ```
 
-When extending the pay functionality with a delegate, the protocol will pass a [`JBDidPayData`](/protocol/api/data-structures/jbdidpaydata.md) to the `didPay(...)` function:
+When extending the pay functionality with a delegate, the protocol will pass a [`JBDidPayData`](/api/data-structures/jbdidpaydata.md) to the `didPay(...)` function:
 
 ```solidity
 struct JBDidPayData {
@@ -47,10 +47,10 @@ struct JBTokenAmount {
 
 The `msg.sender` to the delegate will be the payment terminal that facilitated the payment. 
 
-In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal/)'s and [`JBERC20PaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jberc20paymentterminal/)'s, the pay delegate hook gets called _after_ the project's tokens have been minted and distributed. [View the docs](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md). 
+In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/api/contracts/or-payment-terminals/jbethpaymentterminal/)'s and [`JBERC20PaymentTerminal`](/api/contracts/or-payment-terminals/jberc20paymentterminal/)'s, the pay delegate hook gets called _after_ the project's tokens have been minted and distributed. [View the docs](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md). 
 
 Make sure to only allow trusted contracts to access the `didPay(...)` transaction.
 
 ### Attaching
 
-A delegate contract should be deployed independently. Once deployed, its address can be returned from a data source hook. See [how to build a data source](/protocol/build/treasury-extensions/data-source.md) for more.
+A delegate contract should be deployed independently. Once deployed, its address can be returned from a data source hook. See [how to build a data source](/build/treasury-extensions/data-source.md) for more.

@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBChainlinkV3PriceFeed`](/protocol/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/README.md)​‌
+Contract:[`JBChainlinkV3PriceFeed`](/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/README.md)​‌
 
-Interface: [`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md)
+Interface: [`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -22,7 +22,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
   * `_decimals` is the number of decimals the returned fixed point price should include.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBPriceFeed`](/protocol/api/interfaces/ijbpricefeed.md) interface.
+* The function overrides a function definition from the [`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md) interface.
 * The function returns the current price of the feed, as a fixed point number with the specified number of decimals.
 
 ### Body
@@ -36,7 +36,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
 
     Internal references:
 
-    * [`feed`](/protocol/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/properties/feed.md)
+    * [`feed`](/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/properties/feed.md)
 
     External references:
 
@@ -60,7 +60,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
 
     _Libraries used:_
 
-    * [`JBFixedPointNumber`](/protocol/api/libraries/jbfixedpointnumber.md)
+    * [`JBFixedPointNumber`](/api/libraries/jbfixedpointnumber.md)
       * `.adjustDecimals(...)`
 
 </TabItem>

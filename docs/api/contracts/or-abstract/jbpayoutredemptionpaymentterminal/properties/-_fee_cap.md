@@ -1,6 +1,6 @@
 # _MAX_FEE
 
-Contract:[`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract:[`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 **Maximum fee that can be set for a funding cycle configuration.** 
 

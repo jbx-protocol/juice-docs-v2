@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBProjects`](/protocol/api/contracts/jbprojects/README.md)​‌
+Contract: [`JBProjects`](/api/contracts/jbprojects/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -34,7 +34,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 
     _Internal references:_
 
-    * [`tokenUriResolver`](/protocol/api/contracts/jbprojects/properties/tokenuriresolver.md)
+    * [`tokenUriResolver`](/api/contracts/jbprojects/properties/tokenuriresolver.md)
 2.  Resolve the URI for the project.
 
     ```solidity
@@ -44,7 +44,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 
     _External references:_
 
-    * [`getUri`](/protocol/api/interfaces/ijbtokenuriresolver.md)
+    * [`getUri`](/api/interfaces/ijbtokenuriresolver.md)
 
 
 </TabItem>

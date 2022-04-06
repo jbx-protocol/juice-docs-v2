@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -33,7 +33,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
     _External references:_
 
-    * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
+    * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
 
 2.  If the protocol's terminal is the same as this terminal, save gas by paying the contract internally.
 
@@ -49,7 +49,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
         _Internal references:_
 
-        * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
+        * [`_pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
 
 3.  Otherwise if the terminal is different, transfer the fee over.
 
@@ -65,7 +65,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
         _Virtual references:_
 
-        * [`_beforeTransferTo`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
+        * [`_beforeTransferTo`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
 
     4.  Get a reference to the ETH amount that should be attached to the transaction. Only attach anything if the token being paid is ETH.
 
@@ -91,7 +91,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
         _External references:_
 
-        * [`pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
+        * [`pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
 
 
 </TabItem>
@@ -148,7 +148,7 @@ function _processFee(uint256 _amount, address _beneficiary) private {
 
 | Name                                            | Data                                                                                                                                                             |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddToBalance`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 value</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
+| [**`AddToBalance`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 value</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

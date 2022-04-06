@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
+Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -68,7 +68,7 @@ function _packAndStoreIntrinsicPropertiesOf(
 
     _Internal references:_
 
-    * [`_packedIntrinsicPropertiesOf`](/protocol/api/contracts/jbfundingcyclestore/properties/-_packedintrinsicpropertiesof.md)
+    * [`_packedIntrinsicPropertiesOf`](/api/contracts/jbfundingcyclestore/properties/-_packedintrinsicpropertiesof.md)
 
 </TabItem>
 

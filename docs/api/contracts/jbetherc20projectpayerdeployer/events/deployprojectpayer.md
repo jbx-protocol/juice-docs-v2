@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`deployProjectPayer`](/protocol/api/contracts/jbetherc20projectpayerdeployer/write/deployprojectpayer.md)
+* [`deployProjectPayer`](/api/contracts/jbetherc20projectpayerdeployer/write/deployprojectpayer.md)
 
 ## Definition
 

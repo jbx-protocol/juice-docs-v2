@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbtokenstore.md)
+Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbtokenstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,9 +28,9 @@ function addToBalanceOf(
   * `_memo` is a memo to pass along to the emitted event.
 * The function can be accessed externally by anyone.
 * The function can be overriden by inheriting contracts.
-* Through the [`isTerminalOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
+* Through the [`isTerminalOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
 * The function accepts ETH. The transaction reverts if receives ETH but the terminal's token type isn't ETH.
-* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -52,7 +52,7 @@ function addToBalanceOf(
 
     _Virtual references:_
 
-    * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
+    * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 2.  Record the added funds.
 
     ```solidity
@@ -62,7 +62,7 @@ function addToBalanceOf(
 
     _External references:_
 
-    * [`recordAddedBalanceFor`](/protocol/api/contracts/jbpaymentterminalstore/write/recordaddedbalancefor.md)
+    * [`recordAddedBalanceFor`](/api/contracts/jbpaymentterminalstore/write/recordaddedbalancefor.md)
 3.  Refund any held fees. This is useful to allow a project to distribute funds from the protocol and subsequently add them back without paying eventually having to pay double fees.
 
     ```solidity
@@ -72,7 +72,7 @@ function addToBalanceOf(
 
     _Internal references:_
 
-    * [`_refundHeldFees`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_refundheldfees.md)
+    * [`_refundHeldFees`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_refundheldfees.md)
 4.  Emit a `AddToBalance` event with the relevant parameters.
 
     ```solidity
@@ -81,7 +81,7 @@ function addToBalanceOf(
 
     _Event references:_
 
-    * [`AddToBalance`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md)
+    * [`AddToBalance`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md)
 
 </TabItem>
 

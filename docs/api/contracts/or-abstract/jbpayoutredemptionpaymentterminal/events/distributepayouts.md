@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`distributePayoutsOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md)
+* [`distributePayoutsOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md)
 
 ## Definition
 

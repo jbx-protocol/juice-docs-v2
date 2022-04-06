@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
+Contract: [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -36,7 +36,7 @@ function currentReclaimableOverflowOf(
   * `_useTotalOverflow` is a flag indicating whether the overflow used in the calculation should be summed from all of the project's terminals. If false, overflow should be limited to the amount in the specified `_terminal`.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md) interface.
 * The function returns the amount of overflowed tokens that can be reclaimed, as a fixed point number with the same number of decimals as the provided `_terminal`.
 
 #### Body
@@ -50,7 +50,7 @@ function currentReclaimableOverflowOf(
 
     _External references:_
 
-    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 
 2.  Get the amount of overflow to make the calculation with. Use the total overflow of all of the project's terminals if total overflow should be used, otherwise use the overflow of the provided terminal.
 
@@ -69,13 +69,13 @@ function currentReclaimableOverflowOf(
 
     _Internal references:_
 
-    * [`_overflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/-_overflowduring.md)
-    * [`_currentTotalOverflowOf`](/protocol/api/contracts/jbpaymentterminalstore/read/-_currenttotaloverflowof.md)
+    * [`_overflowDuring`](/api/contracts/jbpaymentterminalstore/read/-_overflowduring.md)
+    * [`_currentTotalOverflowOf`](/api/contracts/jbpaymentterminalstore/read/-_currenttotaloverflowof.md)
 
     _External references:_
 
-    * [`decimals`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/decimals.md)
-    * [`currency`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/currency.md)
+    * [`decimals`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/decimals.md)
+    * [`currency`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/currency.md)
 
 3.  If there's no overflow, there's nothing reclaimable.
 
@@ -96,17 +96,17 @@ function currentReclaimableOverflowOf(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.reservedRate(...)`
 
     _Internal references:_
 
-    * [`directory`](/protocol/api/contracts/jbpaymentterminalstore/properties/directory.md)
+    * [`directory`](/api/contracts/jbpaymentterminalstore/properties/directory.md)
 
     _External references:_
 
-    * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
-    * [`totalOutstandingTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md)
+    * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
+    * [`totalOutstandingTokensOf`](/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md)
 
 5.  Return the reclaimable overflow using the project's current funding cycle and the derived current overflow. 
 
@@ -124,7 +124,7 @@ function currentReclaimableOverflowOf(
 
     _Internal references:_
 
-    * [`_reclaimableOverflowDuring`](/protocol/api/contracts/jbpaymentterminalstore/read/-_reclaimableoverflowduring.md)
+    * [`_reclaimableOverflowDuring`](/api/contracts/jbpaymentterminalstore/read/-_reclaimableoverflowduring.md)
 
 
 </TabItem>

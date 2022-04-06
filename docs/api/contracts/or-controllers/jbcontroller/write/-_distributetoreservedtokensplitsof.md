@@ -20,7 +20,7 @@ function _distributeToReservedTokenSplitsOf(
 
 * Arguments:
   * `_projectId` is the ID of the project for which reserved token splits are being distributed.
-  * `_fundingCycle` is the [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md) to base the token distribution on.
+  * `_fundingCycle` is the [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) to base the token distribution on.
   * `_amount` is the total amount of tokens to mint.
 * The function is private to this contract.
 * The function returns the leftover amount after all splits have been distributed.
@@ -46,12 +46,12 @@ function _distributeToReservedTokenSplitsOf(
 
     _Libraries used:_
 
-    * [`JBSplitsGroups`](/protocol/api/libraries/jbsplitsgroups.md)
+    * [`JBSplitsGroups`](/api/libraries/jbsplitsgroups.md)
       * `.RESERVED_TOKENS`
 
     _External references:_
 
-    * [`splitsOf`](/protocol/api/contracts/jbsplitsstore/read/splitsof.md)
+    * [`splitsOf`](/api/contracts/jbsplitsstore/read/splitsof.md)
 3.  Loop through each split.
 
     ```solidity
@@ -80,7 +80,7 @@ function _distributeToReservedTokenSplitsOf(
 
         * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
           * `.mulDiv(...)`
-        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
+        * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.SPLITS_TOTAL_PERCENT`
     6.  If there are tokens to mint for the given split, do so. If the split has an allocator specified, the tokens should go to that address. Otherwise if the split has a project ID specified, the tokens should be directed to the project's owner. Otherwise, the tokens should be directed at the beneficiary address of the split if it has one, or to the message sender if not. Afterwards, if there's an allocator specified, let it know that tokens have been sent. Reduce the leftover amount by the tokens that were sent to the split.
 
@@ -122,13 +122,13 @@ function _distributeToReservedTokenSplitsOf(
 
         _Libraries used:_
 
-        * [`JBSplitsGroups`](/protocol/api/libraries/jbsplitsgroups.md)
+        * [`JBSplitsGroups`](/api/libraries/jbsplitsgroups.md)
           * `.RESERVED_TOKENS`
 
         _External references:_
 
-        * [`mintFor`](/protocol/api/contracts/jbtokenstore/write/mintfor.md)
-        * [`allocate`](/protocol/api/interfaces/ijbsplitallocator.md)
+        * [`mintFor`](/api/contracts/jbtokenstore/write/mintfor.md)
+        * [`allocate`](/api/interfaces/ijbsplitallocator.md)
 
 7.  Emit a `DistributeToReservedTokenSplit` event for the split being iterated on with the relevant parameters.
 
@@ -145,7 +145,7 @@ function _distributeToReservedTokenSplitsOf(
 
     _Event references:_
 
-    * [`DistributeToReservedTokenSplit`](/protocol/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md)
+    * [`DistributeToReservedTokenSplit`](/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md)
 
 </TabItem>
 
@@ -241,7 +241,7 @@ function _distributeToReservedTokenSplitsOf(
 
 | Name                                                                                | Data                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeToReservedTokenSplit`**](/protocol/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[`JBSplit`](/protocol/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DistributeToReservedTokenSplit`**](/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[`JBSplit`](/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

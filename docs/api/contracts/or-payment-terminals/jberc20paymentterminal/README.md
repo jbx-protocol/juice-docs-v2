@@ -16,7 +16,7 @@ Ethereum mainnet: _Not yet deployed_
 
 | Contract                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBPayoutRedemptionPaymentTerminal`**](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) | Generic terminal managing all inflows and outflows of funds into the protocol ecosystem. |
+| [**`IJBPayoutRedemptionPaymentTerminal`**](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) | Generic terminal managing all inflows and outflows of funds into the protocol ecosystem. |
 
 ## Constructor
 
@@ -53,13 +53,13 @@ Ethereum mainnet: _Not yet deployed_
 
 * **Arguments:**
   * `_token` is the ERC20 token that this terminal manages.
-  * `_currency` is the currency that this terminal's token adheres to for price feeds. From [`JBCurrencies`](/protocol/api/libraries/jbcurrencies.md).
-  * `_baseWeightCurrency` is the currency to base token issuance on. From [`JBCurrencies`](/protocol/api/libraries/jbcurrencies.md).
-  * `_payoutSplitsGroup` is the group that denotes payout splits from this terminal in the splits store. From [`JBSplitGroups`](/protocol/api/libraries/jbsplitsgroups.md).
-  * `_operatorStore` is an [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
-  * `_projects` is an [`IJBProjects`](/protocol/api/interfaces/ijbprojects.md) contract which mints ERC-721's that represent project ownership and transfers.
-  * `_directory` is an [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
-  * `_splitsStore` is an [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore/) contract that stores splits for each project.
-  * `_prices` is an [`IJBPrices`](/protocol/api/interfaces/ijbprices.md) contract that exposes price feeds.
+  * `_currency` is the currency that this terminal's token adheres to for price feeds. From [`JBCurrencies`](/api/libraries/jbcurrencies.md).
+  * `_baseWeightCurrency` is the currency to base token issuance on. From [`JBCurrencies`](/api/libraries/jbcurrencies.md).
+  * `_payoutSplitsGroup` is the group that denotes payout splits from this terminal in the splits store. From [`JBSplitGroups`](/api/libraries/jbsplitsgroups.md).
+  * `_operatorStore` is an [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
+  * `_projects` is an [`IJBProjects`](/api/interfaces/ijbprojects.md) contract which mints ERC-721's that represent project ownership and transfers.
+  * `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
+  * `_splitsStore` is an [`IJBSplitsStore`](/api/interfaces/ijbsplitsstore/) contract that stores splits for each project.
+  * `_prices` is an [`IJBPrices`](/api/interfaces/ijbprices.md) contract that exposes price feeds.
   * `_store` is a contract that stores the terminal's data.
   * `_owner` is the address that will own this contract.

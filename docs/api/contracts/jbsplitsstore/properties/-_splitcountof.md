@@ -1,6 +1,6 @@
 # _splitCountOf
 
-Contract: [`JBSplitsStore`](/protocol/api/contracts/jbsplitsstore/README.md)​‌
+Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
 **The number of splits currently set for each project ID's configurations.**
 

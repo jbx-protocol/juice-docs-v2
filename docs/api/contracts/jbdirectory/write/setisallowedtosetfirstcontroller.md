@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md)​‌
+Contract:[`JBDirectory`](/api/contracts/jbdirectory/README.md)​‌
 
-Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
+Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -30,7 +30,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
   * `_address` is the address to allow or revoke allowance from.
   * `_flag` is whether allowance is being added or revoked.
 * Through the `onlyOwner` modifier, this function can only be accessed by the address that owns this contract.
-* The function overrides a function definition from the [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) interface.
+* The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
 * The function returns nothing.
 
 #### Body
@@ -44,7 +44,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 
     Internal references:
 
-    * [`isAllowedToSetFirstController`](/protocol/api/contracts/jbdirectory/properties/isallowedtosetfirstcontroller.md)
+    * [`isAllowedToSetFirstController`](/api/contracts/jbdirectory/properties/isallowedtosetfirstcontroller.md)
 2.  Emit a `SetIsAllowedToSetFirstController` event with the relevant parameters.
 
     ```solidity
@@ -53,7 +53,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 
     _Event references:_
 
-    * [`SetIsAllowedToSetFirstController`](/protocol/api/contracts/jbdirectory/events/setisallowedtosetfirstcontroller.md)
+    * [`SetIsAllowedToSetFirstController`](/api/contracts/jbdirectory/events/setisallowedtosetfirstcontroller.md)
 
 </TabItem>
 
@@ -93,7 +93,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 
 | Name                                                                          | Data                                                                                          |
 | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [**`SetIsAllowedToSetFirstController`**](/protocol/api/contracts/jbdirectory/events/setisallowedtosetfirstcontroller.md) | <ul><li><code>address indexed addr</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
+| [**`SetIsAllowedToSetFirstController`**](/api/contracts/jbdirectory/events/setisallowedtosetfirstcontroller.md) | <ul><li><code>address indexed addr</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

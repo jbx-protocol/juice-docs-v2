@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`_distributeToPayoutSplitsOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_distributetopayoutsplitsof.md)
+* [`_distributeToPayoutSplitsOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_distributetopayoutsplitsof.md)
 
 ## Definition
 
@@ -20,6 +20,6 @@ event DistributeToPayoutSplit(
 * `fundingCycleConfiguration` is the funding cycle configuration during which a payout split was distributed.
 * `fundingCycleNumber` is the number of the funding cycle during which a payout split was distributed.
 * `projectId` is the ID of the project that had a payout split distributed.
-* `split` is the [`JBSplit`](/protocol/api/data-structures/jbsplit.md) to which the distribution was made.
+* `split` is the [`JBSplit`](/api/data-structures/jbsplit.md) to which the distribution was made.
 * `amount` is the total token amount that was distributed to the split.
 * `caller` is the address that issued the transaction within which the event was emitted.

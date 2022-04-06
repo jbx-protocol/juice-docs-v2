@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -27,9 +27,9 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 * Arguments:
   * `_projectId` is the ID of the project being migrated.
   * `_to` is the terminal contract that will gain the project's funds.
-* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.MIGRATE_TERMINAL`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.MIGRATE_TERMINAL`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
 * The function can be overriden by inheriting contracts.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -43,7 +43,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     _Internal references:_
 
-    * [`token`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/token.md)
+    * [`token`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/token.md)
 2.  Record the migration and get a reference to the project's balance.
 
     ```solidity
@@ -53,7 +53,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     _External references:_
 
-    * [`recordMigration`](/protocol/api/contracts/jbpaymentterminalstore/write/recordmigration.md)
+    * [`recordMigration`](/api/contracts/jbpaymentterminalstore/write/recordmigration.md)
 3.  If there's a balance to migrate, move the funds over to the new terminal. Send ETH along with the transaction if this terminal is an ETH terminal. Make sure any inherited pre-transfer logic is called before transferring. 
 
     ```solidity
@@ -72,11 +72,11 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     _Virtual references:_
 
-    * [`_beforeTransferTo`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
+    * [`_beforeTransferTo`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
 
     _Internal references:_
 
-    * [`addToBalanceOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
+    * [`addToBalanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
 4.  Emit a `Migrate` event with the relevant parameters.
 
     ```solidity
@@ -85,7 +85,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     _Event references:_
 
-    * [`Migrate`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/migrate.md)
+    * [`Migrate`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/migrate.md)
 
 </TabItem>
 
@@ -144,7 +144,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
 | Name                                       | Data                                                                                                                                                                                                                                               |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Migrate`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/migrate.md)                                 | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)indexed to</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                 |
+| [**`Migrate`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/migrate.md)                                 | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)indexed to</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                 |
 
 </TabItem>
 

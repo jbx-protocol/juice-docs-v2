@@ -20,7 +20,7 @@ The following are risks that everyone should be aware of before interacting with
 
 1. The protocol runs entirely on public smart contracts explained in detail throughout these docs. The Juicebox protocol is public infrastructure running well-known code, all consequences from interacting with networks running the protocol are borne by the entities who sign each transaction. The protocol works according to the specifications outlined in these docs to the extent the code is written and deployed correctly, which is a collective responsibility and not guarenteed. There is a major risk that this is not the case. Please do your own research.
 
-2. Ownership of each project on the Juicebox protocol belongs to the address possessing a [`JBProjects`](/protocol/api/contracts/jbprojects) NFT with a unique token ID, which also serves as the project's ID. The address that owns this token can reconfigure a project's funding cycles, which empower it to manipulate a project's finances both productively and maliciously.
+2. Ownership of each project on the Juicebox protocol belongs to the address possessing a [`JBProjects`](/api/contracts/jbprojects) NFT with a unique token ID, which also serves as the project's ID. The address that owns this token can reconfigure a project's funding cycles, which empower it to manipulate a project's finances both productively and maliciously.
 
    The following values can be reconfigured on a per-funding cycle basis:
 

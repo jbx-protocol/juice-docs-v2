@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`_distributeToReservedTokenSplitsOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_distributetoreservedtokensplitsof.md)
+* [`_distributeToReservedTokenSplitsOf`](/api/contracts/or-controllers/jbcontroller/write/-_distributetoreservedtokensplitsof.md)
 
 ## Definition
 
@@ -20,6 +20,6 @@ event DistributeToReservedTokenSplit(
 * `fundingCycleConfiguration` is the funding cycle configuration during which the reserved tokens were distributed to the split.
 * `fundingCycleNumber` is the number of the funding cycle during which the reserved tokens were distributed to the split.
 * `projectId` is the ID of the token's project.
-* `split` is the [`JBSplit`](/protocol/api/data-structures/jbsplit.md) that received reserved tokens.
+* `split` is the [`JBSplit`](/api/data-structures/jbsplit.md) that received reserved tokens.
 * `tokenCount` is the number of tokens that were distributed to the split.
 * `caller` is the address that issued the transaction within which the event was emitted.

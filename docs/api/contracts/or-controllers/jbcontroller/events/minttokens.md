@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`mintTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/minttokensof.md)
+* [`mintTokensOf`](/api/contracts/or-controllers/jbcontroller/write/minttokensof.md)
 
 ## Definition
 

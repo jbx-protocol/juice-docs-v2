@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/protocol/api/contracts/jbpaymentterminalstore/README.md)​‌
+Contract: [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -41,7 +41,7 @@ function _currentTotalOverflowOf(
 
     _Internal references:_
 
-    * [`terminalsOf`](/protocol/api/contracts/jbdirectory/read/terminalsof.md)
+    * [`terminalsOf`](/api/contracts/jbdirectory/read/terminalsof.md)
 2.  Create references where the total balance across all terminals is be stored in terms of ETH.
 
     ```solidity
@@ -58,7 +58,7 @@ function _currentTotalOverflowOf(
 
     _External references:_
 
-    * [`currentEthOverflowOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/currentethoverflowof.md)
+    * [`currentEthOverflowOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/currentethoverflowof.md)
 4.  If the total overflow is to be returned in a currency other than ETH, make the conversion while maintaining 18 decimals of fidelity.
 
     ```solidity
@@ -72,12 +72,12 @@ function _currentTotalOverflowOf(
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
-    * [`JBCurrencies`](/protocol/api/libraries/jbcurrencies.md)
+    * [`JBCurrencies`](/api/libraries/jbcurrencies.md)
       * `.ETH`
 
     _External references:_
 
-    * [`priceFor`](/protocol/api/contracts/jbprices/read/pricefor.md)
+    * [`priceFor`](/api/contracts/jbprices/read/pricefor.md)
 5.  If the fixed point overflow is to be returned with a number of decimals other than 18, adjust the number accordingly. 
 
     ```solidity
@@ -92,7 +92,7 @@ function _currentTotalOverflowOf(
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
-    * [`JBFixedPointNumber`](/protocol/api/libraries/jbfixedpointnumber.md)
+    * [`JBFixedPointNumber`](/api/libraries/jbfixedpointnumber.md)
       * `.adjustDecimals(...)`
 
 </TabItem>

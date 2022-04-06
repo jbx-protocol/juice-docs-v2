@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayer`](/protocol/api/contracts/jbetherc20projectpayer/README.md)
+Contract: [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md)
 
-Interface: [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md)
+Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -44,7 +44,7 @@ receive() external payable virtual override { ... }
 
     _Internal references:_
 
-    * [`_pay`](/protocol/api/contracts/jbetherc20projectpayer/write/-_pay.md)
+    * [`_pay`](/api/contracts/jbetherc20projectpayer/write/-_pay.md)
 
 </TabItem>
 
