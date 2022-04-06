@@ -22,7 +22,7 @@ function _pay(
   bool _preferClaimedTokens,
   string memory _memo,
   bytes memory _metadata
-) private { ... }
+) private returns (uint256 beneficiaryTokenCount) { ... }
 ```
 
 * Arguments:
@@ -50,9 +50,8 @@ function _pay(
 
     ```solidity
     // Define variables that will be needed outside the scoped section below.
-    // Keep a reference to the funding cycle during which the payment is being made, and the number of tokens minted for the beneficiary.
+    // Keep a reference to the funding cycle during which the payment is being made.
     JBFundingCycle memory _fundingCycle;
-    uint256 _beneficiaryTokenCount;
 
     // Scoped section prevents stack too deep. `_delegate` and `_tokenCount` only used within scope.
     { ... }
@@ -96,7 +95,7 @@ function _pay(
         // Mint the tokens if needed.
         if (_tokenCount > 0)
           // Set token count to be the number of tokens minted for the beneficiary instead of the total amount.
-          _beneficiaryTokenCount = directory.controllerOf(_projectId).mintTokensOf(
+          beneficiaryTokenCount = directory.controllerOf(_projectId).mintTokensOf(
             _projectId,
             _tokenCount,
             _beneficiary,
@@ -115,7 +114,7 @@ function _pay(
 
         ```solidity
         // The token count for the beneficiary must be greater than or equal to the minimum expected.
-        if (_beneficiaryTokenCount < _minReturnedTokens) revert INADEQUATE_TOKEN_COUNT();
+        if (beneficiaryTokenCount < _minReturnedTokens) revert INADEQUATE_TOKEN_COUNT();
         ```
 
     6.   If a delegate was provided, callback to its `didPay` function, and emit an event with the relevant parameters..
@@ -127,7 +126,7 @@ function _pay(
             _payer,
             _projectId,
             _bundledAmount,
-            _beneficiaryTokenCount,
+            beneficiaryTokenCount,
             _beneficiary,
             _memo,
             _metadata
@@ -155,7 +154,7 @@ function _pay(
       _projectId,
       _beneficiary,
       _amount,
-      _beneficiaryTokenCount,
+      beneficiaryTokenCount,
       _memo,
       msg.sender
     );
@@ -182,6 +181,8 @@ function _pay(
   @param _preferClaimedTokens A flag indicating whether the request prefers to mint project tokens into the beneficiaries wallet rather than leaving them unclaimed. This is only possible if the project has an attached token contract. Leaving them unclaimed saves gas.
   @param _memo A memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate.  A data source can alter the memo before emitting in the event and forwarding to the delegate.
   @param _metadata Bytes to send along to the data source and delegate, if provided.
+
+  @return beneficiaryTokenCount The number of tokens minted for the beneficiary, as a fixed point number with 18 decimals.
 */
 function _pay(
   uint256 _amount,
@@ -192,14 +193,13 @@ function _pay(
   bool _preferClaimedTokens,
   string memory _memo,
   bytes memory _metadata
-) private {
+) private returns (uint256 beneficiaryTokenCount)  {
   // Cant send tokens to the zero address.
   if (_beneficiary == address(0)) revert PAY_TO_ZERO_ADDRESS();
 
   // Define variables that will be needed outside the scoped section below.
-  // Keep a reference to the funding cycle during which the payment is being made, and the number of tokens minted for the beneficiary.
+  // Keep a reference to the funding cycle during which the payment is being made.
   JBFundingCycle memory _fundingCycle;
-  uint256 _beneficiaryTokenCount;
 
   // Scoped section prevents stack too deep. `_delegate` and `_tokenCount` only used within scope.
   {
@@ -222,7 +222,7 @@ function _pay(
     // Mint the tokens if needed.
     if (_tokenCount > 0)
       // Set token count to be the number of tokens minted for the beneficiary instead of the total amount.
-      _beneficiaryTokenCount = directory.controllerOf(_projectId).mintTokensOf(
+      beneficiaryTokenCount = directory.controllerOf(_projectId).mintTokensOf(
         _projectId,
         _tokenCount,
         _beneficiary,
@@ -232,7 +232,7 @@ function _pay(
       );
 
     // The token count for the beneficiary must be greater than or equal to the minimum expected.
-    if (_beneficiaryTokenCount < _minReturnedTokens) revert INADEQUATE_TOKEN_COUNT();
+    if (beneficiaryTokenCount < _minReturnedTokens) revert INADEQUATE_TOKEN_COUNT();
 
     // If a delegate was returned by the data source, issue a callback to it.
     if (_delegate != IJBPayDelegate(address(0))) {
@@ -240,7 +240,7 @@ function _pay(
         _payer,
         _projectId,
         _bundledAmount,
-        _beneficiaryTokenCount,
+        beneficiaryTokenCount,
         _beneficiary,
         _memo,
         _metadata
@@ -257,7 +257,7 @@ function _pay(
     _projectId,
     _beneficiary,
     _amount,
-    _beneficiaryTokenCount,
+    beneficiaryTokenCount,
     _memo,
     msg.sender
   );

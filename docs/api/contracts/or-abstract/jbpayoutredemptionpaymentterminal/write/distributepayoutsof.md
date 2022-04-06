@@ -27,7 +27,7 @@ function distributePayoutsOf(
   uint256 _currency,
   uint256 _minReturnedTokens,
   string calldata _memo
-) external virtual override { ... }
+) external virtual override returns (uint256 netLeftoverDistributionAmount) { ... }
 ```
 
 * Arguments:
@@ -39,7 +39,7 @@ function distributePayoutsOf(
 * The function can be accessed externally by anyone.
 * The function can be overriden by inheriting contracts.
 * The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
-* The function returns doesn't return anything.
+* The function returns the amount that was sent to the project owner, as a fixed point number with the same amount of decimals as this terminal.
 
 #### Body
 
@@ -80,11 +80,10 @@ function distributePayoutsOf(
 
     ```solidity
     // Define variables that will be needed outside the scoped section below.
-    // Keep a reference to the fee amount that was paid, and the distribution amount leftover after distributing to the splits.
+    // Keep a reference to the fee amount that was paid.
     uint256 _fee;
-    uint256 _leftoverDistributionAmount;
 
-    // Scoped section prevents stack too deep. `_feeDiscount` and `_feeEligibleDistributionAmount` only used within scope.
+    // Scoped section prevents stack too deep. `_feeDiscount`, `_feeEligibleDistributionAmount`, and `_leftoverDistributionAmount` only used within scope.
     { ... }
     ```
 
@@ -107,11 +106,14 @@ function distributePayoutsOf(
 
         * [`_currentFeeDiscount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
-    2.  Get a reference to the amount of distributed funds from which fees should be taken.
+    2.  Get a reference to the amount of distributed funds from which fees should be taken, and the amount leftover after distributing splits.
 
         ```solidity
         // The amount distributed that is eligible for incurring fees.
         uint256 _feeEligibleDistributionAmount;
+
+        // The amount leftover after distributing to the splits.
+        uint256 _leftoverDistributionAmount;d
         ```
 
     3.  Distribute the amount to all payout splits. Get a reference to any leftover amount, and all amounts sent to splits from which fees should be taken.
@@ -163,21 +165,26 @@ function distributePayoutsOf(
 
         * [`_takeFeeFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
 
-    6.  Transfer any leftover amount to the project owner if needed.
+    6.  Calculate what the net value of the leftover distribution will be.
 
         ```solidity
-        // Transfer any remaining balance to the project owner.
-        if (_leftoverDistributionAmount > 0)
-          _transferFrom(
-            address(this),
-            _projectOwner,
-            _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, _feeDiscount)
-          );
+        // Get a reference to how much to distribute to the project owner, which is the leftover amount minus any fees.
+        netLeftoverDistributionAmount = _leftoverDistributionAmount == 0
+          ? 0
+          : _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, _feeDiscount);
         ```
 
         _Internal references:_
 
         * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
+
+    7.  Transfer any leftover amount to the project owner if needed.
+
+        ```solidity
+        // Transfer any remaining balance to the project owner.
+        if (netLeftoverDistributionAmount > 0)
+          _transferFrom(address(this), _projectOwner, netLeftoverDistributionAmount);
+        ```
 
         _Virtual references:_
 
@@ -194,7 +201,7 @@ function distributePayoutsOf(
       _amount,
       _distributedAmount,
       _fee,
-      _leftoverDistributionAmount,
+      netLeftoverDistributionAmount,
       _memo,
       msg.sender
     );
@@ -227,6 +234,8 @@ function distributePayoutsOf(
   @param _currency The expected currency of the amount being distributed. Must match the project's current funding cycle's distribution limit currency.
   @param _minReturnedTokens The minimum number of terminal tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same number of decimals as this terminal.
   @param _memo A memo to pass along to the emitted event.
+
+  @return netLeftoverDistributionAmount The amount that was sent to the project owner, as a fixed point number with the same amount of decimals as this terminal.
 */
 function distributePayoutsOf(
   uint256 _projectId,
@@ -234,7 +243,7 @@ function distributePayoutsOf(
   uint256 _currency,
   uint256 _minReturnedTokens,
   string calldata _memo
-) external virtual override {
+) external virtual override returns (uint256 netLeftoverDistributionAmount) {
   // Record the distribution.
   (JBFundingCycle memory _fundingCycle, uint256 _distributedAmount) = store.recordDistributionFor(
       _projectId,
@@ -251,11 +260,10 @@ function distributePayoutsOf(
   address payable _projectOwner = payable(projects.ownerOf(_projectId));
 
   // Define variables that will be needed outside the scoped section below.
-    // Keep a reference to the fee amount that was paid, and the distribution amount leftover after distributing to the splits.
+  // Keep a reference to the fee amount that was paid.
   uint256 _fee;
-  uint256 _leftoverDistributionAmount;
 
-  // Scoped section prevents stack too deep. `_feeDiscount` and `_feeEligibleDistributionAmount` only used within scope.
+  // Scoped section prevents stack too deep. `_feeDiscount`, `_feeEligibleDistributionAmount`, and `_leftoverDistributionAmount` only used within scope.
   {
     // Get the amount of discount that should be applied to any fees taken.
     // If the fee is zero, set the discount to 100% for convinience.
@@ -265,6 +273,9 @@ function distributePayoutsOf(
 
     // The amount distributed that is eligible for incurring fees.
     uint256 _feeEligibleDistributionAmount;
+
+    // The amount leftover after distributing to the splits.
+    uint256 _leftoverDistributionAmount;d
 
     // Payout to splits and get a reference to the leftover transfer amount after all splits have been paid.
     // Also get a reference to the amount that was distributed to splits from which fees should be taken.
@@ -290,13 +301,14 @@ function distributePayoutsOf(
         _feeDiscount
       );
 
+    // Get a reference to how much to distribute to the project owner, which is the leftover amount minus any fees.
+    netLeftoverDistributionAmount = _leftoverDistributionAmount == 0
+      ? 0
+      : _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, _feeDiscount);
+
     // Transfer any remaining balance to the project owner.
-    if (_leftoverDistributionAmount > 0)
-      _transferFrom(
-        address(this),
-        _projectOwner,
-        _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, _feeDiscount)
-      );
+    if (netLeftoverDistributionAmount > 0)
+      _transferFrom(address(this), _projectOwner, netLeftoverDistributionAmount);
   }
 
   emit DistributePayouts(
@@ -307,7 +319,7 @@ function distributePayoutsOf(
     _amount,
     _distributedAmount,
     _fee,
-    _leftoverDistributionAmount,
+    netLeftoverDistributionAmount,
     _memo,
     msg.sender
   );

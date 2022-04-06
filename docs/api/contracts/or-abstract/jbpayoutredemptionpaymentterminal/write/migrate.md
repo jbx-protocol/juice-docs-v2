@@ -21,7 +21,8 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
   external
   virtual
   override
-  requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.MIGRATE_TERMINAL) { ... }
+  requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.MIGRATE_TERMINAL) 
+  returns (uint256 balance) { ... }
 ```
 
 * Arguments:
@@ -30,7 +31,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 * Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.MIGRATE_TERMINAL`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
 * The function can be overriden by inheriting contracts.
 * The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
-* The function doesn't return anything.
+* The function returns the amount of funds that were migrated, as a fixed point number with the same amount of decimals as this terminal.
 
 #### Body
 
@@ -48,7 +49,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     ```solidity
     // Record the migration in the store.
-    uint256 _balance = store.recordMigration(_projectId);
+    balance = store.recordMigration(_projectId);
     ```
 
     _External references:_
@@ -58,15 +59,15 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     ```solidity
     // Transfer the balance if needed.
-    if (_balance > 0) {
+    if (balance > 0) {
       // Trigger any inherited pre-transfer logic.
-      _beforeTransferTo(address(_to), _balance);
+      _beforeTransferTo(address(_to), balance);
 
       // If this terminal's token is ETH, send it in msg.value.
-      uint256 _payableValue = token == JBTokens.ETH ? _balance : 0;
+      uint256 _payableValue = token == JBTokens.ETH ? balance : 0;
 
       // Withdraw the balance to transfer to the new terminal;
-      _to.addToBalanceOf{value: _payableValue}(_balance, _projectId, '');
+      _to.addToBalanceOf{value: _payableValue}(balance, _projectId, '');
     }
     ```
 
@@ -80,7 +81,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 4.  Emit a `Migrate` event with the relevant parameters.
 
     ```solidity
-    emit Migrate(_projectId, _to, _balance, msg.sender);
+    emit Migrate(_projectId, _to, balance, msg.sender);
     ```
 
     _Event references:_
@@ -101,32 +102,35 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
   @param _projectId The ID of the project being migrated.
   @param _to The terminal contract that will gain the project's funds.
+
+  @return balance The amount of funds that were migrated, as a fixed point number with the same amount of decimals as this terminal.
 */
 function migrate(uint256 _projectId, IJBPaymentTerminal _to)
   external
   virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.MIGRATE_TERMINAL)
+  returns (uint256 balance)
 {
   // The terminal being migrated to must accept the same token as this terminal.
   if (token != _to.token()) revert TERMINAL_TOKENS_INCOMPATIBLE();
 
   // Record the migration in the store.
-  uint256 _balance = store.recordMigration(_projectId);
+  balance = store.recordMigration(_projectId);
 
   // Transfer the balance if needed.
-  if (_balance > 0) {
+  if (balance > 0) {
     // Trigger any inherited pre-transfer logic.
-    _beforeTransferTo(address(_to), _balance);
+    _beforeTransferTo(address(_to), balance);
 
     // If this terminal's token is ETH, send it in msg.value.
-    uint256 _payableValue = token == JBTokens.ETH ? _balance : 0;
+    uint256 _payableValue = token == JBTokens.ETH ? balance : 0;
 
     // Withdraw the balance to transfer to the new terminal;
     _to.addToBalanceOf{value: _payableValue}(_balance, _projectId, '');
   }
 
-  emit Migrate(_projectId, _to, _balance, msg.sender);
+  emit Migrate(_projectId, _to, balance, msg.sender);
 }
 ```
 

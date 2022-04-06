@@ -30,7 +30,8 @@ function useAllowanceOf(
   external
   virtual
   override
-  requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.USE_ALLOWANCE) { ... }
+  requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.USE_ALLOWANCE)
+  returns (uint256 netDistributedAmount) { ... }
 ```
 
 * Arguments:
@@ -42,7 +43,7 @@ function useAllowanceOf(
 * Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.USE_ALLOWANCE`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
 * The function can be overriden by inheriting contracts.
 * The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
-* The function doesn't return anything.
+* The function returns the amount of tokens that was distributed to the beneficiary, as a fixed point number with the same amount of decimals as the terminal.
 
 #### Body
 
@@ -68,18 +69,19 @@ function useAllowanceOf(
     if (_distributedAmount < _minReturnedTokens) revert INADEQUATE_DISTRIBUTION_AMOUNT();
     ```
 
-3.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. Define a variable outside of the scope that'll be set within the scope but later referenced again outside.
+3.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. 
 
-    ```solidity
-    // Define variables that will be needed outside the scoped section below.
-    // Keep a reference to the fee amount that was paid.
-    uint256 _feeAmount;
-
-    // Scoped section prevents stack too deep. `_projectOwner`, `_feeDiscount`, and `_netAmount` only used within scope.
+    // Scoped section prevents stack too deep. `_fee`, `_projectOwner`, `_feeDiscount`, and `_netAmount` only used within scope.
     { ... }
     ```
+    1.  Get a reference to the fee.
 
-    1.  Get a reference to the project owner, who will be the beneficiary of the paid fee.
+        ```solidity
+        // Get a reference to the fee amount that was paid.
+        uint256 _feeAmount;
+        ```
+
+    2.  Get a reference to the project owner, who will be the beneficiary of the paid fee.
 
         ```solidity
         // Get a reference to the project owner, which will receive tokens from paying the platform fee.
@@ -90,7 +92,7 @@ function useAllowanceOf(
 
         * [`ownerOf`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#IERC721-ownerOf-uint256-)
 
-    2.  Get a reference to the discount that'll be used when applying the fee. If the fee is 0, set the discount to be 100% to simplify subsequent calculations. No fee is the same as a full discount. 
+    3.  Get a reference to the discount that'll be used when applying the fee. If the fee is 0, set the discount to be 100% to simplify subsequent calculations. No fee is the same as a full discount. 
 
         ```solidity
         // Get the amount of discount that should be applied to any fees taken.
@@ -109,7 +111,7 @@ function useAllowanceOf(
 
         * [`_currentFeeDiscount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
-    3.  Take the fee if needed.
+    4.  Take the fee if needed.
 
         ```solidity
         // Take a fee from the `_distributedAmount`, if needed.
@@ -127,14 +129,15 @@ function useAllowanceOf(
 
         * [`_takeFeeFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
 
-    4.  Send the net amount to the beneficiary if needed.
+    5.  Send the net amount to the beneficiary if needed.
 
         ```solidity
         // The net amount is the withdrawn amount without the fee.
-        uint256 _netAmount = _distributedAmount - _fee;
+        netDistributedAmount = _distributedAmount - _fee;
 
         // Transfer any remaining balance to the beneficiary.
-        if (_netAmount > 0) _transferFrom(address(this), _beneficiary, _netAmount);
+        if (netDistributedAmount > 0) 
+          _transferFrom(address(this), _beneficiary, _netAmount);
         ```
 
         _Virtual references:_
@@ -151,7 +154,7 @@ function useAllowanceOf(
       _beneficiary,
       _amount,
       _distributedAmount,
-      _fee,
+      netDistributedAmount,
       _memo,
       msg.sender
     );
@@ -182,6 +185,8 @@ function useAllowanceOf(
   @param _minReturnedTokens The minimum number of tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same amount of decimals as this terminal.
   @param _beneficiary The address to send the funds to.
   @param _memo A memo to pass along to the emitted event.
+
+  @return netDistributedAmount The amount of tokens that was distributed to the beneficiary, as a fixed point number with the same amount of decimals as the terminal.)
 */
 function useAllowanceOf(
   uint256 _projectId,
@@ -195,6 +200,7 @@ function useAllowanceOf(
   virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.USE_ALLOWANCE)
+  returns (uint256 netDistributedAmount)
 {
   // Record the use of the allowance.
   (JBFundingCycle memory _fundingCycle, uint256 _distributedAmount) = store.recordUsedAllowanceOf(
@@ -208,11 +214,11 @@ function useAllowanceOf(
   // Keep a reference to the fee amount that was paid.
   if (_distributedAmount < _minReturnedTokens) revert INADEQUATE_DISTRIBUTION_AMOUNT();
 
-  // Define variables that will be needed outside the scoped section below.
-  uint256 _fee;
-
-  // Scoped section prevents stack too deep. `_projectOwner`, `_feeDiscount`, and `_netAmount` only used within scope.
+  // Scoped section prevents stack too deep. `_fee`, `_projectOwner`, `_feeDiscount`, and `_netAmount` only used within scope.
   {
+    // Get a reference to the fee amount that was paid.
+    uint256 _feeAmount;
+
     // Get a reference to the project owner, which will receive tokens from paying the platform fee.
     address _projectOwner = projects.ownerOf(_projectId);
 
@@ -228,10 +234,11 @@ function useAllowanceOf(
       : _takeFeeFrom(_projectId, _fundingCycle, _distributedAmount, _projectOwner, _feeDiscount);
 
     // The net amount is the withdrawn amount without the fee.
-    uint256 _netAmount = _distributedAmount - _fee;
+    netDistributedAmount = _distributedAmount - _fee;
 
     // Transfer any remaining balance to the beneficiary.
-    if (_netAmount > 0) _transferFrom(address(this), _beneficiary, _netAmount);
+    if (netDistributedAmount > 0) 
+      _transferFrom(address(this), _beneficiary, _netAmount);
   }
 
   emit UseAllowance(
@@ -241,7 +248,7 @@ function useAllowanceOf(
     _beneficiary,
     _amount,
     _distributedAmount,
-    _fee,
+    netDistributedAmount,
     _memo,
     msg.sender
   );

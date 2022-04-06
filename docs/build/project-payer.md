@@ -4,15 +4,15 @@ sidebar_position: 4
 
 # Project payer
 
-[`JBProjectPayer`](/protocol/api/contracts/jbprojectpayer/) contracts make it easy to route funds to a projects' treasuries from other contracts or from within inheriting contracts. This is useful for routing funds to a Juicebox treasury from within other contracts such as an NFT's minting function, or creating contract's that will automatically route any received funds to a project's treasury with preconfigured parameters to send along with the payment.  
+[`JBETHERC20ProjectPayer`](/protocol/api/contracts/jbetherc20projectpayer/) contracts make it easy to route funds to a projects' treasuries from other contracts or from within inheriting contracts. This is useful for routing funds to a Juicebox treasury from within other contracts such as an NFT's minting function, or creating contract's that will automatically route any received funds to a project's treasury with preconfigured parameters to send along with the payment.  
 
-The [`JBProjectPayer`] can be inherited from any contract to facilitate internal transactions to juicebox treasuries. They can also be deployed as stand alone project payer copies using [`JBProjectPayerDeployer`](/protocol/api/contracts/jbprojectpayerdeployer).
+The [`JBETHERc20ProjectPayer`] can be inherited from any contract to facilitate internal transactions to juicebox treasuries in ETH or any ERC-20s, assuming the project is using a payment terminal that accepts those tokens. They can also be deployed as stand alone project payer copies using [`JBProjectPayerDeployer`](/protocol/api/contracts/jbetherc20projectpayerdeployer).
 
 #### Inheriting JBProjectPayer
 
-Inheriting from [`JBProjectPayer`](/protocol/api/contracts/jbprojectpayer/) will give a contract access to a public [`JBProjectPayer.pay(...)`](protocol/api/contracts/jbprojectpayer/write/pay.md) function and an internal [`JBProjectPayer._pay(...)`](protocol/api/contracts/jbprojectpayer/write/_pay.md) function. These can be used from within the contract to route funds to a juicebox treasury while specifying all relevant parameters to contextualize the payment. Use the internal version if the inheriting contract has already handled receiving the funds being forwaded.
+Inheriting from [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/) will give a contract access to a public [`JBProjectPayer.pay(...)`](/api/contracts/jbetherc20projectpayer/) function and an internal [`JBProjectPayer._pay(...)`](/api/contracts/jbetherc20projectpayer/write/-_pay.md) function. These can be used from within the contract to route funds to a juicebox treasury while specifying all relevant parameters to contextualize the payment. Use the internal version if the inheriting contract has already handled receiving the funds being forwaded.
 
-Follow instructions in [`Getting started`](protocol/build/getting-started.md) to import the JBProjectPayer files into a project.
+Follow instructions in [`Getting started`](/build/getting-started.md) to import the JBProjectPayer files into a project.
 
 ```solidity
 function pay(
@@ -46,7 +46,7 @@ If your contract does not wish to route payments received via the native `receiv
 
 #### Deploying project payers
 
-Instances of the [`JBProjectPayer`](/protocol/api/contracts/jbprojectpayer/) contract can also be deployed as stand-alone forwarders of payments to juicebox treasuries. A new project payer can be deployed using [`JBProjectPayerDeployer.deployProjectPayer(...)`](/protocol/api/contracts/jbprojectpayerdeployer/write/deployprojectpayer.md).
+Instances of the [`JBProjectPayer`](/api/contracts/jbprojectpayer/) contract can also be deployed as stand-alone forwarders of payments to juicebox treasuries. A new project payer can be deployed using [`JBProjectPayerDeployer.deployProjectPayer(...)`](/api/contracts/jbetherc20projectpayerdeployer/write/deployprojectpayer.md).
 
 ```solidity
 function deployProjectPayer(

@@ -39,7 +39,7 @@ function pay(
 * Through the [`isTerminalOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
 * The function accepts ETH. The transaction reverts if receives ETH but the terminal's token type isn't ETH.
 * The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
-* The function doesn't return anything.
+* The function returns the number of tokens minted for the beneficiary, as a fixed point number with 18 decimals.
 
 #### Body
 
@@ -97,6 +97,8 @@ function pay(
   @param _preferClaimedTokens A flag indicating whether the request prefers to mint project tokens into the beneficiaries wallet rather than leaving them unclaimed. This is only possible if the project has an attached token contract. Leaving them unclaimed saves gas.
   @param _memo A memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate. A data source can alter the memo before emitting in the event and forwarding to the delegate.
   @param _metadata Bytes to send along to the data source and delegate, if provided.
+
+  @return The number of tokens minted for the beneficiary, as a fixed point number with 18 decimals.
 */
 function pay(
   uint256 _amount,
@@ -106,7 +108,7 @@ function pay(
   bool _preferClaimedTokens,
   string calldata _memo,
   bytes calldata _metadata
-) external payable virtual override isTerminalOfProject(_projectId) {
+) external payable virtual override isTerminalOfProject(_projectId) returns (uint256) {
   // ETH shouldn't be sent if this terminal's token isn't ETH.
   if (token != JBTokens.ETH) {
     if (msg.value > 0) revert NO_MSG_VALUE_ALLOWED();
