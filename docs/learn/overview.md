@@ -142,7 +142,7 @@ sidebar_position: 1
   <br/>
   A project can change its token during any of its funding cycles that are explicitly configured to allow changes.<br/>
   <br/>
-  By default, the protocol provides a transaction for projects to deploy <a href="/docs/api/contracts/jbtoken">`JBToken`</a> ERC-20 tokens. 
+  By default, the protocol provides a transaction for projects to deploy <a href="/docs/api/contracts/jbtoken"><code>JBToken</code></a> ERC-20 tokens. 
   <br/>
 * **Splits**<br/>
   A project can pre-program token distributions to splits. The destination of a split can be an Ethereum address, the project ID of another project's Juicebox treasury (the split will allow you to configure the beneficiary of that project's tokens that get minted in response to the contribution), to the `allocate(...)` function of any contract that adheres to <a href="/docs/api/interfaces/ijbsplitallocator">`IJBSplitAllocator`</a>, or to the address that initiated the transaction that distributes tokens to the splits.<br/>
