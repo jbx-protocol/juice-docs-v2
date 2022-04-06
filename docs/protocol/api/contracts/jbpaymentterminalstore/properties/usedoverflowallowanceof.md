@@ -8,7 +8,7 @@ Interface: [`JBPaymentTerminalStore`](/protocol/api/interfaces/ijbpaymenttermina
 
 _Increases as projects use their allowance._
 
-_The used allowance limit is represented as a fixed point number with the same amount of decimals as its relative terminal._
+_The used allowance is represented as a fixed point number with the same amount of decimals as its relative terminal._
 
 # Definition
 
@@ -21,7 +21,7 @@ _The used allowance limit is represented as a fixed point number with the same a
   Increases as projects use their allowance.
 
   @dev
-  The used allowance limit is represented as a fixed point number with the same amount of decimals as its relative terminal.
+  The used allowance is represented as a fixed point number with the same amount of decimals as its relative terminal.
 
   _terminal The terminal to which the overflow allowance applies.
   _projectId The ID of the project to get the used overflow allowance of.

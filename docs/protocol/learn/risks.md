@@ -34,7 +34,7 @@ The following are risks that everyone should be aware of before interacting with
      
      <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to rug the entire treasury into an arbitrary wallet.<br/><br/>
 
-   * **Setting an overflow allowance limit** 
+   * **Setting an overflow allowance** 
      
      With an overflow allowance of zero, all treasury funds belonging to the community – funds in excess of the distribution limit – can not be accessed by the project owner. The only way funds can leave the treasury is through token redemptions. 
 
