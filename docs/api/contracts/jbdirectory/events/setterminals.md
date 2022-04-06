@@ -1,4 +1,4 @@
-# AddTerminal
+# SetTerminal
 
 Emitted from:
 
