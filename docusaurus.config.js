@@ -10,8 +10,8 @@ const config = {
   tagline: 'The juiciest repository of knowledge' ,
   url: 'https://info.juicebox.money',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'Juicebox', // Usually your GitHub org/user name.
   projectName: 'Juicebox Protocol', // Usually your repo name.
