@@ -132,9 +132,11 @@ sidebar_position: 1
   By default, a project starts with 0 tokens and mints them when its treasury receives contributions.<br/>
   A project can mint and distribute more of its own tokens on demand if its current funding cycle isn't configured to pause minting.
   <br/>
+
 * **Burn tokens**<br/>
   Anyone can burn a project's tokens, if the project's current funding cycle isn't configured to paused burning.
   <br/>
+
 * **Bring-your-own token**<br/>
   A project can bring its own token, as long as it adheres to <a href="/docs/api/interfaces/ijbtoken">`IJBToken`</a> and uses fixed point accounting with 18 decimals.<br/>
   <br/>
@@ -144,12 +146,14 @@ sidebar_position: 1
   <br/>
   By default, the protocol provides a transaction for projects to deploy <a href="/docs/api/contracts/jbtoken"><code>JBToken</code></a> ERC-20 tokens. 
   <br/>
+
 * **Splits**<br/>
   A project can pre-program token distributions to splits. The destination of a split can be an Ethereum address, the project ID of another project's Juicebox treasury (the split will allow you to configure the beneficiary of that project's tokens that get minted in response to the contribution), to the `allocate(...)` function of any contract that adheres to <a href="/docs/api/interfaces/ijbsplitallocator">`IJBSplitAllocator`</a>, or to the address that initiated the transaction that distributes tokens to the splits.<br/>
   <br/>
   <a href="/docs/learn/glossary/splits">Learn more about splits</a><br/>
   <a href="/docs/learn/glossary/split-allocator">Learn more about allocators</a>
   <br/>
+
 * **Protocol fees**<br/>
   All funds distributed by projects from their treasuries to destinations outside of the juicebox ecosystem will incure a protocol fee. This fee is sent to the JuiceboxDAO treasury which runs on the Juicebox protocol itself (project ID of 1), triggering the same functionality as a payment directly to JuiceboxDAO (by default, minting JBX for the fee payer according to JuiceboxDAO's current funding cycle configuration) from an external source.<br/>
   <br/>
@@ -157,20 +161,24 @@ sidebar_position: 1
   <br/>
   Any funds sent from one juicebox treasury to another via splits do not incur fees.
   <br/>
+
 * **Custom treasury strategies**<br/>
   Funding cycles can be configured to use an <a href="/docs/api/interfaces/ijbfundingcycledatasource">`IJBFundingCycleDataSource`</a>, <a href="/docs/api/interfaces/ijbpaydelegate">`IJBPayDelegate`</a>, and <a href="/docs/api/interfaces/ijbredemptiondelegate">`IJBRedemptionDelegate`</a> to extend or override the default protocol's behavior that defines what happens when an address tries to make a payment to the project's treasury, and what happens when someone tries to redeem the project tokens during any particular funding cycle.<br/>
   <br/>
   <a href="/docs/learn/glossary/data-source">Learn more about data sources</a><br/>
   <a href="/docs/learn/glossary/delegate">Learn more about delegates</a>
   <br/>
+
 * **Accept multiple tokens**<br/>
   A project can specify any number of payment terminal contracts where it can receive funds denominated in various tokens. This allows projects to create distinct rules for accepting ETH, any ERC-20, or any asset in general.<br/>
   <br/>
   Anyone can roll their own contract that adheres to <a href="/docs/api/interfaces/ijbpaymentterminal">`IJBPaymentTerminal`</a> for projects to use, and a project can migrate funds between terminals that use the same token as it wishes.
   <br/>
+
 * **Forkability and migratability**<br/>
   A project can migrate its treasury's controller to any other contract that adheres to <a href="/docs/api/interfaces/ijbcontroller">`IJBController`</a>. This allows a project to evolve into updated or custom treasury dynamics rules over time as it wishes.
   <br/>
+
 * **Operators**<br/>
   A project owner can specify addresses that are allowed to operate certain administrative treasury transactions on its behalf.<br/>
   <br/>
