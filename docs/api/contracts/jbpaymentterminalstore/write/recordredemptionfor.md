@@ -133,7 +133,14 @@ function recordRedemptionFor(
         * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
         * [`totalOutstandingTokensOf`](/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md)
 
-    3.  Get a reference to the reclaimable overflow if there is overflow. 
+    3.  Make sure the provided token count is within the bounds of the total supply.
+
+        ```solidity
+        // Can't redeem more tokens that is in the supply.
+        if (_tokenCount > _totalSupply) revert INSUFFICIENT_TOKENS();
+        ```
+
+    4.  Get a reference to the reclaimable overflow if there is overflow. 
 
         ```solidity
         if (_currentOverflow > 0)
@@ -151,7 +158,7 @@ function recordRedemptionFor(
 
         * [`_reclaimableOverflowDuring`](/api/contracts/jbpaymentterminalstore/read/-_reclaimableoverflowduring.md)
 
-    4.  If the project's current funding cycle is configured to use a data source when making redemptions, ask the data source for the parameters that should be used throughout the rest of the function given provided contextual values in a [`JBRedeemParamsData`](/api/data-structures/jbredeemparamsdata.md) structure. Otherwise default parameters are used.
+    5.  If the project's current funding cycle is configured to use a data source when making redemptions, ask the data source for the parameters that should be used throughout the rest of the function given provided contextual values in a [`JBRedeemParamsData`](/api/data-structures/jbredeemparamsdata.md) structure. Otherwise default parameters are used.
 
         ```solidity
         // If the funding cycle has configured a data source, use it to derive a claim amount and memo.
@@ -284,6 +291,9 @@ function recordRedemptionFor(
       _projectId,
       fundingCycle.reservedRate()
     );
+
+    // Can't redeem more tokens that is in the supply.
+    if (_tokenCount > _totalSupply) revert INSUFFICIENT_TOKENS();
 
     if (_currentOverflow > 0)
       // Calculate reclaim amount using the current overflow amount.

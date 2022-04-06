@@ -108,7 +108,14 @@ function currentReclaimableOverflowOf(
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
     * [`totalOutstandingTokensOf`](/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md)
 
-5.  Return the reclaimable overflow using the project's current funding cycle and the derived current overflow. 
+5.  Make sure the provided token count is within the bounds of the total supply.
+
+    ```solidity
+    // Can't redeem more tokens that is in the supply.
+    if (_tokenCount > _totalSupply) return 0;
+    ```
+
+6.  Return the reclaimable overflow using the project's current funding cycle and the derived current overflow. 
 
     ```solidity
     // Return the reclaimable overflow amount.
@@ -180,6 +187,9 @@ function currentReclaimableOverflowOf(
     _projectId,
     _fundingCycle.reservedRate()
   );
+
+  // Can't redeem more tokens that is in the supply.
+  if (_tokenCount > _totalSupply) return 0;
   
   // Return the reclaimable overflow amount.
   return

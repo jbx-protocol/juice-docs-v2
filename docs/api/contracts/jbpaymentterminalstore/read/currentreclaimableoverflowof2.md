@@ -44,7 +44,14 @@ function currentReclaimableOverflowOf(
     if (_overflow == 0) return 0;
     ```
 
-2.  Get a reference to the project's current funding cycle.
+2.  Make sure the provided token count is within the bounds of the total supply.
+
+    ```solidity
+    // Can't redeem more tokens that is in the supply.
+    if (_tokenCount > _totalSupply) return 0;
+    ```
+
+3.  Get a reference to the project's current funding cycle.
     
     ```solidity
     // Get a reference to the project's current funding cycle.
@@ -55,7 +62,7 @@ function currentReclaimableOverflowOf(
 
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 
-2.  Return the reclaimable overflow using the project's current funding cycle and the provided parameters. 
+4.  Return the reclaimable overflow using the project's current funding cycle and the provided parameters. 
 
     ```solidity
     // If there is no overflow, nothing is reclaimable.
@@ -95,6 +102,9 @@ function currentReclaimableOverflowOf(
 ) external view override returns (uint256) {
   // If there's no overflow, there's no reclaimable overflow.
   if (_overflow == 0) return 0;
+
+  // Can't redeem more tokens that is in the supply.
+  if (_tokenCount > _totalSupply) return 0;
 
   // Get a reference to the project's current funding cycle.
   JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
