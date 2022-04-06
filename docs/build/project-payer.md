@@ -42,6 +42,8 @@ function _pay(
 ) internal virtual {}
 ```
 
+If your contract does not wish to route payments received via the native `receive` interaction to a juicebox treasury, all default constructor arguments can be left as null values. The contract will revert any payment received.
+
 #### Deploying project payers
 
 Instances of the [`JBProjectPayer`](/protocol/api/contracts/jbprojectpayer/) contract can also be deployed as stand-alone forwarders of payments to juicebox treasuries. A new project payer can be deployed using [`JBProjectPayerDeployer.deployProjectPayer(...)`](/protocol/api/contracts/jbprojectpayerdeployer/write/deployprojectpayer.md).
