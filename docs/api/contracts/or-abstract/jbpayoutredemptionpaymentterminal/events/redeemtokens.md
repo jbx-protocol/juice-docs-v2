@@ -14,7 +14,7 @@ event RedeemTokens(
   address holder,
   address beneficiary,
   uint256 tokenCount,
-  uint256 claimedAmount,
+  uint256 reclaimedAmount,
   string memo,
   address caller
 );
@@ -26,6 +26,6 @@ event RedeemTokens(
 * `holder` is the address whose tokens were redeemed.
 * `beneficiary` is the address to which any redemption benefits were sent.
 * `tokenCount` is the amount of tokens that were redeemed.
-* `claimedAmount` is the amount of tokens that were sent to the beneficiary as a result of the redemption.
+* `reclaimedAmount` is the amount of tokens that were sent to the beneficiary as a result of the redemption.
 * `memo` is a note that was attached.
 * `caller` is the address that issued the transaction within which the event was emitted.
