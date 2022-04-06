@@ -1,11 +1,5 @@
 # IJBETHERC20ProjectPayerDeployer
 
-```solidity
-pragma solidity 0.8.6;
-
-import './IJBDirectory.sol';
-import './IJBProjectPayer.sol';
-
 interface IJBETHERC20ProjectPayerDeployer {
   event DeployProjectPayer(
     IJBProjectPayer indexed projectPayer,
