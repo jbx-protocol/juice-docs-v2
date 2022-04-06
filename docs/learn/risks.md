@@ -38,21 +38,21 @@ The following are risks that everyone should be aware of before interacting with
      
      With an overflow allowance of zero, all treasury funds belonging to the community – funds in excess of the distribution limit – can not be accessed by the project owner. The only way funds can leave the treasury is through token redemptions. 
 
-     A non-zero overflow allowance gives the project owner access to a portion of the community's funds for on-demaind distribution to arbitrary addresses.
+     A non-zero overflow allowance gives the project owner access to a portion of the community's funds for on-demand distribution to arbitrary addresses.
      
      <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to manage discretionary spending.<br/><br/>
 
      <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to rug the entire treasury into an arbitrary wallet.<br/><br/>
 
-   * **Allowing on-demand token minting** 
+   * **Paused token minting** 
 
-     While token minting isn't allowed, the only way for new project tokens to be minted and distributed is for the project to receive new funds into its treasury. Tokens will get minted in accordance to the current funding cycle's values. 
+     While token minting is paused, the only way for new project tokens to be minted and distributed is for the project to receive new funds into its treasury. Tokens will get minted in accordance to the current funding cycle's values. 
 
-     If token minting is allowed, an arbitrary number of tokens can be minted and distributed by the project owner, diluting the redemption value of all outstanding tokens.
+     If token minting isn't paused, an arbitrary number of tokens can be minted and distributed by the project owner, diluting the redemption value of all outstanding tokens.
      
      <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to premint tokens to members, or satisfy other agreed upon inflationary treasury strategies.<br/><br/>
 
-     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to mint exorbenant amount of tokens and redeem them to reclaim treasury funds into an arbitrary wallet.<br/><br/>
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to mint extra tokens and redeem them to reclaim treasury funds into an arbitrary wallet, rugging the entire treasury.<br/><br/>
 
    * **Allowing changing of project tokens** 
 
@@ -60,7 +60,17 @@ The following are risks that everyone should be aware of before interacting with
 
      If changing tokens is allowed, a new token can replace the role of a previous token for new issuance and redemptions. 
      
-     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, dettach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.<br/><br/>
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, detach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.<br/><br/>
+
+     <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.<br/><br/>
+
+  * **Pause payments, pause distributions, pause redemptions, pause burn**
+
+     While each functionality isn't paused, the standard functionality will be accessible.
+
+     If payments are paused to a project, the protocol will reject any inbound payments. If disitributions are paused for a project, the protocol will reject any request to distribute funds from the treasury. If redemptions are paused, the p changing tokens is allowed, a new token can replace the role of a previous token for new issuance and redemptions. 
+
+     <Highlight color="#009933"><strong>Used productively</strong></Highlight> this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, detach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.<br/><br/>
 
      <Highlight color="#ff3300"><strong>Used maliciously</strong></Highlight> this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.<br/><br/>
 

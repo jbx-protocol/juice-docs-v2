@@ -51,10 +51,10 @@ function recordUsedAllowanceOf(
     _External references:_
 
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
-2.  Get a reference to the new used overflow allowance.
+2.  Get a reference to the new used overflow allowance for this funding cycle configuration.
 
     ```solidity
-    // Get a reference to the new used overflow allowance.
+    // Get a reference to the new used overflow allowance for this funding cycle configuration.
     uint256 _newUsedOverflowAllowanceOf = usedOverflowAllowanceOf[IJBPaymentTerminal(msg.sender)][
       _projectId
     ][fundingCycle.configuration] + _amount;
@@ -206,7 +206,7 @@ function recordUsedAllowanceOf(
   // Get a reference to the project's current funding cycle.
   fundingCycle = fundingCycleStore.currentOf(_projectId);
 
-  // Get a reference to the new used overflow allowance.
+  // Get a reference to the new used overflow allowance for this funding cycle configuration.
   uint256 _newUsedOverflowAllowanceOf = usedOverflowAllowanceOf[IJBPaymentTerminal(msg.sender)][
     _projectId
   ][fundingCycle.configuration] + _amount;

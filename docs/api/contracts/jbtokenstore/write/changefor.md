@@ -16,6 +16,8 @@ _Only a project's current controller can change its token._
 
 _This contract must have access to all of the token's [`IJBToken`](/api/interfaces/ijbtoken.md) interface functions._
 
+_Can't change to a token that's currently being used by another project._
+
 #### Definition
 
 ```solidity
@@ -145,6 +147,9 @@ function changeFor(
 
   @dev
   This contract must have access to all of the token's `IJBToken` interface functions.
+
+  @dev
+  Can't change to a token that's currently being used by another project.
 
   @param _projectId The ID of the project to which the changed token belongs.
   @param _token The new token. Send an empty address to remove the project's current token without adding a new one, if claiming tokens isn't currency required by the project.
