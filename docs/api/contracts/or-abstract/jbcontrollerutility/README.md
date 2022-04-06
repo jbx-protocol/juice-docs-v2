@@ -1,7 +1,6 @@
 ---
 description: >-
-  Provides tools for contracts that has functionality that can only be accessed
-  by a project's controller.
+  Provides tools for contracts with functionality that can only be accessed by a project's controller.
 ---
 
 # JBControllerUtility
