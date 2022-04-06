@@ -14,13 +14,13 @@ The Juicebox protocol is a programmable treasury. Projects can use it to configu
 
 The protocol is nuanced, however. The goal of the protocol docs is for you to find any protocol related information that you're looking for. Whether you're auditing, developing your own JB project, creating your own JB extensions, looking for bug bounties, or just looking to learn some solidity and contract design, these docs should give you just what you're looking for. These docs should allow you to click around and get a real good deep dive, and should just as easily allow you to find overview information.
 
-Looking for general guides on how the protocol works? See the [Learn](/learn/overview.md) section.
+Looking for general guides on how the protocol works? See the [Learn](learn/overview.md) section.
 
-Looking for guides to launch and program a treasury? See the [Build](/build/getting-started.md) section.
+Looking for guides to launch and program a treasury? See the [Build](build/getting-started.md) section.
 
-Looking for an outline of the protocol's API, or a deep dive on each line of code? Click around in the [API](/api/contracts/) section. There are bug bounties posted for each documented function.
+Looking for an outline of the protocol's API, or a deep dive on each line of code? Click around in the [API](api/contracts/) section. There are bug bounties posted for each documented function.
 
-Documentation for Juicebox Protocol V1 (live on mainnet since July 2021) is available [here](/docs/protocol-v1/).
+Documentation for Juicebox Protocol V1 (live on mainnet since July 2021) is available [here](protocol-v1/).
 
 Reach out to contributors of the DAO on Discord to call attention to something that could be made more clear. You can also submit PR's directly to the documentation repo [here](https://github.com/jbx-protocol/juice-docs).
 
