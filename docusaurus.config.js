@@ -53,8 +53,14 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Sidebar config
       hideableSidebar: true,
       autoCollapseSidebarCategories: true,
+      // Color mode
+      colorMode: {
+	defaultMode: 'dark',
+	respectPrefersColorScheme: true,
+      }, 
       navbar: {
         logo: {
           alt: 'Juicebox Logo',
