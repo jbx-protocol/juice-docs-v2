@@ -1,4 +1,4 @@
-# SetOverflowAllowance
+# SetFundAccessConstraints
 
 Emitted from:
 
