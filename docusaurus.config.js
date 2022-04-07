@@ -150,6 +150,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
 	defaultLanguage: 'solidity',
+	additionalLanguages: ['solidity'],
       },
       
     }),
