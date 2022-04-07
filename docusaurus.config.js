@@ -145,7 +145,6 @@ const config = {
             ],
           },
         ],
-        copyright: `Licensed under The MIT License.`,
       },
       prism: {
         theme: lightCodeTheme,
