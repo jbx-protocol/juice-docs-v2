@@ -8,7 +8,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   A flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet. Leaving tokens unclaimed saves gas.

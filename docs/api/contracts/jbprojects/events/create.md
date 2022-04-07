@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event Create(
   uint256 indexed projectId,
   address indexed owner,

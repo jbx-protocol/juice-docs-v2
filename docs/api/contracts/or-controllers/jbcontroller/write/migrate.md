@@ -14,7 +14,7 @@ _Only a project's owner or a designated operator can migrate it._
 
 ### Definition
 
-```solidity
+```
 function migrate(uint256 _projectId, IJBController _to)
   external
   virtual
@@ -33,7 +33,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
 1.  Make sure this controller is the project's current controller. 
 
-    ```solidity
+    ```
     // This controller must be the project's current controller.
     if (directory.controllerOf(_projectId) != this) revert NOT_CURRENT_CONTROLLER();
     ```
@@ -43,7 +43,7 @@ function migrate(uint256 _projectId, IJBController _to)
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
 2.  Get a reference to the current funding cycle for the project.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -53,7 +53,7 @@ function migrate(uint256 _projectId, IJBController _to)
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 3.  Make sure the project's current funding cycle is configured to allow controller migrations.
 
-    ```solidity
+    ```
     // Migration must be allowed.
     if (!_fundingCycle.controllerMigrationAllowed()) revert MIGRATION_NOT_ALLOWED();
     ```
@@ -64,7 +64,7 @@ function migrate(uint256 _projectId, IJBController _to)
       `.controllerMigrationAllowed(...)`
 4.  Distribute any outstanding reserved tokens. There are reserved tokens to be distributed if the tracker does not equal the token's total supply.
 
-    ```solidity
+    ```
     // All reserved tokens must be minted before migrating.
     if (uint256(_processedTokenTrackerOf[_projectId]) != tokenStore.totalSupplyOf(_projectId))
       _distributeReservedTokensOf(_projectId, '');
@@ -80,7 +80,7 @@ function migrate(uint256 _projectId, IJBController _to)
     * [`totalSupplyOf`](/api/contracts/jbtokenstore/read/totalsupplyof.md)
 5.  Let the new controller know that a migration to it is happening.
 
-    ```solidity
+    ```
     // Make sure the new controller is prepped for the migration.
     _to.prepForMigrationOf(_projectId, this);
     ```
@@ -90,7 +90,7 @@ function migrate(uint256 _projectId, IJBController _to)
     * [`prepForMigrationOf`](/api/contracts/or-controllers/jbcontroller/write/prepformigrationof.md)
 6.  Set the new controller of the project.
 
-    ```solidity
+    ```
     // Set the new controller.
     directory.setControllerOf(_projectId, _to);
     ```
@@ -100,7 +100,7 @@ function migrate(uint256 _projectId, IJBController _to)
     * [`setControllerOf`](/api/contracts/jbdirectory/write/setcontrollerof.md)
 7.  Emit a `Migrate` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Migrate(_projectId, _to, msg.sender);
     ```
 
@@ -112,7 +112,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Allows a project to migrate from this controller to another.

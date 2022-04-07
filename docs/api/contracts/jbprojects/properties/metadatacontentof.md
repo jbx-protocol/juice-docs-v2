@@ -8,7 +8,7 @@ Interface: [`IJBProjects`](/api/interfaces/ijbprojects.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The metadata for each project, which can be used across several domains.

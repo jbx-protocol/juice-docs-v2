@@ -14,7 +14,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 ### Definition
 
-```solidity
+```
 function transfer(
   uint256,
   address _to,
@@ -33,7 +33,7 @@ function transfer(
 
 1.  Forward the call to the ERC20 implementation.
 
-    ```solidity
+    ```
     transfer(_to, _amount);
     ```
 
@@ -45,7 +45,7 @@ function transfer(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Transfer tokens to an account.

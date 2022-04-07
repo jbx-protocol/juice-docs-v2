@@ -10,7 +10,7 @@ _The count is incremented with each new project created. The resulting ERC-721 t
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The number of projects that have been created using this contract.

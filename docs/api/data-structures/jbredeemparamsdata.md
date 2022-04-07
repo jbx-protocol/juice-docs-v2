@@ -1,6 +1,6 @@
 # JBRedeemParamsData
 
-```solidity
+```
 struct JBRedeemParamsData {
   // The terminal that is facilitating the redemption.
   IJBPaymentTerminal terminal;

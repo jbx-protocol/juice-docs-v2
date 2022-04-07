@@ -16,7 +16,7 @@ _Only a token holder or an operator can transfer its unclaimed tokens._
 
 #### Definition
 
-```solidity
+```
 function transferFrom(
   address _holder,
   uint256 _projectId,
@@ -38,13 +38,13 @@ function transferFrom(
 
 1.  Make sure a non-zero recipient was specified.
 
-    ```solidity
+    ```
     // Can't transfer to the zero address.
     if (_recipient == address(0)) revert RECIPIENT_ZERO_ADDRESS();
     ```
 2.  Get a reference to the amount of unclaimed project tokens the holder has.
 
-    ```solidity
+    ```
     // Get a reference to the holder's unclaimed project token balance.
     uint256 _unclaimedBalance = unclaimedBalanceOf[_holder][_projectId];
     ```
@@ -54,13 +54,13 @@ function transferFrom(
     * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 3.  Make sure the holder has enough unclaimed tokens to transfer.
 
-    ```solidity
+    ```
     // The holder must have enough unclaimed tokens to transfer.
     if (_amount > _unclaimedBalance) revert INSUFFICIENT_UNCLAIMED_TOKENS();
     ```
 4.  Subtract the amount from the holder's unclaimed balance of project tokens. 
 
-    ```solidity
+    ```
     // Subtract from the holder's unclaimed token balance.
     unclaimedBalanceOf[_holder][_projectId] = unclaimedBalanceOf[_holder][_projectId] - _amount;
     ```
@@ -70,7 +70,7 @@ function transferFrom(
     * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 5.  Add the amount of unclaimed project tokens to the recipient's balance.
 
-    ```solidity
+    ```
     // Add the unclaimed project tokens to the recipient's balance.
     unclaimedBalanceOf[_recipient][_projectId] =
       unclaimedBalanceOf[_recipient][_projectId] +
@@ -82,7 +82,7 @@ function transferFrom(
     * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 6.  Emit a `Transfer` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Transfer(_holder, _projectId, _recipient, _amount, msg.sender);
     ```
 
@@ -94,7 +94,7 @@ function transferFrom(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Allows a holder to transfer unclaimed tokens to another account.

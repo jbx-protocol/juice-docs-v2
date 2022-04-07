@@ -1,6 +1,6 @@
 # IJBTokenStore
 
-```solidity
+```
 interface IJBTokenStore {
   event Issue(
     uint256 indexed projectId,

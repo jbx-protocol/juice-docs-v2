@@ -8,7 +8,7 @@ Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   Each project's attached token contract.

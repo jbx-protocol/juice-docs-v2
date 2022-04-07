@@ -8,7 +8,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   Terminals that can be paid towards from this terminal without incurring a fee.

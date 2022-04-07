@@ -16,7 +16,7 @@ _Only the owner of this contract cant mint more of it._
 
 ### Definition
 
-```solidity
+```
 function mint(
   uint256,
   address _account,
@@ -36,7 +36,7 @@ function mint(
 
 1.  Forward the call to the ERC20 implementation.
 
-    ```solidity
+    ```
     return _mint(_account, _amount);
     ```
 
@@ -48,7 +48,7 @@ function mint(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Mints more of the token.

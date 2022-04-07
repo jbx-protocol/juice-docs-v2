@@ -12,7 +12,7 @@ Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â€
 
 ### Definition
 
-```solidity
+```
 function _ballotStateOf(
   uint256 _projectId,
   uint256 _configuration,
@@ -32,13 +32,13 @@ function _ballotStateOf(
 
 1.  If there is no ballot configuration, the ballot state is implicitly approved.
 
-    ```solidity
+    ```
     // If there is no ballot funding cycle, implicitly approve.
     if (_ballotFundingCycleConfiguration == 0) return JBBallotState.Approved;
     ```
 2.  Get the funding cycle that has a reference of the ballot that should be used.
 
-    ```solidity
+    ```
     // Get the ballot funding cycle.
     JBFundingCycle memory _ballotFundingCycle = _getStructFor(
       _projectId,
@@ -51,7 +51,7 @@ function _ballotStateOf(
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 3.  If there's no ballot, the funding cycle configuration is implicitly approved. Otherwise if the ballot's duration has not yet expired, it is implicitly active. Otherwise, return the state that the ballot for the provided configuration.
 
-    ```solidity
+    ```
     // If there is no ballot, the ID is auto approved.
     // Otherwise if the ballot's duration hasn't passed, its still active.
     // Otherwise, return the ballot's state.
@@ -66,7 +66,7 @@ function _ballotStateOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   A project's latest funding cycle configuration approval status.

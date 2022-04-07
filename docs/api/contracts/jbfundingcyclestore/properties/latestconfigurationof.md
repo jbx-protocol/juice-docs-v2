@@ -6,7 +6,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The latest funding cycle configuration for each project.

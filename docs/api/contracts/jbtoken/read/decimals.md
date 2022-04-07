@@ -14,7 +14,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 ### Definition
 
-```solidity
+```
 function decimals() public view override(ERC20, IJBToken) returns (uint8) { ... }
 ```
 
@@ -27,7 +27,7 @@ function decimals() public view override(ERC20, IJBToken) returns (uint8) { ... 
 
 1.  Forward the call to the ERC20 implementation.
 
-    ```solidity
+    ```
     return super.decimals();
     ```
 
@@ -39,7 +39,7 @@ function decimals() public view override(ERC20, IJBToken) returns (uint8) { ... 
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   The number of decimals included in the fixed point accounting of this token.

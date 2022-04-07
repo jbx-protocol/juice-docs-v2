@@ -16,7 +16,7 @@ _Only a token holder or a designated operator can redeem its tokens._
 
 #### Definition
 
-```solidity
+```
 function redeemTokensOf(
   address _holder,
   uint256 _projectId,
@@ -50,33 +50,33 @@ function redeemTokensOf(
 
 1.  Make sure the provided beneficiary of the claimed funds isn't the zero address.
 
-    ```solidity
+    ```
     // Can't send reclaimed funds to the zero address.
     if (_beneficiary == address(0)) revert REDEEM_TO_ZERO_ADDRESS();
     ```
 2.  Define a reference to the project's funding cycle during which the redemption is being made.
 
-    ```solidity
+    ```
     // Define variables that will be needed outside the scoped section below.
     // Keep a reference to the funding cycle during which the redemption is being made.
     JBFundingCycle memory _fundingCycle;
     ```
 3.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. 
 
-    ```solidity
+    ```
     // Scoped section prevents stack too deep. `_delegate` only used within scope.
     { ... }
     ```
 
     1.  Get a reference to the redemption delegate that. 
 
-        ```solidity
+        ```
         IJBRedemptionDelegate _delegate;
         ```
 
     2.  Record the redemption and get a reference to the funding cycle during which the redemption was made, the terminal token amount that should be reclaimed, a delegate to callback to, and an updated memo.
 
-        ```solidity
+        ```
         // Record the redemption.
         (_fundingCycle, reclaimAmount, _delegate, _memo) = store.recordRedemptionFor(
           _holder,
@@ -95,14 +95,14 @@ function redeemTokensOf(
 
     3.  Make sure the amount of terminal tokens being reclaimed is at least as much as the specified minimum.
 
-        ```solidity
+        ```
         // The amount being reclaimed must be at least as much as was expected.
         if (reclaimAmount < _minReturnedTokens) revert INADEQUATE_RECLAIM_AMOUNT();
         ```
 
     4.  Burn the project's tokens if needed.
 
-        ```solidity
+        ```
         // Burn the project tokens.
         if (_tokenCount > 0)
           directory.controllerOf(_projectId).burnTokensOf(
@@ -121,7 +121,7 @@ function redeemTokensOf(
 
     5.  If a delegate was provided, callback to its `didRedeem` function, and emit an event with the relevant parameters..
 
-        ```solidity
+        ```
         // If a delegate was returned by the data source, issue a callback to it.
         if (_delegate != IJBRedemptionDelegate(address(0))) {
           JBDidRedeemData memory _data = JBDidRedeemData(
@@ -148,14 +148,14 @@ function redeemTokensOf(
 
 4.  If an amount is being reclaimed, send the funds to the beneficiary.
 
-    ```solidity
+    ```
     // Send the reclaimed funds to the beneficiary.
     if (reclaimAmount > 0) _transferFrom(address(this), _beneficiary, reclaimAmount);
     ```
 
 5.  Emit a `RedeemTokens` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit RedeemTokens(
       _fundingCycle.configuration,
       _fundingCycle.number,
@@ -177,7 +177,7 @@ function redeemTokensOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Holders can redeem their tokens to claim the project's overflowed tokens, or to trigger rules determined by the project's current funding cycle's data source.

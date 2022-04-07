@@ -1,6 +1,6 @@
 # JBOverflowAllowance
 
-```solidity
+```
 struct JBFundAccessConstraints {
   // The terminal within which the distribution limit and the overflow allowance applies.
   IJBPaymentTerminal terminal;

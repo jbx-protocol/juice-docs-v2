@@ -1,6 +1,6 @@
 # JBFundingCycleData
 
-```solidity
+```
 struct JBFundingCycleData {
   // The number of seconds the funding cycle lasts for, after which a new funding cycle will start.
   // A duration of 0 means that the funding cycle will stay active until the project owner explicitly issues a reconfiguration, at which point a new funding cycle will immediately start with the updated properties.

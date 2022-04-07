@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event ProcessFees(uint256 indexed projectId, JBFee[] fees, address caller);
 ```
 

@@ -16,7 +16,7 @@ _The number of decimals in the returned fixed point amount is the same as that o
 
 ### Definition
 
-```solidity
+```
 function overflowAllowanceOf(
   uint256 _projectId,
   uint256 _configuration,
@@ -39,7 +39,7 @@ function overflowAllowanceOf(
 
 1.  Get a reference to the packed overflow allowance data.
 
-    ```solidity
+    ```
     // Get a reference to the packed data.
     uint256 _data = _packedOverflowAllowanceDataOf[_projectId][_configuration][_terminal];
     ```
@@ -49,7 +49,7 @@ function overflowAllowanceOf(
     * [`_packedOverflowAllowanceDataOf`](/api/contracts/or-controllers/jbcontroller/properties/-_packedoverflowallowancedataof.md)
 2.  Return the overflow allowance, which is in the first 248 bits, and the currency the overflow allowance is in terms of, which is in the last 8 bits.
 
-    ```solidity
+    ```
     // The allowance is in bits 0-247. The currency is in bits 248-255.
     return (uint256(uint248(_data)), _data >> 248);
     ```
@@ -58,7 +58,7 @@ function overflowAllowanceOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   The amount of overflow that a project is allowed to tap into on-demand throughout a configuration, and the currency it's in terms of.

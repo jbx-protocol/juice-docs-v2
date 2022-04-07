@@ -20,7 +20,7 @@ Ethereum mainnet: _Not yet deployed_
 
 ## Constructor
 
-```solidity
+```
   constructor(
     IERC20Metadata _token,
     uint256 _currency,

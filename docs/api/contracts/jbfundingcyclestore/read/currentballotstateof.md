@@ -14,7 +14,7 @@ Interface: [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md)
 
 ### Definition
 
-```solidity
+```
 function currentBallotStateOf(uint256 _projectId) external view override returns (JBBallotState) { ... } 
 ```
 
@@ -29,7 +29,7 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
 
 1.  Get a reference to the latest funding cycle for the project.
 
-    ```solidity
+    ```
     // Get a reference to the latest funding cycle configuration.
     uint256 _fundingCycleConfiguration = latestConfigurationOf[_projectId];
     ```
@@ -39,7 +39,7 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
     * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 2.  Get a reference to the funding cycle for the latest configuration.
 
-    ```solidity
+    ```
     // Resolve the funding cycle for the for the latest configuration.
     JBFundingCycle memory _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
     ```
@@ -49,7 +49,7 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 3.  Return the ballot state of the latest funding cycle configuration as is determined by the current configuration and the funding cycle it's based on.
 
-    ```solidity
+    ```
     return _ballotStateOf(_projectId, _fundingCycle.configuration, _fundingCycle.basedOn);
     ```
 
@@ -61,7 +61,7 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   The current ballot state of the project.

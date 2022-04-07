@@ -16,7 +16,7 @@ _Assumes the project has a latest configuration._
 
 ### Definition
 
-```solidity
+```
 function _standbyOf(uint256 _projectId) private view returns (uint256 configuration) { ... }
 ```
 
@@ -30,7 +30,7 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
 
 1.  Get a reference to the latest funding cycle for the project.
 
-    ```solidity
+    ```
     // Get a reference to the project's latest funding cycle.
     configuration = latestConfigurationOf[_projectId];
     ```
@@ -40,7 +40,7 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
     * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 2.  Get the struct for the latest funding cycle.
 
-    ```solidity
+    ```
     // Get the necessary properties for the latest funding cycle.
     JBFundingCycle memory _fundingCycle = _getStructFor(_projectId, configuration);
     ```
@@ -50,19 +50,19 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 3.  If the cycle has started, return 0 since there is not a stored funding cycle in standby.
 
-    ```solidity
+    ```
     // There is no upcoming funding cycle if the latest funding cycle has already started.
     if (block.timestamp >= _fundingCycle.start) return 0;
     ```
 4.  If this is the first funding cycle, it must be queued since it doesn't require a ballot's approval.
 
-    ```solidity
+    ```
     // If this is the first funding cycle, it is queued.
     if (_fundingCycle.number == 1) return configuration;
     ```
 5.  Get a reference to the cycle that the latest is based on.
 
-    ```solidity
+    ```
     // Get the necessary properties for the base funding cycle.
     JBFundingCycle memory _baseFundingCycle = _getStructFor(_projectId, _fundingCycle.basedOn);
     ```
@@ -72,7 +72,7 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 6.  It's possible that the latest cycle was configured to start at or after a date in the future that comes after another iteration of the currently active funding cycle. If this is the case, there is no immediately queued funding cycle.
 
-    ```solidity
+    ```
     // If the latest configuration doesn't start until after another base cycle, return 0.
     if (
       _baseFundingCycle.duration > 0 &&
@@ -84,7 +84,7 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   The project's stored funding cycle that hasn't yet started and should be used next, if one exists.

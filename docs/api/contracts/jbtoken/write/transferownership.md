@@ -16,7 +16,7 @@ _Only the owner of this contract can transfer it._
 
 ### Definition
 
-```solidity
+```
 function transferOwnership(address _newOwner)
   public
   virtual
@@ -34,7 +34,7 @@ function transferOwnership(address _newOwner)
 
 1.  Forward the call to the inherited version from `Ownable`.
 
-    ```solidity
+    ```
     return super.transferOwnership(_newOwner);
     ```
 
@@ -46,7 +46,7 @@ function transferOwnership(address _newOwner)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Transfer ownership of this contract to another address.

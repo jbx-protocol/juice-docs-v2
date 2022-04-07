@@ -1,6 +1,6 @@
 # IJBToken
 
-```solidity
+```
 interface IJBToken {
   function decimals() external view returns (uint8);
 

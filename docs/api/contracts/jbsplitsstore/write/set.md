@@ -18,7 +18,7 @@ _The new splits must include any currently set splits that are locked._
 
 #### Definition
 
-```solidity
+```
 function set(
   uint256 _projectId,
   uint256 _domain,
@@ -48,7 +48,7 @@ function set(
 
 1.  Get a reference to the current splits set for the specified project's domain, within the specified group.
 
-    ```solidity
+    ```
     // Get a reference to the project's current splits.
     JBSplit[] memory _currentSplits = _getStructsFor(_projectId, _domain, _group);
     ```
@@ -59,20 +59,20 @@ function set(
     * two
 2.  Loop through each current split to make sure the new splits being set respect any current split bound by a lock constraint.
 
-    ```solidity
+    ```
     // Check to see if all locked splits are included.
     for (uint256 _i = 0; _i < _currentSplits.length; _i++) { ... }
     ```
 
     1.  If the current split isn't locked, move on to the next one.
 
-        ```solidity
+        ```
         // If not locked, continue.
         if (block.timestamp >= _currentSplits[_i].lockedUntil) continue;
         ```
     2.  If the current split is locked, check to make sure the new splits includes it. The only property of a locked split that can have changed is its locked deadline, which can be extended.
 
-        ```solidity
+        ```
         // Keep a reference to whether or not the locked split being iterated on is included.
         bool _includesLocked = false;
 
@@ -90,42 +90,42 @@ function set(
         ```
     3.  Check to make sure the provided splits includes any locked current splits.
 
-        ```solidity
+        ```
         if (!_includesLocked) revert PREVIOUS_LOCKED_SPLITS_NOT_INCLUDED();
         ```
 4.  Store a local variable to keep track of all the percents from the splits.
 
-    ```solidity
+    ```
     // Add up all the percents to make sure they cumulative are under 100%.
     uint256 _percentTotal = 0;
     ```
 5.  Loop through each newly provided splits to validate the provided properties.
 
-    ```solidity
+    ```
     for (uint256 _i = 0; _i < _splits.length; _i++) { ... }
     ```
 
     1.  Check that the percent for the current split is not zero.
 
-        ```solidity
+        ```
         // The percent should be greater than 0.
         if (_splits[_i].percent == 0) revert INVALID_SPLIT_PERCENT();
         ```
     2.  Check that the ID of the project for the current split is within the max value that can be packed.
 
-        ```solidity
+        ```
         // ProjectId should be within a uint56
         if (_splits[_i].projectId > type(uint56).max) revert INVALID_PROJECT_ID();
         ```
     3.  Increment the total percents that have been accumulated so far.
 
-        ```solidity
+        ```
         // Add to the total percents.
         _percentTotal = _percentTotal + _splits[_i].percent;
         ```
     4.  Make sure the accumulated percents are under 100%.
 
-        ```solidity
+        ```
         // Validate the total does not exceed the expected value.
         if (_percentTotal > JBConstants.SPLITS_TOTAL_PERCENT) revert INVALID_TOTAL_PERCENT();
         ```
@@ -136,7 +136,7 @@ function set(
           * `.SPLITS_TOTAL_PERCENT`
     5.  Pack common split properties into a storage slot.
 
-        ```solidity
+        ```
         // Prefer claimed in bit 0.
         uint256 _packedSplitParts1 = _splits[_i].preferClaimed ? 1 : 0;
         // Percent in bits 1-32.
@@ -155,7 +155,7 @@ function set(
         * [`_packedSplitParts1Of`](/api/contracts/jbsplitsstore/properties/-_packedsplitparts1of.md)
     6.  Pack less common split properties into another storage slot if needed. Otherwise, delete any content in storage at the index being iterated on.
 
-       ```solidity
+       ```
        // If there's data to store in the second packed split part, pack and store.
        if (_splits[_i].lockedUntil > 0 || _splits[_i].allocator != IJBSplitAllocator(address(0))) {
          // Locked until should be within a uint48
@@ -179,7 +179,7 @@ function set(
        * [`_packedSplitParts2Of`](/api/contracts/jbsplitsstore/properties/-_packedsplitparts2of.md)
     7.  For each added split, emit a `SetSplit` event with all relevant parameters.
 
-        ```solidity
+        ```
         emit SetSplit(_projectId, _domain, _group, _splits[_i], msg.sender);
         ```
 
@@ -188,7 +188,7 @@ function set(
         * [`SetSplit`](/api/contracts/jbsplitsstore/events/setsplit.md)
 6.  Store the new array length.
 
-    ```solidity
+    ```
     // Set the new length of the splits.
     _splitCountOf[_projectId][_domain][_group] = _splits.length;
     ```
@@ -201,7 +201,7 @@ function set(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Sets a project's splits.

@@ -16,7 +16,7 @@ _Only an address can set its own operators._
 
 ### Definition
 
-```solidity
+```
  function setOperator(JBOperatorData calldata _operatorData) external override { ... }
 ```
 
@@ -29,7 +29,7 @@ _Only an address can set its own operators._
 
 1.  Pack the provided permissions into a `uint256`. Each bit of the resulting value represents whether or not permission has been granted for that index.
 
-    ```solidity
+    ```
     // Pack the indexes into a uint256.
     uint256 _packed = _packedPermissions(_operatorData.permissionIndexes);
     ```
@@ -39,7 +39,7 @@ _Only an address can set its own operators._
     * [`_packedPermissions`](/api/contracts/jboperatorstore/read/-_packedpermissions.md)
 2.  Store the packed permissions as the permissions of the provided operator, on behalf of the `msg.sender`, specifically for the provided domain.
 
-     ```solidity
+     ```
      // Store the new value.
      permissionsOf[_operatorData.operator][msg.sender][_operatorData.domain] = _packed;
      ```
@@ -49,7 +49,7 @@ _Only an address can set its own operators._
      * [`permissionsOf`](/api/contracts/jboperatorstore/properties/permissionsof.md)
 3.  Emit a `SetOperator` event with the relevant parameters.
 
-     ```solidity
+     ```
      emit SetOperator(
        _operatorData.operator,
        msg.sender,
@@ -67,7 +67,7 @@ _Only an address can set its own operators._
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Sets permissions for an operator.

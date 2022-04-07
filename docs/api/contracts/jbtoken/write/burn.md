@@ -16,7 +16,7 @@ _Only the owner of this contract cant burn some of its supply._
 
 ### Definition
 
-```solidity
+```
 function burn(
   uint256,
   address _account,
@@ -36,7 +36,7 @@ function burn(
 
 1.  Forward the call to the ERC20 implementation.
 
-    ```solidity
+    ```
     return _burn(_account, _amount);
     ```
 
@@ -48,7 +48,7 @@ function burn(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Burn some outstanding tokens.

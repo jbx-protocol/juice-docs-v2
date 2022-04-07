@@ -6,7 +6,7 @@ Contract:[`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayo
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   Fees that are being held to be processed later.

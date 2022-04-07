@@ -1,6 +1,6 @@
 # requirePermissionAllowingOverride
 
-```solidity
+```
 modifier requirePermissionAllowingOverride(
   address _account,
   uint256 _domain,

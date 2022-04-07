@@ -20,7 +20,7 @@ Ethereum mainnet: _Not yet deployed_
 
 ## Constructor
 
-```solidity
+```
 constructor(AggregatorV3Interface _feed) {
   feed = _feed;
 }

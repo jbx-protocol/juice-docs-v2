@@ -16,7 +16,7 @@ _Only a project owner, an operator, or the contract's owner can process held fee
 
 #### Definition
 
-```solidity
+```
 function processFees(uint256 _projectId)
   external
   virtual
@@ -42,7 +42,7 @@ function processFees(uint256 _projectId)
 
 1.  Get a reference to all held fees for the project.
 
-    ```solidity
+    ```
     // Get a reference to the project's held fees.
     JBFee[] memory _heldFees = _heldFeesOf[_projectId];
     ```
@@ -52,7 +52,7 @@ function processFees(uint256 _projectId)
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 2.  Remove all fees.
 
-    ```solidity
+    ```
     // Delete the held fee's now that they've been processed.
     delete _heldFeesOf[_projectId];
     ```
@@ -62,7 +62,7 @@ function processFees(uint256 _projectId)
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 2.  Iterate through the array. Take fee's for each [`JBFee`](/api/data-structures/jbfee.md) data structure.
 
-    ```solidity
+    ```
     // Process each fee.
     for (uint256 _i = 0; _i < _heldFees.length; _i++)
       _processFee(
@@ -81,7 +81,7 @@ function processFees(uint256 _projectId)
     * [`_processFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_processfee.md)
 4.  Emit a `ProcessFees` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit ProcessFees(_projectId, _heldFees, msg.sender);
     ```
 
@@ -93,7 +93,7 @@ function processFees(uint256 _projectId)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Process any fees that are being held for the project.

@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 #### Definition
 
-```solidity
+```
 function _distributeToReservedTokenSplitsOf(
   uint256 _projectId,
   JBFundingCycle memory _fundingCycle,
@@ -29,13 +29,13 @@ function _distributeToReservedTokenSplitsOf(
 
 1.  Save the passed in amount as the leftover amount that will be returned. The subsequent routine will decrement the leftover amount as splits are settled.
 
-    ```solidity
+    ```
     // Set the leftover amount to the initial amount.
     leftoverAmount = _amount;
     ```
 2.  Get a reference to reserved token splits for the current funding cycle configuration of the project.
 
-    ```solidity
+    ```
     // Get a reference to the project's reserved token splits.
     JBSplit[] memory _splits = splitsStore.splitsOf(
       _projectId,
@@ -54,20 +54,20 @@ function _distributeToReservedTokenSplitsOf(
     * [`splitsOf`](/api/contracts/jbsplitsstore/read/splitsof.md)
 3.  Loop through each split.
 
-    ```solidity
+    ```
     //Transfer between all splits.
     for (uint256 _i = 0; _i < _splits.length; _i++) { ... }
     ```
 
     1.  Get a reference to the current split being iterated on.
 
-        ```solidity
+        ```
         // Get a reference to the split being iterated on.
         JBSplit memory _split = _splits[_i];
         ```
     2.  Get a reference to the amount of tokens to distribute to the current split. This amount is the total amount multiplied by the percentage of the split, which is a number out of the max value.
 
-        ```solidity
+        ```
         // The amount to send towards the split.
         uint256 _tokenCount = PRBMath.mulDiv(
           _amount,
@@ -84,7 +84,7 @@ function _distributeToReservedTokenSplitsOf(
           * `.SPLITS_TOTAL_PERCENT`
     6.  If there are tokens to mint for the given split, do so. If the split has an allocator specified, the tokens should go to that address. Otherwise if the split has a project ID specified, the tokens should be directed to the project's owner. Otherwise, the tokens should be directed at the beneficiary address of the split if it has one, or to the message sender if not. Afterwards, if there's an allocator specified, let it know that tokens have been sent. Reduce the leftover amount by the tokens that were sent to the split.
 
-        ```solidity
+        ```
         // Mints tokens for the split if needed.
         if (_tokenCount > 0) {
           tokenStore.mintFor(
@@ -132,7 +132,7 @@ function _distributeToReservedTokenSplitsOf(
 
 7.  Emit a `DistributeToReservedTokenSplit` event for the split being iterated on with the relevant parameters.
 
-    ```solidity
+    ```
     emit DistributeToReservedTokenSplit(
       _fundingCycle.configuration,
       _fundingCycle.number,
@@ -151,7 +151,7 @@ function _distributeToReservedTokenSplitsOf(
 
 <TabItem value="Only code" label="Only code">
 
-```solidity
+```
 /**
   @notice
   Distribute tokens to the splits according to the specified funding cycle configuration.

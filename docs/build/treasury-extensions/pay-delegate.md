@@ -5,7 +5,7 @@ Before implementing, learn about delegates [here](/learn/glossary/delegate.md).
 
 A contract can become a treasury pay delegate by adhering to [`IJBPayDelegate`](/api/interfaces/ijbpaydelegate.md):
 
-```solidity
+```
 interface IJBPayDelegate {
   function didPay(JBDidPayData calldata _data) external;
 }
@@ -13,7 +13,7 @@ interface IJBPayDelegate {
 
 When extending the pay functionality with a delegate, the protocol will pass a [`JBDidPayData`](/api/data-structures/jbdidpaydata.md) to the `didPay(...)` function:
 
-```solidity
+```
 struct JBDidPayData {
   // The address from which the payment originated.
   address payer;
@@ -32,7 +32,7 @@ struct JBDidPayData {
 }
 ```
 
-```solidity
+```
 struct JBTokenAmount {
   // The token the payment was made in.
   address token;

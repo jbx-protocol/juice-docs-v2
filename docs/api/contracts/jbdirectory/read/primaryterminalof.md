@@ -14,7 +14,7 @@ _The zero address is returned if a terminal isn't found for the specified token.
 
 #### Definition
 
-```solidity
+```
 function primaryTerminalOf(uint256 _projectId, address _token)
   public
   view
@@ -34,7 +34,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
 
 1.  Check to see if the project has explicitly set a primary terminal for this token. If so, return it.
 
-    ```solidity
+    ```
     // If a primary terminal for the token was specifically set, return it.
     if (_primaryTerminalOf[_projectId][_token] != IJBPaymentTerminal(address(0)))
       return _primaryTerminalOf[_projectId][_token];
@@ -45,7 +45,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
     * [`_primaryTerminalOf`](/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
 2.  Loop through each of the project's terminals looking for one that uses the same token as the one specified. If one is found, return it.
 
-    ```solidity
+    ```
     // Return the first terminal which accepts the specified token.
     for (uint256 _i; _i < _terminalsOf[_projectId].length; _i++) {
       IJBPaymentTerminal _terminal = _terminalsOf[_projectId][_i];
@@ -58,7 +58,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 3.  Return an empty terminal if not found.
 
-    ```solidity
+    ```
     // Not found.
     return IJBPaymentTerminal(address(0));
     ```
@@ -67,7 +67,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   The primary terminal that is managing funds for a project for a specified token.

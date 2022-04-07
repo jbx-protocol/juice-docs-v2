@@ -16,7 +16,7 @@ _Only the owner of this contract can change the fee._
 
 #### Definition
 
-```solidity
+```
 function setFee(uint256 _fee) external onlyOwner { ... }
 ```
 
@@ -30,7 +30,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
 1.  Make sure the proposed fee is less than the max fee.
 
-    ```solidity
+    ```
     // The provided fee must be within the max.
     if (_fee > _FEE_CAP) revert FEE_TOO_HIGH();
     ```
@@ -40,13 +40,13 @@ function setFee(uint256 _fee) external onlyOwner { ... }
     * [`_FEE_CAP`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_fee_cap.md)
 2.  Store the new fee.
 
-    ```solidity
+    ```
     // Store the new fee.
     fee = _fee;
     ```
 3.  Emit a `SetFee` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetFee(_fee, msg.sender);
     ```
 
@@ -58,7 +58,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Allows the fee to be updated.

@@ -1,6 +1,6 @@
 # IJBFundingCycleStore
 
-```solidity
+```
 interface IJBFundingCycleStore {
   event Configure(
     uint256 indexed configuration,

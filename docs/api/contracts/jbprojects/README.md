@@ -29,7 +29,7 @@ Ethereum mainnet: _Not yet deployed_
 
 ## Constructor
 
-```solidity
+```
 constructor(IJBOperatorStore _operatorStore)
   ERC721('Juicebox Projects', 'JUICEBOX')
   EIP712('Juicebox Projects', '1')

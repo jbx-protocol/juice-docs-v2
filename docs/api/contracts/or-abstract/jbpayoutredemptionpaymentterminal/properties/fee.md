@@ -10,7 +10,7 @@ _Out of 200._
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The platform fee percent.

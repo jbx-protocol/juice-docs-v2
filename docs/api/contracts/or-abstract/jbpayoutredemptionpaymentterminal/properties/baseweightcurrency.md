@@ -10,7 +10,7 @@ _If this differs from `currency`, there must be a price feed available to conver
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The currency to base token issuance on.

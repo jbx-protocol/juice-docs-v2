@@ -14,7 +14,7 @@ Interface: `IJBFundingCycleStore`
 
 ### Definition
 
-```solidity
+```
 function get(uint256 _projectId, uint256 _configuration)
   external
   view
@@ -34,7 +34,7 @@ function get(uint256 _projectId, uint256 _configuration)
 
 1.  Return the struct for the provided configuration and project.
 
-    ```solidity
+    ```
     return _getStructFor(_projectId, _configuration);
     ```
 
@@ -46,7 +46,7 @@ function get(uint256 _projectId, uint256 _configuration)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Get the funding cycle with the given configuration for the specified project.

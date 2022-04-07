@@ -14,7 +14,7 @@ Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
 
 #### Definition
 
-```solidity
+```
 function pay(
   uint256 _amount,
   uint256 _projectId,
@@ -45,7 +45,7 @@ function pay(
 
 1.  If this terminal's token is not ETH, make sure ETH wasn't sent to it. Then transfer the specified amount of tokens from the message sender to this contract. If this terminal's contract is ETH, override the specified amount value with with amount of ETH sent to the function.
 
-    ```solidity
+    ```
     // ETH shouldn't be sent if this terminal's token isn't ETH.
     if (token != JBTokens.ETH) {
       if (msg.value > 0) revert NO_MSG_VALUE_ALLOWED();
@@ -63,7 +63,7 @@ function pay(
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 
-    ```solidity
+    ```
     return
       _pay(
         _amount,
@@ -85,7 +85,7 @@ function pay(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Contribute tokens to a project.

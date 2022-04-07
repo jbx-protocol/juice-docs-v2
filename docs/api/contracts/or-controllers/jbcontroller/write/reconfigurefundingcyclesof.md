@@ -16,7 +16,7 @@ _Only a project's owner or a designated operator can configure its funding cycle
 
 #### Definition
 
-```solidity
+```
 function reconfigureFundingCyclesOf(
   uint256 _projectId,
   JBFundingCycleData calldata _data,
@@ -49,7 +49,7 @@ function reconfigureFundingCyclesOf(
 
 1.  Configure the project's funding cycle, fund access constraints, and splits. Get a reference to the resulting funding cycle's configuration.
 
-    ```solidity
+    ```
     // Configure the next funding cycle.
     configuration = _configure(
       _projectId,
@@ -66,7 +66,7 @@ function reconfigureFundingCyclesOf(
     * [`_configure`](/api/contracts/or-controllers/jbcontroller/write/-_configure.md)
 5.  Emit a `ReconfigureFundingCycles` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit ReconfigureFundingCycles(configuration, _projectId, _memo, msg.sender);
     ```
 
@@ -78,7 +78,7 @@ function reconfigureFundingCyclesOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Proposes a configuration of a subsequent funding cycle that will take effect once the current one expires if it is approved by the current funding cycle's ballot.

@@ -14,7 +14,7 @@ _This amount changes as the value of the balances changes in relation to the cur
 
 #### Definition
 
-```solidity
+```
 function _currentTotalOverflowOf(
   uint256 _projectId,
   uint256 _decimals,
@@ -34,7 +34,7 @@ function _currentTotalOverflowOf(
 
 1.  Get a reference to all of the project's current terminals.
 
-    ```solidity
+    ```
     // Get a reference to the project's terminals.
     IJBPaymentTerminal[] memory _terminals = directory.terminalsOf(_projectId);
     ```
@@ -44,13 +44,13 @@ function _currentTotalOverflowOf(
     * [`terminalsOf`](/api/contracts/jbdirectory/read/terminalsof.md)
 2.  Create references where the total balance across all terminals is be stored in terms of ETH.
 
-    ```solidity
+    ```
     // Keep a reference to the ETH overflow across all terminals, as a fixed point number with 18 decimals.
     uint256 _ethOverflow;
     ```
 3.  For each terminal, add its balance in terms of ETH to the total ETH balance.
 
-    ```solidity
+    ```
     // Add the current ETH overflow for each terminal.
     for (uint256 _i = 0; _i < _terminals.length; _i++)
       _ethOverflow = _ethOverflow + _terminals[_i].currentEthOverflowOf(_projectId);
@@ -61,7 +61,7 @@ function _currentTotalOverflowOf(
     * [`currentEthOverflowOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/currentethoverflowof.md)
 4.  If the total overflow is to be returned in a currency other than ETH, make the conversion while maintaining 18 decimals of fidelity.
 
-    ```solidity
+    ```
     // Convert the ETH overflow to the specified currency if needed, maintaining a fixed point number with 18 decimals.
     uint256 _totalOverflow18Decimal = _currency == JBCurrencies.ETH
       ? _ethOverflow
@@ -80,7 +80,7 @@ function _currentTotalOverflowOf(
     * [`priceFor`](/api/contracts/jbprices/read/pricefor.md)
 5.  If the fixed point overflow is to be returned with a number of decimals other than 18, adjust the number accordingly. 
 
-    ```solidity
+    ```
     // Adjust the decimals of the fixed point number if needed to match the target decimals.
     return
       (_decimals == 18)
@@ -99,7 +99,7 @@ function _currentTotalOverflowOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Gets the amount that is currently overflowing across all of a project's terminals. 

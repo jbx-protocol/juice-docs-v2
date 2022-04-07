@@ -29,7 +29,7 @@ Ethereum mainnet: _Not yet deployed_
 
 ## Constructor
 
-```solidity
+```
 constructor(
   uint256 _defaultProjectId,
   address payable _defaultBeneficiary,

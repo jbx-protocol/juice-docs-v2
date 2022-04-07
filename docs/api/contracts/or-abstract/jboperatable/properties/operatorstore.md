@@ -7,7 +7,7 @@ Interface: [`IJBOperatable`](/api/interfaces/ijboperatable.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   A contract storing operator assignments.

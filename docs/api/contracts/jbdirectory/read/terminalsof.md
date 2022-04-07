@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ### Definition
 
-```solidity
+```
 function terminalsOf(uint256 _projectId)
   external
   view
@@ -29,7 +29,7 @@ function terminalsOf(uint256 _projectId)
 
 1.  This function just reads and returns the stored `_terminalsOf` the project.
 
-    ```solidity
+    ```
     return _terminalsOf[_projectId];
     ```
 
@@ -41,7 +41,7 @@ function terminalsOf(uint256 _projectId)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   For each project ID, the terminals that are currently managing its funds.

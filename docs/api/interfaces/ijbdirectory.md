@@ -1,6 +1,6 @@
 # IJBDirectory
 
-```solidity
+```
 interface IJBDirectory {
   event SetController(uint256 indexed projectId, IJBController indexed controller, address caller);
 

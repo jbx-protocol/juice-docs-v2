@@ -26,7 +26,7 @@ Ethereum mainnet: _Not yet deployed_
 
 ## Constructor
 
-```solidity
+```
 constructor(IJBDirectory _directory) JBControllerUtility(_directory) {}
 ```
 

@@ -1,6 +1,6 @@
 # JBFundingCycleMetadataResolver
 
-```solidity
+```
 library JBFundingCycleMetadataResolver {
   function reservedRate(JBFundingCycle memory _fundingCycle) internal pure returns (uint256) {
     return uint256(uint16(_fundingCycle.metadata >> 8));

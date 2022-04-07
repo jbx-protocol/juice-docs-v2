@@ -16,7 +16,7 @@ _Only the owner of this contract can set terminal's as feeless._
 
 #### Definition
 
-```solidity
+```
 function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
   external
   virtual
@@ -35,13 +35,13 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
 
 1.  Store the flag for the terminal.
 
-    ```solidity
+    ```
     // Set the flag value.
     isFeelessTerminal[_terminal] = _flag;
     ```
 2.  Emit a `SetFeelessTerminal` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetFeelessTerminal(_terminal, _flag, msg.sender);
     ```
 
@@ -53,7 +53,7 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Sets whether projects operating on this terminal can pay projects operating on the specified terminal without incurring a fee.

@@ -8,7 +8,7 @@ Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The token that this terminal accepts.

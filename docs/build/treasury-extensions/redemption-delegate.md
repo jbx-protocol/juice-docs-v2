@@ -5,7 +5,7 @@ Before implementing, learn about delegates [here](/learn/glossary/delegate.md).
 
 A contract can become a treasury redemption delegate by adhering to [`IJBRedemptionDelegate`](/api/interfaces/ijbredemptiondelegate.md):
 
-```solidity
+```
 interface IJBRedemptionDelegate {
   function didRedeem(JBDidRedeemData calldata _data) external;
 }
@@ -13,7 +13,7 @@ interface IJBRedemptionDelegate {
 
 When extending the redemption functionality with a delegate, the protocol will pass a [`JBDidRedeemData`](/api/data-structures/jbdidredeemdata.md) to the `didRedeem(...)` function:
 
-```solidity
+```
 struct JBDidRedeemData {
   // The holder of the tokens being redeemed.
   address holder;
@@ -32,7 +32,7 @@ struct JBDidRedeemData {
 }
 ```
 
-```solidity
+```
 struct JBTokenAmount {
   // The token the reclaimed amount will be made in.
   address token;

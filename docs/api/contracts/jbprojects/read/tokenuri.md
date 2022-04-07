@@ -12,7 +12,7 @@ Contract: [`JBProjects`](/api/contracts/jbprojects/README.md)​‌
 
 ### Definition
 
-```solidity
+```
 function tokenURI(uint256 _projectId) public view override returns (string memory) { ... }
 ```
 
@@ -27,7 +27,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 
 1.  Return an empty string if there is no URI resolver set.
 
-    ```solidity
+    ```
     // If there's no resolver, there's no URI.
     if (tokenUriResolver == IJBTokenUriResolver(address(0))) return '';
     ```
@@ -37,7 +37,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
     * [`tokenUriResolver`](/api/contracts/jbprojects/properties/tokenuriresolver.md)
 2.  Resolve the URI for the project.
 
-    ```solidity
+    ```
     // Return the resolved URI.
     return tokenUriResolver.getUri(_projectId);
     ```
@@ -51,7 +51,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Returns the URI where the ERC-721 standard JSON of a project is hosted.

@@ -16,7 +16,7 @@ _Only a project's owner, a designated operator, or one of its terminals can mint
 
 #### Definition
 
-```solidity
+```
 function mintTokensOf(
   uint256 _projectId,
   uint256 _tokenCount,
@@ -53,13 +53,13 @@ function mintTokensOf(
 
 1.  Make sure there is a specified amount of tokens to mint.
 
-    ```solidity
+    ```
     // There should be tokens to mint.
     if (_tokenCount == 0) revert ZERO_TOKENS_TO_MINT();
     ```
 2.  Make sure the project current allows directly minting tokens by checking that it isn't paused when being called by any contract other than one of the project's terminals. If the request is coming from a terminal, allow minting regardless of the pause state because it could be a sub-routine of another operation such as receiving payments. If minting is allowed, get a reference to the reserved rate that should be used. 
 
-    ```solidity
+    ```
     // Define variables that will be needed outside scoped section below.
     uint256 _reservedRate;
 
@@ -91,7 +91,7 @@ function mintTokensOf(
     * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
 3.  If the operation should reserve 100% of the minted tokens, the token tracker should be updated to add a difference of the specified token count instead of minting the tokens directly. This will allow a future distribution of reserved tokens to mint the token count to reserved addresses. Otherwise, update the token tracker if there is no intent to reserve tokens alongside the mint and mint the unreserved tokens for the beneficiary.
 
-    ```solidity
+    ```
     if (_reservedRate == JBConstants.MAX_RESERVED_RATE)
       // Subtract the total weighted amount from the tracker so the full reserved token amount can be printed later.
       _processedTokenTrackerOf[_projectId] =
@@ -132,7 +132,7 @@ function mintTokensOf(
     * [`mintFor`](/api/contracts/jbtokenstore/write/mintfor.md)
 4.  Emit a `MintTokens` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit MintTokens(_beneficiary, _projectId, _tokenCount, _memo, _reservedRate, msg.sender);
     ```
 
@@ -144,7 +144,7 @@ function mintTokensOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Mint new token supply into an account, and optionally reserve a supply to be distributed according to the project's current funding cycle configuration.

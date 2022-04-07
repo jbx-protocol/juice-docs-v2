@@ -16,7 +16,7 @@ _Only a project's owner or a designated operator can migrate it._
 
 #### Definition
 
-```solidity
+```
 function migrate(uint256 _projectId, IJBPaymentTerminal _to)
   external
   virtual
@@ -37,7 +37,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
 1.  Make sure the token type of the terminal being migrated to matches the token type of this terminal.
 
-    ```solidity
+    ```
     // The terminal being migrated to must accept the same token as this terminal.
     if (token != _to.token()) revert TERMINAL_TOKENS_INCOMPATIBLE();
     ```
@@ -47,7 +47,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
     * [`token`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/token.md)
 2.  Record the migration and get a reference to the project's balance.
 
-    ```solidity
+    ```
     // Record the migration in the store.
     balance = store.recordMigration(_projectId);
     ```
@@ -57,7 +57,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
     * [`recordMigration`](/api/contracts/jbpaymentterminalstore/write/recordmigration.md)
 3.  If there's a balance to migrate, move the funds over to the new terminal. Send ETH along with the transaction if this terminal is an ETH terminal. Make sure any inherited pre-transfer logic is called before transferring. 
 
-    ```solidity
+    ```
     // Transfer the balance if needed.
     if (balance > 0) {
       // Trigger any inherited pre-transfer logic.
@@ -80,7 +80,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
     * [`addToBalanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
 4.  Emit a `Migrate` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Migrate(_projectId, _to, balance, msg.sender);
     ```
 
@@ -92,7 +92,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Allows a project owner to migrate its funds and operations to a new terminal of the same token type.

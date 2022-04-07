@@ -14,7 +14,7 @@ Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbtokenstore.md)
 
 #### Definition
 
-```solidity
+```
 function addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
@@ -37,7 +37,7 @@ function addToBalanceOf(
 
 1.  If this terminal's token isn't ETH, make sure ETH wasn't sent to the function, then transfer the amount of tokens from the message sender to this contract. If this terminal's contract is ETH, override the specified amount value with with amount of ETH sent to the function.
 
-    ```solidity
+    ```
     // If this terminal's token isn't ETH, make sure no msg.value was sent, then transfer the tokens in from msg.sender.
     if (token != JBTokens.ETH) {
       // Amount must be greater than 0.
@@ -55,7 +55,7 @@ function addToBalanceOf(
     * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 2.  Record the added funds.
 
-    ```solidity
+    ```
     // Record the added funds.
     store.recordAddedBalanceFor(_projectId, _amount);
     ```
@@ -65,7 +65,7 @@ function addToBalanceOf(
     * [`recordAddedBalanceFor`](/api/contracts/jbpaymentterminalstore/write/recordaddedbalancefor.md)
 3.  Refund any held fees. This is useful to allow a project to distribute funds from the protocol and subsequently add them back without paying eventually having to pay double fees.
 
-    ```solidity
+    ```
     // Refund any held fees to make sure the project doesn't pay double for funds going in and out of the protocol.
     _refundHeldFees(_projectId, _amount);
     ```
@@ -75,7 +75,7 @@ function addToBalanceOf(
     * [`_refundHeldFees`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_refundheldfees.md)
 4.  Emit a `AddToBalance` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit AddToBalance(_projectId, _amount, _memo, msg.sender);
     ```
 
@@ -87,7 +87,7 @@ function addToBalanceOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Receives funds belonging to the specified project.

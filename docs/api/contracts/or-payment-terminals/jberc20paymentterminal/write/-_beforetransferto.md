@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-payment-termin
 
 # Definition
 
-```solidity
+```
 function _beforeTransferTo(address, uint256) internal override { ...}
 ```
 
@@ -26,7 +26,7 @@ function _beforeTransferTo(address, uint256) internal override { ...}
 
 1.  Before transferring tokens to another address, approve that address to pull the specified amount of tokens from this contract.
 
-    ```solidity
+    ```
     IERC20(token).approve(_to, _amount);
     ```
 
@@ -39,7 +39,7 @@ function _beforeTransferTo(address, uint256) internal override { ...}
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Logic to be triggered before transferring tokens from this terminal.

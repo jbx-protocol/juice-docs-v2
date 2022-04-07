@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event SetDefaultValues(
   uint256 indexed projectId,
   address indexed beneficiary,

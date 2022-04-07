@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event ReconfigureFundingCycles(
   uint256 configuration,
   uint256 projectId,

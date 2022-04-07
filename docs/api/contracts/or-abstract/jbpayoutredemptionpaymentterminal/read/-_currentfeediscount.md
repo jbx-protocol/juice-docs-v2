@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 #### Definition
 
-```solidity
+```
 function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 feeDiscount) { ... }
 ```
 
@@ -26,7 +26,7 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
 1.  If the protocol project doesn't have a terminal that accepts this terminal's token, no fee can be taken so a max discount should be returned.
 
-    ```solidity
+    ```
     // Can't take a fee if the protocol project doesn't have a terminal that accepts the token.
     if (directory.primaryTerminalOf(_PROTOCOL_PROJECT_ID, token) == IJBPaymentTerminal(address(0)))
       return JBConstants.MAX_FEE_DISCOUNT;
@@ -46,7 +46,7 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
     * [`token`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/token.md)
 2.  If there's a gauge, ask it for the discount. Otherwise, there is no discount. If the gauge reverts, set the discount to 0.
 
-    ```solidity
+    ```
     // Get the fee discount.
     if( feeGauge == IJBFeeGauge(address(0)) )
       feeDiscount = 0;
@@ -69,7 +69,7 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
 3.  If there gauge provided an invalid discount, set the discount to 0.
 
-    ```solidity
+    ```
     // If the fee discount is greater than the max, nullify the discount.
     if (feeDiscount > JBConstants.MAX_FEE_DISCOUNT) feeDiscount = 0;
     ```
@@ -78,7 +78,7 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Get the fee discount from the fee gauge for the specified project.

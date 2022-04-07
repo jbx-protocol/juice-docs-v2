@@ -12,7 +12,7 @@ Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â€
 
 ### Definition
 
-```solidity
+```
 function _initFor(
   uint256 _projectId,
   JBFundingCycle memory _baseFundingCycle,
@@ -35,7 +35,7 @@ function _initFor(
 
 1.  If no base funding cycle was provided, create a first funding cycle for the project by storing its intrinsic properties. Otherwise, create a new funding cycle by deriving values from the specified base cycle, interpreting a weight of 0 to inherit from the discounted weight of the base funding cycle and a weight of 1 as a weight of 0.
 
-    ```solidity
+    ```
     // If there is no base, initialize a first cycle.
     if (_baseFundingCycle.number == 0) {
       // The first number is 1.
@@ -83,7 +83,7 @@ function _initFor(
     * [`_deriveNumberFrom`](/api/contracts/jbfundingcyclestore/read/-_derivenumberfrom.md)
 2.  Store the initialized configuration as the latest of the project.
 
-    ```solidity
+    ```
     // Set the project's latest funding cycle configuration.
     latestConfigurationOf[_projectId] = _configuration;
     ```
@@ -93,7 +93,7 @@ function _initFor(
     * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 3.  Emit an `Init` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Init(_configuration, _projectId, _baseFundingCycle.configuration);
     ```
 
@@ -105,7 +105,7 @@ function _initFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Initializes a funding cycle with the specified properties.

@@ -8,7 +8,7 @@ _Out of MAX_FEE (50_000_000 / 1_000_000_000)_
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   Maximum fee that can be set for a funding cycle configuration.

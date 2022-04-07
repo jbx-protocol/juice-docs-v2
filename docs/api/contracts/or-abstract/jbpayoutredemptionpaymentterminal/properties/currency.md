@@ -8,7 +8,7 @@ Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The currency to use when resolving price feeds for this terminal.

@@ -16,7 +16,7 @@ _Only a project's current controller can mint its tokens._
 
 ### Definition
 
-```solidity
+```
 function mintFor(
   address _holder,
   uint256 _projectId,
@@ -38,7 +38,7 @@ function mintFor(
 
 1.  Get a reference to the project's current token.
 
-    ```solidity
+    ```
     // Get a reference to the project's current token.
     IJBToken _token = tokenOf[_projectId];
     ```
@@ -48,7 +48,7 @@ function mintFor(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 2.  Check if tokens should be minted using the internal accounting mechanism, or if they should be claimed into the holder's wallet. Tokens should be claimed if the project has issued tokens, and either the project forces tokens to be claimed or if the `_preferClaimedTokens` flag is true. The internal accounting mechanism uses less gas, and tokens issued using it can later be claimed into the holders wallet by anyone who submits a [`claimFor`](/api/contracts/jbtokenstore/write/claimfor.md) transaction.
 
-    ```solidity
+    ```
     // Save a reference to whether there exists a token and the caller prefers these claimed tokens or the project requires it.
     bool _shouldClaimTokens = (requireClaimFor[_projectId] || _preferClaimedTokens) &&
       _token != IJBToken(address(0));
@@ -59,7 +59,7 @@ function mintFor(
     * [`requireClaimFor`](/api/contracts/jbtokenstore/properties/requireclaimfor.md)
 3.  If claimed tokens should be minted, mint the project's token into the holders wallet. Otherwise increment the holder's balance or the unclaimed tokens for the project, and the total supply of unclaimed tokens for the project.
 
-    ```solidity
+    ```
     if (_shouldClaimTokens) 
       // If tokens should be claimed, mint tokens into the holder's wallet.
       _token.mint(_projectId, _holder, _amount);
@@ -80,7 +80,7 @@ function mintFor(
     * [`mint`](/api/contracts/jbtoken/write/mint.md)
 4.  Emit a `Mint` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Mint(_holder, _projectId, _amount, _shouldClaimTokens, _preferClaimedTokens, msg.sender);
     ```
 
@@ -92,7 +92,7 @@ function mintFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Mint new project tokens.

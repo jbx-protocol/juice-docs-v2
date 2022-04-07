@@ -1,6 +1,6 @@
 # IJBPaymentTerminal
 
-```solidity
+```
 interface IJBPaymentTerminalStore {
   function fundingCycleStore() external view returns (IJBFundingCycleStore);
 

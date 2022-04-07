@@ -27,7 +27,7 @@ Ethereum mainnet: _Not yet deployed_\
 
 ## Constructor
 
-```solidity
+```
 constructor(
   IJBPrices _prices,
   IJBDirectory _directory,

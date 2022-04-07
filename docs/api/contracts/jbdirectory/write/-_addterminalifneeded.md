@@ -15,7 +15,7 @@ Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 ### Definition
 
 
-```solidity
+```
 function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) private { ... }
 ```
 * Arguments:
@@ -26,7 +26,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
 ### Body
 1.  Nothing to do if the terminal is already a terminal of the project.
-    ```solidity
+    ```
     // Check that the terminal has not already been added.
     if (isTerminalOf(_projectId, _terminal)) return;
     ```
@@ -37,7 +37,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
 2.  Get a reference to the project's current funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -52,7 +52,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
 3.  Make sure the project's current funding cycle is set to allow setting its terminals, or the request to set the controller is coming from the project's current controller.
 
-    ```solidity
+    ```
     // Setting terminals must be allowed if not called from the current controller.
     if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
       revert SET_TERMINALS_NOT_ALLOWED();
@@ -68,7 +68,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
 
 4.  Add the terminal.
-    ```solidity
+    ```
     // Add the new terminal.
     _terminalsOf[_projectId].push(_terminal);
     ```
@@ -78,7 +78,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 5.  Emit a `AddTerminal` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit AddTerminal(_projectId, _terminal, msg.sender);
     ```
 
@@ -90,7 +90,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Add a terminal to a project's list of terminals if it hasn't been already.

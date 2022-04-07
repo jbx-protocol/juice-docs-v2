@@ -14,7 +14,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 ### Definition
 
-```solidity
+```
 function reservedTokenBalanceOf(uint256 _projectId, uint256 _reservedRate)
   external
   view
@@ -34,7 +34,7 @@ function reservedTokenBalanceOf(uint256 _projectId, uint256 _reservedRate)
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 
-    ```solidity
+    ```
     return
       _reservedTokenAmountFrom(
         _processedTokenTrackerOf[_projectId],
@@ -56,7 +56,7 @@ function reservedTokenBalanceOf(uint256 _projectId, uint256 _reservedRate)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Gets the amount of reserved tokens that a project has available to distribute.

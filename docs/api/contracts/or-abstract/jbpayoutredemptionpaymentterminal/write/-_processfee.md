@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 #### Definition
 
-```solidity
+```
 function _processFee(uint256 _amount, address _beneficiary) { ... }
 ```
 
@@ -26,7 +26,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
 1.  Get the terminal that the protocol project is accepting funds through for this terminal's token.
 
-    ```solidity
+    ```
     // Get the terminal for the protocol project.
     IJBPaymentTerminal _terminal = directory.primaryTerminalOf(_PROTOCOL_PROJECT_ID, token);
     ```
@@ -37,13 +37,13 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
 2.  If the protocol's terminal is the same as this terminal, save gas by paying the contract internally.
 
-    ```solidity
+    ```
     // When processing the admin fee, save gas if the admin is using this contract as its terminal.
     if (_terminal == this) { ... }
     ```
     1.  Pay the protocol using the internal pay function.
 
-        ```solidity
+        ```
         _pay(_amount, address(this), _PROTOCOL_PROJECT_ID, _beneficiary, 0, false, '', bytes('')); // Use the local pay call.
         ```
 
@@ -53,12 +53,12 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
 3.  Otherwise if the terminal is different, transfer the fee over.
 
-    ```solidity
+    ```
     else { ... }
     ```
     1.  Call any pre-transfer logic.
 
-        ```solidity
+        ```
         // Trigger any inherited pre-transfer logic.
         _beforeTransferTo(address(_terminal), _amount);
         ```
@@ -69,14 +69,14 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
     4.  Get a reference to the ETH amount that should be attached to the transaction. Only attach anything if the token being paid is ETH.
 
-        ```solidity
+        ```
         // If this terminal's token is ETH, send it in msg.value.
         uint256 _payableValue = token == JBTokens.ETH ? _amount : 0;
         ```
 
     5.  Send the payment.
 
-        ```solidity
+        ```
         // Send the payment.
         _terminal.pay{value: _payableValue}(
           _amount,
@@ -98,7 +98,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Process a fee of the specified amount.

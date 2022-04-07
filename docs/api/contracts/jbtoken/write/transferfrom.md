@@ -16,7 +16,7 @@ _Only the owner of this contract cant burn some of its supply._
 
 ### Definition
 
-```solidity
+```
 function transferFrom(
   uint256,
   address _from,
@@ -37,7 +37,7 @@ function transferFrom(
 
 1.  Forward the call to the ERC20 implementation.
 
-    ```solidity
+    ```
     transferFrom(_from, _to, _amount);
     ```
 
@@ -49,7 +49,7 @@ function transferFrom(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Transfer tokens between accounts.

@@ -16,7 +16,7 @@ _Assumes a funding cycle with a duration of 0 will never be asked to be the base
 
 ### Definition
 
-```solidity
+```
 function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool _allowMidCycle)
   private
   view
@@ -37,7 +37,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
     1. If the call to the function does not allow mid cycle, the start date must be now or in the future. This is also the case if the base funding cycle doesn't have a duration because the next funding cycle can start immediately.
     2. If neither of these cases apply, moving back one full duration period of the base funding cycle will find the most recent possible start time for the mock cycle to start.
 
-    ```solidity
+    ```
     // Get the distance of the current time to the start of the next possible funding cycle.
     // If the returned mock cycle must not yet have started, the start time of the mock must be in the future.
     uint256 _mustStartAtOrAfter = !_allowMidCycle
@@ -46,7 +46,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
     ```
 2.  Find the correct start time for the mock funding cycle.
 
-    ```solidity
+    ```
     // Derive what the start time should be.
     uint256 _start = _deriveStartFrom(_baseFundingCycle, _mustStartAtOrAfter);
     ```
@@ -56,7 +56,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
     * [`_deriveStartFrom`](/api/contracts/jbfundingcyclestore/read/-_derivestartfrom.md)
 3.  Find the correct number for the mock funding cycle.
 
-    ```solidity
+    ```
     // Derive what the number should be.
     uint256 _number = _deriveNumberFrom(_baseFundingCycle, _start);
     ```
@@ -66,7 +66,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
     * [`_deriveNumberFrom`](/api/contracts/jbfundingcyclestore/read/-_derivenumberfrom.md)
 4.  Return a [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) with the aggregated configuration.
 
-    ```solidity
+    ```
     return
       JBFundingCycle(
         _number,
@@ -89,7 +89,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   A view of the funding cycle that would be created based on the provided one if the project doesn't make a reconfiguration.

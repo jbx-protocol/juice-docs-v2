@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event Burn(
   address indexed holder,
   uint256 indexed projectId,

@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event SetTokenUriResolver(IJBTokenUriResolver newResolver, address caller);
 ```
 

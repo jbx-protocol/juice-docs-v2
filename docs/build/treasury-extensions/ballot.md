@@ -5,7 +5,7 @@ Before implementing, learn about ballots [here](/learn/glossary/ballot.md).
 
 A contract can become a funding cycle ballot by adhering to [`IJBFundingCycleBallot`](/api/interfaces/ijbfundingcycleballot.md):
 
-```solidity
+```
 interface IJBFundingCycleBallot {
   function duration() external view returns (uint256);
 

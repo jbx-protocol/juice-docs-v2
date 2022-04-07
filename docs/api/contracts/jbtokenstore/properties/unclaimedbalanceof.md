@@ -8,7 +8,7 @@ Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   Each holder's balance of unclaimed tokens for each project.

@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event Configure(
   uint256 indexed configuration,
   uint256 indexed projectId,

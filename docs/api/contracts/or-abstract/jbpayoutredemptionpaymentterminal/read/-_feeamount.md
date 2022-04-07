@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 #### Definition
 
-```solidity
+```
 function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns (uint256) { ... }
 ```
 
@@ -27,7 +27,7 @@ function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns 
 
 1.  Calculate the discounted fee by subtracting the discount from the fee.
 
-    ```solidity
+    ```
     // Calculate the discounted fee.
     uint256 _discountedFee = fee - PRBMath.mulDiv(fee, _feeDiscount, JBConstants.MAX_FEE_DISCOUNT);
     ```
@@ -40,7 +40,7 @@ function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns 
       * `.MAX_FEE_DISCOUNT`
 2.  Return the amount of tokens from the specified amount that should be paid as a fee.
 
-    ```solidity
+    ```
     // The amount of tokens from the `_amount` to pay as a fee.
     return
       _amount - PRBMath.mulDiv(_amount, JBConstants.MAX_FEE, _discountedFee + JBConstants.MAX_FEE);
@@ -50,7 +50,7 @@ function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns 
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Returns the fee amount based on the provided amount for the specified project.

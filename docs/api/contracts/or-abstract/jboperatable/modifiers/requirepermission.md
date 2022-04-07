@@ -1,6 +1,6 @@
 # requirePermission
 
-```solidity
+```
 modifier requirePermission(
   address _account,
   uint256 _domain,

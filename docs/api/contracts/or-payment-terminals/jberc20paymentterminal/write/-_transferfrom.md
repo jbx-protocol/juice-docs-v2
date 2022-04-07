@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-payment-termin
 
 # Definition
 
-```solidity
+```
 function _transferFrom(
   address,
   address payable _to,
@@ -31,7 +31,7 @@ function _transferFrom(
 
 1.  Send the ERC20. If the specified sender is this contract, use the transfer transaction that doesn't require pre-approval. Otherwise, transfer from the specified address.
 
-    ```solidity
+    ```
      _from == address(this)
       ? IERC20(token).transfer(_to, _amount)
       : IERC20(token).transferFrom(_from, _to, _amount);
@@ -47,7 +47,7 @@ function _transferFrom(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Transfers tokens.

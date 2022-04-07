@@ -16,7 +16,7 @@ _Only a token's holder, a designated operator, or a project's terminal can burn 
 
 ### Definition
 
-```solidity
+```
 function burnTokensOf(
   address _holder,
   uint256 _projectId,
@@ -51,13 +51,13 @@ function burnTokensOf(
 
 1.  Make sure there is a specified number of tokens to burn.
 
-    ```solidity
+    ```
     // There should be tokens to burn
     if (_tokenCount == 0) revert NO_BURNABLE_TOKENS();
     ```
 2.  Get a reference to the current funding cycle for the project.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -67,7 +67,7 @@ function burnTokensOf(
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 3.  Make sure the current funding cycle for the project hasn't paused burning if the request is not coming from one of the project's terminals. If the request is coming from a terminal, allow burning regardless of the pause state because it could be a sub-routine of another operation such as redemption.
 
-    ```solidity
+    ```
     // If the message sender is not a terminal, the current funding cycle must not be paused.
     if (
       _fundingCycle.burnPaused() &&
@@ -85,7 +85,7 @@ function burnTokensOf(
     * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
 4.  Update the token tracker so that the correct amount of reserved tokens are still mintable after the burn.
 
-    ```solidity
+    ```
     // Update the token tracker so that reserved tokens will still be correctly mintable.
     _processedTokenTrackerOf[_projectId] =
       _processedTokenTrackerOf[_projectId] -
@@ -97,7 +97,7 @@ function burnTokensOf(
     * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
 5.  Burn the tokens.
 
-    ```solidity
+    ```
     // Burn the tokens.
     tokenStore.burnFrom(_holder, _projectId, _tokenCount, _preferClaimedTokens);
     ```
@@ -107,7 +107,7 @@ function burnTokensOf(
     * [`burnFrom`](/api/contracts/jbtokenstore/write/burnfrom.md)
 6.  Emit a `BurnTokens` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit BurnTokens(_holder, _projectId, _tokenCount, _memo, msg.sender);
     ```
 
@@ -119,7 +119,7 @@ function burnTokensOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Burns a token holder's supply.

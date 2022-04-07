@@ -20,7 +20,7 @@ _Can't change to a token that's currently being used by another project._
 
 #### Definition
 
-```solidity
+```
 function changeFor(
   uint256 _projectId,
   IJBToken _token,
@@ -40,7 +40,7 @@ function changeFor(
 
 1.  Make sure claiming isn't required if removing the token.
 
-    ```solidity
+    ```
     // Can't remove the project's token if the project requires claiming tokens.
     if (_token == IJBToken(address(0)) && requireClaimFor[_projectId])
       revert CANT_REMOVE_TOKEN_IF_ITS_REQUIRED();
@@ -52,7 +52,7 @@ function changeFor(
 
 2.  Make sure the token being changed to isn't being used by another project.
 
-    ```solidity
+    ```
     // Can't change to a token already in use.
     if (projectOf[_token] != 0) revert TOKEN_ALREADY_IN_USE();
     ```
@@ -63,7 +63,7 @@ function changeFor(
 
 3.  Make sure the token has 18 decimals.
 
-    ```solidity
+    ```
     // Can't change to a token that doesn't use 18 decimals.
     if (_token.decimals() != 18) revert TOKENS_MUST_HAVE_18_DECIMALS();
     ```
@@ -74,7 +74,7 @@ function changeFor(
 
 4.  Get a reference to the project's current token.
 
-    ```solidity
+    ```
     // Get a reference to the current token for the project.
     oldToken = tokenOf[_projectId];
     ```
@@ -84,7 +84,7 @@ function changeFor(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 5.  Store the provided token as the token of the project.
 
-    ```solidity
+    ```
     // Store the new token.
     tokenOf[_projectId] = _token;
     ```
@@ -94,7 +94,7 @@ function changeFor(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 6.  Store the project the new token is being used for.
 
-    ```solidity
+    ```
     // Store the project for the new token.
     projectOf[_token] = _projectId;
     ```
@@ -104,7 +104,7 @@ function changeFor(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 7.  Reset the project for the project's old token.
 
-    ```solidity
+    ```
     // Reset the project for the old token.
     projectOf[oldToken] = 0;
     ```
@@ -114,7 +114,7 @@ function changeFor(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 8.  If there's a current token and a new owner address was provided, transfer the ownership of the current token from this contract to the new owner.
 
-    ```solidity
+    ```
     // If there's a current token and a new owner was provided, transfer ownership of the old token to the new owner.
     if (_newOwner != address(0) && oldToken != IJBToken(address(0)))
       oldToken.transferOwnership(_newOwner);
@@ -125,7 +125,7 @@ function changeFor(
     * [`transferOwnership`](/api/contracts/jbtoken/write/transferownership.md)
 9.  Emit a `Change` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Change(_projectId, _token, oldToken, _newOwner, msg.sender);
     ```
 
@@ -137,7 +137,7 @@ function changeFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Swap the current project's token for another, and transfer ownership of the current token to another address if needed.

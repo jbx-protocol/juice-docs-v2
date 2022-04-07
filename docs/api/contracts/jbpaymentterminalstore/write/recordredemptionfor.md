@@ -18,7 +18,7 @@ _The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterm
 
 #### Definition
 
-```solidity
+```
 function recordRedemptionFor(
   address _holder,
   uint256 _projectId,
@@ -58,7 +58,7 @@ function recordRedemptionFor(
 
 1.  Get a reference to the project's current funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -68,7 +68,7 @@ function recordRedemptionFor(
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure the project's funding cycle isn't configured to pause redemptions.
 
-    ```solidity
+    ```
     // The current funding cycle must not be paused.
     if (fundingCycle.redeemPaused()) revert FUNDING_CYCLE_REDEEM_PAUSED();
     ```
@@ -79,14 +79,14 @@ function recordRedemptionFor(
       `.redeemPaused(...)`
 3.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. 
 
-    ```solidity
+    ```
     // Scoped section prevents stack too deep. `_currentOverflow`, `_totalSupply`, and `_data` only used within scope.
     { ... }
     ```
 
     1.  Get a reference to the amount of overflow the project has. Either the project's total overflow or the overflow local to the msg.sender's balance will be used depending on how the project's funding cycle is configured. 
 
-        ```solidity
+        ```
         // Get the amount of current overflow.
         // Use the local overflow if the funding cycle specifies that it should be used. Otherwise, use the project's total overflow across all of its terminals.
         uint256 _currentOverflow = fundingCycle.useTotalOverflowForRedemptions()
@@ -111,7 +111,7 @@ function recordRedemptionFor(
 
     2.  Get a reference to the total outstanding supply of project tokens.
 
-        ```solidity
+        ```
         // Get the number of outstanding tokens the project has.
         uint256 _totalSupply = directory.controllerOf(_projectId).totalOutstandingTokensOf(
           _projectId,
@@ -135,14 +135,14 @@ function recordRedemptionFor(
 
     3.  Make sure the provided token count is within the bounds of the total supply.
 
-        ```solidity
+        ```
         // Can't redeem more tokens that is in the supply.
         if (_tokenCount > _totalSupply) revert INSUFFICIENT_TOKENS();
         ```
 
     4.  Get a reference to the reclaimable overflow if there is overflow. 
 
-        ```solidity
+        ```
         if (_currentOverflow > 0)
           // Calculate reclaim amount using the current overflow amount.
           reclaimAmount = _reclaimableOverflowDuring(
@@ -160,7 +160,7 @@ function recordRedemptionFor(
 
     5.  If the project's current funding cycle is configured to use a data source when making redemptions, ask the data source for the parameters that should be used throughout the rest of the function given provided contextual values in a [`JBRedeemParamsData`](/api/data-structures/jbredeemparamsdata.md) structure. Otherwise default parameters are used.
 
-        ```solidity
+        ```
         // If the funding cycle has configured a data source, use it to derive a claim amount and memo.
         if (fundingCycle.useDataSourceForRedeem()) {
           // Create the params that'll be sent to the data source.
@@ -197,7 +197,7 @@ function recordRedemptionFor(
 
 4.  Make sure the amount being claimed is within the bounds of the project's balance.
 
-    ```solidity
+    ```
     // The amount being reclaimed must be within the project's balance.
     if (reclaimAmount > balanceOf[IJBPaymentTerminal(msg.sender)][_projectId])
       revert INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE();
@@ -208,7 +208,7 @@ function recordRedemptionFor(
     * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 5.  Decrement any claimed funds from the project's balance if needed.
 
-    ```solidity
+    ```
     // Remove the reclaimed funds from the project's balance.
     if (reclaimAmount > 0)
       balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
@@ -224,7 +224,7 @@ function recordRedemptionFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Records newly redeemed tokens of a project.

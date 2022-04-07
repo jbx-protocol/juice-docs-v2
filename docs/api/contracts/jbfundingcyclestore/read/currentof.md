@@ -16,7 +16,7 @@ _If a current funding cycle of the project is not found, returns an empty fundin
 
 ### Definition
 
-```solidity
+```
 function currentOf(uint256 _projectId)
   external
   view
@@ -35,7 +35,7 @@ function currentOf(uint256 _projectId)
 
 1.  If there are no stored funding cycles for the provided project, there can't be an active funding cycle so an empty funding cycle should be returned.
 
-    ```solidity
+    ```
     // If the project does not have a funding cycle, return an empty struct.
     if (latestConfigurationOf[_projectId] == 0) return _getStructFor(0, 0);
     ```
@@ -46,7 +46,7 @@ function currentOf(uint256 _projectId)
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 2.  Get a reference to the configuration of an eligible funding cycle if there is one. This eligible cycle might not yet be approved.
 
-    ```solidity
+    ```
     // Get a reference to the configuration of the eligible funding cycle.
     uint256 _fundingCycleConfiguration = _eligibleOf(_projectId);
     ```
@@ -56,13 +56,13 @@ function currentOf(uint256 _projectId)
     * [`_eligibleOf`](/api/contracts/jbfundingcyclestore/read/-_eligibleof.md)
 3.  Create a reference to a funding cycle.
 
-    ```solidity
+    ```
     // Keep a reference to the eligible funding cycle.
     JBFundingCycle memory _fundingCycle;
     ```
 4.  If there's a candidate funding cycle configuration, check to see if it is approved. If so, return the funding cycle as the current funding cycle of the project. Otherwise, get a reference to the funding cycle that the candidate is based on. A current funding cycle will be one derived from this reference.
 
-    ```solidity
+    ```
     // If an eligible funding cycle exists...
     if (_fundingCycleConfiguration > 0) {
       // Resolve the funding cycle for the eligible configuration.
@@ -84,7 +84,7 @@ function currentOf(uint256 _projectId)
     * [`_isApproved`](/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
 5.  If there's not a candidate funding cycle configuration, get a reference the latest stored funding cycle for the project. If it's not approved or if it hasn't yet started, get a reference to the cycle it's based on. A current funding cycle will be one derived from this reference.
 
-    ```solidity
+    ```
     else {
       // No upcoming funding cycle found that is eligible to become active,
       // so use the last configuration.
@@ -106,7 +106,7 @@ function currentOf(uint256 _projectId)
     * [`_isApproved`](/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
 6.  If the current referenced configuration is 0, there must not be a current cycle so return an empty one.
 
-    ```solidity
+    ```
     // If there is not funding cycle to base the current one on, there can't be a current one. 
     if (_fundingCycleConfiguration == 0) return _getStructFor(0, 0);
     ```
@@ -116,7 +116,7 @@ function currentOf(uint256 _projectId)
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 7.  Create the funding cycle structure using the current reference. The current funding cycle will be one based on this reference.
 
-    ```solidity
+    ```
     // The funding cycle to base a current one on.
     _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
     ```
@@ -127,7 +127,7 @@ function currentOf(uint256 _projectId)
 
 8.  If the base has a duration of 0, it must still be current.
 
-    ```solidity
+    ```
     // If the base has no duration, it's still the current one.
     if (_fundingCycle.duration == 0) return _fundingCycle;
     ```
@@ -138,7 +138,7 @@ function currentOf(uint256 _projectId)
 
 9.  Return a funding cycle based on the one currently referenced. The mock funding cycle is allowed to have started already, which is why a `true` flag is passed in.
 
-    ```solidity
+    ```
     // Return a mock of the current funding cycle.
     return _mockFundingCycleBasedOn(_fundingCycle, true);
     ```
@@ -151,7 +151,7 @@ function currentOf(uint256 _projectId)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   The funding cycle that is currently active for the specified project.

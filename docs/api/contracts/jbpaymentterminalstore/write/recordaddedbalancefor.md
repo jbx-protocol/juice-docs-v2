@@ -15,7 +15,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 _The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
 #### Definition
 
-```solidity
+```
 function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
   external
   override
@@ -32,7 +32,7 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
 
 1.  Increment the project's balance by the specified amount.
 
-    ```solidity
+    ```
     // Increment the balance.
     balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
       balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] +
@@ -47,7 +47,7 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Records newly added funds for the project.

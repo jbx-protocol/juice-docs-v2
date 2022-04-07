@@ -8,7 +8,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The Projects contract which mints ERC-721's that represent project ownership and transfers.

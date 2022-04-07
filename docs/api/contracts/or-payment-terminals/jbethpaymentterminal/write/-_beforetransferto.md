@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-payment-termin
 
 # Definition
 
-```solidity
+```
 function _beforeTransferTo(address, uint256) internal override { ...}
 ```
 
@@ -31,7 +31,7 @@ _Empty_
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Logic to be triggered before transferring tokens from this terminal.

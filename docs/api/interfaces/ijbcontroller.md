@@ -1,6 +1,6 @@
 # IJBController
 
-```solidity
+```
 interface IJBController {
   event LaunchProject(uint256 configuration, uint256 projectId, string memo, address caller);
 

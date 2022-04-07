@@ -16,7 +16,7 @@ _The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterm
 
 #### Definition
 
-```solidity
+```
 function recordMigration(uint256 _projectId)
   external
   override
@@ -33,7 +33,7 @@ function recordMigration(uint256 _projectId)
 
 1.  Get a reference to the project's current funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -43,7 +43,7 @@ function recordMigration(uint256 _projectId)
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure that migrating terminals is allowed by the current funding cycle.
 
-    ```solidity
+    ```
     // Migration must be allowed.
     if (!_fundingCycle.terminalMigrationAllowed()) revert PAYMENT_TERMINAL_MIGRATION_NOT_ALLOWED();
     ```
@@ -54,7 +54,7 @@ function recordMigration(uint256 _projectId)
       `.terminalMigrationAllowed(...)`
 3.  Get a reference to the project's current balance. Set this to the value that the function will return.
 
-    ```solidity
+    ```
     // Return the current balance.
     balance = balanceOf[IJBPaymentTerminal(msg.sender)][_projectId];
     ```
@@ -64,7 +64,7 @@ function recordMigration(uint256 _projectId)
     * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 4.  Set the project's balance to 0 since funds are moving away from this terminal.
 
-    ```solidity
+    ```
     // Set the balance to 0.
     balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] = 0;
     ```
@@ -77,7 +77,7 @@ function recordMigration(uint256 _projectId)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Records the migration of funds from this store.

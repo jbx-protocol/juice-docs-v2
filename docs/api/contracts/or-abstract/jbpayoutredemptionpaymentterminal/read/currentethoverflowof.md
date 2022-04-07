@@ -16,7 +16,7 @@ _The current overflow is represented as a fixed point number with 18 decimals._
 
 ### Definition
 
-```solidity
+```
 function currentEthOverflowOf(uint256 _projectId) external view override returns (uint256) { ... }
 ```
 
@@ -31,7 +31,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
 1.  Get this terminal's current overflow, which is in terms of this terminal's token.
 
-    ```solidity
+    ```
     // Get this terminal's current overflow.
     uint256 _overflow = store.currentOverflowOf(this, _projectId);
     ```
@@ -41,7 +41,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
     * [`currentOverflowOf`](/api/contracts/jbpaymentterminalstore/read/currentoverflowof.md)
 2.  If this terminal's fixed point accounting doesn't have 18 decimals, adjust the overflow to have 18 decimals.
 
-    ```solidity
+    ```
     // Adjust the decimals of the fixed point number if needed to have 18 decimals.
     uint256 _adjustedOverflow = (decimals == 18)
       ? _overflow
@@ -55,7 +55,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
 3.  If this terminal's currency isn't ETH, convert the overflow to ETH. Return the 18 decimal ETH fixed point overflow value.
 
-    ```solidity
+    ```
     // Return the amount converted to ETH.
     return
       (currency == JBCurrencies.ETH)
@@ -80,7 +80,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Gets the current overflowed amount in this terminal for a specified project, in terms of ETH.

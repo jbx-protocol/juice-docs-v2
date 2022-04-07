@@ -1,6 +1,6 @@
 # IJBProjectPayer
 
-```solidity
+```
 interface IJBProjectPayer {
   event SetDefaultValues(
     uint256 indexed projectId,

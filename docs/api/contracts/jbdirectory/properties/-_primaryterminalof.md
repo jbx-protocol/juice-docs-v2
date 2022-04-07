@@ -6,7 +6,7 @@ Contract: [`JBDirectory`](/api/contracts/jbdirectory/README.md)‌
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The project's primary terminal for a token.

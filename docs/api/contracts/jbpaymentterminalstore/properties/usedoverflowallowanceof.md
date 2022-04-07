@@ -12,7 +12,7 @@ _The used allowance is represented as a fixed point number with the same amount 
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The amount of funds that a project has used from its allowance during the current funding cycle configuration for each terminal, in terms of the overflow allowance's currency.

@@ -6,7 +6,7 @@ Emitted from:
 
 Definition:
 
-```solidity
+```
 event AddTerminal(uint256 indexed projectId, IJBPaymentTerminal indexed terminal, address caller);
 ```
 

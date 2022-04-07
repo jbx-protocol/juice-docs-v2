@@ -16,7 +16,7 @@ _Only a project's owner or operator can change its token._
 
 ### Definition
 
-```solidity
+```
 function changeTokenOf(
   uint256 _projectId,
   IJBToken _token,
@@ -41,7 +41,7 @@ function changeTokenOf(
 
 1.  Get a reference to the project's current funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -51,7 +51,7 @@ function changeTokenOf(
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure the current funding cycle for the project allows changing tokens.
 
-    ```solidity
+    ```
     // The current funding cycle must not be paused.
     if (!_fundingCycle.changeTokenAllowed()) revert CHANGE_TOKEN_NOT_ALLOWED();
     ```
@@ -62,7 +62,7 @@ function changeTokenOf(
       `.changeTokenAllowed(...)`
 3.  Forward the call to the token store.
 
-    ```solidity
+    ```
     // Change the token in the store.
     tokenStore.changeFor(_projectId, _token, _newOwner);
     ```
@@ -71,7 +71,7 @@ function changeTokenOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Swap the current project's token that is minted and burned for another, and transfer ownership of the current token to another address if needed.

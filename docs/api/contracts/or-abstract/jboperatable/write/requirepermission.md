@@ -1,6 +1,6 @@
 # requirePermission
 
-```solidity
+```
 /** 
   @notice
   Require the message sender is either the account or has the specified permission.

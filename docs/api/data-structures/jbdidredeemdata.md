@@ -1,6 +1,6 @@
 # JBDidRedeemData
 
-```solidity
+```
 struct JBDidRedeemData {
   // The holder of the tokens being redeemed.
   address holder;

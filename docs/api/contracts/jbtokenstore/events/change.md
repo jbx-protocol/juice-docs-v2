@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event Change(
   uint256 indexed projectId,
   IJBToken indexed newToken,

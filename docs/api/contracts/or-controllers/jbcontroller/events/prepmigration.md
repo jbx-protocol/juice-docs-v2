@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event PrepMigration(uint256 indexed projectId, IJBController from, address caller);
 ```
 

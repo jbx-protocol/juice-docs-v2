@@ -16,7 +16,7 @@ _Only a project owner, an operator, or its controller can set its terminals._
 
 ### Definition
 
-```solidity
+```
 function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _terminals)
   external
   override
@@ -39,7 +39,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
 1.  Get a reference to the project's current funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -50,7 +50,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
 2.  Make sure the project's current funding cycle is set to allow setting terminals, or the request to set the terminals is coming from the project's current controller.
 
-    ```solidity
+    ```
     // Setting terminals must be allowed if not called from the current controller.
     if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
       revert SET_TERMINALS_NOT_ALLOWED();
@@ -67,7 +67,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
 3.  Get a reference to the project's current funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -78,7 +78,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
 4.  Get a reference to the project's current terminals.
 
-    ```solidity
+    ```
     // Get a reference to the terminals of the project.
     IJBPaymentTerminal[] memory _oldTerminals = _terminalsOf[_projectId];
     ```
@@ -88,7 +88,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 5.  Delete the project's current set of terminals from storage.
 
-    ```solidity
+    ```
     // Delete the stored terminals for the project.
     _terminalsOf[_projectId] = _terminals;
     ```
@@ -98,7 +98,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 
 6.  Make sure the same terminal isn't being set multiple times.
-    ```solidity
+    ```
     // Make sure duplicates were not added.
     if (_terminals.length > 1)
       for (uint256 _i; _i < _terminals.length; _i++)
@@ -108,7 +108,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
 7.  If any of the project's primary terminals are being removed, also remove their status as a primary terminal.
 
-    ```solidity
+    ```
     // If one of the old terminals was set as a primary terminal but is not included in the new terminals, remove it from being a primary terminal.
     for (uint256 _i; _i < _oldTerminals.length; _i++)
       if (
@@ -123,7 +123,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
     * [`_contains`](/api/contracts/jbdirectory/read/-_contains.md)
 8.  Emit a `SetTerminals` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetTerminals(_projectId, _terminals, msg.sender);
     ```
 
@@ -135,7 +135,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Set a project's terminals.

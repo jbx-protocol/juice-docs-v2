@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event Migrate(
   uint256 indexed projectId,
   IJBPaymentTerminal indexed to,

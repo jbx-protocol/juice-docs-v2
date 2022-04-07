@@ -8,7 +8,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 #### Definition
 
-```solidity
+```
 modifier isTerminalOf(uint256 _projectId) { ... }
 ```
 
@@ -19,7 +19,7 @@ modifier isTerminalOf(uint256 _projectId) { ... }
 
 1.  Make sure this terminal is a terminal of the specified project.
 
-    ```solidity
+    ```
     if (!directory.isTerminalOf(_projectId, this)) revert PROJECT_TERMINAL_MISMATCH();
     _;
     ```
@@ -30,7 +30,7 @@ modifier isTerminalOf(uint256 _projectId) { ... }
 {% endtab %}
 
 {% tab title="Code" %}
-```solidity
+```
 /** 
   @notice 
   A modifier that verifies this terminal is a terminal of provided project ID.

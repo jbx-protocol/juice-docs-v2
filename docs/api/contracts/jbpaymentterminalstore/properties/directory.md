@@ -8,7 +8,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 # Definition
 
-```solidity
+```
 /** 
   @notice
   The directory of terminals and controllers for projects.

@@ -1,6 +1,6 @@
 # JBPayParamsData
 
-```solidity
+```
 struct JBPayParamsData {
   // The terminal that is facilitating the payment.
   IJBPaymentTerminal terminal;

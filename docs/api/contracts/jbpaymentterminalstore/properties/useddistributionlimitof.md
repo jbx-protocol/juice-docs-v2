@@ -12,7 +12,7 @@ _The used distribution limit is represented as a fixed point number with the sam
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The amount of funds that a project has distributed from its limit during the current funding cycle for each terminal, in terms of the distribution limit's currency.

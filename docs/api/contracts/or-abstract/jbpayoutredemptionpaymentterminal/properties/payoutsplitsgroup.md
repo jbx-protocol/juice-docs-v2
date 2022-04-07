@@ -8,7 +8,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The group that payout splits coming from this terminal are identified by.

@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 #### Definition
 
-```solidity
+```
 function _pay(
   uint256 _amount,
   address _payer,
@@ -41,14 +41,14 @@ function _pay(
 
 1.  Make sure the provided beneficiary isn't the zero address.
 
-    ```solidity
+    ```
     // Cant send tokens to the zero address.
     if (_beneficiary == address(0)) revert PAY_TO_ZERO_ADDRESS();
     ```
 
 2.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. Define a few variables outside of the scope that'll be set within the scope but later referenced again outside.
 
-    ```solidity
+    ```
     // Define variables that will be needed outside the scoped section below.
     // Keep a reference to the funding cycle during which the payment is being made.
     JBFundingCycle memory _fundingCycle;
@@ -59,21 +59,21 @@ function _pay(
 
     1.  Keep references to the delegate and token count that'll be returned from the subsequent function.
 
-        ```solidity
+        ```
         IJBPayDelegate _delegate;
         uint256 _tokenCount;
         ```
 
     2.  Keep a reference to the [`JBTokenAmount`](/api/data-structures/jbtokenamount.md) structure with info about what's being paid.
 
-        ```solidity
+        ```
         // Bundle the amount info into a JBTokenAmount struct.
         JBTokenAmount memory _bundledAmount = JBTokenAmount(token, _amount, decimals, currency);
         ```
 
     3.  Record the payment, and get a reference to the funding cycle during which the payment was made, the number of project tokens that should be minted as a result, a delegate to callback to, and an updated memo. 
 
-        ```solidity
+        ```
         // Record the payment.
         (_fundingCycle, _tokenCount, _delegate, _memo) = store.recordPaymentFrom(
           _payer,
@@ -91,7 +91,7 @@ function _pay(
 
     4.  Mint tokens if needed. Get a reference to the number of tokens sent to the specified beneificiary as opposed to reserved to be distributed to the project's reserved token splits.
 
-        ```solidity
+        ```
         // Mint the tokens if needed.
         if (_tokenCount > 0)
           // Set token count to be the number of tokens minted for the beneficiary instead of the total amount.
@@ -112,14 +112,14 @@ function _pay(
 
     5.  Make sure the beneficiary is receiving at least as much tokens as the minimum specied.
 
-        ```solidity
+        ```
         // The token count for the beneficiary must be greater than or equal to the minimum expected.
         if (beneficiaryTokenCount < _minReturnedTokens) revert INADEQUATE_TOKEN_COUNT();
         ```
 
     6.   If a delegate was provided, callback to its `didPay` function, and emit an event with the relevant parameters..
 
-        ```solidity
+        ```
         // If a delegate was returned by the data source, issue a callback to it.
         if (_delegate != IJBPayDelegate(address(0))) {
           JBDidPayData memory _data = JBDidPayData(
@@ -147,7 +147,7 @@ function _pay(
 
 3.  Emit a `Pay` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Pay(
       _fundingCycle.configuration,
       _fundingCycle.number,
@@ -168,7 +168,7 @@ function _pay(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Contribute tokens to a project.

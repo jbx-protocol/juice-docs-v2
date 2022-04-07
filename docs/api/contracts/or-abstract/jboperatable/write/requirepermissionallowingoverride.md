@@ -1,6 +1,6 @@
 # requirePermissionAllowingOverride
 
-```solidity
+```
 /** 
   @notice
   Require the message sender is either the account, has the specified permission, or the override condition is true.

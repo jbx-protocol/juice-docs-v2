@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event LaunchProject(uint256 configuration, uint256 projectId, string memo, address caller);
 ```
 

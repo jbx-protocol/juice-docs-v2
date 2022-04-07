@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event ShouldRequireClaim(uint256 indexed projectId, bool indexed flag, address caller)
 ```
 

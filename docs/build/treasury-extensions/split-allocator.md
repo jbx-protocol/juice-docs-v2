@@ -5,7 +5,7 @@ Before implementing, learn about allocators [here](/learn/glossary/allocator.md)
 
 A contract can become a split allocator by adhering to [`IJBSplitAllocator`](/api/interfaces/ijbsplitallocator.md):
 
-```solidity
+```
 interface IJBSplitAllocator {
   function allocate(JBSplitAllocationData calldata _data) external payable;
 }
@@ -13,7 +13,7 @@ interface IJBSplitAllocator {
 
 When extending the payout distribution or reserved token distribution functionality with an allocator, the protocol will pass a [`JBSplitAllocationData`](/api/data-structures/jbsplitallocationdata.md) to the `allocate(...)` function:
 
-```solidity
+```
 struct JBSplitAllocationData {
   // The amount being sent to the split allocator, as a fixed point number.
   uint256 amount;
@@ -28,7 +28,7 @@ struct JBSplitAllocationData {
 }
 ```
 
-```solidity
+```
 struct JBSplit {
   // A flag that only has effect if a projectId is also specified, and the project has a token contract attached.
   // If so, this flag indicates if the tokens that result from making a payment to the project should be delivered claimed into the beneficiary's wallet, or unclaimed to save gas.

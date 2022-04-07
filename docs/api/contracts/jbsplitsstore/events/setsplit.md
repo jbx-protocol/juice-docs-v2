@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event SetSplit(
   uint256 indexed projectId,
   uint256 indexed domain,

@@ -12,7 +12,7 @@ Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â€
 
 ### Definition
 
-```solidity
+```
 function _getStructFor(uint256 _projectId, uint256 _configuration)
   private
   view
@@ -30,18 +30,18 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
 
 1.  If the configuration provided is 0, return an empty funding cycle.
 
-    ```solidity
+    ```
     // Return an empty funding cycle if the configuration specified is 0.
     if (_configuration == 0) return fundingCycle;
     ```
 2.  Set the funding cycle's configuration to the provided value.
 
-    ```solidity
+    ```
     fundingCycle.configuration = _configuration;
     ```
 3.  Get the stored intrinsic properties of the funding cycle. Populate the struct values by unpacking the `uint256`.
 
-    ```solidity
+    ```
     uint256 _packedIntrinsicProperties = _packedIntrinsicPropertiesOf[_projectId][_configuration];
 
     // weight in bits 0-87 bits.
@@ -59,7 +59,7 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
     * [`_packedIntrinsicPropertiesOf`](/api/contracts/jbfundingcyclestore/properties/-_packedintrinsicpropertiesof.md)
 4.  Get the stored user properties of the funding cycle. Populate the struct values by unpacking the `uint256`.
 
-    ```solidity
+    ```
     uint256 _packedUserProperties = _packedUserPropertiesOf[_projectId][_configuration];
 
     // ballot in bits 0-159 bits.
@@ -75,7 +75,7 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
     * [`_packedUserPropertiesOf`](/api/contracts/jbfundingcyclestore/properties/-_packeduserpropertiesof.md)
 5.  Populate the metadata property of the struct by reading from what's stored.
 
-    ```solidity
+    ```
     fundingCycle.metadata = _metadataOf[_projectId][_configuration];
     ```
 
@@ -87,7 +87,7 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Unpack a funding cycle's packed stored values into an easy-to-work-with funding cycle struct.

@@ -14,7 +14,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 #### Definition
 
-```solidity
+```
 function pay(
   uint256 _projectId,
   address _token,
@@ -46,7 +46,7 @@ function pay(
 
 1.  If the token isn't ETH, make sure ETH wasn't sent to the function, then transfer the amount of tokens from the message sender to this contract. If this terminal's contract is ETH, override the specified amount and decimals values with with amount of ETH sent to the function, which is denoted as a fixed point number with 18 decimals.
 
-    ```solidity
+    ```
     // ETH shouldn't be sent if this terminal's token isn't ETH.
     if (address(_token) != JBTokens.ETH) {
       if (msg.value > 0) revert NO_MSG_VALUE_ALLOWED();
@@ -64,7 +64,7 @@ function pay(
     * [`transferFrom`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-transferFrom-address-address-uint256-)
 2.  Make the payment.
 
-    ```solidity
+    ```
     _pay(
       _projectId,
       _token,
@@ -86,7 +86,7 @@ function pay(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Make a payment to the specified project.

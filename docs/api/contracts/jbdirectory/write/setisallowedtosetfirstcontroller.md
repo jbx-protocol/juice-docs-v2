@@ -19,7 +19,7 @@ _If you would like an address/contract allowlisted, please reach out to the cont
 
 #### Definition
 
-```solidity
+```
 function setIsAllowedToSetFirstController(address _address, bool _flag)
   external
   override
@@ -37,7 +37,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 
 1.  Set the allowlist property for the provided address to the flag's value.
 
-    ```solidity
+    ```
     // Set the flag in the allowlist.
     isAllowedToSetFirstController[_address] = _flag;
     ```
@@ -47,7 +47,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
     * [`isAllowedToSetFirstController`](/api/contracts/jbdirectory/properties/isallowedtosetfirstcontroller.md)
 2.  Emit a `SetIsAllowedToSetFirstController` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetIsAllowedToSetFirstController(_address, _flag, msg.sender);
     ```
 
@@ -59,7 +59,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice	
   Set or revoke a contract to the list of trusted addresses that can set a first controller for any project.	

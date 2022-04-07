@@ -20,7 +20,7 @@ _A controller can be set if:_
 
 #### Definition
 
-```solidity
+```
 function setControllerOf(uint256 _projectId, IJBController _controller)
   external
   override
@@ -45,7 +45,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 
 1.  Project IDs are assigned incrementally. If the provided project ID is greater than the number of projects, it must not be a valid project ID.
 
-    ```solidity
+    ```
     // The project must exist.
     if (projects.count() < _projectId) revert INVALID_PROJECT_ID_IN_DIRECTORY();
     ```
@@ -60,7 +60,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 
 2.  Get a reference to the project's current funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -75,7 +75,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 
 3.  Make sure the project's current funding cycle is set to allow setting its controller, or the request to set the controller is coming from the project's current controller or is setting the first controller.
 
-    ```solidity
+    ```
     // Setting controller must be allowed if not called from the current controller or if the project already has a controller.
     if (
       msg.sender != address(controllerOf[_projectId]) &&
@@ -94,7 +94,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
 
 4.  Store the provided controller as the controller of the project.
-    ```solidity
+    ```
     // Set the new controller.
     controllerOf[_projectId] = _controller;
     ```
@@ -104,7 +104,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
 5.  Emit a `SetController` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetController(_projectId, _controller, msg.sender);
     ```
 
@@ -116,7 +116,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Update the controller that manages how terminals interact with the ecosystem.

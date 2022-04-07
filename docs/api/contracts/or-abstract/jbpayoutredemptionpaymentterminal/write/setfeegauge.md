@@ -18,7 +18,7 @@ _If the fee gauge reverts when called upon while a project is attempting to dist
 
 #### Definition
 
-```solidity
+```
 function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner { ... }
 ```
 
@@ -32,13 +32,13 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 
 1.  Store the new fee gauge.
 
-    ```solidity
+    ```
     // Store the new fee gauge.
     feeGauge = _feeGauge;
     ```
 2.  Emit a `SetFeeGauge` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetFeeGauge(_feeGauge, msg.sender);
     ```
 
@@ -50,7 +50,7 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Allows the fee gauge to be updated.

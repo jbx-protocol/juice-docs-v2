@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 #### Definition
 
-```solidity
+```
 function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
 ```
 
@@ -26,7 +26,7 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
 
 1.  Get a reference to any held [`JBFee`](/api/data-structures/jbfee.md)'s for the project.
 
-    ```solidity
+    ```
     // Get a reference to the project's held fees.
     JBFee[] memory _heldFees = _heldFeesOf[_projectId];
     ```
@@ -36,7 +36,7 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 2.  Delete all of the project's held fees. These will be repopulated if they were not refunded.
 
-    ```solidity
+    ```
     // Delete the current held fees.
     delete _heldFeesOf[_projectId];
     ```
@@ -46,7 +46,7 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 3.  Loop through each held fee, decrementing the amount as held fees are refunded. If the entire refund amount has been refunded, add the fee structure back into the project's held fees so that they can be processed or refunded later. If the amount left is greater than the fee structure's amount, decrement the refunded amount and leave the fee structure out of the project's held fees. If only some of the fee structure's amount is needed to cover the rest of the remaining amount, set the amount to 0 after adding the fee structure back into the project's held fees having subtracted the remaining refund amount.
 
-    ```solidity
+    ```
     // Process each fee.
     for (uint256 _i = 0; _i < _heldFees.length; _i++) {
       if (_amount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
@@ -68,7 +68,7 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Refund fees based on the specified amount.

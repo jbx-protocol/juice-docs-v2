@@ -8,7 +8,7 @@ Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The number of decimals the token fixed point amounts are expected to have.

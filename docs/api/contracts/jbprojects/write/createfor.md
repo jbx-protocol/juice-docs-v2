@@ -16,7 +16,7 @@ _Anyone can create a project on an owner's behalf._
 
 #### Definition
 
-```solidity
+```
 function createFor(address _owner, JBProjectMetadata calldata _metadata)
   external
   override
@@ -34,7 +34,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
 
 1.  Increment the count. Set it as the project's ID which is the returned value.
 
-    ```solidity
+    ```
     // Increment the count, which will be used as the ID.
     projectId = ++count;
     ```
@@ -44,7 +44,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
     * [`count`](/api/contracts/jbprojects/properties/count.md)
 2.  Mint a new NFT token belonging to the owner using the projectId as the tokenId.
 
-    ```solidity
+    ```
     // Mint the project.
     _safeMint(projectId, count);
     ```
@@ -54,7 +54,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
     * [`_safeMint`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#ERC721-_safeMint-address-uint256-bytes-)
 3.  If metadata was provided (meaning its content is not an empty string), store it for newly created project under the provided domain.
 
-    ```solidity
+    ```
     // Set the metadata if one was provided.
     if (bytes(_metadata.content).length > 0)
       metadataContentOf[projectId][_metadata.domain] = _metadata.content;
@@ -77,7 +77,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Create a new project for the specified owner, which mints an NFT (ERC-721) into their wallet.

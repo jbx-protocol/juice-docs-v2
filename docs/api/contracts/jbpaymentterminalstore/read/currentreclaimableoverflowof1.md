@@ -20,7 +20,7 @@ _The reclaimable overflow is represented as a fixed point number with the same a
 
 #### Definition
 
-```solidity
+```
 function currentReclaimableOverflowOf(
   IJBPaymentTerminal _terminal,
   uint256 _projectId,
@@ -43,7 +43,7 @@ function currentReclaimableOverflowOf(
 
 1.  Get a reference to the project's current funding cycle.
     
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -54,7 +54,7 @@ function currentReclaimableOverflowOf(
 
 2.  Get the amount of overflow to make the calculation with. Use the total overflow of all of the project's terminals if total overflow should be used, otherwise use the overflow of the provided terminal.
 
-    ```solidity
+    ```
     // Get the amount of current overflow.
     // Use the project's total overflow across all of its terminals if the flag species specifies so. Otherwise, use the overflow local to the specified terminal.
     uint256 _currentOverflow = _useTotalOverflow
@@ -79,14 +79,14 @@ function currentReclaimableOverflowOf(
 
 3.  If there's no overflow, there's nothing reclaimable.
 
-    ```solidity
+    ```
     // If there's no overflow, there's no reclaimable overflow.
     if (_currentOverflow == 0) return 0;
     ```
 
 4.  Get a reference to the total outstanding supply of project tokens that should be used in the calculation.
 
-    ```solidity
+    ```
     // Get the number of outstanding tokens the project has.
     uint256 _totalSupply = directory.controllerOf(_projectId).totalOutstandingTokensOf(
       _projectId,
@@ -110,14 +110,14 @@ function currentReclaimableOverflowOf(
 
 5.  Make sure the provided token count is within the bounds of the total supply.
 
-    ```solidity
+    ```
     // Can't redeem more tokens that is in the supply.
     if (_tokenCount > _totalSupply) return 0;
     ```
 
 6.  Return the reclaimable overflow using the project's current funding cycle and the derived current overflow. 
 
-    ```solidity
+    ```
     // Return the reclaimable overflow amount.
     return
       _reclaimableOverflowDuring(
@@ -138,7 +138,7 @@ function currentReclaimableOverflowOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   The current amount of overflowed tokens from a terminal that can be reclaimed by the specified number of tokens, using the total token supply and overflow in the ecosystem.

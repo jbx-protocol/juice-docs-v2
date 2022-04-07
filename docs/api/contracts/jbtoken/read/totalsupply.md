@@ -14,7 +14,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 ### Definition
 
-```solidity
+```
 function totalSupply(uint256) external view override returns (uint256) { ... }
 ```
 
@@ -29,7 +29,7 @@ function totalSupply(uint256) external view override returns (uint256) { ... }
 
 1.  Forward the call to the ERC20 implementation.
 
-    ```solidity
+    ```
     return super.totalSupply();
     ```
 
@@ -41,7 +41,7 @@ function totalSupply(uint256) external view override returns (uint256) { ... }
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   The total supply of this ERC20.

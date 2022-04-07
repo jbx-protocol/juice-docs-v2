@@ -6,7 +6,7 @@ Contract:[`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   Ensures a maximum number of decimal points of persisted fidelity on mulDiv operations of fixed point numbers. 

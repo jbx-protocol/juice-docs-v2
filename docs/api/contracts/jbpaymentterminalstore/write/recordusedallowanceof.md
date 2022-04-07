@@ -16,7 +16,7 @@ _The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterm
 
 #### Definition
 
-```solidity
+```
 function recordUsedAllowanceOf(
   uint256 _projectId,
   uint256 _amount,
@@ -43,7 +43,7 @@ function recordUsedAllowanceOf(
 
 1.  Get a reference to the project's first funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -53,7 +53,7 @@ function recordUsedAllowanceOf(
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Get a reference to the new used overflow allowance for this funding cycle configuration.
 
-    ```solidity
+    ```
     // Get a reference to the new used overflow allowance for this funding cycle configuration.
     uint256 _newUsedOverflowAllowanceOf = usedOverflowAllowanceOf[IJBPaymentTerminal(msg.sender)][
       _projectId
@@ -65,7 +65,7 @@ function recordUsedAllowanceOf(
     * [`usedOverflowAllowanceOf`](/api/contracts/jbpaymentterminalstore/properties/usedoverflowallowanceof.md)
 3.  Get a reference to the overflow allowance of the project during the current funding cycle configuration, and the currency the overflow allowance is in terms of.
 
-    ```solidity
+    ```
     // There must be sufficient allowance available.
     (uint256 _overflowAllowanceOf, uint256 _overflowAllowanceCurrency) = directory
       .controllerOf(_projectId)
@@ -78,7 +78,7 @@ function recordUsedAllowanceOf(
     * [`overflowAllowanceOf`](/api/contracts/or-controllers/jbcontroller/read/overflowallowanceof.md)
 4.  Make sure there's enough allowance left to accomodate the new used amount.
 
-    ```solidity
+    ```
     // Make sure the new used amount is within the allowance.
     if (_newUsedOverflowAllowanceOf > _overflowAllowanceOf || _overflowAllowanceOf == 0)
       revert INADEQUATE_CONTROLLER_ALLOWANCE();
@@ -86,14 +86,14 @@ function recordUsedAllowanceOf(
 
 5.  Make the sure the provided currency matches the expected currency for the overflow allowance.
 
-    ```solidity
+    ```
     // Make sure the currencies match.
     if (_currency != _overflowAllowanceCurrency) revert CURRENCY_MISMATCH();
     ```
 
 6.  Get a reference to the current distribution limit of the project during the current funding cycle configuration.
 
-    ```solidity
+    ```
     // Get the current funding target
     uint256 distributionLimit =
       directory.controllerOf(_projectId).distributionLimitOf(
@@ -110,7 +110,7 @@ function recordUsedAllowanceOf(
 
 7.  Calculate how much of the balance will be used. If the currency of the allowance and the balance are the same, no price conversion is necessary. Otherwise, convert the allowance currency to that of the balance. 
 
-    ```solidity
+    ```
     // Convert the amount to this store's terminal's token.
     usedAmount = (_currency == _balanceCurrency)
       ? _amount
@@ -136,7 +136,7 @@ function recordUsedAllowanceOf(
 
 8.  Make sure the amount being used is available in overflow.
 
-    ```solidity
+    ```
     // The amount being withdrawn must be available in the overflow.
     if (
       usedAmount >
@@ -149,7 +149,7 @@ function recordUsedAllowanceOf(
     * [`_overflowDuring`](/api/contracts/jbpaymentterminalstore/read/-_overflowduring.md)
 9.  Store the incremented value that tracks how much of a project's allowance was used during the current funding cycle configuration.
 
-    ```solidity
+    ```
     // Store the incremented value.
     usedOverflowAllowanceOf[IJBPaymentTerminal(msg.sender)][_projectId][
       fundingCycle.configuration
@@ -161,7 +161,7 @@ function recordUsedAllowanceOf(
     * [`usedOverflowAllowanceOf`](/api/contracts/jbpaymentterminalstore/properties/usedoverflowallowanceof.md)
 10. Store the decremented balance.
 
-    ```solidity
+    ```
     // Update the project's balance.
     balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
       balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] -
@@ -176,7 +176,7 @@ function recordUsedAllowanceOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Records newly used allowance funds of a project.

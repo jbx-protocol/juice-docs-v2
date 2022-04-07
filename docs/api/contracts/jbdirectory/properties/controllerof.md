@@ -8,7 +8,7 @@ Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   For each project ID, the controller that manages how terminals interact with tokens and funding cycles.

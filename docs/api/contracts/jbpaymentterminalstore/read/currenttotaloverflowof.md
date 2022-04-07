@@ -14,7 +14,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 #### Definition
 
-```solidity
+```
 function currentTotalOverflowOf(
   uint256 _projectId,
   uint256 _decimals,
@@ -35,7 +35,7 @@ function currentTotalOverflowOf(
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 
-    ```solidity
+    ```
     return _currentTotalOverflowOf(_projectId, _decimals, _currency);
     ```
 
@@ -47,7 +47,7 @@ function currentTotalOverflowOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Gets the current overflowed amount for a specified project across all terminals.

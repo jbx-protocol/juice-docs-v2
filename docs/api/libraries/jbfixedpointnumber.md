@@ -1,6 +1,6 @@
 # JBFixedPointNumber
 
-```solidity
+```
 library JBFixedPointNumber {
   function adjustDecimals(
     uint256 _value,

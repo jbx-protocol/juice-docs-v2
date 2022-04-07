@@ -18,7 +18,7 @@ _Only a project owner or operator can launch its funding cycles._
 
 #### Definition
 
-```solidity
+```
 function launchFundingCyclesFor(
   uint256 _projectId,
   JBFundingCycleData calldata _data,
@@ -54,7 +54,7 @@ function launchFundingCyclesFor(
 
 1.  Make sure there's isn't already a funding cycle configuration for the project.
 
-    ```solidity
+    ```
     // If there is a previous configuration, reconfigureFundingCyclesOf should be called instead
     if (fundingCycleStore.latestConfigurationOf(_projectId) > 0)
       revert FUNDING_CYCLE_ALREADY_LAUNCHED();
@@ -65,7 +65,7 @@ function launchFundingCyclesFor(
     * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 2.  Set this controller as the controller of the project.
 
-    ```solidity
+    ```
     // Set this contract as the project's controller in the directory.
     directory.setControllerOf(_projectId, this);
     ```
@@ -75,7 +75,7 @@ function launchFundingCyclesFor(
     * [`setControllerOf`](/api/contracts/jbdirectory/write/setcontrollerof.md)
 3.  Configure the project's funding cycle, fund access constraints, and splits. Get a reference to the resulting funding cycle's configuration.
 
-    ```solidity
+    ```
     // Configure the first funding cycle.
     configuration = _configure(
       _projectId,
@@ -92,7 +92,7 @@ function launchFundingCyclesFor(
     * [`_configure`](/api/contracts/or-controllers/jbcontroller/write/-_configure.md)
 4.  If terminals were provided, add them to the list of terminals the project can accept funds through.
 
-    ```solidity
+    ```
     // Add the provided terminals to the list of terminals.
     if (_terminals.length > 0) directory.setTerminalsOf(_projectId, _terminals);
     ```
@@ -102,7 +102,7 @@ function launchFundingCyclesFor(
     * [`setTerminalsOf`](/api/contracts/jbdirectory/write/setterminalsof.md)
 5.  Emit a `LaunchFundingCycles` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit LaunchFundingCycles(configuration, _projectId, _memo, msg.sender);
     ```
 
@@ -114,7 +114,7 @@ function launchFundingCyclesFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Creates a funding cycle for an already existing project ERC-721.

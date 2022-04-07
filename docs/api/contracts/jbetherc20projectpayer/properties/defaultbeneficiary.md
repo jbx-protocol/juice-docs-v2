@@ -8,7 +8,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The beneficiary that should be used in the payment made when this contract receives payments.

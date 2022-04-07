@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event DelegateDidPay(IJBPayDelegate indexed delegate, JBDidPayData data, address caller);
 ```
 

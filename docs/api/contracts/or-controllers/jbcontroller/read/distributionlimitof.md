@@ -16,7 +16,7 @@ _The number of decimals in the returned fixed point amount is the same as that o
 
 ### Definition
 
-```solidity
+```
 function distributionLimitOf(
   uint256 _projectId,
   uint256 _configuration,
@@ -39,7 +39,7 @@ function distributionLimitOf(
 
 1.  Get a reference to the packed distribution limit data.
 
-    ```solidity
+    ```
     // Get a reference to the packed data.
     uint256 _data = _packedDistributionLimitDataOf[_projectId][_configuration][_terminal];
     ```
@@ -49,7 +49,7 @@ function distributionLimitOf(
     * [`_packedDistributionLimitDataOf`](/api/contracts/or-controllers/jbcontroller/properties/-_packeddistributionlimitdataof.md)
 2.  Return the distribution limit, which is in the first 248 bits, and the currency the distribution limit is in terms of, which is in the last 8 bits.
 
-    ```solidity
+    ```
     // The limit is in bits 0-247. The currency is in bits 248-255.
     return (uint256(uint248(_data)), _data >> 248);
     ```
@@ -58,7 +58,7 @@ function distributionLimitOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   The amount of token that a project can distribute per funding cycle, and the currency it's in terms of.

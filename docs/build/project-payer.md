@@ -14,7 +14,7 @@ Inheriting from [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer
 
 Follow instructions in [Getting started](/build/getting-started.md) to import the `JBProjectPayer` files into a project.
 
-```solidity
+```
 function pay(
   uint256 _projectId,
   address _token,
@@ -28,7 +28,7 @@ function pay(
 ) public payable virtual {}
 ```
 
-```solidity
+```
 function _pay(
   uint256 _projectId,
   address _token,
@@ -48,7 +48,7 @@ If your contract does not wish to route payments received via the native `receiv
 
 Instances of the [`JBProjectPayer`](/api/contracts/jbprojectpayer/) contract can also be deployed as stand-alone forwarders of payments to juicebox treasuries. A new project payer can be deployed using [`JBProjectPayerDeployer.deployProjectPayer(...)`](/api/contracts/jbetherc20projectpayerdeployer/write/deployprojectpayer.md).
 
-```solidity
+```
 function deployProjectPayer(
   uint256 _defaultProjectId,
   address payable _defaultBeneficiary,

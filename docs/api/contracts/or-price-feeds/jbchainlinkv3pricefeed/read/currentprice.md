@@ -14,7 +14,7 @@ Interface: [`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md)
 
 ### Definition
 
-```solidity
+```
 function currentPrice(uint256 _decimals) external view override returns (uint256)  { ... }
 ```
 
@@ -29,7 +29,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
 
 1.  Get the latest price being reported by the price feed. The `latestRoundData` function returns several feed parameters, but only the `_price` is needed.
 
-    ```solidity
+    ```
     // Get the latest round information. Only need the price is needed.
     (, int256 _price, , , ) = feed.latestRoundData();
     ```
@@ -43,7 +43,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
     * [`latestRoundData`](https://docs.chain.link/docs/price-feeds-api-reference/#latestrounddata)
 2.  Get the number of decimals being reported by the price feed that the provided price is expected to have.
 
-    ```solidity
+    ```
     // Get a reference to the number of decimals the feed uses.
     uint256 _feedDecimals = feed.decimals();
     ```
@@ -53,7 +53,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
     * [`decimals`](https://docs.chain.link/docs/price-feeds-api-reference/#decimals)
 3. Return the fixed point price after normalizing the value to the desired number of decimals.
 
-    ```solidity
+    ```
     // Return the price, adjusted to the target decimals.
     return uint256(_price).adjustDecimals(_feedDecimals, _decimals);
     ```
@@ -67,7 +67,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Gets the current price from the feed, normalized to the specified number of decimals.

@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event SetMetadata(uint256 indexed projectId, JBProjectMetadata metadata, address caller);
 ```
 

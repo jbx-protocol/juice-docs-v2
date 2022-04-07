@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-payment-termin
 
 # Definition
 
-```solidity
+```
 function _transferFrom(
   address,
   address payable _to,
@@ -31,7 +31,7 @@ function _transferFrom(
 
 1.  Send the specified amount of ETH from this contract to the specified address.
 
-    ```solidity
+    ```
     Address.sendValue(_to, _amount);
     ```
 
@@ -45,7 +45,7 @@ function _transferFrom(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Transfers tokens.

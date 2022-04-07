@@ -14,7 +14,7 @@ _This amount changes as the value of the balance changes in relation to the curr
 
 #### Definition
 
-```solidity
+```
 function _overflowDuring(
   IJBPaymentTerminal _terminal,
   uint256 _projectId,
@@ -36,7 +36,7 @@ function _overflowDuring(
 
 1.  Get a reference to the current balance of the project.
 
-    ```solidity
+    ```
     // Get the current balance of the project.
     uint256 _balanceOf = balanceOf[_terminal][_projectId];
     ```
@@ -46,13 +46,13 @@ function _overflowDuring(
     * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 2.  If the project has no balance, there can't be any overflow.
 
-    ```solidity
+    ```
     // If there's no balance, there's no overflow.
     if (_balanceOf == 0) return 0;
     ```
 3.  Get a reference to the current distribution limit of the project, along with the currency the limit is in terms of.
 
-    ```solidity
+    ```
     // Get a reference to the distribution limit during the funding cycle.
     (uint256 _distributionLimit, uint256 _distributionLimitCurrency) = directory
       .controllerOf(_projectId)
@@ -64,7 +64,7 @@ function _overflowDuring(
     * [`distributionLimitOf`](/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
 4.  Get a reference to the amount of the funding cycle's target that can still be distributed. This is the difference between its distribution limit and what has already been distributed during this funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the amount still distributable during the funding cycle.
     uint256 _distributionLimitRemaining = _distributionLimit -
       usedDistributionLimitOf[_terminal][_projectId][_fundingCycle.number];
@@ -76,7 +76,7 @@ function _overflowDuring(
 
 5.  Convert the distribution remaining into the balance's currency using the appropriate price feed. The distribution remaining and balance fixed point numbers should already be using the same number of decimals.
 
-    ```solidity
+    ```
     // Convert the _distributionRemaining to be in terms of the provided currency.
     if (_distributionLimitRemaining != 0 && _distributionLimitCurrency != _balanceCurrency)
       _distributionLimitRemaining = PRBMath.mulDiv(
@@ -100,7 +100,7 @@ function _overflowDuring(
     * [`priceFor`](/api/contracts/jbprices/read/pricefor.md)
 6.  If the current balance of the project is at most the target remaining, there is no overflow. Otherwise the difference between the project's current balance and the remaining distribution limit is the overflow.
 
-    ```solidity
+    ```
     // Overflow is the balance of this project minus the amount that can still be distributed.
     return _balanceOf > _distributionLimitRemaining ? _balanceOf - _distributionLimitRemaining : 0;
     ```
@@ -109,7 +109,7 @@ function _overflowDuring(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Gets the amount that is overflowing when measured from the specified funding cycle.

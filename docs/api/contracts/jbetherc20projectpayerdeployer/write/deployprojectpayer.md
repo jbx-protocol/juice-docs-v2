@@ -14,7 +14,7 @@ Interface: [`IJBETHERC20ProjectPayerDeployer`](/api/interfaces/ijbetherc20projec
 
 #### Definition
 
-```solidity
+```
 function deployProjectPayer(
   uint256 _defaultProjectId,
   address payable _defaultBeneficiary,
@@ -42,7 +42,7 @@ function deployProjectPayer(
 
 1.  Deploy the project payer contract.
 
-    ```solidity
+    ```
     // Deploy the project payer.
     projectPayer = new JBETHERC20ProjectPayer(
       _defaultProjectId,
@@ -82,7 +82,7 @@ function deployProjectPayer(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Allows anyone to deploy a new project payer contract.

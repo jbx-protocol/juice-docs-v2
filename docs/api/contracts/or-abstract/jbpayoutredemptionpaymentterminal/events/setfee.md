@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event SetFee(uint256 fee, address caller);
 ```
 

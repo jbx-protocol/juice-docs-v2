@@ -14,7 +14,7 @@ Interface: [`IJBProjects`](/api/interfaces/ijbprojects.md)
 
 #### Definition
 
-```solidity
+```
 function setTokenUriResolver(IJBTokenUriResolver _newResolver) external override onlyOwner { ... }
 ```
 
@@ -28,7 +28,7 @@ function setTokenUriResolver(IJBTokenUriResolver _newResolver) external override
 
 1.  Store the new resolver.
 
-    ```solidity
+    ```
     // Store the new resolver.
     tokenUriResolver = _newResolver;
     ```
@@ -38,7 +38,7 @@ function setTokenUriResolver(IJBTokenUriResolver _newResolver) external override
     * [`tokenUriResolver`](/api/contracts/jbprojects/properties/tokenuriresolver.md)
 2.  Emit a `SetTokenUriResolver` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetTokenUriResolver(_newResolver, msg.sender);
     ```
 
@@ -50,7 +50,7 @@ function setTokenUriResolver(IJBTokenUriResolver _newResolver) external override
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Sets the address of the resolver used to retrieve the tokenURI of projects.

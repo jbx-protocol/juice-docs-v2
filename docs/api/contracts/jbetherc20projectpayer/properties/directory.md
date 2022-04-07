@@ -8,7 +8,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 # Definition
 
-```solidity
+```
 /**
   @notice 
   A contract storing directories of terminals and controllers for each project.

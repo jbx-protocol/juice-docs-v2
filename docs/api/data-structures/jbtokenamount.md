@@ -1,6 +1,6 @@
 # JBTokenAmount
 
-```solidity
+```
 struct JBTokenAmount {
   // The token the payment was made in.
   address token;

@@ -14,7 +14,7 @@ Interface: [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md)
 
 ### Definition
 
-```solidity
+```
 function hasPermissions(
   address _operator,
   address _account,
@@ -36,12 +36,12 @@ function hasPermissions(
 
 1.  Make sure the `_permissionIndex` is one of the 255 indexes in a `uint256`.
 
-    ```solidity
+    ```
     if (_permissionIndex > 255) revert PERMISSION_INDEX_OUT_OF_BOUNDS();
     ```
 2.  Return true if the bit is flipped on for the specified permission index. Otherwise return false.
 
-    ```solidity
+    ```
     return (((permissionsOf[_operator][_account][_domain] >> _permissionIndex) & 1) == 1)
     ```
 
@@ -53,7 +53,7 @@ function hasPermissions(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Whether or not an operator has the permission to take a certain action pertaining to the specified domain.

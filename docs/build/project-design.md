@@ -6,7 +6,7 @@ sidebar_position: 2
 
 In order to understand what Juicebox can do for your project, all you have to do is understand how one transaction works: [`JBController.launchProjectFor(...)`](/api/contracts/or-controllers/jbcontroller/write/launchprojectfor.md), which creates a project, configures its first funding cycle, and specifies where it can begin receiving and manging funds from.
 
-```solidity
+```
 function launchProjectFor(
   address _owner,
   JBProjectMetadata calldata _projectMetadata,
@@ -103,7 +103,7 @@ Here's what happens when basic `_fundAccessConstraints` are specified by sending
 
 Here's what happens when using an overflow allowance instead:
 
-```solidity
+```
 [
   {
     terminal: <address of JBPayoutRedemptionPaymentTerminal>,
@@ -124,7 +124,7 @@ Here's what happens when using an overflow allowance instead:
 
 If you wish to automatically split treasury payouts or reserved token distributions between various destinations (addresses, other Juicebox projects, or split allocator contracts), add some grouped splits to the [`launchProjectFor`](/api/contracts/or-controllers/jbcontroller/write/launchprojectfor.md) transaction.
 
-```solidity
+```
 {
   group: 1,
   splits: [

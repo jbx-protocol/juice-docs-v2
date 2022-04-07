@@ -16,7 +16,7 @@ _The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterm
 
 #### Definition
 
-```solidity
+```
 function recordDistributionFor(
   uint256 _projectId,
   uint256 _amount,
@@ -43,7 +43,7 @@ function recordDistributionFor(
 
 1.  Get a reference to the project's current funding cycle.
 
-    ```solidity
+    ```
     // Get a reference to the project's current funding cycle.
     fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -53,7 +53,7 @@ function recordDistributionFor(
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure the current funding cycle doesn't have distributions paused.
 
-    ```solidity
+    ```
     // The funding cycle must not be configured to have distributions paused.
     if (fundingCycle.distributionsPaused()) revert FUNDING_CYCLE_DISTRIBUTION_PAUSED();
     ```
@@ -65,7 +65,7 @@ function recordDistributionFor(
 
 3.  Calculate the new total amount that has been distributed during this funding cycle by adding the amount being distributed to the used distribution limit.
 
-    ```solidity
+    ```
     // The new total amount that has been distributed during this funding cycle.
     uint256 _newUsedDistributionLimitOf = usedDistributionLimitOf[IJBPaymentTerminal(msg.sender)][
       _projectId
@@ -78,7 +78,7 @@ function recordDistributionFor(
 
 4.  Get a reference to the currrent distribution limit of the project during the current funding cycle, and the currency the distribution limit is in terms of.
 
-    ```solidity
+    ```
     // Amount must be within what is still distributable.
     (uint256 _distributionLimitOf, uint256 _distributionLimitCurrencyOf) = directory
       .controllerOf(_projectId)
@@ -91,7 +91,7 @@ function recordDistributionFor(
 
 5.  Make sure the new total amount distributed will be at most the distribution limit.
 
-    ```solidity
+    ```
     // Make sure the new used amount is within the distribution limit.
     if (_newUsedDistributionLimitOf > _distributionLimitOf || _distributionLimitOf == 0)
       revert DISTRIBUTION_AMOUNT_LIMIT_REACHED();
@@ -99,14 +99,14 @@ function recordDistributionFor(
 
 6.  Make the sure the provided currency matches the expected currency for the distribution limit.
 
-    ```solidity
+    ```
     // Make sure the currencies match.
     if (_currency != _distributionLimitCurrencyOf) revert CURRENCY_MISMATCH();
     ```
 
 7.  Calculate how much of the balance will be used. If the currency of the distribution limit and the balance are the same, no price conversion is necessary. Otherwise, convert the distribution limit currency to that of the balance. 
 
-    ```solidity
+    ```
     // Convert the amount to the balance's currency.
     distributedAmount = (_currency == _balanceCurrency) ? _amount : PRBMath
       .mulDiv(
@@ -130,7 +130,7 @@ function recordDistributionFor(
     * [`priceFor`](/api/contracts/jbprices/read/pricefor.md)
 8.  Make sure the project has access to the amount being distributed.
 
-    ```solidity
+    ```
     // The amount being distributed must be available.
     if (distributedAmount > balanceOf[IJBPaymentTerminal(msg.sender)][_projectId])
       revert INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE();
@@ -141,7 +141,7 @@ function recordDistributionFor(
     * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 9.  Store the new used distributed amount.
 
-    ```solidity
+    ```
     // Store the new amount.
     usedDistributionLimitOf[IJBPaymentTerminal(msg.sender)][_projectId][
       fundingCycle.number
@@ -153,7 +153,7 @@ function recordDistributionFor(
     * [`usedDistributionLimitOf`](/api/contracts/jbpaymentterminalstore/properties/useddistributionlimitof.md)
 10. Store the decremented balance.
 
-    ```solidity
+    ```
     // Removed the distributed funds from the project's token balance.
     balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
       balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] -
@@ -168,7 +168,7 @@ function recordDistributionFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Records newly distributed funds for a project.

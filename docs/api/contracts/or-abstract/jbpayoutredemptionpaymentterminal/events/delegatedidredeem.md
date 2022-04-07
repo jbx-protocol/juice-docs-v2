@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event DelegateDidRedeem(
   IJBRedemptionDelegate indexed delegate,
   JBDidRedeemData data,

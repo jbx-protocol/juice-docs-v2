@@ -1,6 +1,6 @@
 # JBTokens
 
-```solidity
+```
 library JBTokens {
   /** 
     @notice 

@@ -14,7 +14,7 @@ Interface: [`IJBSplitsStore`](/api/interfaces/ijbsplitsstore.md)
 
 #### Definition
 
-```solidity
+```
 function splitsOf(
   uint256 _projectId,
   uint256 _domain,
@@ -35,7 +35,7 @@ function splitsOf(
 
 1.  This function just reads and returns the splits of the project, within the specified domain, for the specified group.
 
-    ```solidity
+    ```
     return _getStructsFor(_projectId, _domain, _group);
     ```
 
@@ -47,7 +47,7 @@ function splitsOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Get all splits for the specified project ID, within the specified domain, for the specified group.

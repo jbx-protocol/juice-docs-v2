@@ -14,7 +14,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 ### Definition
 
-```solidity
+```
 function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
   external
   view
@@ -34,7 +34,7 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
 
 1.  Get the total supply of tokens in circulation.
 
-    ```solidity
+    ```
     // Get the total number of tokens in circulation.
     uint256 _totalSupply = tokenStore.totalSupplyOf(_projectId);
     ```
@@ -45,7 +45,7 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
 
 2.  Get the number of outstanding reserved tokens the project has given the provided reserved rate.
 
-    ```solidity
+    ```
     // Get the number of reserved tokens the project has.
     uint256 _reservedTokenAmount = _reservedTokenAmountFrom(
       _processedTokenTrackerOf[_projectId],
@@ -61,7 +61,7 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
 
 3.  Return the sum of the total supply and the reserved tokens.
 
-    ```solidity
+    ```
     // Add the reserved tokens to the total supply.
     return _totalSupply + _reservedTokenAmount;
     ```
@@ -70,7 +70,7 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Gets the current total amount of outstanding tokens for a project, given a reserved rate.

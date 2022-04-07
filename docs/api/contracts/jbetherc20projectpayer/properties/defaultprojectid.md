@@ -8,7 +8,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The ID of the project that should be used to forward this contract's received payments.

@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event UseAllowance(
   uint256 indexed fundingCycleConfiguration,
   uint256 indexed fundingCycleNumber,

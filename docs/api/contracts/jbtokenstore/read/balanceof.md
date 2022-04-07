@@ -14,7 +14,7 @@ Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 ### Definition
 
-```solidity
+```
 function balanceOf(address _holder, uint256 _projectId)
   external
   view
@@ -33,7 +33,7 @@ function balanceOf(address _holder, uint256 _projectId)
 
 1.  Get a reference to the holder's unclaimed balance for the project.
 
-    ```solidity
+    ```
     // Get a reference to the holder's unclaimed balance for the project.
     balance = unclaimedBalanceOf[_holder][_projectId];
     ```
@@ -43,7 +43,7 @@ function balanceOf(address _holder, uint256 _projectId)
     * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 2.  Get a reference to the project's current token.
 
-    ```solidity
+    ```
     // Get a reference to the project's current token.
     IJBToken _token = tokenOf[_projectId];
     ```
@@ -53,7 +53,7 @@ function balanceOf(address _holder, uint256 _projectId)
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 3.  If the project has a current token, add the holder's balance to the total.
 
-    ```solidity
+    ```
     // If the project has a current token, add the holder's balance to the total.
     if (_token != IJBToken(address(0))) balance = balance + _token.balanceOf(_holder, _projectId);
     ```
@@ -66,7 +66,7 @@ function balanceOf(address _holder, uint256 _projectId)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   The total balance of tokens a holder has for a specified project, including claimed and unclaimed tokens.

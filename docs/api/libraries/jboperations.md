@@ -1,6 +1,6 @@
 # JBOperations
 
-```solidity
+```
 library JBOperations {
   uint256 public constant RECONFIGURE = 1;
   uint256 public constant REDEEM = 2;

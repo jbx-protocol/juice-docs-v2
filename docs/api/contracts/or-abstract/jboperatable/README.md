@@ -23,7 +23,7 @@ description: >-
 
 ## Constructor
 
-```solidity
+```
 constructor(IJBOperatorStore _operatorStore) {
   operatorStore = _operatorStore;
 }

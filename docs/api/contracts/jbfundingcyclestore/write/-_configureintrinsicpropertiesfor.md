@@ -12,7 +12,7 @@ Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â€
 
 ### Definition
 
-```solidity
+```
 function _configureIntrinsicPropertiesFor(
   uint256 _projectId,
   uint256 _configuration,
@@ -33,7 +33,7 @@ function _configureIntrinsicPropertiesFor(
 
 1.  If the project does not yet have a funding cycle, initialize a new one.
 
-    ```solidity
+    ```
     // If there's not yet a funding cycle for the project, initialize one.
     if (latestConfigurationOf[_projectId] == 0)
       // Use an empty funding cycle as the base.
@@ -48,7 +48,7 @@ function _configureIntrinsicPropertiesFor(
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 2.  If there's no standby funding cycle, get a reference to the project's eligible funding cycle. The configurable funding cycle will have to be initialized based on the eligible cycle.
 
-    ```solidity
+    ```
     // Get the active funding cycle's configuration.
     uint256 _currentConfiguration = _eligibleOf(_projectId);
     ```
@@ -58,7 +58,7 @@ function _configureIntrinsicPropertiesFor(
     * [`_eligibleOf`](/api/contracts/jbfundingcyclestore/read/-_eligibleof.md)
 3.  If there is no eligible funding cycle for the project, get a reference instead to the project's latest funding cycle configuration, which may have been initialized long into the past.
 
-    ```solidity
+    ```
     // If an eligible funding cycle does not exist, get a reference to the latest funding cycle configuration for the project.
     if (_currentConfiguration == 0)
       // Get the latest funding cycle's configuration.
@@ -70,7 +70,7 @@ function _configureIntrinsicPropertiesFor(
     * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 4.  Resolve the funding cycle struct for the currently referenced configuration.
 
-    ```solidity
+    ```
     // Get a reference to the funding cycle.
     JBFundingCycle memory _fundingCycle = _getStructFor(_projectId, _currentConfiguration);
     ```
@@ -80,7 +80,7 @@ function _configureIntrinsicPropertiesFor(
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 5.  If the configuration isn't approved, get a reference to the configuration it's based on which must be the latest approved configuration.
 
-    ```solidity
+    ```
     if (!_isApproved(_projectId, _fundingCycle))
       // If it hasn't been approved, set the ID to be the funding cycle it's based on,
       // which carries the latest approved configuration.
@@ -93,7 +93,7 @@ function _configureIntrinsicPropertiesFor(
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 6.  At this point, the current configuration being referenced is the funding cycle configuration that the initialized one should be based on. Get a reference to the [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) for the configuration.
 
-    ```solidity
+    ```
     // Determine the funding cycle to use as the base.
     JBFundingCycle memory _baseFundingCycle = _getStructFor(_projectId, _currentConfiguration);
     ```
@@ -103,7 +103,7 @@ function _configureIntrinsicPropertiesFor(
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 7.  Get a reference to the time after which the base funding cycle's ballot will be resolved. The funding cycle that will be initialized can start any time after the base funding cycle's ballot's duration is up.
 
-    ```solidity
+    ```
     // The time after the ballot of the provided funding cycle has expired.
     // If the provided funding cycle has no ballot, return the current timestamp.
     uint256 _timestampAfterBallot = _baseFundingCycle.ballot == IJBFundingCycleBallot(address(0))
@@ -116,7 +116,7 @@ function _configureIntrinsicPropertiesFor(
     * [`duration`](/api/interfaces/ijbfundingcycleballot.md)
 8.  Initialize a funding cycle with the correct configuration. Make sure it can only start after the base cycle's ballot has resolved.
 
-    ```solidity
+    ```
     _initFor(
       _projectId,
       _baseFundingCycle,
@@ -135,7 +135,7 @@ function _configureIntrinsicPropertiesFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Updates the configurable funding cycle for this project if it exists, otherwise creates one.

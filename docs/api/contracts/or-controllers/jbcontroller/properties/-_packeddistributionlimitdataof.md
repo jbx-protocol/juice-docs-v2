@@ -10,7 +10,7 @@ _bits 248-255: The currency of amount that a project can distribute._
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   Data regarding the distribution limit of a project during a configuration.

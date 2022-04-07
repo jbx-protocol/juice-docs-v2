@@ -12,7 +12,7 @@ Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â€
 
 ### Definition
 
-```solidity
+```
 function _deriveStartFrom(JBFundingCycle memory _baseFundingCycle, uint256 _mustStartAtOrAfter)
   private
   pure
@@ -30,38 +30,38 @@ function _deriveStartFrom(JBFundingCycle memory _baseFundingCycle, uint256 _must
 
 1.  A funding cycle with a duration of 0 can start as soon as possible.
 
-    ```solidity
+    ```
     // A subsequent cycle to one with a duration of 0 should start as soon as possible.
     if (_baseFundingCycle.duration == 0) return _mustStartAtOrAfter;
     ```
 2.  Get a reference to the start time of the cycle immediately following the base cycle. This is the base cycle's start time plus the base cycle's duration.
 
-    ```solidity
+    ```
     // The time when the funding cycle immediately after the specified funding cycle starts.
     uint256 _nextImmediateStart = _baseFundingCycle.start + _baseFundingCycle.duration;
     ```
 3.  If the next immediate start is allowed, it should be used. Otherwise, calculate a value depending on how much time has passed since the next immediate start.
 
-    ```solidity
+    ```
     // If the next immediate start is now or in the future, return it.
     if (_nextImmediateStart >= _mustStartAtOrAfter) return _nextImmediateStart;
     ```
 4.  Save a reference to the amount of seconds since the time when the funding cycle must start on or after, which results in a start time that might satisfy the specified constraints.
 
-    ```solidity
+    ```
     // The amount of seconds since the `_mustStartAtOrAfter` time which results in a start time that might satisfy the specified constraints.
     uint256 _timeFromImmediateStartMultiple = (_mustStartAtOrAfter - _nextImmediateStart) %
       _baseFundingCycle.duration;
     ```
 5.  Save a reference to the first possible start time.
 
-    ```solidity
+    ```
     // A reference to the first possible start timestamp.
     start = _mustStartAtOrAfter - _timeFromImmediateStartMultiple;
     ```
 6.  It's possible that the start time doesn't satisfy the specified constraints. If so, add increments of the funding cycle's duration as necessary to satisfy the threshold.
 
-    ```solidity
+    ```
     // Add increments of duration as necessary to satisfy the threshold.
     while (_mustStartAtOrAfter > start) start = start + _baseFundingCycle.duration;
     ```
@@ -70,7 +70,7 @@ function _deriveStartFrom(JBFundingCycle memory _baseFundingCycle, uint256 _must
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   The date that is the nearest multiple of the specified funding cycle's duration from its end.

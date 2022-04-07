@@ -6,7 +6,7 @@ Emitted from:
 
 Definition:
 
-```solidity
+```
 event SetController(uint256 indexed projectId, IJBController indexed controller, address caller);
 ```
 

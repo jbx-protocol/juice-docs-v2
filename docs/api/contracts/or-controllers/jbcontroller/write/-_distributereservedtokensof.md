@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ### Definition
 
-```solidity
+```
 function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
   private
   returns (uint256 tokenCount) { ... }
@@ -26,7 +26,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
 1.  Get a reference to the current funding cycle of the project.
 
-    ```solidity
+    ```
     // Get the current funding cycle to read the reserved rate from.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -36,7 +36,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Get a reference to the current total supply of tokens issued for the project.
 
-    ```solidity
+    ```
     // Get a reference to new total supply of tokens before minting reserved tokens.
     uint256 _totalTokens = tokenStore.totalSupplyOf(_projectId);
     ```
@@ -46,7 +46,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     * [`totalSupplyOf`](/api/contracts/jbtokenstore/read/totalsupplyof.md)
 3.  Get a reference to the current amount of reserved tokens given the current state of the tracker, the current funding cycle's reserved rate, and the current total token supply.
 
-    ```solidity
+    ```
     // Get a reference to the number of tokens that need to be minted.
     tokenCount = _reservedTokenAmountFrom(
       _processedTokenTrackerOf[_projectId],
@@ -65,7 +65,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     * [`_reservedTokenAmountFrom`](/api/contracts/or-controllers/jbcontroller/read/-_reservedtokenamountfrom.md)
 4.  Set the tracker to be equal to the new current total token supply, which is the amount stored plus the amount that will be minted and distributed.
 
-    ```solidity
+    ```
     // Set the tracker to be the new total supply.
     _processedTokenTrackerOf[_projectId] = int256(_totalTokens + tokenCount);
     ```
@@ -75,7 +75,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
 5.  Get a reference to the project's owner.
 
-    ```solidity
+    ```
     // Get a reference to the project owner.
     address _owner = projects.ownerOf(_projectId);
     ```
@@ -85,7 +85,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     * [`ownerOf`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#IERC721-ownerOf-uint256-)
 6.  If there are outstanding reserved tokens, distribute them to reserved token splits. Get a reference to any leftover amount after the splits are settled.
 
-    ```solidity
+    ```
     // Distribute tokens to splits and get a reference to the leftover amount to mint after all splits have gotten their share.
     uint256 _leftoverTokenCount = tokenCount == 0
       ? 0
@@ -97,7 +97,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     * [`_distributeToReservedTokenSplitsOf`](/api/contracts/or-controllers/jbcontroller/write/-_distributetoreservedtokensplitsof.md)
 7.  If there are any leftover reserved tokens, mint them for the project's owner.
 
-    ```solidity
+    ```
     // Mint any leftover tokens to the project owner.
     if (_leftoverTokenCount > 0) tokenStore.mintFor(_owner, _projectId, _leftoverTokenCount, false);
     ```
@@ -107,7 +107,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     * [`mintFor`](/api/contracts/jbtokenstore/write/mintfor.md)
 8.  Emit a `DistributeReservedTokens` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit DistributeReservedTokens(
       _fundingCycle.configuration,
       _fundingCycle.number,
@@ -128,7 +128,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Distributes all outstanding reserved tokens for a project.

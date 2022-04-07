@@ -26,7 +26,7 @@ Ethereum mainnet: _Not yet deployed_
 
 ## Constructor
 
-```solidity
+```
 constructor(address _owner) {
   // Transfer the ownership.
   transferOwnership(_owner);

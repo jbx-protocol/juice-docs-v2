@@ -1,6 +1,6 @@
 # JBConstant
 
-```solidity
+```
 library JBConstants {
   /** 
     @notice

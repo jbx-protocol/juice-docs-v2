@@ -8,7 +8,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The contract storing all funding cycle configurations.

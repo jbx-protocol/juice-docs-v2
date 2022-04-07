@@ -6,7 +6,7 @@ Contract: [`JBChainlinkV3PriceFeed`](/api/contracts/or-price-feeds/jbchainlinkv3
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The feed that prices are reported from.

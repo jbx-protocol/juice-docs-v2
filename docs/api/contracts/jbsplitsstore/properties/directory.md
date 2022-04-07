@@ -8,7 +8,7 @@ Interface: [`IJBSplitsStore`](/api/interfaces/ijbsplitsstore.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The directory of terminals and controllers for projects.

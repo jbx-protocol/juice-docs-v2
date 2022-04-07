@@ -16,7 +16,7 @@ _Only a project's current controller can configure its funding cycles._
 
 #### Definition
 
-```solidity
+```
 function configureFor(
   uint256 _projectId,
   JBFundingCycleData calldata _data,
@@ -38,13 +38,13 @@ function configureFor(
 
 1.  Make sure the duration fits in a `uint64`.
 
-    ```solidity
+    ```
     // Duration must fit in a uint64.
     if (_data.duration > type(uint64).max) revert INVALID_DURATION();
     ```
 2.  Make sure the `_data.discountRate` is less than the expected maximum value.
 
-    ```solidity
+    ```
     // Discount rate must be less than or equal to 100%.
     if (_data.discountRate > JBConstants.MAX_DISCOUNT_RATE) revert INVALID_DISCOUNT_RATE();
     ```
@@ -55,19 +55,19 @@ function configureFor(
       * `.MAX_DISCOUNT_RATE`
 3.  Make sure the `_data.weight` fits in a `uint80`.
 
-    ```solidity
+    ```
     // Weight must fit into a uint88.
     if (_data.weight > type(uint88).max) revert INVALID_WEIGHT();
     ```
 4.  Get a reference to the time at which the configuration is occurring.
 
-    ```solidity
+    ```
     // The configuration timestamp is now.
     uint256 _configuration = block.timestamp;
     ```
 5.  Configure the intrinsic properties. This'll create a new funding cycle if there isn't a queued one already.
 
-    ```solidity
+    ```
     // Set up a reconfiguration by configuring intrinsic properties.
     _configureIntrinsicPropertiesFor(
       _projectId,
@@ -83,7 +83,7 @@ function configureFor(
     * [`_configureIntrinsicpropertiesFor`](/api/contracts/jbfundingcyclestore/write/-_configureintrinsicpropertiesfor.md)
 6.  Store all of the user configuration properties provided. These properties can all be packed into one `uint256` storage slot. No need to store if the resulting stored value would be 0 since the storage slot defaults to 0.
 
-    ```solidity
+    ```
     // Efficiently stores a funding cycles provided user defined properties.
     // If all user config properties are zero, no need to store anything as the default value will have the same outcome.
     if (
@@ -110,7 +110,7 @@ function configureFor(
     * [`_packedUserPropertiesOf`](/api/contracts/jbfundingcyclestore/properties/-_packeduserpropertiesof.md)
 7.  Store the provided metadata for the configuration. No need to store if the value is 0 since the storage slot defaults to 0.
 
-    ```solidity
+    ```
     // Set the metadata if needed.
     if (_metadata > 0) _metadataOf[_projectId][_configuration] = _metadata;
     ```
@@ -120,7 +120,7 @@ function configureFor(
     * [`_metadataOf`](/api/contracts/jbfundingcyclestore/properties/-_metadataof.md)
 8.  Emit a `Configure` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Configure(_configuration, _projectId, _data, _metadata, _mustStartAtOrAfter, msg.sender);
     ```
 
@@ -129,7 +129,7 @@ function configureFor(
     * [`Configure`](/api/contracts/jbfundingcyclestore/events/configure.md)
 9.  Return the [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) struct that carries the new configuration.
 
-    ```solidity
+    ```
     // Return the funding cycle for the new configuration.
     return _getStructFor(_projectId, _configuration);
     ```
@@ -142,7 +142,7 @@ function configureFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Configures the next eligible funding cycle for the specified project.

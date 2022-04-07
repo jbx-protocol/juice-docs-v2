@@ -16,7 +16,7 @@ _Anyone can deploy a project on an owner's behalf._
 
 #### Definition
 
-```solidity
+```
 function launchProjectFor(
   address _owner,
   JBProjectMetadata calldata _projectMetadata,
@@ -49,7 +49,7 @@ function launchProjectFor(
 
 1.  Create the project. This will mint an ERC-721 in the owner's wallet representing ownership over the project.
 
-    ```solidity
+    ```
     // Mint the project into the wallet of the message sender.
     projectId = projects.createFor(_owner, _projectMetadata);
     ```
@@ -59,7 +59,7 @@ function launchProjectFor(
     * [`createFor`](/api/contracts/jbprojects/write/createfor.md)
 2.  Set this controller as the controller of the project.
 
-    ```solidity
+    ```
     // Set this contract as the project's controller in the directory.
     directory.setControllerOf(projectId, this);
     ```
@@ -69,7 +69,7 @@ function launchProjectFor(
     * [`setControllerOf`](/api/contracts/jbdirectory/write/setcontrollerof.md)
 3.  Configure the project's funding cycle, fund access constraints, and splits. Get a reference to the resulting funding cycle's configuration.
 
-    ```solidity
+    ```
     // Configure the first funding cycle.
     uint256 _configuration = _configure(
       projectId,
@@ -86,7 +86,7 @@ function launchProjectFor(
     * [`_configure`](/api/contracts/or-controllers/jbcontroller/write/-_configure.md)
 4.  If terminals were provided, add them to the list of terminals the project can accept funds through.
 
-    ```solidity
+    ```
     // Add the provided terminals to the list of terminals.
     if (_terminals.length > 0) directory.setTerminalsOf(projectId, _terminals);
     ```
@@ -96,7 +96,7 @@ function launchProjectFor(
     * [`setTerminalsOf`](/api/contracts/jbdirectory/write/setterminalsof.md)
 5.  Emit a `LaunchProject` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit LaunchProject(_configuration, projectId, _memo, msg.sender);
     ```
 
@@ -108,7 +108,7 @@ function launchProjectFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Creates a project. This will mint an ERC-721 into the specified owner's account, configure a first funding cycle, and set up any splits.

@@ -10,7 +10,7 @@ _bits 248-255: The currency of the amount of overflow that a project is allowed 
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   Data regarding the overflow allowance of a project during a configuration.

@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ### Definition
 
-```solidity
+```
 function isTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
   public
   view
@@ -30,7 +30,7 @@ function isTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
 
 1.  Loop through each of the project's terminals looking for the one specified. If it's found, return true.
 
-    ```solidity
+    ```
     for (uint256 _i; _i < _terminalsOf[_projectId].length; _i++)
       if (_terminalsOf[_projectId][_i] == _terminal) return true;
     ```
@@ -40,7 +40,7 @@ function isTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 2.  If a terminal is not found, return false.
 
-    ```solidity
+    ```
     return false;
     ```
 
@@ -48,7 +48,7 @@ function isTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Whether or not a specified terminal is a terminal of the specified project.

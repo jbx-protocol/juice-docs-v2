@@ -8,7 +8,7 @@ _This packed data is often 0_
 
 # Definition
 
-```solidity
+```
 /** 
   @notice
   More packed data of splits for each project ID's configurations.

@@ -5,7 +5,7 @@ Before implementing, learn about data sources [here](/learn/glossary/data-source
 
 A contract can become a treasury data source by adhering to [`IJBFundingCycleDataSource`](/api/interfaces/ijbfundingcycledatasource.md):
 
-```solidity
+```
 interface IJBFundingCycleDataSource {
   function payParams(JBPayParamsData calldata _data)
     external
@@ -33,7 +33,7 @@ There are two functions that must be implemented, `payParams(...)` and `redeemPa
 
 When extending the pay functionality with a data source, the protocol will pass a [`JBPayParamsData`](/api/data-structures/jbpayparamsdata.md) to the `payParams(...)` function:
 
-```solidity
+```
 struct JBPayParamsData {
   // The terminal that is facilitating the payment.
   IJBPaymentTerminal terminal;
@@ -54,7 +54,7 @@ struct JBPayParamsData {
 }
 ```
 
-```solidity
+```
 struct JBTokenAmount {
   // The token the payment was made in.
   address token;
@@ -79,7 +79,7 @@ The `payParams(...)` function can also revert if it's presented with any conditi
  
 When extending the redeem functionality with a data source, the protocol will pass a [`JBRedeemParamsData`](/api/data-structures/jbredeemparamsdata.md) to the `redeemParams(...)` function:
 
-```solidity
+```
 struct JBRedeemParamsData {
   // The terminal that is facilitating the redemption.
   IJBPaymentTerminal terminal;

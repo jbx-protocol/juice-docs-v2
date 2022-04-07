@@ -6,7 +6,7 @@ Emitted from:
 
 Definition:
 
-```solidity
+```
 event SetIsAllowedToSetFirstController(address indexed addr, bool indexed flag, address caller);
 ```
 

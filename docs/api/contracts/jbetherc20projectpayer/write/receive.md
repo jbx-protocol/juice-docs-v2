@@ -16,7 +16,7 @@ _This function is called automatically when the contract receives an ETH payment
 
 #### Definition
 
-```solidity
+```
 receive() external payable virtual override { ... }
 ```
 
@@ -28,7 +28,7 @@ receive() external payable virtual override { ... }
 
 1.  Pay the ETH received to the default proejct ID using the default parameters.
 
-    ```solidity
+    ```
     _pay(
       defaultProjectId,
       JBTokens.ETH,
@@ -50,7 +50,7 @@ receive() external payable virtual override { ... }
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Received funds are paid to the default project ID using the stored default properties.

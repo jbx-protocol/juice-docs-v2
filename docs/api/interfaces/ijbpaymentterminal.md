@@ -1,6 +1,6 @@
 # IJBPaymentTerminal
 
-```solidity
+```
 interface IJBPaymentTerminal {
   function token() external view returns (address);
 

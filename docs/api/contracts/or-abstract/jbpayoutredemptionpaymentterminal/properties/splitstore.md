@@ -8,7 +8,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The contract that stores splits for each project.

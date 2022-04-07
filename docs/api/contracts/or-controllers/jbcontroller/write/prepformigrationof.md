@@ -16,7 +16,7 @@ _This controller should not yet be the project's controller._
 
 ### Definition
 
-```solidity
+```
 function prepForMigrationOf(uint256 _projectId, IJBController) external virtual override { ... }
 ```
 
@@ -31,7 +31,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external virtual 
 
 1.  Make sure this controller isn't the project's current controller. If it is, there shouldn't be a need to prepare anything.
 
-    ```solidity
+    ```
     // This controller must not be the project's current controller.
     if (directory.controllerOf(_projectId) == this) revert CANT_MIGRATE_TO_CURRENT_CONTROLLER();
     ```
@@ -41,7 +41,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external virtual 
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
 2.  Update the processed token tracker to equal the current total supply of tokens. This prevents any inadvertant outstanding reserved tokens from being distributable upon migrating to this controller.
 
-    ```solidity
+    ```
     // Set the tracker as the total supply.
     _processedTokenTrackerOf[_projectId] = int256(tokenStore.totalSupplyOf(_projectId));
     ```
@@ -51,7 +51,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external virtual 
     * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
 3.  Emit a `PrepMigration` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit PrepMigration(_projectId, _from, msg.sender);
     ```
 
@@ -63,7 +63,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external virtual 
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Allows other controllers to signal to this one that a migration is expected for the specified project.

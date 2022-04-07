@@ -12,7 +12,7 @@ Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â€
 
 ### Definition
 
-```solidity
+```
 function _deriveNumberFrom(JBFundingCycle memory _baseFundingCycle, uint256 _start)
   private
   pure
@@ -30,19 +30,19 @@ function _deriveNumberFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
 
 1.  If the base funding cycle doesn't have a duration, the next number is 1 more than the base's number.
 
-    ```solidity
+    ```
     // A subsequent cycle to one with a duration of 0 should be the next number.
     if (_baseFundingCycle.duration == 0) return _baseFundingCycle.number + 1;
     ```
 2.  Get a reference to how long after the base funding cycle's start the specified start time is. 
 
-    ```solidity
+    ```
     // The difference between the start of the base funding cycle and the proposed start.
     uint256 _startDistance = _start - _baseFundingCycle.start;
     ```
 3.  Return the number of base cycles that fit in the base distance.
 
-    ```solidity
+    ```
     // Find the number of base cycles that fit in the start distance.
     return _baseFundingCycle.number + (_startDistance / _baseFundingCycle.duration);
     ```
@@ -51,7 +51,7 @@ function _deriveNumberFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   The number of the next funding cycle given the specified funding cycle.

@@ -16,7 +16,7 @@ _Current feeds can't be modified._
 
 ### Definition
 
-```solidity
+```
 function addFeedFor(
   uint256 _currency,
   uint256 _base,
@@ -36,7 +36,7 @@ function addFeedFor(
 
 1.  Make sure there isn't already a price feed set for the currency base pair.
 
-    ```solidity
+    ```
     // There can't already be a feed for the specified currency.
     if (feedFor[_currency][_base] != IJBPriceFeed(address(0))) revert PRICE_FEED_ALREADY_EXISTS();
     ```
@@ -46,13 +46,13 @@ function addFeedFor(
     * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 2.  Store the provided feed for the currency base pair.
 
-    ```solidity
+    ```
     // Store the feed.
     feedFor[_currency][_base] = _feed;
     ```
 3.  Emit an `AddFeed` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit AddFeed(_currency, _base, _feed);
     ```
 
@@ -64,7 +64,7 @@ function addFeedFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Add a price feed for a currency in terms of the provided base currency.

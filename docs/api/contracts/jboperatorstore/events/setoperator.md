@@ -7,7 +7,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event SetOperator(
   address indexed operator,
   address indexed account,

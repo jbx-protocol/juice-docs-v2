@@ -8,7 +8,7 @@ Interface: [`IJBPrices`](/api/interfaces/ijbprices.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The available price feeds.

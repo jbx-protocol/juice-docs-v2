@@ -16,7 +16,7 @@ _Only a token holder or an operator can require claimed token._
 
 ### Definition
 
-```solidity
+```
 function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
   external
   override
@@ -34,7 +34,7 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
 
 1.  Get a reference to the project's current token.
 
-    ```solidity
+    ```
     // Get a reference to the project's current token.
     IJBToken _token = tokenOf[_projectId];
     ```
@@ -44,13 +44,13 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 2.  Make sure the project has a token. If it doesn't, there's nowhere to claim tokens onto.
 
-    ```solidity
+    ```
     // The project must have a token contract attached.
     if (_token == IJBToken(address(0))) revert TOKEN_NOT_FOUND();
     ```
 3.  Store the flag for the project.
 
-    ```solidity
+    ```
     // Store the flag.
     requireClaimFor[_projectId] = _flag;
     ```
@@ -60,7 +60,7 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
     * [`requireClaimFor`](/api/contracts/jbtokenstore/properties/requireclaimfor.md)
 4.  Emit a `ShouldRequireClaim` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit ShouldRequireClaim(_projectId, _flag, msg.sender);
     ```
 
@@ -72,7 +72,7 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Allows a project to force all future mints of its tokens to be claimed into the holder's wallet, or revoke the flag if it's already set.

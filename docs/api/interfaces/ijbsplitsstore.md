@@ -1,6 +1,6 @@
 # IJBSplitsStore
 
-```solidity
+```
 interface IJBSplitsStore {
   event SetSplit(
     uint256 indexed projectId,

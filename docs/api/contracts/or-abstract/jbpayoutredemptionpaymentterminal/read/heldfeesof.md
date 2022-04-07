@@ -14,7 +14,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 #### Definition
 
-```solidity
+```
 function heldFeesOf(uint256 _projectId) external view override returns (JBFee[] memory) { ... }
 ```
 
@@ -29,7 +29,7 @@ function heldFeesOf(uint256 _projectId) external view override returns (JBFee[] 
 
 1.  This function just reads and returns the stored held fees of the project.
 
-    ```solidity
+    ```
     return _heldFeesOf[_projectId];
     ```
 
@@ -41,7 +41,7 @@ function heldFeesOf(uint256 _projectId) external view override returns (JBFee[] 
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   The fees that are currently being held to be processed later for each project.

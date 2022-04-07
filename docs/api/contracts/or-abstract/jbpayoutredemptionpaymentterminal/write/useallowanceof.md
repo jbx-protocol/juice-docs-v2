@@ -18,7 +18,7 @@ _Incurs the protocol fee._
 
 #### Definition
 
-```solidity
+```
 function useAllowanceOf(
   uint256 _projectId,
   uint256 _amount,
@@ -49,7 +49,7 @@ function useAllowanceOf(
 
 1.  Record the use of the allowed funds.
 
-    ```solidity
+    ```
     // Record the use of the allowance.
     (JBFundingCycle memory _fundingCycle, uint256 _distributedAmount) = store.recordUsedAllowanceOf(
       _projectId,
@@ -64,7 +64,7 @@ function useAllowanceOf(
     * [`recordUsedAllowanceOf`](/api/contracts/jbpaymentterminalstore/write/recordusedallowanceof.md)
 2.  Make sure the distributed amount is at least as much as the specified minimum.
 
-    ```solidity
+    ```
     // The amount being withdrawn must be at least as much as was expected.
     if (_distributedAmount < _minReturnedTokens) revert INADEQUATE_DISTRIBUTION_AMOUNT();
     ```
@@ -76,14 +76,14 @@ function useAllowanceOf(
     ```
     1.  Get a reference to the fee.
 
-        ```solidity
+        ```
         // Get a reference to the fee amount that was paid.
         uint256 _feeAmount;
         ```
 
     2.  Get a reference to the project owner, who will be the beneficiary of the paid fee.
 
-        ```solidity
+        ```
         // Get a reference to the project owner, which will receive tokens from paying the platform fee.
         address _projectOwner = projects.ownerOf(_projectId);
         ```
@@ -94,7 +94,7 @@ function useAllowanceOf(
 
     3.  Get a reference to the discount that'll be used when applying the fee. If the fee is 0, set the discount to be 100% to simplify subsequent calculations. No fee is the same as a full discount. 
 
-        ```solidity
+        ```
         // Get the amount of discount that should be applied to any fees taken.
         // If the fee is zero, set the discount to 100% for convinience.
         uint256 _feeDiscount = fee == 0
@@ -113,7 +113,7 @@ function useAllowanceOf(
 
     4.  Take the fee if needed.
 
-        ```solidity
+        ```
         // Take a fee from the `_distributedAmount`, if needed.
         _feeAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
           ? 0
@@ -131,7 +131,7 @@ function useAllowanceOf(
 
     5.  Send the net amount to the beneficiary if needed.
 
-        ```solidity
+        ```
         // The net amount is the withdrawn amount without the fee.
         netDistributedAmount = _distributedAmount - _fee;
 
@@ -146,7 +146,7 @@ function useAllowanceOf(
 
 4.  Emit a `UseAllowance` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit UseAllowance(
       _fundingCycle.configuration,
       _fundingCycle.number,
@@ -168,7 +168,7 @@ function useAllowanceOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Allows a project to send funds from its overflow up to the preconfigured allowance.

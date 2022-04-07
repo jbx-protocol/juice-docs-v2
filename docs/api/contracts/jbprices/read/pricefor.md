@@ -14,7 +14,7 @@ Interface: [`IJBPrices`](/api/interfaces/ijbprices.md)
 
 ### Definition
 
-```solidity
+```
 function priceFor(
   uint256 _currency,
   uint256 _base,
@@ -35,13 +35,13 @@ function priceFor(
 
 1.  Return 1 if the currency and the base are the same, since they have the same price. Normalize to the desired number of decimals.
 
-    ```solidity
+    ```
     // If the currency is the base, return 1 since they are priced the same. Include the desired number of decimals.
     if (_currency == _base) return 10**_decimals;
     ```
 2.  Get a reference to the feed.
 
-    ```solidity
+    ```
     // Get a reference to the feed.
     IJBPriceFeed _feed = feedFor[_currency][_base];
     ```
@@ -51,13 +51,13 @@ function priceFor(
     * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 3.  Make sure there is a feed stored for the currency base pair.
 
-    ```solidity
+    ```
     // Feed must exist.
     if (_feed == IJBPriceFeed(address(0))) revert PRICE_FEED_NOT_FOUND();
     ```
 4.  Return the latest price being reported by the price feed. 
 
-    ```solidity
+    ```
     // Get the price.
     return _feed.getPrice(_decimals);
     ```
@@ -66,7 +66,7 @@ function priceFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Gets the number of `_currency` units that can be converted to 1 `_base` unit.

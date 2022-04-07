@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event Issue(
   uint256 indexed projectId,
   IJBToken indexed token,

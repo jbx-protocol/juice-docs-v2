@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 ### Definition
 
-```solidity
+```
 function _contains(IJBPaymentTerminal[] calldata _terminals, IJBPaymentTerminal _terminal)
   private
   pure
@@ -28,13 +28,13 @@ function _contains(IJBPaymentTerminal[] calldata _terminals, IJBPaymentTerminal 
 
 1.  Loop through each of the provided terminals looking for the provided terminal. If it's found, return true.
 
-    ```solidity
+    ```
     for (uint256 _i; _i < _terminals.length; _i++) if (_terminals[_i] == _terminal) return true;
     ```
 
 2.  If the terminal is not found, return false.
 
-    ```solidity
+    ```
     return false;
     ```
 
@@ -42,7 +42,7 @@ function _contains(IJBPaymentTerminal[] calldata _terminals, IJBPaymentTerminal 
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Check if the provided terminal array contains the provided terminal.

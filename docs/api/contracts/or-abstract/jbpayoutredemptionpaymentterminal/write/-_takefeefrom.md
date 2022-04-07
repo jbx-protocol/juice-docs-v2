@@ -12,7 +12,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 #### Definition
 
-```solidity
+```
 function _takeFeeFrom(
   uint256 _projectId,
   JBFundingCycle memory _fundingCycle,
@@ -35,7 +35,7 @@ function _takeFeeFrom(
 
 1.  Get a reference to the amount that should be taken.
 
-    ```solidity
+    ```
     // Get the fee discount.
     feeAmount = _feeAmount(_amount, _feeDiscount);
     ```
@@ -45,7 +45,7 @@ function _takeFeeFrom(
     * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
 2.  If the funding cycle is configured to hold fees, add a [`JBFee`](/api/data-structures/jbfee.md) data structure to the project's stored held fees to be either processed or refunded later. Otherwise, take the fee.
 
-    ```solidity
+    ```
     _fundingCycle.shouldHoldFees()
       ? _heldFeesOf[_projectId].push(JBFee(_amount, uint32(fee), _beneficiary))
       : _processFee(feeAmount, _beneficiary); // Take the fee.
@@ -61,7 +61,7 @@ function _takeFeeFrom(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Takes a fee into the platform's project, which has an id of _PROTOCOL_PROJECT_ID.

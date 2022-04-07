@@ -12,7 +12,7 @@ Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â€
 
 #### Definition
 
-```solidity
+```
 function _deriveWeightFrom(JBFundingCycle memory _baseFundingCycle, uint256 _start)
   private
   pure
@@ -30,7 +30,7 @@ function _deriveWeightFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
 
 1.  If the base funding cycle has no duration, the derived weight should be calculated from it no matter how much time has passed since it was active. The discount rate property in a [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) is out of `JBConstants.MAX_DISCOUNT_RATE`(/api/libraries/jbconstants.md).
 
-    ```solidity
+    ```
     // A subsequent cycle to one with a duration of 0 should have the next possible weight.
     if (_baseFundingCycle.duration == 0)
       return
@@ -49,25 +49,25 @@ function _deriveWeightFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
       * `.MAX_DISCOUNT_RATE`
 2.  The calculations that follow will progressively apply discount rates to the base funding cycle's weight to arrive at the correct weight to return.
 
-    ```solidity
+    ```
     // The weight should be based off the base funding cycle's weight.
     weight = _baseFundingCycle.weight;
     ```
 3.  If the base doesn't have a discount rate, the original weight won't change and should be returned.
 
-    ```solidity
+    ```
     // If the discount is 0, the weight doesn't change.
     if (_baseFundingCycle.discountRate == 0) return weight;
     ```
 4.  Get a reference to how long after the base funding cycle's start the specified start time is.
 
-    ```solidity
+    ```
     // The difference between the start of the base funding cycle and the proposed start.
     uint256 _startDistance = _start - _baseFundingCycle.start;
     ```
 5.  Apply the base funding cycle's discount rate. Apply the rate as many times as there have been cycles within the start distance. No need to keep iterating if the weight has reached 0.
 
-    ```solidity
+    ```
     // Apply the base funding cycle's discount rate for each cycle that has passed.
     uint256 _discountMultiple = _startDistance / _baseFundingCycle.duration;
 
@@ -95,7 +95,7 @@ function _deriveWeightFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   The accumulated weight change since the specified funding cycle.

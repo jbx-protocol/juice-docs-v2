@@ -6,7 +6,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 # Definition
 
-```solidity
+```
 /** 
   @notice
   Logic to be triggered before transferring tokens from this terminal.

@@ -1,6 +1,6 @@
 # JBDidPayData
 
-```solidity
+```
 struct JBDidPayData {
   // The address from which the payment originated.
   address payer;

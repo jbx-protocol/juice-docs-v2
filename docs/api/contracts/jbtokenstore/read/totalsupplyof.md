@@ -14,7 +14,7 @@ Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 ### Definition
 
-```solidity
+```
 function totalSupplyOf(uint256 _projectId) external view override returns (uint256 totalSupply) { ... }
 ```
 
@@ -29,7 +29,7 @@ function totalSupplyOf(uint256 _projectId) external view override returns (uint2
 
 1.  Get a reference to the total supply of the project's unclaimed tokens.
 
-    ```solidity
+    ```
     // Get a reference to the total supply of the project's unclaimed tokens. Assign it to the return value.
     totalSupply = unclaimedTotalSupplyOf[_projectId];
     ```
@@ -39,7 +39,7 @@ function totalSupplyOf(uint256 _projectId) external view override returns (uint2
     * [`unclaimedTotalSupplyOf`](/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
 2.  Get a reference to the project's current token.
 
-    ```solidity
+    ```
     // Get a reference to the project's current token.
     IJBToken _token = tokenOf[_projectId];
     ```
@@ -49,7 +49,7 @@ function totalSupplyOf(uint256 _projectId) external view override returns (uint2
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 3.  If the project has a current token, add its total supply to the total.
 
-    ```solidity
+    ```
     // If the project has a current token, add its total supply to the total.
     if (_token != IJBToken(address(0))) totalSupply = totalSupply + _token.totalSupply(_projectId);
     ```
@@ -62,7 +62,7 @@ function totalSupplyOf(uint256 _projectId) external view override returns (uint2
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   The total supply of tokens for each project, including claimed and unclaimed tokens.

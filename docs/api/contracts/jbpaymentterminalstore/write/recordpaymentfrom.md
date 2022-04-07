@@ -18,7 +18,7 @@ _The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterm
 
 #### Definition
 
-```solidity
+```
 function recordPaymentFrom(
   address _payer,
   JBTokenAmount calldata _amount,
@@ -56,7 +56,7 @@ function recordPaymentFrom(
 
 1.  Get a reference to the project's current funding cycle that should have its properties used in the subsequent calculations and returned.
 
-    ```solidity
+    ```
     // Get a reference to the current funding cycle for the project.
     fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
@@ -66,13 +66,13 @@ function recordPaymentFrom(
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure the project has a funding cycle configured. This is done by checking if the project's current funding cycle number is non-zero.
 
-    ```solidity
+    ```
     // The project must have a funding cycle configured.
     if (fundingCycle.number == 0) revert INVALID_FUNDING_CYCLE();
     ```
 3.  Make sure the project's funding cycle isn't configured to pause payments.
 
-    ```solidity
+    ```
     // Must not be paused.
     if (fundingCycle.payPaused()) revert FUNDING_CYCLE_PAYMENT_PAUSED();
     ```
@@ -83,13 +83,13 @@ function recordPaymentFrom(
       `.payPaused(...)`
 4.  Create a variable where the weight to use in subsquent calculations will be saved.
 
-    ```solidity
+    ```
     // The weight according to which new token supply is to be minted, as a fixed point number with 18 decimals.
     uint256 _weight;
     ```
 5.  If the project's current funding cycle is configured to use a data source when receiving payments, ask the data source for the parameters that should be used throughout the rest of the function given provided contextual values in a [`JBPayParamsData`](/api/data-structures/jbpayparamsdata.md) structure. Otherwise default parameters are used.
 
-    ```solidity
+    ```
     // If the funding cycle has configured a data source, use it to derive a weight and memo.
     if (fundingCycle.useDataSourceForPay()) {
       // Create the params that'll be sent to the data source.
@@ -124,13 +124,13 @@ function recordPaymentFrom(
     * [`payParams`](/api/interfaces/ijbfundingcycledatasource.md)
 6.  If there is no amount being recorded, there's nothing left to do so the current values can be returned.
 
-    ```solidity
+    ```
     // If there's no amount being recorded, there's nothing left to do.
     if (_amount.value == 0) return (fundingCycle, 0, delegate, memo);
     ```
 7.  Add the amount being paid to the stored balance.
 
-    ```solidity
+    ```
     // Add the amount to the token balance of the project.
     balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
       balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] +
@@ -142,13 +142,13 @@ function recordPaymentFrom(
     * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
 8.  If there is no weight, the resulting token count will be 0. There's nothing left to do so the current values can be returned.
 
-    ```solidity
+    ```
     // If there's no weight, token count must be 0 so there's nothing left to do.
     if (_weight == 0) return (fundingCycle, 0, delegate, memo);
     ```
 9.  Calculate the weight ratio. This allows a project to get paid in a certain token, but issue project tokens relative to a different base currency. The weight ratio will be used to divide the product of the paid amount and the weight to determine the number of tokens that should be distributed. Since the number of distributed tokens should be a fixed point number with 18 decimals, the weight ratio must have the same number of decimals as the amount to cancel it out and leave only the fidelity of the 18 decimal fixed point weight.
 
-    ```solidity
+    ```
     // Get a reference to the number of decimals in the amount. (prevents stack too deep).
     uint256 _decimals = _amount.decimals;
 
@@ -165,7 +165,7 @@ function recordPaymentFrom(
 
 10. Determine the number of tokens to mint.
 
-    ```solidity
+    ```
     // Find the number of tokens to mint, as a fixed point number with as many decimals as `weight` has.
     tokenCount = PRBMath.mulDiv(_amount.value, _weight, _weightRatio);
     ```
@@ -179,7 +179,7 @@ function recordPaymentFrom(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Records newly contributed tokens to a project.

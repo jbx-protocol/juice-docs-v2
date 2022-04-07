@@ -1,6 +1,6 @@
 # JBFundingCycle
 
-```solidity
+```
 struct JBFundingCycle {
   // The funding cycle number for each project.
   // Each funding cycle has a number that is an increment of the cycle that directly preceded it.

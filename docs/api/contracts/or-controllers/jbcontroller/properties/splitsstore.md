@@ -8,7 +8,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The contract that stores splits for each project.

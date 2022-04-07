@@ -16,7 +16,7 @@ _Only a token holder, the owner of the token's project, or an operator specified
 
 ### Definition
 
-```solidity
+```
 function claimFor(
   address _holder,
   uint256 _projectId,
@@ -36,7 +36,7 @@ function claimFor(
 
 1.  Get a reference to the project's current token.
 
-    ```solidity
+    ```
     // Get a reference to the project's current token.
     IJBToken _token = tokenOf[_projectId];
     ```
@@ -46,13 +46,13 @@ function claimFor(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 2.  Make sure the project has a token. If it doesn't, there's nowhere to claim tokens onto.
 
-    ```solidity
+    ```
     // The project must have a token contract attached.
     if (_token == IJBToken(address(0))) revert TOKEN_NOT_FOUND();
     ```
 3.  Get a reference to the amount of unclaimed project tokens the holder has.
 
-    ```solidity
+    ```
     // Get a reference to the amount of unclaimed project tokens the holder has.
     uint256 _unclaimedBalance = unclaimedBalanceOf[_holder][_projectId];
     ```
@@ -62,13 +62,13 @@ function claimFor(
     * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 4.  Make sure the holder has enough tokens to claim.
 
-    ```solidity
+    ```
     // There must be enough unlocked unclaimed tokens to claim.
     if (_unclaimedBalance < _amount) revert INSUFFICIENT_UNCLAIMED_TOKENS();
     ```
 5.  Subtract from the unclaimed project token balance of the holder.
 
-    ```solidity
+    ```
     // Subtract the claim amount from the holder's unclaimed project token balance.
     unclaimedBalanceOf[_holder][_projectId] = unclaimedBalanceOf[_holder][_projectId] - _amount;
     ```
@@ -78,7 +78,7 @@ function claimFor(
     * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 6.  Subtract from the unclaimed token total supply of the project.
 
-    ```solidity
+    ```
     // Subtract the claim amount from the project's unclaimed total supply.
     unclaimedTotalSupplyOf[_projectId] = unclaimedTotalSupplyOf[_projectId] - _amount;
     ```
@@ -88,7 +88,7 @@ function claimFor(
     * [`unclaimedTotalSupplyOf`](/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
 7.  Mint the tokens to the holder's wallet.
 
-    ```solidity
+    ```
     // Mint the equivalent amount of the project's token for the holder.
     _token.mint(_projectId, _holder, _amount);
     ```
@@ -98,7 +98,7 @@ function claimFor(
     * [`mint`](/api/contracts/jbtoken/write/mint.md)
 8.  Emit a `Claim` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Claim(_holder, _projectId, _unclaimedBalance, _amount, msg.sender);
     ```
 
@@ -110,7 +110,7 @@ function claimFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Claims internally accounted for tokens into a holder's wallet.

@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 #### Definition
 
-```solidity
+```
 function _configure(
   uint256 _projectId,
   JBFundingCycleData calldata _data,
@@ -35,7 +35,7 @@ function _configure(
 
 1.  Make sure the reserved rate is a valid number out of the max value.
 
-    ```solidity
+    ```
     // Make sure the provided reserved rate is valid.
     if (_metadata.reservedRate > JBConstants.MAX_RESERVED_RATE) revert INVALID_RESERVED_RATE();
     ```
@@ -46,7 +46,7 @@ function _configure(
       * `.MAX_RESERVED_RATE(...)`
 2.  Make sure the redemption rate is a valid number out of the max value.
 
-    ```solidity
+    ```
     // Make sure the provided redemption rate is valid.
     if (_metadata.redemptionRate > JBConstants.MAX_REDEMPTION_RATE)
       revert INVALID_REDEMPTION_RATE();
@@ -58,7 +58,7 @@ function _configure(
       * `.MAX_REDEMPTION_RATE(...)`
 3.  Make sure the ballot redemption rate is less than the max value.
 
-    ```solidity
+    ```
     // Make sure the provided ballot redemption rate is valid.
     if (_metadata.ballotRedemptionRate > JBConstants.MAX_REDEMPTION_RATE)
       revert INVALID_BALLOT_REDEMPTION_RATE();
@@ -70,7 +70,7 @@ function _configure(
       * `.MAX_REDEMPTION_RATE(...)`
 4.  Configure the project's funding cycles. Pack the metadata into a `uint256`.
 
-    ```solidity
+    ```
     // Configure the funding cycle's properties.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.configureFor(
       _projectId,
@@ -90,7 +90,7 @@ function _configure(
       `.packFundingCycleMetadata(...)`
 5.  For each provided group splits, set the splits for the specified group if there are any.
 
-    ```solidity
+    ```
     for (uint256 _i; _i < _groupedSplits.length; _i++)
       // Set splits for the current group being iterated on if there are any.
       if (_groupedSplits[_i].splits.length > 0)
@@ -107,7 +107,7 @@ function _configure(
     * [`set`](/api/contracts/jbsplitsstore/write/set.md)
 6.  For each fund access constraint struct in the array passed in, store the values of the distribution limit and overflow allowance packed with their respective currencies. Make sure the values are contained within their bit limit so that they can be packed together in one `uint256`. Emit a `SetFundAccessConstraints` event with the relevant parameters.
 
-    ```solidity
+    ```
     // Set distribution limits if there are any.
     for (uint256 _i; _i < _fundAccessConstraints.length; _i++) {
       JBFundAccessConstraints memory _constraints = _fundAccessConstraints[_i];
@@ -159,7 +159,7 @@ function _configure(
     * [`SetFundAccessConstraints`](/api/contracts/or-controllers/jbcontroller/events/setfundaccessconstraints.md)
 7.  Return the funding cycle's configuration.
 
-    ```solidity
+    ```
     return _fundingCycle.configuration;
     ```
 
@@ -167,7 +167,7 @@ function _configure(
 
 <TabItem value="Only code" label="Only code">
 
-```solidity
+```
 /**
   @notice
   Configures a funding cycle and stores information pertinent to the configuration.

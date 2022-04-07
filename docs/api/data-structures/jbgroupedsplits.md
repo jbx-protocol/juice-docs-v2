@@ -1,6 +1,6 @@
 # JBGroupedSplits
 
-```solidity
+```
 struct JBGroupedSplits {
   // The group indentifier.
   uint256 group;

@@ -1,6 +1,6 @@
 # JBTokenAmount
 
-```solidity
+```
 struct JBSplitAllocationData {
   // The amount being sent to the split allocator, as a fixed point number.
   uint256 amount;

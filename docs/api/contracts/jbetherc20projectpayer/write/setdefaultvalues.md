@@ -14,7 +14,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 #### Definition
 
-```solidity
+```
 function setDefaultValues(
   uint256 _projectId,
   address payable _beneficiary,
@@ -39,7 +39,7 @@ function setDefaultValues(
 
 1.  Set the default project ID if it has changed.
 
-    ```solidity
+    ```
     // Set the default project ID if it has changed.
     if (_projectId != defaultProjectId) defaultProjectId = _projectId;
     ```
@@ -49,7 +49,7 @@ function setDefaultValues(
     * [`defaultProjectId`](/api/contracts/jbetherc20projectpayer/properties/defaultprojectid.md)
 2.  Set the default beneficiary if it has changed.
 
-    ```solidity
+    ```
     // Set the default beneficiary if it has changed.
     if (_beneficiary != defaultBeneficiary) defaultBeneficiary = _beneficiary;
     ```
@@ -59,7 +59,7 @@ function setDefaultValues(
     * [`defaultBeneficiary`](/api/contracts/jbetherc20projectpayer/properties/defaultbeneficiary.md)
 3.  Set the default claimed token preference if it has changed.
 
-    ```solidity
+    ```
     // Set the default claimed token preference if it has changed.
     if (_preferClaimedTokens != defaultPreferClaimedTokens)
       defaultPreferClaimedTokens = _preferClaimedTokens;
@@ -70,7 +70,7 @@ function setDefaultValues(
     * [`defaultPreferClaimedTokens`](/api/contracts/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
 4.  Set the default memo if it has changed.
 
-    ```solidity
+    ```
     // Set the default memo if it has changed.
     if (keccak256(abi.encodePacked(_memo)) != keccak256(abi.encodePacked(defaultMemo)))
       defaultMemo = _memo;
@@ -81,7 +81,7 @@ function setDefaultValues(
     * [`defaultMemo`](/api/contracts/jbetherc20projectpayer/properties/defaultmemo.md)
 5.  Set the default memadata if it has changed.
 
-    ```solidity
+    ```
     // Set the default metadata if it has changed.
     if (keccak256(abi.encodePacked(_metadata)) != keccak256(abi.encodePacked(defaultMetadata)))
       defaultMetadata = _metadata;
@@ -111,7 +111,7 @@ function setDefaultValues(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Sets the default values that determine how to interact with a protocol treasury when this contract receives ETH directly.

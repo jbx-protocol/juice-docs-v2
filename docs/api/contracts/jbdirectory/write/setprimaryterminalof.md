@@ -20,7 +20,7 @@ _If setting a newly added terminal and the funding cycle doesn't allow new termi
 
 ### Definition
 
-```solidity
+```
 function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
   external
   override
@@ -38,7 +38,7 @@ function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
 
 1.  Get a reference to the token that the provided terminal's vault accepts.
 
-    ```solidity
+    ```
     // Get a reference to the token that the terminal accepts.
     address _token = _terminal.token();
     ```
@@ -48,7 +48,7 @@ function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
     * [`token`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/token.md)
 2.  Make sure the project's current funding cycle is set to allow setting terminals, or the request to set the terminals is coming from the project's current controller.
 
-    ```solidity
+    ```
     // Add the terminal to the project if it hasn't been already.
     _addTerminalIfNeeded(_projectId, _terminal);
     ```
@@ -58,7 +58,7 @@ function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
     * [`_addTerminalIfNeeded`](/api/contracts/jbdirectory/write/-_addterminalifneeded.md)
 3.  Store the new terminal as the primary.
 
-    ```solidity
+    ```
     // Store the terminal as the primary for the particular token.
     _primaryTerminalOf[_projectId][_token] = _terminal;
     ```
@@ -68,7 +68,7 @@ function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
     * [`_primaryTerminalOf`](/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
 4.  Emit a `SetPrimaryTerminal` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetPrimaryTerminal(_projectId, _token, _terminal, msg.sender);
     ```
 
@@ -80,7 +80,7 @@ function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Project's can set which terminal should be their primary for a particular token.

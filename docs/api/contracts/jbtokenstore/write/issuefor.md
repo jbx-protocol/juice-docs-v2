@@ -18,7 +18,7 @@ _Only a project's current controller can issue its token._
 
 ### Definition
 
-```solidity
+```
 function issueFor(
   uint256 _projectId,
   string calldata _name,
@@ -38,19 +38,19 @@ function issueFor(
 
 1.  Make sure a name was provided.
 
-    ```solidity
+    ```
     // There must be a name.
     if (bytes(_name).length == 0) revert EMPTY_NAME();
     ```
 2.  Make sure a symbol was provided.
 
-    ```solidity
+    ```
     // There must be a symbol.
     if (bytes(_symbol).length == 0) revert EMPTY_SYMBOL();
     ```
 3.  Make sure the project doesn't already have a token.
 
-    ```solidity
+    ```
     // The project shouldn't already have a token.
     if (tokenOf[_projectId] != IJBToken(address(0))) revert PROJECT_ALREADY_HAS_TOKEN();
     ```
@@ -60,13 +60,13 @@ function issueFor(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 4.  Deploy a new instance of a [`JBToken`](/api/contracts/jbtoken/) contract. Assign it to the return value.
 
-    ```solidity
+    ```
     // Deploy the token contract.
     token = new JBToken(_name, _symbol);
     ```
 5.  Store the newly deployed token contract as the token of the project.
 
-    ```solidity
+    ```
     // Store the token contract.
     tokenOf[_projectId] = token;
     ```
@@ -76,7 +76,7 @@ function issueFor(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 6.  Store the project the token is being used for.
 
-    ```solidity
+    ```
     // Store the project for the token.
     projectOf[token] = _projectId;
     ```
@@ -86,7 +86,7 @@ function issueFor(
     * [`projectOf`](/api/contracts/jbtokenstore/properties/projectof.md)
 7.  Emit an `Issue` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Issue(_projectId, token, _name, _symbol, msg.sender);
     ```
 
@@ -98,7 +98,7 @@ function issueFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Issues an project's ERC-20 tokens that'll be used when claiming tokens.

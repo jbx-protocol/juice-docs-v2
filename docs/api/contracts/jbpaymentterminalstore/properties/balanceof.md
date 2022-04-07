@@ -8,7 +8,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The amount of tokens that each project has for each terminal, in terms of the terminal's token.

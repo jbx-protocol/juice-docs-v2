@@ -16,7 +16,7 @@ _The current overflow is represented as a fixed point number with the same amoun
 
 #### Definition
 
-```solidity
+```
 function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
   external
   view
@@ -36,7 +36,7 @@ function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
 
 1.  Forward the call to the internal version of the function that is also used by other operations, using the project's current funding cycle.
 
-    ```solidity
+    ```
     // Return the overflow during the project's current funding cycle.
     return
       _overflowDuring(
@@ -59,7 +59,7 @@ function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Gets the current overflowed amount in a terminal for a specified project.

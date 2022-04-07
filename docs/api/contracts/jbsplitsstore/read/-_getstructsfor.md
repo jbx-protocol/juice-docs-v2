@@ -12,7 +12,7 @@ Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
 #### Definition
 
-```solidity
+```
 function _getStructsFor(
   uint256 _projectId,
   uint256 _domain,
@@ -32,7 +32,7 @@ function _getStructsFor(
 
 1.  Get a reference to the expected number of splits for the specified domain and group.
 
-    ```solidity
+    ```
     // Get a reference to the number of splits that need to be added to the returned array.
     uint256 _splitCount = _splitCountOf[_projectId][_domain][_group];
     ```
@@ -42,13 +42,13 @@ function _getStructsFor(
     * [`_splitCountOf`](/api/contracts/jbsplitsstore/properties/-_splitcountof.md)
 2.  Inititalize an array with length equal to the number of splits expected.
 
-    ```solidity
+    ```
     // Initialize an array to be returned that has the set length.
     JBSplit[] memory _splits = new JBSplit[](_splitCount);
     ```
 3.  For each index, parse out the packed split parts into [`JBSplit`](/api/data-structures/jbsplit.md) structs and add to the array. The packed splits are stored in two different `uint256` slots, the second of which contains info that is populated way less frequently.
 
-    ```solidity
+    ```
     // Loop through each split and unpack the values into structs.
     for (uint256 _i = 0; _i < _splitCount; _i++) {
       // Get a reference to the fist packed data.
@@ -87,7 +87,7 @@ function _getStructsFor(
     * [`_packedSplitParts2Of`](/api/contracts/jbsplitsstore/properties/-_packedsplitparts2of.md)
 4.  Return the array of splits.
 
-    ```solidity
+    ```
     return _splits;
     ```
 
@@ -95,7 +95,7 @@ function _getStructsFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Unpack splits' packed stored values into easy-to-work-with split structs.

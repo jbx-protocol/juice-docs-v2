@@ -1,6 +1,6 @@
 # IJBOperatorStore
 
-```solidity
+```
 interface IJBOperatorStore {
   event SetOperator(
     address indexed operator,

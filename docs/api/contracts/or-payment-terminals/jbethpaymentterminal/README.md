@@ -20,7 +20,7 @@ Ethereum mainnet: _Not yet deployed_
 
 ## Constructor
 
-```solidity
+```
   constructor(
     uint256 _baseWeightCurrency,
     IJBOperatorStore _operatorStore,

@@ -6,7 +6,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event MintTokens(
   address indexed beneficiary,
   uint256 indexed projectId,

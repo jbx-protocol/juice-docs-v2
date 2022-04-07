@@ -12,7 +12,7 @@ Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â€
 
 ### Definition
 
-```solidity
+```
 function _packAndStoreIntrinsicPropertiesOf(
   uint256 _configuration,
   uint256 _projectId,
@@ -37,31 +37,31 @@ function _packAndStoreIntrinsicPropertiesOf(
 
 1.  The weight property should take up the first 80 bits of the packed `uint256`.
 
-    ```solidity
+    ```
     // weight in bits 0-87.
     uint256 packed = _weight;
     ```
 2.  The based on configuration should take up the next 56 bits.
 
-    ```solidity
+    ```
     // basedOn in bits 88-143.
     packed |= _basedOn << 88;
     ```
 3.  The start should take up the next 56 bits.
 
-    ```solidity
+    ```
     // start in bits 144-199.
     packed |= _start << 144;
     ```
 4.  The number should take up the last 56 bits.
 
-    ```solidity
+    ```
     // number in bits 200-255.
     packed |= _number << 200;
     ```
 5.  Store the packed intrinsic properties for the funding cycle.
 
-    ```solidity
+    ```
     // Store the packed value.
     _packedIntrinsicPropertiesOf[_projectId][_configuration] = packed;
     ```
@@ -74,7 +74,7 @@ function _packAndStoreIntrinsicPropertiesOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Efficiently stores a funding cycle's provided intrinsic properties.

@@ -16,7 +16,7 @@ _Only a project's current controller can burn its tokens._
 
 ### Definition
 
-```solidity
+```
 function burnFrom(
   address _holder,
   uint256 _projectId,
@@ -38,7 +38,7 @@ function burnFrom(
 
 1.  Get a reference to the project's current token.
 
-    ```solidity
+    ```
     // Get a reference to the project's current token.
     IJBToken _token = tokenOf[_projectId];
     ```
@@ -48,7 +48,7 @@ function burnFrom(
     * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 2.  Get a reference to the amount of unclaimed project tokens the holder has.
 
-    ```solidity
+    ```
     // Get a reference to the amount of unclaimed project tokens the holder has.
     uint256 _unclaimedBalance = unclaimedBalanceOf[_holder][_projectId];
     ```
@@ -58,7 +58,7 @@ function burnFrom(
     * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 3.  Get a reference to the amount of the project's tokens the holder has in their wallet. If the project does not yet have tokens issued, the holder must not have a claimed balance.
 
-    ```solidity
+    ```
     // Get a reference to the amount of the project's current token the holder has in their wallet.
     uint256 _claimedBalance = _token == IJBToken(address(0))
       ? 0
@@ -66,7 +66,7 @@ function burnFrom(
     ```
 4.  Make sure the holder has enough tokens to burn. This is true if either the amount to burn is less than both the holder's claimed balance and unclaimed balance, if the amount is greater than the claimed balance and there are enough unclaimed tokens to cover the difference, or if the amount is greater than the unclaimed balance and there are enough claimed tokens to cover the difference.
 
-    ```solidity
+    ```
     // There must be adequate tokens to burn across the holder's claimed and unclaimed balance.
     if (
       (_amount >= _claimedBalance || _amount >= _unclaimedBalance) &&
@@ -76,7 +76,7 @@ function burnFrom(
     ```
 5.  Find the amount of claimed tokens that should be burned. This will be 0 if the holder has no claimed balance, an amount up to the holder's claimed balance if there is a preference for burning claimed tokens, or the difference between the amount being burned and the holder's unclaimed balance otherwise.
 
-    ```solidity
+    ```
     // The amount of tokens to burn.
     uint256 _claimedTokensToBurn;
 
@@ -91,13 +91,13 @@ function burnFrom(
     ```
 6.  The amount of unclaimed tokens to burn is necessarily the amount of tokens to burn minus the amount of claimed tokens to burn.
 
-    ```solidity
+    ```
     // The amount of unclaimed tokens to redeem.
     uint256 _unclaimedTokensToBurn = _amount - _claimedTokensToBurn;
     ```
 7.  If there are unclaimed tokens to burn, subtract the amount from the unclaimed balance of the holder for the project, and from the unclaimed total supply of the project.
 
-    ```solidity
+    ```
     // Subtract the tokens from the unclaimed balance and total supply.
     if (_unclaimedTokensToBurn > 0) {
       // Reduce the holders balance and the total supply.
@@ -116,7 +116,7 @@ function burnFrom(
     * [`unclaimedTotalSupplyOf`](/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
 8.  If there are claimed tokens to burn, burn them from the holder's wallet.
 
-    ```solidity
+    ```
     // Burn the claimed tokens.
     if (_claimedTokensToBurn > 0) _token.burn(_projectId, _holder, _claimedTokensToBurn);
     ```
@@ -126,7 +126,7 @@ function burnFrom(
     * [`burn`](/api/contracts/jbtoken/write/burn.md)
 9.  Emit a `Burn` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit Burn(
       _holder,
       _projectId,
@@ -146,7 +146,7 @@ function burnFrom(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Burns a project's tokens.

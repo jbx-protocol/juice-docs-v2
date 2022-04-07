@@ -8,7 +8,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The data source that returns a discount to apply to a project's fee.

@@ -14,7 +14,7 @@ _Permissions are stored in a packed `uint256`. Each 256 bits represents the on/o
 
 # Definition
 
-```solidity
+```
 /** 
   @notice
   The permissions that an operator has been given to operate on a specific domain.

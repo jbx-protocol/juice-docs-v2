@@ -12,7 +12,7 @@ Contract: [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/READM
 
 #### Definition
 
-```solidity
+```
 function _pay(
   uint256 _projectId,
   address _token,
@@ -43,7 +43,7 @@ function _pay(
 
 1.  Get a reference to the terminal that should be sent the payment by checking for the project's stored primary terminal for the token being paid.  
 
-    ```solidity
+    ```
     // Find the terminal for this contract's project.
     IJBPaymentTerminal _terminal = directory.primaryTerminalOf(_projectId, _token);
     ```
@@ -57,14 +57,14 @@ function _pay(
     * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
 2.  Make sure there is a terminal to make a payment towards.
 
-    ```solidity
+    ```
     // There must be a terminal.
     if (_terminal == IJBPaymentTerminal(address(0))) revert TERMINAL_NOT_FOUND();
     ```
 
 3.  Make sure the number of decimals in the amount being paid matches the number of decimals expected by the terminal.
 
-    ```solidity
+    ```
     // The amount's decimals must match the terminal's expected decimals.
     if (_terminal.decimals() != _decimals) revert INCORRECT_DECIMAL_AMOUNT();
     ```
@@ -119,7 +119,7 @@ function _pay(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice 
   Make a payment to the specified project.

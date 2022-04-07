@@ -2,7 +2,7 @@
 
 # Definition
 
-```solidity
+```
 struct JBOperatorData {
   // The address of the operator.
   address operator;

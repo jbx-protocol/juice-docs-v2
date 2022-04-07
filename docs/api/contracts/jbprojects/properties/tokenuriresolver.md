@@ -8,7 +8,7 @@ Interface: [`IJBProjects`](/api/interfaces/ijbprojects.md)
 
 # Definition
 
-```solidity
+```
 /**
   @notice
   The contract resolving each project ID to its ERC721 URI.

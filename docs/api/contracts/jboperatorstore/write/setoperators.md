@@ -16,7 +16,7 @@ _Only an address can set its own operators._
 
 ### Definition
 
-```solidity
+```
 function setOperators(JBOperatorData[] calldata _operatorData) external override { ... }
 ```
 
@@ -29,13 +29,13 @@ function setOperators(JBOperatorData[] calldata _operatorData) external override
 
 1.  Loop through the provided operator data.
 
-    ```solidity
+    ```
     for (uint256 _i = 0; _i < _operatorData.length; _i++) { ... }
     ```
 
     1.  Pack the provided permissions into a `uint256`. Each bit of the resulting value represents whether or not permission has been granted for that index.
 
-        ```solidity
+        ```
         // Pack the indexes into a uint256.
         uint256 _packed = _packedPermissions(_operatorData[_i].permissionIndexes);
         ```
@@ -45,7 +45,7 @@ function setOperators(JBOperatorData[] calldata _operatorData) external override
         * [`_packedPermissions`](/api/contracts/jboperatorstore/read/-_packedpermissions.md)
     2.  Store the packed permissions as the permissions of the provided operator, on behalf of the `msg.sender`, specifically for the provided domain.
 
-        ```solidity
+        ```
         // Store the new value.
         permissionsOf[_operatorData[_i].operator][msg.sender][_operatorData[_i].domain] = _packed;
         ```
@@ -55,7 +55,7 @@ function setOperators(JBOperatorData[] calldata _operatorData) external override
         * [`permissionsOf`](../properties/permissionsof.md)
     3.  Emit a `SetOperator` event with the relevant parameters.
 
-        ```solidity
+        ```
         emit SetOperator(
           _operatorData[_i].operator,
           msg.sender,
@@ -73,7 +73,7 @@ function setOperators(JBOperatorData[] calldata _operatorData) external override
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Sets permissions for many operators.

@@ -8,7 +8,7 @@ Interface: [`IJBControllerUtility`](/api/interfaces/ijbcontrollerutility.md)
 
 # Definition
 
-```solidity
+```
 /** 
   @notice 
   The directory of terminals and controllers for projects.

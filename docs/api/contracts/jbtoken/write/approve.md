@@ -14,7 +14,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 ### Definition
 
-```solidity
+```
 function approve(
   uint256,
   address _spender,
@@ -33,7 +33,7 @@ function approve(
 
 1.  Forward the call to the ERC20 implementation.
 
-    ```solidity
+    ```
     approve(_spender, _amount);
     ```
 
@@ -45,7 +45,7 @@ function approve(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   Approves an account to spend tokens on the `msg.sender`s behalf.

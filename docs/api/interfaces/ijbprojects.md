@@ -1,6 +1,6 @@
 # IJBProjects
 
-```solidity
+```
 interface IJBProjects is IERC721 {
   event Create(
     uint256 indexed projectId,

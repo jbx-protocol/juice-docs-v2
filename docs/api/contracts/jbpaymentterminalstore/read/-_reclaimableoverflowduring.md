@@ -14,7 +14,7 @@ _If the project has an active funding cycle reconfiguration ballot, the project'
 
 #### Definition
 
-```solidity
+```
 function _reclaimableOverflowDuring(
   uint256 _projectId,
   JBFundingCycle memory _fundingCycle,
@@ -36,19 +36,19 @@ function _reclaimableOverflowDuring(
 
 1.  If there are reserved tokens, add them to the total supply for the purposes of this calculation.
 
-    ```solidity
+    ```
     // If there are reserved tokens, add them to the total supply.
     if (_reservedTokenAmount > 0) _totalSupply = _totalSupply + _reservedTokenAmount;
     ```
 2.  If the calculation is being made to find the claimable amount for all of a project's tokens, return the entire current overflow.
 
-    ```solidity
+    ```
     // If the amount being redeemed is the total supply, return the rest of the overflow.
     if (_tokenCount == _totalSupply) return _overflow;
     ```
 3.  Get a reference to the redemption rate that should be used in the redemption bonding curve formula. If the current funding cycle has an active ballot, use its ballot redemption rate, otherwise use the standard redemption rate. This lets projects configure different bonding curves depending on the state of pending reconfigurations. 
 
-    ```solidity
+    ```
     // Use the ballot redemption rate if the queued cycle is pending approval according to the previous funding cycle's ballot.
     uint256 _redemptionRate = fundingCycleStore.currentBallotStateOf(_projectId) ==
       JBBallotState.Active
@@ -67,13 +67,13 @@ function _reclaimableOverflowDuring(
     * [`currentBallotStateOf`](/api/contracts/jbfundingcyclestore/read/currentballotstateof.md)
 4.  If the redemption rate is 0%, nothing is claimable regardless of the amount of tokens.
 
-    ```solidity
+    ```
     // If the redemption rate is 0, nothing is claimable.
     if (_redemptionRate == 0) return 0;
     ```
 5.  The redemption bonding curve formula depends on a base claimable value that is the linear proportion of the provided tokens to the total supply of tokens. Get a reference to this proportion to use in the formula.
 
-    ```solidity
+    ```
     // Get a reference to the linear proportion.
     uint256 _base = PRBMath.mulDiv(_overflow, _tokenCount, _totalSupply);
     ```
@@ -84,7 +84,7 @@ function _reclaimableOverflowDuring(
       * `.mulDiv(...)`
 6.  Return the claimable amount determined by a bonding curve. At a 100% bonding curve the linear base can be returned immediately, this outcome is naturally part of the curve – checking for it first could prevent an unnecessary and slightly more expensive mulDiv calculation.
 
-    ```solidity
+    ```
     // These conditions are all part of the same curve. Edge conditions are separated because fewer operation are necessary.
     if (_redemptionRate == JBConstants.MAX_REDEMPTION_RATE) return _base;
     
@@ -112,7 +112,7 @@ function _reclaimableOverflowDuring(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   The amount of overflowed tokens from a terminal that can be reclaimed by the specified number of tokens when measured from the specified.

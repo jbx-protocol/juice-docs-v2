@@ -7,7 +7,7 @@ Used in:
 
 # Definition
 
-```solidity
+```
 struct JBSplit {
   // A flag that only has effect if a projectId is also specified, and the project has a token contract attached.
   // If so, this flag indicates if the tokens that result from making a payment to the project should be delivered claimed into the beneficiary's wallet, or unclaimed to save gas.

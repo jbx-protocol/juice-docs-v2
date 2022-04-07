@@ -1,6 +1,6 @@
 # IJBFundingCycleDataSource
 
-```solidity
+```
 interface IJBFundingCycleDataSource {
   function payParams(JBPayParamsData calldata _data)
     external

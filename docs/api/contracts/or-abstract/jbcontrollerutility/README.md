@@ -21,7 +21,7 @@ description: >-
 
 ## Constructor
 
-```solidity
+```
 constructor(IJBDirectory _directory) {
   directory = _directory;
 }

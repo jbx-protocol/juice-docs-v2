@@ -6,7 +6,7 @@ Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
 # Definition
 
-```solidity
+```
 /** 
   @notice
   The number of splits currently set for each project ID's configurations.

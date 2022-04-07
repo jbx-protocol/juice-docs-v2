@@ -1,6 +1,6 @@
 # JBProjectMetadata
 
-```solidity
+```
 struct JBProjectMetadata {
   // Metadata content.
   string content;

@@ -18,7 +18,7 @@ _Applications can use the domain namespace as they wish._
 
 #### Definition
 
-```solidity
+```
 function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
   external
   override
@@ -36,7 +36,7 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
 
 1.  Store the project's new metadata content within the specified domain.
 
-    ```solidity
+    ```
     // Set the project's new metadata content within the specified domain.
     metadataContentOf[_projectId][_metadata.domain] = _metadata.content;
     ```
@@ -46,7 +46,7 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
     * [`metadataContentOf`](/api/contracts/jbprojects/properties/metadatacontentof.md)
 2.  Emit a `SetMetadataCid` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit SetMetadata(_projectId, _metadata, msg.sender);
     ```
 
@@ -58,7 +58,7 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice 
   Allows a project owner to set the project's metadata content for a particular domain namespace. 

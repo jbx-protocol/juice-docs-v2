@@ -14,7 +14,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 ### Definition
 
-```solidity
+```
 function balanceOf(address _account, uint256) external view override returns (uint256) { ... }
 ```
 
@@ -30,7 +30,7 @@ function balanceOf(address _account, uint256) external view override returns (ui
 
 1.  Forward the call to the ERC20 implementation.
 
-    ```solidity
+    ```
     return super.balanceOf(_account);
     ```
 
@@ -42,7 +42,7 @@ function balanceOf(address _account, uint256) external view override returns (ui
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /** 
   @notice
   An account's balance of this ERC20.

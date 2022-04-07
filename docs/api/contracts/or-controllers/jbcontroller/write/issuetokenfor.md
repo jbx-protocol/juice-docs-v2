@@ -18,7 +18,7 @@ _Only a project's owner or operator can issue its token._
 
 ### Definition
 
-```solidity
+```
 function issueFor(
   uint256 _projectId,
   string calldata _name,
@@ -44,7 +44,7 @@ function issueFor(
 
 1.  Forward the call to the token store.
 
-    ```solidity
+    ```
     // Issue the token in the store.
     return tokenStore.issueFor(_projectId, _name, _symbol);
     ```
@@ -53,7 +53,7 @@ function issueFor(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Issues an owner's ERC20 JBTokens that'll be used when claiming tokens.

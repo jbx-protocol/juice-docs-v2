@@ -20,7 +20,7 @@ _All funds distributed outside of this contract or any feeless terminals incure 
 
 #### Definition
 
-```solidity
+```
 function distributePayoutsOf(
   uint256 _projectId,
   uint256 _amount,
@@ -45,7 +45,7 @@ function distributePayoutsOf(
 
 1.  Record the distribution. 
 
-    ```solidity
+    ```
     // Record the distribution.
     (JBFundingCycle memory _fundingCycle, uint256 _distributedAmount) = store.recordDistributionFor(
       _projectId,
@@ -60,14 +60,14 @@ function distributePayoutsOf(
     * [`recordDistributionFor`](/api/contracts/jbpaymentterminalstore/write/recorddistributionfor.md)
 2.  Make sure the distributed amount is at least as much as the minimum expected amount.
 
-    ```solidity
+    ```
     // The amount being distributed must be at least as much as was expected.
     if (_distributedAmount < _minReturnedTokens) revert INADEQUATE_DISTRIBUTION_AMOUNT();
     ```
 
 3.  Get a reference to the project's owner. The owner will be allocated any funds leftover once splits are settled.
 
-    ```solidity
+    ```
     // Get a reference to the project owner, which will receive tokens from paying the platform fee
     // and receive any extra distributable funds not allocated to payout splits.
     address payable _projectOwner = payable(projects.ownerOf(_projectId));
@@ -78,7 +78,7 @@ function distributePayoutsOf(
     * [`ownerOf`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#IERC721-ownerOf-uint256-)
 4.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. Define a few variables outside of the scope that'll be set within the scope but later referenced again outside.
 
-    ```solidity
+    ```
     // Define variables that will be needed outside the scoped section below.
     // Keep a reference to the fee amount that was paid.
     uint256 _fee;
@@ -89,7 +89,7 @@ function distributePayoutsOf(
 
     1.  Get a reference to the discount that'll be used when applying the fee. If the fee is 0, set the discount to be 100% to simplify subsequent calculations. No fee is the same as a full discount. 
 
-        ```solidity
+        ```
         // Get the amount of discount that should be applied to any fees taken.
         // If the fee is zero, set the discount to 100% for convinience.
         uint256 _feeDiscount = fee == 0
@@ -108,7 +108,7 @@ function distributePayoutsOf(
 
     2.  Get a reference to the amount of distributed funds from which fees should be taken, and the amount leftover after distributing splits.
 
-        ```solidity
+        ```
         // The amount distributed that is eligible for incurring fees.
         uint256 _feeEligibleDistributionAmount;
 
@@ -118,7 +118,7 @@ function distributePayoutsOf(
 
     3.  Distribute the amount to all payout splits. Get a reference to any leftover amount, and all amounts sent to splits from which fees should be taken.
 
-        ```solidity
+        ```
         // Payout to splits and get a reference to the leftover amount after all splits have been paid.
         // Also get a reference to the amount that was distributed to splits from which fees should be taken.
         (_leftoverDistributionAmount, _feeEligibleDistributionAmount) = _distributeToPayoutSplitsOf(
@@ -135,14 +135,14 @@ function distributePayoutsOf(
 
     4.  Add the leftover distribution amount to the amount from which fees should be taken since those funds will be leaving the ecosystem to the project owner's address.
 
-        ```solidity
+        ```
         // Leftover distribution amount is also eligible for a fee since the funds are going out of the ecosystem to _beneficiary.
         _feeEligibleDistributionAmount += _leftoverDistributionAmount;
         ```
 
     5.  Take the fee if needed.
 
-        ```solidity
+        ```
         // Take the fee.
         _fee = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT ||
           _feeEligibleDistributionAmount == 0
@@ -167,7 +167,7 @@ function distributePayoutsOf(
 
     6.  Calculate what the net value of the leftover distribution will be.
 
-        ```solidity
+        ```
         // Get a reference to how much to distribute to the project owner, which is the leftover amount minus any fees.
         netLeftoverDistributionAmount = _leftoverDistributionAmount == 0
           ? 0
@@ -180,7 +180,7 @@ function distributePayoutsOf(
 
     7.  Transfer any leftover amount to the project owner if needed.
 
-        ```solidity
+        ```
         // Transfer any remaining balance to the project owner.
         if (netLeftoverDistributionAmount > 0)
           _transferFrom(address(this), _projectOwner, netLeftoverDistributionAmount);
@@ -192,7 +192,7 @@ function distributePayoutsOf(
 
 5.  Emit a `DistributePayouts` event with the relevant parameters.
 
-    ```solidity
+    ```
     emit DistributePayouts(
       _fundingCycle.configuration,
       _fundingCycle.number,
@@ -215,7 +215,7 @@ function distributePayoutsOf(
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Distributes payouts for a project with the distribution limit of its current funding cycle.

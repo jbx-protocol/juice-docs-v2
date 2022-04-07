@@ -1,6 +1,6 @@
 # IJBFundingCycleBallot
 
-```solidity
+```
 interface IJBFundingCycleBallot {
   function duration() external view returns (uint256);
 

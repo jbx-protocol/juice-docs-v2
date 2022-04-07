@@ -14,7 +14,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 ### Definition
 
-```solidity
+```
 function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
   external
   virtual
@@ -34,7 +34,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 
-    ```solidity
+    ```
     return _distributeReservedTokensOf(_projectId, _memo);
     ```
 
@@ -46,7 +46,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
 <TabItem value="Code" label="Code">
 
-```solidity
+```
 /**
   @notice
   Distributes all outstanding reserved tokens for a project.

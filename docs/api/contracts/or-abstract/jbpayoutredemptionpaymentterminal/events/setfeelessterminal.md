@@ -7,7 +7,7 @@ Emitted from:
 
 ## Definition
 
-```solidity
+```
 event SetFeelessTerminal(IJBPaymentTerminal indexed terminal, bool indexed flag, address caller);
 ```
 

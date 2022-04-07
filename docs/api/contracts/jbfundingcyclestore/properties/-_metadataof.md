@@ -6,7 +6,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 
 # Definition
 
-```solidity
+```
 /** 
   @notice
   Stores the metadata for each funding cycle configuration, packed into one storage slot.

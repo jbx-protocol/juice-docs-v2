@@ -6,7 +6,7 @@ Emitted from:
 
 Definition:
 
-```solidity
+```
 event SetPrimaryTerminal(
   uint256 indexed projectId,
   address indexed token,
