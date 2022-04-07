@@ -1,5 +1,6 @@
 # IJBETHERC20ProjectPayerDeployer
 
+```
 interface IJBETHERC20ProjectPayerDeployer {
   event DeployProjectPayer(
     IJBProjectPayer indexed projectPayer,
