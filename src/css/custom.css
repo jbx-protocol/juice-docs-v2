@@ -41,6 +41,10 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+[data-theme='light'] .navbar {
+  background-color: #F1EEE9;
+}
+
 h4 {
 font-weight: bold;
 font-size: 130%;
