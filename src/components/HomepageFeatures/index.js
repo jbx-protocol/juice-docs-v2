@@ -5,19 +5,19 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Documentation',
-    Svg: require('@site/static/img/pina.svg').default,
+    Svg: require('@site/static/img/apple.svg').default,
     description: (
       <>
-	Visit the docs to learn about the Juicebox protocol.
+	Visit the <a href="/docs/intro/">docs</a> to learn about the Juicebox protocol.
       </>
     ),
   },
   {
     title: 'Blog',
-    Svg: require('@site/static/img/apple.svg').default,
+    Svg: require('@site/static/img/pina.svg').default,
     description: (
       <>
-	Visit the blog for updates, observations, guides, and resources.
+	Visit the <a href="/blog/">blog</a> for updates, observations, guides, and resources.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/blueberry.svg').default,
     description: (
       <>
-	For more, join the Juicebox Discord server and follow @juiceboxETH on Twitter.
+	For more, join the <a href="https://www.discord.gg/juicebox">Juicebox Discord</a> server and follow <a href="https://twitter.com/juiceboxETH">@juiceboxETH</a> on Twitter.
       </>
     ),
   },
