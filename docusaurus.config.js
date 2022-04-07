@@ -61,6 +61,15 @@ const config = {
 	defaultMode: 'dark',
 	respectPrefersColorScheme: true,
       }, 
+      // Announcement bar
+      announcementBar: {
+	            id: 'support_us',
+	            content:
+	              '<strong>These docs are under active development. Join our <a href="https://discord.gg/juicebox">Discord</a> to contribute.</strong>',
+	            backgroundColor: '#18B4C7',
+	            textColor: '#FBF9F6',
+	            isCloseable: true,
+	          },
       navbar: {
         logo: {
           alt: 'Juicebox Logo',
