@@ -39,3 +39,8 @@
 [data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+h4 {
+font-weight: bold;
+font-size: 130%;
+}
