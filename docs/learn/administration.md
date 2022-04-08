@@ -3,7 +3,7 @@ sidebar_position: 3
 ---
 # Administration
 
-The following functions can only be accessed by a privileged administrating address, initially the JuiceboxDAO multisig:
+The protocol has very minimal global governance. The following are the only global functions that can be accessed by a privileged administrating address, initially the JuiceboxDAO multisig:
 
 * **[`JBProjects.setTokenUriResolver(...)`](/api/contracts/jbprojects/write/settokenuriresolver.md)**<br/>
   Allows the owner of the [`JBProjects`](/api/contracts/jbprojects/) contract to provide and change the [`IJBTokenUriResolver`](/api/interfaces/ijbtokenuriresolver.md) used to provide metadata for project NFTs in its [`tokenURI(...)`](/api/contracts/jbprojects/read/tokenuri.md) function.
