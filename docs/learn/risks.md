@@ -33,6 +33,8 @@ Ownership of each project on the Juicebox protocol belongs to the address posses
      With a distribution limit of zero, all treasury funds belong to the community. Token holders can redeem their tokens to reclaim their share of the treasury at any time, according to the current funding cycle's redemption bonding curve rate.
 
      A non-zero distribution limit allocates a portion of the treasury for distribution to payout splits.
+
+     A project owner can also change the split allocations that are bound by the funding cycle's distribution limit at any time, unless the split was explicitly locked until a specified date during its creation.
      
      🟢 <strong>Used productively</strong> this can be used to withdraw funds to a community safe, distribute funds to contributors, channel funds to other projects operating treasuries on the protocol, and more.<br/>
      
@@ -117,8 +119,6 @@ Ownership of each project on the Juicebox protocol belongs to the address posses
      🟢 <strong>Used productively</strong> this can be used to move a treasury into a totally custom environment, or to trusted upgraded versions of the protocol.<br/>
 
      🔴 <strong>Used maliciously</strong> this can be used to cut off a community of token holders from their treasury, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs.<br/><br/>
-
-A project owner can also change the split allocations that are bound by the funding cycle's distribution limit at any time, unless the split was explicitly locked until a specified date during its creation.
 
 #### Undistributed reserved rate risk
 If a project enters a funding cycle with a different reserved rate than the preceding cycle while still having outstanding reserved tokens to distribute, the quantity of distributable tokens will change to reflect the new reserved rate.
