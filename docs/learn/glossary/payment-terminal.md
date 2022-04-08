@@ -4,7 +4,7 @@
 
 * A project can be configured to use any contract that adheres to [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) to manage its inflowns and outflows of token funds.
 * Each terminal manages one token type only.
-* Each payment terminal can have unique distribution limit and overflow allowance.
+* Each payment terminal can have a unique distribution limit and overflow allowance.
 * Each payment terminal can behave differently when it receives payments.
 
 #### What you'll want to know if you're building

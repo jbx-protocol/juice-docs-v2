@@ -123,7 +123,7 @@ Here's what the protocol lets your do:
 
 #### **Redemption rate**
 <p>
-  The percentage of a project's treasury funds that can be reclaimed by community members by burning the project's tokens during the funding cycle.
+  The percentage of a project's treasury funds that can be reclaimed by community members by redeeming the project's tokens during the funding cycle.
 </p>
 <p>
   A rate of 100% suggests a linear proportion, meaning X% of treasury funds can be reclaimed by redeeming X% of the token supply.
