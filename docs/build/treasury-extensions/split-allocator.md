@@ -1,6 +1,6 @@
 # Split allocator
 
-Before implementing, learn about allocators [here](/learn/glossary/allocator.md), and splits [here](/learn/glossary/splits.md).
+Before implementing, learn about allocators [here](/learn/glossary/split-allocator.md), and splits [here](/learn/glossary/splits.md).
 #### Specs
 
 A contract can become a split allocator by adhering to [`IJBSplitAllocator`](/api/interfaces/ijbsplitallocator.md):
