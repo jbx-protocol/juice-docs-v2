@@ -144,14 +144,14 @@ Here's what the protocol lets your do:
 
 <!---->
 
-#### **Pause payments, pause distributions, pause redemptions, pause mint, pause burn**
+#### **Pause payments, pause distributions, pause redemptions, pause burn**
 <p>
   Projects can pause various bits of its treasury's functionality on a per-funding cycle basis. These functions are unpaused by default.
 </p>
 
 <!---->
 
-#### **Allow changing tokens, allow terminal migrations, allow controller migrations**
+#### **Allow minting tokens, allow changing tokens, allow terminal migrations, allow controller migrations**
 <p>
   Projects can allow various bits of treasury functionality on a per-funding cycle basis. These functions are disabled by default.
 </p>
@@ -184,7 +184,7 @@ Here's what the protocol lets your do:
 #### **Mint tokens**
 <p>
   By default, a project starts with 0 tokens and mints them when its treasury receives contributions.<br/>
-  A project can mint and distribute more of its own tokens on demand if its current funding cycle isn't configured to pause minting.
+  A project can mint and distribute more of its own tokens on demand if its current funding cycle is configured to allow minting.
 </p>
 
 #### **Burn tokens**
