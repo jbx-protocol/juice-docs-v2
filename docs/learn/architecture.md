@@ -9,7 +9,7 @@ The protocol is made up of 7 core contracts and 3 surface contracts.
 * Core contracts store all the independent components that make the protocol work.
 * Surface contracts glue core contracts together and manage funds. Anyone can write new surface contracts for projects to use.
 
-## Core contracts
+#### Core contracts
 
 The first two core contracts are self explanatory. They store the core opinionated components of the protocol.
 
@@ -35,7 +35,7 @@ The last core contract stores info about which surface contracts each project is
 
 * [`JBDirectory`](/api/contracts/jbdirectory/) keeps a reference of which terminal contracts each project is currently accepting funds through, and which controller contract is managing each project's tokens and funding cycles.
 
-## Surface contracts
+#### Surface contracts
 
 There are currently 3 surface contracts that manage how projects manage funds and define how all core contracts should be used together. Anyone can write new surface contracts for projects to use.
 
@@ -47,4 +47,9 @@ The abstract [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jb
 
 Likewise, a project can bring their own contract to serve as its controller. A project's controller is the only contract that has direct access to manipulate its tokens and funding cycles. A project can set its controller from the core [`JBDirectory`](/api/contracts/jbdirectory/) contract using the [`JBDirectory.setControllerOf(...)`](/api/contracts/jbdirectory/write/setcontrollerof.md) transaction.
 
-## [Visual map](www.figma.com/file/qGZbvt4kWgDJOntra7L960/JBV2)
+#### Bonus contracts
+
+* [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/) provides utilities to pay a project. Inheriting this contract is useful for contracts that wish to route funds to a treasury while specifying the token beneficiary, memo, and other contextual information alongside. Instances of this contract can also be deployed as stand-alone addresses that will forward funds received directly to a project's treasury.
+* [`JBETHERC20ProjectPayerDeployer`](/api/contracts/jbetherc20projectpayerdeployer/) provides a function to deploy new stand-alone [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/)'s. 
+
+<!-- ## [Visual map](www.figma.com/file/qGZbvt4kWgDJOntra7L960/JBV2) -->
