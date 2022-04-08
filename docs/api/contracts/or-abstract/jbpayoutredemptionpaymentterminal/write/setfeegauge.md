@@ -77,7 +77,7 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 
 | Name                                          | Data                                                                                                                                                    |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetFeeGauge`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md) | <ul><li><code>[`IJBFeeGauge`](/api/interfaces/ijbfeegauge.md)indexed feeGauge</code></li><li><code>address caller</code></li></ul> |
+| [**`SetFeeGauge`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md) | <ul><li><code>[IJBFeeGauge](/api/interfaces/ijbfeegauge.md)indexed feeGauge</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

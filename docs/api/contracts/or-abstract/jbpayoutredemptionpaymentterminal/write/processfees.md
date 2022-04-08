@@ -142,7 +142,7 @@ function processFees(uint256 _projectId)
 
 | Name                                          | Data                                                                                                                                                       |
 | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ProcessFees`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfees.md)                         | <ul><li><code>[`JBFee`](/api/data-structures/jbfee.md)[] fees</code></li><li><code>uint256 indexed projectId</code></li></ul>                                                                                                                                                                                                                                                                                                                         |
+| [**`ProcessFees`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfees.md)                         | <ul><li><code>[JBFee](/api/data-structures/jbfee.md)[] fees</code></li><li><code>uint256 indexed projectId</code></li></ul>                                                                                                                                                                                                                                                                                                                         |
 
 </TabItem>
 

@@ -105,7 +105,7 @@ function addFeedFor(
 
 | Name                                  | Data                                                                                                                                                                                                                                                                                           |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddFeed`**](/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
+| [**`AddFeed`**](/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[IJBPriceFeed](/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
 
 </TabItem>
 

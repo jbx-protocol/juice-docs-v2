@@ -90,7 +90,7 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
 
 | Name                                             | Data                                                                                                                                        |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetMetadata`**](/api/contracts/jbprojects/events/setmetadata.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`JBProjectMetadata`](/api/data-structures/jbprojectmetadata.md)metadata</code></li><li><code>address caller</code></li></ul>                                                                                                         |
+| [**`SetMetadata`**](/api/contracts/jbprojects/events/setmetadata.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>[JBProjectMetadata](/api/data-structures/jbprojectmetadata.md)metadata</code></li><li><code>address caller</code></li></ul>                                                                                                         |
 
 </TabItem>
 

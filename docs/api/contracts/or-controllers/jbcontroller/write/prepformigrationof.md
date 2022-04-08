@@ -99,7 +99,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController _from) external vi
 
 | Name                                        | Data                                                                                                                                                                                                                                                       |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`PrepMigration`**](/api/contracts/or-controllers/jbcontroller/events/prepmigration.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[`IJBController`](/api/interfaces/ijbcontroller.md)from</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
+| [**`PrepMigration`**](/api/contracts/or-controllers/jbcontroller/events/prepmigration.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[IJBController](/api/interfaces/ijbcontroller.md)from</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
 {
 
 </TabItem>

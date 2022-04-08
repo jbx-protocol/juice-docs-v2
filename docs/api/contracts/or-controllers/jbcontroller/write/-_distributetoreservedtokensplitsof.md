@@ -241,7 +241,7 @@ function _distributeToReservedTokenSplitsOf(
 
 | Name                                                                                | Data                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeToReservedTokenSplit`**](/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[`JBSplit`](/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DistributeToReservedTokenSplit`**](/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

@@ -281,7 +281,7 @@ function _configure(
 
 | Name                                                                    | Data                                                                                                                                                                                                                                                                                                                                                          |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetFundAccessConstraints`**](/api/contracts/or-controllers/jbcontroller/events/setfundaccessconstraints.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[`JBFundAccessConstraints`](/api/data-structures/jbfundaccessconstraints.md)constraints</code></li><li><code>address caller</code></li></ul> |
+| [**`SetFundAccessConstraints`**](/api/contracts/or-controllers/jbcontroller/events/setfundaccessconstraints.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[JBFundAccessConstraints](/api/data-structures/jbfundaccessconstraints.md)constraints</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

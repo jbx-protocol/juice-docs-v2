@@ -71,7 +71,7 @@ function setTokenUriResolver(IJBTokenUriResolver _newResolver) external override
 
 | Name                                                          | Data                                                                                                                                                                                                                                                                                     |
 | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetTokenUriResolver`**](/api/contracts/jbprojects/events/settokenuriresolver.md) | <ul><li><code>[`IJBTokenUriResolver`](/api/interfaces/ijbtokenuriresolver.md)resolver</code></li><li><code>address caller</code></li></ul>                                                                                                         |
+| [**`SetTokenUriResolver`**](/api/contracts/jbprojects/events/settokenuriresolver.md) | <ul><li><code>[IJBTokenUriResolver](/api/interfaces/ijbtokenuriresolver.md)resolver</code></li><li><code>address caller</code></li></ul>                                                                                                         |
 
 </TabItem>
 

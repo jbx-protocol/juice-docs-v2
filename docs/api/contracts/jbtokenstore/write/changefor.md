@@ -208,7 +208,7 @@ function changeFor(
 
 | Name                                | Data                                                                                                                                                                                |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Change`**](/api/contracts/jbtokenstore/events/change.md)               | <ul><li><code>uint256 indexed projectId</code></li><li><code>[`IJBToken`](/api/interfaces/ijbtoken.md)indexed newToken</code></li><li><code>[`IJBToken`](/api/interfaces/ijbtoken.md)indexed oldToken</code></li><li><code>address indexed owner</code></li><li><code>address caller</code></li></ul>                                                                                           |
+| [**`Change`**](/api/contracts/jbtokenstore/events/change.md)               | <ul><li><code>uint256 indexed projectId</code></li><li><code>[IJBToken](/api/interfaces/ijbtoken.md)indexed newToken</code></li><li><code>[IJBToken](/api/interfaces/ijbtoken.md)indexed oldToken</code></li><li><code>address indexed owner</code></li><li><code>address caller</code></li></ul>                                                                                           |
 
 </TabItem>
 
