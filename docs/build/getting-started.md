@@ -193,7 +193,7 @@ function pay(
 
 <summary>View treasury balance</summary>
 
-A project's treasury balance in a termianl can be found in the store contract. For example, in the [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/), the balance can be found using [`JBPaymentTerminalStore.balanceOf(...)`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md).
+A project's treasury balance in a terminal can be found in the store contract. For example, in the [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/), the balance can be found using [`JBPaymentTerminalStore.balanceOf(...)`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md).
 
 ```
 function balanceOf(IJBPaymentTerminal _terminal, uint256 _projectId)
