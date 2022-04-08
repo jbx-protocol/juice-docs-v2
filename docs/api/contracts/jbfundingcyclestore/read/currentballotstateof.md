@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​‌
+Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​‌
 
 Interface: [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md)
 

@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBOperatorStore`](/api/contracts/jboperatorstore/README.md)​‌
+Contract: [`JBOperatorStore`](/api/contracts/jboperatorstore/README.md)​‌
 
 Interface: [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md)
 

@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBPrices`](/api/contracts/jbprices/README.md)​‌
+Contract: [`JBPrices`](/api/contracts/jbprices/README.md)​‌
 
 Interface: [`IJBPrices`](/api/interfaces/ijbprices.md)
 

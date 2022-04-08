@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## Address
 
-Mainnet:[`0x46C9999A2EDCD5aA177ed7E8af90c68b7d75Ba46`](https://etherscan.io/address/0x46c9999a2edcd5aa177ed7e8af90c68b7d75ba46)
+Mainnet: [`0x46C9999A2EDCD5aA177ed7E8af90c68b7d75Ba46`](https://etherscan.io/address/0x46c9999a2edcd5aa177ed7e8af90c68b7d75ba46)
 
 Kovan: `0x71BA69044CbD951AC87124cBEdbC0334AB21F26D`
 

@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract:[`JBChainlinkV3PriceFeed`](/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/README.md)​‌
+Contract: [`JBChainlinkV3PriceFeed`](/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/README.md)​‌
 
 Interface: [`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md)
 
