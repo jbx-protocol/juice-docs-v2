@@ -6,6 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-link-color: #18B4C7;
   --ifm-background-color: #FBF9F6;
   --ifm-background-surface-color: #F1EEE9;
   --ifm-color-primary: #F5A312;
@@ -22,6 +23,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  --ifm-link-color: #32C8DB;
   --ifm-color-primary: #FFB32C;
   --ifm-color-primary-dark: #FFA80E;
   --ifm-color-primary-darker: #FEA300;
@@ -48,10 +50,6 @@ h1 {
 
 h4 {
   color: #FFB32C;
-}
-
-a {
-  color: rgb(50, 200, 219);
 }
 
 .alert {
