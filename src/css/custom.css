@@ -47,6 +47,13 @@ h1 {
 }
 
 h4 {
-  font-weight: bold;
-  font-size: 130%;
+  color: #FFB32C;
+}
+
+a {
+  color: rgb(50, 200, 219);
+}
+
+.alert {
+  background-color: transparent;
 }
