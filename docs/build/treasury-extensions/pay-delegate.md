@@ -1,7 +1,7 @@
 # Pay delegate
 
 Before implementing, learn about delegates [here](/learn/glossary/delegate.md).
-### Specs
+#### Specs
 
 A contract can become a treasury pay delegate by adhering to [`IJBPayDelegate`](/api/interfaces/ijbpaydelegate.md):
 
@@ -51,6 +51,6 @@ In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/api/con
 
 Make sure to only allow trusted contracts to access the `didPay(...)` transaction.
 
-### Attaching
+#### Attaching
 
 A delegate contract should be deployed independently. Once deployed, its address can be returned from a data source hook. See [how to build a data source](/build/treasury-extensions/data-source.md) for more.

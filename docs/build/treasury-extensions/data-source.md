@@ -1,7 +1,7 @@
 # Data source
 
 Before implementing, learn about data sources [here](/learn/glossary/data-source.md).
-### Specs
+#### Specs
 
 A contract can become a treasury data source by adhering to [`IJBFundingCycleDataSource`](/api/interfaces/ijbfundingcycledatasource.md):
 
@@ -29,7 +29,7 @@ interface IJBFundingCycleDataSource {
 
 There are two functions that must be implemented, `payParams(...)` and `redeemParams(...)`. Either one can be left empty if the intent is to only extend the treasury's pay functionality or redeem functionality.
 
-#### Pay
+##### Pay
 
 When extending the pay functionality with a data source, the protocol will pass a [`JBPayParamsData`](/api/data-structures/jbpayparamsdata.md) to the `payParams(...)` function:
 
@@ -75,7 +75,7 @@ Using these params, the data source's `payParams(...)` function is responsible f
 
 The `payParams(...)` function can also revert if it's presented with any conditions it does not want to accept payments under. 
 
-#### Redeem
+##### Redeem
  
 When extending the redeem functionality with a data source, the protocol will pass a [`JBRedeemParamsData`](/api/data-structures/jbredeemparamsdata.md) to the `redeemParams(...)` function:
 

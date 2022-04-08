@@ -29,7 +29,7 @@ This transaction launches a project. It does so by:
 * Then storing any provided constraints on how the project will be able to access funds within any specified payment terminals by storing values in [`JBController._packedDistributionLimitDataOf(...)`](/api/contracts/or-controllers/jbcontroller/properties/-_packeddistributionlimitdataof.md), [`JBController._packedOverflowAllowanceDataOf(...)`](/api/contracts/or-controllers/jbcontroller/properties/-_packedoverflowallowancedataof.md).
 * Then giving the provided `_terminals` access to the [`JBController`](/api/contracts/or-controllers/jbcontroller/) contract that is handling the [`launchProjectFor`](/api/contracts/or-controllers/jbcontroller/write/launchprojectfor.md) transaction that's currently being executed, and also allowing anyone or any other contract in Web3 to know that the project is currently accepting funds through them by calling [`JBDirectory.setTerminalsOf(...)`](/api/contracts/jbdirectory/write/setterminalsof.md).
 
-### Basics
+#### Basics
 
 Here are some examples, starting with the simplest version:
 
@@ -82,7 +82,7 @@ Under these conditions:
 * None of the funds in the treasury can be distributed to the project owner since no `_fundAccessConstraints` were specified. This means all funds in the treasury are considered overflow. Since the configured `_metadata.redemptionRate` sent is 0 (which represents 100%), all outstanding tokens can be redeemed/burned to claim a proportional part of the overflow. This lets everyone who contributed funds have access to their ETH back.
 * A new funding cycle with an updated configuration can be triggered at any time by the project owner since the configured `_data.duration` of 0 and `_data.ballot` of `0x0000000000000000000000000000000000000000`. This lets the project owner capture an arbitrary amount of what's in the treasury at any given point by sending a reconfiguration transaction with `_fundAccessConstraints` specified.
 
-### Fund access constraints
+#### Fund access constraints
 
 Here's what happens when basic `_fundAccessConstraints` are specified by sending the following [`JBFundAccessContraints`](/api/data-structures/jbfundaccessconstraints.md) values:
 
@@ -161,18 +161,27 @@ If you wish to automatically split treasury payouts or reserved token distributi
      beneficiary: 0x0000000000000000000000000000000000000000,
      lockedUntil: 1644543173,
      allocator: 0x6969696969696969696969696969696969696969
-   }
+   },
+   {
+     preferClaimed: false,
+     percent: 10000000, // 1%, out of 1000000000
+     projectId: 0,
+     beneficiary: 0x0000000000000000000000000000000000000000,
+     lockedUntil: 0,
+     allocator: 0x0000000000000000000000000000000000000000
+   },
   ]
 }
 ```
 
-* If an `allocator` is provided, the split will try to send the split funds to it. Otherwise if a `projectId` is provided the split will try to send funds to that projectId's Juicebox treasury, sending the project's tokens to the `beneficiary`. Otherwise the split funds will be sent directly to the `beneficiary`.
-* There are 4 splits in this group.
+* If an `allocator` is provided, the split will try to send the split funds to it. Otherwise if a `projectId` is provided the split will try to send funds to that projectId's Juicebox treasury, sending the project's tokens to the `beneficiary`. Else if a `beneficiary` is provided the split funds will be sent directly to it. Otherwise, the split will not have a destination defined within it and so applications can treat it as a wildcard. In this case, payouts send the split amount to the `msg.sender` of the transaction.
+* There are 5 splits in this group.
   * The first will send 5% of the total directly to address `0x0123456789012345678901234567890123456789`.
   * The second will send 6% to the Juicebox treasury of project with ID 420. This project's tokens will be sent to address `0x0123456789012345678901234567890123456789.`
   * The third will send 6% to the Juicebox treasury of project with ID 421. This project's tokens will be sent to address `0x0123456789012345678901234567890123456789.`, and they will be automatically claimed as ERC-20's in the beneficiary's wallet if the project has issued them due to the `preferClaimed` flag being `true`.
-  * The last will send 7% to the `allocate` function in contract with address `0x6969696969696969696969696969696969696969` which must adhere to [`IJBSplitAllocator`](/api/interfaces/ijbsplitallocator.md). This function will also receive all contextual information regarding the spit for it to do custom things with. This split will not be editable or removable from the group during this funding cycle configuration while the `lockedUntil` date has yet to passsed.
-  * All the remaining funds (100% - 5% - 6% - 6% - 7% = 76%) will be sent to the project owner's address.
+  * The fourth will send 7% to the `allocate` function in contract with address `0x6969696969696969696969696969696969696969` which must adhere to [`IJBSplitAllocator`](/api/interfaces/ijbsplitallocator.md). This function will also receive all contextual information regarding the spit for it to do custom things with. This split will not be editable or removable from the group during this funding cycle configuration while the `lockedUntil` date has yet to passsed.
+  * The last will send 1% of the total directly to `msg.sender` address since no destination was specified within the split.
+  * All the remaining funds (100% - 5% - 6% - 6% - 7% - 1% = 75%) will be sent to the project owner's address.
 * Since the configured split group is 1 ([which represents ETH payouts](/api/libraries/jbsplitsgroups.md)), the protocol will use this group of splits when distributing funds from the ETH terminal.
 * This splits will only apply to the funding cycle configuration during which they were set. Splits will have to be set again for future configurations.
 * The same group split behavior applies to reserved tokens ([represented by group namespace 2](/api/libraries/jbsplitsgroups.md)), although those routed to a `projectId` will be sent to the project's owner, and those routed to an allocator will be sent to the contract before having the contract's `allocate` function called.

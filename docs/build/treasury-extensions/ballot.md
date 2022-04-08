@@ -1,7 +1,7 @@
 # Ballot
 
 Before implementing, learn about ballots [here](/learn/glossary/ballot.md).
-### Specs
+#### Specs
 
 A contract can become a funding cycle ballot by adhering to [`IJBFundingCycleBallot`](/api/interfaces/ijbfundingcycleballot.md):
 
@@ -22,6 +22,6 @@ When extending the pay functionality with a delegate, the protocol will pass a `
 
 Once the `duration(...)` has expired, the returned value of `stateOf(...)` should no longer change. 
 
-### Attaching
+#### Attaching
 
 A ballot contract should be deployed independently. Once deployed, its address can be configured into a project's funding cycle to take effect while that funding cycle is active for evaluating subsequent reconfigurations. 

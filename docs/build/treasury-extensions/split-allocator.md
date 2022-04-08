@@ -1,7 +1,7 @@
 # Split allocator
 
 Before implementing, learn about allocators [here](/learn/glossary/allocator.md), and splits [here](/learn/glossary/splits.md).
-### Specs
+#### Specs
 
 A contract can become a split allocator by adhering to [`IJBSplitAllocator`](/api/interfaces/ijbsplitallocator.md):
 
@@ -58,6 +58,6 @@ In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/api/con
 * If the allocation is coming from an ERC20 payment terminal such as [`JBERC20PaymentTerminal`](/api/contracts/or-payment-terminals/jberc20paymentterminal/), the tokens will be pre-approved for the allocator contract to transfer them to it. Make sure to initiate the transfer, and make sure to not leave allocated tokens stuck in the allocator contract.
 * If the allocation is coming from a controller such as [`JBController`](/api/contracts/or-controllers/jbcontroller/) distributing reserved tokens, the tokens will be minted pre-distributed to the allocator's address. If the split's `preferClaimed` property is `true` and the project has a token a contract attached, the tokens will be minted directly to the allocator contract. Otherwise, they will be allocated in the  [`JBTokenStore`](/api/contracts/jbtokenstore/) as unclaimed tokens from which the allocator can then [`claimFor(...)`](/api/contracts/jbtokenstore/write/claimfor.md) itself or [`transferFrom(...)`](/api/contracts/jbtokenstore/write/transferfrom.md) itself to another address. Make sure to not leave allocated tokens stuck in the allocator contract or unclaimed in the [`JBTokenStore`](/api/contracts/jbtokenstore/) contract.
 
-### Attaching
+#### Attaching
 
 An allocator contract should be deployed independently. Once deployed, its address can be configured into a project's payout splits or reserved token splits so that any distribution triggered while the funding cycle is active sends the relevant token to the allocator contract's `allocat(...)` hook. 

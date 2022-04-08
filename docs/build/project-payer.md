@@ -46,7 +46,7 @@ If your contract does not wish to route payments received via the native `receiv
 
 #### Deploying project payers
 
-Instances of the [`JBProjectPayer`](/api/contracts/jbprojectpayer/) contract can also be deployed as stand-alone forwarders of payments to juicebox treasuries. A new project payer can be deployed using [`JBProjectPayerDeployer.deployProjectPayer(...)`](/api/contracts/jbetherc20projectpayerdeployer/write/deployprojectpayer.md).
+Instances of the [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/) contract can also be deployed as stand-alone forwarders of payments to juicebox treasuries. A new project payer can be deployed using [`JBProjectPayerDeployer.deployProjectPayer(...)`](/api/contracts/jbetherc20projectpayerdeployer/write/deployprojectpayer.md).
 
 ```
 function deployProjectPayer(
