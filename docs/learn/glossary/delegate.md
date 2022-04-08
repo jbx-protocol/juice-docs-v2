@@ -13,5 +13,6 @@
 * A delegate contract can be specified by the funding cycle's [`dataSource`](data-source.md).
 * The [`IJBPayDelegate`](/api/interfaces/ijbpaydelegate.md)'s `didPay(...)` hook is triggered in [`JBPayoutRedemptionPaymentTerminal._pay(...)`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md), and the [`IJBRedemptionDelegate`](/api/interfaces/ijbredemptiondelegate.md)'s `didRedeem(...)` hook is triggered in [`JBPayoutRedemptionPaymentTerminal.redeemTokensOf(...)`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md).
 * The redemption delegate hook is called before funds are dispersed.
-* [Get started building pay delegates](/build/treasury-extensions/pay-delegate.md).
-* [Get started building redemption delegates](/build/treasury-extensions/redemption-delegate.md).
+
+[Get started building pay delegates](/build/treasury-extensions/pay-delegate.md).
+[Get started building redemption delegates](/build/treasury-extensions/redemption-delegate.md).
