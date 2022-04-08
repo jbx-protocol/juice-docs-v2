@@ -16,7 +16,7 @@
 * Permission for each operation is stored in a bit within an `uint256`. If the bit is 1, the permission is enabled for the particular operator within the particular domain. Otherwise it is disabled.&#x20;
 * [`JBOperatorStore.hasPermission(...)`](/api/contracts/jboperatorstore/read/haspermission.md) and [`JBOperatorStore.hasPermissions(...)`](/api/contracts/jboperatorstore/read/haspermissions.md)can be used to check if an operator has a particular permission.
 
-## Operatable functionality
+#### Operatable functionality
 
 For each project, the following functions can only be accessed by either the address that owns the project's NFT or by operator addresses explicitly allowed by the address that owns the project's NFT. Operators are only valid in the context of a particular owner – if the NFT changes hands, the operators for the project must be set again by the new owner.
 
