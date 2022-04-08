@@ -173,7 +173,7 @@ Here's what the protocol lets your do:
 
 #### **Data source**
 <p>
-  The address of a contract that adheres to <a href="/docs/api/interfaces/ijbfundingcycledatasource">`IJBFundingCycleDataSource`</a>, which can be used to extend or override what happens when the treasury receives funds, and what happens when someone tries to redeem from the treasury.
+  The address of a contract that adheres to <a href="/docs/api/interfaces/ijbfundingcycledatasource"><code>IJBFundingCycleDataSource</code></a>, which can be used to extend or override what happens when the treasury receives funds, and what happens when someone tries to redeem from the treasury.
 </p>
 <p>
   <a href="/docs/learn/glossary/data-source">Learn more about data sources</a>
@@ -194,7 +194,7 @@ Here's what the protocol lets your do:
 
 #### **Bring-your-own token**
 <p>
-  A project can bring its own token, as long as it adheres to <a href="/docs/api/interfaces/ijbtoken">`IJBToken`</a> and uses fixed point accounting with 18 decimals.<br/>
+  A project can bring its own token, as long as it adheres to <a href="/docs/api/interfaces/ijbtoken"><code>IJBToken</code></a> and uses fixed point accounting with 18 decimals.<br/>
 </p>
 <p>
   This allows a project to use ERC-721's, ERC-1155's, or any other custom contract that'll be called upon when the protocol asks to mint or burn tokens.<br/>
