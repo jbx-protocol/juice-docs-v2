@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-Here's what the protocol lets your do:
+Here's what the protocol lets you do:
 
 #### **Deploy an NFT that represents ownership over a project**
 <p>
