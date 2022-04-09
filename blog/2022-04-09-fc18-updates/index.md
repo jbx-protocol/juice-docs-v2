@@ -9,7 +9,7 @@ tags: [dao, updates]
 
 Jango's proposal to [Deploy v2](https://snapshot.org/#/jbdao.eth/proposal/0x98bba73a52fcc2f65252d769b328ab398f955c1bb43259430ff586a568b8e06e) passed by overwhelming majority. You can learn more about v2 on the [docs](https://info.juicebox.money/docs/intro).
 
-Currently, v2 is planned to deploy on April 16th.
+Currently, v2 is scheduled to deploy on April 16th.
 
 Frontend efforts are already well underway: as of 2022-04-07, the [V2 feature parity milestone](https://github.com/jbx-protocol/juice-interface/milestone/5) is 64% complete. Feature parity is Phase 1 of [PeelDAO's roadmap for v2](https://juicebox.notion.site/V2-Juicebox-frontend-roadmap-5a1024f821224e44ab0c07dcf53fd562).
 
