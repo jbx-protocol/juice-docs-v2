@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # Project Payer
 
-[`JBETHERC20ProjectPayer`](/protocol/api/contracts/jbetherc20projectpayer/README.md) contracts make it easy to route funds to projects' treasuries from other contracts or from within inheriting contracts. This is useful for routing funds to a Juicebox treasury from within other contracts such as an NFT's minting function, or creating contract's that will automatically route any received funds to a project's treasury with preconfigured parameters to send along with the payment.  
+[`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md) contracts make it easy to route funds to projects' treasuries from other contracts or from within inheriting contracts. This is useful for routing funds to a Juicebox treasury from within other contracts such as an NFT's minting function, or creating contract's that will automatically route any received funds to a project's treasury with preconfigured parameters to send along with the payment.  
 
-The [`JBETHERC20ProjectPayer`](/protocol/api/contracts/jbetherc20projectpayer/README.md) can be inherited from any contract to facilitate internal transactions to juicebox treasuries in ETH or any ERC-20, assuming the project is using a payment terminal that accepts the tokens. They can also be deployed as stand alone project payer copies using [`JBProjectPayerDeployer`](/protocol/api/contracts/jbetherc20projectpayerdeployer).
+The [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md) can be inherited from any contract to facilitate internal transactions to juicebox treasuries in ETH or any ERC-20, assuming the project is using a payment terminal that accepts the tokens. They can also be deployed as stand alone project payer copies using [`JBProjectPayerDeployer`](/api/contracts/jbetherc20projectpayerdeployer).
 
 #### Inheriting JBProjectPayer
 
