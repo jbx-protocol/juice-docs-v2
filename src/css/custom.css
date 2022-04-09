@@ -6,6 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-color-info-contrast-background: transparent;
   --ifm-link-color: #18B4C7;
   --ifm-background-color: #FBF9F6;
   --ifm-background-surface-color: #F1EEE9;
@@ -50,8 +51,4 @@ h1 {
 
 h4 {
   color: #FFB32C;
-}
-
-.alert {
-  background-color: transparent;
 }
