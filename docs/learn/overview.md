@@ -30,28 +30,28 @@ Here's what the protocol lets you do:
 
 <summary><em>Funding cycle properties</em></summary>
 
-#### **Start timestamp**
+##### **Start timestamp**
 <p>
   The timestamp at which the funding cycle is considered active. Projects can configure the start time of their first funding cycle to be in the future, and can ensure future reconfigurations don't take effect before a specified timestamp.
   </p>
   <p>
-  Once a funding cycle ends, a new one is created automatically that starts right away. If there's an approved queued reconfiguration allowed to start at this time, it will be used, otherwise a copy of the previous funding cycle will be used.
+  Once a funding cycle ends, a new one automatically starts right away. If there's an approved reconfiguration queued to start at this time, it will be used. Otherwise, a copy of the previous funding cycle will be used.
   </p>
 
-#### **Duration**
+##### **Duration**
 <p>
-  How long each funding cycle lasts, specified in seconds. All funding cycle properties are unchangeable while it is in progress. Any proposed reconfigurations are only able to take effect during a subsequent cycle.
+  How long each funding cycle lasts (specified in seconds). All funding cycle properties are unchangeable while that cycle is in progress. In other words, any proposed reconfigurations can only take effect during the subsequent cycle.
   </p>
 <p>
-  If no reconfigurations were submitted by the project owner or if proposed changes fail the current cycle's ballot, a copy of the latest funding cycle will automatically start once the current one ends.
+  If no reconfigurations were submitted by the project owner, or if proposed changes fail the current cycle's ballot, a copy of the latest funding cycle will automatically start once the current one ends.
   </p>
 <p>
-  A cycle with no duration lasts indefinitely, and proposed changes can take effect right away.
+  A cycle with no duration lasts indefinitely, and proposed changes can take effect right away, triggering a new funding cycle.
   </p>
 
-#### **Distribution limit**
+##### **Distribution limit**
 <p>
-  The amount of funds that can be distributed from the project's treasury during a funding cycle. The project owner can pre-program a list of destinations to split distributions.
+  The amount of funds that can be distributed out from the project's treasury during a funding cycle. The project owner can pre-program a list of wallets and other Juicebox projects to split distributions between. There are no fees for distributions to other Juicebox projects.
 </p>
 <p>
   Distributing is a public transaction that anyone can call on a project's behalf.
@@ -62,12 +62,12 @@ Here's what the protocol lets you do:
 
 <!---->
 
-#### **Overflow allowance**
+##### **Overflow allowance**
 <p>
-  The amount of treasury funds that the project owner can distribute discretionarily on-demand.
+  The amount of treasury funds that the project owner can distribute on-demand.
 </p>
 <p>
-  This allowance does not reset per-funding cycle, it instead lasts until the project owner explicitly proposes a reconfiguration with a new allowance.
+  This allowance does not reset per-funding cycle. Instead, it lasts until the project owner explicitly proposes a reconfiguration with a new allowance.
 </p>
 <p>
   Overflow allowances can be specified in any currency that the <a href="/docs/api/contracts/jbprices"><code>JBPrices</code></a> contract has a price feed for converting the underlying treasury asset's currency to.  
@@ -75,19 +75,19 @@ Here's what the protocol lets you do:
 
 <!---->
 
-#### **Weight**
+##### **Weight**
 <p>
-  A number used to determine how many of the project's tokens should be minted and transferred when payments are received during the funding cycle. Project owner's can configure this directly, or allow it to be derived automatically from the previous funding cycle's weight and discount rate. 
+  A number used to determine how many project tokens should be minted and transferred when payments are received during the funding cycle. In other words, weight is the exchange rate between the project token and a currency (defined by a <a href="/docs/api/contracts/jbpayoutredemptionpaymentterminal">JBPayoutRedemptionPaymentTerminal</a>). Project owners can configure this directly, or allow it to be derived automatically from the previous funding cycle's weight and discount rate.
 </p>
 
 <!---->
 
-#### **Discount rate**
+##### **Discount rate**
 <p>
   The percent to automatically decrease the subsequent cycle's weight from the current cycle's weight.
 </p>
 <p>
-  The discount rate only applies if the project owner doesn't explicitly reconfigure the subsequent cycle's weight to a custom value.
+  The discount rate is not applied during funding cycles where the weight is explicitly reconfigured.
 </p>
 <p>
   <a href="/docs/learn/glossary/discount-rate">Learn more about discount rates</a>
@@ -95,15 +95,15 @@ Here's what the protocol lets you do:
 
 <!---->
 
-#### **Ballot**
+##### **Ballot**
 <p>
   The address of a contract that adheres to <a href="/docs/api/interfaces/ijbfundingcycleballot"><code>IJBFundingCycleBallot</code></a>, which can provide custom criteria that prevents a project owner from enacting funding cycle reconfigurations.
 </p>
 <p>
-  A simple implementation commonly used by Juicebox projects is to force reconfigurations to be submitted by the project owner at least X days before the end of the current funding cycle, giving the community foresight into any misconfigurations of abuses of power before they take effect.
+  A common implementation is to force reconfigurations to be submitted at least X days before the end of the current funding cycle, giving the community foresight into any misconfigurations or abuses of power before they take effect.
 </p>
 <p>
-  More complex implementation might include on-chain governance.
+  A more complex implementation might include on-chain governance.
 </p>
 <p>
   <a href="/docs/learn/glossary/ballot">Learn more ballots</a>
@@ -111,9 +111,9 @@ Here's what the protocol lets you do:
 
 <!---->
 
-#### **Reserved rate**
+##### **Reserved rate**
 <p>
-  The percent of newly minted tokens during the funding cycle that a project wishes to withhold for custom distributions. The project owner can pre-program a list of destinations to split reserved tokens among.
+  The percent of newly minted tokens that a project wishes to withhold for custom distributions. The project owner can pre-program a list of wallets and Juicebox projects to split reserved tokens between.
 </p>
 <p>
   <a href="/docs/learn/glossary/reserved-tokens">Learn more about reserved rates</a>
@@ -121,7 +121,7 @@ Here's what the protocol lets you do:
 
 <!---->
 
-#### **Redemption rate**
+##### **Redemption rate**
 <p>
   The percentage of a project's treasury funds that can be reclaimed by community members by redeeming the project's tokens during the funding cycle.
 </p>
@@ -134,9 +134,9 @@ Here's what the protocol lets you do:
 
 <!---->
 
-#### **Ballot redemption rate**
+##### **Ballot redemption rate**
 <p>
-  A project can specify a custom redemption rate that takes effect only when a proposed reconfiguration is waiting to take effect.
+  A project can specify a custom redemption rate that only applies when a proposed reconfiguration is waiting to take effect.
 </p>
 <p>
   This can be used to automatically allow for more favorable redemption rates during times of potential change.
@@ -144,34 +144,34 @@ Here's what the protocol lets you do:
 
 <!---->
 
-#### **Pause payments, pause distributions, pause redemptions, pause burn**
+##### **Pause payments, pause distributions, pause redemptions, pause burn**
 <p>
   Projects can pause various bits of its treasury's functionality on a per-funding cycle basis. These functions are unpaused by default.
 </p>
 
 <!---->
 
-#### **Allow minting tokens, allow changing tokens, allow terminal migrations, allow controller migrations**
+##### **Allow minting tokens, allow changing tokens, allow terminal migrations, allow controller migrations**
 <p>
   Projects can allow various bits of treasury functionality on a per-funding cycle basis. These functions are disabled by default.
 </p>
 
 <!---->
 
-#### **Hold fees**
+##### **Hold fees**
 <p>
-  Any distributions the project makes from its treasury during a funding cycle configured to hold fees will not pay fees directly to the protocol project's treasury. Instead, the project will have the option to add the distributed funds back into its treasury to unlock the held fees. At any point, the project or JuiceboxDAO can process the held fees, which will channel them through to the protocol project's treasury as usual.
+  Projects will not automatically pay fees while hold fees is enabled. Projects can unlock held fees by adding funds back into the treasury. JuiceboxDAO (or the project) can process these held fees at any point.
 </p>
 <p>
   This allows a project to withdraw funds and later add them back into their Juicebox treasury without incurring fees.<br/>
 </p>
 <p>
-  This applies to funds distributions from the distribution limit and from its overflow allowance.
+  This applies to distributions from the distribution limit **and** from the overflow allowance.
 </p>
 
 <!---->
 
-#### **Data source**
+##### **Data source**
 <p>
   The address of a contract that adheres to <a href="/docs/api/interfaces/ijbfundingcycledatasource"><code>IJBFundingCycleDataSource</code></a>, which can be used to extend or override what happens when the treasury receives funds, and what happens when someone tries to redeem from the treasury.
 </p>
@@ -184,12 +184,12 @@ Here's what the protocol lets you do:
 #### **Mint tokens**
 <p>
   By default, a project starts with 0 tokens and mints them when its treasury receives contributions.<br/>
-  A project can mint and distribute more of its own tokens on demand if its current funding cycle is configured to allow minting.
+  A project can mint and distribute tokens on demand if its current funding cycle is configured to allow minting.
 </p>
 
 #### **Burn tokens**
 <p>
-  Anyone can burn a project's tokens, if the project's current funding cycle isn't configured to paused burning.
+  Anyone can burn a project's tokens if the project's current funding cycle isn't configured to paused burning.
 </p>
 
 #### **Bring-your-own token**
@@ -217,7 +217,7 @@ Here's what the protocol lets you do:
 
 #### **Protocol fees**
 <p>
-  All funds distributed by projects from their treasuries to destinations outside of the juicebox ecosystem will incure a protocol fee. This fee is sent to the JuiceboxDAO treasury which runs on the Juicebox protocol itself (project ID of 1), triggering the same functionality as a payment directly to JuiceboxDAO (by default, minting JBX for the fee payer according to JuiceboxDAO's current funding cycle configuration) from an external source.<br/>
+  All funds distributed by projects from their treasuries to destinations outside of the Juicebox ecosystem (i.e. distributions that do not go to other Juicebox treasuries) will incure a protocol fee. This fee is sent to the JuiceboxDAO treasury which runs on the Juicebox protocol itself (project ID of 1), triggering the same functionality as a payment directly to JuiceboxDAO (by default, minting JBX for the fee payer according to JuiceboxDAO's current funding cycle configuration) from an external source.<br/>
 </p>
 <p>
   This fee is adjustable by JuiceboxDAO, with a max value of 5%.<br/>

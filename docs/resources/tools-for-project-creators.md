@@ -30,6 +30,8 @@ Aeolian's [DAO Tooling 101](https://info.juicebox.money/blog/dao-tooling-101/) i
 
 ## Governance
 
+* [Tally](https://www.tally.xyz/) empowers user owned governance through a voting dashboard, governance tooling, real time research and analysis, and an evergreen wiki.
+
 * [Aragon](https://aragon.org/) provides a suite of tools for onchain and offchain governance, dispute resolution, and DAO management.
 
 * [Gnosis Safe](https://gnosis-safe.io/) is a platform for securely managing digital assets. Add [juicebox.money](https://www.juicebox.money) to your *Apps* to securely manage a Juicebox project in Gnosis Safe.

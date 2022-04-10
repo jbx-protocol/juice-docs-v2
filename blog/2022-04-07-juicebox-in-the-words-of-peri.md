@@ -4,6 +4,7 @@ title: Juicebox in the Words of peri
 authors: [felixander]
 tags: [dao, interview]
 ---
+
 # Juicebox in the words of: peri
 
 *“Juicebox in the words of” is a series that highlights JB community members in interview form. Learn about members’ roles at JB and what makes them tick.*
