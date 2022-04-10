@@ -77,7 +77,7 @@ Here's what the protocol lets you do:
 
 ##### **Weight**
 <p>
-  A number used to determine how many project tokens should be minted and transferred when payments are received during the funding cycle. In other words, weight is the exchange rate between the project token and a currency defined by <a href="/docs/api/contracts/">baseWeightCurrency</a>. Project owners can configure this directly, or allow it to be derived automatically from the previous funding cycle's weight and discount rate.
+  A number used to determine how many project tokens should be minted and transferred when payments are received during the funding cycle. In other words, weight is the exchange rate between the project token and a currency (defined by a <a href="/docs/api/contracts/jbpayoutredemptionpaymentterminal">JBPayoutRedemptionPaymentTerminal</a>). Project owners can configure this directly, or allow it to be derived automatically from the previous funding cycle's weight and discount rate.
 </p>
 
 <!---->
@@ -87,7 +87,6 @@ Here's what the protocol lets you do:
   The percent to automatically decrease the subsequent cycle's weight from the current cycle's weight.
 </p>
 <p>
-  The discount rate only applies if the project owner doesn't explicitly reconfigure the subsequent cycle's weight to a custom value.
   The discount rate is not applied during funding cycles where the weight is explicitly reconfigured.
 </p>
 <p>
