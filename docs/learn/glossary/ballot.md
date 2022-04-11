@@ -3,7 +3,7 @@
 #### What everyone needs to know
 
 * A project's funding cycle reconfigurations can vary widely. Custom ballots can be useful to keep changes in check.
-* A ballot contract must implement a function that tells the world if a state of a proposed reconfiguration is `active`, `approved`, or `failed`, as defined in [`JBBallotState`](/api/enums/jbballotstate.md).
+* A ballot contract must implement a function that tells the world if the state of a proposed reconfiguration is `active`, `approved`, or `failed`, as defined in [`JBBallotState`](/api/enums/jbballotstate.md).
 * If a reconfiguration fails to be approved by a ballot, it will not be used. Instead, a copy of the current funding cycle will be used.
 
 #### What you'll want to know if you're building
