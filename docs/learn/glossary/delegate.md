@@ -2,7 +2,7 @@
 
 #### What everyone needs to know
 
-* A delegate contract is a way of providing extensions to a treasury that augments the default [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/) behavior.
+* A delegate contract is a way of providing extensions to a treasury that augments the default [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md) behavior.
 * Pay delegates include a custom `didPay(...)` hook that will execute after all of the default protocol pay logic has successfully executed in the terminal contract. The hook is passed a bunch of contextual information via a [`JBDidPayData`](/api/data-structures/jbdidpaydata.md) struct.
 * Redemption delegates include a custom `didRedeem(...)` hook that will execute after all of the default protocol redeem logic has successfully executed in the terminal contract. The hook is passed a bunch of contextual information via a [`JBDidRedeemData`](/api/data-structures/jbdidredeemdata.md) struct. The `didRedeem(...)` hook gets called before any reclaimed tokens are transferred out of the terminal contract.
 * Each [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) fork can leverage delegates in unique ways.
