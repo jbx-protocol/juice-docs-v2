@@ -37,7 +37,7 @@ And maybe also somehow important, there are not really regulations yet, so innov
 
 ### “Innovative ideas without too many limitations" really strikes me as a biggie. It seems like people are willing to go out and take risks, and make themselves vulnerable. It says a lot for an environment to bring that out of people. How would you describe your role at JB?
 
-I work as the Discord moderator, multisig owner and specialize in Data Viz. I also do community support and alignment, and post educational materials for mainly the Chinese community. I’m also actively looking for different things that I could help; recently I’m writing a Juicebox weekly summary with 0xSTVG. Also our website and blog supporting multiple languages is something I work to do.
+I work as the Discord moderator, multisig owner and specialize in Data Viz. I also do community support and alignment, and post educational materials for mainly the Chinese community. I’m also actively looking for different things that I could help; recently I’m writing a Juicebox weekly summary with 0xSTVG. Also our website and blog supporting multiple languages is something filip and zotico work on very hard, and I work on the Chinese translations of that.
 
 ### That's awesome, and things like the weekly summaries are really important. I always wonder about the Chinese community and how the information travels between it and the rest of the community. You kind of bridge that gap from what I understand, is that accurate?
 
