@@ -44,7 +44,11 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     _Internal references:_
 
-    * [`token`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/token.md)
+    * [`token`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
+
+    _External references:_
+
+    * [`acceptsToken`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
 2.  Record the migration and get a reference to the project's balance.
 
     ```
@@ -54,7 +58,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     _External references:_
 
-    * [`recordMigration`](/api/contracts/jbpaymentterminalstore/write/recordmigration.md)
+    * [`recordMigration`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordmigration.md)
 3.  If there's a balance to migrate, move the funds over to the new terminal. Send ETH along with the transaction if this terminal is an ETH terminal. Make sure any inherited pre-transfer logic is called before transferring. 
 
     ```

@@ -103,9 +103,9 @@
     "message": "JBDirectory",
     "description": "The label for category JBDirectory in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.JBPaymentTerminalStore": {
-    "message": "JBPaymentTerminalStore",
-    "description": "The label for category JBPaymentTerminalStore in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.JBSingleTokenPaymentTerminalStore": {
+    "message": "JBSingleTokenPaymentTerminalStore",
+    "description": "The label for category JBSingleTokenPaymentTerminalStore in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.| Payment terminals": {
     "message": "| Payment terminals",

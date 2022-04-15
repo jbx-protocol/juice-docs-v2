@@ -42,7 +42,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
     ) return _primaryTerminalOf[_projectId][_token];
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`_primaryTerminalOf`](/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
     * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
@@ -56,9 +56,13 @@ function primaryTerminalOf(uint256 _projectId, address _token)
     }
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
+
+    _External references:_
+
+    * [`acceptsToken`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
 3.  Return an empty terminal if not found.
 
     ```

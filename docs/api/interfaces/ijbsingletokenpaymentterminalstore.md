@@ -1,7 +1,7 @@
 # IJBPaymentTerminal
 
 ```
-interface IJBPaymentTerminalStore {
+interface IJBSingleTokenPaymentTerminalStore {
   function fundingCycleStore() external view returns (IJBFundingCycleStore);
 
   function directory() external view returns (IJBDirectory);

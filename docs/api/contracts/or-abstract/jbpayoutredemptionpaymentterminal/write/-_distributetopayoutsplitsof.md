@@ -211,7 +211,7 @@ function _distributeToPayoutSplitsOf(
 
         _Internal references:_
 
-        * [`decimals`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/decimals.md)
+        * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
         * [`isFeelessTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
         * [`pay`]/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/(pay.md)
         * [`_pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)

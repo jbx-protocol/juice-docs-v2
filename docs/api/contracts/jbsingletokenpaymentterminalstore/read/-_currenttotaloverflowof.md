@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">

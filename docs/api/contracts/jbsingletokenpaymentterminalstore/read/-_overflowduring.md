@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -43,7 +43,7 @@ function _overflowDuring(
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 2.  If the project has no balance, there can't be any overflow.
 
     ```
@@ -72,7 +72,7 @@ function _overflowDuring(
 
     _Internal references:_
 
-    * [`usedDistributionLimitOf`](/api/contracts/jbpaymentterminalstore/properties/useddistributionlimitof.md)
+    * [`usedDistributionLimitOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md)
 
 5.  Convert the distribution remaining into the balance's currency using the appropriate price feed. The distribution remaining and balance fixed point numbers should already be using the same number of decimals.
 
@@ -93,7 +93,7 @@ function _overflowDuring(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](/api/contracts/jbpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/api/contracts/jbsingletokenpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
 
     _External references:_
 

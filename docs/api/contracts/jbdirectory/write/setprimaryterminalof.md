@@ -48,6 +48,9 @@ function setPrimaryTerminalOf(
     if (!_terminal.acceptsToken(_token)) revert TOKEN_NOT_ACCEPTED();
     ```
 
+    _External references:_
+
+    * [`acceptsToken`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
 2.  Make sure the project's current funding cycle is set to allow setting terminals, or the request to set the terminals is coming from the project's current controller.
 
     ```
@@ -55,7 +58,7 @@ function setPrimaryTerminalOf(
     _addTerminalIfNeeded(_projectId, _terminal);
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`_addTerminalIfNeeded`](/api/contracts/jbdirectory/write/-_addterminalifneeded.md)
 3.  Store the new terminal as the primary.
@@ -65,7 +68,7 @@ function setPrimaryTerminalOf(
     _primaryTerminalOf[_projectId][_token] = _terminal;
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`_primaryTerminalOf`](/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
 4.  Emit a `SetPrimaryTerminal` event with the relevant parameters.

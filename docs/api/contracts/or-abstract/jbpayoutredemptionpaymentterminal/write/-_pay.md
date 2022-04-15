@@ -87,7 +87,7 @@ function _pay(
 
         _External references:_
 
-        * [`recordPaymentFrom`](/api/contracts/jbpaymentterminalstore/write/recordpaymentfrom.md)
+        * [`recordPaymentFrom`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordpaymentfrom.md)
 
     4.  Mint tokens if needed. Get a reference to the number of tokens sent to the specified beneificiary as opposed to reserved to be distributed to the project's reserved token splits.
 

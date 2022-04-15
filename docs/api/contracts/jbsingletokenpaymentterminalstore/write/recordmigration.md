@@ -3,16 +3,16 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
 
 **Records the migration of funds from this store.**
 
-_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbpaymentterminalstore.md)._
+_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)._
 
 #### Definition
 
@@ -26,7 +26,7 @@ function recordMigration(uint256 _projectId)
 
 * Arguments:
   * `_projectId` is the ID of the project being migrated.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns the project's migrated balance, as a fixed point number with the same amount of decimals as its relative terminal.
 
 #### Body
@@ -61,7 +61,7 @@ function recordMigration(uint256 _projectId)
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 4.  Set the project's balance to 0 since funds are moving away from this terminal.
 
     ```
@@ -71,7 +71,7 @@ function recordMigration(uint256 _projectId)
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 
 </TabItem>
 

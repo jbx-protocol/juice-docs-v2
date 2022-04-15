@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
@@ -57,7 +57,7 @@ function distributePayoutsOf(
 
     _External references:_
 
-    * [`recordDistributionFor`](/api/contracts/jbpaymentterminalstore/write/recorddistributionfor.md)
+    * [`recordDistributionFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recorddistributionfor.md)
 2.  Make sure the distributed amount is at least as much as the minimum expected amount.
 
     ```

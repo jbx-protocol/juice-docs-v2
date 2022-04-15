@@ -91,7 +91,7 @@ function redeemTokensOf(
 
         _External references:_
 
-        * [`recordRedemptionFor`](/api/contracts/jbpaymentterminalstore/write/recordredemptionfor.md)
+        * [`recordRedemptionFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordredemptionfor.md)
 
     3.  Make sure the amount of terminal tokens being reclaimed is at least as much as the specified minimum.
 

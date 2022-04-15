@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -45,7 +45,7 @@ function recordPaymentFrom(
   * `_baseWeightCurrency` is the currency to base token issuance on.
   * `_memo` is a memo to pass along to the emitted event, and passed along to the funding cycle's data source.
   * `_metadata` are bytes to send along to the data source, if one is provided.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns:
   * `fundingCycle` is the project's funding cycle during which payment was made.
   * `tokenCount` is the number of project tokens that were minted, as a fixed point number with 18 decimals.
@@ -139,7 +139,7 @@ function recordPaymentFrom(
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 8.  If there is no weight, the resulting token count will be 0. There's nothing left to do so the current values can be returned.
 
     ```

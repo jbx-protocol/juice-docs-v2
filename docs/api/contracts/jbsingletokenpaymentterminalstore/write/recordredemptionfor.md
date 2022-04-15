@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -47,7 +47,7 @@ function recordRedemptionFor(
   * `_balanceCurrency` is the currency that the returned `reclaimAmount` is expected to be in terms of.
   * `_memo` is a memo to pass along to the emitted event.
   * `_metadata` are bytes to send along to the data source, if one is provided.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns:
   * `fundingCycle` is the funding cycle during which the redemption was made.
   * `reclaimAmount` is the amount of terminal tokens reclaimed, as a fixed point number with 18 decimals.
@@ -106,8 +106,8 @@ function recordRedemptionFor(
 
         _Internal references:_
 
-        * [`_currentTotalOverflowOf`](/api/contracts/jbpaymentterminalstore/read/-_currenttotaloverflowof.md)
-        * [`_overflowDuring`](/api/contracts/jbpaymentterminalstore/read/-_overflowduring.md)
+        * [`_currentTotalOverflowOf`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_currenttotaloverflowof.md)
+        * [`_overflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
 
     2.  Get a reference to the total outstanding supply of project tokens.
 
@@ -126,7 +126,7 @@ function recordRedemptionFor(
 
         _Internal references:_
 
-        * [`directory`](/api/contracts/jbpaymentterminalstore/properties/directory.md)
+        * [`directory`](/api/contracts/jbsingletokenpaymentterminalstore/properties/directory.md)
 
         _External references:_
 
@@ -156,7 +156,7 @@ function recordRedemptionFor(
 
         _Internal references:_
 
-        * [`_reclaimableOverflowDuring`](/api/contracts/jbpaymentterminalstore/read/-_reclaimableoverflowduring.md)
+        * [`_reclaimableOverflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_reclaimableoverflowduring.md)
 
     5.  If the project's current funding cycle is configured to use a data source when making redemptions, ask the data source for the parameters that should be used throughout the rest of the function given provided contextual values in a [`JBRedeemParamsData`](/api/data-structures/jbredeemparamsdata.md) structure. Otherwise default parameters are used.
 
@@ -205,7 +205,7 @@ function recordRedemptionFor(
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 5.  Decrement any claimed funds from the project's balance if needed.
 
     ```
@@ -218,7 +218,7 @@ function recordRedemptionFor(
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 
 </TabItem>
 

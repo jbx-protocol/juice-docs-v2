@@ -61,7 +61,7 @@ function useAllowanceOf(
 
     _External references:_
 
-    * [`recordUsedAllowanceOf`](/api/contracts/jbpaymentterminalstore/write/recordusedallowanceof.md)
+    * [`recordUsedAllowanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordusedallowanceof.md)
 2.  Make sure the distributed amount is at least as much as the specified minimum.
 
     ```

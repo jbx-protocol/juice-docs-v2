@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md)
+Interface: [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -34,7 +34,7 @@ function recordUsedAllowanceOf(
   * `_amount` is the amount to use from the allowance, as a fixed point number. 
   * `_currency` is the currency of the `_amount`. Must match the currency of the overflow allowance.
   * `_balanceCurrency` is the currency that the balance is expected to be in terms of.
-* The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns:
   * `fundingCycle` is the funding cycle during which the withdrawal was made.
   * `usedAmount` is the amount of terminal tokens used, as a fixed point number with the same amount of decimals as its relative terminal.
@@ -62,7 +62,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`usedOverflowAllowanceOf`](/api/contracts/jbpaymentterminalstore/properties/usedoverflowallowanceof.md)
+    * [`usedOverflowAllowanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/usedoverflowallowanceof.md)
 3.  Get a reference to the overflow allowance of the project during the current funding cycle configuration, and the currency the overflow allowance is in terms of.
 
     ```
@@ -133,7 +133,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](/api/contracts/jbpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/api/contracts/jbsingletokenpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
 
     _External references:_
 
@@ -156,7 +156,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`_overflowDuring`](/api/contracts/jbpaymentterminalstore/read/-_overflowduring.md)
+    * [`_overflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
 9.  Store the incremented value that tracks how much of a project's allowance was used during the current funding cycle configuration.
 
     ```
@@ -168,7 +168,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`usedOverflowAllowanceOf`](/api/contracts/jbpaymentterminalstore/properties/usedoverflowallowanceof.md)
+    * [`usedOverflowAllowanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/usedoverflowallowanceof.md)
 10. Store the decremented balance.
 
     ```
@@ -180,7 +180,7 @@ function recordUsedAllowanceOf(
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 
 </TabItem>
 

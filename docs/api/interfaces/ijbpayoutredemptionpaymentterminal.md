@@ -87,7 +87,7 @@ interface IJBPayoutRedemptionPaymentTerminal is IJBSingleTokenPaymentTerminal {
 
   function prices() external view returns (IJBPrices);
 
-  function store() external view returns (IJBPaymentTerminalStore);
+  function store() external view returns (IJBSingleTokenPaymentTerminalStore);
 
   function baseWeightCurrency() external view returns (uint256);
 

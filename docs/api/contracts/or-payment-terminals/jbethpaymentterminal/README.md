@@ -28,7 +28,7 @@ Ethereum mainnet: _Not yet deployed_
     IJBDirectory _directory,
     IJBSplitsStore _splitsStore,
     IJBPrices _prices,
-    IJBPaymentTerminalStore _store,
+    IJBSingleTokenPaymentTerminalStore _store,
     address _owner
   )
     JBPayoutRedemptionPaymentTerminal(

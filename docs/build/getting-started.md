@@ -193,7 +193,7 @@ function pay(
 
 <summary>View treasury balance</summary>
 
-A project's treasury balance in a terminal can be found in the store contract. For example, in the [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md), the balance can be found using [`JBPaymentTerminalStore.balanceOf(...)`](/api/contracts/jbpaymentterminalstore/properties/balanceof.md).
+A project's treasury balance in a terminal can be found in the store contract. For example, in the [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md), the balance can be found using [`JBSingleTokenPaymentTerminalStore.balanceOf(...)`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md).
 
 ```
 function balanceOf(IJBPaymentTerminal _terminal, uint256 _projectId)
@@ -203,7 +203,7 @@ function balanceOf(IJBPaymentTerminal _terminal, uint256 _projectId)
   returns (uint256) { ... }
 ```
 
-The project's current overflow for a terminal can also be found in the store contracts. For example, in the [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md), the terminal's overflow can be found using [`JBPaymentTerminalStore.currentOverflowOf(...)`](/api/contracts/jbpaymentterminalstore/read/currentoverflowof.md).
+The project's current overflow for a terminal can also be found in the store contracts. For example, in the [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md), the terminal's overflow can be found using [`JBSingleTokenPaymentTerminalStore.currentOverflowOf(...)`](/api/contracts/jbsingletokenpaymentterminalstore/read/currentoverflowof.md).
 
 ```
 function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
@@ -212,7 +212,7 @@ function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
   returns (uint256) { ... }
 ```
 
-A terminal store can also resolve the total amount of overflow in all of a project's terminals. For example, in the [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md), the project's overall overflow can be found using [`JBPaymentTerminalStore.currentTotalOverflowOf(...)`](/api/contracts/jbpaymentterminalstore/read/currenttotaloverflowof.md). You'll need to send the number of decimals you're expecting the returned fixed point number to include, and the curreny it's in terms of.
+A terminal store can also resolve the total amount of overflow in all of a project's terminals. For example, in the [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md), the project's overall overflow can be found using [`JBSingleTokenPaymentTerminalStore.currentTotalOverflowOf(...)`](/api/contracts/jbsingletokenpaymentterminalstore/read/currenttotaloverflowof.md). You'll need to send the number of decimals you're expecting the returned fixed point number to include, and the curreny it's in terms of.
 
 ```
 function currentTotalOverflowOf(
@@ -273,7 +273,7 @@ function distributePayoutsOf(
 
 <summary>View used distribution limit</summary>
 
-Any used distribution limit can be found in the terminal store contract for each terminal. For example, in the [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md), the used distribution limit during a funding cycle can be found using [`JBPaymentTerminalStore.usedDistributionLimitOf(...)`](/api/contracts/jbpaymentterminalstore/properties/useddistributionlimitof.md).
+Any used distribution limit can be found in the terminal store contract for each terminal. For example, in the [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md), the used distribution limit during a funding cycle can be found using [`JBSingleTokenPaymentTerminalStore.usedDistributionLimitOf(...)`](/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md).
 
 ```
 function usedDistributionLimitOf(
@@ -301,7 +301,7 @@ function usedDistributionLimitOf(
 
 <summary>View used overflow allowance</summary>
 
-Any used overflow allowance can also be found in the terminal store contracts for each terminal. For example, in the [`JBPaymentTerminalStore`](/api/contracts/jbpaymentterminalstore/README.md), the used overflow allowance during a funding cycle can be found using [`JBPaymentTerminalStore.usedOverflowAllowanceOf(...)`](/api/contracts/jbpaymentterminalstore/properties/usedoverflowallowanceof.md).
+Any used overflow allowance can also be found in the terminal store contracts for each terminal. For example, in the [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md), the used overflow allowance during a funding cycle can be found using [`JBSingleTokenPaymentTerminalStore.usedOverflowAllowanceOf(...)`](/api/contracts/jbsingletokenpaymentterminalstore/properties/usedoverflowallowanceof.md).
 
 ```
 function usedOverflowAllowanceOf(

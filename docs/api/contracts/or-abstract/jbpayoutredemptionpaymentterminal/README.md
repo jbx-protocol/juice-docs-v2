@@ -42,7 +42,7 @@ constructor(
   IJBDirectory _directory,
   IJBSplitsStore _splitsStore,
   IJBPrices _prices,
-  IJBPaymentTerminalStore _store,
+  IJBSingleTokenPaymentTerminalStore _store,
   address _owner
 ) JBSingleTokenPaymentTerminal(_token, _decimals, _currency) JBOperatable(_operatorStore) {
   baseWeightCurrency = _baseWeightCurrency;
@@ -98,7 +98,7 @@ constructor(
 | [**`directory`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)                                | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBDirectory](/api/interfaces/ijbdirectory.md) directory</code></li></ul>                                  |
 | [**`splitStore`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/splitstore.md) | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBSplitsStore](/api/interfaces/ijbsplitsstore.md) splitsStore</code></li></ul>                            |
 | [**`prices`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/prices.md) | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBPrices](/api/interfaces/ijbprices.md) prices</code></li></ul>                            |
-| [**`store`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)                                        | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBPaymentTerminalStore](/api/interfaces/ijbpaymentterminalstore.md) store</code></li></ul> |
+| [**`store`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)                                        | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBSingleTokenPaymentTerminalStore](/api/interfaces/ijbsingletokenpaymentterminalstore.md) store</code></li></ul> |
 | [**`baseWeightCurrency`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/baseweightcurrency.md)                                        | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 baseWeightCurrency</code></li></ul> |
 | [**`payoutSplitsGroup`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/payoutsplitsgroup.md)                                        | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 payoutSplitsGroup</code></li></ul> |
 | [**`fee`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)                                        | <p><strong>Returns</strong></p><ul><li><code>uint256 store</code></li></ul> |

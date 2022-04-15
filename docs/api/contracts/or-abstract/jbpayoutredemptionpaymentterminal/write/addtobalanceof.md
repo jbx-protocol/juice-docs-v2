@@ -64,7 +64,7 @@ function addToBalanceOf(
 
     _External references:_
 
-    * [`recordAddedBalanceFor`](/api/contracts/jbpaymentterminalstore/write/recordaddedbalancefor.md)
+    * [`recordAddedBalanceFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordaddedbalancefor.md)
 3.  Refund any held fees. This is useful to allow a project to distribute funds from the protocol and subsequently add them back without paying eventually having to pay double fees.
 
     ```

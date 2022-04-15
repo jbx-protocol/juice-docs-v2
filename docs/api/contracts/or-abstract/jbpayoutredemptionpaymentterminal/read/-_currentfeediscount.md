@@ -43,7 +43,7 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
     _Internal references:_
 
-    * [`token`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/token.md)
+    * [`token`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
 2.  If there's a gauge, ask it for the discount. Otherwise, there is no discount. If the gauge reverts, set the discount to 0.
 
     ```

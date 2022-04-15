@@ -13,7 +13,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
   @notice 
   The contract that stores and manages the terminal's data.
 */
-JBPaymentTerminalStore public immutable store;
+JBSingleTokenPaymentTerminalStore public immutable store;
 ```
 
 * Once set the value cannot be changed.
