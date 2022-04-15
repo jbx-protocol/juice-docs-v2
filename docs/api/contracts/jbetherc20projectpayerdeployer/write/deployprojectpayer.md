@@ -34,7 +34,7 @@ function deployProjectPayer(
   * `_defaultMemo` is the memo that'll be forwarded with the project payer's received payments. 
   * `_defaultMetadata` is the metadata that'll be forwarded with the project payer's received payments. 
   * `_defaultPreferAddToBalance` is a flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.
-  * `_directory` is the metadata that'll be sent. 
+  * `_directory` is a contract storing directories of terminals and controllers for each project.
   * `_owner` is the address that will own the project payer.
 * The function can be accessed externally by anyone.
 * The function overrides a function definition from the[`IJBETHERC20ProjectPayerDeployer`](/api/interfaces/ijbetherc20projectpayerdeployer.md) interface.
@@ -145,7 +145,7 @@ function deployProjectPayer(
 
 | Name                                | Data                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DeployProjectPayer`**](/api/contracts/jbetherc20projectpayerdeployer/events/deployprojectpayer.md)                                                                          | <ul><li><code>[IJBProjectPayer](/api/interfaces/ijbprojectpayer.md) indexed projectPayer</code></li><li><code>uint256 indexed defaultProjectId</code></li><li><code>address indexed defaultBeneficiary</code></li><li><code>bool defaultPreferClaimedTokens</code></li><li><code>string defaultMemo</code></li><li><code>bytes defaultMetadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>[IJBDirectory](/api/interfaces/ijbdirectory.md) directory</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DeployProjectPayer`**](/api/contracts/jbetherc20projectpayerdeployer/events/deployprojectpayer.md)                                                                          | <ul><li><code>[IJBProjectPayer](/api/interfaces/ijbprojectpayer.md) indexed projectPayer</code></li><li><code>uint256 defaultProjectId</code></li><li><code>address defaultBeneficiary</code></li><li><code>bool defaultPreferClaimedTokens</code></li><li><code>string defaultMemo</code></li><li><code>bytes defaultMetadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>[IJBDirectory](/api/interfaces/ijbdirectory.md) directory</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

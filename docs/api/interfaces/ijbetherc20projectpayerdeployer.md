@@ -4,8 +4,8 @@
 interface IJBETHERC20ProjectPayerDeployer {
   event DeployProjectPayer(
     IJBProjectPayer indexed projectPayer,
-    uint256 indexed defaultProjectId,
-    address indexed defaultBeneficiary,
+    uint256 defaultProjectId,
+    address defaultBeneficiary,
     bool defaultPreferClaimedTokens,
     string defaultMemo,
     bytes defaultMetadata,
