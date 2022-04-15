@@ -8,18 +8,18 @@ Emitted from:
 
 ```
 event DistributeToReservedTokenSplit(
-  uint256 indexed fundingCycleConfiguration,
-  uint256 indexed fundingCycleNumber,
   uint256 indexed projectId,
+  uint256 indexed domain,
+  uint256 indexed group,
   JBSplit split,
   uint256 tokenCount,
   address caller
 );
 ```
 
-* `fundingCycleConfiguration` is the funding cycle configuration during which the reserved tokens were distributed to the split.
-* `fundingCycleNumber` is the number of the funding cycle during which the reserved tokens were distributed to the split.
-* `projectId` is the ID of the token's project.
+* `projectId` is the ID of the project to which the split belongs.
+* `domain` is the namespace that differentiates different split groups for the projectId.
+* `group` is the property that joins multiple splits into one full group.
 * `split` is the [`JBSplit`](/api/data-structures/jbsplit.md) that received reserved tokens.
-* `tokenCount` is the number of tokens that were distributed to the split.
+* `amount` is the total token amount that was distributed to the split.
 * `caller` is the address that issued the transaction within which the event was emitted.

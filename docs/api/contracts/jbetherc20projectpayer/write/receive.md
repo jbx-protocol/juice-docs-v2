@@ -29,7 +29,7 @@ receive() external payable virtual override { ... }
 
 #### Body
 
-1.  Pay the ETH received to the default proejct ID using the default parameters. Use the `addToBalance` function if there's a preference to do so.
+1.  Pay the ETH received to the default project ID using the default parameters. Use the `addToBalance` function if there's a preference to do so.
 
     ```
     if (defaultPreferAddToBalance)

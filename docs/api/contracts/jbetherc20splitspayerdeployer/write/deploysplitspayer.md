@@ -1,11 +1,11 @@
-# deploySplitPayer
+# deploySplitsPayer
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20SplitPayerDeployer`](/api/contracts/jbetherc20splitpayerdeployer/README.md)
+Contract: [`JBETHERC20SplitsPayerDeployer`](/api/contracts/jbetherc20splitspayerdeployer/README.md)
 
-Interface: [`IJBETHERC20SplitPayerDeployer`](/api/interfaces/ijbetherc20splitpayerdeployer.md)
+Interface: [`IJBETHERC20SplitsPayerDeployer`](/api/interfaces/ijbetherc20splitspayerdeployer.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -169,7 +169,7 @@ function deploySplitsPayer(
 
 | Name                                | Data                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DeploySplitsPayer`**](/api/contracts/jbetherc20projectpayerdeployer/events/deploysplitspayer.md)                                                                          | <ul><li><code>[IJBSplitsPayer](/api/interfaces/ijbsplitspayer.md) indexed splitsPayer</code></li><li><code>uint256 indexed defaultSplitsProjectId</code></li><li><code>uint256 defaultSplitsDomain</code></li><li><code>uint256 defaultSplitsGroup</code></li><li><code>[IJBSplitStore](/api/interfaces/ijbsplitstore.md) splitStore</code></li><li><code>uint256 defaultProjectId</code></li><li><code>address defaultBeneficiary</code></li><li><code>bool defaultPreferClaimedTokens</code></li><li><code>string defaultMemo</code></li><li><code>bytes defaultMetadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DeploySplitsPayer`**](/api/contracts/jbetherc20splitspayerdeployer/events/deploysplitspayer.md)                                                                          | <ul><li><code>[IJBSplitsPayer](/api/interfaces/ijbsplitspayer.md) indexed splitsPayer</code></li><li><code>uint256 indexed defaultSplitsProjectId</code></li><li><code>uint256 defaultSplitsDomain</code></li><li><code>uint256 defaultSplitsGroup</code></li><li><code>[IJBSplitStore](/api/interfaces/ijbsplitsstore.md) splitStore</code></li><li><code>uint256 defaultProjectId</code></li><li><code>address defaultBeneficiary</code></li><li><code>bool defaultPreferClaimedTokens</code></li><li><code>string defaultMemo</code></li><li><code>bytes defaultMetadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

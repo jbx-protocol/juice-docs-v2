@@ -1,13 +1,13 @@
-# DistributeToPayoutSplit
+# DistributeToSplit
 
 Emitted from:
 
-* [`_distributeToPayoutSplitsOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_distributetopayoutsplitsof.md)
+* [`_payToSplits`](/api/contracts/jbetherc20splitspayer/write/-_paytosplits.md)
 
 ## Definition
 
 ```
-event DistributeToPayoutSplit(
+event DistributeToSplit(
   uint256 indexed projectId,
   uint256 indexed domain,
   uint256 indexed group,
