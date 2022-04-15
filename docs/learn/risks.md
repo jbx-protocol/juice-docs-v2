@@ -80,6 +80,13 @@ Ownership of each project on the Juicebox protocol belongs to the address posses
 
      🔴 <strong>Used maliciously</strong> this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.<br/><br/>
 
+     #### Setting the funding cycle's weight 
+     
+     A funding cycle's weight determines how many tokens will be minted and distributed when a treasury receives funds. By default, a funding cycle has the same weight as the cycle that preceded it after applying the preceding cycle's discount rate.  
+     
+     🟢 <strong>Used productively</strong> this can be used to manage how tokens are issued over time.<br/>
+
+     🔴 <strong>Used maliciously</strong> this can be used to manipulate token issuance, and rug the entire treasury into an arbitrary wallet.<br/><br/>
      #### Custom treasury extensions
     
      If project's funding cycles have no data source, delegate, split allocator, or ballot constracts attached, the consequences of each interaction with the protocol are predictable, consistent, and specified within these docs.
