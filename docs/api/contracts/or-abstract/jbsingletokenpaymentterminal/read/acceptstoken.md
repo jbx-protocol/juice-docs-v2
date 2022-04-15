@@ -1,57 +1,53 @@
-# heldFeesOf
+# acceptsToken
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
 
-**The fees that are currently being held to be processed later for each project.**
+**A flag indicating if this terminal accepts the specified token.**
 
-#### Definition
+### Definition
 
 ```
-function heldFeesOf(uint256 _projectId) external view override returns (JBFee[] memory) { ... }
+function acceptsToken(address _token) external view override returns (bool) { ... }
 ```
 
 * Arguments:
-  * `_projectId` is the ID of the project for which fees are being held.
+  * `_token` is the token to check if this terminal accepts or not.
 * The view function can be accessed externally by anyone.
-* The function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
-* The function returns an array of fees that are being held.
+* The view function does not alter state on the blockchain.
+* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
+* The function returns the flag.
 
-#### Body
+### Body
 
-1.  This function just reads and returns the stored held fees of the project.
+1.  In order for this terminal to accept a token, it must match the single token that this terminal is for.
 
     ```
-    return _heldFeesOf[_projectId];
+    return _token == token;
     ```
-
-    _Internal references:_
-
-    * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
 
 </TabItem>
 
 <TabItem value="Code" label="Code">
 
 ```
-/**
+/** 
   @notice
-  The fees that are currently being held to be processed later for each project.
+  A flag indicating if this terminal accepts the specified token.
 
-  @param _projectId The ID of the project for which fees are being held.
+  @param _token The token to check if this terminal accepts or not.
 
-  @return An array of fees that are being held.
+  @return The flag.
 */
-function heldFeesOf(uint256 _projectId) external view override returns (JBFee[] memory) {
-  return _heldFeesOf[_projectId];
+function acceptsToken(address _token) external view override returns (bool) {
+  return _token == token;
 }
 ```
 
