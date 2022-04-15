@@ -2,7 +2,7 @@
 description: Generic terminal managing all inflows and outflows of funds into the protocol ecosystem.
 ---
 
-# JBPayoutRedemptionPaymentTerminal
+# JBSingleTokenPaymentTerminal
 
 ## Overview
 
