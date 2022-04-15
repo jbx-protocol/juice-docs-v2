@@ -37,7 +37,7 @@ function _transferFrom(
 
     _Libraries used:_
 
-    * [`Address`](https://docs.openzeppelin.com/contracts/2.x/api/utils#Address)
+    * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`
 
 

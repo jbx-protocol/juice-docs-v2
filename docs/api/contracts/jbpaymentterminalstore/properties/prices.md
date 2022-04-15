@@ -16,6 +16,6 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 IJBPrices public immutable override prices;
 ```
 
-* The value cannot be changed.
+* Once set the value cannot be changed.
 * The resulting view function can be accessed externally by anyone.
 * The resulting function overrides a function definition from the [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md) interface.

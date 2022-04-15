@@ -39,7 +39,7 @@ function transfer(
 
     _Inherited references:_
 
-    * [`transfer`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-transfer-address-uint256-)
+    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transfer-address-uint256-)
 
 </TabItem>
 

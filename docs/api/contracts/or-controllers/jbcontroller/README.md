@@ -24,7 +24,6 @@ Ethereum mainnet: _Not yet deployed_
 | Contract                                                                          | Description                                                                                                                               |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`JBOperatable`**](/api/contracts/or-abstract/jboperatable/)                            | Includes convenience functionality for checking a message sender's permissions before executing certain transactions.                     |
-| [**`ReentrancyGuard`**](https://docs.openzeppelin.com/contracts/4.x/api/security#ReentrancyGuard) | Includes convenience functionality for preventing access to certain functions while certain other functions are being executed.           |
 
 ## Constructor
 

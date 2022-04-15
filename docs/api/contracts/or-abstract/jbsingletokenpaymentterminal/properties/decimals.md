@@ -1,6 +1,6 @@
 # decimals
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminal`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/README.md)​‌
 
 Interface: [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbsingletokenpaymentterminal.md)
 
@@ -16,6 +16,6 @@ Interface: [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbsingletokenpayme
 uint256 public immutable override decimals;
 ```
 
-* The value cannot be changed.
+* Once set the value cannot be changed.
 * The resulting view function can be accessed externally by anyone.
 * The resulting function overrides a function definition from the [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbsingletokenpaymentterminal.md) interface.

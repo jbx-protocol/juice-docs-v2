@@ -27,7 +27,7 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
 * Arguments:
   * `_terminal` is the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) that can be paid towards while still bypassing fees.
   * `_flag` is a flag indicating whether the terminal should be feeless or not.
-* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/2.x/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
+* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
 * The function can be overriden by inheriting contracts.
 * The function doesn't return anything.
 

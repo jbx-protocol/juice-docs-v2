@@ -36,7 +36,7 @@ function balanceOf(address _account, uint256) external view override returns (ui
 
     _Inherited references:_
 
-    * [`balanceOf`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-balanceOf-address-)
+    * [`balanceOf`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-balanceOf-address-)
 
 </TabItem>
 

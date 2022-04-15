@@ -35,7 +35,7 @@ function totalSupply(uint256) external view override returns (uint256) { ... }
 
     _Inherited references:_
 
-    * [`totalSupply`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-totalSupply--)
+    * [`totalSupply`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-totalSupply--)
 
 </TabItem>
 

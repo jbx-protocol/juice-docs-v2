@@ -20,14 +20,14 @@ description: >-
 
 | Contract                                                         | Description                                                                                                                                                                        |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ERC20`**](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#ERC20) | General token standard for fungible accounting. |
+| [**`ERC20Permit`**](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#ERC20Permit) | General token standard for fungible accounting. |
 | [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable) | Includes convenience functionality for specifying an address that owns the contract, with modifiers that only allow access by the owner. |
 
 ## Constructor
 
 ```
 constructor(string memory _name, string memory _symbol)
-  ERC20(_name, _symbol) {}
+  ERC20(_name, _symbol) ERC20Permit(_name) {}
 ```
 
 * **Arguments:**

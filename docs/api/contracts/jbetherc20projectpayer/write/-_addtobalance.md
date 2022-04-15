@@ -74,7 +74,7 @@ function _addToBalance(
 
     _External references:_
 
-    * [`approve`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-approve-address-uint256-)
+    * [`approve`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
 
 5.  Keep a reference to the amount to send in the transaction. If the token being paid is ETH, send the value along with the tx.   
 

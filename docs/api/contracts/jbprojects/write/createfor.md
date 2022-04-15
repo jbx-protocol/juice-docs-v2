@@ -51,7 +51,7 @@ function createFor(address _owner, JBProjectMetadata calldata _metadata)
 
     _Internal references:_
 
-    * [`_safeMint`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721#ERC721-_safeMint-address-uint256-bytes-)
+    * [`_safeMint`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#ERC721-_safeMint-address-uint256-bytes-)
 3.  If metadata was provided (meaning its content is not an empty string), store it for newly created project under the provided domain.
 
     ```

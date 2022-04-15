@@ -44,9 +44,10 @@ function addToBalance(
     if (address(_token) != JBTokens.ETH) {
       if (msg.value > 0) revert NO_MSG_VALUE_ALLOWED();
 
-      // Transfer tokens to this terminal from the msg sender.
+      // Transfer tokens to this contract from the msg sender.
       IERC20(_token).transferFrom(msg.sender, address(this), _amount);
     } else {
+      // If ETH is being paid, set the amount to the message value, and decimals to 18.
       _amount = msg.value;
       _decimals = 18;
     }
@@ -54,7 +55,7 @@ function addToBalance(
 
     _External references:_
 
-    * [`transferFrom`](https://docs.openzeppelin.com/contracts/2.x/api/token/erc20#IERC20-transferFrom-address-address-uint256-)
+    * [`transferFrom`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transferFrom-address-address-uint256-)
 2.  Add to the project's balance.
 
     ```
@@ -91,9 +92,10 @@ function addToBalance(
   if (address(_token) != JBTokens.ETH) {
     if (msg.value > 0) revert NO_MSG_VALUE_ALLOWED();
 
-    // Transfer tokens to this terminal from the msg sender.
+    // Transfer tokens to this contract from the msg sender.
     IERC20(_token).transferFrom(msg.sender, address(this), _amount);
   } else {
+    // If ETH is being paid, set the amount to the message value, and decimals to 18.
     _amount = msg.value;
     _decimals = 18;
   }

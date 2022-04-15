@@ -15,6 +15,6 @@ Interface: [`IJBOperatable`](/api/interfaces/ijboperatable.md)
 IJBOperatorStore public immutable override operatorStore;
 ```
 
-* The value cannot be changed.
+* Once set the value cannot be changed.
 * The resulting view function can be accessed externally by anyone.
 * The resulting function overrides a function definition from the [`IJBOperatable`](/api/interfaces/ijboperatable.md) interface.

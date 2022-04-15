@@ -21,6 +21,6 @@ _If this differs from `currency`, there must be a price feed available to conver
 uint256 public immutable override baseWeightCurrency;
 ```
 
-* The value cannot be changed.
+* Once set the value cannot be changed.
 * The resulting view function can be accessed externally by anyone.
 * The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
