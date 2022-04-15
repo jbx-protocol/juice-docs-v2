@@ -35,21 +35,24 @@ function primaryTerminalOf(uint256 _projectId, address _token)
 1.  Check to see if the project has explicitly set a primary terminal for this token. If so, return it.
 
     ```
-    // If a primary terminal for the token was specifically set, return it.
-    if (_primaryTerminalOf[_projectId][_token] != IJBPaymentTerminal(address(0)))
-      return _primaryTerminalOf[_projectId][_token];
+    // If a primary terminal for the token was specifically set and its one of the project's terminals, return it.
+    if (
+      _primaryTerminalOf[_projectId][_token] != IJBPaymentTerminal(address(0)) &&
+      isTerminalOf(_projectId, _primaryTerminalOf[_projectId][_token])
+    ) return _primaryTerminalOf[_projectId][_token];
     ```
 
     Internal references:
 
     * [`_primaryTerminalOf`](/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
+    * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
 2.  Loop through each of the project's terminals looking for one that uses the same token as the one specified. If one is found, return it.
 
     ```
     // Return the first terminal which accepts the specified token.
     for (uint256 _i; _i < _terminalsOf[_projectId].length; _i++) {
       IJBPaymentTerminal _terminal = _terminalsOf[_projectId][_i];
-      if (_terminal.token() == _token) return _terminal;
+      if (_terminal.acceptsToken(_token)) return _terminal;
     }
     ```
 
@@ -89,14 +92,16 @@ function primaryTerminalOf(uint256 _projectId, address _token)
   override
   returns (IJBPaymentTerminal)
 {
-  // If a primary terminal for the token was specifically set, return it.
-  if (_primaryTerminalOf[_projectId][_token] != IJBPaymentTerminal(address(0)))
-    return _primaryTerminalOf[_projectId][_token];
+  // If a primary terminal for the token was specifically set and its one of the project's terminals, return it.
+  if (
+    _primaryTerminalOf[_projectId][_token] != IJBPaymentTerminal(address(0)) &&
+    isTerminalOf(_projectId, _primaryTerminalOf[_projectId][_token])
+  ) return _primaryTerminalOf[_projectId][_token];
 
   // Return the first terminal which accepts the specified token.
   for (uint256 _i; _i < _terminalsOf[_projectId].length; _i++) {
     IJBPaymentTerminal _terminal = _terminalsOf[_projectId][_i];
-    if (_terminal.token() == _token) return _terminal;
+    if (_terminal.acceptsToken(_token)) return _terminal;
   }
 
   // Not found.

@@ -79,8 +79,9 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
         ```
         // Send the payment.
         _terminal.pay{value: _payableValue}(
-          _amount,
           _PROTOCOL_PROJECT_ID,
+          _amount,
+          token,
           _beneficiary,
           0,
           false,
@@ -122,8 +123,9 @@ function _processFee(uint256 _amount, address _beneficiary) private {
 
     // Send the payment.
     _terminal.pay{value: _payableValue}(
-      _amount,
       _PROTOCOL_PROJECT_ID,
+      _amount,
+      token,
       _beneficiary,
       0,
       false,

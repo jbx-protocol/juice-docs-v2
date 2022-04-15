@@ -27,7 +27,7 @@ _The used allowance is represented as a fixed point number with the same amount 
   _projectId The ID of the project to get the used overflow allowance of.
   _configuration The configuration of the during which the allowance was used.
 */
-mapping(IJBPaymentTerminal => mapping(uint256 => mapping(uint256 => uint256)))
+mapping(IJBSingleTokenPaymentTerminal => mapping(uint256 => mapping(uint256 => uint256)))
   public
   override usedOverflowAllowanceOf;
 ```

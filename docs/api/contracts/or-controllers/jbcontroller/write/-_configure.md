@@ -240,13 +240,17 @@ function _configure(
     if (_constraints.distributionLimit > 0)
       _packedDistributionLimitDataOf[_projectId][_fundingCycle.configuration][
         _constraints.terminal
-      ] = _constraints.distributionLimit | (_constraints.distributionLimitCurrency << 248);
+      ][_constraints.token] =
+        _constraints.distributionLimit |
+        (_constraints.distributionLimitCurrency << 248);
 
     // Set the overflow allowance if there is one.
     if (_constraints.overflowAllowance > 0)
       _packedOverflowAllowanceDataOf[_projectId][_fundingCycle.configuration][
         _constraints.terminal
-      ] = _constraints.overflowAllowance | (_constraints.overflowAllowanceCurrency << 248);
+      ][_constraints.token] =
+        _constraints.overflowAllowance |
+        (_constraints.overflowAllowanceCurrency << 248);
 
     emit SetFundAccessConstraints(
       _fundingCycle.configuration,

@@ -2,22 +2,19 @@
 
 ```
 interface IJBPaymentTerminal {
-  function token() external view returns (address);
+  function acceptsToken(address _token) external view returns (bool);
 
-  function decimals() external view returns (uint256);
+  function currencyForToken(address _token) external view returns (uint256);
 
-  function currency() external view returns (uint256);
-
-  function baseWeightCurrency() external view returns (uint256);
-
-  function payoutSplitsGroup() external view returns (uint256);
+  function decimalsForToken(address _token) external view returns (uint256);
 
   // Return value must be a fixed point number with 18 decimals.
   function currentEthOverflowOf(uint256 _projectId) external view returns (uint256);
 
   function pay(
-    uint256 _amount,
     uint256 _projectId,
+    uint256 _amount,
+    address _token,
     address _beneficiary,
     uint256 _minReturnedTokens,
     bool _preferClaimedTokens,
@@ -28,6 +25,7 @@ interface IJBPaymentTerminal {
   function addToBalanceOf(
     uint256 _projectId,
     uint256 _amount,
+    address _token,
     string calldata _memo
   ) external payable;
 }

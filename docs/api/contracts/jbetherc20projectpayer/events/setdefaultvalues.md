@@ -13,6 +13,7 @@ event SetDefaultValues(
   bool preferClaimedTokens,
   string memo,
   bytes metadata,
+  bool preferAddToBalance,
   address caller
 );
 ```
@@ -22,4 +23,5 @@ event SetDefaultValues(
 * `defaultPreferClaimedTokens` is a flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet.
 * `defaultMemo` is the memo that'll be passed along to the emitted event.
 * `defaultMetadata` are bytes to send along to the project's data source and delegate, if provided.
+* `preferAddToBalance` is a flag indicating if received payments should be forwarded to the project's `addToBalance` function or `pay` function. 
 * `caller` is the address that issued the transaction within which the event was emitted.

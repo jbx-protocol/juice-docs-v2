@@ -16,6 +16,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 function _ballotStateOf(
   uint256 _projectId,
   uint256 _configuration,
+  uint256 _start,
   uint256 _ballotFundingCycleConfiguration
 ) private view returns (JBBallotState) { ... }
 ```
@@ -23,6 +24,7 @@ function _ballotStateOf(
 * Arguments:
   * `_projectId` is the ID of the project to which the funding cycle belongs.
   * `_configuration` is the funding cycle configuration to get the ballot state of.
+  * `_start` is the start time of the funding cycle configuration to get the ballot state of.
   * `_ballotFundingCycleConfiguration` is the configuration of the funding cycle which is configured with the ballot that should be used.
 * The view function is private to this contract.
 * The view function does not alter state on the blockchain.
@@ -59,7 +61,7 @@ function _ballotStateOf(
       return JBBallotState.Approved;
     else if (_ballotFundingCycle.ballot.duration() >= block.timestamp - _configuration)
       return JBBallotState.Active;
-    else return _ballotFundingCycle.ballot.stateOf(_projectId, _configuration);
+    else return _ballotFundingCycle.ballot.stateOf(_projectId, _configuration, _start);
     ```
 
 </TabItem>
@@ -73,6 +75,7 @@ function _ballotStateOf(
 
   @param _projectId The ID of the project to which the funding cycle belongs.
   @param _configuration The funding cycle configuration to get the ballot state of.
+  @param _start The start time of the funding cycle configuration to get the ballot state of.
   @param _ballotFundingCycleConfiguration The configuration of the funding cycle which is configured with the ballot that should be used.
 
   @return The ballot state of the project.
@@ -80,6 +83,7 @@ function _ballotStateOf(
 function _ballotStateOf(
   uint256 _projectId,
   uint256 _configuration,
+  uint256 _start,
   uint256 _ballotFundingCycleConfiguration
 ) private view returns (JBBallotState) {
   // If there is no ballot funding cycle, implicitly approve.
@@ -98,7 +102,7 @@ function _ballotStateOf(
     return JBBallotState.Approved;
   else if (_ballotFundingCycle.ballot.duration() >= block.timestamp - _configuration)
     return JBBallotState.Active;
-  else return _ballotFundingCycle.ballot.stateOf(_projectId, _configuration);
+  else return _ballotFundingCycle.ballot.stateOf(_projectId, _configuration, _start);
 }
 ```
 

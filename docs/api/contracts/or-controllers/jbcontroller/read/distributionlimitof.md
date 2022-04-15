@@ -20,7 +20,8 @@ _The number of decimals in the returned fixed point amount is the same as that o
 function distributionLimitOf(
   uint256 _projectId,
   uint256 _configuration,
-  IJBPaymentTerminal _terminal
+  IJBPaymentTerminal _terminal,
+  address _token
 ) external view override returns (uint256, uint256) { ... }
 ```
 
@@ -28,6 +29,7 @@ function distributionLimitOf(
 * `_projectId` is the ID of the project to get the distribution limit of.
 * `_configuration` is the configuration during which the distribution limit applies.
 * `_terminal` is the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) from which distributions are being limited.
+* `_token` is the token for which the distribution limit applies.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
@@ -41,7 +43,7 @@ function distributionLimitOf(
 
     ```
     // Get a reference to the packed data.
-    uint256 _data = _packedDistributionLimitDataOf[_projectId][_configuration][_terminal];
+    uint256 _data = _packedDistributionLimitDataOf[_projectId][_configuration][_terminal][_token];
     ```
 
     _Internal references:_
@@ -69,6 +71,7 @@ function distributionLimitOf(
   @param _projectId The ID of the project to get the distribution limit of.
   @param _configuration The configuration during which the distribution limit applies.
   @param _terminal The terminal from which distributions are being limited.
+  @param _token The token for which the distribution limit applies.
 
   @return The distribution limit, as a fixed point number with the same number of decimals as the provided terminal.
   @return The currency of the distribution limit.
@@ -76,10 +79,11 @@ function distributionLimitOf(
 function distributionLimitOf(
   uint256 _projectId,
   uint256 _configuration,
-  IJBPaymentTerminal _terminal
+  IJBPaymentTerminal _terminal,
+  address _token
 ) external view override returns (uint256, uint256) {
   // Get a reference to the packed data.
-  uint256 _data = _packedDistributionLimitDataOf[_projectId][_configuration][_terminal];
+  uint256 _data = _packedDistributionLimitDataOf[_projectId][_configuration][_terminal][_token];
 
   // The limit is in bits 0-247. The currency is in bits 248-255.
   return (uint256(uint248(_data)), _data >> 248);

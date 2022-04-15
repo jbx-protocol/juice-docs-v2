@@ -22,7 +22,7 @@ _The reclaimable overflow is represented as a fixed point number with the same a
 
 ```
 function currentReclaimableOverflowOf(
-  IJBPaymentTerminal _terminal,
+  IJBSingleTokenPaymentTerminal _terminal,
   uint256 _projectId,
   uint256 _tokenCount,
   bool _useTotalOverflow
@@ -160,7 +160,7 @@ function currentReclaimableOverflowOf(
   @return The amount of overflowed tokens that can be reclaimed, as a fixed point number with the same number of decimals as the provided `_terminal`.
 */
 function currentReclaimableOverflowOf(
-  IJBPaymentTerminal _terminal,
+  IJBSingleTokenPaymentTerminal _terminal,
   uint256 _projectId,
   uint256 _tokenCount,
   bool _useTotalOverflow

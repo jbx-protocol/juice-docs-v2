@@ -27,7 +27,7 @@ _The used distribution limit is represented as a fixed point number with the sam
   _projectId The ID of the project to get the used distribution limit of.
   _fundingCycleNumber The number of the funding cycle during which the distribution limit was used.
 */
-mapping(IJBPaymentTerminal => mapping(uint256 => mapping(uint256 => uint256)))
+mapping(IJBSingleTokenPaymentTerminal => mapping(uint256 => mapping(uint256 => uint256)))
   public
   override usedDistributionLimitOf;
 ```

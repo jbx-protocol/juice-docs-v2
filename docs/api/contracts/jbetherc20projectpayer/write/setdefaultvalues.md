@@ -20,7 +20,8 @@ function setDefaultValues(
   address payable _beneficiary,
   bool _preferClaimedTokens,
   string memory _memo,
-  bytes memory _metadata
+  bytes memory _metadata,
+  bool _defaultPreferAddToBalance
 ) external virtual override onlyOwner { ... }
 ```
 
@@ -30,6 +31,7 @@ function setDefaultValues(
   * `_preferClaimedTokens` is a flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet. 
   * `_memo` is the memo that'll be used. 
   * `_metadata` is the metadata that'll be sent. 
+  * `_defaultPreferAddToBalance` is a flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.
 * Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
 * The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md) interface.
@@ -79,7 +81,7 @@ function setDefaultValues(
     _Internal references:_
 
     * [`defaultMemo`](/api/contracts/jbetherc20projectpayer/properties/defaultmemo.md)
-5.  Set the default memadata if it has changed.
+5.  Set the default metadata if it has changed.
 
     ```
     // Set the default metadata if it has changed.
@@ -90,6 +92,18 @@ function setDefaultValues(
     _Internal references:_
 
     * [`defaultMetadata`](/api/contracts/jbetherc20projectpayer/properties/defaultmetadata.md)
+
+5.  Set the default metadata if it has changed.
+
+    ```
+    // Set the add to balance preference if it has changed.
+    if (_defaultPreferAddToBalance != defaultPreferAddToBalance)
+      defaultPreferAddToBalance = _defaultPreferAddToBalance;
+    ```
+
+    _Internal references:_
+
+    * [`defaultPreferAddToBalance`](/api/contracts/jbetherc20projectpayer/properties/defaultpreferaddtobalance.md)
 6.  Emit a `SetDefaultValues` event with all relevant parameters.
 
     ```
@@ -99,6 +113,7 @@ function setDefaultValues(
       _preferClaimedTokens,
       _memo,
       _metadata,
+      _defaultPreferAddToBalance,
       msg.sender
     );
     ```
@@ -121,13 +136,15 @@ function setDefaultValues(
   @param _preferClaimedTokens A flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet. 
   @param _memo The memo that'll be used. 
   @param _metadata The metadata that'll be sent. 
+  @param _defaultPreferAddToBalance A flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.
 */
 function setDefaultValues(
   uint256 _projectId,
   address payable _beneficiary,
   bool _preferClaimedTokens,
   string memory _memo,
-  bytes memory _metadata
+  bytes memory _metadata,
+  bool _defaultPreferAddToBalance
 ) external virtual override onlyOwner {
   // Set the default project ID if it has changed.
   if (_projectId != defaultProjectId) defaultProjectId = _projectId;
@@ -147,12 +164,17 @@ function setDefaultValues(
   if (keccak256(abi.encodePacked(_metadata)) != keccak256(abi.encodePacked(defaultMetadata)))
     defaultMetadata = _metadata;
 
+  // Set the add to balance preference if it has changed.
+  if (_defaultPreferAddToBalance != defaultPreferAddToBalance)
+    defaultPreferAddToBalance = _defaultPreferAddToBalance;
+
   emit SetDefaultValues(
     _projectId,
     _beneficiary,
     _preferClaimedTokens,
     _memo,
     _metadata,
+    _defaultPreferAddToBalance,
     msg.sender
   );
 }
@@ -164,7 +186,7 @@ function setDefaultValues(
 
 | Name                                | Data                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetDefaultValues`**](/api/contracts/jbetherc20projectpayer/events/setdefaultvalues.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>bool preferClaimedTokens</code></li><li><code>string memo</code></li><li><code>bytes metadata</code></li><li><code>address caller</code></li></ul>                  |
+| [**`SetDefaultValues`**](/api/contracts/jbetherc20projectpayer/events/setdefaultvalues.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>bool preferClaimedTokens</code></li><li><code>string memo</code></li><li><code>bytes metadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

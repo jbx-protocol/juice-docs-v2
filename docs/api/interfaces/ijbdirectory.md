@@ -19,7 +19,7 @@ interface IJBDirectory {
 
   function projects() external view returns (IJBProjects);
 
-function fundingCycleStore() external view returns (IJBFundingCycleStore);
+  function fundingCycleStore() external view returns (IJBFundingCycleStore);
 
   function controllerOf(uint256 _projectId) external view returns (IJBController);
 
@@ -41,7 +41,11 @@ function fundingCycleStore() external view returns (IJBFundingCycleStore);
 
   function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _terminals) external;
 
-  function setPrimaryTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal) external;
+  function setPrimaryTerminalOf(
+    uint256 _projectId,
+    address _token,
+    IJBPaymentTerminal _terminal
+  ) external;
 
   function setIsAllowedToSetFirstController(address _address, bool _flag) external;
 }

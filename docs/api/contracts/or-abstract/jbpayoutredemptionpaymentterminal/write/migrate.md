@@ -39,7 +39,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     ```
     // The terminal being migrated to must accept the same token as this terminal.
-    if (token != _to.token()) revert TERMINAL_TOKENS_INCOMPATIBLE();
+    if (!_to.acceptsToken(token)) revert TERMINAL_TOKENS_INCOMPATIBLE();
     ```
 
     _Internal references:_
@@ -67,7 +67,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
       uint256 _payableValue = token == JBTokens.ETH ? balance : 0;
 
       // Withdraw the balance to transfer to the new terminal;
-      _to.addToBalanceOf{value: _payableValue}(balance, _projectId, '');
+      _to.addToBalanceOf{value: _payableValue}(balance, _projectId, token, '');
     }
     ```
 
@@ -113,7 +113,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
   returns (uint256 balance)
 {
   // The terminal being migrated to must accept the same token as this terminal.
-  if (token != _to.token()) revert TERMINAL_TOKENS_INCOMPATIBLE();
+  if (!_to.acceptsToken(token)) revert TERMINAL_TOKENS_INCOMPATIBLE();
 
   // Record the migration in the store.
   balance = store.recordMigration(_projectId);
@@ -127,7 +127,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
     uint256 _payableValue = token == JBTokens.ETH ? balance : 0;
 
     // Withdraw the balance to transfer to the new terminal;
-    _to.addToBalanceOf{value: _payableValue}(_balance, _projectId, '');
+    _to.addToBalanceOf{value: _payableValue}(_balance, _projectId, token, '');
   }
 
   emit Migrate(_projectId, _to, balance, msg.sender);

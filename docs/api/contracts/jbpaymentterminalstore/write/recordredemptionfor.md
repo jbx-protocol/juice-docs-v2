@@ -14,7 +14,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 _Redeems the project's tokens according to values provided by a configured data source. If no data source is configured, redeems tokens along a redemption bonding curve that is a function of the number of tokens being burned._
 
-_The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
+_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
 
 #### Definition
 
@@ -92,7 +92,7 @@ function recordRedemptionFor(
         uint256 _currentOverflow = fundingCycle.useTotalOverflowForRedemptions()
           ? _currentTotalOverflowOf(_projectId, _balanceDecimals, _balanceCurrency)
           : _overflowDuring(
-            IJBPaymentTerminal(msg.sender),
+            IJBSingleTokenPaymentTerminal(msg.sender),
             _projectId,
             fundingCycle,
             _balanceCurrency
@@ -165,7 +165,7 @@ function recordRedemptionFor(
         if (fundingCycle.useDataSourceForRedeem()) {
           // Create the params that'll be sent to the data source.
           JBRedeemParamsData memory _data = JBRedeemParamsData(
-            IJBPaymentTerminal(msg.sender),
+            IJBSingleTokenPaymentTerminal(msg.sender),
             _holder,
             _projectId,
             _tokenCount,
@@ -199,7 +199,7 @@ function recordRedemptionFor(
 
     ```
     // The amount being reclaimed must be within the project's balance.
-    if (reclaimAmount > balanceOf[IJBPaymentTerminal(msg.sender)][_projectId])
+    if (reclaimAmount > balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId])
       revert INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE();
     ```
 
@@ -211,8 +211,8 @@ function recordRedemptionFor(
     ```
     // Remove the reclaimed funds from the project's balance.
     if (reclaimAmount > 0)
-      balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-        balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] -
+      balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+        balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] -
         reclaimAmount;
     ```
 
@@ -233,7 +233,7 @@ function recordRedemptionFor(
   Redeems the project's tokens according to values provided by a configured data source. If no data source is configured, redeems tokens along a redemption bonding curve that is a function of the number of tokens being burned.
 
   @dev
-  The msg.sender must be an IJBPaymentTerminal. 
+  The msg.sender must be an IJBSingleTokenPaymentTerminal. 
 
   @param _holder The account that is having its tokens redeemed.
   @param _projectId The ID of the project to which the tokens being redeemed belong.
@@ -280,7 +280,7 @@ function recordRedemptionFor(
     uint256 _currentOverflow = fundingCycle.useTotalOverflowForRedemptions()
       ? _currentTotalOverflowOf(_projectId, _balanceDecimals, _balanceCurrency)
       : _overflowDuring(
-        IJBPaymentTerminal(msg.sender),
+        IJBSingleTokenPaymentTerminal(msg.sender),
         _projectId,
         fundingCycle,
         _balanceCurrency
@@ -309,7 +309,7 @@ function recordRedemptionFor(
     if (fundingCycle.useDataSourceForRedeem()) {
       // Create the params that'll be sent to the data source.
       JBRedeemParamsData memory _data = JBRedeemParamsData(
-        IJBPaymentTerminal(msg.sender),
+        IJBSingleTokenPaymentTerminal(msg.sender),
         _holder,
         _projectId,
         _tokenCount,
@@ -331,13 +331,13 @@ function recordRedemptionFor(
   }
 
   // The amount being reclaimed must be within the project's balance.
-  if (reclaimAmount > balanceOf[IJBPaymentTerminal(msg.sender)][_projectId])
+  if (reclaimAmount > balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId])
     revert INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE();
 
   // Remove the reclaimed funds from the project's balance.
   if (reclaimAmount > 0)
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-      balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] -
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+      balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] -
       reclaimAmount;
 }
 ```

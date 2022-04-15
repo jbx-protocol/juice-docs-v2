@@ -89,8 +89,18 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     // Distribute tokens to splits and get a reference to the leftover amount to mint after all splits have gotten their share.
     uint256 _leftoverTokenCount = tokenCount == 0
       ? 0
-      : _distributeToReservedTokenSplitsOf(_projectId, _fundingCycle, tokenCount);
+      : _distributeToReservedTokenSplitsOf(
+          _projectId,
+          _fundingCycle.configuration,
+          JBSplitsGroups.RESERVED_TOKENS,
+          tokenCount
+        );
     ```
+
+    _Libraries used:_
+
+    * [`JBSplitsGroups`](/api/libraries/jbsplitsgroups.md)
+      * `.RESERVED_TOKENS`
 
     _Internal references:_
 
@@ -164,7 +174,12 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
   // Distribute tokens to splits and get a reference to the leftover amount to mint after all splits have gotten their share.
   uint256 _leftoverTokenCount = tokenCount == 0
     ? 0
-    : _distributeToReservedTokenSplitsOf(_projectId, _fundingCycle, tokenCount);
+    : _distributeToReservedTokenSplitsOf(
+        _projectId,
+        _fundingCycle.configuration,
+        JBSplitsGroups.RESERVED_TOKENS,
+        tokenCount
+      );
 
   // Mint any leftover tokens to the project owner.
   if (_leftoverTokenCount > 0) tokenStore.mintFor(_owner, _projectId, _leftoverTokenCount, false);

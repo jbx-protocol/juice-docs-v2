@@ -19,7 +19,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
   _terminal The terminal to which the balance applies.
   _projectId The ID of the project to get the balance of.
 */
-mapping(IJBPaymentTerminal => mapping(uint256 => uint256)) public override balanceOf;
+mapping(IJBSingleTokenPaymentTerminal => mapping(uint256 => uint256)) public override balanceOf;
 ```
 
 * Arguments:

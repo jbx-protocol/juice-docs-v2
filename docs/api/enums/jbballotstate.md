@@ -2,8 +2,8 @@
 
 ```
 enum JBBallotState {
-  Approved,
   Active,
+  Approved,
   Failed
 }
 ```

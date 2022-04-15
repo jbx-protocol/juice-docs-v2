@@ -12,7 +12,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 **Records newly added funds for the project.**
 
-_The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
+_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
 #### Definition
 
 ```
@@ -34,8 +34,8 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
 
     ```
     // Increment the balance.
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-      balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] +
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+      balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] +
       _amount;
     ```
 
@@ -53,7 +53,7 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
   Records newly added funds for the project.
 
   @dev
-  The msg.sender must be an IJBPaymentTerminal. 
+  The msg.sender must be an IJBSingleTokenPaymentTerminal. 
 
   @param _projectId The ID of the project to which the funds being added belong.
   @param _amount The amount of temrinal tokens added, as a fixed point number with the same amount of decimals as its relative terminal.
@@ -64,8 +64,8 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
   nonReentrant
 {
   // Increment the balance.
-  balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] +
+  balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] +
     _amount;
 }
 ```

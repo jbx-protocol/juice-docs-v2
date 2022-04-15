@@ -54,16 +54,14 @@ function _getStructsFor(
       // Get a reference to the fist packed data.
       uint256 _packedSplitPart1 = _packedSplitParts1Of[_projectId][_domain][_group][_i];
 
+      // Store the first spit part. 
       JBSplit memory _split;
 
-      // Prefer claimed in bit 0.
       _split.preferClaimed = (_packedSplitPart1 & 1) == 1;
-      // Percent in bits 1-32.
-      _split.percent = uint256(uint32(_packedSplitPart1 >> 1));
-      // ProjectId in bits 33-88.
-      _split.projectId = uint256(uint56(_packedSplitPart1 >> 33));
-      // Beneficiary in bits 89-248.
-      _split.beneficiary = payable(address(uint160(_packedSplitPart1 >> 89)));
+      _split.preferAddToBalance = (_packedSplitPart1 & 2) == 1;
+      _split.percent = uint256(uint32(_packedSplitPart1 >> 2));
+      _split.projectId = uint256(uint56(_packedSplitPart1 >> 34));
+      _split.beneficiary = payable(address(uint160(_packedSplitPart1 >> 90)));
 
       // Get a reference to the second packed data.
       uint256 _packedSplitPart2 = _packedSplitParts2Of[_projectId][_domain][_group][_i];
@@ -122,16 +120,14 @@ function _getStructsFor(
     // Get a reference to the fist packed data.
     uint256 _packedSplitPart1 = _packedSplitParts1Of[_projectId][_domain][_group][_i];
 
+    // Populate the split struct.
     JBSplit memory _split;
 
-    // Prefer claimed in bit 0.
     _split.preferClaimed = (_packedSplitPart1 & 1) == 1;
-    // Percent in bits 1-32.
-    _split.percent = uint256(uint32(_packedSplitPart1 >> 1));
-    // ProjectId in bits 33-88.
-    _split.projectId = uint256(uint56(_packedSplitPart1 >> 33));
-    // Beneficiary in bits 89-248.
-    _split.beneficiary = payable(address(uint160(_packedSplitPart1 >> 89)));
+    _split.preferAddToBalance = (_packedSplitPart1 & 2) == 1;
+    _split.percent = uint256(uint32(_packedSplitPart1 >> 2));
+    _split.projectId = uint256(uint56(_packedSplitPart1 >> 34));
+    _split.beneficiary = payable(address(uint160(_packedSplitPart1 >> 90)));
 
     // Get a reference to the second packed data.
     uint256 _packedSplitPart2 = _packedSplitParts2Of[_projectId][_domain][_group][_i];

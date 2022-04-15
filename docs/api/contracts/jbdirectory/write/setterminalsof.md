@@ -76,17 +76,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 
-4.  Get a reference to the project's current terminals.
-
-    ```
-    // Get a reference to the terminals of the project.
-    IJBPaymentTerminal[] memory _oldTerminals = _terminalsOf[_projectId];
-    ```
-
-    _Internal references:_
-
-    * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
-5.  Delete the project's current set of terminals from storage.
+4.  Delete the project's current set of terminals from storage.
 
     ```
     // Delete the stored terminals for the project.
@@ -97,7 +87,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 
-6.  Make sure the same terminal isn't being set multiple times.
+5.  Make sure the same terminal isn't being set multiple times.
     ```
     // Make sure duplicates were not added.
     if (_terminals.length > 1)
@@ -106,22 +96,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
           if (_terminals[_i] == _terminals[_j]) revert DUPLICATE_TERMINALS();
     ```
 
-7.  If any of the project's primary terminals are being removed, also remove their status as a primary terminal.
-
-    ```
-    // If one of the old terminals was set as a primary terminal but is not included in the new terminals, remove it from being a primary terminal.
-    for (uint256 _i; _i < _oldTerminals.length; _i++)
-      if (
-        _primaryTerminalOf[_projectId][_oldTerminals[_i].token()] == _oldTerminals[_i] &&
-        !_contains(_terminals, _oldTerminals[_i])
-      ) delete _primaryTerminalOf[_projectId][_oldTerminals[_i].token()];
-    ```
-
-    _Internal references:_
-
-    * [`_primaryTerminalOf`](/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
-    * [`_contains`](/api/contracts/jbdirectory/read/-_contains.md)
-8.  Emit a `SetTerminals` event with the relevant parameters.
+6.  Emit a `SetTerminals` event with the relevant parameters.
 
     ```
     emit SetTerminals(_projectId, _terminals, msg.sender);
@@ -163,9 +138,6 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
   if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
     revert SET_TERMINALS_NOT_ALLOWED();
 
-  // Get a reference to the terminals of the project.
-  IJBPaymentTerminal[] memory _oldTerminals = _terminalsOf[_projectId];
-
   // Delete the stored terminals for the project.
   _terminalsOf[_projectId] = _terminals;
 
@@ -174,13 +146,6 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
     for (uint256 _i; _i < _terminals.length; _i++)
       for (uint256 _j = _i + 1; _j < _terminals.length; _j++)
         if (_terminals[_i] == _terminals[_j]) revert DUPLICATE_TERMINALS();
-
-  // If one of the old terminals was set as a primary terminal but is not included in the new terminals, remove it from being a primary terminal.
-  for (uint256 _i; _i < _oldTerminals.length; _i++)
-    if (
-      _primaryTerminalOf[_projectId][_oldTerminals[_i].token()] == _oldTerminals[_i] &&
-      !_contains(_terminals, _oldTerminals[_i])
-    ) delete _primaryTerminalOf[_projectId][_oldTerminals[_i].token()];
 
   emit SetTerminals(_projectId, _terminals, msg.sender);
 }

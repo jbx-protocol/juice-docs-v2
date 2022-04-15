@@ -36,15 +36,17 @@ constructor(
   bool _defaultPreferClaimedTokens,
   string memory _defaultMemo,
   bytes memory _defaultMetadata,
+  bool _defaultPreferAddToBalance,
   IJBDirectory _directory,
   address _owner
 ) {
-  directory = _directory;
   defaultProjectId = _defaultProjectId;
   defaultBeneficiary = _defaultBeneficiary;
   defaultPreferClaimedTokens = _defaultPreferClaimedTokens;
   defaultMemo = _defaultMemo;
   defaultMetadata = _defaultMetadata;
+  defaultPreferAddToBalance = _defaultPreferAddToBalance;
+  directory = _directory;
 
   _transferOwnership(_owner);
 }
@@ -56,6 +58,7 @@ constructor(
   * `_defaultPreferClaimedTokens` is a flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet.
   * `_defaultMemo` is the memo that'll be passed along to the emitted event..
   * `_defaultMetadata` are bytes to send along to the project's data source and delegate, if provided..
+  * `_defaultPreferAddToBalance` is a flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.
   * `_directory` is a contract storing directories of terminals and controllers for each project..
   * `_owner` is the address that will own the contract..
 
@@ -63,7 +66,7 @@ constructor(
 
 | Name                                                                                                      | Data                                                                                                                                                                                                                                 |
 | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**`SetDefaultValues`**](/api/contracts/jbetherc20projectpayer/events/setdefaultvalues.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>address indexed beneficiary</code></li><li><code>bool preferClaimedTokens</code></li><li><code>string memo</code></li><li><code>bytes metadata</code></li><li><code>address caller</code></li></ul>                  |
+| [**`SetDefaultValues`**](/api/contracts/jbetherc20projectpayer/events/setdefaultvalues.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>address indexed beneficiary</code></li><li><code>bool preferClaimedTokens</code></li><li><code>string memo</code></li><li><code>bytes metadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>address caller</code></li></ul>                  |
 
 ## Properties
 
@@ -75,6 +78,7 @@ constructor(
 | [**`defaultPreferClaimedTokens`**](/api/contracts/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>bool defaultPreferClaimedTokens</code></li></ul>                                                                                                |
 | [**`defaultMemo`**](/api/contracts/jbetherc20projectpayer/properties/defaultmemo.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>string defaultMemo</code></li></ul>                                                                                                |
 | [**`defaultMetadata`**](/api/contracts/jbetherc20projectpayer/properties/defaultmetadata.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>bytes defaultMetadata</code></li></ul>                                                                                                |
+| [**`defaultPreferAddToBalance`**](/api/contracts/jbetherc20projectpayer/properties/defaultpreferaddtobalance.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>bool defaultPreferAddToBalance</code></li></ul>                                                                                                |
 
 ## Write
 
@@ -83,3 +87,4 @@ constructor(
 | [**`receive`**](/api/contracts/jbetherc20projectpayer/write/pay.md)                                                                        | <p><strong>Traits</strong></p><ul><li><code>payable</code></li><li><code>virtual</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _token</code></li><li>uint256 _amount</li><li><code>address _beneficiary</code></li><li>uint256 _minReturnedTokens</li><li><code>bool _preferClaimedTokens</code></li><li>string _memo</li><li>bytes _metadata</li></ul>                                             |
 | [**`setDefaultValues`**](/api/contracts/jbetherc20projectpayer/write/setdefaultvalues.md)                                                                        | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--)</code></li><li><code>virtual</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address payable _beneficiary</code></li><li><code>bool _preferClaimedTokens</code></li><li><code>string _memo</code></li><li><code>bytes _metadata</code></li></ul>                                             |
 | [**`pay`**](/api/contracts/jbetherc20projectpayer/write/pay.md)                                                                        | <p><strong>Traits</strong></p><ul><li><code>payable</code></li><li><code>virtual</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _token</code></li><li>uint256 _amount</li><li><code>uint256 _decimals</code></li><li><code>address _beneficiary</code></li><li>uint256 _minReturnedTokens</li><li><code>bool _preferClaimedTokens</code></li><li>string _memo</li><li>bytes _metadata</li></ul>                                             |
+| [**`addToBalance`**](/api/contracts/jbetherc20projectpayer/write/addtobalance.md)                                                                        | <p><strong>Traits</strong></p><ul><li><code>payable</code></li><li><code>virtual</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _token</code></li><li>uint256 _amount</li><li><code>uint256 _decimals</code></li><li>string _memo</li></ul>                                             |

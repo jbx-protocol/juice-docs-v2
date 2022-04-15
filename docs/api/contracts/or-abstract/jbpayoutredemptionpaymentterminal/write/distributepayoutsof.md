@@ -123,7 +123,8 @@ function distributePayoutsOf(
         // Also get a reference to the amount that was distributed to splits from which fees should be taken.
         (_leftoverDistributionAmount, _feeEligibleDistributionAmount) = _distributeToPayoutSplitsOf(
           _projectId,
-          _fundingCycle,
+          _fundingCycle.configuration,
+          payoutSplitsGroup,
           _distributedAmount,
           _feeDiscount
         );
@@ -281,7 +282,8 @@ function distributePayoutsOf(
     // Also get a reference to the amount that was distributed to splits from which fees should be taken.
     (_leftoverDistributionAmount, _feeEligibleDistributionAmount) = _distributeToPayoutSplitsOf(
       _projectId,
-      _fundingCycle,
+      _fundingCycle.configuration,
+      payoutSplitsGroup,
       _distributedAmount,
       _feeDiscount
     );

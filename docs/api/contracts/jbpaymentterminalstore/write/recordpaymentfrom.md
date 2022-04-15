@@ -14,7 +14,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 _Mint's the project's tokens according to values provided by a configured data source. If no data source is configured, mints tokens proportional to the amount of the contribution._
 
-_The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md). The amount specified in the params is in terms of the msg.sender's tokens._
+_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md). The amount specified in the params is in terms of the msg.sender's tokens._
 
 #### Definition
 
@@ -94,7 +94,7 @@ function recordPaymentFrom(
     if (fundingCycle.useDataSourceForPay()) {
       // Create the params that'll be sent to the data source.
       JBPayParamsData memory _data = JBPayParamsData(
-        IJBPaymentTerminal(msg.sender),
+        IJBSingleTokenPaymentTerminal(msg.sender),
         _payer,
         _amount,
         _projectId,
@@ -132,8 +132,8 @@ function recordPaymentFrom(
 
     ```
     // Add the amount to the token balance of the project.
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-      balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] +
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+      balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] +
       _amount.value;
     ```
 
@@ -188,7 +188,7 @@ function recordPaymentFrom(
   Mint's the project's tokens according to values provided by a configured data source. If no data source is configured, mints tokens proportional to the amount of the contribution.
 
   @dev
-  The msg.sender must be an IJBPaymentTerminal. The amount specified in the params is in terms of the msg.sender's tokens.
+  The msg.sender must be an IJBSingleTokenPaymentTerminal. The amount specified in the params is in terms of the msg.sender's tokens.
 
   @param _payer The original address that sent the payment to the terminal.
   @param _amount The amount of tokens being paid. Includes the token being paid, the value, the number of decimals included, and the currency of the amount.
@@ -236,7 +236,7 @@ function recordPaymentFrom(
   if (fundingCycle.useDataSourceForPay()) {
     // Create the params that'll be sent to the data source.
     JBPayParamsData memory _data = JBPayParamsData(
-      IJBPaymentTerminal(msg.sender),
+      IJBSingleTokenPaymentTerminal(msg.sender),
       _payer,
       _amount,
       _projectId,
@@ -257,8 +257,8 @@ function recordPaymentFrom(
   if (_amount.value == 0) return (fundingCycle, 0, delegate, memo);
 
   // Add the amount to the token balance of the project.
-  balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] +
+  balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] +
     _amount.value;
 
   // If there's no weight, token count must be 0 so there's nothing left to do.

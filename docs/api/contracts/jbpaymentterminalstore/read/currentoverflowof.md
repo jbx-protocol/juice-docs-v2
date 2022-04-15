@@ -17,7 +17,7 @@ _The current overflow is represented as a fixed point number with the same amoun
 #### Definition
 
 ```
-function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
+function currentOverflowOf(IJBSingleTokenPaymentTerminal _terminal, uint256 _projectId)
   external
   view
   override
@@ -72,7 +72,7 @@ function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
 
   @return The current amount of overflow that project has in the specified terminal.
 */
-function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
+function currentOverflowOf(IJBSingleTokenPaymentTerminal _terminal, uint256 _projectId)
   external
   view
   override

@@ -12,7 +12,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 **Records newly used allowance funds of a project.**
 
-_The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
+_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
 
 #### Definition
 
@@ -55,9 +55,9 @@ function recordUsedAllowanceOf(
 
     ```
     // Get a reference to the new used overflow allowance for this funding cycle configuration.
-    uint256 _newUsedOverflowAllowanceOf = usedOverflowAllowanceOf[IJBPaymentTerminal(msg.sender)][
-      _projectId
-    ][fundingCycle.configuration] + _amount;
+    uint256 _newUsedOverflowAllowanceOf = usedOverflowAllowanceOf[
+      IJBSingleTokenPaymentTerminal(msg.sender)
+    ][_projectId][fundingCycle.configuration] + _amount;
     ```
 
     _Internal references:_
@@ -69,7 +69,12 @@ function recordUsedAllowanceOf(
     // There must be sufficient allowance available.
     (uint256 _overflowAllowanceOf, uint256 _overflowAllowanceCurrency) = directory
       .controllerOf(_projectId)
-      .overflowAllowanceOf(_projectId, fundingCycle.configuration, IJBPaymentTerminal(msg.sender));
+      .overflowAllowanceOf(
+        _projectId,
+        fundingCycle.configuration,
+        IJBSingleTokenPaymentTerminal(msg.sender),
+        IJBSingleTokenPaymentTerminal(msg.sender).token()
+      );
     ```
 
     _External references:_
@@ -137,10 +142,15 @@ function recordUsedAllowanceOf(
 8.  Make sure the amount being used is available in overflow.
 
     ```
-    // The amount being withdrawn must be available in the overflow.
+    // The amount being distributed must be available in the overflow.
     if (
       usedAmount >
-      _overflowDuring(IJBPaymentTerminal(msg.sender), _projectId, fundingCycle, _balanceCurrency)
+      _overflowDuring(
+        IJBSingleTokenPaymentTerminal(msg.sender),
+        _projectId,
+        fundingCycle,
+        _balanceCurrency
+      )
     ) revert INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE();
     ```
 
@@ -151,7 +161,7 @@ function recordUsedAllowanceOf(
 
     ```
     // Store the incremented value.
-    usedOverflowAllowanceOf[IJBPaymentTerminal(msg.sender)][_projectId][
+    usedOverflowAllowanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId][
       fundingCycle.configuration
     ] = _newUsedOverflowAllowanceOf;
     ```
@@ -163,8 +173,8 @@ function recordUsedAllowanceOf(
 
     ```
     // Update the project's balance.
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-      balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] -
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+      balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] -
       usedAmount;
     ```
 
@@ -182,7 +192,7 @@ function recordUsedAllowanceOf(
   Records newly used allowance funds of a project.
 
   @dev
-  The msg.sender must be an IJBPaymentTerminal. 
+  The msg.sender must be an IJBSingleTokenPaymentTerminal. 
 
   @param _projectId The ID of the project to use the allowance of.
   @param _amount The amount to use from the allowance, as a fixed point number. 
@@ -207,14 +217,19 @@ function recordUsedAllowanceOf(
   fundingCycle = fundingCycleStore.currentOf(_projectId);
 
   // Get a reference to the new used overflow allowance for this funding cycle configuration.
-  uint256 _newUsedOverflowAllowanceOf = usedOverflowAllowanceOf[IJBPaymentTerminal(msg.sender)][
-    _projectId
-  ][fundingCycle.configuration] + _amount;
+  uint256 _newUsedOverflowAllowanceOf = usedOverflowAllowanceOf[
+    IJBSingleTokenPaymentTerminal(msg.sender)
+  ][_projectId][fundingCycle.configuration] + _amount;
 
   // There must be sufficient allowance available.
   (uint256 _overflowAllowanceOf, uint256 _overflowAllowanceCurrency) = directory
     .controllerOf(_projectId)
-    .overflowAllowanceOf(_projectId, fundingCycle.configuration, IJBPaymentTerminal(msg.sender));
+    .overflowAllowanceOf(
+      _projectId,
+      fundingCycle.configuration,
+      IJBSingleTokenPaymentTerminal(msg.sender),
+      IJBSingleTokenPaymentTerminal(msg.sender).token()
+    );
 
   // Make sure the new used amount is within the allowance.
   if (_newUsedOverflowAllowanceOf > _overflowAllowanceOf || _overflowAllowanceOf == 0)
@@ -232,20 +247,25 @@ function recordUsedAllowanceOf(
       prices.priceFor(_currency, _balanceCurrency, _MAX_FIXED_POINT_FIDELITY)
     );
 
-  // The amount being withdrawn must be available in the overflow.
+  // The amount being distributed must be available in the overflow.
   if (
     usedAmount >
-    _overflowDuring(IJBPaymentTerminal(msg.sender), _projectId, fundingCycle, _balanceCurrency)
+    _overflowDuring(
+      IJBSingleTokenPaymentTerminal(msg.sender),
+      _projectId,
+      fundingCycle,
+      _balanceCurrency
+    )
   ) revert INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE();
 
   // Store the incremented value.
-  usedOverflowAllowanceOf[IJBPaymentTerminal(msg.sender)][_projectId][
+  usedOverflowAllowanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId][
     fundingCycle.configuration
   ] = _newUsedOverflowAllowanceOf;
 
   // Update the project's balance.
-  balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] -
+  balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] -
     usedAmount;
 }
 ```

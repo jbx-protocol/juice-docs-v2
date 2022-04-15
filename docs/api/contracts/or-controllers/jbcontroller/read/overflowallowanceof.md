@@ -20,7 +20,8 @@ _The number of decimals in the returned fixed point amount is the same as that o
 function overflowAllowanceOf(
   uint256 _projectId,
   uint256 _configuration,
-  IJBPaymentTerminal _terminal
+  IJBPaymentTerminal _terminal,
+  address _token
 ) external view override returns (uint256, uint256) { ... }
 ```
 
@@ -28,6 +29,7 @@ function overflowAllowanceOf(
 * `_projectId` is the ID of the project to get the overflow allowance of.
 * `_configuration` is the configuration of the during which the allowance applies.
 * `_terminal` is the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) managing the overflow.
+* `_token` is the token for which the overflow allowance applies.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
@@ -69,6 +71,7 @@ function overflowAllowanceOf(
   @param _projectId The ID of the project to get the overflow allowance of.
   @param _configuration The configuration of the during which the allowance applies.
   @param _terminal The terminal managing the overflow.
+  @param _token The token for which the overflow allowance applies.
 
   @return The overflow allowance, as a fixed point number with the same number of decimals as the provided terminal.
   @return The currency of the overflow allowance.
@@ -76,10 +79,11 @@ function overflowAllowanceOf(
 function overflowAllowanceOf(
   uint256 _projectId,
   uint256 _configuration,
-  IJBPaymentTerminal _terminal
+  IJBPaymentTerminal _terminal,
+  address _terminal
 ) external view override returns (uint256, uint256) {
   // Get a reference to the packed data.
-  uint256 _data = _packedOverflowAllowanceDataOf[_projectId][_configuration][_terminal];
+  uint256 _data = _packedOverflowAllowanceDataOf[_projectId][_configuration][_terminal][_token];
 
   // The allowance is in bits 0-247. The currency is in bits 248-255.
   return (uint256(uint248(_data)), _data >> 248);

@@ -13,7 +13,8 @@ import TabItem from '@theme/TabItem';
 ```
 function _distributeToReservedTokenSplitsOf(
   uint256 _projectId,
-  JBFundingCycle memory _fundingCycle,
+  uint256 _domain,
+  uint256 _group,
   uint256 _amount
 ) private returns (uint256 leftoverAmount) { ... }
 ```
@@ -21,6 +22,8 @@ function _distributeToReservedTokenSplitsOf(
 * Arguments:
   * `_projectId` is the ID of the project for which reserved token splits are being distributed.
   * `_fundingCycle` is the [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) to base the token distribution on.
+  * `_domain` is the domain of the splits to distribute the reserved tokens between.
+  * `_group` is the group of the splits to distribute the reserved tokens between.
   * `_amount` is the total amount of tokens to mint.
 * The function is private to this contract.
 * The function returns the leftover amount after all splits have been distributed.
@@ -37,17 +40,8 @@ function _distributeToReservedTokenSplitsOf(
 
     ```
     // Get a reference to the project's reserved token splits.
-    JBSplit[] memory _splits = splitsStore.splitsOf(
-      _projectId,
-      _fundingCycle.configuration,
-      JBSplitsGroups.RESERVED_TOKENS
-    );
+    JBSplit[] memory _splits = splitsStore.splitsOf(_projectId, _domain, _group);
     ```
-
-    _Libraries used:_
-
-    * [`JBSplitsGroups`](/api/libraries/jbsplitsgroups.md)
-      * `.RESERVED_TOKENS`
 
     _External references:_
 
@@ -107,10 +101,11 @@ function _distributeToReservedTokenSplitsOf(
           if (_split.allocator != IJBSplitAllocator(address(0)))
             _split.allocator.allocate(
               JBSplitAllocationData(
+                address(tokenStore.tokenOf(_projectId)),
                 _tokenCount,
                 18, // 18 decimals.
                 _projectId,
-                JBSplitsGroups.RESERVED_TOKENS,
+                _group,
                 _split
               )
             );
@@ -119,11 +114,6 @@ function _distributeToReservedTokenSplitsOf(
           leftoverAmount = leftoverAmount - _tokenCount;
         }
         ```
-
-        _Libraries used:_
-
-        * [`JBSplitsGroups`](/api/libraries/jbsplitsgroups.md)
-          * `.RESERVED_TOKENS`
 
         _External references:_
 
@@ -134,9 +124,9 @@ function _distributeToReservedTokenSplitsOf(
 
     ```
     emit DistributeToReservedTokenSplit(
-      _fundingCycle.configuration,
-      _fundingCycle.number,
       _projectId,
+      _domain,
+      _group,
       _split,
       _tokenCount,
       msg.sender
@@ -157,25 +147,23 @@ function _distributeToReservedTokenSplitsOf(
   Distribute tokens to the splits according to the specified funding cycle configuration.
 
   @param _projectId The ID of the project for which reserved token splits are being distributed.
-  @param _fundingCycle The funding cycle to base the token distribution on.
+  @param _domain The domain of the splits to distribute the reserved tokens between.
+  @param _group The group of the splits to distribute the reserved tokens between.
   @param _amount The total amount of tokens to mint.
 
   @return leftoverAmount If the splits percents dont add up to 100%, the leftover amount is returned.
 */
 function _distributeToReservedTokenSplitsOf(
   uint256 _projectId,
-  JBFundingCycle memory _fundingCycle,
+  uint256 _domain,
+  uint256 _group,
   uint256 _amount
 ) private returns (uint256 leftoverAmount) {
   // Set the leftover amount to the initial amount.
   leftoverAmount = _amount;
 
   // Get a reference to the project's reserved token splits.
-  JBSplit[] memory _splits = splitsStore.splitsOf(
-    _projectId,
-    _fundingCycle.configuration,
-    JBSplitsGroups.RESERVED_TOKENS
-  );
+  JBSplit[] memory _splits = splitsStore.splitsOf(_projectId, _domain, _group);
 
   //Transfer between all splits.
   for (uint256 _i = 0; _i < _splits.length; _i++) {
@@ -211,10 +199,11 @@ function _distributeToReservedTokenSplitsOf(
       if (_split.allocator != IJBSplitAllocator(address(0)))
         _split.allocator.allocate(
           JBSplitAllocationData(
+            address(tokenStore.tokenOf(_projectId)),
             _tokenCount,
             18, // 18 decimals.
             _projectId,
-            JBSplitsGroups.RESERVED_TOKENS,
+            _group,
             _split
           )
         );
@@ -224,9 +213,9 @@ function _distributeToReservedTokenSplitsOf(
     }
 
     emit DistributeToReservedTokenSplit(
-      _fundingCycle.configuration,
-      _fundingCycle.number,
       _projectId,
+      _domain,
+      _group,
       _split,
       _tokenCount,
       msg.sender
@@ -241,7 +230,7 @@ function _distributeToReservedTokenSplitsOf(
 
 | Name                                                                                | Data                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeToReservedTokenSplit`**](/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DistributeToReservedTokenSplit`**](/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

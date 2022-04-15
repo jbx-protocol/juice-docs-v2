@@ -12,7 +12,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 **Records newly distributed funds for a project.**
 
-_The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
+_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
 
 #### Definition
 
@@ -67,9 +67,9 @@ function recordDistributionFor(
 
     ```
     // The new total amount that has been distributed during this funding cycle.
-    uint256 _newUsedDistributionLimitOf = usedDistributionLimitOf[IJBPaymentTerminal(msg.sender)][
-      _projectId
-    ][fundingCycle.number] + _amount;
+    uint256 _newUsedDistributionLimitOf = usedDistributionLimitOf[
+      IJBSingleTokenPaymentTerminal(msg.sender)
+    ][_projectId][fundingCycle.number] + _amount;
     ```
 
     _Internal references:_
@@ -82,7 +82,12 @@ function recordDistributionFor(
     // Amount must be within what is still distributable.
     (uint256 _distributionLimitOf, uint256 _distributionLimitCurrencyOf) = directory
       .controllerOf(_projectId)
-      .distributionLimitOf(_projectId, fundingCycle.configuration, IJBPaymentTerminal(msg.sender));
+      .distributionLimitOf(
+        _projectId,
+        fundingCycle.configuration,
+        IJBSingleTokenPaymentTerminal(msg.sender),
+        IJBSingleTokenPaymentTerminal(msg.sender).token()
+      );
     ```
 
     _External references:_
@@ -132,7 +137,7 @@ function recordDistributionFor(
 
     ```
     // The amount being distributed must be available.
-    if (distributedAmount > balanceOf[IJBPaymentTerminal(msg.sender)][_projectId])
+    if (distributedAmount > balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId])
       revert INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE();
     ```
 
@@ -143,7 +148,7 @@ function recordDistributionFor(
 
     ```
     // Store the new amount.
-    usedDistributionLimitOf[IJBPaymentTerminal(msg.sender)][_projectId][
+    usedDistributionLimitOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId][
       fundingCycle.number
     ] = _newUsedDistributionLimitOf;
     ```
@@ -155,8 +160,8 @@ function recordDistributionFor(
 
     ```
     // Removed the distributed funds from the project's token balance.
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-      balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] -
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+      balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] -
       distributedAmount;
     ```
 
@@ -174,7 +179,7 @@ function recordDistributionFor(
   Records newly distributed funds for a project.
 
   @dev
-  The msg.sender must be an IJBPaymentTerminal. 
+  The msg.sender must be an IJBSingleTokenPaymentTerminal. 
 
   @param _projectId The ID of the project that is having funds distributed.
   @param _amount The amount to use from the distribution limit, as a fixed point number.
@@ -202,14 +207,19 @@ function recordDistributionFor(
   if (fundingCycle.distributionsPaused()) revert FUNDING_CYCLE_DISTRIBUTION_PAUSED();
 
   // The new total amount that has been distributed during this funding cycle.
-  uint256 _newUsedDistributionLimitOf = usedDistributionLimitOf[IJBPaymentTerminal(msg.sender)][
-    _projectId
-  ][fundingCycle.number] + _amount;
+  uint256 _newUsedDistributionLimitOf = usedDistributionLimitOf[
+    IJBSingleTokenPaymentTerminal(msg.sender)
+  ][_projectId][fundingCycle.number] + _amount;
 
   // Amount must be within what is still distributable.
   (uint256 _distributionLimitOf, uint256 _distributionLimitCurrencyOf) = directory
     .controllerOf(_projectId)
-    .distributionLimitOf(_projectId, fundingCycle.configuration, IJBPaymentTerminal(msg.sender));
+    .distributionLimitOf(
+      _projectId,
+      fundingCycle.configuration,
+      IJBSingleTokenPaymentTerminal(msg.sender),
+      IJBSingleTokenPaymentTerminal(msg.sender).token()
+    );
 
   // Make sure the new used amount is within the distribution limit.
   if (_newUsedDistributionLimitOf > _distributionLimitOf || _distributionLimitOf == 0)
@@ -227,17 +237,17 @@ function recordDistributionFor(
     );
 
   // The amount being distributed must be available.
-  if (distributedAmount > balanceOf[IJBPaymentTerminal(msg.sender)][_projectId])
+  if (distributedAmount > balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId])
     revert INADEQUATE_PAYMENT_TERMINAL_STORE_BALANCE();
 
   // Store the new amount.
-  usedDistributionLimitOf[IJBPaymentTerminal(msg.sender)][_projectId][
+  usedDistributionLimitOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId][
     fundingCycle.number
   ] = _newUsedDistributionLimitOf;
 
   // Removed the distributed funds from the project's token balance.
-  balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] =
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] -
+  balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] =
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] -
     distributedAmount;
 }
 ```

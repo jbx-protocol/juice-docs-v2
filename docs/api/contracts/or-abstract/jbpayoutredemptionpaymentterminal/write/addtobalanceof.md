@@ -18,6 +18,7 @@ Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbtokenstore.md)
 function addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
+  address,
   string calldata _memo
 ) external payable virtual override isTerminalOf(_projectId) { ... }
 ```
@@ -25,6 +26,7 @@ function addToBalanceOf(
 * Arguments:
   * `_projectId` is the ID of the project to which the funds received belong.
   * `_amount` is the amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
+  * `_token` is the token being paid. This terminal ignores this property since it only manages one currency. This is ignored.
   * `_memo` is a memo to pass along to the emitted event.
 * The function can be accessed externally by anyone.
 * The function can be overriden by inheriting contracts.
@@ -94,11 +96,13 @@ function addToBalanceOf(
 
   @param _projectId The ID of the project to which the funds received belong.
   @param _amount The amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
+  ignored: _token The token being paid. This terminal ignores this property since it only manages one currency. 
   @param _memo A memo to pass along to the emitted event.
 */
 function addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
+  address,
   string calldata _memo
 ) external payable virtual override isTerminalOf(_projectId) {
   // If this terminal's token isn't ETH, make sure no msg.value was sent, then transfer the tokens in from msg.sender.

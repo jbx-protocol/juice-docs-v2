@@ -12,7 +12,10 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 **Received funds are paid to the default project ID using the stored default properties.**
 
+_Use the `addToBalance` function if there's a preference to do so. Otherwise use `pay`._
+
 _This function is called automatically when the contract receives an ETH payment._
+
 
 #### Definition
 
@@ -26,24 +29,34 @@ receive() external payable virtual override { ... }
 
 #### Body
 
-1.  Pay the ETH received to the default proejct ID using the default parameters.
+1.  Pay the ETH received to the default proejct ID using the default parameters. Use the `addToBalance` function if there's a preference to do so.
 
     ```
-    _pay(
-      defaultProjectId,
-      JBTokens.ETH,
-      address(this).balance,
-      18, // balance is a fixed point number with 18 decimals.
-      defaultBeneficiary == address(0) ? msg.sender : defaultBeneficiary,
-      0, // Can't determine expectation of returned tokens ahead of time.
-      defaultPreferClaimedTokens,
-      defaultMemo,
-      defaultMetadata
-    );
+    if (defaultPreferAddToBalance)
+      _addToBalance(
+        defaultProjectId,
+        JBTokens.ETH,
+        address(this).balance,
+        18, // balance is a fixed point number with 18 decimals.
+        defaultMemo
+      );
+    else
+      _pay(
+        defaultProjectId,
+        JBTokens.ETH,
+        address(this).balance,
+        18, // balance is a fixed point number with 18 decimals.
+        defaultBeneficiary == address(0) ? msg.sender : defaultBeneficiary,
+        0, // Can't determine expectation of returned tokens ahead of time.
+        defaultPreferClaimedTokens,
+        defaultMemo,
+        defaultMetadata
+      );
     ```
 
     _Internal references:_
 
+    * [`_addToBalance`](/api/contracts/jbetherc20projectpayer/write/-_addtobalance.md)
     * [`_pay`](/api/contracts/jbetherc20projectpayer/write/-_pay.md)
 
 </TabItem>
@@ -56,20 +69,32 @@ receive() external payable virtual override { ... }
   Received funds are paid to the default project ID using the stored default properties.
 
   @dev
+  Use the `addToBalance` function if there's a preference to do so. Otherwise use `pay`.
+
+  @dev
   This function is called automatically when the contract receives an ETH payment.
 */
 receive() external payable virtual override {
-  _pay(
-    defaultProjectId,
-    JBTokens.ETH,
-    address(this).balance,
-    18, // balance is a fixed point number with 18 decimals.
-    defaultBeneficiary == address(0) ? msg.sender : defaultBeneficiary,
-    0, // Can't determine expectation of returned tokens ahead of time.
-    defaultPreferClaimedTokens,
-    defaultMemo,
-    defaultMetadata
-  );
+  if (defaultPreferAddToBalance)
+    _addToBalance(
+      defaultProjectId,
+      JBTokens.ETH,
+      address(this).balance,
+      18, // balance is a fixed point number with 18 decimals.
+      defaultMemo
+    );
+  else
+    _pay(
+      defaultProjectId,
+      JBTokens.ETH,
+      address(this).balance,
+      18, // balance is a fixed point number with 18 decimals.
+      defaultBeneficiary == address(0) ? msg.sender : defaultBeneficiary,
+      0, // Can't determine expectation of returned tokens ahead of time.
+      defaultPreferClaimedTokens,
+      defaultMemo,
+      defaultMetadata
+    );
 }
 ```
 

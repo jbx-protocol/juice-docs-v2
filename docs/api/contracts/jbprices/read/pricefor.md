@@ -49,17 +49,47 @@ function priceFor(
     Internal references:
 
     * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
-3.  Make sure there is a feed stored for the currency base pair.
+3.  If the feed exists, return the price that it's currently reporting.
+
+    ```solidity
+    // If it exists, return the price.
+    if (_feed != IJBPriceFeed(address(0))) return _feed.currentPrice(_decimals);
+    ```
+
+    External references:
+
+    * [`currentPrice`](/api/interfaces/ijbpricefeed.md)
+4.  Get a reference to the feed using the inverse pair.
 
     ```
-    // Feed must exist.
-    if (_feed == IJBPriceFeed(address(0))) revert PRICE_FEED_NOT_FOUND();
+    // Get the inverse feed.
+    _feed = feedFor[_base][_currency];
     ```
-4.  Return the latest price being reported by the price feed. 
+
+    Internal references:
+
+    * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
+5.  If the inverse feed exists, return the inverse of the price that it's currently reporting.
+
+    ```solidity
+    // If it exists, return the inverse price.
+    if (_feed != IJBPriceFeed(address(0)))
+      return PRBMath.mulDiv(10**_decimals, 10**_decimals, _feed.currentPrice(_decimals));
+    ```
+
+    _Libraries used:_
+
+    * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
+      * `.mulDiv(...)`
+
+    External references:
+
+    * [`currentPrice`](/api/interfaces/ijbpricefeed.md)
+6.  Revert if no feed was found.
 
     ```
-    // Get the price.
-    return _feed.getPrice(_decimals);
+    // No price feed available, revert.
+    revert PRICE_FEED_NOT_FOUND();
     ```
 
 </TabItem>
@@ -88,11 +118,18 @@ function priceFor(
   // Get a reference to the feed.
   IJBPriceFeed _feed = feedFor[_currency][_base];
 
-  // Feed must exist.
-  if (_feed == IJBPriceFeed(address(0))) revert PRICE_FEED_NOT_FOUND();
+  // If it exists, return the price.
+  if (_feed != IJBPriceFeed(address(0))) return _feed.currentPrice(_decimals);
 
-  // Get the price.
-  return _feed.getPrice(_decimals);
+  // Get the inverse feed.
+  _feed = feedFor[_base][_currency];
+
+  // If it exists, return the inverse price.
+  if (_feed != IJBPriceFeed(address(0)))
+    return PRBMath.mulDiv(10**_decimals, 10**_decimals, _feed.currentPrice(_decimals));
+
+  // No price feed available, revert.
+  revert PRICE_FEED_NOT_FOUND();
 }
 ```
 

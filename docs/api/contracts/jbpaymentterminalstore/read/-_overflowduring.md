@@ -16,7 +16,7 @@ _This amount changes as the value of the balance changes in relation to the curr
 
 ```
 function _overflowDuring(
-  IJBPaymentTerminal _terminal,
+  IJBSingleTokenPaymentTerminal _terminal,
   uint256 _projectId,
   JBFundingCycle memory _fundingCycle,
   uint256 _balanceCurrency
@@ -56,7 +56,7 @@ function _overflowDuring(
     // Get a reference to the distribution limit during the funding cycle.
     (uint256 _distributionLimit, uint256 _distributionLimitCurrency) = directory
       .controllerOf(_projectId)
-      .distributionLimitOf(_projectId, _fundingCycle.configuration, _terminal);
+      .distributionLimitOf(_projectId, _fundingCycle.configuration, _terminal, _terminal.token());
     ```
 
     _External references:_
@@ -125,7 +125,7 @@ function _overflowDuring(
   @return overflow The overflow of funds, as a fixed point number with the same amount of decimals as the specified terminal.
 */
 function _overflowDuring(
-  IJBPaymentTerminal _terminal,
+  IJBSingleTokenPaymentTerminal _terminal,
   uint256 _projectId,
   JBFundingCycle memory _fundingCycle,
   uint256 _balanceCurrency
@@ -139,7 +139,7 @@ function _overflowDuring(
   // Get a reference to the distribution limit during the funding cycle.
   (uint256 _distributionLimit, uint256 _distributionLimitCurrency) = directory
     .controllerOf(_projectId)
-    .distributionLimitOf(_projectId, _fundingCycle.configuration, _terminal);
+    .distributionLimitOf(_projectId, _fundingCycle.configuration, _terminal, _terminal.token());
 
   // Get a reference to the amount still distributable during the funding cycle.
   uint256 _distributionLimitRemaining = _distributionLimit -

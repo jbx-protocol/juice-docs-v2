@@ -137,14 +137,14 @@ function set(
     5.  Pack common split properties into a storage slot.
 
         ```
-        // Prefer claimed in bit 0.
-        uint256 _packedSplitParts1 = _splits[_i].preferClaimed ? 1 : 0;
-        // Percent in bits 1-32.
-        _packedSplitParts1 |= _splits[_i].percent << 1;
-        // ProjectId in bits 33-88.
-        _packedSplitParts1 |= _splits[_i].projectId << 33;
-        // Beneficiary in bits 89-248.
-        _packedSplitParts1 |= uint256(uint160(address(_splits[_i].beneficiary))) << 89;
+        // Pack the first split part properties.
+        uint256 _packedSplitParts1;
+        
+        if(_splits[_i].preferClaimed) _packedSplitParts1 = 1;
+        if(_splits[_i].preferAddToBalance) _packedSplitParts1 |= 1 << 1;
+        _packedSplitParts1 |= _splits[_i].percent << 2;
+        _packedSplitParts1 |= _splits[_i].projectId << 34;
+        _packedSplitParts1 |= uint256(uint160(address(_splits[_i].beneficiary))) << 90;
 
         // Store the first split part.
         _packedSplitParts1Of[_projectId][_domain][_group][_i] = _packedSplitParts1;
@@ -274,14 +274,14 @@ function set(
     // Validate the total does not exceed the expected value.
     if (_percentTotal > JBConstants.SPLITS_TOTAL_PERCENT) revert INVALID_TOTAL_PERCENT();
 
-    // Prefer claimed in bit 0.
-    uint256 _packedSplitParts1 = _splits[_i].preferClaimed ? 1 : 0;
-    // Percent in bits 1-32.
-    _packedSplitParts1 |= _splits[_i].percent << 1;
-    // ProjectId in bits 33-88.
-    _packedSplitParts1 |= _splits[_i].projectId << 33;
-    // Beneficiary in bits 89-248.
-    _packedSplitParts1 |= uint256(uint160(address(_splits[_i].beneficiary))) << 89;
+    // Pack the first split part properties.
+    uint256 _packedSplitParts1;
+    
+    if(_splits[_i].preferClaimed) _packedSplitParts1 = 1;
+    if(_splits[_i].preferAddToBalance) _packedSplitParts1 |= 1 << 1;
+    _packedSplitParts1 |= _splits[_i].percent << 2;
+    _packedSplitParts1 |= _splits[_i].projectId << 34;
+    _packedSplitParts1 |= uint256(uint160(address(_splits[_i].beneficiary))) << 90;
 
     // Store the first split part.
     _packedSplitParts1Of[_projectId][_domain][_group][_i] = _packedSplitParts1;

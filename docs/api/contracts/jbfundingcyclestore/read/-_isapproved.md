@@ -32,8 +32,12 @@ function _isApproved(uint256 _projectId, JBFundingCycle memory _fundingCycle)
 
     ```
     return
-      _ballotStateOf(_projectId, _fundingCycle.configuration, _fundingCycle.basedOn) ==
-      JBBallotState.Approved;
+      _ballotStateOf(
+        _projectId,
+        _fundingCycle.configuration,
+        _fundingCycle.start,
+        _fundingCycle.basedOn
+      ) == JBBallotState.Approved;
     ```
 
     _Internal references:_
@@ -60,8 +64,12 @@ function _isApproved(uint256 _projectId, JBFundingCycle memory _fundingCycle)
     returns (bool)
   {
     return
-      _ballotStateOf(_projectId, _fundingCycle.configuration, _fundingCycle.basedOn) ==
-      JBBallotState.Approved;
+      _ballotStateOf(
+        _projectId,
+        _fundingCycle.configuration,
+        _fundingCycle.start,
+        _fundingCycle.basedOn
+      ) == JBBallotState.Approved;
   }
 ```
 

@@ -12,7 +12,7 @@ Interface: [`JBPaymentTerminalStore`](/api/interfaces/ijbpaymentterminalstore.md
 
 **Records the migration of funds from this store.**
 
-_The msg.sender must be an [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminalstore.md)._
+_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbpaymentterminalstore.md)._
 
 #### Definition
 
@@ -56,7 +56,7 @@ function recordMigration(uint256 _projectId)
 
     ```
     // Return the current balance.
-    balance = balanceOf[IJBPaymentTerminal(msg.sender)][_projectId];
+    balance = balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId];
     ```
 
     _Internal references:_
@@ -66,7 +66,7 @@ function recordMigration(uint256 _projectId)
 
     ```
     // Set the balance to 0.
-    balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] = 0;
+    balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] = 0;
     ```
 
     _Internal references:_
@@ -83,7 +83,7 @@ function recordMigration(uint256 _projectId)
   Records the migration of funds from this store.
 
   @dev
-  The msg.sender must be an IJBPaymentTerminal. 
+  The msg.sender must be an IJBSingleTokenPaymentTerminal. 
 
   @param _projectId The ID of the project being migrated.
 
@@ -102,10 +102,10 @@ function recordMigration(uint256 _projectId)
   if (!_fundingCycle.terminalMigrationAllowed()) revert PAYMENT_TERMINAL_MIGRATION_NOT_ALLOWED();
 
   // Return the current balance.
-  balance = balanceOf[IJBPaymentTerminal(msg.sender)][_projectId];
+  balance = balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId];
 
   // Set the balance to 0.
-  balanceOf[IJBPaymentTerminal(msg.sender)][_projectId] = 0;
+  balanceOf[IJBSingleTokenPaymentTerminal(msg.sender)][_projectId] = 0;
 }
 ```
 

@@ -8,24 +8,24 @@ interface IJBPaymentTerminalStore {
 
   function prices() external view returns (IJBPrices);
 
-  function balanceOf(IJBPaymentTerminal _terminal, uint256 _projectId)
+  function balanceOf(IJBSingleTokenPaymentTerminal _terminal, uint256 _projectId)
     external
     view
     returns (uint256);
 
   function usedDistributionLimitOf(
-    IJBPaymentTerminal _terminal,
+    IJBSingleTokenPaymentTerminal _terminal,
     uint256 _projectId,
     uint256 _fundingCycleNumber
   ) external view returns (uint256);
 
   function usedOverflowAllowanceOf(
-    IJBPaymentTerminal _terminal,
+    IJBSingleTokenPaymentTerminal _terminal,
     uint256 _projectId,
     uint256 _fundingCycleConfiguration
   ) external view returns (uint256);
 
-  function currentOverflowOf(IJBPaymentTerminal _terminal, uint256 _projectId)
+  function currentOverflowOf(IJBSingleTokenPaymentTerminal _terminal, uint256 _projectId)
     external
     view
     returns (uint256);
@@ -37,7 +37,7 @@ interface IJBPaymentTerminalStore {
   ) external view returns (uint256);
 
   function currentReclaimableOverflowOf(
-    IJBPaymentTerminal _terminal,
+    IJBSingleTokenPaymentTerminal _terminal,
     uint256 _projectId,
     uint256 _tokenCount,
     bool _useTotalOverflow

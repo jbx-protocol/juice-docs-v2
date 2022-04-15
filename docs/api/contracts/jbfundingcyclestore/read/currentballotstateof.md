@@ -50,7 +50,13 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
 3.  Return the ballot state of the latest funding cycle configuration as is determined by the current configuration and the funding cycle it's based on.
 
     ```
-    return _ballotStateOf(_projectId, _fundingCycle.configuration, _fundingCycle.basedOn);
+    return
+      _ballotStateOf(
+        _projectId,
+        _fundingCycle.configuration,
+        _fundingCycle.start,
+        _fundingCycle.basedOn
+      );
     ```
 
     _Internal references:_
@@ -77,7 +83,13 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
   // Resolve the funding cycle for the for the latest configuration.
   JBFundingCycle memory _fundingCycle = _getStructFor(_projectId, _fundingCycleConfiguration);
 
-  return _ballotStateOf(_projectId, _fundingCycle.configuration, _fundingCycle.basedOn);
+  return
+    _ballotStateOf(
+      _projectId,
+      _fundingCycle.configuration,
+      _fundingCycle.start,
+      _fundingCycle.basedOn
+    );
 }
 ```
 
