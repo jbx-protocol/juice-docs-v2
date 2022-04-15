@@ -35,7 +35,7 @@ function isTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
       if (_terminalsOf[_projectId][_i] == _terminal) return true;
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 2.  If a terminal is not found, return false.

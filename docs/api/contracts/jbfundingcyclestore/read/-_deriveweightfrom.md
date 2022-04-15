@@ -89,7 +89,7 @@ function _deriveWeightFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
     * [`JBConstants`](/api/libraries/jbconstants.md)
-      * `.MAX_DISCOUNT_RATE` _Internal references:_
+      * `.MAX_DISCOUNT_RATE` 
 
 </TabItem>
 

@@ -46,7 +46,7 @@ function priceFor(
     IJBPriceFeed _feed = feedFor[_currency][_base];
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 3.  If the feed exists, return the price that it's currently reporting.
@@ -56,7 +56,7 @@ function priceFor(
     if (_feed != IJBPriceFeed(address(0))) return _feed.currentPrice(_decimals);
     ```
 
-    External references:
+    _External references:_
 
     * [`currentPrice`](/api/interfaces/ijbpricefeed.md)
 4.  Get a reference to the feed using the inverse pair.
@@ -66,7 +66,7 @@ function priceFor(
     _feed = feedFor[_base][_currency];
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 5.  If the inverse feed exists, return the inverse of the price that it's currently reporting.
@@ -82,7 +82,7 @@ function priceFor(
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
 
-    External references:
+    _External references:_
 
     * [`currentPrice`](/api/interfaces/ijbpricefeed.md)
 6.  Revert if no feed was found.

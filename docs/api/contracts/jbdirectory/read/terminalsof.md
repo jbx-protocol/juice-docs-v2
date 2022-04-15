@@ -33,7 +33,7 @@ function terminalsOf(uint256 _projectId)
     return _terminalsOf[_projectId];
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 

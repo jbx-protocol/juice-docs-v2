@@ -99,7 +99,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
     controllerOf[_projectId] = _controller;
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
 5.  Emit a `SetController` event with the relevant parameters.

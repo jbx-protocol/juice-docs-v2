@@ -39,7 +39,7 @@ function splitsOf(
     return _getStructsFor(_projectId, _domain, _group);
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`_getStructsFor`](/api/contracts/jbsplitsstore/read/-_getstructsfor.md)
 

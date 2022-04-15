@@ -56,7 +56,7 @@ function hasPermissions(
       return false;
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`permissionsOf`](/api/contracts/jboperatorstore/properties/permissionsof.md)
 5.  After the loop, return `true` since the loop checked all specified permissions without returning `false`.

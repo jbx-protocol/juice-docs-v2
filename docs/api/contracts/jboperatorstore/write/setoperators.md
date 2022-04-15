@@ -40,7 +40,7 @@ function setOperators(JBOperatorData[] calldata _operatorData) external override
         uint256 _packed = _packedPermissions(_operatorData[_i].permissionIndexes);
         ```
 
-        Internal references:
+        _Internal references:_
 
         * [`_packedPermissions`](/api/contracts/jboperatorstore/read/-_packedpermissions.md)
     2.  Store the packed permissions as the permissions of the provided operator, on behalf of the `msg.sender`, specifically for the provided domain.

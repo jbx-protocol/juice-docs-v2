@@ -45,7 +45,7 @@ function hasPermissions(
     return (((permissionsOf[_operator][_account][_domain] >> _permissionIndex) & 1) == 1)
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`permissionsOf`](/api/contracts/jboperatorstore/properties/permissionsof.md)
 

@@ -41,7 +41,7 @@ function addFeedFor(
     if (feedFor[_currency][_base] != IJBPriceFeed(address(0))) revert PRICE_FEED_ALREADY_EXISTS();
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 2.  Store the provided feed for the currency base pair.
@@ -51,7 +51,7 @@ function addFeedFor(
     feedFor[_currency][_base] = _feed;
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 3.  Emit an `AddFeed` event with the relevant parameters.
@@ -109,7 +109,7 @@ function addFeedFor(
 
 | Name                                  | Data                                                                                                                                                                                                                                                                                           |
 | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddFeed`**](/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[IJBPriceFeed](/api/interfaces/ijbpricefeed.md)feed</code></li></ul> |
+| [**`AddFeed`**](/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[IJBPriceFeed](/api/interfaces/ijbpricefeed.md) feed</code></li></ul> |
 
 </TabItem>
 

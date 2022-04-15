@@ -42,7 +42,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
     isAllowedToSetFirstController[_address] = _flag;
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`isAllowedToSetFirstController`](/api/contracts/jbdirectory/properties/isallowedtosetfirstcontroller.md)
 2.  Emit a `SetIsAllowedToSetFirstController` event with the relevant parameters.

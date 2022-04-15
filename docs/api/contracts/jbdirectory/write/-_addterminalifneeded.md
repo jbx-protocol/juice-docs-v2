@@ -31,7 +31,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
     if (isTerminalOf(_projectId, _terminal)) return;
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
 
@@ -73,7 +73,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
     _terminalsOf[_projectId].push(_terminal);
     ```
 
-    Internal references:
+    _Internal references:_
 
     * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
 5.  Emit a `AddTerminal` event with the relevant parameters.
