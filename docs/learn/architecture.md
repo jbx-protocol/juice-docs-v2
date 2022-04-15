@@ -51,5 +51,7 @@ Likewise, a project can bring its own contract to serve as its controller. A pro
 
 * [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md) provides utilities to pay a project. Inheriting this contract is useful for contracts that wish to route funds to a treasury while specifying the token beneficiary, memo, and other contextual information alongside. Instances of this contract can also be deployed as stand-alone addresses that will forward funds received directly to a project's treasury.
 * [`JBETHERC20ProjectPayerDeployer`](/api/contracts/jbetherc20projectpayerdeployer/README.md) provides a function to deploy new stand-alone [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md)'s. 
+* [`JBETHERC20SplitsPayer`](/api/contracts/jbetherc20splitspayer/README.md) provides utilities to pay a group of splits. Inheriting this contract is useful for contracts that wish to route funds to a group of splits while specifying the memo, and other contextual information alongside. Instances of this contract can also be deployed as stand-alone addresses that will forward funds received directly to a group of splits.
+* [`JBETHERC20SplitsPayerDeployer`](/api/contracts/jbetherc20splitspayerdeployer/README.md) provides a function to deploy new stand-alone [`JBETHERC20SplitsPayer`](/api/contracts/jbetherc20splitspayer/README.md)'s. 
 
 <!-- ## [Visual map](www.figma.com/file/qGZbvt4kWgDJOntra7L960/JBV2) -->

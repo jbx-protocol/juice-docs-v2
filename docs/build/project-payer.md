@@ -25,7 +25,7 @@ function pay(
   bool _preferClaimedTokens,
   string calldata _memo,
   bytes calldata _metadata
-) public payable virtual {}
+) public payable virtual override {}
 ```
 
 ```
