@@ -29,20 +29,20 @@ Ethereum mainnet: _Not yet deployed_\
 
 ```
 constructor(
-  IJBPrices _prices,
   IJBDirectory _directory,
-  IJBFundingCycleStore _fundingCycleStore
+  IJBFundingCycleStore _fundingCycleStore,
+  IJBPrices _prices
 ) {
-  prices = _prices;
   directory = _directory;
   fundingCycleStore = _fundingCycleStore;
+  prices = _prices;
 }
 ```
 
 * **Arguments:**
-  * `_prices` is an [`IJBPrices`](/api/interfaces/ijbprices.md) contract that exposes price feeds.
   * `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
   * `_fundingCycleStore` is an [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md) contract storing all funding cycle configurations.
+  * `_prices` is an [`IJBPrices`](/api/interfaces/ijbprices.md) contract that exposes price feeds.
 
 ## Properties
 
