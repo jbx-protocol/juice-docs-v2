@@ -50,6 +50,10 @@ function addFeedFor(
     // Store the feed.
     feedFor[_currency][_base] = _feed;
     ```
+
+    Internal references:
+
+    * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 3.  Emit an `AddFeed` event with the relevant parameters.
 
     ```
