@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-Here's what the protocol lets you do:
+The Juicebox protocol contains the following functionality.
 
 #### Deploy an NFT that represents ownership over a project
 <p>
