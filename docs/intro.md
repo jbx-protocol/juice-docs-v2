@@ -5,25 +5,21 @@ sidebar_position: 1
 
 # Intro
 
-:::tip
-Please note that these docs are under active development.
-:::
+#### Background
 
-## Background
+Welcome all curious developers to the Juicebox protocol docs.
 
-Welcome all curious developers to the Juicebox V2 protocol docs.
-
-The Juicebox protocol is a programmable treasury. Projects can use it to configure how its tokens should be minted when it receives funds, and under what conditions those funds can be distributed to preprogrammed addresses or claimed by its community. These rules can evolve over funding cycles, allowing people to bootstrap open-ended projects and add structure, constraints, and incentives over time as needed. The protocol is light enough for a group of friends, yet powerful enough for a global network of anons sharing thousands of ETH, ERC-20s, or other assets.
+The Juicebox protocol is a programmable treasury. Projects can use it to configure how its tokens should be minted when it receives funds, and under what conditions those funds can be distributed to preprogrammed addresses or reclaimed by its community. These rules can evolve over funding cycles, allowing people to bootstrap open-ended projects and add structure, constraints, and incentives over time as needed. The protocol is light enough for a group of friends, yet powerful enough for a global network of anons sharing thousands of ETH, ERC-20s, or other assets.
 
 The protocol is nuanced, however. The goal of the protocol docs is for you to find any protocol related information that you're looking for. Whether you're auditing, developing your own JB project, creating JB extensions, looking for bug bounties, or just looking to learn some solidity and contract design, these docs should give you just what you're looking for. These docs should allow you to click around and get a real good deep dive, and should just as easily allow you to find overview information.
 
-## Directory
+#### Directory
 
-Looking for general guides on how the protocol works? See the [Learn](learn/overview.md) section.
+[Learn](learn/overview.md) - General info on how the protocol works. 
 
-Looking for guides to launch and program a treasury? See the [Build](build/getting-started.md) section.
+[Build](build/getting-started.md) - Guides to launch and program a treasury.
 
-Looking for an outline of the protocol's API, or a deep dive on each line of code? Click around in the [API](api/contracts/) section. There are bug bounties posted for each documented function.
+[API](api/contracts/) - Specifications of each contract and function, and a deep dive through each line of code.
 
 Documentation for Juicebox Protocol V1 (live on mainnet since July 2021) is available [here](protocol-v1/).
 
