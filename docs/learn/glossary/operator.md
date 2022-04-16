@@ -6,7 +6,7 @@
 * Several functions are only available to a project's owner, or to an operator address that the project's owner has set.
 * Operator permissions are stored and managed in the [`JBOperatorStore`](/api/contracts/jboperatorstore/README.md), where they can be added or revoked at any time by the address being operated on behalf of.
 * Operator permissions are expressed in terms of indexes defined in [`JBOperations`](/api/libraries/jboperations.md).
-* Operator permissions apply to a specific domain, which is used in the Juicebox ecosystem to allow addresses to give permissions that only apply to a specific project (where the domain is the projectId). A domain of 0 is a wildcard domain.
+* Operator permissions apply to a specific domain namespace, which is used in the Juicebox ecosystem to allow addresses to give permissions that only apply to a specific project (where the domain is the project's ID). A domain of 0 is a wildcard domain, giving an operator access to an action across all domains.
 
 #### What you'll want to know if you're building
 

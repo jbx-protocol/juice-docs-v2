@@ -2,7 +2,7 @@
 
 #### What everyone needs to know
 
-* A project's payout distribution splits or its reserved token distribution splits can be directed at addresses, other project treasuries within the protocol ecosystem, or custom allocator contracts.
+* A project's payout distribution splits or its reserved token distribution splits can be directed at custom allocator contracts.
 * An allocator can be attached to a project's split during any funding cycle configuration to automate the routing of treasury funds and reserved project tokens. 
 * An allocator's `allocate(...)` transaction is triggered automatically when the split is receiving funds.
 
