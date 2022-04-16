@@ -6,7 +6,7 @@ sidebar_position: 3
 The protocol has very minimal global governance. The following are the only global functions that can be accessed by a privileged administrating address, initially the JuiceboxDAO multisig:
 
 * **[`JBProjects.setTokenUriResolver(...)`](/api/contracts/jbprojects/write/settokenuriresolver.md)**<br/>
-  Allows the owner of the [`JBProjects`](/api/contracts/jbprojects/README.md) contract to provide and change the [`IJBTokenUriResolver`](/api/interfaces/ijbtokenuriresolver.md) used to provide metadata for project NFTs in its [`tokenURI(...)`](/api/contracts/jbprojects/read/tokenuri.md) function.
+  Allows the owner of the [`JBProjects`](/api/contracts/jbprojects/README.md) contract to provide and change the [`IJBTokenUriResolver`](/api/interfaces/ijbtokenuriresolver.md) used to resolve metadata for project NFTs in its [`tokenURI(...)`](/api/contracts/jbprojects/read/tokenuri.md) function.
   <br/>
 * **[`JBPrices.addFeedFor(...)`](/api/contracts/jbprices/write/addfeed.md)**<br/>
   Allows the owner of the [`JBPrices`](/api/contracts/jbprices/README.md) contract to add new price feeds used to convert amounts denoted in one currency to another. Once added, a price feed cannot be removed.

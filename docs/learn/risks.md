@@ -16,7 +16,7 @@ export const Highlight = ({children, color}) => (
   </span>
 );
 
-The following are risks that everyone should be aware of before interacting with the protocol. The protocol's design exposes these risks in consequence to its normal operating procedures. Most risks boil down to the trust. 
+The following are risks that everyone should be aware of before interacting with the protocol. The protocol's design exposes these risks in consequence to its normal operating procedures. 
 
 #### Smart contract risk
 <p>
