@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Splits Payer
+# Splits payer
 
 [`JBETHERC20SplitsPayer`](/api/contracts/jbetherc20splitspayer/README.md) contracts make it easy to route funds to a group of splits from other contracts or from within inheriting contracts. This is useful for routing funds to a number of Juicebox project treasuries and other addresses from within other contracts such as an NFT marketplaces.
 

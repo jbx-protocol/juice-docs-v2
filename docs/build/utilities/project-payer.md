@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Project Payer
+# Project payer
 
 [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md) contracts make it easy to route funds to projects' treasuries from other contracts or from within inheriting contracts. This is useful for routing funds to a Juicebox treasury from within other contracts such as an NFT's minting function, or creating contract's that will automatically route any received funds to a project's treasury with preconfigured parameters to send along with the payment.  
 
