@@ -49,6 +49,11 @@ h1 {
   font-size: 2.7rem;
 }
 
-h4, h5 {
+h4,
+h5 {
   color: #FFB32C;
+}
+
+.menu__link {
+  overflow: scroll;
 }
