@@ -1,4 +1,4 @@
-# JBTokenAmount
+# JBSplitAllocationData
 
 ```
 struct JBSplitAllocationData {
