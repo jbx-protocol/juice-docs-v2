@@ -45,7 +45,7 @@ The abstract [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jb
 
 Likewise, a project can bring its own contract to serve as its controller. A project's controller is the only contract that has direct access to manipulate its tokens and funding cycles. A project can set its controller from the core [`JBDirectory`](/api/contracts/jbdirectory/README.md) contract using [`JBDirectory.setControllerOf(...)`](/api/contracts/jbdirectory/write/setcontrollerof.md) if its current funding cycle is configured to allow doing so.
 
-#### Bonus contracts
+#### Bonus utility contracts
 
 * [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md) provides utilities to pay a project. Inheriting this contract is useful for contracts that wish to route funds to a treasury while specifying the token beneficiary, memo, and other contextual information alongside. Instances of this contract can also be deployed as stand-alone addresses that will forward funds received directly to a project's treasury.
 * [`JBETHERC20ProjectPayerDeployer`](/api/contracts/jbetherc20projectpayerdeployer/README.md) provides a function to deploy new stand-alone [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md)'s. 
