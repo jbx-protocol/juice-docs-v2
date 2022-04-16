@@ -42,7 +42,7 @@ Ownership of each project on the Juicebox protocol belongs to the address posses
 
      #### Setting an overflow allowance
      
-     With an overflow allowance of zero, all treasury funds belonging to the community – funds in excess of the distribution limit – can not be accessed by the project owner. The only way funds can leave the treasury is through token redemptions. 
+     With an overflow allowance of zero, all treasury funds belonging to the community – funds in excess of the distribution limit – cannot be accessed by the project owner. The only way funds can leave the treasury is through token redemptions. 
 
      A non-zero overflow allowance gives the project owner access to a portion of the community's funds for on-demand distribution to arbitrary addresses.
      
@@ -50,15 +50,23 @@ Ownership of each project on the Juicebox protocol belongs to the address posses
 
      🔴 <strong>Used maliciously</strong> this can be used to rug the entire treasury into an arbitrary wallet.<br/><br/>
 
-     #### Paused token minting
+     #### Allowing token minting
 
-     While token minting is paused, the only way for new project tokens to be minted and distributed is for the project to receive new funds into its treasury. Tokens will get minted in accordance to the current funding cycle's values. 
+     While token minting is not allowed, the only way for new project tokens to be minted and distributed is for the project to receive new funds into its treasury. Tokens will get minted in accordance to the current funding cycle's values. 
 
-     If token minting isn't paused, an arbitrary number of tokens can be minted and distributed by the project owner, diluting the redemption value of all outstanding tokens.
+     If token minting is allowed, an arbitrary number of tokens can be minted and distributed by the project owner, diluting the redemption value of all outstanding tokens.
      
      🟢 <strong>Used productively</strong> this can be used to premint tokens to members, or satisfy other agreed upon inflationary treasury strategies.<br/>
 
      🔴 <strong>Used maliciously</strong> this can be used to mint extra tokens and redeem them to reclaim treasury funds into an arbitrary wallet, rugging the entire treasury.<br/><br/>
+
+     #### Setting the funding cycle's weight 
+     
+     A funding cycle's weight determines how many tokens will be minted and distributed when a treasury receives funds. By default, a funding cycle has the same weight as the cycle that preceded it after applying the preceding cycle's discount rate.  
+     
+     🟢 <strong>Used productively</strong> this can be used to manage how tokens are issued over time.<br/>
+
+     🔴 <strong>Used maliciously</strong> this can be used to manipulate token issuance, and rug the entire treasury into an arbitrary wallet.<br/><br/>
 
      #### Allowing changing of project tokens
 
@@ -74,22 +82,15 @@ Ownership of each project on the Juicebox protocol belongs to the address posses
 
      While each functionality isn't paused, the standard functionality will be accessible.
 
-     If payments are paused to a project, the protocol will reject any inbound payments. If disitributions are paused for a project, the protocol will reject any request to distribute funds from the treasury. If redemptions are paused, the p changing tokens is allowed, a new token can replace the role of a previous token for new issuance and redemptions. 
+     If payments are paused to a project, the protocol will reject any inbound payments. If disitributions are paused for a project, the protocol will reject any request to distribute funds from the treasury. If redemptions are paused, the protocol will reject any request to redeem tokens. If burning is paused, the protocol will reject any request by token holders to burn their tokens. 
 
-     🟢 <strong>Used productively</strong> this can be used to allow projects to augment a previous token strategy with a Juicebox treasury, detach a token from a Juicebox treasury, or create custom token mechanisms associated with its Juicebox treasury.<br/>
+     🟢 <strong>Used productively</strong> this can be used to allow projects to creatively tune how its treasury can be accessed.<br/>
 
-     🔴 <strong>Used maliciously</strong> this can be used to cut off a community of token holders from their treasury while using the redemption of a new token to reclaim treasury funds into an arbitrary wallet.<br/><br/>
+     🔴 <strong>Used maliciously</strong> this can be used to cut off a community of token holders from standard treasury functionality.<br/><br/>
 
-     #### Setting the funding cycle's weight 
-     
-     A funding cycle's weight determines how many tokens will be minted and distributed when a treasury receives funds. By default, a funding cycle has the same weight as the cycle that preceded it after applying the preceding cycle's discount rate.  
-     
-     🟢 <strong>Used productively</strong> this can be used to manage how tokens are issued over time.<br/>
-
-     🔴 <strong>Used maliciously</strong> this can be used to manipulate token issuance, and rug the entire treasury into an arbitrary wallet.<br/><br/>
      #### Custom treasury extensions
     
-     If project's funding cycles have no data source, delegate, split allocator, or ballot constracts attached, the consequences of each interaction with the protocol are predictable, consistent, and specified within these docs.
+     If a project's funding cycles have no data source, delegate, split allocator, or ballot constracts attached, the consequences of each interaction with the protocol are predictable, consistent, and specified within these docs.
 
      If a project has attached a data source, delegate, split allocator, or ballot contract to a funding cycle, the protocol will access information from them and call functionality within them at specific moments during the execution of various transactions within the regular operation of the protocol.
      
