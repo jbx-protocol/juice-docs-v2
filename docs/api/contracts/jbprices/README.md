@@ -10,7 +10,7 @@ description: Manages and normalizes price feeds.
 
 ### **Addresses**
 
-Ethereum mainnet: _Not yet deployed_
+Ethereum mainnet: [`0x8E05bcD2812E1449f0EC3aE24E2C395F533d9A99`](https://etherscan.io/address/0x8E05bcD2812E1449f0EC3aE24E2C395F533d9A99)
 
 ### **Interfaces**
 

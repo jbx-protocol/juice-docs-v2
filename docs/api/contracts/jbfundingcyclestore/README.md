@@ -10,7 +10,7 @@ description: Manages funding cycle configurations and scheduling.
 
 ### **Addresses**
 
-Ethereum mainnet: _Not yet deployed_
+Ethereum mainnet: [`0xce2Ce2F37fE5B2C2Dd047908B2F61c9c3f707272`](https://etherscan.io/address/0xce2Ce2F37fE5B2C2Dd047908B2F61c9c3f707272)
 
 ### **Interfaces**
 

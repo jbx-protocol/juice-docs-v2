@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/apple.svg').default,
     description: (
       <>
-	Visit the <a href="/docs/intro/">docs</a> to learn about the Juicebox protocol.
+	Visit the <a href="/docs/">docs</a> to learn about the Juicebox protocol.
       </>
     ),
   },
