@@ -1,41 +1,39 @@
----
-description: Manages and normalizes price feeds.
----
-
 # JBChainlinkV3PriceFeed
 
-## Overview
+_Manages and normalizes price feeds._
 
-### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBChainlinkV3PriceFeed.sol)
+#### Code
 
-### **Addresses**
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBChainlinkV3PriceFeed.sol
+
+#### Addresses
 
 Ethereum mainnet: [`0xfd6Bc33C9e25c6d9Bbd00b04992E3639E786DCEd`](https://etherscan.io/address/0xfd6Bc33C9e25c6d9Bbd00b04992E3639E786DCEd)
 
-### **Interfaces**
+#### Interfaces
 
 | Name                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`IJBPriceFeed`**](/api/interfaces/ijbpricefeed.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
-## Constructor
+#### Constructor
 
 ```
+/** 
+  @param _feed The feed to report prices from.
+*/
 constructor(AggregatorV3Interface _feed) {
   feed = _feed;
 }
 ```
 
-* **Arguments:**
-  * `_feed` is the feed to report prices from.
-
-## Properties
+#### Properties
 
 | Function                                                          | Definition                                                                                                                                                                                                |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`feed`**](/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/properties/feed.md)                            | <p><strong>Returns</strong></p><ul><li><code>[AggregatorV3Interface](https://docs.chain.link/docs/price-feeds-api-reference/) feed</code></li></ul> |
 
-## Read
+#### Read
 
 | Function                                 | Definition                                                                                                                                                                                   |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

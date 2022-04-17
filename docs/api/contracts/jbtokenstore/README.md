@@ -1,34 +1,36 @@
----
-description: >-
- Manage token minting, burning, and account balances.
----
-
 # JBTokenStore
 
-## Overview
+_Manage token minting, burning, and account balances._
 
-### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBTokenStore.sol)
+#### Code
 
-### **Addresses**
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBTokenStore.sol
+
+#### Addresses
 
 Ethereum mainnet: [`0x5b62ccB7fdA139185374c8f36FAa388c20E1387F`](https://etherscan.io/address/0x5b62ccB7fdA139185374c8f36FAa388c20E1387F)
 
-### **Interfaces**
+#### Interfaces
 
 | Name                                                     | Description                                                                                                                              |
 | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`IJBTokenStore`**](/api/interfaces/ijbtokenstore.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
-### **Inheritance**
+#### Inheritance
 
 | Contract                                                         | Description                                                                                                                                                                        |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`JBControllerUtility`**](/api/contracts/or-abstract/jbcontrollerutility/) | Includes convenience functionality for checking if the message sender is the current controller of the project whose data is being manipulated.                                      |
 | [**`JBOperatable`**](/api/contracts/or-abstract/jboperatable/)               | Includes convenience functionality for checking a message sender's permissions before executing certain transactions. |
 
-## Constructor
+#### Constructor
 
 ```
+/**
+  @param _operatorStore A contract storing operator assignments.
+  @param _projects A contract which mints ERC-721's that represent project ownership and transfers.
+  @param _directory A contract storing directories of terminals and controllers for each project.
+*/
 constructor(
   IJBOperatorStore _operatorStore,
   IJBProjects _projects,
@@ -38,12 +40,7 @@ constructor(
 }
 ```
 
-* **Arguments:**
-  * `_operatorStore` is an [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
-  * `_projects` is an [`IJBProjects`](/api/interfaces/ijbprojects.md) contract which mints ERC-721's that represent project ownership and transfers.
-  * `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
-
-## Events
+#### Events
 
 | Name                                                     | Data                                                                                                                                                                                                                                                                          |
 | -------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,7 +52,7 @@ constructor(
 | [**`Change`**](/api/contracts/jbtokenstore/events/change.md)               | <ul><li><code>uint256 indexed projectId</code></li><li><code>[IJBToken](/api/interfaces/ijbtoken.md) indexed newToken</code></li><li><code>[IJBToken](/api/interfaces/ijbtoken.md) indexed oldToken</code></li><li><code>address indexed owner</code></li><li><code>address caller</code></li></ul>                                                                                           |
 | [**`Transfer`**](/api/contracts/jbtokenstore/events/transfer.md)                     | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>address indexed recipient</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                   |
 
-## Properties
+#### Properties
 
 | Function                                                             | Definition                                                                                                                                                                                                 |
 | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -66,7 +63,7 @@ constructor(
 | [**`unclaimedTotalSupplyOf`**](/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 unclaimedTotalSupply</code></li></ul>                                  |
 | [**`requireClaimFor`**](/api/contracts/jbtokenstore/properties/requireclaimfor.md)               | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool flag</code></li></ul>                                                     |
 
-## Read
+#### Read
 
 | Function                                                             | Definition                                                                                                                                                                                                 |
 | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -78,7 +75,7 @@ constructor(
 | Function                                                            | Definition                                                                                                                                                                                                                                                                                                      |
 | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`issueFor`**](/api/contracts/jbtokenstore/write/issuefor.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[onlyController](/api/contracts/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>string _name</code></li><li><code>string _symbol</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBToken](/api/interfaces/ijbtoken.md) token</code></li></ul> |
-| [**`changeFor`**](/api/contracts/jbtokenstore/write/changefor.md)                       | <p><strong>Traits</strong></p><ul><li><code>[onlyController](/api/contracts/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>IJBToken _token</code></li><li><code>address _newOwner</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBToken](/api/interfaces/ijbtoken.md)</code><code>oldToken</code></li></ul>                                             |
+| [**`changeFor`**](/api/contracts/jbtokenstore/write/changefor.md)                       | <p><strong>Traits</strong></p><ul><li><code>[onlyController](/api/contracts/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>IJBToken _token</code></li><li><code>address _newOwner</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBToken](/api/interfaces/ijbtoken.md) oldToken</code></li></ul>                                             |
 | [**`mintFor`**](/api/contracts/jbtokenstore/write/mintfor.md)                                   | <p><strong>Traits</strong></p><ul><li><code>[onlyController](/api/contracts/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>address _holder</code></li><li><code>uint256 _projectId</code></li><li><code>uint256 _amount</code></li><li><code>bool _preferClaimedTokens</code></li></ul>                               |
 | [**`burnFrom`**](/api/contracts/jbtokenstore/write/burnfrom.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[onlyController](/api/contracts/or-abstract/jbcontrollerutility/modifiers/onlycontroller.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>address _holder</code></li><li><code>uint256 _projectId</code></li><li><code>uint256 _amount</code></li><li><code>bool _preferClaimedTokens</code></li></ul>                               |
 | [**`claimFor`**](/api/contracts/jbtokenstore/write/claimfor.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[requirePermissionAllowingOverride](/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>address _holder</code></li><li><code>uint256 _projectId</code></li><li><code>uint256 _amount</code></li></ul>                                                                                                                                                       |

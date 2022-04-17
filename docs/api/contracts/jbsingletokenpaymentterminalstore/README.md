@@ -1,33 +1,35 @@
----
-description: >-
-  Manages all bookkeeping for inflows and outflows of funds from any IJBSingleTokenPaymentTerminal.
----
-
 # JBSingleTokenPaymentTerminalStore
 
-Overview
+_Manages all bookkeeping for inflows and outflows of funds from any [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbsingletokenpaymentterminal.md)._
 
-### [Code](https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBSingleTokenPaymentTerminalStore.sol)
+#### Code
 
-### **Addresses**
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBSingleTokenPaymentTerminalStore.sol
+
+#### Addresses
 
 Ethereum mainnet: [`0x47C6072ccDb899C016ED07ae8aEb7b2cfFe3C82e`](https://etherscan.io/address/0x47C6072ccDb899C016ED07ae8aEb7b2cfFe3C82e)
 
-### **Interfaces**
+#### Interfaces
 
 | Name                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`IJBSingleTokenPaymentTerminalStore`**](/api/interfaces/ijbsingletokenpaymentterminalstore.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
-### **Inheritance**
+#### Inheritance
 
 | Contract                                                                  | Description                                                                                                                              |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`ReentrancyGuard`**](https://docs.openzeppelin.com/contracts/4.x/api/security#ReentrancyGuard) | Contract module that helps prevent reentrant calls to a function. |
 
-## Constructor
+#### Constructor
 
 ```
+/**
+  @param _directory A contract storing directories of terminals and controllers for each project.
+  @param _fundingCycleStore A contract storing all funding cycle configurations.
+  @param _prices A contract that exposes price feeds.
+*/
 constructor(
   IJBDirectory _directory,
   IJBFundingCycleStore _fundingCycleStore,
@@ -39,12 +41,7 @@ constructor(
 }
 ```
 
-* **Arguments:**
-  * `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
-  * `_fundingCycleStore` is an [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md) contract storing all funding cycle configurations.
-  * `_prices` is an [`IJBPrices`](/api/interfaces/ijbprices.md) contract that exposes price feeds.
-
-## Properties
+#### Properties
 
 | Function                                                                 | Definition                                                                                                                                                                                                                                       |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -55,7 +52,7 @@ constructor(
 | [**`usedOverflowAllowanceOf`**](/api/contracts/jbsingletokenpaymentterminalstore/properties/usedoverflowallowanceof.md)   | <p><strong>Params</strong></p><ul><li><code>[IJBSingleTokenPaymentTerminal](/api/interfaces/ijbpaymentterminal.md) _terminal</code></li><li><code>uint256 _projectId</code></li><li><code>uint256 _configuration</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 usedOverflowAllowance</code></li></ul>                           |
 | [**`usedDistributionLimitOf`**](/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md) | <p><strong>Params</strong></p><ul><li><code>[IJBSingleTokenPaymentTerminal](/api/interfaces/ijbpaymentterminal.md) _terminal</code></li><li><code>uint256 _projectId</code></li><li><code>uint256 _fundingCycleId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 usedDistributionLimitOf</code></li></ul>                       |
 
-## Read
+#### Read
 
 | Function                                                       | Definition                                                                                                                                                                                                      |
 | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -64,7 +61,7 @@ constructor(
 | [**`currentReclaimableOverflowOf`**](/api/contracts/jbsingletokenpaymentterminalstore/read/currentreclaimableoverflowof1.md)       | <p><strong>Params</strong></p><ul><li><code>[IJBSingleTokenPaymentTerminal](/api/interfaces/ijbpaymentterminal.md) _terminal</code></li><li><code>uint256 _projectId</code></li><li><code>uint256 _tokenCount</code></li><li><code>bool _useTotalOverflow</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 reclaimableOverflow</code></li></ul> |
 | [**`currentReclaimableOverflowOf`**](/api/contracts/jbsingletokenpaymentterminalstore/read/currentreclaimableoverflowof2.md)       | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>uint256 _tokenCount</code></li><li><code>uint256 _totalSupply</code></li><li><code>uint256 _overflow</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 reclaimableOverflow</code></li></ul> |
 
-## Write
+#### Write
 
 | Function                                                      | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

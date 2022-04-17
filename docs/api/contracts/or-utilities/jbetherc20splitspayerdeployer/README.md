@@ -1,9 +1,6 @@
----
-description: >-
- Deploys splits payer contracts.
----
-
 # JBETHERC20SplitsPayerDeployer
+
+_Deploys [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer) contracts._
 
 https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBETHERC20SplitsPayerDeployer.sol
 

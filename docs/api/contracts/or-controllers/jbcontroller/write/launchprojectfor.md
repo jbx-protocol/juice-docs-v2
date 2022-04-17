@@ -172,7 +172,7 @@ function launchProjectFor(
 
 | Name                                                                    | Data                                                                                                                                                                                                                                                                                                                                                          |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`LaunchProject`**](/api/contracts/or-controllers/jbcontroller/events/launchproject.md)                                         | <ul><li><code>uint256 configuration</code></li><li><code>uint256 projectId</code></li><li><code>string memo</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                 |
+| [**`LaunchProject`**](/api/contracts/or-controllers/jbcontroller/events/launchproject.md)                                         | <ul><li><code>uint256 configuration</code></li><li><code>uint256 projectId</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                 |
 
 </TabItem>
 

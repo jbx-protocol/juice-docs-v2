@@ -1,9 +1,6 @@
----
-description: >-
- Sends ETH or ERC20's to a project treasury as it receives direct payments or has it's functions called.
----
-
 # JBETHERC20ProjectPayer
+
+_Sends ETH or ERC20's to a project treasury as it receives direct payments or has it's functions called._
 
 _Inherit from this contract or borrow from its logic to forward ETH or ERC20's to project treasuries from within other contracts._
 

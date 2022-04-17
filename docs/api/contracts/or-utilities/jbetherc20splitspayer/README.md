@@ -1,9 +1,6 @@
----
-description: >-
- Sends ETH or ERC20's to a group of splits as it receives direct payments or has its functions called.
----
-
 # JBETHERC20SplitsPayer
+
+_Sends ETH or ERC20's to a group of splits as it receives direct payments or has its functions called._
 
 _Inherit from this contract or borrow from its logic to forward ETH or ERC20's to a group of splits from within other contracts._
 

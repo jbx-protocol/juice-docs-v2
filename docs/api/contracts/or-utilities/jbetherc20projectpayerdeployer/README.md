@@ -1,9 +1,6 @@
----
-description: >-
- Deploys project payer contracts.
----
-
 # JBETHERC20ProjectPayerDeployer
+
+_Deploys [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer) contracts._
 
 https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBETHERC20ProjectPayerDeployer.sol
 

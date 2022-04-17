@@ -1,38 +1,41 @@
----
-description: >-
-  Modifiers to allow access to functions based on the message sender's operator
-  status.
----
-
 # JBOperatable
 
-## Overview
+_Modifiers to allow access to functions based on the message sender's operator status._
 
-### Traits
+#### Traits
 
 `abstract`
 
-### [Code](https://github.com/jbx-protocol/juice-contracts/tree/main/contracts/v2abstract/JBOperatable.sol)
+#### Code
 
-## Modifiers
+https://github.com/jbx-protocol/juice-contracts/tree/main/contracts/v2abstract/JBOperatable.sol
+
+
+#### Interfaces
+
+| Name                                                                      | Description                                                                                                                              |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`IJBOperatable`**](/api/interfaces/ijboperatable.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+
+#### Constructor
+
+```
+/** 
+  @param _operatorStore A contract storing operator assignments.
+*/
+constructor(IJBOperatorStore _operatorStore) {
+  operatorStore = _operatorStore;
+}
+```
+
+#### Modifiers
 
 | Name                                                                                      | Data                                                                                                                                                                   |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`requirePermission`**](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md)                                 | <ul><li><code>address _account</code></li><li><code>uint256 _domain</code></li><li><code>uint256 _index</code></li></ul>                                               |
 | [**`requirePermissionAllowingOverride`**](/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) | <ul><li><code>address _account</code></li><li><code>uint256 _domain</code></li><li><code>uint256 _permissionIndex</code></li><li><code>bool _override</code></li></ul> |
 
-## Constructor
-
-```
-constructor(IJBOperatorStore _operatorStore) {
-  operatorStore = _operatorStore;
-}
-```
-
-* **Arguments:**
-  * `_operatorStore` is an [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
-
-## Read
+#### Read
 
 | Function                                           | Definition                                                                                                                                                          |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
