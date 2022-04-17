@@ -32,11 +32,11 @@ library JBFundingCycleMetadataResolver {
     return ((_fundingCycle.metadata >> 58) & 1) == 1;
   }
 
-  function mintPaused(JBFundingCycle memory _fundingCycle) internal pure returns (bool) {
+  function burnPaused(JBFundingCycle memory _fundingCycle) internal pure returns (bool) {
     return ((_fundingCycle.metadata >> 59) & 1) == 1;
   }
 
-  function burnPaused(JBFundingCycle memory _fundingCycle) internal pure returns (bool) {
+  function mintingAllowed(JBFundingCycle memory _fundingCycle) internal pure returns (bool) {
     return ((_fundingCycle.metadata >> 60) & 1) == 1;
   }
 
@@ -67,10 +67,10 @@ library JBFundingCycleMetadataResolver {
   function setControllerAllowed(JBFundingCycle memory _fundingCycle) internal pure returns (bool) {
     return ((_fundingCycle.metadata >> 65) & 1) == 1;
   }
+
   function shouldHoldFees(JBFundingCycle memory _fundingCycle) internal pure returns (bool) {
     return ((_fundingCycle.metadata >> 66) & 1) == 1;
   }
-
 
   function useTotalOverflowForRedemptions(JBFundingCycle memory _fundingCycle)
     internal
