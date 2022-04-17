@@ -11,7 +11,7 @@ description: >-
 
 ### **Addresses**
 
-Ethereum mainnet: _Not yet deployed_
+Ethereum mainnet: [`0x99dB6b517683237dE9C494bbd17861f3608F3585`](https://etherscan.io/address/0x99dB6b517683237dE9C494bbd17861f3608F3585)
 
 ### **Interfaces**
 

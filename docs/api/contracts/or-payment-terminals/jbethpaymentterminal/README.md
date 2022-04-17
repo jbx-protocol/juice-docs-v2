@@ -10,7 +10,7 @@ description: Manages all inflows and outflows of ETH into the protocol ecosystem
 
 ### **Addresses**
 
-Ethereum mainnet: _Not yet deployed_
+Ethereum mainnet: [`0xF77Cc21F7Ffdb0700D6d01FCF32EBE654f1A389b`](https://etherscan.io/address/0xF77Cc21F7Ffdb0700D6d01FCF32EBE654f1A389b)
 
 ### **Inheritance**
 
