@@ -10,7 +10,7 @@ The [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md) 
 
 #### Inheriting JBProjectPayer
 
-Inheriting from [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md) will give a contract access to a public [`JBProjectPayer.pay(...)`](/api/contracts/jbetherc20projectpayer/README.md) function and an internal [`JBProjectPayer._pay(...)`](/api/contracts/jbetherc20projectpayer/write/-_pay.md) function. These can be used from within the contract to route funds to a juicebox treasury while specifying all relevant parameters to contextualize the payment. Use the internal version if the inheriting contract has already handled receiving the funds being forwaded.
+Inheriting from [`JBETHERC20ProjectPayer`](/api/contracts/jbetherc20projectpayer/README.md) will give a contract access to a public [`JBProjectPayer.pay(...)`](/api/contracts/jbetherc20projectpayer/write/pay.md), a public [`JBProjectPayer.addToBalance(...)`](/api/contracts/jbetherc20projectpayer/write/addtobalance.md) function, an internal [`JBProjectPayer._pay(...)`](/api/contracts/jbetherc20projectpayer/write/-_pay.md) function, and an internal [`JBProjectPayer._addToBalance(...)`](/api/contracts/jbetherc20projectpayer/write/-_addtobalance.md) function. These can be used from within the contract to route funds to a juicebox treasury while specifying all relevant parameters to contextualize the payment. Use the internal versions if the inheriting contract has already handled receiving the funds being forwaded.
 
 Follow instructions in [Getting started](/build/getting-started.md) to import the `JBProjectPayer` files into a project.
 
@@ -29,6 +29,16 @@ function pay(
 ```
 
 ```
+function addToBalance(
+  uint256 _projectId,
+  address _token,
+  uint256 _amount,
+  uint256 _decimals,
+  string memory _memo
+) public payable virtual override {}
+```
+
+```
 function _pay(
   uint256 _projectId,
   address _token,
@@ -40,6 +50,16 @@ function _pay(
   string memory _memo,
   bytes memory _metadata
 ) internal virtual {}
+```
+
+```
+function _addToBalance(
+  uint256 _projectId,
+  address _token,
+  uint256 _amount,
+  uint256 _decimals,
+  string memory _memo
+) internal virtual  {}
 ```
 
 If your contract does not wish to route payments received via the native `receive` interaction to a juicebox treasury, all default constructor arguments can be left as null values. The contract will revert any payment received.
@@ -55,6 +75,7 @@ function deployProjectPayer(
   bool _defaultPreferClaimedTokens,
   string memory _defaultMemo,
   bytes memory _defaultMetadata,
+  bool _defaultPreferAddToBalance,
   IJBDirectory _directory,
   address _owner
 ) external override returns (IJBProjectPayer projectPayer) { ... }
