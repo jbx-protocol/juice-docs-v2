@@ -8,7 +8,7 @@ interface IJBReconfigurationBufferBallot is IJBFundingCycleBallot {
     JBBallotState indexed ballotState,
     address caller
   );
-  
+
   function finalState(uint256 _projectId, uint256 _configuration) external returns (JBBallotState);
 
   function fundingCycleStore() external view returns (IJBFundingCycleStore);
