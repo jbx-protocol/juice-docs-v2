@@ -15,6 +15,8 @@ When extending the payout distribution or reserved token distribution functional
 
 ```
 struct JBSplitAllocationData {
+  // The token being sent to the split allocator.
+  address token;
   // The amount being sent to the split allocator, as a fixed point number.
   uint256 amount;
   // The number of decimals in the amount.
@@ -33,6 +35,8 @@ struct JBSplit {
   // A flag that only has effect if a projectId is also specified, and the project has a token contract attached.
   // If so, this flag indicates if the tokens that result from making a payment to the project should be delivered claimed into the beneficiary's wallet, or unclaimed to save gas.
   bool preferClaimed;
+  // A flag indicating if a distribution to a project should prefer triggering it's addToBalance function instead of its pay function.
+  bool preferAddToBalance;
   // The percent of the whole group that this split occupies. This number is out of `JBConstants.SPLITS_TOTAL_PERCENT`.
   uint256 percent;
   // If an allocator is not set but a projectId is set, funds will be sent to the protocol treasury belonging to the project who's ID is specified.
@@ -60,4 +64,4 @@ In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/api/con
 
 #### Attaching
 
-An allocator contract should be deployed independently. Once deployed, its address can be configured into a project's payout splits or reserved token splits so that any distribution triggered while the funding cycle is active sends the relevant token to the allocator contract's `allocat(...)` hook. 
+An allocator contract should be deployed independently. Once deployed, its address can be configured into a project's payout splits or reserved token splits so that any distribution triggered while the funding cycle is active sends the relevant token to the allocator contract's `allocate(...)` hook. 
