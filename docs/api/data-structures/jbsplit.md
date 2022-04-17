@@ -1,12 +1,5 @@
 # JBSplit
 
-Used in:
-
-* [`JBSplitsStore`](../contracts/jbsplitsstore/)
-  * [`set`](../contracts/jbsplitsstore/write/set.md)
-
-# Definition
-
 ```
 struct JBSplit {
   // A flag that only has effect if a projectId is also specified, and the project has a token contract attached.

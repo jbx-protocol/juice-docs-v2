@@ -1,7 +1,5 @@
 # JBOperatorData
 
-# Definition
-
 ```
 struct JBOperatorData {
   // The address of the operator.
