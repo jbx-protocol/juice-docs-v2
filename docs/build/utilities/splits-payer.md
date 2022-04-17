@@ -4,13 +4,13 @@ sidebar_position: 4
 
 # Splits payer
 
-[`JBETHERC20SplitsPayer`](/api/contracts/jbetherc20splitspayer/README.md) contracts make it easy to route funds to a group of splits from other contracts or from within inheriting contracts. This is useful for routing funds to a number of Juicebox project treasuries and other addresses from within other contracts such as an NFT marketplaces.
+[`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md) contracts make it easy to route funds to a group of splits from other contracts or from within inheriting contracts. This is useful for routing funds to a number of Juicebox project treasuries and other addresses from within other contracts such as an NFT marketplaces.
 
-The [`JBETHERC20SplitsPayer`](/api/contracts/jbetherc20splitspayer/README.md) can be inherited from any contract to facilitate internal transactions to split groups in ETH or any ERC-20, assuming the projects in the split group are using a payment terminal that accepts the tokens. They can also be deployed as stand alone splits payer copies using [`JBSplitsPayerDeployer`](/api/contracts/jbetherc20splitspayerdeployer).
+The [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md) can be inherited from any contract to facilitate internal transactions to split groups in ETH or any ERC-20, assuming the projects in the split group are using a payment terminal that accepts the tokens. They can also be deployed as stand alone splits payer copies using [`JBSplitsPayerDeployer`](/api/contracts/or-utilities/jbetherc20splitspayerdeployer).
 
 #### Inheriting JBSplitsPayer
 
-Inheriting from [`JBETHERC20SplitsPayer`](/api/contracts/jbetherc20splitspayer/README.md) will give a contract access to a public [`JBSplitsPayer.pay(...)`](/api/contracts/jbetherc20splitspayer/write/pay.md) function, a public [`JBSplitsPayer.addToBalance(...)`](/api/contracts/jbetherc20splitspayer/write/addtobalance.md), and an internal [`JBSplitsPayer._payToSplits(...)`](/api/contracts/jbetherc20splitspayer/write/-_paytosplits.md) function. These can be used from within the contract to route funds to a group of splits while specifying where leftover funds should go. Use the internal function if the inheriting contract has already handled receiving the funds being forwaded.
+Inheriting from [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md) will give a contract access to a public [`JBSplitsPayer.pay(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/pay.md) function, a public [`JBSplitsPayer.addToBalance(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/addtobalance.md), and an internal [`JBSplitsPayer._payToSplits(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md) function. These can be used from within the contract to route funds to a group of splits while specifying where leftover funds should go. Use the internal function if the inheriting contract has already handled receiving the funds being forwaded.
 
 Follow instructions in [Getting started](/build/getting-started.md) to import the `JBSplitsPayer` files into a project.
 
@@ -53,7 +53,7 @@ If your contract does not wish to route payments received via the native `receiv
 
 #### Deploying splits payers
 
-Instances of the [`JBETHERC20SplitsPayer`](/api/contracts/jbetherc20splitspayer/README.md) contract can also be deployed as stand-alone forwarders of payments to split groups. A new splits payer can be deployed using [`JBSplitsPayerDeployer.deploySplitsPayer(...)`](/api/contracts/jbetherc20splitspayerdeployer/write/deploysplitspayer.md).
+Instances of the [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md) contract can also be deployed as stand-alone forwarders of payments to split groups. A new splits payer can be deployed using [`JBSplitsPayerDeployer.deploySplitsPayer(...)`](/api/contracts/or-utilities/jbetherc20splitspayerdeployer/write/deploysplitspayer.md).
 
 ```
 function deploySplitsPayer(
