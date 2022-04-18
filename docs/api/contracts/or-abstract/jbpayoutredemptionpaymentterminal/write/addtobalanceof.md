@@ -55,35 +55,15 @@ function addToBalanceOf(
     _Virtual references:_
 
     * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
-2.  Record the added funds.
+2.  Forward to the internal function to properly account for the added balance.
 
     ```
-    // Record the added funds.
-    store.recordAddedBalanceFor(_projectId, _amount);
-    ```
-
-    _External references:_
-
-    * [`recordAddedBalanceFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordaddedbalancefor.md)
-3.  Refund any held fees. This is useful to allow a project to distribute funds from the protocol and subsequently add them back without paying eventually having to pay double fees.
-
-    ```
-    // Refund any held fees to make sure the project doesn't pay double for funds going in and out of the protocol.
-    _refundHeldFees(_projectId, _amount);
+    _addToBalanceOf(_projectId, _amount, _memo);
     ```
 
     _Internal references:_
 
-    * [`_refundHeldFees`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_refundheldfees.md)
-4.  Emit a `AddToBalance` event with the relevant parameters.
-
-    ```
-    emit AddToBalance(_projectId, _amount, _memo, msg.sender);
-    ```
-
-    _Event references:_
-
-    * [`AddToBalance`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md)
+    * [`_addToBalanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/write/-_addtobalanceof.md)
 
 </TabItem>
 
@@ -116,13 +96,7 @@ function addToBalanceOf(
   // If the terminal's token is ETH, override `_amount` with msg.value.
   else _amount = msg.value;
 
-  // Refund any held fees to make sure the project doesn't pay double for funds going in and out of the protocol.
-  uint256 _refundedFees = _refundHeldFees(_projectId, _amount);
-
-  // Record the added funds.
-  store.recordAddedBalanceFor(_projectId, _amount + _refundedFees);
-
-  emit AddToBalance(_projectId, _amount, _memo, msg.sender);
+  _addToBalanceOf(_projectId, _amount, _memo);
 }
 ```
 
