@@ -29,6 +29,9 @@ constructor(uint256 _duration, IJBFundingCycleStore _fundingCycleStore) {
 }
 ```
 
+* **Arguments:**
+  * `_duration` is the number of seconds to wait until a reconfiguration can be either `Approved` or `Failed`.
+  * `_fundingCycleStore` is a contract storing all funding cycle configurations.
 
 #### Events
 

@@ -28,6 +28,9 @@ constructor(IJBOperatorStore _operatorStore) {
 }
 ```
 
+* **Arguments:**
+  * `_operatorStore` is an [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
+
 #### Modifiers
 
 | Name                                                                                      | Data                                                                                                                                                                   |

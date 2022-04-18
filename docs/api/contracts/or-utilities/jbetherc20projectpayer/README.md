@@ -57,6 +57,16 @@ constructor(
 }
 ```
 
+* **Arguments:**
+  * `_defaultProjectId` is the ID of the project whose treasury should be forwarded this contract's received payments.
+  * `_defaultBeneficiary` is the address that'll receive the project's tokens.
+  * `_defaultPreferClaimedTokens` is a flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet.
+  * `_defaultMemo` is the memo that'll be passed along to the emitted event..
+  * `_defaultMetadata` are bytes to send along to the project's data source and delegate, if provided.
+  * `_defaultPreferAddToBalance` is a flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.
+  * `_directory` is a contract storing directories of terminals and controllers for each project.
+  * `_owner` is the address that will own the contract.
+
 #### Events
 
 | Name                                                                                                      | Data                                                                                                                                                                                                                                 |

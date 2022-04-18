@@ -27,6 +27,9 @@ constructor(IJBDirectory _directory) {
 }
 ```
 
+* **Arguments:**
+  * `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
+
 #### Modifiers
 
 | Name                                                                                      | Data                                                                                                                                                                   |

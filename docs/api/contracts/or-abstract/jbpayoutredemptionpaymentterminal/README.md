@@ -70,6 +70,19 @@ constructor(
 }
 ```
 
+* **Arguments:**
+  * `_token` is the token that this terminal manages.
+  * `_decimals` is the number of decimals the token fixed point amounts are expected to have.
+  * `_currency` is the currency that this terminal's token adheres to for price feeds. From [`JBCurrencies`](/api/libraries/jbcurrencies.md).
+  * `_baseWeightCurrency` is the currency to base token issuance on. From [`JBCurrencies`](/api/libraries/jbcurrencies.md).
+  * `_payoutSplitsGroup` is the group that denotes payout splits from this terminal in the splits store. From [`JBSplitGroups`](/api/libraries/jbsplitsgroups.md).
+  * `_operatorStore` is an [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
+  * `_projects` is an [`IJBProjects`](/api/interfaces/ijbprojects.md) contract which mints ERC-721's that represent project ownership and transfers.
+  * `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
+  * `_splitsStore` is an [`IJBSplitsStore`](/api/interfaces/ijbsplitsstore/) contract that stores splits for each project.
+  * `_prices` is an [`IJBPrices`](/api/interfaces/ijbprices.md) contract that exposes price feeds.
+  * `_store` is a contract that stores the terminal's data.
+  * `_owner` is the address that will own this contract.
 
 #### Events
 

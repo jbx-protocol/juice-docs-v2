@@ -34,6 +34,9 @@ constructor(address _owner) {
 }
 ```
 
+* **Arguments:**
+  * `_owner` is the address that will own the contract.
+
 #### Events
 
 | Name                               | Data                                                                                                                                                                                    |

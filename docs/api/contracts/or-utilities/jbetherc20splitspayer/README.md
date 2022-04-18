@@ -70,6 +70,19 @@ constructor(
 }
 ```
 
+* **Arguments:**
+  * `_defaultSplitsProjectId` is the ID of project for which the default splits are stored.
+  * `_defaultSplitsDomain` is the splits domain to payout when this contract receives direct payments.
+  * `_defaultSplitsGroup` is the splits group to payout when this contract receives direct payments.
+  * `_splitsStore` is a contract that stores splits for each project.
+  * `_defaultProjectId` is the ID of the project whose treasury should be forwarded the splits payer contract's received payment leftovers after distributing to the default splits group.
+  * `_defaultBeneficiary` is the address that'll receive the project's tokens. 
+  * `_defaultPreferClaimedTokens` is a flag indicating whether issued tokens should be automatically claimed into the beneficiary's wallet. 
+  * `_defaultMemo` is a memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate.  A data source can alter the memo before emitting in the event and forwarding to the delegate.
+  * `_defaultMetadata` are bytes to send along to the project's data source and delegate, if provided.
+  * `_defaultPreferAddToBalance` is a flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.
+  * `_owner` is the address that will own the contract.
+
 #### Events
 
 | Name                                                                                                      | Data                                                                                                                                                                                                                                 |

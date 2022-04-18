@@ -27,15 +27,14 @@ Ethereum mainnet: [`0xB9Ee9d8203467f6EC0eAC81163d210bd1a7d3b55`](https://ethersc
 #### Constructor
 
 ```
-/** 
-  @param _operatorStore A contract storing operator assignments.
-*/
 constructor(IJBOperatorStore _operatorStore)
   ERC721('Juicebox Projects', 'JUICEBOX')
   EIP712('Juicebox Projects', '1')
   JBOperatable(_operatorStore)
 {}
 ```
+* **Arguments:**
+  * `_operatorStore` is an [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
 
 #### Events
 

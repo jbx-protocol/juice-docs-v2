@@ -49,6 +49,14 @@ constructor(
 }
 ```
 
+* **Arguments:**
+  * `_operatorStore` is an [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
+  * `_projects` is an [`IJBProjects`](/api/interfaces/ijbprojects.md) contract which mints ERC-721's that represent project ownership and transfers.
+  * `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
+  * `_fundingCycleStore` is an [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md) contract storing all funding cycle configurations.
+  * `_tokenStore` is an [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) contract that manages token minting and burning.
+  * `_splitsStore` is an [`IJBSplitsStore`](/api/interfaces/ijbsplitsstore/) contract that stores splits for each project.
+
 #### Events
 
 | Name                                                                             | Data                                                                                                                                                                                                                                                                                                                      |
