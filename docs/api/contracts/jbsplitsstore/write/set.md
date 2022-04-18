@@ -56,7 +56,6 @@ function set(
     _Internal references:_
 
     * [`_getStructsFor`](/api/contracts/jbsplitsstore/read/-_getstructsfor.md)
-    * two
 2.  Loop through each current split to make sure the new splits being set respect any current split bound by a lock constraint.
 
     ```
@@ -329,7 +328,7 @@ function set(
 
 | Name                                    | Data                                                                                                                                                                                                                 |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetSplit`**](/api/contracts/jbsplitsstore/events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md)split</code></li><li><code>address caller</code></li></ul> |
+| [**`SetSplit`**](/api/contracts/jbsplitsstore/events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md) split</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

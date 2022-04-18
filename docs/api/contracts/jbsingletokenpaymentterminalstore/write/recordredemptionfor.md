@@ -75,8 +75,8 @@ function recordRedemptionFor(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.redeemPaused(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.redeemPaused(...)`
 3.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. 
 
     ```
@@ -101,8 +101,8 @@ function recordRedemptionFor(
 
         _Libraries used:_
 
-        * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-          `.useTotalOverflowForRedemptions(...)`\
+        * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+          * `.useTotalOverflowForRedemptions(...)`
 
         _Internal references:_
 
@@ -188,12 +188,12 @@ function recordRedemptionFor(
 
         _Libraries used:_
 
-        * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-          `.useDataSourceForRedeem(...)`\
-          `.dataSource(...)`\
-          `.redemptionRate(...)`\
-          `.ballotRedemptionRate(...)`\
-          `.useTotalOverflowForRedemptions(...)`
+        * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+          * `.useDataSourceForRedeem(...)`
+          * `.dataSource(...)`
+          * `.redemptionRate(...)`
+          * `.ballotRedemptionRate(...)`
+          * `.useTotalOverflowForRedemptions(...)`
 
 4.  Make sure the amount being claimed is within the bounds of the project's balance.
 

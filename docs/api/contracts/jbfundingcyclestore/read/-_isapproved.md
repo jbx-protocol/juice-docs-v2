@@ -40,6 +40,11 @@ function _isApproved(uint256 _projectId, JBFundingCycle memory _fundingCycle)
       ) == JBBallotState.Approved;
     ```
 
+    _Enums used:_
+
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
+      * `.Approved`
+
     _Internal references:_
 
     * [`_ballotStateOf`](/api/contracts/jbfundingcyclestore/read/-_ballotstateof.md)

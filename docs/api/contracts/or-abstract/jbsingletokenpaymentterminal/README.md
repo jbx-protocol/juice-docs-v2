@@ -42,10 +42,9 @@ constructor(
 }
 ```
 
-* **Arguments:**
-  * `_token` is the token that this terminal manages.
-  * `_decimals` is the number of decimals the token fixed point amounts are expected to have.
-  * `_currency` is the currency that this terminal's token adheres to for price feeds. From [`JBCurrencies`](/api/libraries/jbcurrencies.md).
+* `_token` is the token that this terminal manages.
+* `_decimals` is the number of decimals the token fixed point amounts are expected to have.
+* `_currency` is the currency that this terminal's token adheres to for price feeds. From [`JBCurrencies`](/api/libraries/jbcurrencies.md).
 
 #### Properties
 

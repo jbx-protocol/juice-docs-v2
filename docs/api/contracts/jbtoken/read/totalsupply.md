@@ -19,7 +19,7 @@ function totalSupply(uint256) external view override returns (uint256) { ... }
 ```
 
 * Arguments:
-  * The `_projectId` parameter is ignored.
+  * `_projectId` is the ID of the project to which the token belongs. This is ignored.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
@@ -45,6 +45,8 @@ function totalSupply(uint256) external view override returns (uint256) { ... }
 /** 
   @notice
   The total supply of this ERC20.
+  
+  _projectId the ID of the project to which the token belongs. This is ignored.
 
   @return The total supply of this ERC20, as a fixed point number with 18 decimals.
 */

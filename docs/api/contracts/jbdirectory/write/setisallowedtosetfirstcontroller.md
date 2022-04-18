@@ -29,7 +29,7 @@ function setIsAllowedToSetFirstController(address _address, bool _flag)
 * Arguments:
   * `_address` is the address to allow or revoke allowance from.
   * `_flag` is whether allowance is being added or revoked.
-* Through the `onlyOwner` modifier, this function can only be accessed by the address that owns this contract.
+* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
 * The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
 * The function returns nothing.
 

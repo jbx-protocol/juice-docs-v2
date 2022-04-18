@@ -4,7 +4,7 @@ Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
 **More packed data of splits for each project ID's configurations.**
 
-_This packed data is often 0_
+_This packed data is often 0._
 
 #### Definition
 

@@ -23,7 +23,7 @@ function approve(
 ```
 
 * Arguments:
-  * The `_projectId` parameter is ignored.
+  * `_projectId` is the ID of the project to which the token belongs. This is ignored.
   * `_spender` is the address that will be spending tokens on the `msg.sender`s behalf.
   * `_amount` is the amount the `_spender` is allowed to spend.
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
@@ -50,6 +50,7 @@ function approve(
   @notice
   Approves an account to spend tokens on the `msg.sender`s behalf.
 
+  _projectId the ID of the project to which the token belongs. This is ignored.
   @param _spender The address that will be spending tokens on the `msg.sender`s behalf.
   @param _amount The amount the `_spender` is allowed to spend.
 */

@@ -61,6 +61,7 @@ function _overflowDuring(
 
     _External references:_
 
+    * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
     * [`distributionLimitOf`](/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
 4.  Get a reference to the amount of the funding cycle's target that can still be distributed. This is the difference between its distribution limit and what has already been distributed during this funding cycle.
 
@@ -88,12 +89,13 @@ function _overflowDuring(
 
     _Libraries used:_
 
-    * [`JBCurrencies`](/api/libraries/jbcurrencies.md)
-      * `.ETH`
+    * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
+      * `.mulDiv(...)`
 
     _Internal references:_
 
     * [`_MAX_FIXED_POINT_FIDELITY`](/api/contracts/jbsingletokenpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
+    * [`prices`](/api/contracts/jbsingletokenpaymentterminalstore/properties/prices.md)
 
     _External references:_
 

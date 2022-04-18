@@ -31,9 +31,8 @@ constructor(string memory _name, string memory _symbol)
   ERC20(_name, _symbol) ERC20Permit(_name) {}
 ```
 
-* **Arguments:**
-  * `_name` is the name of the token.
-  * `_symbol` is the symbol that the token should be represented by.
+* `_name` is the name of the token.
+* `_symbol` is the symbol that the token should be represented by.
 
 
 #### Read

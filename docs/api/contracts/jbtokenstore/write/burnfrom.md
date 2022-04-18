@@ -64,16 +64,17 @@ function burnFrom(
       ? 0
       : _token.balanceOf(_holder, _projectId);
     ```
-4.  Make sure the holder has enough tokens to burn. This is true if either the amount to burn is less than both the holder's claimed balance and unclaimed balance, if the amount is greater than the claimed balance and there are enough unclaimed tokens to cover the difference, or if the amount is greater than the unclaimed balance and there are enough claimed tokens to cover the difference.
+
+    _External references:_
+
+    * [`balanceOf`](/api/contracts/jbtoken/read/balanceof.md)
+4.  Make sure the holder has enough tokens to burn. 
 
     ```
     // There must be adequate tokens to burn across the holder's claimed and unclaimed balance.
-    if (
-      (_amount >= _claimedBalance || _amount >= _unclaimedBalance) &&
-      (_amount < _claimedBalance || _unclaimedBalance < _amount - _claimedBalance) &&
-      (_amount < _unclaimedBalance || _claimedBalance < _amount - _unclaimedBalance)
-    ) revert INSUFFICIENT_FUNDS();
+    if (_amount > _claimedBalance + _unclaimedBalance) revert INSUFFICIENT_FUNDS();
     ```
+
 5.  Find the amount of claimed tokens that should be burned. This will be 0 if the holder has no claimed balance, an amount up to the holder's claimed balance if there is a preference for burning claimed tokens, or the difference between the amount being burned and the holder's unclaimed balance otherwise.
 
     ```
@@ -177,11 +178,7 @@ function burnFrom(
     : _token.balanceOf(_holder, _projectId);
 
   // There must be adequate tokens to burn across the holder's claimed and unclaimed balance.
-  if (
-    (_amount >= _claimedBalance || _amount >= _unclaimedBalance) &&
-    (_amount < _claimedBalance || _unclaimedBalance < _amount - _claimedBalance) &&
-    (_amount < _unclaimedBalance || _claimedBalance < _amount - _unclaimedBalance)
-  ) revert INSUFFICIENT_FUNDS();
+  if (_amount > _claimedBalance + _unclaimedBalance) revert INSUFFICIENT_FUNDS();
 
   // The amount of tokens to burn.
   uint256 _claimedTokensToBurn;

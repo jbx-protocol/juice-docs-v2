@@ -42,7 +42,7 @@ function _currentTotalOverflowOf(
     _Internal references:_
 
     * [`terminalsOf`](/api/contracts/jbdirectory/read/terminalsof.md)
-2.  Create references where the total balance across all terminals is be stored in terms of ETH.
+2.  Create a reference where the total balance across all terminals is be stored in terms of ETH.
 
     ```
     // Keep a reference to the ETH overflow across all terminals, as a fixed point number with 18 decimals.

@@ -50,8 +50,8 @@ function recordMigration(uint256 _projectId)
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.terminalMigrationAllowed(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.terminalMigrationAllowed(...)`
 3.  Get a reference to the project's current balance. Set this to the value that the function will return.
 
     ```

@@ -61,7 +61,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
     _Libraries used:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)<br/>
-      `.setTerminalsAllowed(...)`
+      * `.setTerminalsAllowed(...)`
 
     _Internal references:_
 
@@ -116,18 +116,19 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 ```
 
 </TabItem>
-
 <TabItem value="Errors" label="Errors">
-| String                          | Description                                               |
-| ------------------------------- | --------------------------------------------------------- |
+
+| String                            | Description                                                      |
+| --------------------------------- | ---------------------------------------------------------------- |
 | **`SET_TERMINALS_NOT_ALLOWED`**          | Thrown if the provided project isn't currently allowed to set its terminals.                |
+
 </TabItem>
 
 <TabItem value="Events" label="Events">
 
 | Name                                          | Data                                                                                                                                                                                                        |
 | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddTerminal`**](/api/contracts/jbdirectory/events/addterminal.md) | <ul><li><code>uint256 indexed projectId</code></li><li><a href="/api/interfaces/ijbpaymentterminal.md"><code>IJBPaymentTerminal</code></a><code>indexed terminal</code></li><li><code>address caller</code></li></ul> |
+| [**`AddTerminal`**](/api/contracts/jbdirectory/events/addterminal.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code><a href="/api/interfaces/ijbpaymentterminal.md">IJBPaymentTerminal</a> indexed terminal</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

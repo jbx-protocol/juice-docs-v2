@@ -132,10 +132,6 @@ function currentOf(uint256 _projectId)
     if (_fundingCycle.duration == 0) return _fundingCycle;
     ```
 
-    _Internal references:_
-
-    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
-
 9.  Return a funding cycle based on the one currently referenced. The mock funding cycle is allowed to have started already, which is why a `true` flag is passed in.
 
     ```

@@ -17,14 +17,11 @@ _Only the owner of this contract can transfer it._
 #### Definition
 
 ```
-function transferOwnership(address _newOwner)
-  public
-  virtual
-  override(Ownable, IJBToken)
-  onlyOwner { ... }
+ function transferOwnership(uint256, address _newOwner) public virtual override onlyOwner { ... }
 ```
 
 * Arguments:
+  * `_projectId` is the ID of the project to which the token belongs. This is ignored.
   * `_newOwner` is the new owner.
 * Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
@@ -54,14 +51,10 @@ function transferOwnership(address _newOwner)
   @dev
   Only the owner of this contract can transfer it.
 
+  _projectId The ID of the project to which the token belongs. This is ignored.
   @param _newOwner The new owner.
 */
-function transferOwnership(address _newOwner)
-  public
-  virtual
-  override(Ownable, IJBToken)
-  onlyOwner
-{
+function transferOwnership(uint256, address _newOwner) public virtual override onlyOwner {
   return super.transferOwnership(_newOwner);
 }
 ```

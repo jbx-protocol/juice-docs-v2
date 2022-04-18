@@ -25,7 +25,7 @@ function mint(
 ```
 
 * Arguments:
-  * The `_projectId` parameter is ignored.
+  * `_projectId` is the ID of the project to which the token belongs. This is ignored.
   * `_account` is the account to mint the tokens for.
   * `_amount` is the amount of tokens to mint, as a fixed point number with 18 decimals.
 * Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
@@ -56,6 +56,7 @@ function mint(
   @dev
   Only the owner of this contract cant mint more of it.
 
+  _projectId The ID of the project to which the token belongs. This is ignored.
   @param _account The account to mint the tokens for.
   @param _amount The amount of tokens to mint, as a fixed point number with 18 decimals.
 */

@@ -27,8 +27,7 @@ constructor(AggregatorV3Interface _feed) {
 }
 ```
 
-* **Arguments:**
-  * `_feed` is the feed to report prices from.
+* `_feed` is the feed to report prices from.
 
 #### Properties
 

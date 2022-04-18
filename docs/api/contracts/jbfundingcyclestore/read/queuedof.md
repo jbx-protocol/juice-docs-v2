@@ -42,6 +42,7 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
+    * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
     * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 2.  Check to see if there's a standby funding cycle configuration.
 
@@ -87,8 +88,8 @@ function queuedOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
     * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 5.  If the referenced funding cycle has a duration of 0, there can't be a queued funding cycle since configurations with no duration are being made manually instead of on a schedule.
 
     ```
@@ -117,6 +118,10 @@ function queuedOf(uint256 _projectId)
     // Get the funding cycle of its base funding cycle, which carries the last approved configuration.
     fundingCycle = _getStructFor(_projectId, fundingCycle.basedOn);
     ```
+    
+    _Internal references:_
+
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 
 8.  If the base has a duration of 0, it must still be current and there must not be a queued cycle.
 

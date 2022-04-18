@@ -56,11 +56,20 @@ function _reclaimableOverflowDuring(
       : _fundingCycle.redemptionRate();
     ```
 
+    _Enums used:_
+
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
+      * `.Active`
+
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.ballotRedemptionRate(...)`\
-      `.redemptionRate(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.ballotRedemptionRate(...)`
+      * `.redemptionRate(...)`
+
+    _Internal references:_
+
+    * [`fundingCycleStore`](/api/contracts/jbsingletokenpaymentterminalstore/properties/fundingcyclestore.md)
 
     _External references:_
 

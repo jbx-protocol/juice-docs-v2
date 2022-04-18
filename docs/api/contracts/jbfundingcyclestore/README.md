@@ -32,8 +32,7 @@ Ethereum mainnet: [`0xce2Ce2F37fE5B2C2Dd047908B2F61c9c3f707272`](https://ethersc
 constructor(IJBDirectory _directory) JBControllerUtility(_directory) {}
 ```
 
-* **Arguments:**
-  * `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
+* `_directory` is an [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
 
 #### Events
 

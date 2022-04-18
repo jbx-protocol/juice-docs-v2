@@ -38,6 +38,11 @@ function _ballotStateOf(
     // If there is no ballot funding cycle, implicitly approve.
     if (_ballotFundingCycleConfiguration == 0) return JBBallotState.Approved;
     ```
+
+    _Enums used:_
+
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
+      * `.Approved`
 2.  Get the funding cycle that has a reference of the ballot that should be used.
 
     ```
@@ -63,6 +68,17 @@ function _ballotStateOf(
       return JBBallotState.Active;
     else return _ballotFundingCycle.ballot.stateOf(_projectId, _configuration, _start);
     ```
+
+    _Enums used:_
+
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
+      * `.Approved`
+      * `.Active`
+
+    _External references:_
+
+    * [`duration`](/api/interfaces/ijbfundingcycleballot.md)
+    * [`stateOf`](/api/interfaces/ijbfundingcycleballot.md)
 
 </TabItem>
 

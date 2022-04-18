@@ -103,7 +103,7 @@ function changeFor(
 
     _Internal references:_
 
-    * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
+    * [`projectOf`](/api/contracts/jbtokenstore/properties/projectof.md)
 7.  Reset the project for the project's old token.
 
     ```
@@ -113,7 +113,7 @@ function changeFor(
 
     _Internal references:_
 
-    * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
+    * [`projectOf`](/api/contracts/jbtokenstore/properties/projectof.md)
 8.  If there's a current token and a new owner address was provided, transfer the ownership of the current token from this contract to the new owner.
 
     ```

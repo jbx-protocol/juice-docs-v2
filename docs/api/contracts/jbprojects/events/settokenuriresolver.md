@@ -7,7 +7,7 @@ Emitted from:
 #### Definition
 
 ```
-event SetTokenUriResolver(IJBTokenUriResolver newResolver, address caller);
+event SetTokenUriResolver(IJBTokenUriResolver indexed newResolver, address caller);
 ```
 
 * `newResolver` is the new URI resolver contract.

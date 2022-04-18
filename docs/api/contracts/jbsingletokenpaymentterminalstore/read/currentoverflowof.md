@@ -54,6 +54,7 @@ function currentOverflowOf(IJBSingleTokenPaymentTerminal _terminal, uint256 _pro
     _External references:_
 
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
 
 </TabItem>
 

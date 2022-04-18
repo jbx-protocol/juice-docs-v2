@@ -28,7 +28,7 @@ function _deriveWeightFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
 
 #### Body
 
-1.  If the base funding cycle has no duration, the derived weight should be calculated from it no matter how much time has passed since it was active. The discount rate property in a [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) is out of `JBConstants.MAX_DISCOUNT_RATE`(/api/libraries/jbconstants.md).
+1.  If the base funding cycle has no duration, the derived weight should be calculated from it no matter how much time has passed since it was active. The discount rate property in a [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) is out of [`JBConstants.MAX_DISCOUNT_RATE`](/api/libraries/jbconstants.md).
 
     ```
     // A subsequent cycle to one with a duration of 0 should have the next possible weight.

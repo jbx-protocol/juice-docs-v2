@@ -86,8 +86,8 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.setControllerAllowed(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)<br/>
+      * `.setControllerAllowed(...)`
 
     _Internal references:_
 

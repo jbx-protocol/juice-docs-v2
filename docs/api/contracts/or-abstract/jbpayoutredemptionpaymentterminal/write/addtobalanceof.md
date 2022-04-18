@@ -63,7 +63,7 @@ function addToBalanceOf(
 
     _Internal references:_
 
-    * [`_addToBalanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/write/-_addtobalanceof.md)
+    * [`_addToBalanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_addtobalanceof.md)
 
 </TabItem>
 

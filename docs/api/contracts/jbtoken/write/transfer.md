@@ -23,7 +23,7 @@ function transfer(
 ```
 
 * Arguments:
-  * The `_projectId` parameter is ignored.
+  * `_projectId` is the ID of the project to which the token belongs. This is ignored.
   * `_to` is the destination address.
   * `_amount` is the amount of the transfer, as a fixed point number with 18 decimals.
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
@@ -50,6 +50,7 @@ function transfer(
   @notice
   Transfer tokens to an account.
 
+  _projectId The ID of the project to which the token belongs. This is ignored.
   @param _to The destination address.
   @param _amount The amount of the transfer, as a fixed point number with 18 decimals.
 */

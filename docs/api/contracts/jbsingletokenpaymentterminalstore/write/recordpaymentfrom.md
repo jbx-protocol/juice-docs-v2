@@ -79,8 +79,8 @@ function recordPaymentFrom(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.payPaused(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.payPaused(...)`
 4.  Create a variable where the weight to use in subsquent calculations will be saved.
 
     ```
@@ -114,10 +114,10 @@ function recordPaymentFrom(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.useDataSourceForPay(...)`\
-      `.dataSource(...)`\
-      `.reservedRate(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.useDataSourceForPay(...)`\
+      * `.dataSource(...)`\
+      * `.reservedRate(...)`
 
     _External references:_
 

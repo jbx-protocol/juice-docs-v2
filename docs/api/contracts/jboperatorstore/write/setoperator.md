@@ -20,7 +20,7 @@ _Only an address can set its own operators._
  function setOperator(JBOperatorData calldata _operatorData) external override { ... }
 ```
 
-* `_operatorData` is the [JBOperatorData](/api/data-structures/jboperatordata.md) that specifies the params for the operator being set.
+* `_operatorData` is the [`JBOperatorData`](/api/data-structures/jboperatordata.md) that specifies the params for the operator being set.
 * The function can be accessed externally by anyone.
 * The function overrides a function definition from the [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) interface.
 * The function doesn't return anything.

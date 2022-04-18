@@ -16,7 +16,7 @@ event Claim(
 );
 ```
 
-* `holder`is the address to which the tokens being claimed belong.
+* `holder` is the address to which the tokens being claimed belong.
 * `projectId` is the ID of the project to which the claimed tokens belong.
 * `initialUnclaimedBalance` is the amount of unclaimed tokens the holder had a balance of at the time of claiming.
 * `amount` is the amount of tokens that were claimed.

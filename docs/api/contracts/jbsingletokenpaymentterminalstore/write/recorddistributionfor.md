@@ -60,8 +60,8 @@ function recordDistributionFor(
 
     _Libraries used:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.distributionsPaused(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.distributionsPaused(...)`
 
 3.  Calculate the new total amount that has been distributed during this funding cycle by adding the amount being distributed to the used distribution limit.
 
@@ -93,6 +93,7 @@ function recordDistributionFor(
     _External references:_
 
     * [`distributionLimitOf`](/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
+    * [`token`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
 
 5.  Make sure the new total amount distributed will be at most the distribution limit.
 

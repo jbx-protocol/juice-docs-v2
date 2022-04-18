@@ -20,7 +20,7 @@ function balanceOf(address _account, uint256) external view override returns (ui
 
 * Arguments:
   * `_account` is the account to get a balance of.
-  * The `_projectId` parameter is ignored.
+  * `_projectId` is the ID of the project to which the token belongs. This is ignored.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
@@ -48,6 +48,7 @@ function balanceOf(address _account, uint256) external view override returns (ui
   An account's balance of this ERC20.
 
   @param _account The account to get a balance of.
+  _projectId is the ID of the project to which the token belongs. This is ignored.
 
   @return The balance of the `_account` of this ERC20, as a fixed point number with 18 decimals.
 */

@@ -34,8 +34,7 @@ constructor(address _owner) {
 }
 ```
 
-* **Arguments:**
-  * `_owner` is the address that will own the contract.
+* `_owner` is the address that will own the contract.
 
 #### Events
 
@@ -59,4 +58,4 @@ constructor(address _owner) {
 
 | Function                             | Definition                                                                                                                                                                                                                               |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`addFeedFor`**](/api/contracts/jbprices/write/addfeed.md) | <p><strong>Traits</strong></p><ul><li><code>onlyOwner</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li><li><code>[IJBPriceFeed](/api/interfaces/ijbpricefeed.md) feed</code></li></ul> |
+| [**`addFeedFor`**](/api/contracts/jbprices/write/addfeed.md) | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li><li><code>[IJBPriceFeed](/api/interfaces/ijbpricefeed.md) _feed</code></li></ul> |
