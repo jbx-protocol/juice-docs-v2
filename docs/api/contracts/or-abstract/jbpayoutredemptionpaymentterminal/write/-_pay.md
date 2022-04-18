@@ -85,6 +85,10 @@ function _pay(
         );
         ```
 
+        _Internal references:_
+
+        * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+
         _External references:_
 
         * [`recordPaymentFrom`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordpaymentfrom.md)
@@ -105,6 +109,10 @@ function _pay(
           );
         ```
 
+        _Internal references:_
+
+        * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
+
         _External references:_
 
         * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
@@ -117,7 +125,7 @@ function _pay(
         if (beneficiaryTokenCount < _minReturnedTokens) revert INADEQUATE_TOKEN_COUNT();
         ```
 
-    6.   If a delegate was provided, callback to its `didPay` function, and emit an event with the relevant parameters..
+    6.  If a delegate was provided, callback to its `didPay` function, and emit an event with the relevant parameters..
 
         ```
         // If a delegate was returned by the data source, issue a callback to it.

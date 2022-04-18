@@ -48,6 +48,10 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
     uint256 _feedDecimals = feed.decimals();
     ```
 
+    _Internal references:_
+
+    * [`feed`](/api/contracts/or-price-feeds/jbchainlinkv3pricefeed/properties/feed.md)
+
     _External references:_
 
     * [`decimals`](https://docs.chain.link/docs/price-feeds-api-reference/#decimals)
@@ -58,7 +62,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
     return uint256(_price).adjustDecimals(_feedDecimals, _decimals);
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFixedPointNumber`](/api/libraries/jbfixedpointnumber.md)
       * `.adjustDecimals(...)`

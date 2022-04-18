@@ -41,6 +41,10 @@ function _payToSplits(
     // Get a reference to the splits.
     JBSplit[] memory _splits = splitsStore.splitsOf(_splitsProjectId, _splitsDomain, _splitsGroup);
     ```
+    
+    _External references:_
+
+    * [`splitsStore`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/splitsstore.md)
 
     _External references:_
 
@@ -140,10 +144,12 @@ function _payToSplits(
     }
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBTokens`](/api/libraries/jbtokens.md)
       * `.ETH`
+    * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
+      * `.sendValue(...)`
 
     _Internal references:_
 
@@ -152,6 +158,8 @@ function _payToSplits(
 
     _External references:_
 
+    * [`approve`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
+    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transfer-address-uint256-)
     * [`allocate`](/api/interfaces/ijbsplitallocator.md)
 
     _Event references:_

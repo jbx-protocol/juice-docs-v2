@@ -63,7 +63,6 @@ function _addToBalance(
 
     _External references:_
 
-    * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
     * [`decimalsForToken`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
 
 4.  If the token being paid is an ERC20, approve the terminal to spend the amount of tokens from this terminal.
@@ -72,6 +71,11 @@ function _addToBalance(
     // Approve the `_amount` of tokens from the destination terminal to transfer tokens from this contract.
     if (_token != JBTokens.ETH) IERC20(_token).approve(address(_terminal), _amount);
     ```
+
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
 
     _External references:_
 
@@ -84,6 +88,11 @@ function _addToBalance(
     uint256 _payableValue = _token == JBTokens.ETH ? _amount : 0;
     ```
 
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
+
 5.  Add to the project's balance with the provided properties. 
 
     ```
@@ -93,7 +102,7 @@ function _addToBalance(
 
     _External references:_
 
-    * [`addToBalance`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalane.md)
+    * [`addToBalanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
     
 </TabItem>
 

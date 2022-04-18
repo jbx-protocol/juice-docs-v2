@@ -94,7 +94,7 @@ function currentReclaimableOverflowOf(
     );
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.reservedRate(...)`

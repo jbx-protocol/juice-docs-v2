@@ -1,4 +1,4 @@
-# splitStore
+# splitsStore
 
 Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 

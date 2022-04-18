@@ -1,9 +1,13 @@
 # isTerminalOf
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-{% tabs %}
-{% tab title="Step by step" %}
+<Tabs>
+<TabItem value="Step by step" label="Step by step">
+
 **A modifier that verifies this terminal is a terminal of provided project ID.**
 
 #### Definition
@@ -24,12 +28,18 @@ modifier isTerminalOf(uint256 _projectId) { ... }
     _;
     ```
 
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
+
     _External references:_
 
     * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
-{% endtab %}
 
-{% tab title="Code" %}
+</TabItem>
+
+<TabItem value="Code" label="Code">
+
 ```
 /** 
   @notice 
@@ -40,20 +50,24 @@ modifier isTerminalOf(uint256 _projectId) {
   _;
 }
 ```
-{% endtab %}
 
-{% tab title="Errors" %}
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
 | String                       | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
 | **`PROJECT_TERMINAL_MISMATCH`** | Thrown if this terminal is not a terminal of the specified project. |
 
-{% endtab %}
+</TabItem>
 
-{% tab title="Bug bounty" %}
+<TabItem value="Bug bounty" label="Bug bounty">
+
 | Category          | Description                                                                                                                            | Reward |
 | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | **Optimization**  | Help make this operation more efficient.                                                                                               | 0.5ETH |
 | **Low severity**  | Identify a vulnerability in this operation that could lead to an inconvenience for a user of the protocol or for a protocol developer. | 1ETH   |
 | **High severity** | Identify a vulnerability in this operation that could lead to data corruption or loss of funds.                                        | 5+ETH  |
-{% endtab %}
-{% endtabs %}
+
+</TabItem>
+</Tabs>

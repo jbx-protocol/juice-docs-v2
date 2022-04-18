@@ -77,7 +77,7 @@ function priceFor(
       return PRBMath.mulDiv(10**_decimals, 10**_decimals, _feed.currentPrice(_decimals));
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`

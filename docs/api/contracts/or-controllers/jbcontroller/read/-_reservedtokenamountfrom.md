@@ -49,7 +49,7 @@ function _reservedTokenAmountFrom(
     if (_reservedRate == JBConstants.MAX_RESERVED_RATE) return _unprocessedTokenBalanceOf;
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBConstants`](/api/libraries/jbconstants.md)
       * `.MAX_RESERVED_RATE`
@@ -64,7 +64,7 @@ function _reservedTokenAmountFrom(
       ) - _unprocessedTokenBalanceOf;
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`

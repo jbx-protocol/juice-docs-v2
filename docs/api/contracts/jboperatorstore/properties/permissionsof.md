@@ -34,8 +34,9 @@ _Permissions are stored in a packed `uint256`. Each 256 bits represents the on/o
 mapping(address => mapping(address => mapping(uint256 => uint256))) public override permissionsOf;
 ```
 
-* `_operator` is the address of the operator.
-* `_account` is the address of the account being operated.
-* `_domain` is the domain within which the permissions apply. Applications can use the domain namespace as they wish.
+* Arguments:
+  * `_operator` is the address of the operator.
+  * `_account` is the address of the account being operated.
+  * `_domain` is the domain within which the permissions apply. Applications can use the domain namespace as they wish.
 * The resulting view function can be accessed externally by anyone.
 * The resulting function overrides a function definition from the [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) interface.

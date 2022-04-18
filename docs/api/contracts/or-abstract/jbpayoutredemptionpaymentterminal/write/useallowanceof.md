@@ -102,7 +102,7 @@ function useAllowanceOf(
           : _currentFeeDiscount(_projectId);
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
@@ -120,7 +120,7 @@ function useAllowanceOf(
           : _takeFeeFrom(_projectId, _fundingCycle, _distributedAmount, _projectOwner, _feeDiscount);
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`

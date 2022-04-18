@@ -36,6 +36,10 @@ function finalize(uint256 _projectId, uint256 _configured)
     JBFundingCycle memory _fundingCycle = fundingCycleStore.get(_projectId, _configured);
     ```
 
+    _Internal references:_
+
+    * [`fundingCycleStore`](/api/contracts/or-ballots/jbreconfigurationbufferballot/properties/fundingcyclestore.md)
+
     _External references:_
 
     * [`get`](/api/contracts/jbfundingcyclestore/read/get.md)
@@ -66,6 +70,11 @@ function finalize(uint256 _projectId, uint256 _configured)
       }
     }
     ```
+
+    _Enums used:_
+
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
+      * `.Active`
 
     _Internal references:_
 

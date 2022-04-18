@@ -35,7 +35,7 @@ function _transferFrom(
     Address.sendValue(_to, _amount);
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`

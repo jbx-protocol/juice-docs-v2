@@ -17,6 +17,7 @@ Contract: [`JBDirectory`](/api/contracts/jbdirectory/README.md)‌
 mapping(uint256 => mapping(address => IJBPaymentTerminal)) private _primaryTerminalOf;
 ```
 
-* `_projectId` is the ID of the project to get the primary terminal of.
-* `_token` is the token to get the project's primary terminal of.
+* Arguments:
+  * `_projectId` is the ID of the project to get the primary terminal of.
+  * `_token` is the token to get the project's primary terminal of.
 * The resulting view function is private to this contract.

@@ -56,7 +56,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
       revert SET_TERMINALS_NOT_ALLOWED();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.setTerminalsAllowed(...)`

@@ -40,7 +40,7 @@ function _configure(
     if (_metadata.reservedRate > JBConstants.MAX_RESERVED_RATE) revert INVALID_RESERVED_RATE();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBConstants`](/api/libraries/jbconstants.md)
       * `.MAX_RESERVED_RATE(...)`
@@ -52,7 +52,7 @@ function _configure(
       revert INVALID_REDEMPTION_RATE();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBConstants`](/api/libraries/jbconstants.md)
       * `.MAX_REDEMPTION_RATE(...)`
@@ -64,7 +64,7 @@ function _configure(
       revert INVALID_BALLOT_REDEMPTION_RATE();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBConstants`](/api/libraries/jbconstants.md)
       * `.MAX_REDEMPTION_RATE(...)`
@@ -84,10 +84,10 @@ function _configure(
 
     * [`configureFor`](/api/contracts/jbfundingcyclestore/write/configurefor.md)
 
-    _Libraries used:_
+    _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.packFundingCycleMetadata(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.packFundingCycleMetadata(...)`
 5.  For each provided group splits, set the splits for the specified group if there are any.
 
     ```

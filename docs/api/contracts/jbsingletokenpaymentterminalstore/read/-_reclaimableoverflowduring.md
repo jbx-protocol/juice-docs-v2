@@ -61,7 +61,7 @@ function _reclaimableOverflowDuring(
     * [`JBBallotState`](/api/enums/jbballotstate.md)
       * `.Active`
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.ballotRedemptionRate(...)`
@@ -87,7 +87,7 @@ function _reclaimableOverflowDuring(
     uint256 _base = PRBMath.mulDiv(_overflow, _tokenCount, _totalSupply);
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
@@ -110,7 +110,7 @@ function _reclaimableOverflowDuring(
       );
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`

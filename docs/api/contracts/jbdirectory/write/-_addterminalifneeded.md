@@ -58,7 +58,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
       revert SET_TERMINALS_NOT_ALLOWED();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)<br/>
       * `.setTerminalsAllowed(...)`

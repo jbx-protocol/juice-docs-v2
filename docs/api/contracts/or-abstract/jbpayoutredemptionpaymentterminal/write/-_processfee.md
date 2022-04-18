@@ -31,6 +31,10 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
     IJBPaymentTerminal _terminal = directory.primaryTerminalOf(_PROTOCOL_PROJECT_ID, token);
     ```
 
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
+
     _External references:_
 
     * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
@@ -74,6 +78,10 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
         uint256 _payableValue = token == JBTokens.ETH ? _amount : 0;
         ```
 
+        _Library references:_
+
+        * [`JBTokens`](/api/libraries/jbtokens.md)
+          * `.ETH`
     5.  Send the payment.
 
         ```
@@ -90,6 +98,10 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
         ); // Use the external pay call of the correct terminal.
         ```
 
+        _Internal references:_
+
+        * [`_PROTOCOL_PROJECT_ID`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_protocol_project_id.md)
+        
         _External references:_
 
         * [`pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)

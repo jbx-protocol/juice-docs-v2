@@ -31,6 +31,10 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
 
+    _Internal references:_
+
+    * [`fundingCycleStore`](/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
+
     _External references:_
 
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
@@ -40,6 +44,10 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     // Get a reference to new total supply of tokens before minting reserved tokens.
     uint256 _totalTokens = tokenStore.totalSupplyOf(_projectId);
     ```
+
+    _Internal references:_
+
+    * [`tokenStore`](/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
 
     _External references:_
 
@@ -55,13 +63,14 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
     );
     ```
 
-    _Libraries used:_
+    _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.reservedRate(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.reservedRate(...)`
 
     _Internal references:_
 
+    * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
     * [`_reservedTokenAmountFrom`](/api/contracts/or-controllers/jbcontroller/read/-_reservedtokenamountfrom.md)
 4.  Set the tracker to be equal to the new current total token supply, which is the amount stored plus the amount that will be minted and distributed.
 
@@ -82,6 +91,10 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
+    * [`projects`](/api/contracts/or-controllers/jbcontroller/properties/projects.md)
+
+    _External references:_
+
     * [`ownerOf`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#IERC721-ownerOf-uint256-)
 6.  If there are outstanding reserved tokens, distribute them to reserved token splits. Get a reference to any leftover amount after the splits are settled.
 
@@ -97,7 +110,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
         );
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBSplitsGroups`](/api/libraries/jbsplitsgroups.md)
       * `.RESERVED_TOKENS`

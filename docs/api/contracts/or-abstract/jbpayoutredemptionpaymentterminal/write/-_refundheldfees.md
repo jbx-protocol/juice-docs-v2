@@ -77,6 +77,7 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
     _Internal references:_
 
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
+    * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
 
 </TabItem>
 

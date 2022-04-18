@@ -80,6 +80,11 @@ function _pay(
     if (_token != JBTokens.ETH) IERC20(_token).approve(address(_terminal), _amount);
     ```
 
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
+
     _External references:_
 
     * [`approve`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
@@ -91,6 +96,11 @@ function _pay(
     uint256 _payableValue = _token == JBTokens.ETH ? _amount : 0;
     ```
 
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
+      
 6.  Send the payment to the terminal with the provided properties. If no beneficiary was specified, set the message sender as the beneficiary.
 
     ```

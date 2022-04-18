@@ -97,7 +97,7 @@ function distributePayoutsOf(
           : _currentFeeDiscount(_projectId);
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
@@ -157,7 +157,7 @@ function distributePayoutsOf(
           );
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`

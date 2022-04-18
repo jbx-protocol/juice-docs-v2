@@ -54,8 +54,16 @@ receive() external payable virtual override { ... }
       );
     ```
 
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
+      
     _Internal references:_
 
+    * [`defaultPreferClaimedTokens`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
+    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
+    * [`defaultProjectId`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultprojectid.md)
     * [`_addToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md)
     * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
 

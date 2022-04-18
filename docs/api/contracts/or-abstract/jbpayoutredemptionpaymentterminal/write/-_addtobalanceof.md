@@ -46,6 +46,10 @@ function _addToBalanceOf(
     store.recordAddedBalanceFor(_projectId, _amount + _refundedFees);
     ```
 
+    _Internal references:_
+
+    * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+
     _External references:_
 
     * [`recordAddedBalanceFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordaddedbalancefor.md)

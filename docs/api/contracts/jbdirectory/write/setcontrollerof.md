@@ -84,7 +84,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
     ) revert SET_CONTROLLER_NOT_ALLOWED();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)<br/>
       * `.setControllerAllowed(...)`

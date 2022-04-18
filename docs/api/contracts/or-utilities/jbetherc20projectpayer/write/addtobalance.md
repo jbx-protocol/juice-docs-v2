@@ -53,6 +53,11 @@ function addToBalance(
     }
     ```
 
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
+      
     _External references:_
 
     * [`transferFrom`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transferFrom-address-address-uint256-)

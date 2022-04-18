@@ -68,7 +68,7 @@ function _currentTotalOverflowOf(
       : PRBMath.mulDiv(_ethOverflow, 10**18, prices.priceFor(JBCurrencies.ETH, _currency, 18));
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
@@ -88,7 +88,7 @@ function _currentTotalOverflowOf(
         : JBFixedPointNumber.adjustDecimals(_totalOverflow18Decimal, 18, _decimals);
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`

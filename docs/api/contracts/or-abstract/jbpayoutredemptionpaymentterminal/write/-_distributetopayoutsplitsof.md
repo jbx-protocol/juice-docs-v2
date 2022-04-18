@@ -50,6 +50,10 @@ function _distributeToPayoutSplitsOf(
     JBSplit[] memory _splits = splitsStore.splitsOf(_projectId, _domain, _group);
     ```
 
+    _Internal references:_
+
+    * [`splitsStore`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/splitsstore.md)
+
     _External references:_
 
     * [`splitsOf`](/api/contracts/jbsplitsstore/read/splitsof.md)
@@ -77,7 +81,7 @@ function _distributeToPayoutSplitsOf(
         );
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
           * `.mulDiv(...)`
@@ -202,22 +206,24 @@ function _distributeToPayoutSplitsOf(
         }
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBConstants`](/api/libraries/jbconstants.md)
-          * `.MAX_FEE_DISCOUNT(...)`
+          * `.MAX_FEE_DISCOUNT`
         * [`JBTokens`](/api/libraries/jbtokens.md)
           * `.ETH`
 
         _Internal references:_
 
-        * [`fee`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/fee.md)
+        * [`fee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
         * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
         * [`isFeelessTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
-        * [`pay`]/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/(pay.md)
+        * [`pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
         * [`_pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
         * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
         * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
+        * [`_beforeTransferTo`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
+        * [`_addtobalanceof`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_addtobalanceof.md)
 
         _External references:_
 
@@ -425,7 +431,7 @@ function _distributeToPayoutSplitsOf(
 
 | Name                                                                  | Data                                                                                                                                                                                                                                                                                     |
 | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeToPayoutSplit`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md)split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                           |
+| [**`DistributeToPayoutSplit`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                           |
 
 </TabItem>
 

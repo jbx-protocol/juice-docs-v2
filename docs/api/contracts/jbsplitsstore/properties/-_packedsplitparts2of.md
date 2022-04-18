@@ -25,9 +25,10 @@ mapping(uint256 => mapping(uint256 => mapping(uint256 => mapping(uint256 => uint
   private _packedSplitParts2Of;
 ```
 
-* `_projectId` is the ID of the project to get packed splits data for.
-* `_domain` is an identifier within which the returned splits should be considered active.
-* `_group` is the identifying group of the splits.
-* `_index` is the indexed order that the split was set at.
+* Arguments:
+  * `_projectId` is the ID of the project to get packed splits data for.
+  * `_domain` is an identifier within which the returned splits should be considered active.
+  * `_group` is the identifying group of the splits.
+  * `_index` is the indexed order that the split was set at.
 * Returns packed split data.
 * The resulting view function is private to this contract.

@@ -54,6 +54,10 @@ function launchProjectFor(
     projectId = projects.createFor(_owner, _projectMetadata);
     ```
 
+    _Internal references:_
+
+    * [`projects`](/api/contracts/or-controllers/jbcontroller/properties/projects.md)
+
     _External references:_
 
     * [`createFor`](/api/contracts/jbprojects/write/createfor.md)
@@ -63,6 +67,10 @@ function launchProjectFor(
     // Set this contract as the project's controller in the directory.
     directory.setControllerOf(projectId, this);
     ```
+
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-controllers/jbcontroller/properties/directory.md)
 
     _External references:_
 
@@ -91,6 +99,10 @@ function launchProjectFor(
     if (_terminals.length > 0) directory.setTerminalsOf(projectId, _terminals);
     ```
 
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-controllers/jbcontroller/properties/directory.md)
+    
     _External references:_
 
     * [`setTerminalsOf`](/api/contracts/jbdirectory/write/setterminalsof.md)

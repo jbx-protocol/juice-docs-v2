@@ -77,7 +77,7 @@ function recordPaymentFrom(
     if (fundingCycle.payPaused()) revert FUNDING_CYCLE_PAYMENT_PAUSED();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.payPaused(...)`
@@ -112,7 +112,7 @@ function recordPaymentFrom(
     }
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.useDataSourceForPay(...)`\
@@ -170,7 +170,7 @@ function recordPaymentFrom(
     tokenCount = PRBMath.mulDiv(_amount.value, _weight, _weightRatio);
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`

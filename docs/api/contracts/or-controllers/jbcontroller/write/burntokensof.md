@@ -62,6 +62,10 @@ function burnTokensOf(
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
 
+    _Internal references:_
+
+    * [`fundingCycleStore`](/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
+    
     _External references:_
 
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
@@ -75,10 +79,14 @@ function burnTokensOf(
     ) revert BURN_PAUSED_AND_SENDER_NOT_VALID_TERMINAL_DELEGATE();
     ```
 
-    _Libraries used:_
+    _Internal references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.burnPause(...)`
+    * [`directory`](/api/contracts/or-controllers/jbcontroller/properties/directory.md)
+
+    _Library references:_
+
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.burnPaused(...)`
 
     _External references:_
 
@@ -101,6 +109,10 @@ function burnTokensOf(
     // Burn the tokens.
     tokenStore.burnFrom(_holder, _projectId, _tokenCount, _preferClaimedTokens);
     ```
+
+    _Internal references:_
+
+    * [`tokenStore`](/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
 
     _External references:_
 

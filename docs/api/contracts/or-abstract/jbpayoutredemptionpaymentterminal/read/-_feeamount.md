@@ -38,7 +38,7 @@ function _feeAmount(
       PRBMath.mulDiv(_fee, _feeDiscount, JBConstants.MAX_FEE_DISCOUNT);
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
@@ -51,6 +51,13 @@ function _feeAmount(
     return
       _amount - PRBMath.mulDiv(_amount, JBConstants.MAX_FEE, _discountedFee + JBConstants.MAX_FEE);
     ```
+
+    _Library references:_
+
+    * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
+      * `.mulDiv(...)`
+    * [`JBConstants`](/api/libraries/jbconstants.md)
+      * `.MAX_FEE`
 
 </TabItem>
 

@@ -49,7 +49,7 @@ function configureFor(
     if (_data.discountRate > JBConstants.MAX_DISCOUNT_RATE) revert INVALID_DISCOUNT_RATE();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBConstants`](/api/libraries/jbconstants.md)
       * `.MAX_DISCOUNT_RATE`

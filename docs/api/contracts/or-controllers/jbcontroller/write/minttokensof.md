@@ -79,11 +79,16 @@ function mintTokensOf(
     }
     ```
 
-    _Libraries used:_
+    _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.reservedRate(...)`
-      `.mintPaused(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.mintPaused(...)`
+      * `.reservedRate(...)`
+
+    _Internal references:_
+
+    * [`fundingCycleStore`](/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
+    * [`directory`](/api/contracts/or-controllers/jbcontroller/properties/directory.md)
 
     _External references:_
 
@@ -116,7 +121,7 @@ function mintTokensOf(
     }
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
@@ -125,6 +130,7 @@ function mintTokensOf(
 
     _Internal references:_
 
+    * [`tokenStore`](/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
     * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
 
     _External references:_

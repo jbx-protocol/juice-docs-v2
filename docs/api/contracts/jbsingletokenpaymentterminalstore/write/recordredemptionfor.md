@@ -73,7 +73,7 @@ function recordRedemptionFor(
     if (fundingCycle.redeemPaused()) revert FUNDING_CYCLE_REDEEM_PAUSED();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.redeemPaused(...)`
@@ -99,7 +99,7 @@ function recordRedemptionFor(
           );
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
           * `.useTotalOverflowForRedemptions(...)`
@@ -119,7 +119,7 @@ function recordRedemptionFor(
         );
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
           * `.reservedRate(...)`
@@ -186,7 +186,7 @@ function recordRedemptionFor(
         }
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
           * `.useDataSourceForRedeem(...)`

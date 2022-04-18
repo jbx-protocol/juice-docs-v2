@@ -129,7 +129,7 @@ function set(
         if (_percentTotal > JBConstants.SPLITS_TOTAL_PERCENT) revert INVALID_TOTAL_PERCENT();
         ```
 
-        _Libraries used:_
+        _Library references:_
 
         * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.SPLITS_TOTAL_PERCENT`

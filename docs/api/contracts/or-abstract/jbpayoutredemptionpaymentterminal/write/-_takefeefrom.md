@@ -54,6 +54,7 @@ function _takeFeeFrom(
 
     _Internal references:_
 
+    * [`fee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
     * [`_processFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_processfee.md)
 

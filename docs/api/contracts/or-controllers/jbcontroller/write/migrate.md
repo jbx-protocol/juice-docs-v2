@@ -38,6 +38,10 @@ function migrate(uint256 _projectId, IJBController _to)
     if (directory.controllerOf(_projectId) != this) revert NOT_CURRENT_CONTROLLER();
     ```
 
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-controllers/jbcontroller/properties/directory.md)
+
     _External references:_
 
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
@@ -47,6 +51,10 @@ function migrate(uint256 _projectId, IJBController _to)
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
+
+    _Internal references:_
+
+    * [`fundingCycleStore`](/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
 
     _External references:_
 
@@ -58,10 +66,10 @@ function migrate(uint256 _projectId, IJBController _to)
     if (!_fundingCycle.controllerMigrationAllowed()) revert MIGRATION_NOT_ALLOWED();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.controllerMigrationAllowed(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.controllerMigrationAllowed(...)`
 4.  Distribute any outstanding reserved tokens. There are reserved tokens to be distributed if the tracker does not equal the token's total supply.
 
     ```
@@ -72,6 +80,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     _Internal references:_
 
+    * [`tokenStore`](/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
     * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
     * [`_distributeReservedTokensOf`](/api/contracts/or-controllers/jbcontroller/write/-_distributereservedtokensof.md)
 
@@ -94,6 +103,10 @@ function migrate(uint256 _projectId, IJBController _to)
     // Set the new controller.
     directory.setControllerOf(_projectId, _to);
     ```
+
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-controllers/jbcontroller/properties/directory.md)
 
     _External references:_
 
@@ -167,7 +180,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
 | Name                                                                                | Data                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Migrate`**](/api/contracts/or-controllers/jbcontroller/events/migrate.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[IJBController](/api/interfaces/ijbcontroller.md)to</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
+| [**`Migrate`**](/api/contracts/or-controllers/jbcontroller/events/migrate.md)                                               | <ul><li><code>uint256 projectId</code></li><li><code>[IJBController](/api/interfaces/ijbcontroller.md) to</code></li><li><code>address caller</code></li></ul>                                                                                                                  |
 
 </TabItem>
 

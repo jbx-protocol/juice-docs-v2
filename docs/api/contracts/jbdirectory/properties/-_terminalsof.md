@@ -16,5 +16,6 @@ Contract: [`JBDirectory`](/api/contracts/jbdirectory/README.md)‌
 mapping(uint256 => IJBPaymentTerminal[]) private _terminalsOf;
 ```
 
-* `_projectId` is the ID of the project to get terminals of.
+* Arguments:
+  * `_projectId` is the ID of the project to get terminals of.
 * The resulting view function is private to this contract.

@@ -60,6 +60,10 @@ function launchFundingCyclesFor(
       revert FUNDING_CYCLE_ALREADY_LAUNCHED();
     ```
 
+    _Internal references:_
+
+    * [`fundingCycleStore`](/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
+
     _External references:_
 
     * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
@@ -69,6 +73,10 @@ function launchFundingCyclesFor(
     // Set this contract as the project's controller in the directory.
     directory.setControllerOf(_projectId, this);
     ```
+
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-controllers/jbcontroller/properties/directory.md)
 
     _External references:_
 
@@ -96,6 +104,10 @@ function launchFundingCyclesFor(
     // Add the provided terminals to the list of terminals.
     if (_terminals.length > 0) directory.setTerminalsOf(_projectId, _terminals);
     ```
+
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-controllers/jbcontroller/properties/directory.md)
 
     _External references:_
 

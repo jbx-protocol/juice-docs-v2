@@ -53,6 +53,11 @@ function addToBalance(
     }
     ```
 
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
+      
     _External references:_
 
     * [`transferFrom`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transferFrom-address-address-uint256-)
@@ -62,7 +67,7 @@ function addToBalance(
     ```solidity
     // Pay the splits and get a reference to the amount leftover.
     uint256 _leftoverAmount = _payToSplits(
-      defaultProjectId,
+      defaultSplitsProjectId,
       defaultSplitsDomain,
       defaultSplitsGroup,
       _token,
@@ -73,6 +78,9 @@ function addToBalance(
 
     _Internal references:_
 
+    * [`defaultSplitsProjectId`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsprojectid.md)
+    * [`defaultSplitsDomain`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsdomain.md)
+    * [`defaultSplitsGroup`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsgroup.md)
     * [`_payToSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md)
 3.  If there's any leftover amount, add to balance of the specified project. If no project is specified, send the leftover funds to the beneficiary or the msg.sender.
 
@@ -104,13 +112,16 @@ function addToBalance(
     }
     ```
 
-    _Libraries used:_
+    _Library references:_
 
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
     * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`
 
     _Internal references:_
 
+    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
     * [`_addToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md)
 
     _External references:_
@@ -172,7 +183,7 @@ function addToBalance(
 
   // Pay the splits and get a reference to the amount leftover.
   uint256 _leftoverAmount = _payToSplits(
-    defaultProjectId,
+    defaultSplitsProjectId,
     defaultSplitsDomain,
     defaultSplitsGroup,
     _token,

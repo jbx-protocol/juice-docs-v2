@@ -6,7 +6,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 **The platform fee percent.**
 
-_Out of 200._
+_Out of MAX_FEE (25_000_000 / 1_000_000_000)._
 
 #### Definition
 
@@ -16,7 +16,7 @@ _Out of 200._
   The platform fee percent.
 
   @dev
-  Out of MAX_FEE (25_000_000 / 1_000_000_000)
+  Out of MAX_FEE (25_000_000 / 1_000_000_000).
 */
 uint256 public override fee = 25_000_000; // 2.5%
 ```

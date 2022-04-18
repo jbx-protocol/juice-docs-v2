@@ -46,6 +46,10 @@ function changeTokenOf(
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
     ```
 
+    _Internal references:_
+
+    * [`fundingCycleStore`](/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
+
     _External references:_
 
     * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
@@ -56,16 +60,24 @@ function changeTokenOf(
     if (!_fundingCycle.changeTokenAllowed()) revert CHANGE_TOKEN_NOT_ALLOWED();
     ```
 
-    _Libraries used:_
+    _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)\
-      `.changeTokenAllowed(...)`
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+      * `.changeTokenAllowed(...)`
 3.  Forward the call to the token store.
 
     ```
     // Change the token in the store.
     tokenStore.changeFor(_projectId, _token, _newOwner);
     ```
+
+    _Internal references:_
+
+    * [`tokenStore`](/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
+
+    _External references:_
+
+    * [`changeFor`](/api/contracts/jbtokenstore/write/changefor.md)
 
 </TabItem>
 

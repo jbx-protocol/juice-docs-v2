@@ -32,18 +32,18 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
       return JBConstants.MAX_FEE_DISCOUNT;
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBConstants`](/api/libraries/jbconstants.md)
       * `.MAX_FEE_DISCOUNT`
 
+    _Internal references:_
+
+    * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
+
     _External references:_
 
     * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
-
-    _Internal references:_
-
-    * [`token`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
 2.  If there's a gauge, ask it for the discount. Otherwise, there is no discount. If the gauge reverts, set the discount to 0.
 
     ```
@@ -73,6 +73,11 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
     // If the fee discount is greater than the max, nullify the discount.
     if (feeDiscount > JBConstants.MAX_FEE_DISCOUNT) feeDiscount = 0;
     ```
+
+    _Library references:_
+
+    * [`JBConstants`](/api/libraries/jbconstants.md)
+      * `.MAX_FEE_DISCOUNT`
 
 </TabItem>
 

@@ -18,7 +18,8 @@ Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 mapping(address => bool) public override isAllowedToSetFirstController;
 ```
 
-* `_address` is the address that is either allowed or not.
+* Arguments:
+  * `_address` is the address that is either allowed or not.
 * The resulting view function can be accessed externally by anyone.
 * The resulting function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
  

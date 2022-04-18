@@ -87,13 +87,21 @@ receive() external payable virtual override { ... }
       );
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
       
     _Internal references:_
 
+
+    * [`defaultProjectId`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultprojectid.md)
+    * [`defaultPreferClaimedTokens`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
+    * [`defaultMemo`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmemo.md)
+    * [`defaultMetadata`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmetadata.md)
+    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
     * [`_addToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md)
     * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
 

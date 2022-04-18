@@ -36,6 +36,10 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
     uint256 _overflow = store.currentOverflowOf(this, _projectId);
     ```
 
+    _Internal references:_
+
+    * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+
     _External references:_
 
     * [`currentOverflowOf`](/api/contracts/jbsingletokenpaymentterminalstore/read/currentoverflowof.md)
@@ -48,7 +52,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
       : JBFixedPointNumber.adjustDecimals(_overflow, decimals, 18);
     ```
 
-    _Libraries used:_
+    _Library references:_
 
     * [`JBFixedPointNumber`](/api/libraries/jbfixedpointnumber.md)
       * `.adjustDecimals(...)`
@@ -67,10 +71,16 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
         );
     ```
 
-    _Libraries used:_
+    _Library references:_
 
+    * [`JBCurrencies`](/api/libraries/jbcurrencies.md)
+      * `.ETH`
     * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
       * `.mulDiv(...)`
+
+    _Internal references:_
+
+    * [`prices`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/prices.md)
 
     _External references:_
 

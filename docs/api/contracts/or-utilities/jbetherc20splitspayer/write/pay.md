@@ -61,6 +61,11 @@ function pay(
     }
     ```
 
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
+
     _External references:_
 
     * [`transferFrom`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transferFrom-address-address-uint256-)
@@ -70,7 +75,7 @@ function pay(
     ```solidity
     // Pay the splits and get a reference to the amount leftover.
     uint256 _leftoverAmount = _payToSplits(
-      defaultProjectId,
+      defaultSplitsProjectId,
       defaultSplitsDomain,
       defaultSplitsGroup,
       _token,
@@ -81,6 +86,9 @@ function pay(
 
     _Internal references:_
 
+    * [`defaultSplitsProjectId`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsprojectid.md)
+    * [`defaultSplitsDomain`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsdomain.md)
+    * [`defaultSplitsGroup`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsgroup.md)
     * [`_payToSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md)
 
 3.  If there's any leftover amount, pay the specified project. If no project is specified, send the leftover funds to the beneficiary or the msg.sender.
@@ -122,8 +130,10 @@ function pay(
     }
     ```
 
-    _Libraries used:_
+    _Library references:_
 
+    * [`JBTokens`](/api/libraries/jbtokens.md)
+      * `.ETH`
     * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`
 
@@ -201,7 +211,7 @@ function pay(
 
   // Pay the splits and get a reference to the amount leftover.
   uint256 _leftoverAmount = _payToSplits(
-    defaultProjectId,
+    defaultSplitsProjectId,
     defaultSplitsDomain,
     defaultSplitsGroup,
     _token,

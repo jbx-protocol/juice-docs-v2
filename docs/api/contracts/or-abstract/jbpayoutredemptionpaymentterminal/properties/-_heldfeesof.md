@@ -16,5 +16,6 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 mapping(uint256 => JBFee[]) private _heldFeesOf;
 ```
 
-* `_projectId` is the ID of the project for which fees are being held.
+* Arguments:
+  * `_projectId` is the ID of the project for which fees are being held.
 * The resulting view function is private to this contract.

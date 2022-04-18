@@ -39,6 +39,10 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
     uint256 _totalSupply = tokenStore.totalSupplyOf(_projectId);
     ```
 
+    _Internal references:_
+
+    * [`tokenStore`](/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
+
     _External references:_
 
     * [`totalSupplyOf`](/api/contracts/jbtokenstore/read/totalsupplyof.md)

@@ -41,6 +41,11 @@ function stateOf(
       return finalState[_projectId][_configured];
     ```
 
+    _Enums used:_
+
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
+      * `.Active`
+
     _Internal references:_
 
     * [`finalState`](/api/contracts/or-ballots/jbreconfigurationbufferballot/properties/finalstate.md)
@@ -54,12 +59,23 @@ function stateOf(
       return (block.timestamp >= _start) ? JBBallotState.Failed : JBBallotState.Active;
     ```
 
+    _Enums used:_
+
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
+      * `.Failed`
+      * `.Active`
+
 3. The ballot is otherwise approved. 
 
     ```
     // The ballot is otherwise approved.
     return JBBallotState.Approved;
     ```
+
+    _Enums used:_
+
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
+      * `.Approved`
 
 </TabItem>
 
