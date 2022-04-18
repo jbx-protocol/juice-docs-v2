@@ -27,7 +27,7 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external virtual 
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Make sure this controller isn't the project's current controller. If it is, there shouldn't be a need to prepare anything.
 

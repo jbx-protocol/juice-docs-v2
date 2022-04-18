@@ -4,7 +4,7 @@ Contract: [`JBChainlinkV3PriceFeed`](/api/contracts/or-price-feeds/jbchainlinkv3
 
 **The available [`AggregatorV3Interface`](https://docs.chain.link/docs/price-feeds-api-reference/) price feeds.**
 
-# Definition
+#### Definition
 
 ```
 /** 

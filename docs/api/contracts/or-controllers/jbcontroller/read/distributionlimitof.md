@@ -37,7 +37,7 @@ function distributionLimitOf(
   * `distributionLimit` is the distribution limit, as a fixed point number with the same number of decimals as the provided terminal.
   * `distributionLimitCurrency` is the currency from [`JBCurrencies`](/api/libraries/jbcurrencies.md) that the returned distribution limit is in terms of.
 
-### Body
+#### Body
 
 1.  Get a reference to the packed distribution limit data.
 

@@ -14,7 +14,7 @@ Interface: [`IJBPrices`](/api/interfaces/ijbprices.md)
 
 _Current feeds can't be modified._
 
-### Definition
+#### Definition
 
 ```
 function addFeedFor(
@@ -32,7 +32,7 @@ function addFeedFor(
 * The function overrides a function definition from the [`IJBPrices`](/api/interfaces/ijbprices.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Make sure there isn't already a price feed set for the currency base pair.
 

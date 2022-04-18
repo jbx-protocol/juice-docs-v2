@@ -14,7 +14,7 @@ Interface: [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md)
 
 _Only an address can set its own operators._
 
-### Definition
+#### Definition
 
 ```
  function setOperator(JBOperatorData calldata _operatorData) external override { ... }
@@ -25,7 +25,7 @@ _Only an address can set its own operators._
 * The function overrides a function definition from the [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Pack the provided permissions into a `uint256`. Each bit of the resulting value represents whether or not permission has been granted for that index.
 

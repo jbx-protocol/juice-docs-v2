@@ -4,7 +4,7 @@ Emitted from:
 
 * [`transferFrom`](/api/contracts/jbtokenstore/write/transferfrom.md)
 
-## Definition
+######Definition
 
 ```
 event Transfer(

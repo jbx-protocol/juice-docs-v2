@@ -4,7 +4,7 @@ Emitted from:
 
 * [`_pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
 
-## Definition
+#### Definition
 
 ```
 event DelegateDidPay(IJBPayDelegate indexed delegate, JBDidPayData data, address caller);

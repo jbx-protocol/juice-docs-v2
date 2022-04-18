@@ -10,7 +10,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 
 **Updates the configurable funding cycle for this project if it exists, otherwise creates one.**
 
-### Definition
+#### Definition
 
 ```
 function _configureIntrinsicPropertiesFor(
@@ -29,7 +29,7 @@ function _configureIntrinsicPropertiesFor(
 * The function is private to this contract.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  If the project does not yet have a funding cycle, initialize a new one.
 

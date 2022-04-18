@@ -4,7 +4,7 @@ Emitted from:
 
 * [`issueFor`](/api/contracts/jbtokenstore/write/issuefor.md)
 
-## Definition
+#### Definition
 
 ```
 event Issue(

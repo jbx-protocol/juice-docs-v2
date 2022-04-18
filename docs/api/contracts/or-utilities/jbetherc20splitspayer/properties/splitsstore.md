@@ -6,7 +6,7 @@ Interface: [`IJBSplitsPayer`](/api/interfaces/ijbsplitspayer.md)
 
 **The contract that stores splits for each project.**
 
-# Definition
+#### Definition
 
 ```
 /**

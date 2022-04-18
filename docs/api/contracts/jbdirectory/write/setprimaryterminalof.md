@@ -18,7 +18,7 @@ _The terminal will be set as the primary terminal where ecosystem contracts shou
 
 _If setting a newly added terminal and the funding cycle doesn't allow new terminals, the caller must be the current controller._
 
-### Definition
+#### Definition
 
 ```
 function setPrimaryTerminalOf(
@@ -39,7 +39,7 @@ function setPrimaryTerminalOf(
 * The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Make sure the provided terminal accepts to provided token.
 

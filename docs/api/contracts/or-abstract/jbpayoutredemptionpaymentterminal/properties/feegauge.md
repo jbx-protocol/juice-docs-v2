@@ -6,7 +6,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 **The data source that returns a discount to apply to a project's fee.**
 
-# Definition
+#### Definition
 
 ```
 /**

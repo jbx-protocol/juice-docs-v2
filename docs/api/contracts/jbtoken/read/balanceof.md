@@ -12,7 +12,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 **An account's balance of this ERC20.**
 
-### Definition
+#### Definition
 
 ```
 function balanceOf(address _account, uint256) external view override returns (uint256) { ... }
@@ -26,7 +26,7 @@ function balanceOf(address _account, uint256) external view override returns (ui
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
 * The function returns the balance of the `_account` of this ERC20, as a fixed point number with 18 decimals.
 
-### Body
+#### Body
 
 1.  Forward the call to the ERC20 implementation.
 

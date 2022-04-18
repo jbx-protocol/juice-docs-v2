@@ -4,7 +4,7 @@ Emitted from:
 
 * [`claimFor`](/api/contracts/jbtokenstore/write/burnfrom.md)
 
-## Definition
+#### Definition
 
 ```
 event Claim(

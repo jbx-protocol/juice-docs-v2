@@ -6,7 +6,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 **Terminals that can be paid towards from this terminal without incurring a fee.**
 
-# Definition
+#### Definition
 
 ```
 /**

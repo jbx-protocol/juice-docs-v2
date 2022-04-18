@@ -4,7 +4,7 @@ Emitted from:
 
 * [`distributePayoutsOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md)
 
-## Definition
+#### Definition
 
 ```
 event DistributePayouts(

@@ -4,7 +4,7 @@ Emitted from:
 
 * [`setDefaultSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/write/setdefaultsplits.md)
 
-## Definition
+#### Definition
 
 ```
 event SetDefaultSplits(

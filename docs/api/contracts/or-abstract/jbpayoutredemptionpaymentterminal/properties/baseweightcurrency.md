@@ -8,7 +8,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 _If this differs from `currency`, there must be a price feed available to convert `currency` to `baseWeightCurrency`._
 
-# Definition
+#### Definition
 
 ```
 /**

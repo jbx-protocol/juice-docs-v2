@@ -6,7 +6,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 **The memo that should be used in the payment made when this contract receives payments.**
 
-# Definition
+#### Definition
 
 ```
 /** 

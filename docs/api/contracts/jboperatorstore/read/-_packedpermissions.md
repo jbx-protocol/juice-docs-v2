@@ -10,7 +10,7 @@ Contract: [`JBOperatorStore`](/api/contracts/jboperatorstore/README.md)​‌
 
 **Converts an array of permission indexes to a packed `uint256`.**
 
-### Definition
+#### Definition
 
 ```
 function _packedPermissions(uint256[] calldata _indexes) private pure returns (uint256 packed) {...}
@@ -21,7 +21,7 @@ function _packedPermissions(uint256[] calldata _indexes) private pure returns (u
 * The view function does not modify or reference state variables outside the function.
 * The function returns the packed value.
 
-### Body
+#### Body
 
 1.  Loop through the provided indexes.
 

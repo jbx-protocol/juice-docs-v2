@@ -4,7 +4,7 @@ Emitted from:
 
 * [`_distributeToReservedTokenSplitsOf`](/api/contracts/or-controllers/jbcontroller/write/-_distributetoreservedtokensplitsof.md)
 
-## Definition
+#### Definition
 
 ```
 event DistributeToReservedTokenSplit(

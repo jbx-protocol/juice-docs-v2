@@ -6,7 +6,7 @@ Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletoken
 
 **The amount of tokens that each project has for each terminal, in terms of the terminal's token.**
 
-# Definition
+#### Definition
 
 ```
 /**

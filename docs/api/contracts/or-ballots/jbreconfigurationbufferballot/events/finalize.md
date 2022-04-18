@@ -4,7 +4,7 @@ Emitted from:
 
 * [`finalize`](/api/contracts/or-ballots/jbreconfigurationbufferballot/write/finalize.md)
 
-## Definition
+#### Definition
 
 ```
 event Finalize(

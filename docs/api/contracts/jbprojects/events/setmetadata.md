@@ -4,7 +4,7 @@ Emitted from:
 
 * [`setMetadataOf`](/api/contracts/jbprojects/write/setmetadataof.md)
 
-## Definition
+#### Definition
 
 ```
 event SetMetadata(uint256 indexed projectId, JBProjectMetadata metadata, address caller);

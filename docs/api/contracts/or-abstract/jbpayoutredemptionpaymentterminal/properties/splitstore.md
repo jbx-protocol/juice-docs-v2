@@ -6,7 +6,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 **The contract that stores splits for each project.**
 
-# Definition
+#### Definition
 
 ```
 /**

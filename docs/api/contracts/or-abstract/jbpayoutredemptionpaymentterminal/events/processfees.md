@@ -4,7 +4,7 @@ Emitted from:
 
 * [`processFees`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/processfees.md)
 
-## Definition
+#### Definition
 
 ```
 event ProcessFees(uint256 indexed projectId, JBFee[] fees, address caller);

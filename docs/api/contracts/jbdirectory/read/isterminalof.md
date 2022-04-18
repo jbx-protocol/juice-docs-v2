@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 **Whether or not a specified terminal is a terminal of the specified project.**
 
-### Definition
+#### Definition
 
 ```
 function isTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
@@ -26,7 +26,7 @@ function isTerminalOf(uint256 _projectId, IJBPaymentTerminal _terminal)
 * The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
 * The function returns a flag indicating whether or not the specified terminal is a terminal of the specified project.
 
-### Body
+#### Body
 
 1.  Loop through each of the project's terminals looking for the one specified. If it's found, return true.
 

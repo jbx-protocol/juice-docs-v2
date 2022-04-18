@@ -10,7 +10,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 
 **Unpack a funding cycle's packed stored values into an easy-to-work-with funding cycle struct.**
 
-### Definition
+#### Definition
 
 ```
 function _getStructFor(uint256 _projectId, uint256 _configuration)
@@ -26,7 +26,7 @@ function _getStructFor(uint256 _projectId, uint256 _configuration)
 * The view function does not alter state on the blockchain.
 * The function returns a [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) struct.
 
-### Body
+#### Body
 
 1.  If the configuration provided is 0, return an empty funding cycle.
 

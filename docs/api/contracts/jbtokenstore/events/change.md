@@ -4,7 +4,7 @@ Emitted from:
 
 * [`changefor`](/api/contracts/jbtokenstore/write/changefor.md)
 
-## Definition
+#### Definition
 
 ```
 event Change(

@@ -12,7 +12,7 @@ Contract: [`JBController`](/api/contracts/or-controllers/jbcontroller/README.md)
 
 _Only a project's owner or a designated operator can migrate it._
 
-### Definition
+#### Definition
 
 ```
 function migrate(uint256 _projectId, IJBController _to)
@@ -29,7 +29,7 @@ function migrate(uint256 _projectId, IJBController _to)
 * The function can be overriden by inheriting contracts.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Make sure this controller is the project's current controller. 
 

@@ -6,7 +6,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 **The contract that stores and manages the terminal's data.**
 
-# Definition
+#### Definition
 
 ```
 /**

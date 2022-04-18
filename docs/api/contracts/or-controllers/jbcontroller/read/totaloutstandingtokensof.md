@@ -30,7 +30,7 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function returns the current total amount of outstanding tokens for the project.
 
-### Body
+#### Body
 
 1.  Get the total supply of tokens in circulation.
 

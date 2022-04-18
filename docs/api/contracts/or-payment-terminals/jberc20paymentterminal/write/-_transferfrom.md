@@ -10,7 +10,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-payment-termin
 
 **Transfers tokens.**
 
-# Definition
+#### Definition
 
 ```
 function _transferFrom(

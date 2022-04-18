@@ -12,7 +12,7 @@ Interface: [`IJBPrices`](/api/interfaces/ijbprices.md)
 
 **Gets the number of `_currency` units that can be converted to 1 `_base` unit.**
 
-### Definition
+#### Definition
 
 ```
 function priceFor(
@@ -31,7 +31,7 @@ function priceFor(
 * The function overrides a function definition from the [`IJBPrices`](/api/interfaces/ijbprices.md) interface.
 * The function returns the price of the currency in terms of the base, as a fixed point number with the specified number of decimals.
 
-### Body
+#### Body
 
 1.  Return 1 if the currency and the base are the same, since they have the same price. Normalize to the desired number of decimals.
 

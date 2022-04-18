@@ -5,7 +5,7 @@ Contract: [`JBOperatable`](/api/contracts/or-abstract/jboperatable/README.md)​
 Interface: [`IJBOperatable`](/api/interfaces/ijboperatable.md)
 **A contract storing operator assignments.**
 
-# Definition
+#### Definition
 
 ```
 /** 

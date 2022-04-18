@@ -14,7 +14,7 @@ _Returns an empty funding cycle if there can't be a mock funding cycle based on 
 
 _Assumes a funding cycle with a duration of 0 will never be asked to be the base of a mock._
 
-### Definition
+#### Definition
 
 ```
 function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool _allowMidCycle)
@@ -30,7 +30,7 @@ function _mockFundingCycleBasedOn(JBFundingCycle memory _baseFundingCycle, bool 
 * The view function does not alter state on the blockchain.
 * The function returns a mock [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) of what the next funding cycle will be.
 
-### Body
+#### Body
 
 1.  Save a reference to time at or after which the mock must have started. There are a few possibilities.
 

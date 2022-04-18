@@ -4,7 +4,7 @@ Emitted from:
 
 * [`addToBalance`](/api/contracts/or-utilities/jbetherc20splitspayer/write/addtobalance.md)
 
-## Definition
+#### Definition
 
 ```
 event AddToBalance(

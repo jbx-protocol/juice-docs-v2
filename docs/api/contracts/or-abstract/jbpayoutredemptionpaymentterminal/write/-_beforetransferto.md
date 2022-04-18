@@ -4,7 +4,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 **Logic to be triggered before transferring tokens from this terminal.**
 
-# Definition
+#### Definition
 
 ```
 /** 

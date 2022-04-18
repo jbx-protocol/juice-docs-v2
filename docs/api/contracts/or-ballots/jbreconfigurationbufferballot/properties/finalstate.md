@@ -8,7 +8,7 @@ Interface: [`IJBReconfigurationBufferBallot`](/api/contracts/interfaces/ijbrecon
 
 _If `Active`, the ballot for the provided configuration can still be finalized whenever its state settles._
 
-# Definition
+#### Definition
 
 ```
 /**

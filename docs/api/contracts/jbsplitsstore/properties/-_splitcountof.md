@@ -4,7 +4,7 @@ Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
 **The number of splits currently set for each project ID's configurations.**
 
-# Definition
+#### Definition
 
 ```
 /** 

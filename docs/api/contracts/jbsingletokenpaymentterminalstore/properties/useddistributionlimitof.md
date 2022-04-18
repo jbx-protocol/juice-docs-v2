@@ -10,7 +10,7 @@ _Increases as projects use their preconfigured distribution limits._
 
 _The used distribution limit is represented as a fixed point number with the same amount of decimals as its relative terminal._
 
-# Definition
+#### Definition
 
 ```
 /**

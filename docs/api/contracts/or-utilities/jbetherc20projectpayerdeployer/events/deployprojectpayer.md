@@ -4,7 +4,7 @@ Emitted from:
 
 * [`deployProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayerdeployer/write/deployprojectpayer.md)
 
-## Definition
+#### Definition
 
 ```
 event DeployProjectPayer(

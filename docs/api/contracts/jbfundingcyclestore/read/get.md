@@ -12,7 +12,7 @@ Interface: `IJBFundingCycleStore`
 
 **Get the funding cycle with the given configuration for the specified project.**
 
-### Definition
+#### Definition
 
 ```
 function get(uint256 _projectId, uint256 _configuration)
@@ -30,7 +30,7 @@ function get(uint256 _projectId, uint256 _configuration)
 * The function overrides a function definition from the [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md) interface.
 * The function returns the [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md).
 
-### Body
+#### Body
 
 1.  Return the struct for the provided configuration and project.
 

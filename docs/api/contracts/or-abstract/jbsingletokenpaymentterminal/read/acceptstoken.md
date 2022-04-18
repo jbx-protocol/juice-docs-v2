@@ -25,7 +25,7 @@ function acceptsToken(address _token) external view override returns (bool) { ..
 * The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
 * The function returns the flag.
 
-### Body
+#### Body
 
 1.  In order for this terminal to accept a token, it must match the single token that this terminal is for.
 

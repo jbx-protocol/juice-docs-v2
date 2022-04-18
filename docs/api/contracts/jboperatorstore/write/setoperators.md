@@ -14,7 +14,7 @@ Interface: [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md)
 
 _Only an address can set its own operators._
 
-### Definition
+#### Definition
 
 ```
 function setOperators(JBOperatorData[] calldata _operatorData) external override { ... }
@@ -25,7 +25,7 @@ function setOperators(JBOperatorData[] calldata _operatorData) external override
 * The function overrides a function definition from the [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Loop through the provided operator data.
 

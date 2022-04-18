@@ -27,7 +27,7 @@ function finalize(uint256 _projectId, uint256 _configured)
 * The function overrides a function definition from the [`IJBReconfigurationBufferBallot`](/api/contracts/interfaces/ijbreconfigurationbufferballot) interface.
 * The function returns the state of the finalized ballot. If `Active`, the ballot can still later be finalized when it's state resolves.
 
-### Body
+#### Body
 
 1.  Get a reference to the project's currency funding cycle.
 

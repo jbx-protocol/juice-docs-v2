@@ -4,7 +4,7 @@ Emitted from:
 
 * [`shouldRequireClaimingFor`](/api/contracts/jbtokenstore/write/shouldrequireclaimingfor.md)
 
-## Definition
+#### Definition
 
 ```
 event ShouldRequireClaim(uint256 indexed projectId, bool indexed flag, address caller)

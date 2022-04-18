@@ -6,7 +6,7 @@ Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 **The ID of the project that each token belongs to.**
 
-# Definition
+#### Definition
 
 ```
 /**

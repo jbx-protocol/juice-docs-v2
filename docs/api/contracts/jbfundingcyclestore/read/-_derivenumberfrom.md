@@ -10,7 +10,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 
 **The number of the next funding cycle given the specified funding cycle.**
 
-### Definition
+#### Definition
 
 ```
 function _deriveNumberFrom(JBFundingCycle memory _baseFundingCycle, uint256 _start)
@@ -26,7 +26,7 @@ function _deriveNumberFrom(JBFundingCycle memory _baseFundingCycle, uint256 _sta
 * The view function does not alter state on the blockchain.
 * The function returns the funding cycle number.
 
-### Body
+#### Body
 
 1.  If the base funding cycle doesn't have a duration, the next number is 1 more than the base's number.
 

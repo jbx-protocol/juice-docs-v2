@@ -10,7 +10,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 
 **A project's latest funding cycle configuration approval status.**
 
-### Definition
+#### Definition
 
 ```
 function _ballotStateOf(
@@ -30,7 +30,7 @@ function _ballotStateOf(
 * The view function does not alter state on the blockchain.
 * The function returns the [`JBBallotState`](/api/enums/jbballotstate.md) of the project.
 
-### Body
+#### Body
 
 1.  If there is no ballot configuration, the ballot state is implicitly approved.
 

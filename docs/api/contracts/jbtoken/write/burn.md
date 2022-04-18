@@ -14,7 +14,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 _Only the owner of this contract cant burn some of its supply._
 
-### Definition
+#### Definition
 
 ```
 function burn(
@@ -32,7 +32,7 @@ function burn(
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Forward the call to the ERC20 implementation.
 

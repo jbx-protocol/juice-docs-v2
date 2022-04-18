@@ -4,7 +4,7 @@ Emitted from:
 
 * [`launchProjectFor`](/api/contracts/or-controllers/jbcontroller/write/launchfundingcyclesfor.md)
 
-## Definition
+#### Definition
 
 ```
 event LaunchFundingCycles(uint256 configuration, uint256 projectId, string memo, address caller);

@@ -66,12 +66,7 @@ function processFees(uint256 _projectId)
     // Process each fee.
     for (uint256 _i = 0; _i < _heldFees.length; _i++)
       _processFee(
-        _heldFees[_i].amount -
-          PRBMath.mulDiv(
-            _heldFees[_i].amount,
-            JBConstants.MAX_FEE,
-            _heldFees[_i].fee + JBConstants.MAX_FEE
-          ),
+        _feeAmount(_heldFees[_i].amount, _heldFees[_i].fee, _heldFees[_i].feeDiscount),
         _heldFees[_i].beneficiary
       );
     ```
@@ -79,6 +74,7 @@ function processFees(uint256 _projectId)
     _Internal references:_
 
     * [`_processFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_processfee.md)
+    * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
 4.  Emit a `ProcessFees` event with the relevant parameters.
 
     ```
@@ -123,12 +119,7 @@ function processFees(uint256 _projectId)
   // Process each fee.
   for (uint256 _i = 0; _i < _heldFees.length; _i++)
     _processFee(
-      _heldFees[_i].amount -
-        PRBMath.mulDiv(
-          _heldFees[_i].amount,
-          JBConstants.MAX_FEE,
-          _heldFees[_i].fee + JBConstants.MAX_FEE
-        ),
+      _feeAmount(_heldFees[_i].amount, _heldFees[_i].fee, _heldFees[_i].feeDiscount),
       _heldFees[_i].beneficiary
     );
 

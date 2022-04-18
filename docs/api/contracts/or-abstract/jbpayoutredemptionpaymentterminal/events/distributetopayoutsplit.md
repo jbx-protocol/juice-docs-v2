@@ -4,7 +4,7 @@ Emitted from:
 
 * [`_distributeToPayoutSplitsOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_distributetopayoutsplitsof.md)
 
-## Definition
+#### Definition
 
 ```
 event DistributeToPayoutSplit(

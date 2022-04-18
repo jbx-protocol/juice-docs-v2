@@ -4,7 +4,7 @@ Emitted from:
 
 * [`pay`](/api/contracts/or-utilities/jbetherc20splitspayer/write/pay.md)
 
-## Definition
+#### Definition
 
 ```
 event Pay(

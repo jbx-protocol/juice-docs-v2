@@ -10,7 +10,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 
 **The date that is the nearest multiple of the specified funding cycle's duration from its end.**
 
-### Definition
+#### Definition
 
 ```
 function _deriveStartFrom(JBFundingCycle memory _baseFundingCycle, uint256 _mustStartAtOrAfter)
@@ -26,7 +26,7 @@ function _deriveStartFrom(JBFundingCycle memory _baseFundingCycle, uint256 _must
 * The view function does not alter state on the blockchain.
 * The function returns the next start time.
 
-### Body
+#### Body
 
 1.  A funding cycle with a duration of 0 can start as soon as possible.
 

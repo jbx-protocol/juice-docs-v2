@@ -6,7 +6,7 @@ Interface: [`IJBProjects`](/api/interfaces/ijbprojects.md)
 
 **The contract resolving each project ID to its ERC721 URI.**
 
-# Definition
+#### Definition
 
 ```
 /**

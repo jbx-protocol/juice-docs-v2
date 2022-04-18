@@ -6,7 +6,7 @@ Interface: [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbsingletokenpayme
 
 **The number of decimals the token fixed point amounts are expected to have.**
 
-# Definition
+#### Definition
 
 ```
 /**

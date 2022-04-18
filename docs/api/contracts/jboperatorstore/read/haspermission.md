@@ -12,7 +12,7 @@ Interface: [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md)
 
 **Whether or not an operator has the permission to take a certain action pertaining to the specified domain.**
 
-### Definition
+#### Definition
 
 ```
 function hasPermissions(
@@ -32,7 +32,7 @@ function hasPermissions(
 * The function overrides a function definition from the [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) interface.
 * The function returns a flag indicating whether the operator has the specified permission.
 
-### Body
+#### Body
 
 1.  Make sure the `_permissionIndex` is one of the 255 indexes in a `uint256`.
 

@@ -4,7 +4,7 @@ Emitted from:
 
 * [`mintTokensOf`](/api/contracts/or-controllers/jbcontroller/write/minttokensof.md)
 
-## Definition
+#### Definition
 
 ```
 event MintTokens(

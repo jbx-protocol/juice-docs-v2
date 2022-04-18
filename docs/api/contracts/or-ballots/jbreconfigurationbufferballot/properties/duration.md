@@ -6,7 +6,7 @@ Interface: [`IJBFundingCycleBallot`](/api/interfaces/ijbfundingcycleballot.md)
 
 **The number of seconds that must pass for a funding cycle reconfiguration to become either `Approved` or `Failed`.**
 
-# Definition
+#### Definition
 
 ```
 /**

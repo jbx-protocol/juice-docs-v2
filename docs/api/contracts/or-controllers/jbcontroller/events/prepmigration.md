@@ -4,7 +4,7 @@ Emitted from:
 
 * [`prepMigrationOf`](/api/contracts/or-controllers/jbcontroller/write/prepformigrationof.md)
 
-## Definition
+#### Definition
 
 ```
 event PrepMigration(uint256 indexed projectId, IJBController from, address caller);

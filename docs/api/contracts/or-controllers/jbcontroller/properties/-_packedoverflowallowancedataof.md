@@ -8,7 +8,7 @@ _bits 0-247: The amount of overflow that a project is allowed to tap into on-dem
 
 _bits 248-255: The currency of the amount of overflow that a project is allowed to tap._
 
-# Definition
+#### Definition
 
 ```
 /**

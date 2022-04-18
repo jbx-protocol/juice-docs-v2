@@ -92,7 +92,7 @@ function _distributeToPayoutSplitsOf(
           if (_split.allocator != IJBSplitAllocator(address(0))) {
             _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
               ? _payoutAmount
-              : _payoutAmount - _feeAmount(_payoutAmount, _feeDiscount);
+              : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
 
             // This distribution is eligible for a fee since the funds are leaving the ecosystem.
             feeEligibleDistributionAmount += _payoutAmount;
@@ -150,7 +150,7 @@ function _distributeToPayoutSplitsOf(
               else {
                 _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
                   ? _payoutAmount
-                  : _payoutAmount - _feeAmount(_payoutAmount, _feeDiscount);
+                  : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
 
                 feeEligibleDistributionAmount += _payoutAmount;
               }
@@ -184,7 +184,7 @@ function _distributeToPayoutSplitsOf(
           } else {
             _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
               ? _payoutAmount
-              : _payoutAmount - _feeAmount(_payoutAmount, _feeDiscount);
+              : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
 
             // This distribution is eligible for a fee since the funds are leaving the ecosystem.
             feeEligibleDistributionAmount += _payoutAmount;
@@ -211,6 +211,7 @@ function _distributeToPayoutSplitsOf(
 
         _Internal references:_
 
+        * [`fee`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/fee.md)
         * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
         * [`isFeelessTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
         * [`pay`]/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/(pay.md)
@@ -290,7 +291,7 @@ function _distributeToPayoutSplitsOf(
       if (_split.allocator != IJBSplitAllocator(address(0))) {
         _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
           ? _payoutAmount
-          : _payoutAmount - _feeAmount(_payoutAmount, _feeDiscount);
+          : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
 
         // This distribution is eligible for a fee since the funds are leaving the ecosystem.
         feeEligibleDistributionAmount += _payoutAmount;
@@ -347,7 +348,7 @@ function _distributeToPayoutSplitsOf(
           else {
             _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
               ? _payoutAmount
-              : _payoutAmount - _feeAmount(_payoutAmount, _feeDiscount);
+              : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
 
             feeEligibleDistributionAmount += _payoutAmount;
           }
@@ -381,7 +382,7 @@ function _distributeToPayoutSplitsOf(
       } else {
         _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
           ? _payoutAmount
-          : _payoutAmount - _feeAmount(_payoutAmount, _feeDiscount);
+          : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
 
         // This distribution is eligible for a fee since the funds are leaving the ecosystem.
         feeEligibleDistributionAmount += _payoutAmount;

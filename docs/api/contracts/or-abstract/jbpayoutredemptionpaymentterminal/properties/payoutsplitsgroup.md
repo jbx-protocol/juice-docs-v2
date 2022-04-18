@@ -6,7 +6,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 **The group that payout splits coming from this terminal are identified by.**
 
-# Definition
+#### Definition
 
 ```
 /**

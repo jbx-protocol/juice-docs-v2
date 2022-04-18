@@ -25,7 +25,7 @@ function currencyForToken(address) external view override returns (uint256) { ..
 * The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
 * The function returns the currency index.
 
-### Body
+#### Body
 
 1.  This terminal only uses one currency.
 

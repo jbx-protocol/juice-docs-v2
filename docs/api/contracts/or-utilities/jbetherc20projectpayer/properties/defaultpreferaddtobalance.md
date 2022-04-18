@@ -6,7 +6,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 **A flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.**
 
-# Definition
+#### Definition
 
 ```
 /**

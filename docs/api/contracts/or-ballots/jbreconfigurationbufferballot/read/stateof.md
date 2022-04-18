@@ -31,7 +31,7 @@ function stateOf(
 * The function overrides a function definition from the [`IJBFundingCycleBallot`](/api/interfaces/ijbfundingcycleballot.md) interface.
 * The function returns the state of the provided ballot.
 
-### Body
+#### Body
 
 1.  Return the final state if there is one. 
 
@@ -45,7 +45,7 @@ function stateOf(
 
     * [`finalState`](/api/contracts/or-ballots/jbreconfigurationbufferballot/properties/finalstate.md)
 
-2.  If the ballots duration has not yet passed since the reconfiguration was proposed, the state is failed if the funding cycle is supposed to have already started. Otherwise it is still active.  
+2.  If the ballot's duration has not yet passed since the reconfiguration was proposed, the state is failed if the funding cycle is supposed to have already started. Otherwise it is still active.  
 
     ```
     // If the delay hasn't yet passed, the ballot is either failed or active.

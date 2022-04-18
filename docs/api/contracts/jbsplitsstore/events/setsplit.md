@@ -4,7 +4,7 @@ Emitted from:
 
 * [`set`](/api/contracts/jbsplitsstore/write/set.md)
 
-## Definition
+#### Definition
 
 ```
 event SetSplit(

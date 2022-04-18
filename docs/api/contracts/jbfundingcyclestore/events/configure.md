@@ -4,7 +4,7 @@ Emitted from:
 
 * [`configureFor`](/api/contracts/jbfundingcyclestore/write/configurefor.md)
 
-## Definition
+#### Definition
 
 ```
 event Configure(

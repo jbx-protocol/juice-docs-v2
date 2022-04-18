@@ -30,7 +30,7 @@ function reservedTokenBalanceOf(uint256 _projectId, uint256 _reservedRate)
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function returns the reserved token balance.
 
-### Body
+#### Body
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 

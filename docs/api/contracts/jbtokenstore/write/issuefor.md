@@ -34,7 +34,7 @@ function issueFor(
 * The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
 * The function returns the token that was issued.
 
-### Body
+#### Body
 
 1.  Make sure a name was provided.
 

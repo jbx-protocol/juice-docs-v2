@@ -4,7 +4,7 @@ Emitted from:
 
 * [`setFeeGauge`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfeegauge.md)
 
-## Definition
+#### Definition
 
 ```
 event SetFeeGauge(IJBFeeGauge indexed feeGauge, address caller);

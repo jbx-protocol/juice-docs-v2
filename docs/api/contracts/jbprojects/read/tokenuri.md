@@ -10,7 +10,7 @@ Contract: [`JBProjects`](/api/contracts/jbprojects/README.md)​‌
 
 **Returns the URI where the ERC-721 standard JSON of a project is hosted.**
 
-### Definition
+#### Definition
 
 ```
 function tokenURI(uint256 _projectId) public view override returns (string memory) { ... }
@@ -23,7 +23,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 * The function overrides a function definition from the [`ERC721Votes`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#ERC721Votes) contract.
 * The function returns the token URI to use for the provided `_projectId`.
 
-### Body
+#### Body
 
 1.  Return an empty string if there is no URI resolver set.
 

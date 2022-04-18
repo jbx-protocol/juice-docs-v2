@@ -6,7 +6,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 _Out of MAX_FEE (50_000_000 / 1_000_000_000)_
 
-# Definition
+#### Definition
 
 ```
 /**

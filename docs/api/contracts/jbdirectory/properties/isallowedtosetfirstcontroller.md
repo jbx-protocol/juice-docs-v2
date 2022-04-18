@@ -6,7 +6,7 @@ Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 
 **Addresses that can set a project's first controller on their behalf. These addresses/contracts have been vetted and verified by this contract's owner.** 
 
-# Definition
+#### Definition
 
 ```
 /**

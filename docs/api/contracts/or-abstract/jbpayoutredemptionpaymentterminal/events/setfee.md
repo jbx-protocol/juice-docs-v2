@@ -4,7 +4,7 @@ Emitted from:
 
 * [`setFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfee.md)
 
-## Definition
+#### Definition
 
 ```
 event SetFee(uint256 fee, address caller);

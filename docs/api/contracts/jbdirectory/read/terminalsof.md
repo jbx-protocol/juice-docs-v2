@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 **For each project ID, the terminals that are currently managing its funds.**
 
-### Definition
+#### Definition
 
 ```
 function terminalsOf(uint256 _projectId)
@@ -25,7 +25,7 @@ function terminalsOf(uint256 _projectId)
 * The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
 * The function returns an array of terminal addresses.
 
-### Body
+#### Body
 
 1.  This function just reads and returns the stored `_terminalsOf` the project.
 

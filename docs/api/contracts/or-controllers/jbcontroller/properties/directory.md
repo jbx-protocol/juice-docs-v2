@@ -6,7 +6,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 **The directory of terminals and controllers for projects.**
 
-# Definition
+#### Definition
 
 ```
 /** 

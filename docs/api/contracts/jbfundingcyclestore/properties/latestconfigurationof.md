@@ -4,7 +4,7 @@ Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)â
 
 **The latest funding cycle configuration for each project.**
 
-# Definition
+#### Definition
 
 ```
 /** 

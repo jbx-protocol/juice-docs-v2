@@ -6,7 +6,7 @@ Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 **A flag indicating if tokens are required to be issued as claimed for a particular project.**
 
-# Definition
+#### Definition
 
 ```
 /**

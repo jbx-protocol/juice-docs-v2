@@ -6,7 +6,7 @@ Interface: [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbsingletokenpayme
 
 **The token that this terminal accepts.**
 
-# Definition
+#### Definition
 
 ```
 /**

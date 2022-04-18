@@ -32,7 +32,7 @@ function claimFor(
 * The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
 * The function does't return anything.
 
-### Body
+#### Body
 
 1.  Get a reference to the project's current token.
 

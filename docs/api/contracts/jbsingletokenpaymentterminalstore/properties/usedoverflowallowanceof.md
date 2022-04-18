@@ -10,7 +10,7 @@ _Increases as projects use their allowance._
 
 _The used allowance is represented as a fixed point number with the same amount of decimals as its relative terminal._
 
-# Definition
+#### Definition
 
 ```
 /**

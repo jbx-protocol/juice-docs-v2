@@ -4,7 +4,7 @@ Emitted from:
 
 * [`mintFor`](/api/contracts/jbtokenstore/write/mintfor.md)
 
-## Definition
+#### Definition
 
 ```
 event Mint(

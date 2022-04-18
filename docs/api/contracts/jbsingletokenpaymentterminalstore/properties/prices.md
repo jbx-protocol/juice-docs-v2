@@ -6,7 +6,7 @@ Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletoken
 
 **The contract that exposes price feeds.**
 
-# Definition
+#### Definition
 
 ```
 /** 

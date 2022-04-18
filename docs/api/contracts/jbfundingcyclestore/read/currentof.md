@@ -14,7 +14,7 @@ Interface: [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md)
 
 _If a current funding cycle of the project is not found, returns an empty funding cycle with all properties set to 0._
 
-### Definition
+#### Definition
 
 ```
 function currentOf(uint256 _projectId)
@@ -31,7 +31,7 @@ function currentOf(uint256 _projectId)
 * The function overrides a function definition from the [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md) interface.
 * The function returns the project's current [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md).
 
-### Body
+#### Body
 
 1.  If there are no stored funding cycles for the provided project, there can't be an active funding cycle so an empty funding cycle should be returned.
 

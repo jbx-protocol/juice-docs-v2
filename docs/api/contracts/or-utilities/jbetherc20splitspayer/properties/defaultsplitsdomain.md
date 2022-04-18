@@ -6,7 +6,7 @@ Interface: [`IJBSplitsPayer`](/api/interfaces/ijbsplitspayer.md)
 
 **The domain within which the default splits are stored.**
 
-# Definition
+#### Definition
 
 ```
 /**

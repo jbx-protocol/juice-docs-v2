@@ -6,7 +6,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 **The contract storing all funding cycle configurations.**
 
-# Definition
+#### Definition
 
 ```
 /** 

@@ -116,11 +116,11 @@ function addToBalanceOf(
   // If the terminal's token is ETH, override `_amount` with msg.value.
   else _amount = msg.value;
 
-  // Record the added funds.
-  store.recordAddedBalanceFor(_projectId, _amount);
-
   // Refund any held fees to make sure the project doesn't pay double for funds going in and out of the protocol.
-  _refundHeldFees(_projectId, _amount);
+  uint256 _refundedFees = _refundHeldFees(_projectId, _amount);
+
+  // Record the added funds.
+  store.recordAddedBalanceFor(_projectId, _amount + _refundedFees);
 
   emit AddToBalance(_projectId, _amount, _memo, msg.sender);
 }

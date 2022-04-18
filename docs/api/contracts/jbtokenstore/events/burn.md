@@ -4,7 +4,7 @@ Emitted from:
 
 * [`burnFrom`](/api/contracts/jbtokenstore/write/burnfrom.md)
 
-## Definition
+#### Definition
 
 ```
 event Burn(

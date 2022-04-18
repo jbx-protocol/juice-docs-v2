@@ -6,7 +6,7 @@ Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletoken
 
 **The directory of terminals and controllers for projects.**
 
-# Definition
+#### Definition
 
 ```
 /** 

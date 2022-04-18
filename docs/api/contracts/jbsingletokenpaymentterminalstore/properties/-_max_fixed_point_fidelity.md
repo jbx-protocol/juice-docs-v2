@@ -4,7 +4,7 @@ Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaym
 
 **Ensures a maximum number of decimal points of persisted fidelity on mulDiv operations of fixed point numbers.** 
 
-# Definition
+#### Definition
 
 ```
 /**

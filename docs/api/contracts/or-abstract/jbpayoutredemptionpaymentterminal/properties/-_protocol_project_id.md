@@ -4,7 +4,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 **The protocol project ID is 1, as it should be the first project launched during the deployment process.** 
 
-# Definition
+#### Definition
 
 ```
 /**

@@ -16,7 +16,7 @@ _Deploys a project's ERC20 JBToken contract._
 
 _Only a project's owner or operator can issue its token._
 
-### Definition
+#### Definition
 
 ```
 function issueFor(
@@ -40,7 +40,7 @@ function issueFor(
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function returns the address of the token that was issued.
 
-### Body
+#### Body
 
 1.  Forward the call to the token store.
 

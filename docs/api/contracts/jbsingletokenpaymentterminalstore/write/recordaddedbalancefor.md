@@ -24,7 +24,7 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
 
 * Arguments:
   * `_projectId` is the ID of the project to which the funds being added belong.
-  * `_amount` is the amount of temrinal tokens added, as a fixed point number with the same amount of decimals as its relative terminal.
+  * `_amount` is the amount of terminal tokens added, as a fixed point number with the same amount of decimals as its relative terminal.
 * The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function doesn't return anything.
 
@@ -56,7 +56,7 @@ function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
   The msg.sender must be an IJBSingleTokenPaymentTerminal. 
 
   @param _projectId The ID of the project to which the funds being added belong.
-  @param _amount The amount of temrinal tokens added, as a fixed point number with the same amount of decimals as its relative terminal.
+  @param _amount The amount of terminal tokens added, as a fixed point number with the same amount of decimals as its relative terminal.
 */
 function recordAddedBalanceFor(uint256 _projectId, uint256 _amount)
   external

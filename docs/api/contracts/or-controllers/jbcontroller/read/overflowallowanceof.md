@@ -37,7 +37,7 @@ function overflowAllowanceOf(
   * `overflowAllowance` is the overflow allowance, as a fixed point number with the same number of decimals as the provided terminal.
   * `overflowAllowanceCurrency` is the currency from [`JBCurrencies`](/api/libraries/jbcurrencies.md) that the returned overflow allowance is in terms of.
 
-### Body
+#### Body
 
 1.  Get a reference to the packed overflow allowance data.
 

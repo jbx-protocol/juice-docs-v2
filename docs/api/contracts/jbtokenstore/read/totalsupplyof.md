@@ -25,7 +25,7 @@ function totalSupplyOf(uint256 _projectId) external view override returns (uint2
 * The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
 * The function returns the total supply of the project's tokens.
 
-### Body
+#### Body
 
 1.  Get a reference to the total supply of the project's unclaimed tokens.
 

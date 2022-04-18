@@ -4,7 +4,7 @@ Contract: [`JBDirectory`](/api/contracts/jbdirectory/README.md)‌
 
 **The project's primary terminal for a token.**
 
-# Definition
+#### Definition
 
 ```
 /** 

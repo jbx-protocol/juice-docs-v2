@@ -14,7 +14,7 @@ Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 
 _Only a project owner, an operator, or its controller can set its terminals._
 
-### Definition
+#### Definition
 
 ```
 function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _terminals)
@@ -35,7 +35,7 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 * The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Get a reference to the project's current funding cycle.
 

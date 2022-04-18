@@ -6,7 +6,7 @@ Interface: [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbsingletokenpayme
 
 **The currency to use when resolving price feeds for this terminal.**
 
-# Definition
+#### Definition
 
 ```
 /**

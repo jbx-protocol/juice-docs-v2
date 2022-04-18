@@ -29,7 +29,7 @@ function balanceOf(address _holder, uint256 _projectId)
 * The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
 * The function returns the project token balance of the `_holder`.
 
-### Body
+#### Body
 
 1.  Get a reference to the holder's unclaimed balance for the project.
 

@@ -12,7 +12,7 @@ Interface: [`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md)
 
 **Gets the current price from the feed, normalized to the specified number of decimals.**
 
-### Definition
+#### Definition
 
 ```
 function currentPrice(uint256 _decimals) external view override returns (uint256)  { ... }
@@ -25,7 +25,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
 * The function overrides a function definition from the [`IJBPriceFeed`](/api/interfaces/ijbpricefeed.md) interface.
 * The function returns the current price of the feed, as a fixed point number with the specified number of decimals.
 
-### Body
+#### Body
 
 1.  Get the latest price being reported by the price feed. The `latestRoundData` function returns several feed parameters, but only the `_price` is needed.
 

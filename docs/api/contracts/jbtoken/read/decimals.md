@@ -12,7 +12,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 **The number of decimals included in the fixed point accounting of this token.**
 
-### Definition
+#### Definition
 
 ```
 function decimals() public view override(ERC20, IJBToken) returns (uint8) { ... }
@@ -23,7 +23,7 @@ function decimals() public view override(ERC20, IJBToken) returns (uint8) { ... 
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
 * The function returns the number of decimals.
 
-### Body
+#### Body
 
 1.  Forward the call to the ERC20 implementation.
 

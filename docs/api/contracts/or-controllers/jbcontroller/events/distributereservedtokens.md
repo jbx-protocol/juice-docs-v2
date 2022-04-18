@@ -4,7 +4,7 @@ Emitted from:
 
 * [`distributeReservedTokensOf`](/api/contracts/or-controllers/jbcontroller/write/distributereservedtokensof.md)
 
-## Definition
+#### Definition
 
 ```
 event DistributeReservedTokens(

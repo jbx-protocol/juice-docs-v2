@@ -14,7 +14,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 _Only a token's holder, a designated operator, or a project's terminal can burn it._
 
-### Definition
+#### Definition
 
 ```
 function burnTokensOf(
@@ -47,7 +47,7 @@ function burnTokensOf(
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Make sure there is a specified number of tokens to burn.
 

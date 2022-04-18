@@ -4,7 +4,7 @@ Emitted from:
 
 * [`_payToSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md)
 
-## Definition
+#### Definition
 
 ```
 event DistributeToSplit(

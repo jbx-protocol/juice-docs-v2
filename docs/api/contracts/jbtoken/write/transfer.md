@@ -12,7 +12,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 **Transfer tokens to an account.**
 
-### Definition
+#### Definition
 
 ```
 function transfer(
@@ -29,7 +29,7 @@ function transfer(
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Forward the call to the ERC20 implementation.
 

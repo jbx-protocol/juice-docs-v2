@@ -13,7 +13,9 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 #### Definition
 
 ```
-function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
+function _refundHeldFees(uint256 _projectId, uint256 _amount)
+  private
+  returns (uint256 refundedFees) { ... }
 ```
 
 * Arguments:
@@ -44,17 +46,29 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
     _Internal references:_
 
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
-3.  Loop through each held fee, decrementing the amount as held fees are refunded. If the entire refund amount has been refunded, add the fee structure back into the project's held fees so that they can be processed or refunded later. If the amount left is greater than the fee structure's amount, decrement the refunded amount and leave the fee structure out of the project's held fees. If only some of the fee structure's amount is needed to cover the rest of the remaining amount, set the amount to 0 after adding the fee structure back into the project's held fees having subtracted the remaining refund amount.
+3.  Loop through each held fee, decrementing the amount as held fees are refunded and incrementing the amount of refunded fees. If the entire refund amount has been refunded, add the fee structure back into the project's held fees so that they can be processed or refunded later. If the amount left is greater than the fee structure's amount, decrement the refunded amount and leave the fee structure out of the project's held fees. If only some of the fee structure's amount is needed to cover the rest of the remaining amount, set the amount to 0 after adding the fee structure back into the project's held fees having subtracted the remaining refund amount.
 
     ```
     // Process each fee.
     for (uint256 _i = 0; _i < _heldFees.length; _i++) {
       if (_amount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
-      else if (_amount >= _heldFees[_i].amount) _amount = _amount - _heldFees[_i].amount;
-      else {
-        _heldFeesOf[_projectId].push(
-          JBFee(_heldFees[_i].amount - _amount, _heldFees[_i].fee, _heldFees[_i].beneficiary)
+      else if (_amount >= _heldFees[_i].amount) {
+        _amount = _amount - _heldFees[_i].amount;
+        refundedFees += _feeAmount(
+          _heldFees[_i].amount,
+          _heldFees[_i].fee,
+          _heldFees[_i].feeDiscount
         );
+      } else {
+        _heldFeesOf[_projectId].push(
+          JBFee(
+            _heldFees[_i].amount - _amount,
+            _heldFees[_i].fee,
+            _heldFees[_i].feeDiscount,
+            _heldFees[_i].beneficiary
+          )
+        );
+        refundedFees += _feeAmount(_amount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
         _amount = 0;
       }
     }
@@ -75,8 +89,12 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private { ... }
 
   @param _projectId The project for which fees are being refunded.
   @param _amount The amount to base the refund on, as a fixed point number with the same amount of decimals as this terminal.
+
+  @return refundedFees How much fees were refunded, as a fixed point number with the same number of decimals as this terminal.
 */
-function _refundHeldFees(uint256 _projectId, uint256 _amount) private {
+function _refundHeldFees(uint256 _projectId, uint256 _amount)
+  private
+  returns (uint256 refundedFees) {
   // Get a reference to the project's held fees.
   JBFee[] memory _heldFees = _heldFeesOf[_projectId];
 
@@ -86,11 +104,23 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount) private {
   // Process each fee.
   for (uint256 _i = 0; _i < _heldFees.length; _i++) {
     if (_amount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
-    else if (_amount >= _heldFees[_i].amount) _amount = _amount - _heldFees[_i].amount;
-    else {
-      _heldFeesOf[_projectId].push(
-        JBFee(_heldFees[_i].amount - _amount, _heldFees[_i].fee, _heldFees[_i].beneficiary)
+    else if (_amount >= _heldFees[_i].amount) {
+      _amount = _amount - _heldFees[_i].amount;
+      refundedFees = _feeAmount(
+        _heldFees[_i].amount,
+        _heldFees[_i].fee,
+        _heldFees[_i].feeDiscount
       );
+    } else {
+      _heldFeesOf[_projectId].push(
+        JBFee(
+          _heldFees[_i].amount - _amount,
+          _heldFees[_i].fee,
+          _heldFees[_i].feeDiscount,
+          _heldFees[_i].beneficiary
+        )
+      );
+      refundedFees = _feeAmount(_amount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
       _amount = 0;
     }
   }

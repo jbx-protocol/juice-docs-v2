@@ -6,7 +6,7 @@ Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletoken
 
 **The contract storing all funding cycle configurations.**
 
-# Definition
+#### Definition
 
 ```
 /** 

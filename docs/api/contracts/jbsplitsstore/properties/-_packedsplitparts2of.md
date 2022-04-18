@@ -6,7 +6,7 @@ Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
 _This packed data is often 0_
 
-# Definition
+#### Definition
 
 ```
 /** 

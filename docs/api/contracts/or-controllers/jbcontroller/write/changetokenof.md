@@ -14,7 +14,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 _Only a project's owner or operator can change its token._
 
-### Definition
+#### Definition
 
 ```
 function changeTokenOf(
@@ -37,7 +37,7 @@ function changeTokenOf(
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Get a reference to the project's current funding cycle.
 

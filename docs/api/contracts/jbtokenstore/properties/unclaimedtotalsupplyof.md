@@ -6,7 +6,7 @@ Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 **The total supply of unclaimed tokens for each project.**
 
-# Definition
+#### Definition
 
 ```
 /**

@@ -4,7 +4,7 @@ Emitted from:
 
 * [`setDefaultValues`](/api/contracts/or-utilities/jbetherc20projectpayer/write/setdefaultvalues.md)
 
-## Definition
+#### Definition
 
 ```
 event SetDefaultValues(

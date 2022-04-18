@@ -4,7 +4,7 @@ Emitted from:
 
 * [`reconfigureFundingCyclesOf`](/api/contracts/or-controllers/jbcontroller/write/reconfigurefundingcyclesof.md)
 
-## Definition
+#### Definition
 
 ```
 event ReconfigureFundingCycles(

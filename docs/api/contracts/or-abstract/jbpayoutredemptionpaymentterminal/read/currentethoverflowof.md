@@ -27,7 +27,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 * The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
 * The function returns the current amount of ETH overflow that project has in this terminal, as a fixed point number with 18 decimals.
 
-### Body
+#### Body
 
 1.  Get this terminal's current overflow, which is in terms of this terminal's token.
 

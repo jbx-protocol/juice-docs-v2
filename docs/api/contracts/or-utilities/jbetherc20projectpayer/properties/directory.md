@@ -6,7 +6,7 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 **A contract storing directories of terminals and controllers for each project.**
 
-# Definition
+#### Definition
 
 ```
 /**

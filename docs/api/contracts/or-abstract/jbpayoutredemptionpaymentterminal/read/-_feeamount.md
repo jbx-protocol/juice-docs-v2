@@ -13,11 +13,16 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 #### Definition
 
 ```
-function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns (uint256) { ... }
+function _feeAmount(
+  uint256 _amount,
+  uint256 _fee,
+  uint256 _feeDiscount
+) private pure returns (uint256) { ... }
 ```
 
 * Arguments:
   * `_amount` is the amount that the fee is based on, as a fixed point number with the same amount of decimals as this terminal.
+  * `_fee` is the percentage of the fee, out of MAX_FEE.
   * `_feeDiscount` is the percentage discount that should be applied out of the max amount, out of MAX_FEE_DISCOUNT.
 * The view function is private to this contract.
 * The view function does not alter state on the blockchain.
@@ -29,7 +34,8 @@ function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns 
 
     ```
     // Calculate the discounted fee.
-    uint256 _discountedFee = fee - PRBMath.mulDiv(fee, _feeDiscount, JBConstants.MAX_FEE_DISCOUNT);
+    uint256 _discountedFee = _fee -
+      PRBMath.mulDiv(_fee, _feeDiscount, JBConstants.MAX_FEE_DISCOUNT);
     ```
 
     _Libraries used:_
@@ -56,13 +62,19 @@ function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns 
   Returns the fee amount based on the provided amount for the specified project.
 
   @param _amount The amount that the fee is based on, as a fixed point number with the same amount of decimals as this terminal.
+  @param _fee The percentage of the fee, out of MAX_FEE. 
   @param _feeDiscount The percentage discount that should be applied out of the max amount, out of MAX_FEE_DISCOUNT.
 
   @return The amount of the fee, as a fixed point number with the same amount of decimals as this terminal.
 */
-function _feeAmount(uint256 _amount, uint256 _feeDiscount) private view returns (uint256) {
+function _feeAmount(
+  uint256 _amount,
+  uint256 _fee,
+  uint256 _feeDiscount
+) private pure returns (uint256) {
   // Calculate the discounted fee.
-  uint256 _discountedFee = fee - PRBMath.mulDiv(fee, _feeDiscount, JBConstants.MAX_FEE_DISCOUNT);
+  uint256 _discountedFee = _fee -
+    PRBMath.mulDiv(_fee, _feeDiscount, JBConstants.MAX_FEE_DISCOUNT);
 
   // The amount of tokens from the `_amount` to pay as a fee.
   return

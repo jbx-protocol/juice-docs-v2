@@ -8,7 +8,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 _Out of 200._
 
-# Definition
+#### Definition
 
 ```
 /**

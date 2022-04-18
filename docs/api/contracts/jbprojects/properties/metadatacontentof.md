@@ -6,7 +6,7 @@ Interface: [`IJBProjects`](/api/interfaces/ijbprojects.md)
 
 **The metadata for each project, which can be used across several domains.**
 
-# Definition
+#### Definition
 
 ```
 /** 

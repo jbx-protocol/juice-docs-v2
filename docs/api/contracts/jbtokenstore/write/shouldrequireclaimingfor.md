@@ -30,7 +30,7 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
 * The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Get a reference to the project's current token.
 

@@ -4,7 +4,7 @@ Emitted from:
 
 * [`migrate`](/api/contracts/or-controllers/jbcontroller/write/migrate.md)
 
-## Definition
+#### Definition
 
 ```
 event Migrate(uint256 indexed projectId, IJBController to, address caller);

@@ -25,7 +25,7 @@ function decimalsForToken(address) external view override returns (uint256) { ..
 * The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
 * The function returns the number of decimals for the token.
 
-### Body
+#### Body
 
 1.  This terminal only uses one decimals.
 

@@ -37,11 +37,12 @@ function _takeFeeFrom(
 
     ```
     // Get the fee discount.
-    feeAmount = _feeAmount(_amount, _feeDiscount);
+    feeAmount = _feeAmount(_amount, fee, _feeDiscount);
     ```
 
     _Internal references:_
 
+    * [`fee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
     * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
 2.  If the funding cycle is configured to hold fees, add a [`JBFee`](/api/data-structures/jbfee.md) data structure to the project's stored held fees to be either processed or refunded later. Otherwise, take the fee.
 
@@ -81,9 +82,11 @@ function _takeFeeFrom(
   address _beneficiary,
   uint256 _feeDiscount
 ) private returns (uint256 feeAmount) {
-  feeAmount = _feeAmount(_amount, _feeDiscount);
+  feeAmount = _feeAmount(_amount, fee, _feeDiscount);
   _fundingCycle.shouldHoldFees()
-    ? _heldFeesOf[_projectId].push(JBFee(_amount, uint32(fee), _beneficiary))
+    ? _heldFeesOf[_projectId].push(
+      JBFee(_amount, uint32(fee), uint32(_feeDiscount), _beneficiary)
+    )
     : _processFee(feeAmount, _beneficiary); // Take the fee.
 }
 ```

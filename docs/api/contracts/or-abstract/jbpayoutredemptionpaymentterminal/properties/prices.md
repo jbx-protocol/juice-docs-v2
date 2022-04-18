@@ -6,7 +6,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 
 **The contract that exposes price feeds.**
 
-# Definition
+#### Definition
 
 ```
 /**

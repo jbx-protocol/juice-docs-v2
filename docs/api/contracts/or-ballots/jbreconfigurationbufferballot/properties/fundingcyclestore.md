@@ -6,7 +6,7 @@ Interface: [`IJBReconfigurationBufferBallot`](/api/contracts/interfaces/ijbrecon
 
 **The contract storing all funding cycle configurations.**
 
-# Definition
+#### Definition
 
 ```
 /** 
@@ -18,4 +18,4 @@ IJBFundingCycleStore public immutable override fundingCycleStore;
 
 * Once set the value cannot be changed.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`IJBReconfigurationBufferBallot`](/api/interfaces//api/contracts/interfaces/ijbreconfigurationbufferballot.md) interface.
+* The resulting function overrides a function definition from the [`IJBReconfigurationBufferBallot`](/api/interfaces/ijbreconfigurationbufferballot.md) interface.

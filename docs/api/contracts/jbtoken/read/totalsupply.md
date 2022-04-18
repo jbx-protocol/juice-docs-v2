@@ -12,7 +12,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 **The total supply of this ERC20.**
 
-### Definition
+#### Definition
 
 ```
 function totalSupply(uint256) external view override returns (uint256) { ... }
@@ -25,7 +25,7 @@ function totalSupply(uint256) external view override returns (uint256) { ... }
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
 * The function returns the total supply of this ERC20, as a fixed point number with 18 decimals.
 
-### Body
+#### Body
 
 1.  Forward the call to the ERC20 implementation.
 

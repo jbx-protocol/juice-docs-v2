@@ -4,7 +4,7 @@ Emitted from:
 
 * [`setTokenUriResolver`](/api/contracts/jbprojects/write/settokenuriresolver.md)
 
-## Definition
+#### Definition
 
 ```
 event SetTokenUriResolver(IJBTokenUriResolver newResolver, address caller);

@@ -4,7 +4,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 **Transfers tokens.**
 
-# Definition
+#### Definition
 
 ```
 /** 

@@ -5,7 +5,7 @@ Emitted from:
 
 * [`setFeelessTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfeelessterminal.md)
 
-## Definition
+#### Definition
 
 ```
 event SetFeelessTerminal(IJBPaymentTerminal indexed terminal, bool indexed flag, address caller);

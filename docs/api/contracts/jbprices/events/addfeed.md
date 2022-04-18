@@ -4,7 +4,7 @@ Emitted from:
 
 * [`addFeedFor`](/api/contracts/jbprices/write/addfeed.md)
 
-## Definition
+#### Definition
 
 ```
 event AddFeed(uint256 indexed currency, uint256 indexed base, IJBPriceFeed feed);

@@ -4,7 +4,7 @@ Emitted from:
 
 * [`_configure`](/api/contracts/or-controllers/jbcontroller/write/-_configure.md)
 
-## Definition
+#### Definition
 
 ```
 event SetFundAccessConstraints(

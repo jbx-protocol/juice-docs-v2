@@ -12,7 +12,7 @@ Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 
 **Add a terminal to a project's list of terminals if it hasn't been already.**
 
-### Definition
+#### Definition
 
 
 ```
@@ -24,7 +24,7 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 * The function is private to this contract.
 * The function doesn't return anything.
 
-### Body
+#### Body
 1.  Nothing to do if the terminal is already a terminal of the project.
     ```
     // Check that the terminal has not already been added.

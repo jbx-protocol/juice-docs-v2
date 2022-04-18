@@ -4,7 +4,7 @@ Emitted from:
 
 * [`_initFor`](/api/contracts/jbfundingcyclestore/write/-_initfor.md)
 
-## Definition
+#### Definition
 
 ```
 event Init(uint256 indexed configuration, uint256 indexed projectId, uint256 indexed basedOn);

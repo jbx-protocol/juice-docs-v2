@@ -172,7 +172,7 @@ function distributePayoutsOf(
         // Get a reference to how much to distribute to the project owner, which is the leftover amount minus any fees.
         netLeftoverDistributionAmount = _leftoverDistributionAmount == 0
           ? 0
-          : _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, _feeDiscount);
+          : _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, fee, _feeDiscount);
         ```
 
         _Internal references:_

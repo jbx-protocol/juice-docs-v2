@@ -6,7 +6,7 @@ Interface: [`IJBSplitsPayer`](/api/interfaces/ijbsplitspayer.md)
 
 **The ID of project for which the default splits are stored.**
 
-# Definition
+#### Definition
 
 ```
 /**

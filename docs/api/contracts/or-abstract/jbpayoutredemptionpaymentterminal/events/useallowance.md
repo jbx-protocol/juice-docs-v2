@@ -4,7 +4,7 @@ Emitted from:
 
 * [`useAllowanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/useallowanceof.md)
 
-## Definition
+#### Definition
 
 ```
 event UseAllowance(

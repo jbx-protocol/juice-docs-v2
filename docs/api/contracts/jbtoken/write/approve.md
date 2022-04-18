@@ -12,7 +12,7 @@ Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 **Approves an account to spend tokens on the `msg.sender`s behalf.**
 
-### Definition
+#### Definition
 
 ```
 function approve(
@@ -29,7 +29,7 @@ function approve(
 * The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
-### Body
+#### Body
 
 1.  Forward the call to the ERC20 implementation.
 

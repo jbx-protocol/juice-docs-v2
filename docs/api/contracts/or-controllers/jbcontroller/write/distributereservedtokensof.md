@@ -12,7 +12,7 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 
 **Distributes all outstanding reserved tokens for a project.**
 
-### Definition
+#### Definition
 
 ```
 function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
@@ -30,7 +30,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function returns the amount of minted reserved tokens.
 
-### Body
+#### Body
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 

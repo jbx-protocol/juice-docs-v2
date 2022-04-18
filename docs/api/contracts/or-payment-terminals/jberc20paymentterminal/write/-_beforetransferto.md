@@ -10,7 +10,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-payment-termin
 
 **Logic to be triggered before transferring tokens from this terminal.**
 
-# Definition
+#### Definition
 
 ```
 function _beforeTransferTo(address, uint256) internal override { ...}

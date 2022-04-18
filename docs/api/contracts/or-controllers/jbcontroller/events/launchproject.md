@@ -4,7 +4,7 @@ Emitted from:
 
 * [`launchProjectFor`](/api/contracts/or-controllers/jbcontroller/write/launchprojectfor.md)
 
-## Definition
+#### Definition
 
 ```
 event LaunchProject(uint256 configuration, uint256 projectId, string memo, address caller);

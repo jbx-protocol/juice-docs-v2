@@ -4,7 +4,7 @@ Emitted from:
 
 * [`redeemTokensOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md)
 
-## Definition
+#### Definition
 
 ```
 event RedeemTokens(

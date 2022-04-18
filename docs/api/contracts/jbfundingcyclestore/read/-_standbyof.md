@@ -14,7 +14,7 @@ _A value of 0 is returned if no funding cycle was found._
 
 _Assumes the project has a latest configuration._
 
-### Definition
+#### Definition
 
 ```
 function _standbyOf(uint256 _projectId) private view returns (uint256 configuration) { ... }
@@ -26,7 +26,7 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
 * The view function does not alter state on the blockchain.
 * The function returns the configuration of the standby funding cycle if one exists, or 0 if one doesn't exist.
 
-### Body
+#### Body
 
 1.  Get a reference to the latest funding cycle for the project.
 

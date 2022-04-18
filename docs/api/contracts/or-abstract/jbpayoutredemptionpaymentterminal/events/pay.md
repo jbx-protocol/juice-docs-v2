@@ -4,7 +4,7 @@ Emitted from:
 
 * [`pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
 
-## Definition
+#### Definition
 
 ```
 event Pay(

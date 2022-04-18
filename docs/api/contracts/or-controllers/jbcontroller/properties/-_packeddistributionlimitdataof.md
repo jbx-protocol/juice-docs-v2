@@ -8,7 +8,7 @@ _bits 0-247: The amount of token that a project can distribute per funding cycle
 
 _bits 248-255: The currency of amount that a project can distribute._
 
-# Definition
+#### Definition
 
 ```
 /**

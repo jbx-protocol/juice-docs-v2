@@ -4,7 +4,7 @@ Emitted from:
 
 * [`addToBalanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
 
-## Definition
+#### Definition
 
 ```
 event AddToBalance(uint256 indexed projectId, uint256 amount, string memo, address caller);

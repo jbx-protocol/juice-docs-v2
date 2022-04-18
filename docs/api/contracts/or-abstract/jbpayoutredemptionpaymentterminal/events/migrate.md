@@ -4,7 +4,7 @@ Emitted from:
 
 * [`migrate`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/migrate.md)
 
-## Definition
+#### Definition
 
 ```
 event Migrate(
