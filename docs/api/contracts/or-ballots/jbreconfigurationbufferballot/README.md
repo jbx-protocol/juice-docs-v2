@@ -8,7 +8,8 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBReconfi
 
 #### Addresses
 
-Ethereum mainnet: [`0x7Cb86D43B665196BC719b6974D320bf674AFb395`](https://etherscan.io/address/0x7Cb86D43B665196BC719b6974D320bf674AFb395)
+Ethereum mainnet:  not yet.
+<!-- Ethereum mainnet: [`0x7Cb86D43B665196BC719b6974D320bf674AFb395`](https://etherscan.io/address/0x7Cb86D43B665196BC719b6974D320bf674AFb395) -->
 
 #### Interfaces
 

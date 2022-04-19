@@ -9,7 +9,8 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBFunding
 
 #### Addresses
 
-Ethereum mainnet: [`0xce2Ce2F37fE5B2C2Dd047908B2F61c9c3f707272`](https://etherscan.io/address/0xce2Ce2F37fE5B2C2Dd047908B2F61c9c3f707272)
+Ethereum mainnet:  not yet.
+<!-- Ethereum mainnet: [`0xce2Ce2F37fE5B2C2Dd047908B2F61c9c3f707272`](https://etherscan.io/address/0xce2Ce2F37fE5B2C2Dd047908B2F61c9c3f707272) -->
 
 #### Interfaces
 

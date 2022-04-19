@@ -8,7 +8,8 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBETHPaym
 
 #### Addresses
 
-Ethereum mainnet: [`0xF77Cc21F7Ffdb0700D6d01FCF32EBE654f1A389b`](https://etherscan.io/address/0xF77Cc21F7Ffdb0700D6d01FCF32EBE654f1A389b)
+Ethereum mainnet:  not yet.
+<!-- Ethereum mainnet: [`0xF77Cc21F7Ffdb0700D6d01FCF32EBE654f1A389b`](https://etherscan.io/address/0xF77Cc21F7Ffdb0700D6d01FCF32EBE654f1A389b) -->
 
 #### Inheritance
 
@@ -64,3 +65,10 @@ constructor(
 * `_prices` is an [`IJBPrices`](/api/interfaces/ijbprices.md) contract that exposes price feeds.
 * `_store` is a contract that stores the terminal's data.
 * `_owner` is the address that will own this contract.
+
+#### Write
+
+| Function                                                  | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [**`_transferFrom`**](/api/contracts/or-payment-terminals/jbethpaymentterminal/write/-_transferfrom.md) | <p><strong>Traits</strong></p><ul><li><code>internal</code></li></ul> <p><strong>Params</strong></p><ul><li><code>address _from</code></li><li><code>address payable _to</code></li><li><code>uint256 _amount</code></li></ul>                                                                                                                                                                                                                  |
+| [**`_beforeTransferTo`**](/api/contracts/or-payment-terminals/jbethpaymentterminal/write/-_beforetransferto.md) | <p><strong>Traits</strong></p><ul><li><code>internal</code></li><li><code>virtual</code></li></ul> <p><strong>Params</strong></p><ul><li><code>address _to</code></li><li><code>uint256 _amount</code></li></ul>                                                                                                                                                                                                                  |

@@ -8,7 +8,8 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBControl
 
 #### Addresses
 
-Ethereum mainnet: [`0x55d4dfb578daA4d60380995ffF7a706471d7c719`](https://etherscan.io/address/0x55d4dfb578daA4d60380995ffF7a706471d7c719)
+Ethereum mainnet:  not yet.
+<!-- Ethereum mainnet: [`0x55d4dfb578daA4d60380995ffF7a706471d7c719`](https://etherscan.io/address/0x55d4dfb578daA4d60380995ffF7a706471d7c719) -->
 
 #### Interfaces
 

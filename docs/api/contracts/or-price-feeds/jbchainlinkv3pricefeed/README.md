@@ -8,7 +8,8 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBChainli
 
 #### Addresses
 
-Ethereum mainnet: [`0xfd6Bc33C9e25c6d9Bbd00b04992E3639E786DCEd`](https://etherscan.io/address/0xfd6Bc33C9e25c6d9Bbd00b04992E3639E786DCEd)
+Ethereum mainnet:  not yet.
+<!-- Ethereum mainnet: [`0xfd6Bc33C9e25c6d9Bbd00b04992E3639E786DCEd`](https://etherscan.io/address/0xfd6Bc33C9e25c6d9Bbd00b04992E3639E786DCEd) -->
 
 #### Interfaces
 
