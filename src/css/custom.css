@@ -55,5 +55,5 @@ h5 {
 }
 
 .menu__link {
-  overflow: scroll;
+  overflow: auto;
 }
