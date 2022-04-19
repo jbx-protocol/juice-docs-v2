@@ -10,7 +10,7 @@ Contract: [`JBOperatable`](/api/contracts/or-abstract/jboperatable/README.md)​
 
 **Only allows the speficied account, an operator of the account to proceed, or a truthy override flag.**
 
-### Definition
+#### Definition
 
 ```
 modifier requirePermissionAllowingOverride(

@@ -10,7 +10,7 @@ Contract: [`JBControllerUtility`](/api/contracts/or-abstract/jbcontrollerutility
 
 **Only allows the controller of the specified project to proceed.**
 
-### Definition
+#### Definition
 
 ```
 modifier onlyController(uint256 _projectId) { ... }

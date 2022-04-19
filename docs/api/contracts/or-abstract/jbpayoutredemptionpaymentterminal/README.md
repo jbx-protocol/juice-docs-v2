@@ -99,8 +99,14 @@ constructor(
 | [**`DistributeToPayoutSplit`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                           |
 | [**`SetFee`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfee.md)                                                 | <ul><li><code>uint256 fee</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                            |
 | [**`SetFeeGauge`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md) | <ul><li><code>[IJBFeeGauge](/api/interfaces/ijbfeegauge.md) indexed feeGauge</code></li><li><code>address caller</code></li></ul> |
-
 | [**`SetFeelessTerminal`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeelessterminal.md) | <ul><li><code>[IJBPaymentTerminal](/api/interfaces/ijbpaymentterminal.md) indexed terminal</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
+
+
+#### Modifiers 
+
+| Function                                                                  | Definition                                                                                                                                                                                                                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [**`isTerminalOf`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md)                                  | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul>                                     |
 
 #### Properties
 

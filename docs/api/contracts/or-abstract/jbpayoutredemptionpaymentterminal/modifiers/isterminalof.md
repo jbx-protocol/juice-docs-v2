@@ -25,7 +25,6 @@ modifier isTerminalOf(uint256 _projectId) { ... }
 
     ```
     if (!directory.isTerminalOf(_projectId, this)) revert PROJECT_TERMINAL_MISMATCH();
-    _;
     ```
 
     _Internal references:_
@@ -35,6 +34,12 @@ modifier isTerminalOf(uint256 _projectId) { ... }
     _External references:_
 
     * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
+
+2.  Continue the rest of the function.
+
+    ```
+    _;
+    ```
 
 </TabItem>
 
