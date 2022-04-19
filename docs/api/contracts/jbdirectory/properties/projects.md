@@ -4,14 +4,14 @@ Contract: [`JBDirectory`](/api/contracts/jbdirectory/README.md)​‌
 
 Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 
-**The Projects contract which mints ERC-721's that represent project ownership and transfers.**
+**Mints ERC-721's that represent project ownership and transfers.**
 
 #### Definition
 
 ```
 /** 
   @notice 
-  The Projects contract which mints ERC-721's that represent project ownership and transfers.
+  Mints ERC-721's that represent project ownership and transfers.
 */ 
 IJBProjects public immutable override projects;
 ```

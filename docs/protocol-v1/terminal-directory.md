@@ -62,7 +62,7 @@ constructor(IProjects _projects, IOperatorStore _operatorStore)
 ### Read
 
 ```javascript
-/// @notice The Projects contract which mints ERC-721's that represent project ownership and transfers.
+/// @notice Mints ERC-721's that represent project ownership and transfers.
 function projects() external view returns (IProjects)
 ```
 
