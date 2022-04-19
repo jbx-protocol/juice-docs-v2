@@ -55,6 +55,11 @@ function distributePayoutsOf(
     );
     ```
 
+    _Internal references:_
+
+    * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+    * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+
     _External references:_
 
     * [`recordDistributionFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recorddistributionfor.md)
@@ -132,6 +137,7 @@ function distributePayoutsOf(
 
         _Internal references:_
 
+        * [`payoutSplitsGroup`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/payoutsplitsgroup.md)
         * [`_distributeToPayoutSplitsOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_distributetopayoutsplitsof.md)
 
     4.  Add the leftover distribution amount to the amount from which fees should be taken since those funds will be leaving the ecosystem to the project owner's address.
@@ -177,6 +183,7 @@ function distributePayoutsOf(
 
         _Internal references:_
 
+        * [`fee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
         * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
 
     7.  Transfer any leftover amount to the project owner if needed.

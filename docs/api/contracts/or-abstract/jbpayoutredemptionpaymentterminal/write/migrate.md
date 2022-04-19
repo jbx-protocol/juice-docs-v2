@@ -10,7 +10,7 @@ Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredem
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
 
-**Allows a project owner to migrate its funds and operations to a new terminal of the same token type.**
+**Allows a project owner to migrate its funds and operations to a new terminal that accepts the same token type.**
 
 _Only a project's owner or a designated operator can migrate it._
 
@@ -56,6 +56,10 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
     balance = store.recordMigration(_projectId);
     ```
 
+    _Internal references:_
+
+    * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+
     _External references:_
 
     * [`recordMigration`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordmigration.md)
@@ -74,6 +78,11 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
       _to.addToBalanceOf{value: _payableValue}(balance, _projectId, token, '');
     }
     ```
+
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbcurrencies.md)
+      * `.ETH`
 
     _Virtual references:_
 
@@ -99,7 +108,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 ```
 /**
   @notice
-  Allows a project owner to migrate its funds and operations to a new terminal of the same token type.
+  Allows a project owner to migrate its funds and operations to a new terminal that accepts the same token type.
 
   @dev
   Only a project's owner or a designated operator can migrate it.
@@ -152,7 +161,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
 | Name                                       | Data                                                                                                                                                                                                                                               |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Migrate`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/migrate.md)                                 | <ul><li><code>uint256 indexed projectId</code></li><li><code>[IJBPaymentTerminal](/api/interfaces/ijbpaymentterminal.md)indexed to</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                 |
+| [**`Migrate`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/migrate.md)                                 | <ul><li><code>uint256 indexed projectId</code></li><li><code>[IJBPaymentTerminal](/api/interfaces/ijbpaymentterminal.md) indexed to</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                 |
 
 </TabItem>
 

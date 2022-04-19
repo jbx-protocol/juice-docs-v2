@@ -89,6 +89,11 @@ function redeemTokensOf(
         );
         ```
 
+        _Internal references:_
+
+        * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+        * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+
         _External references:_
 
         * [`recordRedemptionFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordredemptionfor.md)
@@ -113,6 +118,9 @@ function redeemTokensOf(
             false
           );
         ```
+        _Internal references:_
+
+        * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
 
         _External references:_
 
@@ -138,6 +146,12 @@ function redeemTokensOf(
         }
         ```
 
+        _Internal references:_
+
+        * [`token`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
+        * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
+        * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+
         _External references:_
 
         * [`didRedeem`](/api/interfaces/ijbredemptiondelegate.md)
@@ -153,6 +167,9 @@ function redeemTokensOf(
     if (reclaimAmount > 0) _transferFrom(address(this), _beneficiary, reclaimAmount);
     ```
 
+    _Internal references:_
+
+    * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 5.  Emit a `RedeemTokens` event with the relevant parameters.
 
     ```

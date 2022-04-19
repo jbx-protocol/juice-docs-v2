@@ -30,7 +30,7 @@ function pay(
 * Arguments:
   * `_projectId` is the ID of the project being paid.
   * `_amount` is the amount of terminal tokens being received, as a fixed point number with the same amount of decimals as this terminal. If this terminal's token is ETH, this is ignored and msg.value is used in its place.
-  * `_token` is the token being paid. This terminal ignores this property since it only manages one currency. This is ignored.
+  * `_token` is the token being paid. This terminal ignores this property since it only manages one currency.
   * `_beneficiary` is the address to mint tokens for and pass along to the funding cycle's delegate.
   * `_minReturnedTokens` is the minimum number of project tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   * `_preferClaimedTokens` is a flag indicating whether the request prefers to mint project tokens into the beneficiaries wallet rather than leaving them unclaimed. This is only possible if the project has an attached token contract. Leaving them unclaimed saves gas.
@@ -58,6 +58,11 @@ function pay(
     // If this terminal's token is ETH, override _amount with msg.value.
     else _amount = msg.value;
     ```
+
+    _Library references:_
+
+    * [`JBTokens`](/api/libraries/jbcurrencies.md)
+      * `.ETH`
 
     _Virtual references:_
 

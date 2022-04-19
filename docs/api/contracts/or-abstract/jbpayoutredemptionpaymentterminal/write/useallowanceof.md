@@ -59,6 +59,11 @@ function useAllowanceOf(
     );
     ```
 
+    _Internal references:_
+
+    * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+    * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+
     _External references:_
 
     * [`recordUsedAllowanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordusedallowanceof.md)
@@ -71,9 +76,11 @@ function useAllowanceOf(
 
 3.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. 
 
+    ```
     // Scoped section prevents stack too deep. `_fee`, `_projectOwner`, `_feeDiscount`, and `_netAmount` only used within scope.
     { ... }
     ```
+
     1.  Get a reference to the fee.
 
         ```
@@ -87,6 +94,10 @@ function useAllowanceOf(
         // Get a reference to the project owner, which will receive tokens from paying the platform fee.
         address _projectOwner = projects.ownerOf(_projectId);
         ```
+
+        _Internal references:_
+
+        * [`projects`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/projects.md)
 
         _External references:_
 

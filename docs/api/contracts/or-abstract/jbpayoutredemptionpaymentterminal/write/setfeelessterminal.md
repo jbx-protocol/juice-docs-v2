@@ -39,6 +39,10 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
     // Set the flag value.
     isFeelessTerminal[_terminal] = _flag;
     ```
+
+    _Internal references:_
+
+    * [`isFeelessTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
 2.  Emit a `SetFeelessTerminal` event with the relevant parameters.
 
     ```
@@ -83,7 +87,7 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
 
 | Name                                          | Data                                                                                                                                                    |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetFeelessTerminal`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeelessterminal.md) | <ul><li><code>[IJBPaymentTerminal](/api/interfaces/ijbpaymentterminal.md)indexed terminal</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
+| [**`SetFeelessTerminal`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeelessterminal.md) | <ul><li><code>[IJBPaymentTerminal](/api/interfaces/ijbpaymentterminal.md) indexed terminal</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 
