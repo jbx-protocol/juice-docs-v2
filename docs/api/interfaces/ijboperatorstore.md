@@ -1,5 +1,11 @@
 # IJBOperatorStore
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBOperatorStore.sol
+
+#### Definition
+
 ```
 interface IJBOperatorStore {
   event SetOperator(

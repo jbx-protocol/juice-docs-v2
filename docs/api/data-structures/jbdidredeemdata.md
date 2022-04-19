@@ -1,5 +1,11 @@
 # JBDidRedeemData
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBDidRedeemData.sol
+
+#### Definition
+
 ```
 struct JBDidRedeemData {
   // The holder of the tokens being redeemed.

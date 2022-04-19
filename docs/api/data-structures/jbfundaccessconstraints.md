@@ -1,5 +1,11 @@
 # JBOverflowAllowance
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBFundAccessConstraints.sol
+
+#### Definition
+
 ```
 struct JBFundAccessConstraints {
   // The terminal within which the distribution limit and the overflow allowance applies.

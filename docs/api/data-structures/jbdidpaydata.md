@@ -1,5 +1,11 @@
 # JBDidPayData
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBDidPayData.sol
+
+#### Definition
+
 ```
 struct JBDidPayData {
   // The address from which the payment originated.

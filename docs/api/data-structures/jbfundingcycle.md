@@ -1,5 +1,11 @@
 # JBFundingCycle
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBFundingCycle.sol
+
+#### Definition
+
 ```
 struct JBFundingCycle {
   // The funding cycle number for each project.

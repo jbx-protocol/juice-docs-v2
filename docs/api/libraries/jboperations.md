@@ -1,5 +1,11 @@
 # JBOperations
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/libraries/JBOperations.sol
+
+#### Definition
+
 ```
 library JBOperations {
   uint256 public constant RECONFIGURE = 1;

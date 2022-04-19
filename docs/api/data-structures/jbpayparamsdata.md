@@ -1,5 +1,11 @@
 # JBPayParamsData
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBPayParamsData.sol
+
+#### Definition
+
 ```
 struct JBPayParamsData {
   // The terminal that is facilitating the payment.

@@ -1,5 +1,11 @@
 # IJBPaymentTerminal
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBPaymentTerminal.sol
+
+#### Definition
+
 ```
 interface IJBPaymentTerminal {
   function acceptsToken(address _token) external view returns (bool);

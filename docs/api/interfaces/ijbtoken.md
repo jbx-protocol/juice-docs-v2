@@ -1,5 +1,11 @@
 # IJBToken
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBToken.sol
+
+#### Definition
+
 ```
 interface IJBToken {
   function decimals() external view returns (uint8);

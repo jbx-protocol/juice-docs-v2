@@ -1,5 +1,11 @@
 # JBFundingCycleMetadataResolver
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/libraries/JBFundingCycleMetadataResolver.sol
+
+#### Definition
+
 ```
 library JBFundingCycleMetadataResolver {
   function reservedRate(JBFundingCycle memory _fundingCycle) internal pure returns (uint256) {

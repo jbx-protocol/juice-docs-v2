@@ -1,5 +1,11 @@
 # JBFixedPointNumber
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/libraries/JBFixedPointNumber.sol
+
+#### Definition
+
 ```
 library JBFixedPointNumber {
   function adjustDecimals(

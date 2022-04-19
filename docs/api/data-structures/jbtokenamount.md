@@ -1,5 +1,11 @@
 # JBTokenAmount
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBTokenAmount.sol
+
+#### Definition
+
 ```
 struct JBTokenAmount {
   // The token the payment was made in.

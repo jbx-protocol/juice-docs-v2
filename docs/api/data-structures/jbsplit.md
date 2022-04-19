@@ -1,5 +1,12 @@
 # JBSplit
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBSplit.sol
+
+#### Definition
+
+
 ```
 struct JBSplit {
   // A flag that only has effect if a projectId is also specified, and the project has a token contract attached.

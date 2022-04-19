@@ -1,5 +1,11 @@
 # IJBPrices
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBPrices.sol
+
+#### Definition
+
 ```
 interface IJBPrices {
   event AddFeed(uint256 indexed currency, uint256 indexed base, IJBPriceFeed feed);

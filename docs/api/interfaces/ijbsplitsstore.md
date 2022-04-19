@@ -1,5 +1,11 @@
 # IJBSplitsStore
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBSplitsStore.sol
+
+#### Definition
+
 ```
 interface IJBSplitsStore {
   event SetSplit(

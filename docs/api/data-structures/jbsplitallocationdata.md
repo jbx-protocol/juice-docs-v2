@@ -1,5 +1,11 @@
 # JBSplitAllocationData
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBSplitAllocationData.sol
+
+#### Definition
+
 ```
 struct JBSplitAllocationData {
   // The token being sent to the split allocator.

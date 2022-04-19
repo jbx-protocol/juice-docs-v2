@@ -1,5 +1,11 @@
 # IJBController
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBController.sol
+
+#### Definition
+
 ```
 interface IJBController {
   event LaunchProject(uint256 configuration, uint256 projectId, string memo, address caller);

@@ -1,5 +1,11 @@
 # JBRedeemParamsData
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBRedeemParamsData.sol
+
+#### Definition
+
 ```
 struct JBRedeemParamsData {
   // The terminal that is facilitating the redemption.

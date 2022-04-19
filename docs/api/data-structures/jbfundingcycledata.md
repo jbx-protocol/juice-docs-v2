@@ -1,5 +1,11 @@
 # JBFundingCycleData
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBFundingCycleData.sol
+
+#### Definition
+
 ```
 struct JBFundingCycleData {
   // The number of seconds the funding cycle lasts for, after which a new funding cycle will start.

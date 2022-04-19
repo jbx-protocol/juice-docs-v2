@@ -1,5 +1,11 @@
 # IJBProjects
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBProjects.sol
+
+#### Definition
+
 ```
 interface IJBProjects is IERC721 {
   event Create(

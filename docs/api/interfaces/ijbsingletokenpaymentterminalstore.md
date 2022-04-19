@@ -1,5 +1,11 @@
 # IJBPaymentTerminal
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBSingleTokenPaymentTerminalStore.sol
+
+#### Definition
+
 ```
 interface IJBSingleTokenPaymentTerminalStore {
   function fundingCycleStore() external view returns (IJBFundingCycleStore);

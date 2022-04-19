@@ -1,5 +1,11 @@
 # IJBReconfigurationBufferBallot
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBReconfigurationBufferBallot.sol
+
+#### Definition
+
 ```
 interface IJBReconfigurationBufferBallot is IJBFundingCycleBallot {
   event Finalize(

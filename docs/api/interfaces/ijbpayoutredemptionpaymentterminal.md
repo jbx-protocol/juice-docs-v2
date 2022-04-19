@@ -1,5 +1,11 @@
 # IJBPayoutRedemptionPaymentTerminal
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBPayoutRedemptionPaymentTerminal.sol
+
+#### Definition
+
 ```
 interface IJBPayoutRedemptionPaymentTerminal is IJBSingleTokenPaymentTerminal {
   event AddToBalance(uint256 indexed projectId, uint256 amount, string memo, address caller);

@@ -1,5 +1,11 @@
 # IJBTokenStore
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBTokenStore.sol
+
+#### Definition
+
 ```
 interface IJBTokenStore {
   event Issue(

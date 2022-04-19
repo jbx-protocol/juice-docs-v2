@@ -1,5 +1,11 @@
 # IJBDirectory
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interfaces/IJBDirectory.sol
+
+#### Definition
+
 ```
 interface IJBDirectory {
   event SetController(uint256 indexed projectId, IJBController indexed controller, address caller);

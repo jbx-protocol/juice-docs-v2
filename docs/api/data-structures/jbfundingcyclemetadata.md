@@ -1,5 +1,11 @@
 # JBFundingCycleMetadata
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBFundingCycleMetadata.sol
+
+#### Definition
+
 ```
 struct JBFundingCycleMetadata {
   // The reserved rate of the funding cycle. This number is a percentage calculated out of `JBConstants.MAX_RESERVED_RATE`.

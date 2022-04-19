@@ -1,7 +1,13 @@
 # JBOperatorData
 
+#### Code
+
+https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/JBGroupedSplits.sol
+
+#### Definition
+
 ```
-struct JBOperatorData {
+struct JBGroupedSplits {
   // The address of the operator.
   address operator;
   // The domain within which the operator is being given permissions.
