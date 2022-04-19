@@ -51,7 +51,7 @@ _Only the owner of this contract can transfer it._
   @dev
   Only the owner of this contract can transfer it.
 
-  _projectId The ID of the project to which the token belongs. This is ignored.
+  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
   @param _newOwner The new owner.
 */
 function transferOwnership(uint256, address _newOwner) public virtual override onlyOwner {

@@ -56,7 +56,7 @@ function burn(
   @dev
   Only the owner of this contract cant burn some of its supply.
   
-  _projectId The ID of the project to which the token belongs. This is ignored.
+  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
   @param _account The account to burn tokens from.
   @param _amount The amount of tokens to burn, as a fixed point number with 18 decimals.
 */

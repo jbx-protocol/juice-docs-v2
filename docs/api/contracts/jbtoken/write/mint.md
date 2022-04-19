@@ -56,7 +56,7 @@ function mint(
   @dev
   Only the owner of this contract cant mint more of it.
 
-  _projectId The ID of the project to which the token belongs. This is ignored.
+  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
   @param _account The account to mint the tokens for.
   @param _amount The amount of tokens to mint, as a fixed point number with 18 decimals.
 */

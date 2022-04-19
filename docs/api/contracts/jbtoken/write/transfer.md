@@ -50,7 +50,7 @@ function transfer(
   @notice
   Transfer tokens to an account.
 
-  _projectId The ID of the project to which the token belongs. This is ignored.
+  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
   @param _to The destination address.
   @param _amount The amount of the transfer, as a fixed point number with 18 decimals.
 */

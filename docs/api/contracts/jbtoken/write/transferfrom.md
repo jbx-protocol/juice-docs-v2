@@ -54,7 +54,7 @@ function transferFrom(
   @notice
   Transfer tokens between accounts.
 
-  _projectId The ID of the project to which the token belongs. This is ignored.
+  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
   @param _from The originating address.
   @param _to The destination address.
   @param _amount The amount of the transfer, as a fixed point number with 18 decimals.
