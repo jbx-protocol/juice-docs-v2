@@ -44,12 +44,19 @@ function _takeFeeFrom(
 
     * [`fee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
     * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
-2.  If the funding cycle is configured to hold fees, add a [`JBFee`](/api/data-structures/jbfee.md) data structure to the project's stored held fees to be either processed or refunded later. Otherwise, take the fee.
+2.  If the funding cycle is configured to hold fees, add a [`JBFee`](/api/data-structures/jbfee.md) data structure to the project's stored held fees to be either processed or refunded later, and emit a `HoldFee` event with the relevant parameters. Otherwise, take the fee and emit a `ProcessFee` event with the relevant parameters.
 
     ```
-    _fundingCycle.shouldHoldFees()
-      ? _heldFeesOf[_projectId].push(JBFee(_amount, uint32(fee), _beneficiary))
-      : _processFee(feeAmount, _beneficiary); // Take the fee.
+    if (_fundingCycle.shouldHoldFees()) {
+      // Store the held fee.
+      _heldFeesOf[_projectId].push(JBFee(_amount, uint32(fee), uint32(_feeDiscount), _beneficiary));
+      emit HoldFee(_projectId, _amount, fee, _feeDiscount, _beneficiary, msg.sender);
+    } else {
+      // Process the fee.
+      _processFee(feeAmount, _beneficiary); // Take the fee.
+
+      emit ProcessFee(_projectId, feeAmount, false, _beneficiary, msg.sender);
+    }
     ```
 
     _Internal references:_
@@ -58,6 +65,10 @@ function _takeFeeFrom(
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
     * [`_processFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_processfee.md)
 
+    _Event references:_
+
+    * [`HoldFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/holdfee.md)
+    * [`ProcessFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfee.md)
 
 </TabItem>
 
@@ -84,13 +95,27 @@ function _takeFeeFrom(
   uint256 _feeDiscount
 ) private returns (uint256 feeAmount) {
   feeAmount = _feeAmount(_amount, fee, _feeDiscount);
-  _fundingCycle.shouldHoldFees()
-    ? _heldFeesOf[_projectId].push(
-      JBFee(_amount, uint32(fee), uint32(_feeDiscount), _beneficiary)
-    )
-    : _processFee(feeAmount, _beneficiary); // Take the fee.
+  if (_fundingCycle.shouldHoldFees()) {
+    // Store the held fee.
+    _heldFeesOf[_projectId].push(JBFee(_amount, uint32(fee), uint32(_feeDiscount), _beneficiary));
+    emit HoldFee(_projectId, _amount, fee, _feeDiscount, _beneficiary, msg.sender);
+  } else {
+    // Process the fee.
+    _processFee(feeAmount, _beneficiary); // Take the fee.
+
+    emit ProcessFee(_projectId, feeAmount, false, _beneficiary, msg.sender);
+  }
 }
 ```
+
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
+| Name                          | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`HoldFee`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/holdfee.md)                         | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed amount</code></li><li><code>uint256 indexed fee</code></li><li><code>uint256 feeDiscount</code></li><li><code>address beneficiary</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                                                                                                         |
+| [**`ProcessFee`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfee.md)                         | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed amount</code></li><li><code>bool indexed wasHeld</code></li><li><code>address beneficiary</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                                                                                                         |
 
 </TabItem>
 

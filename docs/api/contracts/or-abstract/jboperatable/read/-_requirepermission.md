@@ -22,7 +22,7 @@ function _requirePermission(
 
 * Arguments:
   * `_account` is the account to allow.
-  * `_domain` is the amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
+  * `_domain` is the domain namespace within which the permission index will be checked.
   * `_permissionIndex` is the permission index that an operator must have within the specified domain to be allowed.
 * The resulting function is internal to this contract and its inheriters.
 * The function doesn't return anything.
@@ -57,7 +57,7 @@ function _requirePermission(
   Require the message sender is either the account or has the specified permission.
 
   @param _account The account to allow.
-  @param _domain The domain within which the permission index will be checked.
+  @param _domain The domain namespace within which the permission index will be checked.
   @param _permissionIndex The permission index that an operator must have within the specified domain to be allowed.
 */
 function _requirePermission(

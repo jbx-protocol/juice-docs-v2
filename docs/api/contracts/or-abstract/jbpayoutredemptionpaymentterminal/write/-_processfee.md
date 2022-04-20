@@ -158,14 +158,6 @@ function _processFee(uint256 _amount, address _beneficiary) private {
 
 </TabItem>
 
-<TabItem value="Events" label="Events">
-
-| Name                                            | Data                                                                                                                                                             |
-| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddToBalance`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 value</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
-
-</TabItem>
-
 <TabItem value="Bug bounty" label="Bug bounty">
 
 | Category          | Description                                                                                                                            | Reward |

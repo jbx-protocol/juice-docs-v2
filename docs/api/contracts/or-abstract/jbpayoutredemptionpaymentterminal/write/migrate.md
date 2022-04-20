@@ -75,7 +75,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
       uint256 _payableValue = token == JBTokens.ETH ? balance : 0;
 
       // Withdraw the balance to transfer to the new terminal;
-      _to.addToBalanceOf{value: _payableValue}(balance, _projectId, token, '');
+      _to.addToBalanceOf{value: _payableValue}(balance, _projectId, token, '', bytes(''));
     }
     ```
 
@@ -140,7 +140,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
     uint256 _payableValue = token == JBTokens.ETH ? balance : 0;
 
     // Withdraw the balance to transfer to the new terminal;
-    _to.addToBalanceOf{value: _payableValue}(_balance, _projectId, token, '');
+    _to.addToBalanceOf{value: _payableValue}(_balance, _projectId, token, '', bytes(''));
   }
 
   emit Migrate(_projectId, _to, balance, msg.sender);

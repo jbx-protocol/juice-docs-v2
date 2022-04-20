@@ -54,9 +54,9 @@ function _overflowDuring(
 
     ```
     // Get a reference to the distribution limit during the funding cycle.
-    (uint256 _distributionLimit, uint256 _distributionLimitCurrency) = directory
-      .controllerOf(_projectId)
-      .distributionLimitOf(_projectId, _fundingCycle.configuration, _terminal, _terminal.token());
+    (uint256 _distributionLimit, uint256 _distributionLimitCurrency) = IJBController(
+      directory.controllerOf(_projectId)
+    ).distributionLimitOf(_projectId, _fundingCycle.configuration, _terminal, _terminal.token());
     ```
 
     _External references:_

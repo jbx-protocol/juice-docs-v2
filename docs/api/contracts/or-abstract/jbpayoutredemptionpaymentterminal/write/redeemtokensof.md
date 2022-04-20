@@ -40,7 +40,7 @@ function redeemTokensOf(
   * `_minReturnedTokens` is the minimum amount of terminal tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   * `_beneficiary` is the address to send the terminal tokens to.
   * `_memo` is a memo to pass along to the emitted event.
-  * `_metadata` are bytes to send along to the data source and delegate, if provided.
+  * `_metadata` are bytes to send along to the data source, delegate, and emitted event, if provided.
 * Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.REDEEM`](/api/libraries/jboperations.md) permission by the token holder.
 * The function can be overriden by inheriting contracts.
 * The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
@@ -110,7 +110,7 @@ function redeemTokensOf(
         ```
         // Burn the project tokens.
         if (_tokenCount > 0)
-          directory.controllerOf(_projectId).burnTokensOf(
+          IJBController(directory.controllerOf(_projectId)).burnTokensOf(
             _holder,
             _projectId,
             _tokenCount,
@@ -208,7 +208,7 @@ function redeemTokensOf(
   @param _minReturnedTokens The minimum amount of terminal tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   @param _beneficiary The address to send the terminal tokens to.
   @param _memo A memo to pass along to the emitted event.
-  @param _metadata Bytes to send along to the data source and delegate, if provided.
+  @param _metadata Bytes to send along to the data source, delegate, and emitted event, if provided.
 
   @return reclaimAmount The amount of terminal tokens that the project tokens were redeemed for, as a fixed point number with 18 decimals.
 */
@@ -254,7 +254,7 @@ function redeemTokensOf(
 
     // Burn the project tokens.
     if (_tokenCount > 0)
-      directory.controllerOf(_projectId).burnTokensOf(
+      IJBController(directory.controllerOf(_projectId)).burnTokensOf(
         _holder,
         _projectId,
         _tokenCount,
@@ -290,6 +290,7 @@ function redeemTokensOf(
     _tokenCount,
     reclaimAmount,
     _memo,
+    _metadata,
     msg.sender
   );
 }
@@ -310,7 +311,7 @@ function redeemTokensOf(
 
 | Name                                           | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`RedeemTokens`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address holder</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 claimedAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
+| [**`RedeemTokens`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address holder</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 claimedAmount</code></li><li><code>string memo</code></li><li><code>bytes metadata</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

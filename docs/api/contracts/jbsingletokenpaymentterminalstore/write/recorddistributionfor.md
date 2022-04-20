@@ -80,9 +80,9 @@ function recordDistributionFor(
 
     ```
     // Amount must be within what is still distributable.
-    (uint256 _distributionLimitOf, uint256 _distributionLimitCurrencyOf) = directory
-      .controllerOf(_projectId)
-      .distributionLimitOf(
+    (uint256 _distributionLimitOf, uint256 _distributionLimitCurrencyOf) = IJBController(
+      directory.controllerOf(_projectId)
+    ).distributionLimitOf(
         _projectId,
         fundingCycle.configuration,
         IJBSingleTokenPaymentTerminal(msg.sender),
@@ -213,9 +213,9 @@ function recordDistributionFor(
   ][_projectId][fundingCycle.number] + _amount;
 
   // Amount must be within what is still distributable.
-  (uint256 _distributionLimitOf, uint256 _distributionLimitCurrencyOf) = directory
-    .controllerOf(_projectId)
-    .distributionLimitOf(
+  (uint256 _distributionLimitOf, uint256 _distributionLimitCurrencyOf) = IJBController(
+    directory.controllerOf(_projectId)
+  ).distributionLimitOf(
       _projectId,
       fundingCycle.configuration,
       IJBSingleTokenPaymentTerminal(msg.sender),

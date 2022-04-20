@@ -1,4 +1,4 @@
-# pay
+# addToBalanceOf
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -15,12 +15,13 @@ Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 #### Definition
 
 ```
-function addToBalance(
+function addToBalanceOf(
   uint256 _projectId,
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string memory _memo,
+  bytes memory _metadata
 ) public payable virtual override { ... }
 ```
 
@@ -30,6 +31,7 @@ function addToBalance(
   * `_amount` is the amount of tokens being paid, as a fixed point number. If the token is ETH, this is ignored and msg.value is used in its place.
   * `_decimals` is the number of decimals in the `_amount` fixed point number. If the token is ETH, this is ignored and 18 is used in its place, which corresponds to the amount of decimals expected in msg.value.
   * `_memo` is a memo to pass along to the emitted event.
+  * `_metadata` is extra data to pass along to the terminal.
 * The function can be accessed externally by anyone, or internally from this contract or one that inherits it.
 * The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md) interface.
@@ -64,12 +66,12 @@ function addToBalance(
 2.  Add to the project's balance.
 
     ```
-    _addToBalance(_projectId, _token, _amount, _decimals, _memo);
+    _addToBalanceOf(_projectId, _token, _amount, _decimals, _memo, _metadata);
     ```
 
     _Internal references:_
 
-    * [`_addToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md)
+    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
     
 </TabItem>
 
@@ -85,13 +87,15 @@ function addToBalance(
   @param _amount The amount of tokens being paid, as a fixed point number. If the token is ETH, this is ignored and msg.value is used in its place.
   @param _decimals The number of decimals in the `_amount` fixed point number. If the token is ETH, this is ignored and 18 is used in its place, which corresponds to the amount of decimals expected in msg.value.
   @param _memo A memo to pass along to the emitted event.
+  @param _metadata Extra data to pass along to the terminal.
 */
-function addToBalance(
+function addToBalanceOf(
   uint256 _projectId,
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string memory _memo,
+  bytes memory _metadata
 ) public payable virtual override {
   // ETH shouldn't be sent if the token isn't ETH.
   if (address(_token) != JBTokens.ETH) {

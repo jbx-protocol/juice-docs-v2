@@ -15,7 +15,7 @@ _Only a project's owner or a designated operator can migrate it._
 #### Definition
 
 ```
-function migrate(uint256 _projectId, IJBController _to)
+function migrate(uint256 _projectId, IJBMigratable _to)
   external
   virtual
   override
@@ -24,7 +24,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
 * Arguments:
   * `_projectId` is the ID of the project that will be migrated from this controller.
-  * `_to` is the controller to which the project is migrating.
+  * `_to` is the [`IJBMigratable`](/api/interfaces/ijbmigratable.md) controller to which the project is migrating.
 * Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.MIGRATE_CONTROLLER`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
 * The function can be overriden by inheriting contracts.
 * The function doesn't return anything.
@@ -35,7 +35,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     ```
     // This controller must be the project's current controller.
-    if (directory.controllerOf(_projectId) != this) revert NOT_CURRENT_CONTROLLER();
+    if (directory.controllerOf(_projectId) != address(this)) revert NOT_CURRENT_CONTROLLER();
     ```
 
     _Internal references:_
@@ -91,7 +91,7 @@ function migrate(uint256 _projectId, IJBController _to)
 
     ```
     // Make sure the new controller is prepped for the migration.
-    _to.prepForMigrationOf(_projectId, this);
+    _to.prepForMigrationOf(_projectId, address(this));
     ```
 
     _External references:_
@@ -136,14 +136,14 @@ function migrate(uint256 _projectId, IJBController _to)
   @param _projectId The ID of the project that will be migrated from this controller.
   @param _to The controller to which the project is migrating.
 */
-function migrate(uint256 _projectId, IJBController _to)
+function migrate(uint256 _projectId, IJBMigratable _to)
   external
   virtual
   override
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.MIGRATE_CONTROLLER)
 {
   // This controller must be the project's current controller.
-  if (directory.controllerOf(_projectId) != this) revert NOT_CURRENT_CONTROLLER();
+  if (directory.controllerOf(_projectId) != address(this)) revert NOT_CURRENT_CONTROLLER();
 
   // Get a reference to the project's current funding cycle.
   JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
@@ -156,7 +156,7 @@ function migrate(uint256 _projectId, IJBController _to)
     _distributeReservedTokensOf(_projectId, '');
 
   // Make sure the new controller is prepped for the migration.
-  _to.prepForMigrationOf(_projectId, this);
+  _to.prepForMigrationOf(_projectId, address(this));
 
   // Set the new controller.
   directory.setControllerOf(_projectId, _to);

@@ -113,10 +113,8 @@ function recordRedemptionFor(
 
         ```
         // Get the number of outstanding tokens the project has.
-        uint256 _totalSupply = directory.controllerOf(_projectId).totalOutstandingTokensOf(
-          _projectId,
-          fundingCycle.reservedRate()
-        );
+        uint256 _totalSupply = IJBController(directory.controllerOf(_projectId))
+          .totalOutstandingTokensOf(_projectId, fundingCycle.reservedRate());
         ```
 
         _Library references:_
@@ -287,10 +285,8 @@ function recordRedemptionFor(
       );
 
     // Get the number of outstanding tokens the project has.
-    uint256 _totalSupply = directory.controllerOf(_projectId).totalOutstandingTokensOf(
-      _projectId,
-      fundingCycle.reservedRate()
-    );
+    uint256 _totalSupply = IJBController(directory.controllerOf(_projectId))
+      .totalOutstandingTokensOf(_projectId, fundingCycle.reservedRate());
 
     // Can't redeem more tokens that is in the supply.
     if (_tokenCount > _totalSupply) revert INSUFFICIENT_TOKENS();

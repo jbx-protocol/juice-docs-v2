@@ -16,10 +16,10 @@ _bits 248-255: The currency of the amount of overflow that a project is allowed 
   Data regarding the overflow allowance of a project during a configuration.
 
   @dev
-  bits 0-247: The amount of overflow that a project is allowed to tap into on-demand throughout the configuration.
+  bits 0-231: The amount of overflow that a project is allowed to tap into on-demand throughout the configuration.
 
   @dev
-  bits 248-255: The currency of the amount of overflow that a project is allowed to tap.
+  bits 232-255: The currency of the amount of overflow that a project is allowed to tap.
 
   _projectId The ID of the project to get the packed overflow allowance data of.
   _configuration The configuration during which the packed overflow allowance data applies.

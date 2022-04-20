@@ -17,11 +17,12 @@ _This controller should not yet be the project's controller._
 ### Definition
 
 ```
-function prepForMigrationOf(uint256 _projectId, IJBController) external virtual override { ... }
+function prepForMigrationOf(uint256 _projectId, address _from) external virtual override { ... }
 ```
 
 * Arguments:
   * `_projectId` is the ID of the project that will be migrated to this controller.
+  * `_from` is the controller being migrated from.
 * The function can be accessed externally by anyone.
 * The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
@@ -33,7 +34,8 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external virtual 
 
     ```
     // This controller must not be the project's current controller.
-    if (directory.controllerOf(_projectId) == this) revert CANT_MIGRATE_TO_CURRENT_CONTROLLER();
+    if (directory.controllerOf(_projectId) == address(this)) 
+      revert CANT_MIGRATE_TO_CURRENT_CONTROLLER();
     ```
 
     _Internal references:_
@@ -84,9 +86,10 @@ function prepForMigrationOf(uint256 _projectId, IJBController) external virtual 
   @param _projectId The ID of the project that will be migrated to this controller.
   @param _from The controller being migrated from.
 */
-function prepForMigrationOf(uint256 _projectId, IJBController _from) external virtual override {
+function prepForMigrationOf(uint256 _projectId, address _from) external virtual override {
   // This controller must not be the project's current controller.
-  if (directory.controllerOf(_projectId) == this) revert CANT_MIGRATE_TO_CURRENT_CONTROLLER();
+  if (directory.controllerOf(_projectId) == address(this)) 
+    revert CANT_MIGRATE_TO_CURRENT_CONTROLLER();
 
   // Set the tracker as the total supply.
   _processedTokenTrackerOf[_projectId] = int256(tokenStore.totalSupplyOf(_projectId));

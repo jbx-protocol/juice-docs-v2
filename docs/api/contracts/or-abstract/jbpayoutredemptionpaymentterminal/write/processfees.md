@@ -60,30 +60,33 @@ function processFees(uint256 _projectId)
     _Internal references:_
 
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
-2.  Iterate through the array. Take fee's for each [`JBFee`](/api/data-structures/jbfee.md) data structure.
+2.  Iterate through the array. Take fee's for each [`JBFee`](/api/data-structures/jbfee.md) data structure. Emit a `ProcessFee` event with the relevant parameters for each fee processed.
 
     ```
     // Process each fee.
-    for (uint256 _i = 0; _i < _heldFees.length; _i++)
-      _processFee(
-        _feeAmount(_heldFees[_i].amount, _heldFees[_i].fee, _heldFees[_i].feeDiscount),
-        _heldFees[_i].beneficiary
+    for (uint256 _i = 0; _i < _heldFees.length; _i++) {
+      // Get the fee amount.
+      uint256 _amount = _feeAmount(
+        _heldFees[_i].amount,
+        _heldFees[_i].fee,
+        _heldFees[_i].feeDiscount
       );
+
+      // Process the fee.
+      _processFee(_amount, _heldFees[_i].beneficiary);
+
+      emit ProcessFee(_projectId, _amount, _heldFees[_i].beneficiary, msg.sender);
+    }
     ```
 
     _Internal references:_
 
     * [`_processFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_processfee.md)
     * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
-4.  Emit a `ProcessFees` event with the relevant parameters.
-
-    ```
-    emit ProcessFees(_projectId, _heldFees, msg.sender);
-    ```
 
     _Event references:_
 
-    * [`ProcessFees`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfees.md)
+    * [`ProcessFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfee.md)
 
 </TabItem>
 
@@ -117,13 +120,19 @@ function processFees(uint256 _projectId)
   delete _heldFeesOf[_projectId];
 
   // Process each fee.
-  for (uint256 _i = 0; _i < _heldFees.length; _i++)
-    _processFee(
-      _feeAmount(_heldFees[_i].amount, _heldFees[_i].fee, _heldFees[_i].feeDiscount),
-      _heldFees[_i].beneficiary
+  for (uint256 _i = 0; _i < _heldFees.length; _i++) {
+    // Get the fee amount.
+    uint256 _amount = _feeAmount(
+      _heldFees[_i].amount,
+      _heldFees[_i].fee,
+      _heldFees[_i].feeDiscount
     );
 
-  emit ProcessFees(_projectId, _heldFees, msg.sender);
+    // Process the fee.
+    _processFee(_amount, _heldFees[_i].beneficiary);
+
+    emit ProcessFee(_projectId, _amount, true, _heldFees[_i].beneficiary, msg.sender);
+  }
 }
 ```
 
@@ -133,7 +142,7 @@ function processFees(uint256 _projectId)
 
 | Name                                          | Data                                                                                                                                                       |
 | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ProcessFees`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfees.md)                         | <ul><li><code>[JBFee](/api/data-structures/jbfee.md)[] fees</code></li><li><code>uint256 indexed projectId</code></li></ul>                                                                                                                                                                                                                                                                                                                         |
+| [**`ProcessFee`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/processfee.md)                         | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed amount</code></li><li><code>bool indexed wasHeld</code></li><li><code>address beneficiary</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                                                                                                         |
 
 </TabItem>
 

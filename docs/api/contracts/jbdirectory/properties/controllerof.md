@@ -15,7 +15,7 @@ Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
 
   _projectId The ID of the project to get the controller of.
 */
-mapping(uint256 => IJBController) public override controllerOf;
+mapping(uint256 => address) public override controllerOf;
 ```
 
 * Arguments:

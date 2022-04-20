@@ -52,8 +52,8 @@ function overflowAllowanceOf(
 2.  Return the overflow allowance, which is in the first 248 bits, and the currency the overflow allowance is in terms of, which is in the last 8 bits.
 
     ```
-    // The allowance is in bits 0-247. The currency is in bits 248-255.
-    return (uint256(uint248(_data)), _data >> 248);
+    // The allowance is in bits 0-231. The currency is in bits 232-255.
+    return (uint256(uint232(_data)), _data >> 232);
     ```
 
 </TabItem>
@@ -85,8 +85,8 @@ function overflowAllowanceOf(
   // Get a reference to the packed data.
   uint256 _data = _packedOverflowAllowanceDataOf[_projectId][_configuration][_terminal][_token];
 
-  // The allowance is in bits 0-247. The currency is in bits 248-255.
-  return (uint256(uint248(_data)), _data >> 248);
+  // The allowance is in bits 0-231. The currency is in bits 232-255.
+  return (uint256(uint232(_data)), _data >> 232);
 }
 ```
 

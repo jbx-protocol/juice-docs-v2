@@ -133,8 +133,13 @@ function _distributeToPayoutSplitsOf(
               // This distribution does not incur a fee.
               _netPayoutAmount = _payoutAmount;
 
+              // Send the projectId in the metadata.
+              bytes memory _projectMetadata = new bytes(32);
+              _projectMetadata = bytes(abi.encodePacked(_projectId));
+
               // Add to balance if prefered.
-              if (_split.preferAddToBalance) _addToBalanceOf(_split.projectId, _netPayoutAmount, '');
+              if (_split.preferAddToBalance)
+                _addToBalanceOf(_split.projectId, _netPayoutAmount, '', _projectMetadata);
               else
                 _pay(
                   _netPayoutAmount,
@@ -144,7 +149,7 @@ function _distributeToPayoutSplitsOf(
                   0,
                   _split.preferClaimed,
                   '',
-                  bytes('')
+                  _projectMetadata
                 );
             } else {
               // If the terminal is set as feeless, this distribution is not eligible for a fee.
@@ -165,13 +170,18 @@ function _distributeToPayoutSplitsOf(
               // If this terminal's token is ETH, send it in msg.value.
               uint256 _payableValue = token == JBTokens.ETH ? _netPayoutAmount : 0;
 
+              // Send the projectId in the metadata.
+              bytes memory _projectMetadata = new bytes(32);
+              _projectMetadata = bytes(abi.encodePacked(_projectId));
+
               // Add to balance if prefered.
               if (_split.preferAddToBalance)
                 _terminal.addToBalanceOf{value: _payableValue}(
                   _split.projectId,
                   _netPayoutAmount,
                   token,
-                  ''
+                  '',
+                  _projectMetadata
                 );
               else
                 _terminal.pay{value: _payableValue}(
@@ -182,7 +192,7 @@ function _distributeToPayoutSplitsOf(
                   0,
                   _split.preferClaimed,
                   '',
-                  bytes('')
+                  _projectMetadata
                 );
             }
           } else {
@@ -333,8 +343,13 @@ function _distributeToPayoutSplitsOf(
           // This distribution does not incur a fee.
           _netPayoutAmount = _payoutAmount;
 
+          // Send the projectId in the metadata.
+          bytes memory _projectMetadata = new bytes(32);
+          _projectMetadata = bytes(abi.encodePacked(_projectId));
+
           // Add to balance if prefered.
-          if (_split.preferAddToBalance) _addToBalanceOf(_split.projectId, _netPayoutAmount, '');
+          if (_split.preferAddToBalance)
+            _addToBalanceOf(_split.projectId, _netPayoutAmount, '', _projectMetadata);
           else
             _pay(
               _netPayoutAmount,
@@ -344,7 +359,7 @@ function _distributeToPayoutSplitsOf(
               0,
               _split.preferClaimed,
               '',
-              bytes('')
+              _projectMetadata
             );
         } else {
           // If the terminal is set as feeless, this distribution is not eligible for a fee.
@@ -365,13 +380,18 @@ function _distributeToPayoutSplitsOf(
           // If this terminal's token is ETH, send it in msg.value.
           uint256 _payableValue = token == JBTokens.ETH ? _netPayoutAmount : 0;
 
+          // Send the projectId in the metadata.
+          bytes memory _projectMetadata = new bytes(32);
+          _projectMetadata = bytes(abi.encodePacked(_projectId));
+
           // Add to balance if prefered.
           if (_split.preferAddToBalance)
             _terminal.addToBalanceOf{value: _payableValue}(
               _split.projectId,
               _netPayoutAmount,
               token,
-              ''
+              '',
+              _projectMetadata
             );
           else
             _terminal.pay{value: _payableValue}(
@@ -382,7 +402,7 @@ function _distributeToPayoutSplitsOf(
               0,
               _split.preferClaimed,
               '',
-              bytes('')
+              _projectMetadata
             );
         }
       } else {

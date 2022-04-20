@@ -88,10 +88,8 @@ function currentReclaimableOverflowOf(
 
     ```
     // Get the number of outstanding tokens the project has.
-    uint256 _totalSupply = directory.controllerOf(_projectId).totalOutstandingTokensOf(
-      _projectId,
-      _fundingCycle.reservedRate()
-    );
+    uint256 _totalSupply = IJBController(directory.controllerOf(_projectId))
+      .totalOutstandingTokensOf(_projectId, _fundingCycle.reservedRate());
     ```
 
     _Library references:_
@@ -183,10 +181,8 @@ function currentReclaimableOverflowOf(
   if (_currentOverflow == 0) return 0;
 
   // Get the number of outstanding tokens the project has.
-  uint256 _totalSupply = directory.controllerOf(_projectId).totalOutstandingTokensOf(
-    _projectId,
-    _fundingCycle.reservedRate()
-  );
+  uint256 _totalSupply = IJBController(directory.controllerOf(_projectId))
+    .totalOutstandingTokensOf(_projectId, _fundingCycle.reservedRate());
 
   // Can't redeem more tokens that is in the supply.
   if (_tokenCount > _totalSupply) return 0;

@@ -33,7 +33,7 @@ function _pay(
   * `_minReturnedTokens` is the minimum number of project tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   * `_preferClaimedTokens` is a flag indicating whether the request prefers to mint project tokens into the beneficiaries wallet rather than leaving them unclaimed. This is only possible if the project has an attached token contract. Leaving them unclaimed saves gas.
   * `_memo` is memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate. A data source can alter the memo before emitting in the event and forwarding to the delegate.
-  * `_metadata` are bytes to send along to the data source and delegate, if provided.
+  * `_metadata` are bytes to send along to the data source, delegate, and emitted event, if provided.
 * The function is private to this contract.
 * The function doesn't return anything.
 
@@ -99,7 +99,7 @@ function _pay(
         // Mint the tokens if needed.
         if (_tokenCount > 0)
           // Set token count to be the number of tokens minted for the beneficiary instead of the total amount.
-          beneficiaryTokenCount = directory.controllerOf(_projectId).mintTokensOf(
+          beneficiaryTokenCount = IJBController(directory.controllerOf(_projectId)).mintTokensOf(
             _projectId,
             _tokenCount,
             _beneficiary,
@@ -164,6 +164,7 @@ function _pay(
       _amount,
       beneficiaryTokenCount,
       _memo,
+      _metadata,
       msg.sender
     );
     ```
@@ -188,7 +189,7 @@ function _pay(
   @param _minReturnedTokens The minimum number of project tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   @param _preferClaimedTokens A flag indicating whether the request prefers to mint project tokens into the beneficiaries wallet rather than leaving them unclaimed. This is only possible if the project has an attached token contract. Leaving them unclaimed saves gas.
   @param _memo A memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate.  A data source can alter the memo before emitting in the event and forwarding to the delegate.
-  @param _metadata Bytes to send along to the data source and delegate, if provided.
+  @param _metadata Bytes to send along to the data source, delegate, and emitted event, if provided.
 
   @return beneficiaryTokenCount The number of tokens minted for the beneficiary, as a fixed point number with 18 decimals.
 */
@@ -230,7 +231,7 @@ function _pay(
     // Mint the tokens if needed.
     if (_tokenCount > 0)
       // Set token count to be the number of tokens minted for the beneficiary instead of the total amount.
-      beneficiaryTokenCount = directory.controllerOf(_projectId).mintTokensOf(
+      beneficiaryTokenCount = IJBController(directory.controllerOf(_projectId)).mintTokensOf(
         _projectId,
         _tokenCount,
         _beneficiary,
@@ -268,6 +269,7 @@ function _pay(
     _amount,
     beneficiaryTokenCount,
     _memo,
+    _metadata,
     msg.sender
   );
 }

@@ -26,9 +26,14 @@ interface IJBFundingCycleStore {
     view
     returns (JBFundingCycle memory);
 
-  function queuedOf(uint256 _projectId) external view returns (JBFundingCycle memory);
+  function latestConfiguredOf(uint256 _projectId)
+    external
+    view
+    returns (JBFundingCycle memory fundingCycle, JBBallotState ballotState);
 
-  function currentOf(uint256 _projectId) external view returns (JBFundingCycle memory);
+  function queuedOf(uint256 _projectId) external view returns (JBFundingCycle memory fundingCycle);
+
+  function currentOf(uint256 _projectId) external view returns (JBFundingCycle memory fundingCycle);
 
   function currentBallotStateOf(uint256 _projectId) external view returns (JBBallotState);
 

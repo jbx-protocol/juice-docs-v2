@@ -16,6 +16,7 @@ event Pay(
   uint256 amount,
   uint256 beneficiaryTokenCount,
   string memo,
+  bytes metadata,
   address caller
 );
 ```
@@ -28,4 +29,5 @@ event Pay(
 * `amount` is the amount of tokens that was paid.
 * `beneficiaryTokenCount` is the amount of the project's tokens that were issued to the beneficiary as a result of the payment made.
 * `memo` is a note that was attached.
+* `metadata` is extra data sent to the data source, delegate, and emitted event, if provided.
 * `caller` is the address that issued the transaction within which the event was emitted.

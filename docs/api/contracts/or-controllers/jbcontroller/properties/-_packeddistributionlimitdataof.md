@@ -16,10 +16,10 @@ _bits 248-255: The currency of amount that a project can distribute._
   Data regarding the distribution limit of a project during a configuration.
 
   @dev
-  bits 0-247: The amount of token that a project can distribute per funding cycle.
+  bits 0-231: The amount of token that a project can distribute per funding cycle.
 
   @dev
-  bits 248-255: The currency of amount that a project can distribute.
+  bits 232-255: The currency of amount that a project can distribute.
 
   _projectId The ID of the project to get the packed distribution limit data of.
   _configuration The configuration during which the packed distribution limit data applies.

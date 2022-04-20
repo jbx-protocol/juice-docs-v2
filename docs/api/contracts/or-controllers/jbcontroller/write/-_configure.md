@@ -112,31 +112,31 @@ function _configure(
     for (uint256 _i; _i < _fundAccessConstraints.length; _i++) {
       JBFundAccessConstraints memory _constraints = _fundAccessConstraints[_i];
 
-      // If distribution limit value is larger than 248 bits, revert.
-      if (_constraints.distributionLimit > type(uint248).max) revert INVALID_DISTRIBUTION_LIMIT();
+      // If distribution limit value is larger than 232 bits, revert.
+      if (_constraints.distributionLimit > type(uint232).max) revert INVALID_DISTRIBUTION_LIMIT();
 
-      // If distribution limit currency value is larger than 8 bits, revert.
-      if (_constraints.distributionLimitCurrency > type(uint8).max)
+      // If distribution limit currency value is larger than 24 bits, revert.
+      if (_constraints.distributionLimitCurrency > type(uint24).max)
         revert INVALID_DISTRIBUTION_LIMIT_CURRENCY();
 
-      // If overflow allowance value is larger than 248 bits, revert.
-      if (_constraints.overflowAllowance > type(uint248).max) revert INVALID_OVERFLOW_ALLOWANCE();
+      // If overflow allowance value is larger than 232 bits, revert.
+      if (_constraints.overflowAllowance > type(uint232).max) revert INVALID_OVERFLOW_ALLOWANCE();
 
-      // If overflow allowance currency value is larger than 8 bits, revert.
-      if (_constraints.overflowAllowanceCurrency > type(uint8).max)
+      // If overflow allowance currency value is larger than 24 cbits, revert.
+      if (_constraints.overflowAllowanceCurrency > type(uint24).max)
         revert INVALID_OVERFLOW_ALLOWANCE_CURRENCY();
 
       // Set the distribution limit if there is one.
       if (_constraints.distributionLimit > 0)
         _packedDistributionLimitDataOf[_projectId][_fundingCycle.configuration][
           _constraints.terminal
-        ] = _constraints.distributionLimit | (_constraints.distributionLimitCurrency << 248);
+        ] = _constraints.distributionLimit | (_constraints.distributionLimitCurrency << 232);
 
       // Set the overflow allowance if there is one.
       if (_constraints.overflowAllowance > 0)
         _packedOverflowAllowanceDataOf[_projectId][_fundingCycle.configuration][
           _constraints.terminal
-        ] = _constraints.overflowAllowance | (_constraints.overflowAllowanceCurrency << 248);
+        ] = _constraints.overflowAllowance | (_constraints.overflowAllowanceCurrency << 232);
 
       emit SetFundAccessConstraints(
         _fundingCycle.configuration,
@@ -222,18 +222,18 @@ function _configure(
   for (uint256 _i; _i < _fundAccessConstraints.length; _i++) {
     JBFundAccessConstraints memory _constraints = _fundAccessConstraints[_i];
 
-    // If distribution limit value is larger than 248 bits, revert.
-    if (_constraints.distributionLimit > type(uint248).max) revert INVALID_DISTRIBUTION_LIMIT();
+    // If distribution limit value is larger than 232 bits, revert.
+    if (_constraints.distributionLimit > type(uint232).max) revert INVALID_DISTRIBUTION_LIMIT();
 
-    // If distribution limit currency value is larger than 8 bits, revert.
-    if (_constraints.distributionLimitCurrency > type(uint8).max)
+    // If distribution limit currency value is larger than 24 bits, revert.
+    if (_constraints.distributionLimitCurrency > type(uint24).max)
       revert INVALID_DISTRIBUTION_LIMIT_CURRENCY();
 
-    // If overflow allowance value is larger than 248 bits, revert.
-    if (_constraints.overflowAllowance > type(uint248).max) revert INVALID_OVERFLOW_ALLOWANCE();
+    // If overflow allowance value is larger than 232 bits, revert.
+    if (_constraints.overflowAllowance > type(uint232).max) revert INVALID_OVERFLOW_ALLOWANCE();
 
-    // If overflow allowance currency value is larger than 8 bits, revert.
-    if (_constraints.overflowAllowanceCurrency > type(uint8).max)
+    // If overflow allowance currency value is larger than 24 bits, revert.
+    if (_constraints.overflowAllowanceCurrency > type(uint24).max)
       revert INVALID_OVERFLOW_ALLOWANCE_CURRENCY();
 
     // Set the distribution limit if there is one.
@@ -242,7 +242,7 @@ function _configure(
         _constraints.terminal
       ][_constraints.token] =
         _constraints.distributionLimit |
-        (_constraints.distributionLimitCurrency << 248);
+        (_constraints.distributionLimitCurrency << 232);
 
     // Set the overflow allowance if there is one.
     if (_constraints.overflowAllowance > 0)
@@ -250,7 +250,7 @@ function _configure(
         _constraints.terminal
       ][_constraints.token] =
         _constraints.overflowAllowance |
-        (_constraints.overflowAllowanceCurrency << 248);
+        (_constraints.overflowAllowanceCurrency << 232);
 
     emit SetFundAccessConstraints(
       _fundingCycle.configuration,

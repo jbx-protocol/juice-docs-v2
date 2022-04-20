@@ -32,7 +32,8 @@ interface IJBPaymentTerminal {
     uint256 _projectId,
     uint256 _amount,
     address _token,
-    string calldata _memo
+    string calldata _memo,
+    bytes calldata _metadata
   ) external payable;
 }
 ```

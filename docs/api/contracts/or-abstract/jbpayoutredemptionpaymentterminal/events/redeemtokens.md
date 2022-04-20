@@ -16,6 +16,7 @@ event RedeemTokens(
   uint256 tokenCount,
   uint256 reclaimedAmount,
   string memo,
+  bytes metadata,
   address caller
 );
 ```
@@ -28,4 +29,5 @@ event RedeemTokens(
 * `tokenCount` is the amount of tokens that were redeemed.
 * `reclaimedAmount` is the amount of tokens that were sent to the beneficiary as a result of the redemption.
 * `memo` is a note that was attached.
+* `metadata` is extra data sent to the data source, delegate, and emitted event, if provided.
 * `caller` is the address that issued the transaction within which the event was emitted.

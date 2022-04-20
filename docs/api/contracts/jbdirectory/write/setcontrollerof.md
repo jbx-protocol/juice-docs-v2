@@ -21,7 +21,7 @@ _A controller can be set if:_
 #### Definition
 
 ```
-function setControllerOf(uint256 _projectId, IJBController _controller)
+function setControllerOf(uint256 _projectId, address _controller)
   external
   override
   requirePermissionAllowingOverride(
@@ -79,7 +79,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
     // Setting controller must be allowed if not called from the current controller or if the project already has a controller.
     if (
       msg.sender != address(controllerOf[_projectId]) &&
-      controllerOf[_projectId] != IJBController(address(0)) &&
+      controllerOf[_projectId] != address(0) &&
       !_fundingCycle.setControllerAllowed()
     ) revert SET_CONTROLLER_NOT_ALLOWED();
     ```
@@ -130,7 +130,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
   @param _projectId The ID of the project to set a new controller for.
   @param _controller The new controller to set.
 */
-function setControllerOf(uint256 _projectId, IJBController _controller)
+function setControllerOf(uint256 _projectId, address _controller)
   external
   override
   requirePermissionAllowingOverride(
@@ -138,8 +138,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
     _projectId,
     JBOperations.SET_CONTROLLER,
     (msg.sender == address(controllerOf[_projectId]) ||
-      (isAllowedToSetFirstController[msg.sender] &&
-        controllerOf[_projectId] == IJBController(address(0))))
+      (isAllowedToSetFirstController[msg.sender] && controllerOf[_projectId] == address(0)))
   )
 {
   // The project must exist.
@@ -150,7 +149,7 @@ function setControllerOf(uint256 _projectId, IJBController _controller)
   // Setting controller must be allowed if not called from the current controller or if the project already has a controller.
   if (
     msg.sender != address(controllerOf[_projectId]) &&
-    controllerOf[_projectId] != IJBController(address(0)) &&
+    controllerOf[_projectId] != address(0) &&
     !_fundingCycle.setControllerAllowed()
   ) revert SET_CONTROLLER_NOT_ALLOWED();
 

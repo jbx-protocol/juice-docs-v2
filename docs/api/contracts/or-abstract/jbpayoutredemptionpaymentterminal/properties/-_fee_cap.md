@@ -4,7 +4,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 
 **Maximum fee that can be set for a funding cycle configuration.** 
 
-_Out of MAX_FEE (50_000_000 / 1_000_000_000)_
+_Out of MAX_FEE (50_000_000 / 1_000_000_000)._
 
 #### Definition
 
@@ -14,7 +14,7 @@ _Out of MAX_FEE (50_000_000 / 1_000_000_000)_
   Maximum fee that can be set for a funding cycle configuration.
 
   @dev
-  Out of MAX_FEE (50_000_000 / 1_000_000_000)
+  Out of MAX_FEE (50_000_000 / 1_000_000_000).
 */
 uint256 private constant _FEE_CAP = 50_000_000;
 ```

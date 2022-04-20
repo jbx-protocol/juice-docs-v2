@@ -98,7 +98,14 @@ function _payToSplits(
           // Otherwise, if a project is specified, make a payment to it.
         } else if (_split.projectId != 0) {
           if (_split.preferAddToBalance)
-            _addToBalance(_split.projectId, _token, _splitAmount, _decimals, defaultMemo);
+            _addToBalanceOf(
+              _split.projectId,
+              _token,
+              _splitAmount,
+              _decimals,
+              defaultMemo,
+              defaultMetadata
+            );
           else
             _pay(
               _split.projectId,
@@ -237,7 +244,14 @@ function _payToSplits(
         // Otherwise, if a project is specified, make a payment to it.
       } else if (_split.projectId != 0) {
         if (_split.preferAddToBalance)
-          _addToBalance(_split.projectId, _token, _splitAmount, _decimals, defaultMemo);
+          _addToBalanceOf(
+            _split.projectId,
+            _token,
+            _splitAmount,
+            _decimals,
+            defaultMemo,
+            defaultMetadata
+          );
         else
           _pay(
             _split.projectId,

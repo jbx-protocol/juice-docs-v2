@@ -65,7 +65,7 @@ function launchProjectFor(
 
     ```
     // Set this contract as the project's controller in the directory.
-    directory.setControllerOf(projectId, this);
+    directory.setControllerOf(projectId, address(this));
     ```
 
     _Internal references:_
@@ -158,7 +158,7 @@ function launchProjectFor(
   projectId = projects.createFor(_owner, _projectMetadata);
 
   // Set this contract as the project's controller in the directory.
-  directory.setControllerOf(projectId, this);
+  directory.setControllerOf(projectId, address(this));
 
   // Configure the first funding cycle.
   uint256 _configuration = _configure(

@@ -16,7 +16,8 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpay
 function _addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
-  string memory _memo
+  string memory _memo,
+  bytes memory _metadata
 ) private { ... }
 ```
 
@@ -24,6 +25,7 @@ function _addToBalanceOf(
   * `_projectId` is the ID of the project to which the funds received belong.
   * `_amount` is the amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
   * `_memo` is a memo to pass along to the emitted event.
+  * `_metadata` is extra data to pass along to the emitted event.
 * The function is private to this contract.
 * The function doesn't return anything.
 
@@ -56,7 +58,7 @@ function _addToBalanceOf(
 3.  Emit a `AddToBalance` event with the relevant parameters.
 
     ```
-    emit AddToBalance(_projectId, _amount, _refundedFees, _memo, msg.sender);
+    emit AddToBalance(_projectId, _amount, _refundedFees, _memo, _metadata, msg.sender);
     ```
 
     _Event references:_
@@ -75,11 +77,13 @@ function _addToBalanceOf(
   @param _projectId The ID of the project to which the funds received belong.
   @param _amount The amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
   @param _memo A memo to pass along to the emitted event.
+  @param _metadata Extra data to pass along to the emitted event.
 */
 function _addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
-  string memory _memo
+  string memory _memo,
+  bytes memory _metadata
 ) private {
   // Refund any held fees to make sure the project doesn't pay double for funds going in and out of the protocol.
   uint256 _refundedFees = _refundHeldFees(_projectId, _amount);
@@ -87,7 +91,7 @@ function _addToBalanceOf(
   // Record the added funds with any refunded fees.
   store.recordAddedBalanceFor(_projectId, _amount + _refundedFees);
 
-  emit AddToBalance(_projectId, _amount, _refundedFees, _memo, msg.sender);
+  emit AddToBalance(_projectId, _amount, _refundedFees, _memo, _metadata, msg.sender);
 }
 ```
 

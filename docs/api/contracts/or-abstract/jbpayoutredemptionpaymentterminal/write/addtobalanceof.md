@@ -19,7 +19,8 @@ function addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
   address,
-  string calldata _memo
+  string calldata _memo,
+  bytes calldata _metadata
 ) external payable virtual override isTerminalOf(_projectId) { ... }
 ```
 
@@ -28,6 +29,7 @@ function addToBalanceOf(
   * `_amount` is the amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
   * `_token` is the token being paid. This terminal ignores this property since it only manages one currency.
   * `_memo` is a memo to pass along to the emitted event.
+  * `_metadata` is metadata to pass along to the emitted event.
 * The function can be accessed externally by anyone.
 * The function can be overriden by inheriting contracts.
 * Through the [`isTerminalOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
@@ -83,12 +85,14 @@ function addToBalanceOf(
   @param _amount The amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
   ignored: _token The token being paid. This terminal ignores this property since it only manages one currency. 
   @param _memo A memo to pass along to the emitted event.
+  @param _metadata Metadata to pass along to the emitted event.
 */
 function addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
   address,
-  string calldata _memo
+  string calldata _memo,
+  bytes calldata _metadata
 ) external payable virtual override isTerminalOf(_projectId) {
   // If this terminal's token isn't ETH, make sure no msg.value was sent, then transfer the tokens in from msg.sender.
   if (token != JBTokens.ETH) {

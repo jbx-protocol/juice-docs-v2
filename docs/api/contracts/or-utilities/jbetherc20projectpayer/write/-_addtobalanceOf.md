@@ -1,4 +1,4 @@
-# _addToBalance
+# _addToBalanceOf
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -13,12 +13,13 @@ Contract: [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20proje
 #### Definition
 
 ```
-function _addToBalance(
+function _addToBalanceOf(
   uint256 _projectId,
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string memory _memo,
+  bytes memory _metadata
 ) internal virtual { ... }
 ```
 
@@ -28,6 +29,7 @@ function _addToBalance(
   * `_amount` is the amount of tokens being paid, as a fixed point number. If the token is ETH, this is ignored and msg.value is used in its place.
   * `_decimals` is the number of decimals in the `_amount` fixed point number. If the token is ETH, this is ignored and 18 is used in its place, which corresponds to the amount of decimals expected in msg.value.
   * `_memo` is a memo to pass along to the emitted event.
+  * `_metadata` is extra data to pass along to the terminal.
 * The function is private to this contract.
 * The function doesn't return anything.
 
@@ -119,13 +121,15 @@ function _addToBalance(
   @param _decimals The number of decimals in the `_amount` fixed point number. If the token is ETH, this is ignored and 18 is used in its place, which corresponds to the amount of decimals expected in msg.value.
   @param _memo A memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate.  A data source can alter the memo before emitting in the event and forwarding to the delegate.
   @param _memo A memo to pass along to the emitted event.
+  @param _metadata Extra data to pass along to the terminal.
 */
 function _addToBalance(
   uint256 _projectId,
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string memory _memo,
+  bytes memory _metadata
 ) internal virtual {
   // Find the terminal for the specified project.
   IJBPaymentTerminal _terminal = directory.primaryTerminalOf(_projectId, _token);
@@ -143,7 +147,7 @@ function _addToBalance(
   uint256 _payableValue = _token == JBTokens.ETH ? _amount : 0;
 
   // Add to balance so tokens don't get issued.
-  _terminal.addToBalanceOf{value: _payableValue}(_projectId, _amount, _token, _memo);
+  _terminal.addToBalanceOf{value: _payableValue}(_projectId, _amount, _token, _memo, _metadata);
 }
 ```
 

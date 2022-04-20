@@ -67,9 +67,9 @@ function recordUsedAllowanceOf(
 
     ```
     // There must be sufficient allowance available.
-    (uint256 _overflowAllowanceOf, uint256 _overflowAllowanceCurrency) = directory
-      .controllerOf(_projectId)
-      .overflowAllowanceOf(
+    (uint256 _overflowAllowanceOf, uint256 _overflowAllowanceCurrency) = IJBController(
+      directory.controllerOf(_projectId)
+    ).overflowAllowanceOf(
         _projectId,
         fundingCycle.configuration,
         IJBSingleTokenPaymentTerminal(msg.sender),
@@ -223,9 +223,9 @@ function recordUsedAllowanceOf(
   ][_projectId][fundingCycle.configuration] + _amount;
 
   // There must be sufficient allowance available.
-  (uint256 _overflowAllowanceOf, uint256 _overflowAllowanceCurrency) = directory
-    .controllerOf(_projectId)
-    .overflowAllowanceOf(
+  (uint256 _overflowAllowanceOf, uint256 _overflowAllowanceCurrency) = IJBController(
+    directory.controllerOf(_projectId)
+  ).overflowAllowanceOf(
       _projectId,
       fundingCycle.configuration,
       IJBSingleTokenPaymentTerminal(msg.sender),

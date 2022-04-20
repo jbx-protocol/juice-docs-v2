@@ -46,14 +46,22 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
     _Internal references:_
 
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
-3.  Loop through each held fee, decrementing the amount as held fees are refunded and incrementing the amount of refunded fees. If the entire refund amount has been refunded, add the fee structure back into the project's held fees so that they can be processed or refunded later. If the amount left is greater than the fee structure's amount, decrement the refunded amount and leave the fee structure out of the project's held fees. If only some of the fee structure's amount is needed to cover the rest of the remaining amount, set the amount to 0 after adding the fee structure back into the project's held fees having subtracted the remaining refund amount.
+
+3.  Get a reference to how much of the amount is left to refund fees for.
+
+    ```
+    // Get a reference to the leftover amount once all fees have been settled.
+    uint256 leftoverAmount = _amount;
+    ```
+
+4.  Loop through each held fee, decrementing the amount as held fees are refunded and incrementing the amount of refunded fees. If the entire refund amount has been refunded, add the fee structure back into the project's held fees so that they can be processed or refunded later. If the amount left is greater than the fee structure's amount, decrement the refunded amount and leave the fee structure out of the project's held fees. If only some of the fee structure's amount is needed to cover the rest of the remaining amount, set the amount to 0 after adding the fee structure back into the project's held fees having subtracted the remaining refund amount.
 
     ```
     // Process each fee.
     for (uint256 _i = 0; _i < _heldFees.length; _i++) {
-      if (_amount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
-      else if (_amount >= _heldFees[_i].amount) {
-        _amount = _amount - _heldFees[_i].amount;
+      if (leftoverAmount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
+      else if (leftoverAmount >= _heldFees[_i].amount) {
+        leftoverAmount = leftoverAmount - _heldFees[_i].amount;
         refundedFees += _feeAmount(
           _heldFees[_i].amount,
           _heldFees[_i].fee,
@@ -62,14 +70,14 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
       } else {
         _heldFeesOf[_projectId].push(
           JBFee(
-            _heldFees[_i].amount - _amount,
+            _heldFees[_i].amount - leftoverAmount,
             _heldFees[_i].fee,
             _heldFees[_i].feeDiscount,
             _heldFees[_i].beneficiary
           )
         );
-        refundedFees += _feeAmount(_amount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
-        _amount = 0;
+        refundedFees += _feeAmount(leftoverAmount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
+        leftoverAmount = 0;
       }
     }
     ```
@@ -78,6 +86,16 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
 
     * [`_heldFeesOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_heldfeesof.md)
     * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
+
+5.  Emit a `RefundHeldFees` event with the relevant parameters.
+
+    ```
+    emit RefundHeldFees(_projectId, _amount, refundedFees, leftoverAmount, msg.sender);
+    ```
+
+    _Event references:_
+
+    * [`RefundHeldFees`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/refundheldfees.md)
 
 </TabItem>
 
@@ -102,12 +120,15 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
   // Delete the current held fees.
   delete _heldFeesOf[_projectId];
 
+  // Get a reference to the leftover amount once all fees have been settled.
+  uint256 leftoverAmount = _amount;
+
   // Process each fee.
   for (uint256 _i = 0; _i < _heldFees.length; _i++) {
-    if (_amount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
-    else if (_amount >= _heldFees[_i].amount) {
-      _amount = _amount - _heldFees[_i].amount;
-      refundedFees = _feeAmount(
+    if (leftoverAmount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
+    else if (leftoverAmount >= _heldFees[_i].amount) {
+      leftoverAmount = leftoverAmount - _heldFees[_i].amount;
+      refundedFees += _feeAmount(
         _heldFees[_i].amount,
         _heldFees[_i].fee,
         _heldFees[_i].feeDiscount
@@ -115,18 +136,28 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
     } else {
       _heldFeesOf[_projectId].push(
         JBFee(
-          _heldFees[_i].amount - _amount,
+          _heldFees[_i].amount - leftoverAmount,
           _heldFees[_i].fee,
           _heldFees[_i].feeDiscount,
           _heldFees[_i].beneficiary
         )
       );
-      refundedFees = _feeAmount(_amount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
-      _amount = 0;
+      refundedFees += _feeAmount(leftoverAmount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
+      leftoverAmount = 0;
     }
   }
+
+  emit RefundHeldFees(_projectId, _amount, refundedFees, leftoverAmount, msg.sender);
 }
 ```
+
+</TabItem>
+
+<TabItem value="Events" label="Events">
+
+| Name                          | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`RefundHeldFees`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/refundheldfees.md)                                         | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed amount</code></li><li><code>uint256 indexed refundedFees</code></li><li><code>uint256 leftoverAmount</code></li><li><code>address caller</code></li></ul>        |
 
 </TabItem>
 

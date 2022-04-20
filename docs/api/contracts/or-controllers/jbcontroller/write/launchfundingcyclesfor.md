@@ -71,7 +71,7 @@ function launchFundingCyclesFor(
 
     ```
     // Set this contract as the project's controller in the directory.
-    directory.setControllerOf(_projectId, this);
+    directory.setControllerOf(_projectId, address(this));
     ```
 
     _Internal references:_
@@ -169,7 +169,7 @@ function launchFundingCyclesFor(
     revert FUNDING_CYCLE_ALREADY_LAUNCHED();
 
   // Set this contract as the project's controller in the directory.
-  directory.setControllerOf(_projectId, this);
+  directory.setControllerOf(_projectId, address(this));
 
   // Configure the first funding cycle.
   configuration = _configure(
