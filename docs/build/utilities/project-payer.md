@@ -10,7 +10,7 @@ The [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpaye
 
 #### Inheriting JBProjectPayer
 
-Inheriting from [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer/README.md) will give a contract access to a public [`JBProjectPayer.pay(...)`](/api/contracts/or-utilities/jbetherc20projectpayer/write/pay.md), a public [`JBProjectPayer.addToBalance(...)`](/api/contracts/or-utilities/jbetherc20projectpayer/write/addtobalance.md) function, an internal [`JBProjectPayer._pay(...)`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md) function, and an internal [`JBProjectPayer._addToBalance(...)`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md) function. These can be used from within the contract to route funds to a juicebox treasury while specifying all relevant parameters to contextualize the payment. Use the internal versions if the inheriting contract has already handled receiving the funds being forwaded.
+Inheriting from [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer/README.md) will give a contract access to a public [`JBProjectPayer.pay(...)`](/api/contracts/or-utilities/jbetherc20projectpayer/write/pay.md), a public [`JBProjectPayer.addToBalanceOf(...)`](/api/contracts/or-utilities/jbetherc20projectpayer/write/addtobalanceof.md) function, an internal [`JBProjectPayer._pay(...)`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md) function, and an internal [`JBProjectPayer._addToBalanceOf(...)`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md) function. These can be used from within the contract to route funds to a juicebox treasury while specifying all relevant parameters to contextualize the payment. Use the internal versions if the inheriting contract has already handled receiving the funds being forwaded.
 
 Follow instructions in [Getting started](/build/getting-started.md) to import the `JBProjectPayer` files into a project.
 
@@ -29,12 +29,13 @@ function pay(
 ```
 
 ```
-function addToBalance(
+function addToBalanceOf(
   uint256 _projectId,
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string calldata _memo
+  bytes calldata _metadata
 ) public payable virtual override {}
 ```
 
@@ -58,7 +59,8 @@ function _addToBalance(
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string memory _memo,
+  string memory _metadata
 ) internal virtual  {}
 ```
 

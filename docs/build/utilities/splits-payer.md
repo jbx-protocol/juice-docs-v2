@@ -10,7 +10,7 @@ The [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/
 
 #### Inheriting JBSplitsPayer
 
-Inheriting from [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md) will give a contract access to a public [`JBSplitsPayer.pay(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/pay.md) function, a public [`JBSplitsPayer.addToBalance(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/addtobalance.md), and an internal [`JBSplitsPayer._payToSplits(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md) function. These can be used from within the contract to route funds to a group of splits while specifying where leftover funds should go. Use the internal function if the inheriting contract has already handled receiving the funds being forwaded.
+Inheriting from [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md) will give a contract access to a public [`JBSplitsPayer.pay(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/pay.md) function, a public [`JBSplitsPayer.addToBalanceOf(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/addtobalanceof.md), and an internal [`JBSplitsPayer._payToSplits(...)`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md) function. These can be used from within the contract to route funds to a group of splits while specifying where leftover funds should go. Use the internal function if the inheriting contract has already handled receiving the funds being forwaded.
 
 Follow instructions in [Getting started](/build/getting-started.md) to import the `JBSplitsPayer` files into a project.
 
@@ -23,8 +23,8 @@ function pay(
   address _beneficiary,
   uint256 _minReturnedTokens,
   bool _preferClaimedTokens,
-  string memory _memo,
-  bytes memory _metadata
+  string calldata _memo,
+  bytes calldata _metadata
 ) public payable virtual override nonReentrant {}
 ```
 
@@ -34,7 +34,8 @@ function addToBalance(
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string calldata _memo,
+  bytes calldata _metadata
 ) public payable virtual override nonReentrant {}
 ```
 

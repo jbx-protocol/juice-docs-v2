@@ -20,7 +20,8 @@ function addToBalanceOf(
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string calldata _memo,
+  bytes calldata _metadata
 ) public payable virtual override nonReentrant { ... }
 ```
 
@@ -169,7 +170,8 @@ function addToBalanceOf(
   address _token,
   uint256 _amount,
   uint256 _decimals,
-  string memory _memo
+  string calldata _memo,
+  bytes calldata _metadata
 ) public payable virtual override nonReentrant {
   // ETH shouldn't be sent if this terminal's token isn't ETH.
   if (address(_token) != JBTokens.ETH) {
