@@ -15,32 +15,21 @@ When extending the pay functionality with a delegate, the protocol will pass a [
 
 ```
 struct JBDidPayData {
-  // The address from which the payment originated.
   address payer;
-  // The ID of the project for which the payment was made.
   uint256 projectId;
-  // The amount of the payment. Includes the token being paid, the value, the number of decimals included, and the currency of the amount.
   JBTokenAmount amount;
-  // The number of project tokens minted for the beneficiary.
   uint256 projectTokenCount;
-  // The address to which the tokens were minted.
   address beneficiary;
-  // The memo that is being emitted alongside the payment.
   string memo;
-  // Metadata to send to the delegate.
   bytes metadata;
 }
 ```
 
 ```
 struct JBTokenAmount {
-  // The token the payment was made in.
   address token;
-  // The amount of tokens that was paid, as a fixed point number.
   uint256 value;
-  // The number of decimals included in the value fixed point number.
   uint256 decimals;
-  // The expected currency of the value.
   uint256 currency;
 }
 ```

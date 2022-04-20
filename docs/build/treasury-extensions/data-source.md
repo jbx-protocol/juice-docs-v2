@@ -35,34 +35,22 @@ When extending the pay functionality with a data source, the protocol will pass 
 
 ```
 struct JBPayParamsData {
-  // The terminal that is facilitating the payment.
   IJBPaymentTerminal terminal;
-  // The address from which the payment originated.
   address payer;
-  // The amount of the payment. Includes the token being paid, the value, the number of decimals included, and the currency of the amount.
   JBTokenAmount amount;
-  // The ID of the project being paid.
   uint256 projectId;
-  // The weight of the funding cycle during which the payment is being made.
   uint256 weight;
-  // The reserved rate of the funding cycle during which the payment is being made.
   uint256 reservedRate;
-  // The memo that was sent alongside the payment.
   string memo;
-  // Arbitrary metadata provided by the payer.
   bytes metadata;
 }
 ```
 
 ```
 struct JBTokenAmount {
-  // The token the payment was made in.
   address token;
-  // The amount of tokens that was paid, as a fixed point number.
   uint256 value;
-  // The number of decimals included in the value fixed point number.
   uint256 decimals;
-  // The expected currency of the value.
   uint256 currency;
 }
 ```
@@ -81,29 +69,19 @@ When extending the redeem functionality with a data source, the protocol will pa
 
 ```
 struct JBRedeemParamsData {
-  // The terminal that is facilitating the redemption.
   IJBPaymentTerminal terminal;
-  // The holder of the tokens being redeemed.
   address holder;
-  // The ID of the project whos tokens are being redeemed.
   uint256 projectId;
-  // The proposed number of tokens being redeemed, as a fixed point number with 18 decimals.
   uint256 tokenCount;
-  // The number of decimals included in the reclaim amount fixed point number.
+  uint256 totalSupply;
+  uint256 overflow;
   uint256 decimals;
-  // The currency that the reclaim amount is expected to be in terms of.
   uint256 currency;
-  // The amount that should be reclaimed by the redeemer using the protocol's standard bonding curve redemption formula.
   uint256 reclaimAmount;
-  // If overflow across all of a project's terminals is being used when making redemptions.
   bool useTotalOverflow;
-  // The redemption rate of the funding cycle during which the redemption is being made.
   uint256 redemptionRate;
-  // The ballot redemption rate of the funding cycle during which the redemption is being made.
   uint256 ballotRedemptionRate;
-  // The proposed memo that is being emitted alongside the redemption.
   string memo;
-  // Arbitrary metadata provided by the redeemer.
   bytes metadata;
 }
 ```

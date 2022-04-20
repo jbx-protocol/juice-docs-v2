@@ -7,10 +7,15 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/structs/J
 #### Definition
 
 ```
-struct JBPayParamsData {
-  // Metadata content.
+/** 
+  @member content The metadata content.
+  @member domain The domain within which the metadata applies.
+*/
+struct JBProjectMetadata {
   string content;
-  // The domain within which the metadata applies.
   uint256 domain;
 }
 ```
+
+* `content` is the metadata content.
+* `domain` is the domain within which the metadata applies.
