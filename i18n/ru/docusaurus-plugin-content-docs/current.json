@@ -3,18 +3,6 @@
     "message": "Next",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.Create a Juicebox Project": {
-    "message": "Create a Juicebox Project",
-    "description": "The label for category Create a Juicebox Project in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Resources": {
-    "message": "Resources",
-    "description": "The label for category Resources in sidebar tutorialSidebar"
-  },
-  "sidebar.tutorialSidebar.category.Protocol v2": {
-    "message": "Protocol v2",
-    "description": "The label for category Protocol v2 in sidebar tutorialSidebar"
-  },
   "sidebar.tutorialSidebar.category.Learn": {
     "message": "Learn",
     "description": "The label for category Learn in sidebar tutorialSidebar"
@@ -27,9 +15,13 @@
     "message": "Build",
     "description": "The label for category Build in sidebar tutorialSidebar"
   },
-  "sidebar.tutorialSidebar.category.Treasury Extensions": {
-    "message": "Treasury Extensions",
-    "description": "The label for category Treasury Extensions in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Treasury extensions": {
+    "message": "Treasury extensions",
+    "description": "The label for category Treasury extensions in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Utilities": {
+    "message": "Utilities",
+    "description": "The label for category Utilities in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.API": {
     "message": "API",
@@ -111,6 +103,14 @@
     "message": "| Payment terminals",
     "description": "The label for category | Payment terminals in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.JBERC20PaymentTerminal": {
+    "message": "JBERC20PaymentTerminal",
+    "description": "The label for category JBERC20PaymentTerminal in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBETHPaymentTerminal": {
+    "message": "JBETHPaymentTerminal",
+    "description": "The label for category JBETHPaymentTerminal in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.| Controllers": {
     "message": "| Controllers",
     "description": "The label for category | Controllers in sidebar tutorialSidebar"
@@ -126,6 +126,34 @@
   "sidebar.tutorialSidebar.category.JBChainlinkV3PriceFeed": {
     "message": "JBChainlinkV3PriceFeed",
     "description": "The label for category JBChainlinkV3PriceFeed in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.| Ballots": {
+    "message": "| Ballots",
+    "description": "The label for category | Ballots in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBReconfigurationBufferBallot": {
+    "message": "JBReconfigurationBufferBallot",
+    "description": "The label for category JBReconfigurationBufferBallot in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.| Utilities": {
+    "message": "| Utilities",
+    "description": "The label for category | Utilities in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBETHERC20ProjectPayer": {
+    "message": "JBETHERC20ProjectPayer",
+    "description": "The label for category JBETHERC20ProjectPayer in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBETHERC20ProjectPayerDeployer": {
+    "message": "JBETHERC20ProjectPayerDeployer",
+    "description": "The label for category JBETHERC20ProjectPayerDeployer in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBETHERC20SplitsPayer": {
+    "message": "JBETHERC20SplitsPayer",
+    "description": "The label for category JBETHERC20SplitsPayer in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JBETHERC20SplitsPayerDeployer": {
+    "message": "JBETHERC20SplitsPayerDeployer",
+    "description": "The label for category JBETHERC20SplitsPayerDeployer in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.| Abstract": {
     "message": "| Abstract",
@@ -147,6 +175,14 @@
     "message": "JBPayoutRedemptionPaymentTerminal",
     "description": "The label for category JBPayoutRedemptionPaymentTerminal in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.JBSingleTokenPaymentTerminal": {
+    "message": "JBSingleTokenPaymentTerminal",
+    "description": "The label for category JBSingleTokenPaymentTerminal in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Resources": {
+    "message": "Resources",
+    "description": "The label for category Resources in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.Protocol v1": {
     "message": "Protocol v1",
     "description": "The label for category Protocol v1 in sidebar tutorialSidebar"
@@ -162,5 +198,9 @@
   "sidebar.tutorialSidebar.category.Developers": {
     "message": "Developers",
     "description": "The label for category Developers in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Create a v1 Juicebox Project": {
+    "message": "Create a v1 Juicebox Project",
+    "description": "The label for category Create a v1 Juicebox Project in sidebar tutorialSidebar"
   }
 }

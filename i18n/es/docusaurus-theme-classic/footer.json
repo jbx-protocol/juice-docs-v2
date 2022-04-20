@@ -42,9 +42,5 @@
   "link.item.label.Governance": {
     "message": "Governance",
     "description": "The label of footer link with label=Governance linking to https://snapshot.org/#/jbdao.eth"
-  },
-  "copyright": {
-    "message": "Licensed under The MIT License.",
-    "description": "The footer copyright"
   }
 }
