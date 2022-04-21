@@ -55,7 +55,7 @@ struct JBTokenAmount {
 }
 ```
 
-Using these params, the data source's `payParams(...)` function is responsible for returning a few bits of information:
+Using these params, the data source's `payParams(...)` function is responsible for either reverting or returning a few bits of information:
 
 * `weight` is a fixed point number with 18 decimals that the protocol can use to base arbitrary calculations on. For example, payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md)'s and [`JBERC20PaymentTerminal`](/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)'s, use the `weight` to determine how many project tokens to mint when a project receives a payment (see [the calculation](/api/contracts/jbsingletokenpaymentterminalstore/write/recordpaymentfrom.md)). By default, the protocol will use the `weight` of the project's current funding cycle, which is provided to the data source function in `JBPayParamsData.weight`. Increasing the weight will mint more tokens and decreasing the weight will mint fewer tokens, both as a function of the amount paid. Return the `JBPayParamsData.weight` value if no altered functionality is desired.
 * `memo` is a string that will get emitted within the [`Pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/pay.md) event and sent along to any `delegate` that this function also returns. By default, the protocol will use the `memo` passed in directly by the payer, which is provided to this data source function in `JBPayParamsData.memo`. Return the `JBPayParamsData.memo` value if no altered functionality is desired.
@@ -86,7 +86,7 @@ struct JBRedeemParamsData {
 }
 ```
 
-Using these params, the data source's `redeemParams(...)` function is responsible for returning a few bits of information:
+Using these params, the data source's `redeemParams(...)` function is responsible for either reverting or returning a few bits of information:
 
 * `reclaimAmount` is the amount of tokens the terminal should send out to the redemption beneficiary as a result of burning the amount of tokens specified in `JBRedeemParamsData.tokenCount`, as a fixed point number with the same amount of decimals as `JBRedeemParamsData.decimals`. By default, the protocol will use a recliam amount determined by the standard protocol bonding curve based on the redemption rate the project has configured into its current funding cycle, which is provided to the data source function in `JBRedeemParamsData.reclaimAmount`. Return the `JBRedeemParamsData.reclaimAmount` value if no altered functionality is desired.
 * `memo` is a string that will get emitted within the [`RedeemTokens`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md) event and sent along to any `delegate` that this function also returns. By default, the protocol will use the `memo` passed in directly by the redeemer, which is provided to this data source function in `JBRedeemParamsData.memo`. Return the `JBRedeemParamsData.memo` value if no altered functionality is desired.
