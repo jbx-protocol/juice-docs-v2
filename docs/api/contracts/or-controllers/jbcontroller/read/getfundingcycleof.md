@@ -10,13 +10,13 @@ Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
 
-**A project's current funding cycle along with its metadata.**
+**A project's funding cycle for the specified configuration along with its metadata.**
 
 
 ### Definition
 
 ```
-function currentFundingCycleOf(uint256 _projectId)
+function getFundingCycleOf(uint256 _projectId, uint256 _configuration)
   external
   view
   override
@@ -29,15 +29,15 @@ function currentFundingCycleOf(uint256 _projectId)
 * The view function does not alter state on the blockchain.
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function returns:
-  * `fundingCycle` is the current funding cycle.
-  * `metadata` is the current funding cycle's metadata.
+  * `fundingCycle` is the funding cycle.
+  * `metadata` is the funding cycle's metadata.
 
 #### Body
 
 1.  Get the current funding cycle.
 
     ```
-    fundingCycle = fundingCycleStore.currentOf(_projectId);
+    fundingCycle = fundingCycleStore.get(_projectId, _configuration);
     ```
 
     _Internal references:_
@@ -46,7 +46,7 @@ function currentFundingCycleOf(uint256 _projectId)
 
     _External references:_
 
-    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`get`](/api/contracts/jbfundingcyclestore/read/get.md)
 2.  Expand the metadata of the funding cycle.
 
     ```
@@ -65,20 +65,20 @@ function currentFundingCycleOf(uint256 _projectId)
 ```
 /** 
   @notice
-  A project's current funding cycle along with its metadata.
+  A project's funding cycle for the specified configuration along with its metadata.
 
   @param _projectId The ID of the project to which the funding cycle belongs.
 
-  @return fundingCycle The current funding cycle.
-  @return metadata The current funding cycle's metadata.
+  @return fundingCycle The funding cycle.
+  @return metadata The funding cycle's metadata.
 */
-function currentFundingCycleOf(uint256 _projectId)
+function getFundingCycleOf(uint256 _projectId, uint256 _configuration)
   external
   view
   override
   returns (JBFundingCycle memory fundingCycle, JBFundingCycleMetadata memory metadata)
 {
-  fundingCycle = fundingCycleStore.currentOf(_projectId);
+  fundingCycle = fundingCycleStore.get(_projectId, _configuration);
   metadata = fundingCycle.expandMetadata();
 }
 ```

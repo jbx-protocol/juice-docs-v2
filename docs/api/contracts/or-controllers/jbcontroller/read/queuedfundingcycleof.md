@@ -29,8 +29,8 @@ function queuedFundingCycleOf(uint256 _projectId)
 * The view function does not alter state on the blockchain.
 * The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
 * The function returns:
-  * `fundingCycle` is the latest configured funding cycle.
-  * `metadata` is the latest configured funding cycle's metadata.
+  * `fundingCycle` is the queued funding cycle.
+  * `metadata` is the queued funding cycle's metadata.
 
 #### Body
 

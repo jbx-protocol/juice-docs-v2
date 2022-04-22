@@ -67,7 +67,7 @@ function metadataContentOf(uint256 _projectId, uint256 _domain)
 
 <summary>View funding cycles</summary>
 
-Funding cycle data can be found in the [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md) contract. A funding cycle configuration can be found using [`JBFundingCycleStore.get(...)`](/api/contracts/jbfundingcyclestore/read/get.md), where `_configuration` is the block timestamp when the funding cycle was configured.
+Funding cycle data can be found in the [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md) contract. A funding cycle configuration can be found using [`JBFundingCycleStore.get(...)`](/api/contracts/jbfundingcyclestore/read/get.md), where `_configuration` is the block timestamp when the funding cycle was configured, or using [`JBController.getFundingCycleOf(...)`](/api/contracts/or-controllers/jbcontroller/read/getfundingcycleof.md) if the funding cycle's metadata is needed alongside.
 
 ```
 function get(uint256 _projectId, uint256 _configuration)
@@ -75,6 +75,14 @@ function get(uint256 _projectId, uint256 _configuration)
   view
   override
   returns (JBFundingCycle memory fundingCycle) { ... }
+```
+
+```
+function getFundingCycleOf(uint256 _projectId, uint256 _configuration)
+  external
+  view
+  override
+  returns (JBFundingCycle memory fundingCycle, JBFundingCycleMetadata memory metadata) { ... }
 ```
 
 The project's current funding cycle can be found using [`JBFundingCycleStore.currentOf(...)`](/api/contracts/jbfundingcyclestore/read/currentof.md), or using [`JBController.currentFundingCycleOf(...)`](/api/contracts/or-controllers/jbcontroller/read/currentfundingcycleof.md) if the funding cycle's metadata is needed alongside.
@@ -117,6 +125,30 @@ function queuedFundingCycleOf(uint256 _projectId)
   view
   override
   returns (JBFundingCycle memory fundingCycle, JBFundingCycleMetadata memory metadata) { ... }
+```
+
+The project's latest configured funding cycle can be found using [`JBFundingCycleStore.latestConfiguredOf(...)`](/api/contracts/jbfundingcyclestore/read/latestconfiguredof.md), or using [`JBController.latestConfiguredFundingCycleOf(...)`](/api/contracts/or-controllers/jbcontroller/read/latestconfiguredfundingcycleof.md) if the funding cycle's metadata is needed alongside. These calls also return the current ballot status for the configuration.
+
+If the latest configured funding cycle's ballot is `Approved`, the configuration should also be queued or current. 
+
+```
+function latestConfiguredOf(uint256 _projectId)
+  external
+  view
+  override
+  returns (JBFundingCycle memory fundingCycle, JBBallotState ballotState) { ... }
+```
+
+```
+function latestConfiguredFundingCycleOf(uint256 _projectId)
+  external
+  view
+  override
+  returns (
+    JBFundingCycle memory fundingCycle,
+    JBFundingCycleMetadata memory metadata,
+    JBBallotState ballotState
+  ) { ... }
 ```
 
 </details>
