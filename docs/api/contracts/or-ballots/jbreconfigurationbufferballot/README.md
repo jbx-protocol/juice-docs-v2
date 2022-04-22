@@ -17,6 +17,12 @@ Ethereum mainnet:  not yet.
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`IJBReconfigurationBufferBallot`**](/api/interfaces/ijbreconfigurationbufferballot.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
+#### Inheritance
+
+| Contract                                                                          | Description                                                                                                                               |
+| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
+
 #### Constructor
 
 ```
@@ -52,6 +58,7 @@ constructor(uint256 _duration, IJBFundingCycleStore _fundingCycleStore) {
 | Function                                 | Definition                                                                                                                                                                                   |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`stateOf`**](/api/contracts/or-ballots/jbreconfigurationbufferballot/read/stateof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>uint256 _configured</code></li><li><code>uint256 _start</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBBallotState](/api/enums/jbballotstate.md) ballotState</code></li></ul> |
+| [**`supportsInterface`**](/api/contracts/or-ballots/jbreconfigurationbufferballot/read/supportsinterface.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _interfaceId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool</code></li></ul> |
 
 #### Write
 

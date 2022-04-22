@@ -124,7 +124,7 @@ function addToBalanceOf(
     _Internal references:_
 
     * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
-    * [`_addToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md)
+    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
 
     _External references:_
 

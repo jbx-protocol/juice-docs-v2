@@ -161,7 +161,7 @@ function _payToSplits(
     _Internal references:_
 
     * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
-    * [`_addToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md)
+    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
 
     _External references:_
 

@@ -7,7 +7,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 #### Definition
 
 ```
-interface IJBProjectPayer {
+interface IJBProjectPayer is IERC165 {
   event SetDefaultValues(
     uint256 indexed projectId,
     address indexed beneficiary,

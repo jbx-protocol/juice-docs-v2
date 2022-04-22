@@ -7,7 +7,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 #### Definition
 
 ```
-interface IJBRedemptionDelegate {
+interface IJBRedemptionDelegate is IERC165 {
   function didRedeem(JBDidRedeemData calldata _data) external;
 }
 ```

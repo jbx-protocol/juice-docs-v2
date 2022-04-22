@@ -7,7 +7,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 #### Definition
 
 ```
-interface IJBSplitsPayer {
+interface IJBSplitsPayer is IERC165 {
   event SetDefaultSplits(
     uint256 indexed projectId,
     uint256 indexed domain,

@@ -81,7 +81,7 @@ The project's current funding cycle can be found using [`JBFundingCycleStore.cur
 
 ```
 function currentOf(uint256 _projectId)
-  public
+  external
   view
   override
   returns (JBFundingCycle memory fundingCycle) { ... }
@@ -476,7 +476,8 @@ function addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
   address,
-  string calldata _memo
+  string calldata _memo,
+  bytes calldata _metadata
 ) external payable virtual override isTerminalOf(_projectId) { ... }
 ```
 

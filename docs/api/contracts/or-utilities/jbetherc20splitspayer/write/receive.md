@@ -59,12 +59,13 @@ receive() external payable virtual override { ... }
     if (defaultProjectId != 0)
       if (defaultPreferAddToBalance)
         // Pay the project by adding to its balance if prefered.
-        _addToBalance(
+        _addToBalanceOf(
           defaultProjectId,
           JBTokens.ETH,
           _leftoverAmount,
           18, // decimals.
-          defaultMemo
+          defaultMemo,
+          defaultMetadata
         );
         // Otherwise, issue a payment to the project.
       else
@@ -102,7 +103,7 @@ receive() external payable virtual override { ... }
     * [`defaultMemo`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmemo.md)
     * [`defaultMetadata`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmetadata.md)
     * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
-    * [`_addToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md)
+    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
     * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
 
 </TabItem>
@@ -135,12 +136,13 @@ receive() external payable virtual override nonReentrant {
   if (defaultProjectId != 0)
     if (defaultPreferAddToBalance)
       // Pay the project by adding to its balance if prefered.
-      _addToBalance(
+      _addToBalanceOf(
         defaultProjectId,
         JBTokens.ETH,
         _leftoverAmount,
         18, // decimals.
-        defaultMemo
+        defaultMemo,
+        defaultMetadata
       );
       // Otherwise, issue a payment to the project.
     else

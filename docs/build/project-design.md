@@ -181,7 +181,7 @@ If you wish to automatically split treasury payouts or reserved token distributi
 }
 ```
 
-* If an `allocator` is provided, the split will try to send the split funds to it. Otherwise if a `projectId` is provided the split will try to send funds to that projectId's Juicebox treasury either pay calling `pay(...)` or `addToBalance(...)`, sending the project's tokens to the `beneficiary` if using `pay(...)`. Else if a `beneficiary` is provided the split funds will be sent directly to it. Otherwise, the split will not have a destination defined within it and so applications can treat it as a wildcard. In this case, payouts send the split amount to the `msg.sender` of the transaction.
+* If an `allocator` is provided, the split will try to send the split funds to it. Otherwise if a `projectId` is provided the split will try to send funds to that projectId's Juicebox treasury either pay calling `pay(...)` or `addToBalanceOf(...)`, sending the project's tokens to the `beneficiary` if using `pay(...)`. Else if a `beneficiary` is provided the split funds will be sent directly to it. Otherwise, the split will not have a destination defined within it and so applications can treat it as a wildcard. In this case, payouts send the split amount to the `msg.sender` of the transaction.
 * There are 5 splits in this group.
   * The first will send 5% of the total directly to address `0x0123456789012345678901234567890123456789`.
   * The second will send 6% to the Juicebox treasury of project with ID 420. Since `preferAddToBalance` is false, the payment will be made through the `pay(...)` function of the project's current primary terminal for the token being distributed. Project 420's tokens will be sent to address `0x0123456789012345678901234567890123456789.`.

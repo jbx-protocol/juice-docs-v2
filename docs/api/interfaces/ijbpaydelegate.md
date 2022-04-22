@@ -7,7 +7,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 #### Definition
 
 ```
-interface IJBPayDelegate {
+interface IJBPayDelegate is IERC165 {
   function didPay(JBDidPayData calldata _data) external;
 }
 ```

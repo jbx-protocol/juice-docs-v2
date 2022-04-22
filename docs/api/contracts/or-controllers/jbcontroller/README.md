@@ -22,6 +22,7 @@ Ethereum mainnet:  not yet.
 | Contract                                                                          | Description                                                                                                                               |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`JBOperatable`**](/api/contracts/or-abstract/jboperatable/)                            | Includes convenience functionality for checking a message sender's permissions before executing certain transactions.                     |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
 
 #### Constructor
 
@@ -93,6 +94,7 @@ constructor(
 | [**`latestConfiguredFundingCycleOf`**](/api/contracts/or-controllers/jbcontroller/read/latestconfiguredfundingcycleof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBFundingCycle](/api/data-structures/jbfundingcycle.md) fundingCycle</code></li><li><code>[JBFundingCycleMetadata](/api/data-structures/jbfundingcyclemetadata.md) metadata</code></li><li><code>[JBBallotState](/api/enums/jbballotstate.md) ballotState</code></li></ul> |
 | [**`currentFundingCycleOf`**](/api/contracts/or-controllers/jbcontroller/read/currentfundingcycleof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBFundingCycle](/api/data-structures/jbfundingcycle.md) fundingCycle</code></li><li><code>[JBFundingCycleMetadata](/api/data-structures/jbfundingcyclemetadata.md) metadata</code></li></ul> |
 | [**`queuedFundingCycleOf`**](/api/contracts/or-controllers/jbcontroller/read/queuedfundingcycleof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBFundingCycle](/api/data-structures/jbfundingcycle.md) fundingCycle</code></li><li><code>[JBFundingCycleMetadata](/api/data-structures/jbfundingcyclemetadata.md) metadata</code></li></ul> |
+| [**`supportsInterface`**](/api/contracts/or-controllers/jbcontroller/read/supportsinterface.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _interfaceId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool</code></li></ul> |
 
 #### Write
 

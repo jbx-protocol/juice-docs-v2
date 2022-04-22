@@ -123,7 +123,7 @@ function _addToBalanceOf(
   @param _memo A memo to pass along to the emitted event.
   @param _metadata Extra data to pass along to the terminal.
 */
-function _addToBalance(
+function _addToBalanceOf(
   uint256 _projectId,
   address _token,
   uint256 _amount,

@@ -7,7 +7,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 #### Definition
 
 ```
-interface IJBSplitAllocator {
+interface IJBSplitAllocator is IERC165 {
   function allocate(JBSplitAllocationData calldata _data) external payable;
 }
 ```

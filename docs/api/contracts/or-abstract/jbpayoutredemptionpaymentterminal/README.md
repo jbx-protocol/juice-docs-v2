@@ -132,6 +132,7 @@ constructor(
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`currentEthOverflowOf`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/currentethoverflowof) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 ethOverflow</code></li></ul>                                                                        |
 | [**`heldFeesOf`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/heldfeesof.md)     | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBFee](/api/data-structures/jbfee.md)[] fees</code></li></ul> |
+| [**`supportsInterface`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/supportsinterface.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _interfaceId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool</code></li></ul> |
 
 #### Write
 

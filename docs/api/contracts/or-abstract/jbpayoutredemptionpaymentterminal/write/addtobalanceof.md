@@ -65,7 +65,7 @@ function addToBalanceOf(
 2.  Forward to the internal function to properly account for the added balance.
 
     ```
-    _addToBalanceOf(_projectId, _amount, _memo);
+    _addToBalanceOf(_projectId, _amount, _memo, _metadata);
     ```
 
     _Internal references:_
@@ -105,7 +105,7 @@ function addToBalanceOf(
   // If the terminal's token is ETH, override `_amount` with msg.value.
   else _amount = msg.value;
 
-  _addToBalanceOf(_projectId, _amount, _memo);
+  _addToBalanceOf(_projectId, _amount, _memo, _metadata);
 }
 ```
 

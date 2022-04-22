@@ -58,6 +58,7 @@ constructor(IJBOperatorStore _operatorStore)
 | Function                                                                                                     | Definition                                                                                                                                                                                                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`tokenURI`**](/api/contracts/jbprojects/read/tokenuri.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul>                                                                                                                          |
+| [**`supportsInterface`**](/api/contracts/jbprojects/read/supportsinterface.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _interfaceId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool</code></li></ul> |
 
 #### Write
 

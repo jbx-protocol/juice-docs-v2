@@ -29,7 +29,7 @@ function pay(
 ```
 
 ```
-function addToBalance(
+function addToBalanceOf(
   uint256 _projectId,
   address _token,
   uint256 _amount,

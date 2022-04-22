@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminal`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/README.md)​‌
 
 Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
 

@@ -7,7 +7,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 #### Definition
 
 ```
-interface IJBFundingCycleDataSource {
+interface IJBFundingCycleDataSource is IERC165 {
   function payParams(JBPayParamsData calldata _data)
     external
     view

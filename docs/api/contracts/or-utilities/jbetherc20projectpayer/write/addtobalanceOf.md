@@ -109,7 +109,7 @@ function addToBalanceOf(
     _decimals = 18;
   }
 
-  _addToBalance(_projectId, _token, _amount, _decimals, _memo);
+  _addToBalanceOf(_projectId, _token, _amount, _decimals, _memo, _metadata);
 }
 ```
 

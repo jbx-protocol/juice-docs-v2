@@ -7,7 +7,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 #### Definition
 
 ```
-interface IJBPaymentTerminal {
+interface IJBPaymentTerminal is IERC165 {
   function acceptsToken(address _token) external view returns (bool);
 
   function currencyForToken(address _token) external view returns (uint256);

@@ -7,7 +7,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 #### Definition
 
 ```
-interface IJBFundingCycleBallot {
+interface IJBFundingCycleBallot is IERC165  {
   function duration() external view returns (uint256);
 
   function stateOf(

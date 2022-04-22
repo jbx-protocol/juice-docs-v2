@@ -22,6 +22,7 @@ _There can be several instances of this contract deployed._
 | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | [**`JBETHERC20ProjectPayer`**](/api/contracts/or-utilities/jbetherc20projectpayer) | Sends ETH or ERC20's to a project treasury as it receives direct payments or has it's functions called. |
 | [**`ReentrancyGuard`**](https://docs.openzeppelin.com/contracts/4.x/api/security#ReentrancyGuard) | Contract module that helps prevent reentrant calls to a function. |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
 
 #### Constructor
 
@@ -99,6 +100,12 @@ constructor(
 | [**`defaultSplitsProjectId`**](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsprojectid.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>uint256 defaultSplitsProjectId</code></li></ul>                                                                                                |
 | [**`defaultSplitsDomain`**](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsdomain.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>uint256 defaultSplitsDomain</code></li></ul>                                                                                                |
 | [**`defaultSplitsGroup`**](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsgroup.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>uint256 defaultSplitsGroup</code></li></ul>                                                                                                |
+
+#### Read
+
+| Function                                                       | Definition                                                                                                                                                                                                             |
+| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`supportsInterface`**](/api/contracts/or-utilities/jbetherc20splitspayer/read/supportsinterface.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _interfaceId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool</code></li></ul> |
 
 #### Write
 

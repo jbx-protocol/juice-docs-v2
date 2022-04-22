@@ -33,12 +33,13 @@ receive() external payable virtual override { ... }
 
     ```
     if (defaultPreferAddToBalance)
-      _addToBalance(
+      _addToBalanceOf(
         defaultProjectId,
         JBTokens.ETH,
         address(this).balance,
         18, // balance is a fixed point number with 18 decimals.
-        defaultMemo
+        defaultMemo,
+        defaultMetadata
       );
     else
       _pay(
@@ -64,7 +65,7 @@ receive() external payable virtual override { ... }
     * [`defaultPreferClaimedTokens`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
     * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
     * [`defaultProjectId`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultprojectid.md)
-    * [`_addToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalance.md)
+    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
     * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
 
 </TabItem>
@@ -84,12 +85,13 @@ receive() external payable virtual override { ... }
 */
 receive() external payable virtual override {
   if (defaultPreferAddToBalance)
-    _addToBalance(
+    _addToBalanceOf(
       defaultProjectId,
       JBTokens.ETH,
       address(this).balance,
       18, // balance is a fixed point number with 18 decimals.
-      defaultMemo
+      defaultMemo,
+      defaultMetadata
     );
   else
     _pay(
