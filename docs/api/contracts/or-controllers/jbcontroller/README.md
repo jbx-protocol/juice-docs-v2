@@ -16,6 +16,7 @@ Ethereum mainnet:  not yet.
 | Name                                                                       | Description                                                                                                                                                     |
 | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`IJBController`**](/api/interfaces/ijbcontroller.md) | General interface for the generic controller methods in this contract that interacts with funding cycles and tokens according to the protocol's rules. |
+| [**`IJBMigratable`**](/api/interfaces/ijbmigratable.md) | Allows migrating to this contract, with a hook called to prepare for the migration. |
 
 #### Inheritance
 

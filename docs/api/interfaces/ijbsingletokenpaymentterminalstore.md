@@ -76,8 +76,6 @@ interface IJBSingleTokenPaymentTerminalStore {
     address _holder,
     uint256 _projectId,
     uint256 _tokenCount,
-    uint256 _balanceDecimals,
-    uint256 _balanceCurrency,
     string calldata _memo,
     bytes calldata _metadata
   )
@@ -93,14 +91,12 @@ interface IJBSingleTokenPaymentTerminalStore {
     uint256 _projectId,
     uint256 _amount,
     uint256 _currency,
-    uint256 _balanceCurrency
   ) external returns (JBFundingCycle memory fundingCycle, uint256 distributedAmount);
 
   function recordUsedAllowanceOf(
     uint256 _projectId,
     uint256 _amount,
     uint256 _currency,
-    uint256 _balanceCurrency
   ) external returns (JBFundingCycle memory fundingCycle, uint256 withdrawnAmount);
 
   function recordAddedBalanceFor(uint256 _projectId, uint256 _amount) external;

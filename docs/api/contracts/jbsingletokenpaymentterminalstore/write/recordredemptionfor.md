@@ -23,8 +23,6 @@ function recordRedemptionFor(
   address _holder,
   uint256 _projectId,
   uint256 _tokenCount,
-  uint256 _balanceDecimals,
-  uint256 _balanceCurrency,
   string memory _memo,
   bytes memory _metadata
 )
@@ -43,8 +41,6 @@ function recordRedemptionFor(
   * `_holder` is the account that is having its tokens redeemed.
   * `_projectId` is the ID of the project to which the tokens being redeemed belong.
   * `_tokenCount` is the number of project tokens to redeem, as a fixed point number with 18 decimals.
-  * `_balanceDecimals` is the amount of decimals expected in the returned `reclaimAmount`.
-  * `_balanceCurrency` is the currency that the returned `reclaimAmount` is expected to be in terms of.
   * `_memo` is a memo to pass along to the emitted event.
   * `_metadata` are bytes to send along to the data source, if one is provided.
 * The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
@@ -80,83 +76,123 @@ function recordRedemptionFor(
 3.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. 
 
     ```
-    // Scoped section prevents stack too deep. `_currentOverflow`, `_totalSupply`, and `_data` only used within scope.
+    // Scoped section prevents stack too deep. `_reclaimedTokenAmount`, `_currentOverflow`, and `_totalSupply` only used within scope.
     { ... }
     ```
-
-    1.  Get a reference to the amount of overflow the project has. Either the project's total overflow or the overflow local to the msg.sender's balance will be used depending on how the project's funding cycle is configured. 
-
-        ```
-        // Get the amount of current overflow.
-        // Use the local overflow if the funding cycle specifies that it should be used. Otherwise, use the project's total overflow across all of its terminals.
-        uint256 _currentOverflow = fundingCycle.useTotalOverflowForRedemptions()
-          ? _currentTotalOverflowOf(_projectId, _balanceDecimals, _balanceCurrency)
-          : _overflowDuring(
-            IJBSingleTokenPaymentTerminal(msg.sender),
-            _projectId,
-            fundingCycle,
-            _balanceCurrency
-          );
-        ```
-
-        _Library references:_
-
-        * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
-          * `.useTotalOverflowForRedemptions(...)`
-
-        _Internal references:_
-
-        * [`_currentTotalOverflowOf`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_currenttotaloverflowof.md)
-        * [`_overflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
-
-    2.  Get a reference to the total outstanding supply of project tokens.
+    1.  Keep a reference to the reclaimed token amount, current overflow amount, and total supply variables to use outside of the subsequent scoped block
 
         ```
-        // Get the number of outstanding tokens the project has.
-        uint256 _totalSupply = IJBController(directory.controllerOf(_projectId))
-          .totalOutstandingTokensOf(_projectId, fundingCycle.reservedRate());
+        // Get a reference to the reclaimed token amount struct, the current overflow, and the total token supply.
+        JBTokenAmount memory _reclaimedTokenAmount;
+        uint256 _currentOverflow;
+        uint256 _totalSupply;
         ```
 
-        _Library references:_
-
-        * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
-          * `.reservedRate(...)`
-
-        _Internal references:_
-
-        * [`directory`](/api/contracts/jbsingletokenpaymentterminalstore/properties/directory.md)
-
-        _External references:_
-
-        * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
-        * [`totalOutstandingTokensOf`](/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md)
-
-    3.  Make sure the provided token count is within the bounds of the total supply.
+    2.  The following other scoped block uses the same hack to prevent a "Stack too deep" error. 
 
         ```
-        // Can't redeem more tokens that is in the supply.
-        if (_tokenCount > _totalSupply) revert INSUFFICIENT_TOKENS();
+        // Another scoped section prevents stack too deep. `_token`, `_decimals`, and `_currency` only used within scope.
+        { ... }
         ```
 
-    4.  Get a reference to the reclaimable overflow if there is overflow. 
+        1.  Get a reference to the terminal's token, decimals, and currency.
 
-        ```
-        if (_currentOverflow > 0)
-          // Calculate reclaim amount using the current overflow amount.
-          reclaimAmount = _reclaimableOverflowDuring(
-            _projectId,
-            fundingCycle,
-            _tokenCount,
-            _totalSupply,
-            _currentOverflow
-          );
-        ```
+            ```
+            // Get a reference to the terminal's tokens.
+            address _token = IJBSingleTokenPaymentTerminal(msg.sender).token();
 
-        _Internal references:_
+            // Get a reference to the terminal's decimals.
+            uint256 _decimals = IJBSingleTokenPaymentTerminal(msg.sender).decimals();
 
-        * [`_reclaimableOverflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_reclaimableoverflowduring.md)
+            // Get areference to the terminal's currency.
+            uint256 _currency = IJBSingleTokenPaymentTerminal(msg.sender).currency();
+            ```
 
-    5.  If the project's current funding cycle is configured to use a data source when making redemptions, ask the data source for the parameters that should be used throughout the rest of the function given provided contextual values in a [`JBRedeemParamsData`](/api/data-structures/jbredeemparamsdata.md) structure. Otherwise default parameters are used.
+            _External references:_
+
+            * [`token`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
+            * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
+            * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+
+        2.  Get a reference to the amount of overflow the project has. Either the project's total overflow or the overflow local to the msg.sender's balance will be used depending on how the project's funding cycle is configured. 
+
+            ```
+            // Get the amount of current overflow.
+            // Use the local overflow if the funding cycle specifies that it should be used. Otherwise, use the project's total overflow across all of its terminals.
+            _currentOverflow = fundingCycle.useTotalOverflowForRedemptions()
+              ? _currentTotalOverflowOf(_projectId, _decimals, _currency)
+              : _overflowDuring(
+                IJBSingleTokenPaymentTerminal(msg.sender),
+                _projectId,
+                fundingCycle,
+                _currency
+              );
+            ```
+
+            _Library references:_
+
+            * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+              * `.useTotalOverflowForRedemptions(...)`
+
+            _Internal references:_
+
+            * [`_currentTotalOverflowOf`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_currenttotaloverflowof.md)
+            * [`_overflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
+
+        3.  Get a reference to the total outstanding supply of project tokens.
+
+            ```
+            // Get the number of outstanding tokens the project has.
+            _totalSupply = IJBController(directory.controllerOf(_projectId))
+              .totalOutstandingTokensOf(_projectId, fundingCycle.reservedRate());
+            ```
+
+            _Library references:_
+
+            * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+              * `.reservedRate(...)`
+
+            _Internal references:_
+
+            * [`directory`](/api/contracts/jbsingletokenpaymentterminalstore/properties/directory.md)
+
+            _External references:_
+
+            * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
+            * [`totalOutstandingTokensOf`](/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md)
+
+        4.  Make sure the provided token count is within the bounds of the total supply.
+
+            ```
+            // Can't redeem more tokens that is in the supply.
+            if (_tokenCount > _totalSupply) revert INSUFFICIENT_TOKENS();
+            ```
+
+        5.  Get a reference to the reclaimable overflow if there is overflow. 
+
+            ```
+            if (_currentOverflow > 0)
+              // Calculate reclaim amount using the current overflow amount.
+              reclaimAmount = _reclaimableOverflowDuring(
+                _projectId,
+                fundingCycle,
+                _tokenCount,
+                _totalSupply,
+                _currentOverflow
+              );
+            ```
+
+            _Internal references:_
+
+            * [`_reclaimableOverflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_reclaimableoverflowduring.md)
+
+        6.  Construct the reclaim amount struct.
+
+            ```
+            _reclaimedTokenAmount = JBTokenAmount(_token, reclaimAmount, _decimals, _currency);
+            ```
+
+    3.  If the project's current funding cycle is configured to use a data source when making redemptions, ask the data source for the parameters that should be used throughout the rest of the function given provided contextual values in a [`JBRedeemParamsData`](/api/data-structures/jbredeemparamsdata.md) structure. Otherwise default parameters are used.
 
         ```
         // If the funding cycle has configured a data source, use it to derive a claim amount and memo.
@@ -169,9 +205,7 @@ function recordRedemptionFor(
             _tokenCount,
             _totalSupply,
             _currentOverflow,
-            _balanceDecimals,
-            _balanceCurrency,
-            reclaimAmount,
+            _reclaimedTokenAmount,
             fundingCycle.useTotalOverflowForRedemptions(),
             fundingCycle.redemptionRate(),
             fundingCycle.ballotRedemptionRate(),
@@ -236,8 +270,6 @@ function recordRedemptionFor(
   @param _holder The account that is having its tokens redeemed.
   @param _projectId The ID of the project to which the tokens being redeemed belong.
   @param _tokenCount The number of project tokens to redeem, as a fixed point number with 18 decimals.
-  @param _balanceDecimals The amount of decimals expected in the returned `reclaimAmount`.
-  @param _balanceCurrency The currency that the returned `reclaimAmount` is expected to be in terms of.
   @param _memo A memo to pass along to the emitted event.
   @param _metadata Bytes to send along to the data source, if one is provided.
 
@@ -271,35 +303,56 @@ function recordRedemptionFor(
   // The current funding cycle must not be paused.
   if (fundingCycle.redeemPaused()) revert FUNDING_CYCLE_REDEEM_PAUSED();
 
-  // Scoped section prevents stack too deep. `_currentOverflow`, `_totalSupply`, and `_data` only used within scope.
+  // Scoped section prevents stack too deep. `_reclaimedTokenAmount`, `_currentOverflow`, and `_totalSupply` only used within scope.
   {
-    // Get the amount of current overflow.
-    // Use the local overflow if the funding cycle specifies that it should be used. Otherwise, use the project's total overflow across all of its terminals.
-    uint256 _currentOverflow = fundingCycle.useTotalOverflowForRedemptions()
-      ? _currentTotalOverflowOf(_projectId, _balanceDecimals, _balanceCurrency)
-      : _overflowDuring(
-        IJBSingleTokenPaymentTerminal(msg.sender),
+    // Get a reference to the reclaimed token amount struct, the current overflow, and the total token supply.
+    JBTokenAmount memory _reclaimedTokenAmount;
+    uint256 _currentOverflow;
+    uint256 _totalSupply;
+
+    // Another scoped section prevents stack too deep. `_token`, `_decimals`, and `_currency` only used within scope.
+    {
+      // Get a reference to the terminal's tokens.
+      address _token = IJBSingleTokenPaymentTerminal(msg.sender).token();
+
+      // Get a reference to the terminal's decimals.
+      uint256 _decimals = IJBSingleTokenPaymentTerminal(msg.sender).decimals();
+
+      // Get areference to the terminal's currency.
+      uint256 _currency = IJBSingleTokenPaymentTerminal(msg.sender).currency();
+
+      // Get the amount of current overflow.
+      // Use the local overflow if the funding cycle specifies that it should be used. Otherwise, use the project's total overflow across all of its terminals.
+      _currentOverflow = fundingCycle.useTotalOverflowForRedemptions()
+        ? _currentTotalOverflowOf(_projectId, _decimals, _currency)
+        : _overflowDuring(
+          IJBSingleTokenPaymentTerminal(msg.sender),
+          _projectId,
+          fundingCycle,
+          _currency
+        );
+
+      // Get the number of outstanding tokens the project has.
+      _totalSupply = IJBController(directory.controllerOf(_projectId)).totalOutstandingTokensOf(
         _projectId,
-        fundingCycle,
-        _balanceCurrency
+        fundingCycle.reservedRate()
       );
 
-    // Get the number of outstanding tokens the project has.
-    uint256 _totalSupply = IJBController(directory.controllerOf(_projectId))
-      .totalOutstandingTokensOf(_projectId, fundingCycle.reservedRate());
+      // Can't redeem more tokens that is in the supply.
+      if (_tokenCount > _totalSupply) revert INSUFFICIENT_TOKENS();
 
-    // Can't redeem more tokens that is in the supply.
-    if (_tokenCount > _totalSupply) revert INSUFFICIENT_TOKENS();
+      if (_currentOverflow > 0)
+        // Calculate reclaim amount using the current overflow amount.
+        reclaimAmount = _reclaimableOverflowDuring(
+          _projectId,
+          fundingCycle,
+          _tokenCount,
+          _totalSupply,
+          _currentOverflow
+        );
 
-    if (_currentOverflow > 0)
-      // Calculate reclaim amount using the current overflow amount.
-      reclaimAmount = _reclaimableOverflowDuring(
-        _projectId,
-        fundingCycle,
-        _tokenCount,
-        _totalSupply,
-        _currentOverflow
-      );
+      _reclaimedTokenAmount = JBTokenAmount(_token, reclaimAmount, _decimals, _currency);
+    }
 
     // If the funding cycle has configured a data source, use it to derive a claim amount and memo.
     if (fundingCycle.useDataSourceForRedeem()) {
@@ -311,9 +364,7 @@ function recordRedemptionFor(
         _tokenCount,
         _totalSupply,
         _currentOverflow,
-        _balanceDecimals,
-        _balanceCurrency,
-        reclaimAmount,
+        _reclaimedTokenAmount,
         fundingCycle.useTotalOverflowForRedemptions(),
         fundingCycle.redemptionRate(),
         fundingCycle.ballotRedemptionRate(),

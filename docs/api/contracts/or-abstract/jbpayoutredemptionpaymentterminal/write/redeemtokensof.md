@@ -37,6 +37,7 @@ function redeemTokensOf(
   * `_holder` is the account to redeem tokens for.
   * `_projectId` is the ID of the project to which the tokens being redeemed belong.
   * `_tokenCount` is the number of project tokens to redeem, as a fixed point number with 18 decimals.
+  * `_token` is the token being reclaimed. This terminal ignores this property since it only manages one currency.
   * `_minReturnedTokens` is the minimum amount of terminal tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   * `_beneficiary` is the address to send the terminal tokens to.
   * `_memo` is a memo to pass along to the emitted event.
@@ -48,147 +49,24 @@ function redeemTokensOf(
 
 #### Body
 
-1.  Make sure the provided beneficiary of the claimed funds isn't the zero address.
+1.  Forward to the internal function.
 
     ```
-    // Can't send reclaimed funds to the zero address.
-    if (_beneficiary == address(0)) revert REDEEM_TO_ZERO_ADDRESS();
-    ```
-2.  Define a reference to the project's funding cycle during which the redemption is being made.
-
-    ```
-    // Define variables that will be needed outside the scoped section below.
-    // Keep a reference to the funding cycle during which the redemption is being made.
-    JBFundingCycle memory _fundingCycle;
-    ```
-3.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. 
-
-    ```
-    // Scoped section prevents stack too deep. `_delegate` only used within scope.
-    { ... }
-    ```
-
-    1.  Get a reference to the redemption delegate that. 
-
-        ```
-        IJBRedemptionDelegate _delegate;
-        ```
-
-    2.  Record the redemption and get a reference to the funding cycle during which the redemption was made, the terminal token amount that should be reclaimed, a delegate to callback to, and an updated memo.
-
-        ```
-        // Record the redemption.
-        (_fundingCycle, reclaimAmount, _delegate, _memo) = store.recordRedemptionFor(
-          _holder,
-          _projectId,
-          _tokenCount,
-          decimals, // The fixed point balance has this terminal's token's number of decimals.
-          currency, // The balance is in terms of this terminal's currency.
-          _memo,
-          _metadata
-        );
-        ```
-
-        _Internal references:_
-
-        * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
-        * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
-
-        _External references:_
-
-        * [`recordRedemptionFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordredemptionfor.md)
-
-    3.  Make sure the amount of terminal tokens being reclaimed is at least as much as the specified minimum.
-
-        ```
-        // The amount being reclaimed must be at least as much as was expected.
-        if (reclaimAmount < _minReturnedTokens) revert INADEQUATE_RECLAIM_AMOUNT();
-        ```
-
-    4.  Burn the project's tokens if needed.
-
-        ```
-        // Burn the project tokens.
-        if (_tokenCount > 0)
-          IJBController(directory.controllerOf(_projectId)).burnTokensOf(
-            _holder,
-            _projectId,
-            _tokenCount,
-            '',
-            false
-          );
-        ```
-        _Internal references:_
-
-        * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
-
-        _External references:_
-
-        * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
-        * [`burnTokensOf`](/api/contracts/or-controllers/jbcontroller/write/burntokensof.md)
-
-    5.  If a delegate was provided, callback to its `didRedeem` function, and emit an event with the relevant parameters..
-
-        ```
-        // If a delegate was returned by the data source, issue a callback to it.
-        if (_delegate != IJBRedemptionDelegate(address(0))) {
-          JBDidRedeemData memory _data = JBDidRedeemData(
-            _holder,
-            _projectId,
-            _tokenCount,
-            JBTokenAmount(token, reclaimAmount, decimals, currency),
-            _beneficiary,
-            _memo,
-            _metadata
-          );
-          _delegate.didRedeem(_data);
-          emit DelegateDidRedeem(_delegate, _data, msg.sender);
-        }
-        ```
-
-        _Internal references:_
-
-        * [`token`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
-        * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
-        * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
-
-        _External references:_
-
-        * [`didRedeem`](/api/interfaces/ijbredemptiondelegate.md)
-
-        _Event references:_
-
-        * [`DelegateDidRedeem`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/delegatedidredeem.md)
-
-4.  If an amount is being reclaimed, send the funds to the beneficiary.
-
-    ```
-    // Send the reclaimed funds to the beneficiary.
-    if (reclaimAmount > 0) _transferFrom(address(this), _beneficiary, reclaimAmount);
+    return
+      _redeemTokensOf(
+        _holder,
+        _projectId,
+        _tokenCount,
+        _minReturnedTokens,
+        _beneficiary,
+        _memo,
+        _metadata
+      );
     ```
 
     _Internal references:_
 
-    * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
-5.  Emit a `RedeemTokens` event with the relevant parameters.
-
-    ```
-    emit RedeemTokens(
-      _fundingCycle.configuration,
-      _fundingCycle.number,
-      _projectId,
-      _holder,
-      _beneficiary,
-      _tokenCount,
-      reclaimAmount,
-      _memo,
-      msg.sender
-    );
-    ```
-
-    _Event references:_
-
-    * [`RedeemTokens`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md)
+    * [`_redeemTokensOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_redeemtokensof.md)
 
 </TabItem>
 
@@ -205,6 +83,7 @@ function redeemTokensOf(
   @param _holder The account to redeem tokens for.
   @param _projectId The ID of the project to which the tokens being redeemed belong.
   @param _tokenCount The number of project tokens to redeem, as a fixed point number with 18 decimals.
+  ignored: _token The token being reclaimed. This terminal ignores this property since it only manages one token. 
   @param _minReturnedTokens The minimum amount of terminal tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   @param _beneficiary The address to send the terminal tokens to.
   @param _memo A memo to pass along to the emitted event.
@@ -227,91 +106,18 @@ function redeemTokensOf(
   requirePermission(_holder, _projectId, JBOperations.REDEEM)
   returns (uint256 reclaimAmount)
 {
-  // Can't send reclaimed funds to the zero address.
-  if (_beneficiary == address(0)) revert REDEEM_TO_ZERO_ADDRESS();
-
-    // Define variables that will be needed outside the scoped section below.
-  // Keep a reference to the funding cycle during which the redemption is being made.
-  JBFundingCycle memory _fundingCycle;
-
-  // Scoped section prevents stack too deep. `_delegate` only used within scope.
-  {
-    IJBRedemptionDelegate _delegate;
-
-    // Record the redemption.
-    (_fundingCycle, reclaimAmount, _delegate, _memo) = store.recordRedemptionFor(
+  return
+    _redeemTokensOf(
       _holder,
       _projectId,
       _tokenCount,
-      decimals, // The fixed point balance has this terminal's token's number of decimals.
-      currency, // The balance is in terms of this terminal's currency.
+      _minReturnedTokens,
+      _beneficiary,
       _memo,
       _metadata
     );
-
-    // The amount being reclaimed must be at least as much as was expected.
-    if (reclaimAmount < _minReturnedTokens) revert INADEQUATE_RECLAIM_AMOUNT();
-
-    // Burn the project tokens.
-    if (_tokenCount > 0)
-      IJBController(directory.controllerOf(_projectId)).burnTokensOf(
-        _holder,
-        _projectId,
-        _tokenCount,
-        '',
-        false
-      );
-
-    // If a delegate was returned by the data source, issue a callback to it.
-    if (_delegate != IJBRedemptionDelegate(address(0))) {
-      JBDidRedeemData memory _data = JBDidRedeemData(
-        _holder,
-        _projectId,
-        _tokenCount,
-        JBTokenAmount(token, reclaimAmount, decimals, currency),
-        _beneficiary,
-        _memo,
-        _metadata
-      );
-      _delegate.didRedeem(_data);
-      emit DelegateDidRedeem(_delegate, _data, msg.sender);
-    }
-  }
-
-  // Send the reclaimed funds to the beneficiary.
-  if (reclaimAmount > 0) _transferFrom(address(this), _beneficiary, reclaimAmount);
-
-  emit RedeemTokens(
-    _fundingCycle.configuration,
-    _fundingCycle.number,
-    _projectId,
-    _holder,
-    _beneficiary,
-    _tokenCount,
-    reclaimAmount,
-    _memo,
-    _metadata,
-    msg.sender
-  );
 }
 ```
-
-</TabItem>
-
-<TabItem value="Errors" label="Errors">
-
-| String                       | Description                                             |
-| ---------------------------- | ------------------------------------------------------- |
-| **`REDEEM_TO_ZERO_ADDRESS`** | Thrown if the zero address was sent as the beneficiary. |
-| **`INADEQUATE_RECLAIM_AMOUNT`** | Thrown if the amount being reclaimed is less than the specified minimum. |
-
-</TabItem>
-
-<TabItem value="Events" label="Events">
-
-| Name                                           | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`RedeemTokens`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/redeemtokens.md)                       | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address holder</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 claimedAmount</code></li><li><code>string memo</code></li><li><code>bytes metadata</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

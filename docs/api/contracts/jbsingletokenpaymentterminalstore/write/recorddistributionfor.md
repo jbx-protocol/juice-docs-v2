@@ -20,8 +20,7 @@ _The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijb
 function recordDistributionFor(
   uint256 _projectId,
   uint256 _amount,
-  uint256 _currency,
-  uint256 _balanceCurrency
+  uint256 _currency
 )
   external
   override
@@ -33,7 +32,6 @@ function recordDistributionFor(
   * `_projectId` is the ID of the project that is having funds distributed.
   * `_amount` is the amount to use from the distribution limit, as a fixed point number.
   * `_currency` is the currency of the `_amount`. This must match the project's current funding cycle's currency.
-  * `_balanceCurrency` is the currency that the balance is expected to be in terms of.
 * The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns:
   * `fundingCycle` is the funding cycle during which the withdrawal was made.
@@ -110,7 +108,14 @@ function recordDistributionFor(
     if (_currency != _distributionLimitCurrencyOf) revert CURRENCY_MISMATCH();
     ```
 
-7.  Calculate how much of the balance will be used. If the currency of the distribution limit and the balance are the same, no price conversion is necessary. Otherwise, convert the distribution limit currency to that of the balance. 
+7.  Get a reference to the terminal's currency.
+
+    ```
+    // Get a reference to the terminal's currency.
+    uint256 _balanceCurrency = IJBSingleTokenPaymentTerminal(msg.sender).currency();
+    ```
+
+8.  Calculate how much of the balance will be used. If the currency of the distribution limit and the balance are the same, no price conversion is necessary. Otherwise, convert the distribution limit currency to that of the balance. 
 
     ```
     // Convert the amount to the balance's currency.
@@ -134,7 +139,7 @@ function recordDistributionFor(
     _External references:_
 
     * [`priceFor`](/api/contracts/jbprices/read/pricefor.md)
-8.  Make sure the project has access to the amount being distributed.
+9.  Make sure the project has access to the amount being distributed.
 
     ```
     // The amount being distributed must be available.
@@ -145,7 +150,7 @@ function recordDistributionFor(
     _Internal references:_
 
     * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
-9.  Store the new used distributed amount.
+10. Store the new used distributed amount.
 
     ```
     // Store the new amount.
@@ -157,7 +162,7 @@ function recordDistributionFor(
     _Internal references:_
 
     * [`usedDistributionLimitOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md)
-10. Store the decremented balance.
+11. Store the decremented balance.
 
     ```
     // Removed the distributed funds from the project's token balance.
@@ -185,7 +190,6 @@ function recordDistributionFor(
   @param _projectId The ID of the project that is having funds distributed.
   @param _amount The amount to use from the distribution limit, as a fixed point number.
   @param _currency The currency of the `_amount`. This must match the project's current funding cycle's currency.
-  @param _balanceCurrency The currency that the balance is expected to be in terms of.
 
   @return fundingCycle The funding cycle during which the distribution was made.
   @return distributedAmount The amount of terminal tokens distributed, as a fixed point number with the same amount of decimals as its relative terminal.
@@ -228,6 +232,9 @@ function recordDistributionFor(
 
   // Make sure the currencies match.
   if (_currency != _distributionLimitCurrencyOf) revert CURRENCY_MISMATCH();
+
+  // Get a reference to the terminal's currency.
+  uint256 _balanceCurrency = IJBSingleTokenPaymentTerminal(msg.sender).currency();
 
   // Convert the amount to the balance's currency.
   distributedAmount = (_currency == _balanceCurrency) ? _amount : PRBMath

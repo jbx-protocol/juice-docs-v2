@@ -20,8 +20,7 @@ _The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijb
 function recordUsedAllowanceOf(
   uint256 _projectId,
   uint256 _amount,
-  uint256 _currency,
-  uint256 _balanceCurrency
+  uint256 _currency
 )
   external
   override
@@ -33,7 +32,6 @@ function recordUsedAllowanceOf(
   * `_projectId` is the ID of the project to use the allowance of.
   * `_amount` is the amount to use from the allowance, as a fixed point number. 
   * `_currency` is the currency of the `_amount`. Must match the currency of the overflow allowance.
-  * `_balanceCurrency` is the currency that the balance is expected to be in terms of.
 * The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns:
   * `fundingCycle` is the funding cycle during which the withdrawal was made.
@@ -97,7 +95,14 @@ function recordUsedAllowanceOf(
     if (_currency != _overflowAllowanceCurrency) revert CURRENCY_MISMATCH();
     ```
 
-6.  Get a reference to the current distribution limit of the project during the current funding cycle configuration.
+6.  Get a reference to the terminal's currency.
+
+    ```
+    // Get a reference to the terminal's currency.
+    uint256 _balanceCurrency = IJBSingleTokenPaymentTerminal(msg.sender).currency();
+    ```
+
+7.  Get a reference to the current distribution limit of the project during the current funding cycle configuration.
 
     ```
     // Get the current funding target
@@ -114,7 +119,7 @@ function recordUsedAllowanceOf(
     * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
     * [`distributionLimitOf`](/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
 
-7.  Calculate how much of the balance will be used. If the currency of the allowance and the balance are the same, no price conversion is necessary. Otherwise, convert the allowance currency to that of the balance. 
+8.  Calculate how much of the balance will be used. If the currency of the allowance and the balance are the same, no price conversion is necessary. Otherwise, convert the allowance currency to that of the balance. 
 
     ```
     // Convert the amount to this store's terminal's token.
@@ -140,7 +145,7 @@ function recordUsedAllowanceOf(
 
     * [`priceFor`](/api/contracts/jbprices/read/pricefor.md)
 
-8.  Make sure the amount being used is available in overflow.
+9.  Make sure the amount being used is available in overflow.
 
     ```
     // The amount being distributed must be available in the overflow.
@@ -158,7 +163,7 @@ function recordUsedAllowanceOf(
     _Internal references:_
 
     * [`_overflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
-9.  Store the incremented value that tracks how much of a project's allowance was used during the current funding cycle configuration.
+10. Store the incremented value that tracks how much of a project's allowance was used during the current funding cycle configuration.
 
     ```
     // Store the incremented value.
@@ -170,7 +175,8 @@ function recordUsedAllowanceOf(
     _Internal references:_
 
     * [`usedOverflowAllowanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/usedoverflowallowanceof.md)
-10. Store the decremented balance.
+
+11. Store the decremented balance.
 
     ```
     // Update the project's balance.
@@ -238,6 +244,9 @@ function recordUsedAllowanceOf(
 
   // Make sure the currencies match.
   if (_currency != _overflowAllowanceCurrency) revert CURRENCY_MISMATCH();
+
+  // Get a reference to the terminal's currency.
+  uint256 _balanceCurrency = IJBSingleTokenPaymentTerminal(msg.sender).currency();
 
   // Convert the amount to this store's terminal's token.
   usedAmount = (_currency == _balanceCurrency)
