@@ -75,9 +75,7 @@ struct JBRedeemParamsData {
   uint256 tokenCount;
   uint256 totalSupply;
   uint256 overflow;
-  uint256 decimals;
-  uint256 currency;
-  uint256 reclaimAmount;
+  JBTokenAmount reclaimAmount;
   bool useTotalOverflow;
   uint256 redemptionRate;
   uint256 ballotRedemptionRate;
