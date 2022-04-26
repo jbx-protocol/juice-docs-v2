@@ -76,11 +76,23 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
+          /*{
             type: 'doc',
             docId: 'intro',
             position: 'left',
             label: 'Docs',
+          },*/
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'protocol',
+            label: 'Docs',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'resources',
+            label: 'Resources',
           },
 	  {
 	    type: 'localeDropdown',
