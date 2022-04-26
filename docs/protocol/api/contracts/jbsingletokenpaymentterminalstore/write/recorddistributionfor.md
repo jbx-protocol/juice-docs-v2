@@ -3,16 +3,16 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/api/jbdirectory/write/)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/protocol/api/jbdirectory/write/)​‌
 
-Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
+Interface: [`IJBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
 
 **Records newly distributed funds for a project.**
 
-_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)._
+_The msg.sender must be an [`IJBSingleTokenPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)._
 
 #### Definition
 
@@ -32,7 +32,7 @@ function recordDistributionFor(
   * `_projectId` is the ID of the project that is having funds distributed.
   * `_amount` is the amount to use from the distribution limit, as a fixed point number.
   * `_currency` is the currency of the `_amount`. This must match the project's current funding cycle's currency.
-* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns:
   * `fundingCycle` is the funding cycle during which the withdrawal was made.
   * `distributedAmount` is the amount of terminal tokens distributed, as a fixed point number with the same amount of decimals as its relative terminal.
@@ -48,7 +48,7 @@ function recordDistributionFor(
 
     _External references:_
 
-    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Make sure the current funding cycle doesn't have distributions paused.
 
     ```
@@ -58,7 +58,7 @@ function recordDistributionFor(
 
     _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.distributionsPaused(...)`
 
 3.  Calculate the new total amount that has been distributed during this funding cycle by adding the amount being distributed to the used distribution limit.
@@ -72,7 +72,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`usedDistributionLimitOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md)
+    * [`usedDistributionLimitOf`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md)
 
 4.  Get a reference to the currrent distribution limit of the project during the current funding cycle, and the currency the distribution limit is in terms of.
 
@@ -90,8 +90,8 @@ function recordDistributionFor(
 
     _External references:_
 
-    * [`distributionLimitOf`](/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
-    * [`token`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
+    * [`distributionLimitOf`](/protocol/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
+    * [`token`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
 
 5.  Make sure the new total amount distributed will be at most the distribution limit.
 
@@ -134,11 +134,11 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`_MAX_FIXED_POINT_FIDELITY`](/api/contracts/jbsingletokenpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
+    * [`_MAX_FIXED_POINT_FIDELITY`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/-_max_fixed_point_fidelity.md)
 
     _External references:_
 
-    * [`priceFor`](/api/contracts/jbprices/read/pricefor.md)
+    * [`priceFor`](/protocol/api/contracts/jbprices/read/pricefor.md)
 9.  Make sure the project has access to the amount being distributed.
 
     ```
@@ -149,7 +149,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 10. Store the new used distributed amount.
 
     ```
@@ -161,7 +161,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`usedDistributionLimitOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md)
+    * [`usedDistributionLimitOf`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md)
 11. Store the decremented balance.
 
     ```
@@ -173,7 +173,7 @@ function recordDistributionFor(
 
     _Internal references:_
 
-    * [`balanceOf`](/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
+    * [`balanceOf`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md)
 
 </TabItem>
 

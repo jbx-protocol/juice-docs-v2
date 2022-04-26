@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBOperatable`](/api/contracts/or-abstract/jboperatable/README.md)​‌
+Contract: [`JBOperatable`](/protocol/api/contracts/or-abstract/jboperatable/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -38,7 +38,7 @@ modifier requirePermissionAllowingOverride(
 
     _Internal references:_
 
-    * [`_requirePermissionAllowingOverride`](/api/contracts/or-abstract/jboperatable/read/-_requirepermissionallowingoverride.md)
+    * [`_requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/read/-_requirepermissionallowingoverride.md)
 
 2.  Continue the rest of the function.
 

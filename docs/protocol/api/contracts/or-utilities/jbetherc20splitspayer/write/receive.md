@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md)
+Contract: [`JBETHERC20SplitsPayer`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/README.md)
 
-Interface: [`IJBSplitsPayer`](/api/interfaces/ijbsplitspayer.md)
+Interface: [`IJBSplitsPayer`](/protocol/api/interfaces/ijbsplitspayer.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -43,7 +43,7 @@ receive() external payable virtual override { ... }
 
     _Internal references:_
 
-    * [`_payToSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md)
+    * [`_payToSplits`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md)
 
 2.  If there's no leftover amount, there's nothing left to do.
 
@@ -92,19 +92,19 @@ receive() external payable virtual override { ... }
 
     * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`
-    * [`JBTokens`](/api/libraries/jbtokens.md)
+    * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
       * `.ETH`
       
     _Internal references:_
 
 
-    * [`defaultProjectId`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultprojectid.md)
-    * [`defaultPreferClaimedTokens`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
-    * [`defaultMemo`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmemo.md)
-    * [`defaultMetadata`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmetadata.md)
-    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
-    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
-    * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
+    * [`defaultProjectId`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultprojectid.md)
+    * [`defaultPreferClaimedTokens`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
+    * [`defaultMemo`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmemo.md)
+    * [`defaultMetadata`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmetadata.md)
+    * [`defaultBeneficiary`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
+    * [`_addToBalanceOf`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
+    * [`_pay`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
 
 </TabItem>
 

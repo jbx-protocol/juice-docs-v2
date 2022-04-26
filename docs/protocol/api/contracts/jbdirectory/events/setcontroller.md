@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setControllerOf`](/api/contracts/jbdirectory/write/setcontrollerof.md)
+* [`setControllerOf`](/protocol/api/contracts/jbdirectory/write/setcontrollerof.md)
 
 Definition:
 

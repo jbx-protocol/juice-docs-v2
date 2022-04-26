@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
+Contract: [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
 
 Interface: [`IERC165`](https://docs.openzeppelin.com/contracts/2.x/api/introspection#IERC165)
 

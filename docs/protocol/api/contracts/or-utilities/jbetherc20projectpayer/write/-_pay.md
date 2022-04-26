@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
+Contract: [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -50,11 +50,11 @@ function _pay(
 
     _Internal references:_
 
-    * [`directory`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/directory.md)
+    * [`directory`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/directory.md)
 
     _External references:_
 
-    * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
+    * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
 2.  Make sure there is a terminal to make a payment towards.
 
     ```
@@ -71,7 +71,7 @@ function _pay(
 
     _External references:_
 
-    * [`decimalsForToken`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
+    * [`decimalsForToken`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
 
 4.  If the token being paid is an ERC20, approve the terminal to spend the amount of tokens from this terminal.
 
@@ -82,7 +82,7 @@ function _pay(
 
     _Library references:_
 
-    * [`JBTokens`](/api/libraries/jbtokens.md)
+    * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
       * `.ETH`
 
     _External references:_
@@ -98,7 +98,7 @@ function _pay(
 
     _Library references:_
 
-    * [`JBTokens`](/api/libraries/jbtokens.md)
+    * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
       * `.ETH`
       
 6.  Send the payment to the terminal with the provided properties. If no beneficiary was specified, set the message sender as the beneficiary.
@@ -120,7 +120,7 @@ function _pay(
 
     _External references:_
 
-    * [`pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
+    * [`pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
     
 </TabItem>
 

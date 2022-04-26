@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
+Contract: [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
 
-Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
+Interface: [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -39,7 +39,7 @@ function pay(
   * `_metadata` are bytes to send along to the data source, delegate, and emitted event, if provided.
 * The function can be accessed externally by anyone, or internally from this contract or one that inherits it.
 * The function can be overriden by inheriting contracts.
-* The function overrides a function definition from the [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md) interface.
+* The function overrides a function definition from the [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -62,7 +62,7 @@ function pay(
 
     _Library references:_
 
-    * [`JBTokens`](/api/libraries/jbtokens.md)
+    * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
       * `.ETH`
 
     _External references:_
@@ -86,7 +86,7 @@ function pay(
 
     _Internal references:_
 
-    * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
+    * [`_pay`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
     
 </TabItem>
 

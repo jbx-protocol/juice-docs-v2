@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBDirectory`](/api/contracts/jbdirectory/README.md)​‌
+Contract: [`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md)​‌
 
-Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
+Interface: [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -35,8 +35,8 @@ function setPrimaryTerminalOf(
   * `_projectId` is the ID of the project for which a primary token is being set.
   * `_token` is the token to set the primary terminal of.
   * `_terminal` is the terminal to make primary.
-* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.SET_PRIMARY_TERMINAL`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
-* The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
+* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.SET_PRIMARY_TERMINAL`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function overrides a function definition from the [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -50,7 +50,7 @@ function setPrimaryTerminalOf(
 
     _External references:_
 
-    * [`acceptsToken`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
+    * [`acceptsToken`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
 2.  Make sure the project's current funding cycle is set to allow setting terminals, or the request to set the terminals is coming from the project's current controller.
 
     ```
@@ -60,7 +60,7 @@ function setPrimaryTerminalOf(
 
     _Internal references:_
 
-    * [`_addTerminalIfNeeded`](/api/contracts/jbdirectory/write/-_addterminalifneeded.md)
+    * [`_addTerminalIfNeeded`](/protocol/api/contracts/jbdirectory/write/-_addterminalifneeded.md)
 3.  Store the new terminal as the primary.
 
     ```
@@ -70,7 +70,7 @@ function setPrimaryTerminalOf(
 
     _Internal references:_
 
-    * [`_primaryTerminalOf`](/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
+    * [`_primaryTerminalOf`](/protocol/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
 4.  Emit a `SetPrimaryTerminal` event with the relevant parameters.
 
     ```
@@ -79,7 +79,7 @@ function setPrimaryTerminalOf(
 
     _Event references:_
 
-    * [`SetPrimaryTerminal`](/api/contracts/jbdirectory/events/setprimaryterminalmd/)
+    * [`SetPrimaryTerminal`](/protocol/api/contracts/jbdirectory/events/setprimaryterminalmd/)
 
 </TabItem>
 
@@ -137,7 +137,7 @@ function setPrimaryTerminalOf(
 
 | Name                                                        | Data                                                                                                                                                                                                                                                   |
 | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**`SetPrimaryTerminal`**](/api/contracts/jbdirectory/events/setprimaryterminal.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>address indexed token</code></li><li><code>[IJBPaymentTerminal](/api/interfaces/ijbpaymentterminal.md) indexed terminal</code></li><li><code>address caller</code></li></ul> |
+| [**`SetPrimaryTerminal`**](/protocol/api/contracts/jbdirectory/events/setprimaryterminal.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>address indexed token</code></li><li><code>[IJBPaymentTerminal](/protocol/api/interfaces/ijbpaymentterminal.md) indexed terminal</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

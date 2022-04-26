@@ -21,7 +21,7 @@ function _distributeToReservedTokenSplitsOf(
 
 * Arguments:
   * `_projectId` is the ID of the project for which reserved token splits are being distributed.
-  * `_fundingCycle` is the [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) to base the token distribution on.
+  * `_fundingCycle` is the [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md) to base the token distribution on.
   * `_domain` is the domain of the splits to distribute the reserved tokens between.
   * `_group` is the group of the splits to distribute the reserved tokens between.
   * `_amount` is the total amount of tokens to mint.
@@ -45,11 +45,11 @@ function _distributeToReservedTokenSplitsOf(
 
     _Internal references:_
 
-    * [`splitsStore`](/api/contracts/or-controllers/jbcontroller/properties/splitsstore.md)
+    * [`splitsStore`](/protocol/api/contracts/or-controllers/jbcontroller/properties/splitsstore.md)
 
     _External references:_
 
-    * [`splitsOf`](/api/contracts/jbsplitsstore/read/splitsof.md)
+    * [`splitsOf`](/protocol/api/contracts/jbsplitsstore/read/splitsof.md)
 3.  Loop through each split.
 
     ```
@@ -78,7 +78,7 @@ function _distributeToReservedTokenSplitsOf(
 
         * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
           * `.mulDiv(...)`
-        * [`JBConstants`](/api/libraries/jbconstants.md)
+        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
           * `.SPLITS_TOTAL_PERCENT`
     6.  If there are tokens to mint for the given split, do so. If the split has an allocator specified, the tokens should go to that address. Otherwise if the split has a project ID specified, the tokens should be directed to the project's owner. Otherwise, the tokens should be directed at the beneficiary address of the split if it has one, or to the message sender if not. Afterwards, if there's an allocator specified, let it know that tokens have been sent. Reduce the leftover amount by the tokens that were sent to the split.
 
@@ -121,9 +121,9 @@ function _distributeToReservedTokenSplitsOf(
 
         _External references:_
 
-        * [`mintFor`](/api/contracts/jbtokenstore/write/mintfor.md)
-        * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
-        * [`allocate`](/api/interfaces/ijbsplitallocator.md)
+        * [`mintFor`](/protocol/api/contracts/jbtokenstore/write/mintfor.md)
+        * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
+        * [`allocate`](/protocol/api/interfaces/ijbsplitallocator.md)
         * [`ownerOf`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#IERC721-ownerOf-uint256-)
 
 7.  Emit a `DistributeToReservedTokenSplit` event for the split being iterated on with the relevant parameters.
@@ -141,7 +141,7 @@ function _distributeToReservedTokenSplitsOf(
 
     _Event references:_
 
-    * [`DistributeToReservedTokenSplit`](/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md)
+    * [`DistributeToReservedTokenSplit`](/protocol/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md)
 
 </TabItem>
 
@@ -236,7 +236,7 @@ function _distributeToReservedTokenSplitsOf(
 
 | Name                                                                                | Data                                                                                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeToReservedTokenSplit`**](/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DistributeToReservedTokenSplit`**](/protocol/api/contracts/or-controllers/jbcontroller/events/distributetoreservedtokensplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/protocol/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 count</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

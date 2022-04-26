@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -20,7 +20,7 @@ function _beforeTransferTo(address, uint256) internal override { ...}
   * `_to` is the address to which the transfer is going. This is ignored.
   * `_amount` is the amount of the transfer, as a fixed point number with the same number of decimals as this terminal. This is ignored.
 * The resulting function is internal to this contract and its inheriters.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 
 #### Body
 

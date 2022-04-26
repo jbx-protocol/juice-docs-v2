@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`_redeemTokensOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_redeemtokensof.md)
+* [`_redeemTokensOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_redeemtokensof.md)
 
 #### Definition
 

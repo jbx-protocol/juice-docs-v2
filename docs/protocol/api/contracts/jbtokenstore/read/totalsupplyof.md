@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBTokenStore`](/api/contracts/jbtokenstore/README.md)​‌
+Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -22,7 +22,7 @@ function totalSupplyOf(uint256 _projectId) external view override returns (uint2
   * `_projectId` is the ID of the project to get the total token supply of.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
+* The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
 * The function returns the total supply of the project's tokens.
 
 #### Body
@@ -36,7 +36,7 @@ function totalSupplyOf(uint256 _projectId) external view override returns (uint2
 
     _Internal references:_
 
-    * [`unclaimedTotalSupplyOf`](/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
+    * [`unclaimedTotalSupplyOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
 2.  Get a reference to the project's current token.
 
     ```
@@ -46,7 +46,7 @@ function totalSupplyOf(uint256 _projectId) external view override returns (uint2
 
     _Internal references:_
 
-    * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
+    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
 3.  If the project has a current token, add its total supply to the total.
 
     ```

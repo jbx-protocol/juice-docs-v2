@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBOperatable`](/api/contracts/or-abstract/jboperatable/README.md)​‌
+Contract: [`JBOperatable`](/protocol/api/contracts/or-abstract/jboperatable/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -41,11 +41,11 @@ function _requirePermission(
 
     _Internal references:_
 
-    * [`operatorStore`](/api/contracts/or-abstract/jboperatable/properties/operatorstore.md)
+    * [`operatorStore`](/protocol/api/contracts/or-abstract/jboperatable/properties/operatorstore.md)
 
     _External references:_
 
-    * [`hasPermission`](/api/contracts/jboperatorstore/read/haspermission.md)
+    * [`hasPermission`](/protocol/api/contracts/jboperatorstore/read/haspermission.md)
 
 </TabItem>
 

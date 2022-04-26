@@ -1,8 +1,8 @@
 # usedOverflowAllowanceOf
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
+Interface: [`IJBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 **The amount of funds that a project has used from its allowance during the current funding cycle configuration for each terminal, in terms of the overflow allowance's currency.**
 
@@ -37,4 +37,4 @@ mapping(IJBSingleTokenPaymentTerminal => mapping(uint256 => mapping(uint256 => u
   * `_projectId` is the ID of the project to get the used overflow allowance of.
   * `_configuration` is the configuration of the during which the allowance was used.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.

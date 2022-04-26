@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBController`](/api/contracts/or-controllers/jbcontroller/README.md)​‌
+Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,14 +28,14 @@ function distributionLimitOf(
 * Arguments:
 * `_projectId` is the ID of the project to get the distribution limit of.
 * `_configuration` is the configuration during which the distribution limit applies.
-* `_terminal` is the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) from which distributions are being limited.
+* `_terminal` is the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) from which distributions are being limited.
 * `_token` is the token for which the distribution limit applies.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
+* The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns:
   * `distributionLimit` is the distribution limit, as a fixed point number with the same number of decimals as the provided terminal.
-  * `distributionLimitCurrency` is the currency from [`JBCurrencies`](/api/libraries/jbcurrencies.md) that the returned distribution limit is in terms of.
+  * `distributionLimitCurrency` is the currency from [`JBCurrencies`](/protocol/api/libraries/jbcurrencies.md) that the returned distribution limit is in terms of.
 
 #### Body
 
@@ -48,7 +48,7 @@ function distributionLimitOf(
 
     _Internal references:_
 
-    * [`_packedDistributionLimitDataOf`](/api/contracts/or-controllers/jbcontroller/properties/-_packeddistributionlimitdataof.md)
+    * [`_packedDistributionLimitDataOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_packeddistributionlimitdataof.md)
 2.  Return the distribution limit, which is in the first 248 bits, and the currency the distribution limit is in terms of, which is in the last 8 bits.
 
     ```

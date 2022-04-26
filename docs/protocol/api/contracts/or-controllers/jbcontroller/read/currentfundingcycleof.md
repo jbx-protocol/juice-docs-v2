@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBController`](/api/contracts/or-controllers/jbcontroller/README.md)​‌
+Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
-Interface: [`IJBController`](/api/interfaces/ijbcontroller.md)
+Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -27,7 +27,7 @@ function currentFundingCycleOf(uint256 _projectId)
 * `_projectId` is the ID of the project to which the funding cycle belongs.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBController`](/api/interfaces/ijbcontroller.md) interface.
+* The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns:
   * `fundingCycle` is the current funding cycle.
   * `metadata` is the current funding cycle's metadata.
@@ -42,11 +42,11 @@ function currentFundingCycleOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`fundingCycleStore`](/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
+    * [`fundingCycleStore`](/protocol/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
 
     _External references:_
 
-    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Expand the metadata of the funding cycle.
 
     ```
@@ -55,7 +55,7 @@ function currentFundingCycleOf(uint256 _projectId)
 
     _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)<br/>
+    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)<br/>
       * `.expandMetadata(...)`
       
 </TabItem>

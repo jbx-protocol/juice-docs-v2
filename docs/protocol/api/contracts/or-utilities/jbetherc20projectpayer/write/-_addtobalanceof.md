@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
+Contract: [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -44,11 +44,11 @@ function _addToBalanceOf(
 
     _Internal references:_
 
-    * [`directory`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/directory.md)
+    * [`directory`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/directory.md)
 
     _External references:_
 
-    * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
+    * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
 2.  Make sure there is a terminal to make a payment towards.
 
     ```
@@ -65,7 +65,7 @@ function _addToBalanceOf(
 
     _External references:_
 
-    * [`decimalsForToken`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
+    * [`decimalsForToken`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
 
 4.  If the token being paid is an ERC20, approve the terminal to spend the amount of tokens from this terminal.
 
@@ -76,7 +76,7 @@ function _addToBalanceOf(
 
     _Library references:_
 
-    * [`JBTokens`](/api/libraries/jbtokens.md)
+    * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
       * `.ETH`
 
     _External references:_
@@ -92,7 +92,7 @@ function _addToBalanceOf(
 
     _Library references:_
 
-    * [`JBTokens`](/api/libraries/jbtokens.md)
+    * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
       * `.ETH`
 
 5.  Add to the project's balance with the provided properties. 
@@ -104,7 +104,7 @@ function _addToBalanceOf(
 
     _External references:_
 
-    * [`addToBalanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
+    * [`addToBalanceOf`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
     
 </TabItem>
 

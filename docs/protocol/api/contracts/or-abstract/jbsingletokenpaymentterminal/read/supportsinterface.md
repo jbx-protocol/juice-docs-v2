@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminal`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminal`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/README.md)​‌
 
 Interface: [`IERC165`](https://docs.openzeppelin.com/contracts/2.x/api/introspection#IERC165)
 

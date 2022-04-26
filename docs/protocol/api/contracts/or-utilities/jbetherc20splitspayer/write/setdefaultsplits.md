@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md)
+Contract: [`JBETHERC20SplitsPayer`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/README.md)
 
-Interface: [`IJBSplitsPayer`](/api/interfaces/ijbsplitspayer.md)
+Interface: [`IJBSplitsPayer`](/protocol/api/interfaces/ijbsplitspayer.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,7 +28,7 @@ function setDefaultSplits(
   * `_group` is the group within which the default splits are stored. 
 * Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
 * The function can be overriden by inheriting contracts.
-* The function overrides a function definition from the [`IJBSplitsPayer`](/api/interfaces/ijbsplitspayer.md) interface.
+* The function overrides a function definition from the [`IJBSplitsPayer`](/protocol/api/interfaces/ijbsplitspayer.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -42,7 +42,7 @@ function setDefaultSplits(
 
     _Internal references:_
 
-    * [`defaultSplitsProjectId`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsprojectid.md)
+    * [`defaultSplitsProjectId`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsprojectid.md)
 2.  Set the default splits domain if it has changed.
 
     ```
@@ -52,7 +52,7 @@ function setDefaultSplits(
 
     _Internal references:_
 
-    * [`defaultSplitsDomain`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsdomain.md)
+    * [`defaultSplitsDomain`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsdomain.md)
 3.  Set the default splits group if it has changed.
 
     ```
@@ -62,7 +62,7 @@ function setDefaultSplits(
 
     _Internal references:_
 
-    * [`defaultSplitsGroup`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsgroup.md)
+    * [`defaultSplitsGroup`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsgroup.md)
 6.  Emit a `SetDefaultSplits` event with all relevant parameters.
 
     ```
@@ -71,7 +71,7 @@ function setDefaultSplits(
 
     _Event references:_
 
-    * [`SetDefaultSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/events/setdefaultsplits.md)
+    * [`SetDefaultSplits`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/events/setdefaultsplits.md)
 
 </TabItem>
 
@@ -110,7 +110,7 @@ function setDefaultSplits(
 
 | Name                                | Data                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetDefaultSplits`**](/api/contracts/or-utilities/jbetherc20splitspayer/events/setdefaultsplits.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>address caller</code></li></ul>                  |
+| [**`SetDefaultSplits`**](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/events/setdefaultsplits.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

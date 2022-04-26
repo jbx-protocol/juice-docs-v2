@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -25,7 +25,7 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
 ```
 
 * Arguments:
-  * `_terminal` is the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) that can be paid towards while still bypassing fees.
+  * `_terminal` is the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) that can be paid towards while still bypassing fees.
   * `_flag` is a flag indicating whether the terminal should be feeless or not.
 * Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
 * The function can be overriden by inheriting contracts.
@@ -42,7 +42,7 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
 
     _Internal references:_
 
-    * [`isFeelessTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
+    * [`isFeelessTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
 2.  Emit a `SetFeelessTerminal` event with the relevant parameters.
 
     ```
@@ -51,7 +51,7 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
 
     _Event references:_
 
-    * [`SetFeelessTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeelessterminal.md)
+    * [`SetFeelessTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeelessterminal.md)
 
 </TabItem>
 
@@ -87,7 +87,7 @@ function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag)
 
 | Name                                          | Data                                                                                                                                                    |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetFeelessTerminal`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeelessterminal.md) | <ul><li><code>[IJBPaymentTerminal](/api/interfaces/ijbpaymentterminal.md) indexed terminal</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
+| [**`SetFeelessTerminal`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeelessterminal.md) | <ul><li><code>[IJBPaymentTerminal](/protocol/api/interfaces/ijbpaymentterminal.md) indexed terminal</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

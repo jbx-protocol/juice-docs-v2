@@ -1,8 +1,8 @@
 # permissionsOf
 
-Contract: [`JBOperatorStore`](/api/contracts/jboperatorstore/README.md)​‌
+Contract: [`JBOperatorStore`](/protocol/api/contracts/jboperatorstore/README.md)​‌
 
-Interface: [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md)
+Interface: [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md)
 
 **The permissions that an operator has been given to operate on a specific domain.**
 
@@ -39,4 +39,4 @@ mapping(address => mapping(address => mapping(uint256 => uint256))) public overr
   * `_account` is the address of the account being operated.
   * `_domain` is the domain within which the permissions apply. Applications can use the domain namespace as they wish.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`IJBOperatorStore`](/api/interfaces/ijboperatorstore.md) interface.
+* The resulting function overrides a function definition from the [`IJBOperatorStore`](/protocol/api/interfaces/ijboperatorstore.md) interface.

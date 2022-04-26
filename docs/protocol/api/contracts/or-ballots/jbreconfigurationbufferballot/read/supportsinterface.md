@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBReconfigurationBufferBallot`](/api/contracts/or-ballots/jbreconfigurationbufferballot)
+Contract: [`JBReconfigurationBufferBallot`](/protocol/api/contracts/or-ballots/jbreconfigurationbufferballot)
 
 Interface: [`IERC165`](https://docs.openzeppelin.com/contracts/2.x/api/introspection#IERC165)
 
