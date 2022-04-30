@@ -1,4 +1,4 @@
-# Vote delegation for Snapshot
+# Vote Delegation for Snapshot
 
 As projects in Juicebox pay the 2.5% fees every time they distribute payouts, they all get that same amount back in JBX. This gives project owner the power to vote in Snapshot.
 

@@ -1,4 +1,4 @@
-# Multisig transaction guide
+# Multisig Transaction Guide
 
 ## Multisig Process
 
@@ -61,21 +61,21 @@ All Gnosis actions are available on [their app](https://gnosis-safe.io/app/eth:0
 
 1. Go to [https://gnosis-safe.io/app/](https://gnosis-safe.io/app/)
 
-![Untitled](Multisig%20transaction%20guide%2092ebc0838ddb4ed3986b6e20550fba65/Untitled.png)
+![Untitled](transaction-guide-imgs/Untitled.png)
 
 1. Click “Add existing Safe”, input address “0xAF28bcB48C40dBC86f52D459A6562F658fc94B1e”
 
-![Untitled](Multisig%20transaction%20guide%2092ebc0838ddb4ed3986b6e20550fba65/Untitled%201.png)
+![Untitled](transaction-guide-imgs/Untitled%201.png)
 
 1. Label the owners if you’d like
 
-![Untitled](Multisig%20transaction%20guide%2092ebc0838ddb4ed3986b6e20550fba65/Untitled%202.png)
+![Untitled](transaction-guide-imgs/Untitled%202.png)
 
 1. Finish the procedure, and next time you could find JuiceboxDAO on your Gnosis App.
 
 ## How to write a “configure” transaction:
 
-![Untitled](Multisig%20transaction%20guide%2092ebc0838ddb4ed3986b6e20550fba65/Untitled%203.png)
+![Untitled](transaction-guide-imgs/Untitled%203.png)
 
 First, add the [Juicebox app](https://gnosis-safe.io/app/eth:0xAF28bcB48C40dBC86f52D459A6562F658fc94B1e/apps?appUrl=https://juicebox.money) to Gnosis Safe:
 
@@ -86,11 +86,11 @@ First, add the [Juicebox app](https://gnosis-safe.io/app/eth:0xAF28bcB48C40dBC86
 
 You can access the Juicebox website with multisig wallet connected. Navigate to the JuiceboxDAO project and find the “Reconfigure upcoming” button:
 
-![Untitled](Multisig%20transaction%20guide%2092ebc0838ddb4ed3986b6e20550fba65/Untitled%204.png)
+![Untitled](transaction-guide-imgs/Untitled%204.png)
 
 Click on it to reconfigure. You will be able to see the preview before submit transaction. If you submit the txn, call other members to sign it on Gnosis App.
 
-![Untitled](Multisig%20transaction%20guide%2092ebc0838ddb4ed3986b6e20550fba65/Untitled%205.png)
+![Untitled](transaction-guide-imgs/Untitled%205.png)
 
 ## How to read a “configure” transaction:
 
@@ -152,7 +152,7 @@ struct TicketMod {
 
 Check Gnosis safe tx detail [here](https://gnosis-safe.io/app/eth:0xAF28bcB48C40dBC86f52D459A6562F658fc94B1e/transactions/0x3c4ab13fcd7f62c4d6149b32fca3c64b1814d3931bb048bbbbce7cb681acdc68).
 
-![Untitled](Multisig%20transaction%20guide%2092ebc0838ddb4ed3986b6e20550fba65/Untitled%206.png)
+![Untitled](transaction-guide-imgs/Untitled%206.png)
 
 What does this tx mean?
 

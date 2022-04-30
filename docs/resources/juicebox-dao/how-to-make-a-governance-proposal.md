@@ -10,10 +10,10 @@ sidebar_position: 4
 
 **In order to create a new proposal:**
 
-1. Head to the [proposals database](https://www.notion.so/9d126f9148dc42ee83317d5cd74e4db4)
+1. Head to the [proposals database](https://www.notion.so/9d126f9148dc42ee83317d5cd74e4db4).
 2. Click the ⬇ next to "New" (pictured below) and select `📜 Proposal Template`
     
     ![](/img/docs/proposals-db.png)
     
-3. Fill out the template by following the [Proposal Guide](proposal-template.md). Once you've answered each question in the template to the best of your ability, change your proposal’s *status* (the first Notion field at the top of the document) from `Draft` to `Discussion`.
+3. Fill out the template by following the [Proposal Template](proposal-template.md). Once you've answered each question in the template to the best of your ability, change your proposal’s *status* (the first Notion field at the top of the document) from `Draft` to `Discussion`.
 4. A discussion thread for your proposal will be automatically generated in #💡-proposals-workshop on the [Juicebox Discord](https://discord.gg/juicebox). From there, community members will help you to prepare the proposal for the next temperature check.
