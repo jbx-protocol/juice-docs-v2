@@ -124,6 +124,8 @@ Here's what happens when using an overflow allowance instead:
 * Rolled-over funding cycles within the same configuration do not refresh the allowance.
 * An overflow allowance is a free allowance the project can to use without additional pre-programmed stipulations.
 
+The `_distributionLimit` and `_overflowAllowance` parameters must fit in a `uint232`. 
+
 #### Grouped splits
 
 If you wish to automatically split treasury payouts or reserved token distributions between various destinations (addresses, other Juicebox projects, or split allocator contracts), add some grouped splits to the [`launchProjectFor`](/protocol/api/contracts/or-controllers/jbcontroller/write/launchprojectfor.md) transaction.

@@ -39,7 +39,7 @@ function reconfigureFundingCyclesOf(
   * `_metadata` is a [`JBFundingCycleMetadata`](/protocol/api/data-structures/jbfundingcyclemetadata.md) data structure specifying the controller specific params that a funding cycle can have. These properties will remain fixed for the duration of the funding cycle.
   * `_mustStartAtOrAfter` is the time before which the configured funding cycle cannot start.
   * `_groupedSplits` is an array of [`JBGroupedSplits`](/protocol/api/data-structures/jbgroupedsplits.md) data structures containing splits to set for any number of groups. The core protocol makes use of groups defined in [`JBSplitsGroups`](/protocol/api/libraries/jbsplitsgroups.md).
-  * `_fundAccessConstraints` is an array of [`JBFundAccessConstraints`](/protocol/api/data-structures/jbfundaccessconstraints.md) data structures containing amounts that a project can use from its treasury for each payment terminal. Amounts are fixed point numbers using the same number of decimals as the accompanying terminal. The `distributionLimit` applies for each funding cycle, and the `overflowAllowance` applies for the entirety of the configuration.
+  * `_fundAccessConstraints` is an array of [`JBFundAccessConstraints`](/protocol/api/data-structures/jbfundaccessconstraints.md) data structures containing amounts that a project can use from its treasury for each payment terminal. Amounts are fixed point numbers using the same number of decimals as the accompanying terminal. The `_distributionLimit` and `_overflowAllowance` parameters must fit in a `uint232`. The `_distributionLimit` applies for each funding cycle, and the `_overflowAllowance` applies for the entirety of the configuration. 
 * Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.RECONFIGURE`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
 * The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
@@ -91,7 +91,7 @@ function reconfigureFundingCyclesOf(
   @param _metadata Metadata specifying the controller specific params that a funding cycle can have. These properties will remain fixed for the duration of the funding cycle.
   @param _mustStartAtOrAfter The time before which the configured funding cycle cannot start.
   @param _groupedSplits An array of splits to set for any number of groups. 
-  @param _fundAccessConstraints An array containing amounts that a project can use from its treasury for each payment terminal. Amounts are fixed point numbers using the same number of decimals as the accompanying terminal.
+  @param _fundAccessConstraints An array containing amounts that a project can use from its treasury for each payment terminal. Amounts are fixed point numbers using the same number of decimals as the accompanying terminal. The `_distributionLimit` and `_overflowAllowance` parameters must fit in a `uint232`.
   @param _memo A memo to pass along to the emitted event.
 
   @return configuration The configuration of the funding cycle that was successfully reconfigured.
