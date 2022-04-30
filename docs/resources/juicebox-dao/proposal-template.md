@@ -2,7 +2,6 @@
 sidebar_position: 3
 ---
 
-
 # Juicebox Proposal Template
 
 **The italicized text below describes how each section should be filled out. Proposals should be comprehensive, specific, and readable. Sections can be added and removed as needed.**

@@ -40,6 +40,8 @@ Aeolian's [DAO Tooling 101](https://info.juicebox.money/blog/dao-tooling-101/) i
 
 * [sesh](https://sesh.fyi/) is a Discord bot which can be used for polls and event scheduling.
 
+* [Aeolian's Snapshot Analytics](https://aeolianeth.github.io/snapshot-analytics/) is a high-density tool for seeing the current status of Snapshot votes. For now, this dashboard only works with Juicebox DAO governance.
+
 ## Documentation
 
 * [Docusaurus](https://docusaurus.io/) is a static site generator with MDX and React support, primarily built for documentation and blogs. This website is powered by Docusaurus!
