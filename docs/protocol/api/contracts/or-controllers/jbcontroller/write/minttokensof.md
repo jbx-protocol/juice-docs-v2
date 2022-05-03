@@ -12,7 +12,7 @@ Interface: [`IJBController`](/protocol/api/interfaces/ijbcontroller.md)
 
 **Mint new token supply into an account, and optionally reserve a supply to be distributed according to the project's current funding cycle configuration.**
 
-_Only a project's owner, a designated operator, or one of its terminals can mint its tokens._
+_Only a project's owner, a designated operator, one of its terminals, or the current data source can mint its tokens._
 
 #### Definition
 
@@ -28,12 +28,6 @@ function mintTokensOf(
   external
   virtual
   override
-  requirePermissionAllowingOverride(
-    projects.ownerOf(_projectId),
-    _projectId,
-    JBOperations.MINT,
-    directory.isTerminalOf(_projectId, IJBPaymentTerminal(msg.sender))
-  )
   returns (uint256 beneficiaryTokenCount) { ... }
 ```
 
@@ -44,7 +38,7 @@ function mintTokensOf(
   * `_memo` is a memo to pass along to the emitted event.
   * `_preferClaimedTokens` is a flag indicating whether a project's attached token contract should be minted if they have been issued.
   * `_useReservedRate` is whether to use the current funding cycle's reserved rate in the mint calculation.
-* Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.MINT`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, or from one of the project's terminals.
+* Through the [_requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) internal function call, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.MINT`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, from one of the project's terminals, or from the project's current funding cycle data source.
 * The function can be overriden by inheriting contracts.
 * The function overrides a function definition from the [`IJBController`](/protocol/api/interfaces/ijbcontroller.md) interface.
 * The function returns the amount of tokens minted for the beneficiary.
@@ -57,7 +51,7 @@ function mintTokensOf(
     // There should be tokens to mint.
     if (_tokenCount == 0) revert ZERO_TOKENS_TO_MINT();
     ```
-2.  Make sure the project current allows directly minting tokens by checking that it isn't paused when being called by any contract other than one of the project's terminals. If the request is coming from a terminal, allow minting regardless of the pause state because it could be a sub-routine of another operation such as receiving payments. If minting is allowed, get a reference to the reserved rate that should be used. 
+2.  Make sure the message sender has appropriate permissions and that the project currently allows directly minting tokens by checking that it isn't paused when being called by any contract other than one of the project's terminals or current data sources. If the request is coming from a terminal or current data source, allow minting regardless of the pause state because it could be a sub-routine of another operation such as receiving payments. If minting is allowed, get a reference to the reserved rate that should be used. 
 
     ```
     // Define variables that will be needed outside scoped section below.
@@ -68,11 +62,21 @@ function mintTokensOf(
       // Get a reference to the project's current funding cycle.
       JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
 
-      // If the message sender is not a terminal, the current funding cycle must not be paused.
+      // Minting limited to: project owner, authorized callers, project terminal and current funding cycle data source
+      _requirePermissionAllowingOverride(
+        projects.ownerOf(_projectId),
+        _projectId,
+        JBOperations.MINT,
+        directory.isTerminalOf(_projectId, IJBPaymentTerminal(msg.sender)) ||
+          msg.sender == address(_fundingCycle.dataSource())
+      );
+
+      // If the message sender is not a terminal or a datasource, the current funding cycle must allow minting.
       if (
-        _fundingCycle.mintPaused() &&
-        !directory.isTerminalOf(_projectId, IJBPaymentTerminal(msg.sender))
-      ) revert MINT_PAUSED_AND_NOT_TERMINAL_DELEGATE();
+        !_fundingCycle.mintingAllowed() &&
+        !directory.isTerminalOf(_projectId, IJBPaymentTerminal(msg.sender)) &&
+        msg.sender != address(_fundingCycle.dataSource())
+      ) revert MINT_NOT_ALLOWED_AND_NOT_TERMINAL_DELEGATE();
 
       // Determine the reserved rate to use.
       _reservedRate = _useReservedRate ? _fundingCycle.reservedRate() : 0;
@@ -156,7 +160,7 @@ function mintTokensOf(
   Mint new token supply into an account, and optionally reserve a supply to be distributed according to the project's current funding cycle configuration.
 
   @dev
-  Only a project's owner, a designated operator, or one of its terminals can mint its tokens.
+  Only a project's owner, a designated operator, one of its terminals, or the current data source can mint its tokens.
 
   @param _projectId The ID of the project to which the tokens being minted belong.
   @param _tokenCount The amount of tokens to mint in total, counting however many should be reserved.
@@ -197,11 +201,21 @@ function mintTokensOf(
     // Get a reference to the project's current funding cycle.
     JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
 
-    // If the message sender is not a terminal, the current funding cycle must not be paused.
+    // Minting limited to: project owner, authorized callers, project terminal and current funding cycle data source
+    _requirePermissionAllowingOverride(
+      projects.ownerOf(_projectId),
+      _projectId,
+      JBOperations.MINT,
+      directory.isTerminalOf(_projectId, IJBPaymentTerminal(msg.sender)) ||
+        msg.sender == address(_fundingCycle.dataSource())
+    );
+
+    // If the message sender is not a terminal or a datasource, the current funding cycle must allow minting.
     if (
-      _fundingCycle.mintPaused() &&
-      !directory.isTerminalOf(_projectId, IJBPaymentTerminal(msg.sender))
-    ) revert MINT_PAUSED_AND_NOT_TERMINAL_DELEGATE();
+      !_fundingCycle.mintingAllowed() &&
+      !directory.isTerminalOf(_projectId, IJBPaymentTerminal(msg.sender)) &&
+      msg.sender != address(_fundingCycle.dataSource())
+    ) revert MINT_NOT_ALLOWED_AND_NOT_TERMINAL_DELEGATE();
 
     // Determine the reserved rate to use.
     _reservedRate = _useReservedRate ? _fundingCycle.reservedRate() : 0;
