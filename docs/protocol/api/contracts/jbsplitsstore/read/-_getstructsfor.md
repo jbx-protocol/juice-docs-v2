@@ -57,10 +57,15 @@ function _getStructsFor(
       // Store the first spit part. 
       JBSplit memory _split;
 
-      _split.preferClaimed = (_packedSplitPart1 & 1) == 1;
-      _split.preferAddToBalance = (_packedSplitPart1 & 2) == 1;
+      // prefer claimed in bit 0.
+      _split.preferClaimed = _packedSplitPart1 & 1 == 1;
+      // prefer add to balance in bit 1.
+      _split.preferAddToBalance = (_packedSplitPart1 >> 1) & 1 == 1;
+      // percent in bits 2-33.
       _split.percent = uint256(uint32(_packedSplitPart1 >> 2));
+      // projectId in bits 32-89.
       _split.projectId = uint256(uint56(_packedSplitPart1 >> 34));
+      // beneficiary in bits 90-249.
       _split.beneficiary = payable(address(uint160(_packedSplitPart1 >> 90)));
 
       // Get a reference to the second packed data.
@@ -124,10 +129,15 @@ function _getStructsFor(
     // Populate the split struct.
     JBSplit memory _split;
 
-    _split.preferClaimed = (_packedSplitPart1 & 1) == 1;
-    _split.preferAddToBalance = (_packedSplitPart1 & 2) == 1;
+    // prefer claimed in bit 0.
+    _split.preferClaimed = _packedSplitPart1 & 1 == 1;
+    // prefer add to balance in bit 1.
+    _split.preferAddToBalance = (_packedSplitPart1 >> 1) & 1 == 1;
+    // percent in bits 2-33.
     _split.percent = uint256(uint32(_packedSplitPart1 >> 2));
+    // projectId in bits 32-89.
     _split.projectId = uint256(uint56(_packedSplitPart1 >> 34));
+    // beneficiary in bits 90-249.
     _split.beneficiary = payable(address(uint160(_packedSplitPart1 >> 90)));
 
     // Get a reference to the second packed data.

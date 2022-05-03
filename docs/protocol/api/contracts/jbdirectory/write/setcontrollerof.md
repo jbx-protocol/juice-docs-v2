@@ -80,7 +80,7 @@ function setControllerOf(uint256 _projectId, address _controller)
     if (
       msg.sender != address(controllerOf[_projectId]) &&
       controllerOf[_projectId] != address(0) &&
-      !_fundingCycle.setControllerAllowed()
+      !uint8(_fundingCycle.metadata >> 8).setControllerAllowed()
     ) revert SET_CONTROLLER_NOT_ALLOWED();
     ```
 
@@ -150,7 +150,7 @@ function setControllerOf(uint256 _projectId, address _controller)
   if (
     msg.sender != address(controllerOf[_projectId]) &&
     controllerOf[_projectId] != address(0) &&
-    !_fundingCycle.setControllerAllowed()
+    !uint8(_fundingCycle.metadata >> 8).setControllerAllowed()
   ) revert SET_CONTROLLER_NOT_ALLOWED();
 
   // Set the new controller.

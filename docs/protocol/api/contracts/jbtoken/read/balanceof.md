@@ -15,7 +15,11 @@ Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 #### Definition
 
 ```
-function balanceOf(address _account, uint256) external view override returns (uint256) { ... }
+function balanceOf(address _account, uint256 _projectId) 
+  external 
+  view 
+  override 
+  returns (uint256) { ... }
 ```
 
 * Arguments:
@@ -48,11 +52,18 @@ function balanceOf(address _account, uint256) external view override returns (ui
   An account's balance of this ERC20.
 
   @param _account The account to get a balance of.
-  _projectId is the ID of the project to which the token belongs. This is ignored.
+  @param _projectId is the ID of the project to which the token belongs. This is ignored.
 
   @return The balance of the `_account` of this ERC20, as a fixed point number with 18 decimals.
 */
-function balanceOf(address _account, uint256) external view override returns (uint256) {
+function balanceOf(address _account, uint256 _projectId) 
+  external 
+  view 
+  override 
+  returns (uint256) 
+{
+  _projectId; // Prevents unused var compiler and natspec complaints.
+
   return super.balanceOf(_account);
 }
 ```

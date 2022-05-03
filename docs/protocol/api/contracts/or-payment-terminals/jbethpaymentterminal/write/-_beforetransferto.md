@@ -13,7 +13,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-payme
 #### Definition
 
 ```
-function _beforeTransferTo(address, uint256) internal override { ...}
+function _beforeTransferTo(address _to, uint256 _amount) internal pure override { ...}
 ```
 
 * Arguments:
@@ -36,10 +36,13 @@ _Empty_
   @notice
   Logic to be triggered before transferring tokens from this terminal.
 
-  ignored: _to The address to which the transfer is going.
-  ignored: _amount The amount of the transfer, as a fixed point number with the same number of decimals as this terminal.
+  @param _to The address to which the transfer is going.
+  @param _amount The amount of the transfer, as a fixed point number with the same number of decimals as this terminal.
 */
-function _beforeTransferTo(address, uint256) internal override {}
+function _beforeTransferTo(address _to, uint256 _amount) internal pure override {
+  _to; // Prevents unused var compiler and natspec complaints.
+  _amount; // Prevents unused var compiler and natspec complaints.
+}
 ```
 
 </TabItem>

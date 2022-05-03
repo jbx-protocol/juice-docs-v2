@@ -21,6 +21,7 @@ function redeemTokensOf(
   address _holder,
   uint256 _projectId,
   uint256 _tokenCount,
+  address _token,
   uint256 _minReturnedTokens,
   address payable _beneficiary,
   string memory _memo,
@@ -83,7 +84,7 @@ function redeemTokensOf(
   @param _holder The account to redeem tokens for.
   @param _projectId The ID of the project to which the tokens being redeemed belong.
   @param _tokenCount The number of project tokens to redeem, as a fixed point number with 18 decimals.
-  ignored: _token The token being reclaimed. This terminal ignores this property since it only manages one token. 
+  @param _token The token being reclaimed. This terminal ignores this property since it only manages one token. 
   @param _minReturnedTokens The minimum amount of terminal tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   @param _beneficiary The address to send the terminal tokens to.
   @param _memo A memo to pass along to the emitted event.
@@ -95,6 +96,7 @@ function redeemTokensOf(
   address _holder,
   uint256 _projectId,
   uint256 _tokenCount,
+  address _token,
   uint256 _minReturnedTokens,
   address payable _beneficiary,
   string memory _memo,
@@ -106,6 +108,8 @@ function redeemTokensOf(
   requirePermission(_holder, _projectId, JBOperations.REDEEM)
   returns (uint256 reclaimAmount)
 {
+  _token; // Prevents unused var compiler and natspec complaints.
+
   return
     _redeemTokensOf(
       _holder,

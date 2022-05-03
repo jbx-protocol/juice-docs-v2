@@ -25,7 +25,7 @@ function distributePayoutsOf(
   uint256 _projectId,
   uint256 _amount,
   uint256 _currency,
-  address,
+  address _token,
   uint256 _minReturnedTokens,
   string calldata _memo
 ) external virtual override returns (uint256 netLeftoverDistributionAmount) { ... }
@@ -76,7 +76,7 @@ function distributePayoutsOf(
   @param _projectId The ID of the project having its payouts distributed.
   @param _amount The amount of terminal tokens to distribute, as a fixed point number with same number of decimals as this terminal.
   @param _currency The expected currency of the amount being distributed. Must match the project's current funding cycle's distribution limit currency.
-  ignored: _token The token being distributed. This terminal ignores this property since it only manages one token.
+  @param _token The token being distributed. This terminal ignores this property since it only manages one token.
   @param _minReturnedTokens The minimum number of terminal tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same number of decimals as this terminal.
   @param _memo A memo to pass along to the emitted event.
 
@@ -86,10 +86,11 @@ function distributePayoutsOf(
   uint256 _projectId,
   uint256 _amount,
   uint256 _currency,
-  address,
+  address _token,
   uint256 _minReturnedTokens,
   string calldata _memo
 ) external virtual override returns (uint256 netLeftoverDistributionAmount) {
+  _token; // Prevents unused var compiler and natspec complaints.
   return _distributePayoutsOf(_projectId, _amount, _currency, _minReturnedTokens, _memo);
 }
 ```

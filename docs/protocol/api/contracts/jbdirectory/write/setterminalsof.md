@@ -52,8 +52,10 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
 
     ```
     // Setting terminals must be allowed if not called from the current controller.
-    if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
-      revert SET_TERMINALS_NOT_ALLOWED();
+    if (
+      msg.sender != address(controllerOf[_projectId]) &&
+      !uint8(_fundingCycle.metadata >> 8).setTerminalsAllowed()
+    ) revert SET_TERMINALS_NOT_ALLOWED();
     ```
 
     _Library references:_
@@ -135,8 +137,10 @@ function setTerminalsOf(uint256 _projectId, IJBPaymentTerminal[] calldata _termi
   JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
 
   // Setting terminals must be allowed if not called from the current controller.
-  if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
-    revert SET_TERMINALS_NOT_ALLOWED();
+  if (
+    msg.sender != address(controllerOf[_projectId]) &&
+    !uint8(_fundingCycle.metadata >> 8).setTerminalsAllowed()
+  ) revert SET_TERMINALS_NOT_ALLOWED();
 
   // Delete the stored terminals for the project.
   _terminalsOf[_projectId] = _terminals;

@@ -16,7 +16,7 @@ Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 
 ```
 function approve(
-  uint256,
+  uint256 _projectId,
   address _spender,
   uint256 _amount
 ) external override { ... }
@@ -50,15 +50,17 @@ function approve(
   @notice
   Approves an account to spend tokens on the `msg.sender`s behalf.
 
-  ignore: _projectId the ID of the project to which the token belongs. This is ignored.
+  @param _projectId the ID of the project to which the token belongs. This is ignored.
   @param _spender The address that will be spending tokens on the `msg.sender`s behalf.
   @param _amount The amount the `_spender` is allowed to spend.
 */
 function approve(
-  uint256,
+  uint256 _projectId,
   address _spender,
   uint256 _amount
 ) external override {
+  _projectId; // Prevents unused var compiler and natspec complaints.
+
   approve(_spender, _amount);
 }
 ```

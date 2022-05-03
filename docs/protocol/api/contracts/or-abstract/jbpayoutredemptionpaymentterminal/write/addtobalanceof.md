@@ -62,10 +62,10 @@ function addToBalanceOf(
     _Virtual references:_
 
     * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
-2.  Forward to the internal function to properly account for the added balance.
+2.  Forward to the internal function to properly account for the added balance. If the message sender is a feeless address, don't refund held fees.
 
     ```
-    _addToBalanceOf(_projectId, _amount, _memo, _metadata);
+    _addToBalanceOf(_projectId, _amount, _memo, !isFeelessAddress[msg.sender] _metadata);
     ```
 
     _Internal references:_
@@ -83,17 +83,19 @@ function addToBalanceOf(
 
   @param _projectId The ID of the project to which the funds received belong.
   @param _amount The amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
-  ignored: _token The token being paid. This terminal ignores this property since it only manages one token. 
+  @param _token The token being paid. This terminal ignores this property since it only manages one token. 
   @param _memo A memo to pass along to the emitted event.
   @param _metadata Metadata to pass along to the emitted event.
 */
 function addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
-  address,
+  address _token,
   string calldata _memo,
   bytes calldata _metadata
 ) external payable virtual override isTerminalOf(_projectId) {
+  _token; // Prevents unused var compiler and natspec complaints.
+
   // If this terminal's token isn't ETH, make sure no msg.value was sent, then transfer the tokens in from msg.sender.
   if (token != JBTokens.ETH) {
     // Amount must be greater than 0.
@@ -105,7 +107,7 @@ function addToBalanceOf(
   // If the terminal's token is ETH, override `_amount` with msg.value.
   else _amount = msg.value;
 
-  _addToBalanceOf(_projectId, _amount, _memo, _metadata);
+  _addToBalanceOf(_projectId, _amount, _memo, !isFeelessAddress[msg.sender] _metadata);
 }
 ```
 

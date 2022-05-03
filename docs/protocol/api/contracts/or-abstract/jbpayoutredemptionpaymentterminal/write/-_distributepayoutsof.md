@@ -90,8 +90,8 @@ function _distributePayoutsOf(
 
         ```
         // Get the amount of discount that should be applied to any fees taken.
-        // If the fee is zero, set the discount to 100% for convinience.
-        uint256 _feeDiscount = fee == 0
+        // If the fee is zero or if the fee is being used by an address that doesn't incur fees, set the discount to 100% for convinience.
+        uint256 _feeDiscount = fee == 0 || isFeelessAddress[msg.sender]
           ? JBConstants.MAX_FEE_DISCOUNT
           : _currentFeeDiscount(_projectId);
         ```
@@ -103,6 +103,7 @@ function _distributePayoutsOf(
 
         _Internal references:_
 
+        * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/isfeelessaddress.md)
         * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
     2.  Get a reference to the amount of distributed funds from which fees should be taken, and the amount leftover after distributing splits.
@@ -267,8 +268,8 @@ function _distributePayoutsOf(
   // Scoped section prevents stack too deep. `_feeDiscount`, `_feeEligibleDistributionAmount`, and `_leftoverDistributionAmount` only used within scope.
   {
     // Get the amount of discount that should be applied to any fees taken.
-    // If the fee is zero, set the discount to 100% for convinience.
-    uint256 _feeDiscount = fee == 0
+    // If the fee is zero or if the fee is being used by an address that doesn't incur fees, set the discount to 100% for convinience.
+    uint256 _feeDiscount = fee == 0 || isFeelessAddress[msg.sender]
       ? JBConstants.MAX_FEE_DISCOUNT
       : _currentFeeDiscount(_projectId);
 

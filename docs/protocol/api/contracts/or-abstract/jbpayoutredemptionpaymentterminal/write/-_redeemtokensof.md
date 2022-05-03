@@ -124,6 +124,7 @@ function _redeemTokensOf(
             _holder,
             _projectId,
             _tokenCount,
+            _fundingCycle.configuration,
             JBTokenAmount(token, reclaimAmount, decimals, currency),
             _beneficiary,
             _memo,
@@ -247,6 +248,7 @@ function _redeemTokensOf(
       JBDidRedeemData memory _data = JBDidRedeemData(
         _holder,
         _projectId,
+        _fundingCycle.configuration,
         _tokenCount,
         JBTokenAmount(token, reclaimAmount, decimals, currency),
         _beneficiary,

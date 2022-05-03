@@ -79,6 +79,7 @@ function recordRedemptionFor(
     // Scoped section prevents stack too deep. `_reclaimedTokenAmount`, `_currentOverflow`, and `_totalSupply` only used within scope.
     { ... }
     ```
+    
     1.  Keep a reference to the reclaimed token amount, current overflow amount, and total supply variables to use outside of the subsequent scoped block
 
         ```
@@ -202,6 +203,7 @@ function recordRedemptionFor(
             IJBSingleTokenPaymentTerminal(msg.sender),
             _holder,
             _projectId,
+            fundingCycle.configuration,
             _tokenCount,
             _totalSupply,
             _currentOverflow,
@@ -212,7 +214,8 @@ function recordRedemptionFor(
             _memo,
             _metadata
           );
-          (reclaimAmount, memo, delegate) = fundingCycle.dataSource().redeemParams(_data);
+          (reclaimAmount, memo, delegate) = IJBFundingCycleDataSource(fundingCycle.dataSource())
+            .redeemParams(_data);
         } else {
           memo = _memo;
         }
@@ -361,6 +364,7 @@ function recordRedemptionFor(
         IJBSingleTokenPaymentTerminal(msg.sender),
         _holder,
         _projectId,
+        fundingCycle.configuration,
         _tokenCount,
         _totalSupply,
         _currentOverflow,
@@ -371,7 +375,8 @@ function recordRedemptionFor(
         _memo,
         _metadata
       );
-      (reclaimAmount, memo, delegate) = fundingCycle.dataSource().redeemParams(_data);
+      (reclaimAmount, memo, delegate) = IJBFundingCycleDataSource(fundingCycle.dataSource())
+        .redeemParams(_data);
     } else {
       memo = _memo;
     }

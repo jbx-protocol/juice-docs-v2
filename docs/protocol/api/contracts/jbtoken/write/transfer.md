@@ -16,7 +16,7 @@ Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
 
 ```
 function transfer(
-  uint256,
+  uint256 _projectId,
   address _to,
   uint256 _amount
 ) external override { ... }
@@ -50,15 +50,17 @@ function transfer(
   @notice
   Transfer tokens to an account.
 
-  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
+  @param _projectId The ID of the project to which the token belongs. This is ignored.
   @param _to The destination address.
   @param _amount The amount of the transfer, as a fixed point number with 18 decimals.
 */
 function transfer(
-  uint256,
+  uint256 _projectId,
   address _to,
   uint256 _amount
 ) external override {
+  _projectId; // Prevents unused var compiler and natspec complaints.
+
   transfer(_to, _amount);
 }
 ```

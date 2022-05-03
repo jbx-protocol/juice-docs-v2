@@ -10,7 +10,6 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 interface IJBFundingCycleDataSource is IERC165 {
   function payParams(JBPayParamsData calldata _data)
     external
-    view
     returns (
       uint256 weight,
       string memory memo,
@@ -19,7 +18,6 @@ interface IJBFundingCycleDataSource is IERC165 {
 
   function redeemParams(JBRedeemParamsData calldata _data)
     external
-    view
     returns (
       uint256 reclaimAmount,
       string memory memo,

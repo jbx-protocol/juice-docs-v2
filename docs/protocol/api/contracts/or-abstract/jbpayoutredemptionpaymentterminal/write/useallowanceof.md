@@ -23,7 +23,7 @@ function useAllowanceOf(
   uint256 _projectId,
   uint256 _amount,
   uint256 _currency,
-  address,
+  address _token,
   uint256 _minReturnedTokens,
   address payable _beneficiary,
   string memory _memo
@@ -78,7 +78,7 @@ function useAllowanceOf(
   @param _projectId The ID of the project to use the allowance of.
   @param _amount The amount of terminal tokens to use from this project's current allowance, as a fixed point number with the same amount of decimals as this terminal.
   @param _currency The expected currency of the amount being distributed. Must match the project's current funding cycle's overflow allowance currency.
-  ignored: _token The token being distributed. This terminal ignores this property since it only manages one token. 
+  @param _token The token being distributed. This terminal ignores this property since it only manages one token. 
   @param _minReturnedTokens The minimum number of tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same amount of decimals as this terminal.
   @param _beneficiary The address to send the funds to.
   @param _memo A memo to pass along to the emitted event.
@@ -89,7 +89,7 @@ function useAllowanceOf(
   uint256 _projectId,
   uint256 _amount,
   uint256 _currency,
-  address, 
+  address _token, 
   uint256 _minReturnedTokens,
   address payable _beneficiary,
   string memory _memo
@@ -100,6 +100,8 @@ function useAllowanceOf(
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.USE_ALLOWANCE)
   returns (uint256 netDistributedAmount)
 {
+  _token; // Prevents unused var compiler and natspec complaints.
+  
   return _useAllowanceOf(_projectId, _amount, _currency, _minReturnedTokens, _beneficiary, _memo);
 }
 ```

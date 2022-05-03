@@ -54,8 +54,10 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
     ```
     // Setting terminals must be allowed if not called from the current controller.
-    if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
-      revert SET_TERMINALS_NOT_ALLOWED();
+    if (
+      msg.sender != address(controllerOf[_projectId]) &&
+      !uint8(_fundingCycle.metadata >> 8).setTerminalsAllowed()
+    ) revert SET_TERMINALS_NOT_ALLOWED();
     ```
 
     _Library references:_
@@ -104,9 +106,12 @@ function _addTerminalIfNeeded(uint256 _projectId, IJBPaymentTerminal _terminal) 
 
   // Get a reference to the project's current funding cycle.
   JBFundingCycle memory _fundingCycle = fundingCycleStore.currentOf(_projectId);
+
   // Setting terminals must be allowed if not called from the current controller.
-  if (msg.sender != address(controllerOf[_projectId]) && !_fundingCycle.setTerminalsAllowed())
-    revert SET_TERMINALS_NOT_ALLOWED();
+  if (
+    msg.sender != address(controllerOf[_projectId]) &&
+    !uint8(_fundingCycle.metadata >> 8).setTerminalsAllowed()
+  ) revert SET_TERMINALS_NOT_ALLOWED();
 
   // Add the new terminal.
   _terminalsOf[_projectId].push(_terminal);

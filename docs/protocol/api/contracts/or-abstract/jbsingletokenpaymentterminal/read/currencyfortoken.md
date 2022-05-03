@@ -15,7 +15,7 @@ Interface: [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md
 ### Definition
 
 ```
-function currencyForToken(address) external view override returns (uint256) { ... }
+function currencyForToken(address _token) external view override returns (uint256) { ... }
 ```
 
 * Arguments:
@@ -42,11 +42,13 @@ function currencyForToken(address) external view override returns (uint256) { ..
   @notice
   The currency that should be used for the specified token.
 
-  ignored: _token The token to check for the currency of.
+  @param _token The token to check for the currency of.
 
   @return The currency index.
 */
-function currencyForToken(address) external view override returns (uint256) {
+function currencyForToken(address _token) external view override returns (uint256) {
+  _token; // Prevents unused var compiler and natspec complaints.
+
   return currency;
 }
 ```

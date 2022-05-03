@@ -18,7 +18,7 @@ _Only the owner of this contract cant burn some of its supply._
 
 ```
 function transferFrom(
-  uint256,
+  uint256 _projectId,
   address _from,
   address _to,
   uint256 _amount
@@ -54,17 +54,19 @@ function transferFrom(
   @notice
   Transfer tokens between accounts.
 
-  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
+  @param _projectId The ID of the project to which the token belongs. This is ignored.
   @param _from The originating address.
   @param _to The destination address.
   @param _amount The amount of the transfer, as a fixed point number with 18 decimals.
 */
 function transferFrom(
-  uint256,
+  uint256 _projectId,
   address _from,
   address _to,
   uint256 _amount
 ) external override {
+  _projectId; // Prevents unused var compiler and natspec complaints.
+
   transferFrom(_from, _to, _amount);
 }
 ```

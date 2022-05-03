@@ -17,7 +17,11 @@ _Only the owner of this contract can transfer it._
 #### Definition
 
 ```
- function transferOwnership(uint256, address _newOwner) public virtual override onlyOwner { ... }
+function transferOwnership(uint256 _projectId, address _newOwner) 
+  public 
+  virtual 
+  override 
+  onlyOwner  { ... }
 ```
 
 * Arguments:
@@ -51,10 +55,17 @@ _Only the owner of this contract can transfer it._
   @dev
   Only the owner of this contract can transfer it.
 
-  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
+  @param _projectId The ID of the project to which the token belongs. This is ignored.
   @param _newOwner The new owner.
 */
-function transferOwnership(uint256, address _newOwner) public virtual override onlyOwner {
+function transferOwnership(uint256 _projectId, address _newOwner) 
+  public 
+  virtual 
+  override 
+  onlyOwner 
+{
+  _projectId; // Prevents unused var compiler and natspec complaints.
+
   return super.transferOwnership(_newOwner);
 }
 ```

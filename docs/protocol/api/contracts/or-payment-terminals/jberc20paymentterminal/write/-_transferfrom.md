@@ -14,7 +14,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-payme
 
 ```
 function _transferFrom(
-  address,
+  address _from,
   address payable _to,
   uint256 _amount
 ) internal override { ...}

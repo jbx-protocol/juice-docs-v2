@@ -18,7 +18,7 @@ _Only the owner of this contract cant mint more of it._
 
 ```
 function mint(
-  uint256,
+  uint256 _projectId,
   address _account,
   uint256 _amount
 ) external override onlyOwner { ... }
@@ -56,15 +56,17 @@ function mint(
   @dev
   Only the owner of this contract cant mint more of it.
 
-  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
+  @param _projectId The ID of the project to which the token belongs. This is ignored.
   @param _account The account to mint the tokens for.
   @param _amount The amount of tokens to mint, as a fixed point number with 18 decimals.
 */
 function mint(
-  uint256,
+  uint256 _projectId,
   address _account,
   uint256 _amount
 ) external override onlyOwner {
+  _projectId; // Prevents unused var compiler and natspec complaints.
+
   return _mint(_account, _amount);
 }
 ```

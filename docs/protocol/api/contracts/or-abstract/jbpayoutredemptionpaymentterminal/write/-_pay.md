@@ -29,7 +29,7 @@ function _pay(
   * `_amount` is the amount of terminal tokens being received, as a fixed point number with the same amount of decimals as this terminal. If this terminal's token is ETH, this is ignored and msg.value is used in its place.
   * `_payer` is the address making the payment.
   * `_projectId` is the ID of the project being paid.
-  * `_beneficiary` is the address to mint tokens for and pass along to the funding cycle's delegate.
+  * `_beneficiary` is the address to mint tokens for and pass along to the funding cycle's data source and delegate.
   * `_minReturnedTokens` is the minimum number of project tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   * `_preferClaimedTokens` is a flag indicating whether the request prefers to mint project tokens into the beneficiaries wallet rather than leaving them unclaimed. This is only possible if the project has an attached token contract. Leaving them unclaimed saves gas.
   * `_memo` is memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate. A data source can alter the memo before emitting in the event and forwarding to the delegate.
@@ -80,6 +80,7 @@ function _pay(
           _bundledAmount,
           _projectId,
           baseWeightCurrency,
+          _beneficiary,
           _memo,
           _metadata
         );
@@ -133,9 +134,11 @@ function _pay(
           JBDidPayData memory _data = JBDidPayData(
             _payer,
             _projectId,
+            _fundingCycle.configuration,
             _bundledAmount,
             beneficiaryTokenCount,
             _beneficiary,
+            _preferClaimedTokens,
             _memo,
             _metadata
           );
@@ -185,7 +188,7 @@ function _pay(
   @param _amount The amount of terminal tokens being received, as a fixed point number with the same amount of decimals as this terminal. If this terminal's token is ETH, this is ignored and msg.value is used in its place.
   @param _payer The address making the payment.
   @param _projectId The ID of the project being paid.
-  @param _beneficiary The address to mint tokens for and pass along to the funding cycle's delegate.
+  @param _beneficiary The address to mint tokens for and pass along to the funding cycle's data source and delegate.
   @param _minReturnedTokens The minimum number of project tokens expected in return, as a fixed point number with the same amount of decimals as this terminal.
   @param _preferClaimedTokens A flag indicating whether the request prefers to mint project tokens into the beneficiaries wallet rather than leaving them unclaimed. This is only possible if the project has an attached token contract. Leaving them unclaimed saves gas.
   @param _memo A memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate.  A data source can alter the memo before emitting in the event and forwarding to the delegate.
@@ -224,6 +227,7 @@ function _pay(
       _bundledAmount,
       _projectId,
       baseWeightCurrency,
+      _beneficiary,
       _memo,
       _metadata
     );
@@ -248,9 +252,11 @@ function _pay(
       JBDidPayData memory _data = JBDidPayData(
         _payer,
         _projectId,
+        _fundingCycle.configuration,
         _bundledAmount,
         beneficiaryTokenCount,
         _beneficiary,
+        _preferClaimedTokens,
         _memo,
         _metadata
       );

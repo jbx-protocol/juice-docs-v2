@@ -24,6 +24,7 @@ function recordPaymentFrom(
   JBTokenAmount calldata _amount,
   uint256 _projectId,
   uint256 _baseWeightCurrency,
+  address _beneficiary,
   string calldata _memo,
   bytes memory _metadata
 )
@@ -43,6 +44,7 @@ function recordPaymentFrom(
   * `_amount` is a [`JBTokenAmount`](/protocol/api/data-structures/jbtokenamount.md) data structure specifying the amount of tokens being paid. Includes the token being paid, the value, the number of decimals included, and the currency of the amount.
   * `_projectId` is the ID of the project being paid.
   * `_baseWeightCurrency` is the currency to base token issuance on.
+  * `_beneficiary` is the specified address that should be the beneficiary of anything that results from the payment.
   * `_memo` is a memo to pass along to the emitted event, and passed along to the funding cycle's data source.
   * `_metadata` are bytes to send along to the data source, if one is provided.
 * The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
@@ -98,12 +100,16 @@ function recordPaymentFrom(
         _payer,
         _amount,
         _projectId,
+        _beneficiary,
+        fundingCycle.configuration,
         fundingCycle.weight,
         fundingCycle.reservedRate(),
         _memo,
         _metadata
       );
-      (_weight, memo, delegate) = fundingCycle.dataSource().payParams(_data);
+      (_weight, memo, delegate) = IJBFundingCycleDataSource(fundingCycle.dataSource()).payParams(
+        _data
+      );
     }
     // Otherwise use the funding cycle's weight
     else {
@@ -194,6 +200,7 @@ function recordPaymentFrom(
   @param _amount The amount of tokens being paid. Includes the token being paid, the value, the number of decimals included, and the currency of the amount.
   @param _projectId The ID of the project being paid.
   @param _baseWeightCurrency The currency to base token issuance on.
+  @param _beneficiary The specified address that should be the beneficiary of anything that results from the payment.
   @param _memo A memo to pass along to the emitted event, and passed along to the funding cycle's data source.
   @param _metadata Bytes to send along to the data source, if one is provided.
 
@@ -207,8 +214,9 @@ function recordPaymentFrom(
   JBTokenAmount calldata _amount,
   uint256 _projectId,
   uint256 _baseWeightCurrency,
+  address _beneficiary,
   string calldata _memo,
-  bytes calldata _metadata
+  bytes memory _metadata
 )
   external
   override
@@ -240,12 +248,16 @@ function recordPaymentFrom(
       _payer,
       _amount,
       _projectId,
+      _beneficiary,
+      fundingCycle.configuration,
       fundingCycle.weight,
       fundingCycle.reservedRate(),
       _memo,
       _metadata
     );
-    (_weight, memo, delegate) = fundingCycle.dataSource().payParams(_data);
+    (_weight, memo, delegate) = IJBFundingCycleDataSource(fundingCycle.dataSource()).payParams(
+      _data
+    );
   }
   // Otherwise use the funding cycle's weight
   else {

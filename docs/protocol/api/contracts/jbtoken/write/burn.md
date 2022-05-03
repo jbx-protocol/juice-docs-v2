@@ -18,7 +18,7 @@ _Only the owner of this contract cant burn some of its supply._
 
 ```
 function burn(
-  uint256,
+  uint256 _projectId,
   address _account,
   uint256 _amount
 ) external override onlyOwner { ... }
@@ -56,15 +56,17 @@ function burn(
   @dev
   Only the owner of this contract cant burn some of its supply.
   
-  ignore: _projectId The ID of the project to which the token belongs. This is ignored.
+  @param _projectId The ID of the project to which the token belongs. This is ignored.
   @param _account The account to burn tokens from.
   @param _amount The amount of tokens to burn, as a fixed point number with 18 decimals.
 */
 function burn(
-  uint256,
+  uint256 _projectId,
   address _account,
   uint256 _amount
 ) external override onlyOwner {
+  _projectId; // Prevents unused var compiler and natspec complaints.
+
   return _burn(_account, _amount);
 }
 ```

@@ -15,7 +15,7 @@ Interface: [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md
 ### Definition
 
 ```
-function decimalsForToken(address) external view override returns (uint256) { ... }
+function decimalsForToken(address _token) external view override returns (uint256) { ... }
 ```
 
 * Arguments:
@@ -42,11 +42,13 @@ function decimalsForToken(address) external view override returns (uint256) { ..
   @notice
   The decimals that should be used in fixed number accounting for the specified token.
 
-  ignored: _token The token to check for the decimals of.
+  @param _token The token to check for the decimals of.
 
   @return The number of decimals for the token.
 */
-function decimalsForToken(address) external view override returns (uint256) {
+function decimalsForToken(address _token) external view override returns (uint256) {
+  _token; // Prevents unused var compiler and natspec complaints.
+
   return decimals;
 }
 ```

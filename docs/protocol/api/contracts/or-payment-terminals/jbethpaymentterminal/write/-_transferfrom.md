@@ -14,7 +14,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-payme
 
 ```
 function _transferFrom(
-  address,
+  address _from,
   address payable _to,
   uint256 _amount
 ) internal override { ...}
@@ -50,7 +50,7 @@ function _transferFrom(
   @notice
   Transfers tokens.
 
-  ignored: _from The address from which the transfer should originate.
+  @param _from The address from which the transfer should originate.
   @param _to The address to which the transfer should go.
   @param _amount The amount of the transfer, as a fixed point number with the same number of decimals as this terminal.
 */
@@ -59,6 +59,8 @@ function _transferFrom(
   address payable _to,
   uint256 _amount
 ) internal override {
+   _from; // Prevents unused var compiler and natspec complaints.
+
   Address.sendValue(_to, _amount);
 }
 ```

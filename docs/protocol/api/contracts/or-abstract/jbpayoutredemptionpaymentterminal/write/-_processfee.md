@@ -60,6 +60,7 @@ function _processFee(uint256 _amount, address _beneficiary) { ... }
     ```
     else { ... }
     ```
+
     1.  Call any pre-transfer logic.
 
         ```

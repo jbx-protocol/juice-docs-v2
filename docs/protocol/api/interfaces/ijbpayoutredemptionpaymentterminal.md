@@ -124,7 +124,7 @@ interface IJBPayoutRedemptionPaymentTerminal is
 
   event SetFeeGauge(IJBFeeGauge indexed feeGauge, address caller);
 
-  event SetFeelessTerminal(IJBPaymentTerminal indexed terminal, bool indexed flag, address caller);
+  event SetFeelessAddress(address indexed addrs, bool indexed flag, address caller);
 
   function projects() external view returns (IJBProjects);
 
@@ -156,6 +156,6 @@ interface IJBPayoutRedemptionPaymentTerminal is
 
   function setFeeGauge(IJBFeeGauge _feeGauge) external;
 
-  function setFeelessTerminal(IJBPaymentTerminal _terminal, bool _flag) external;
+  function setFeelessAddress(address _address, bool _flag) external;
 }
 ```

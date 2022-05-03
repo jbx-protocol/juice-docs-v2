@@ -96,8 +96,8 @@ function _useAllowanceOf(
 
         ```
         // Get the amount of discount that should be applied to any fees taken.
-        // If the fee is zero, set the discount to 100% for convinience.
-        uint256 _feeDiscount = fee == 0
+        // If the fee is zero or if the fee is being used by an address that doesn't incur fees, set the discount to 100% for convinience.
+        uint256 _feeDiscount = fee == 0 || isFeelessAddress[msg.sender]
           ? JBConstants.MAX_FEE_DISCOUNT
           : _currentFeeDiscount(_projectId);
         ```
@@ -109,6 +109,7 @@ function _useAllowanceOf(
 
         _Internal references:_
 
+        * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/isfeelessaddress.md)
         * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
     4.  Take the fee if needed.
@@ -216,8 +217,8 @@ function useAllowanceOf(
     address _projectOwner = projects.ownerOf(_projectId);
 
     // Get the amount of discount that should be applied to any fees taken.
-    // If the fee is zero, set the discount to 100% for convinience.
-    uint256 _feeDiscount = fee == 0
+    // If the fee is zero or if the fee is being used by an address that doesn't incur fees, set the discount to 100% for convinience.
+    uint256 _feeDiscount = fee == 0 || isFeelessAddress[msg.sender]
       ? JBConstants.MAX_FEE_DISCOUNT
       : _currentFeeDiscount(_projectId);
 

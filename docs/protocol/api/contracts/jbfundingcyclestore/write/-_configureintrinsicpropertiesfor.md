@@ -72,7 +72,7 @@ function _configureIntrinsicPropertiesFor(
 
     ```
     // Get a reference to the funding cycle.
-    JBFundingCycle memory _fundingCycle = _getStructFor(_projectId, _currentConfiguration);
+    JBFundingCycle memory _baseFundingCycle = _getStructFor(_projectId, _currentConfiguration);
     ```
 
     _Internal references:_
@@ -81,26 +81,23 @@ function _configureIntrinsicPropertiesFor(
 5.  If the configuration isn't approved, get a reference to the configuration it's based on which must be the latest approved configuration.
 
     ```
-    if (!_isApproved(_projectId, _fundingCycle))
+    if (!_isApproved(_projectId, _baseFundingCycle))
       // If it hasn't been approved, set the ID to be the funding cycle it's based on,
       // which carries the latest approved configuration.
-      _currentConfiguration = _getStructFor(_projectId, _currentConfiguration).basedOn;
+      _baseFundingCycle = _getStructFor(_projectId, _baseFundingCycle.basedOn;
     ```
 
     _Internal references:_
 
     * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
     * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
-6.  At this point, the current configuration being referenced is the funding cycle configuration that the initialized one should be based on. Get a reference to the [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md) for the configuration.
+6. Make sure the configuration isn't the same as the base configuration. Only one configuration can be made to a project's funding cycles per block. 
 
     ```
-    // Determine the funding cycle to use as the base.
-    JBFundingCycle memory _baseFundingCycle = _getStructFor(_projectId, _currentConfiguration);
+    // The configuration can't be the same as the base configuration.
+    if (_baseFundingCycle.configuration == _configuration) revert NO_SAME_BLOCK_RECONFIGURATION();
     ```
 
-    _Internal references:_
-
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 7.  Get a reference to the time after which the base funding cycle's ballot will be resolved. The funding cycle that will be initialized can start any time after the base funding cycle's ballot's duration is up.
 
     ```
@@ -166,15 +163,15 @@ function _configureIntrinsicPropertiesFor(
     _currentConfiguration = latestConfigurationOf[_projectId];
 
   // Get a reference to the funding cycle.
-  JBFundingCycle memory _fundingCycle = _getStructFor(_projectId, _currentConfiguration);
+  JBFundingCycle memory _baseFundingCycle = _getStructFor(_projectId, _currentConfiguration);
 
-  if (!_isApproved(_projectId, _fundingCycle))
+  if (!_isApproved(_projectId, _baseFundingCycle))
     // If it hasn't been approved, set the ID to be the funding cycle it's based on,
     // which carries the latest approved configuration.
-    _currentConfiguration = _getStructFor(_projectId, _currentConfiguration).basedOn;
+    _baseFundingCycle = _getStructFor(_projectId, _baseFundingCycle.basedOn);
 
-  // Determine the funding cycle to use as the base.
-  JBFundingCycle memory _baseFundingCycle = _getStructFor(_projectId, _currentConfiguration);
+  // The configuration can't be the same as the base configuration.
+  if (_baseFundingCycle.configuration == _configuration) revert NO_SAME_BLOCK_RECONFIGURATION();
 
   // The time after the ballot of the provided funding cycle has expired.
   // If the provided funding cycle has no ballot, return the current timestamp.
@@ -192,6 +189,14 @@ function _configureIntrinsicPropertiesFor(
   );
 }
 ```
+
+</TabItem>
+
+<TabItem value="Errors" label="Errors">
+
+| String                      | Description                                                                  |
+| --------------------------- | ---------------------------------------------------------------------------- |
+| **`NO_SAME_BLOCK_RECONFIGURATION`**        | Thrown if two configurations have been submitted in the same block.            |
 
 </TabItem>
 

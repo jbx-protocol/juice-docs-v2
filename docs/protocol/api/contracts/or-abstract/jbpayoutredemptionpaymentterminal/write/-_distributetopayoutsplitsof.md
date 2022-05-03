@@ -94,12 +94,18 @@ function _distributeToPayoutSplitsOf(
           // Transfer tokens to the split.
           // If there's an allocator set, transfer to its `allocate` function.
           if (_split.allocator != IJBSplitAllocator(address(0))) {
-            _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
-              ? _payoutAmount
-              : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+            // If the split allocator is set as feeless, this distribution is not eligible for a fee.
+            if (isFeelessAddress[address(_split.allocator)])
+              _netPayoutAmount = _payoutAmount;
+              // This distribution is eligible for a fee since the funds are leaving this contract and the allocator isn't listed as feeless.
+            else {
+              _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
+                ? _payoutAmount
+                : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
 
-            // This distribution is eligible for a fee since the funds are leaving the ecosystem.
-            feeEligibleDistributionAmount += _payoutAmount;
+              // This distribution is eligible for a fee since the funds are leaving the ecosystem.
+              feeEligibleDistributionAmount += _payoutAmount;
+            }
 
             // Trigger any inherited pre-transfer logic.
             _beforeTransferTo(address(_split.allocator), _netPayoutAmount);
@@ -139,7 +145,7 @@ function _distributeToPayoutSplitsOf(
 
               // Add to balance if prefered.
               if (_split.preferAddToBalance)
-                _addToBalanceOf(_split.projectId, _netPayoutAmount, '', _projectMetadata);
+                _addToBalanceOf(_split.projectId, _netPayoutAmount, false, '', _projectMetadata);
               else
                 _pay(
                   _netPayoutAmount,
@@ -153,7 +159,7 @@ function _distributeToPayoutSplitsOf(
                 );
             } else {
               // If the terminal is set as feeless, this distribution is not eligible for a fee.
-              if (isFeelessTerminal[_terminal])
+              if (isFeelessAddress[address(_terminal)])
                 _netPayoutAmount = _payoutAmount;
                 // This distribution is eligible for a fee since the funds are leaving this contract and the terminal isn't listed as feeless.
               else {
@@ -227,7 +233,7 @@ function _distributeToPayoutSplitsOf(
 
         * [`fee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
         * [`decimals`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
-        * [`isFeelessTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessterminal.md)
+        * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessaddress.md)
         * [`pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
         * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
         * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
@@ -305,12 +311,18 @@ function _distributeToPayoutSplitsOf(
       // Transfer tokens to the split.
       // If there's an allocator set, transfer to its `allocate` function.
       if (_split.allocator != IJBSplitAllocator(address(0))) {
-        _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
-          ? _payoutAmount
-          : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+        // If the split allocator is set as feeless, this distribution is not eligible for a fee.
+        if (isFeelessAddress[address(_split.allocator)])
+          _netPayoutAmount = _payoutAmount;
+          // This distribution is eligible for a fee since the funds are leaving this contract and the allocator isn't listed as feeless.
+        else {
+          _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
+            ? _payoutAmount
+            : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
 
-        // This distribution is eligible for a fee since the funds are leaving the ecosystem.
-        feeEligibleDistributionAmount += _payoutAmount;
+          // This distribution is eligible for a fee since the funds are leaving the ecosystem.
+          feeEligibleDistributionAmount += _payoutAmount;
+        }
 
         _beforeTransferTo(address(_split.allocator), _netPayoutAmount);
 
@@ -349,7 +361,7 @@ function _distributeToPayoutSplitsOf(
 
           // Add to balance if prefered.
           if (_split.preferAddToBalance)
-            _addToBalanceOf(_split.projectId, _netPayoutAmount, '', _projectMetadata);
+            _addToBalanceOf(_split.projectId, _netPayoutAmount, false, '', _projectMetadata);
           else
             _pay(
               _netPayoutAmount,
@@ -363,7 +375,7 @@ function _distributeToPayoutSplitsOf(
             );
         } else {
           // If the terminal is set as feeless, this distribution is not eligible for a fee.
-          if (isFeelessTerminal[_terminal])
+          if (isFeelessAddress[address(_terminal)])
             _netPayoutAmount = _payoutAmount;
             // This distribution is eligible for a fee since the funds are leaving this contract and the terminal isn't listed as feeless.
           else {

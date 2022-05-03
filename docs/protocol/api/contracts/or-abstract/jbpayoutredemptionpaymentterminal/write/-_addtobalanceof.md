@@ -16,6 +16,7 @@ Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstr
 function _addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
+  bool _shouldRefundHeldFees,
   string memory _memo,
   bytes memory _metadata
 ) private { ... }
@@ -24,6 +25,7 @@ function _addToBalanceOf(
 * Arguments:
   * `_projectId` is the ID of the project to which the funds received belong.
   * `_amount` is the amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
+  * `_shouldRefundHeldFees` is a flag indicating if held fees should be refunded based on the amount being added.
   * `_memo` is a memo to pass along to the emitted event.
   * `_metadata` is extra data to pass along to the emitted event.
 * The function is private to this contract.
@@ -35,7 +37,7 @@ function _addToBalanceOf(
 
     ```
     // Refund any held fees to make sure the project doesn't pay double for funds going in and out of the protocol.
-    uint256 _refundedFees = _refundHeldFees(_projectId, _amount);
+    uint256 _refundedFees = _shouldRefundHeldFees ? _refundHeldFees(_projectId, _amount) : 0;
     ```
 
     _Internal references:_
@@ -76,17 +78,19 @@ function _addToBalanceOf(
 
   @param _projectId The ID of the project to which the funds received belong.
   @param _amount The amount of tokens to add, as a fixed point number with the same number of decimals as this terminal. If this is an ETH terminal, this is ignored and msg.value is used instead.
+  @param _shouldRefundHeldFees A flag indicating if held fees should be refunded based on the amount being added.
   @param _memo A memo to pass along to the emitted event.
   @param _metadata Extra data to pass along to the emitted event.
 */
 function _addToBalanceOf(
   uint256 _projectId,
   uint256 _amount,
+  bool _shouldRefundHeldFees,
   string memory _memo,
   bytes memory _metadata
 ) private {
   // Refund any held fees to make sure the project doesn't pay double for funds going in and out of the protocol.
-  uint256 _refundedFees = _refundHeldFees(_projectId, _amount);
+  uint256 _refundedFees = _shouldRefundHeldFees ? _refundHeldFees(_projectId, _amount) : 0;
 
   // Record the added funds with any refunded fees.
   store.recordAddedBalanceFor(_projectId, _amount + _refundedFees);

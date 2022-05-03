@@ -20,8 +20,8 @@ The protocol has very minimal global governance. The following are the only glob
 * **[`JBETHPaymentTerminal.setFeeGauge(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfeegauge.md)**<br/>
   Allows the owner of the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md) (or any other terminal inheriting from [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)) to change the fee gauge used to provide fee discounts on a per-project basis. 
   <br/>
-* **[`JBETHPaymentTerminal.setFeelessTerminal(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfeelessterminal.md)**<br/>
-  Allows the owner of the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md) (or any other terminal inheriting from [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)) to add/remove any other [`IJBTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) used by other projects from a list of terminals to which distributed funds can be sent without incurring protocol fees. 
+* **[`JBETHPaymentTerminal.setFeelessAddress(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfeelessaddress.md)**<br/>
+  Allows the owner of the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md) (or any other terminal inheriting from [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)) to add/remove any other address used by other projects to/from a list of address to which distributed funds can be sent without incurring protocol fees, and from which funds can be added back to the project's balance without refunding held fees. 
   <br/>
 
 Ownership for each contract is managed independently and can be transferred to a new owner by the current owner.

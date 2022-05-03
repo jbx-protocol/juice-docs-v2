@@ -46,11 +46,13 @@ function totalSupply(uint256) external view override returns (uint256) { ... }
   @notice
   The total supply of this ERC20.
   
-  ignore: _projectId the ID of the project to which the token belongs. This is ignored.
+  @param _projectId the ID of the project to which the token belongs. This is ignored.
 
   @return The total supply of this ERC20, as a fixed point number with 18 decimals.
 */
-function totalSupply(uint256) external view override returns (uint256) {
+function totalSupply(uint256 _projectId) external view override returns (uint256) {
+  _projectId; // Prevents unused var compiler and natspec complaints.
+
   return super.totalSupply();
 }
 ```
