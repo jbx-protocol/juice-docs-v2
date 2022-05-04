@@ -17,6 +17,7 @@ When extending the redemption functionality with a delegate, the protocol will p
 struct JBDidRedeemData {
   address holder;
   uint256 projectId;
+  uint256 currentFundingCycleConfiguration;
   uint256 projectTokenCount;
   JBTokenAmount reclaimedAmount;
   address payable beneficiary;
@@ -27,13 +28,9 @@ struct JBDidRedeemData {
 
 ```
 struct JBTokenAmount {
-  // The token the payment was made in.
   address token;
-  // The amount of tokens that was paid, as a fixed point number.
   uint256 value;
-  // The number of decimals included in the value fixed point number.
   uint256 decimals;
-  // The expected currency of the value.
   uint256 currency;
 }
 ```

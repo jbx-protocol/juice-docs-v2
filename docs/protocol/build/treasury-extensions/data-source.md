@@ -39,6 +39,8 @@ struct JBPayParamsData {
   address payer;
   JBTokenAmount amount;
   uint256 projectId;
+  uint256 currentFundingCycleConfiguration;
+  address beneficiary;
   uint256 weight;
   uint256 reservedRate;
   string memo;
@@ -63,6 +65,8 @@ Using these params, the data source's `payParams(...)` function is responsible f
 
 The `payParams(...)` function can also revert if it's presented with any conditions it does not want to accept payments under. 
 
+The `payParams(...)` function has implicity permissions to [`JBController.mintTokensOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/write/minttokensof.md) for the project
+
 ##### Redeem
  
 When extending the redeem functionality with a data source, the protocol will pass a [`JBRedeemParamsData`](/protocol/api/data-structures/jbredeemparamsdata.md) to the `redeemParams(...)` function:
@@ -72,6 +76,7 @@ struct JBRedeemParamsData {
   IJBPaymentTerminal terminal;
   address holder;
   uint256 projectId;
+  uint256 currentFundingCycleConfiguration;
   uint256 tokenCount;
   uint256 totalSupply;
   uint256 overflow;

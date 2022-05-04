@@ -17,9 +17,11 @@ When extending the pay functionality with a delegate, the protocol will pass a [
 struct JBDidPayData {
   address payer;
   uint256 projectId;
+  uint256 currentFundingCycleConfiguration;
   JBTokenAmount amount;
   uint256 projectTokenCount;
   address beneficiary;
+  bool preferClaimedTokens;
   string memo;
   bytes metadata;
 }
