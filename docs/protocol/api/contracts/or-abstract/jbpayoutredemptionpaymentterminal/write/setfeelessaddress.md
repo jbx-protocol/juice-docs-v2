@@ -42,7 +42,7 @@ function setFeelessAddress(address _address, bool _flag)
 
     _Internal references:_
 
-    * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessAddress.md)
+    * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessaddress.md)
 2.  Emit a `SetFeelessAddress` event with the relevant parameters.
 
     ```

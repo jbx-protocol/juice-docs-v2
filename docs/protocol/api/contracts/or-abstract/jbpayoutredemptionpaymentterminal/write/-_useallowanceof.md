@@ -109,7 +109,7 @@ function _useAllowanceOf(
 
         _Internal references:_
 
-        * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/isfeelessaddress.md)
+        * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessaddress.md)
         * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
     4.  Take the fee if needed.

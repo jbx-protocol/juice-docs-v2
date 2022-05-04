@@ -103,7 +103,7 @@ function _distributePayoutsOf(
 
         _Internal references:_
 
-        * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/isfeelessaddress.md)
+        * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessaddress.md)
         * [`_currentFeeDiscount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
     2.  Get a reference to the amount of distributed funds from which fees should be taken, and the amount leftover after distributing splits.
