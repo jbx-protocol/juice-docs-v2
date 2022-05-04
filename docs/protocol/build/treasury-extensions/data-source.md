@@ -97,6 +97,6 @@ Using these params, the data source's `redeemParams(...)` function is responsibl
 
 The `redeemParams(...)` function can also revert if it's presented with any conditions it does not want to accept redemptions under. 
 
-### Attaching
+#### Attaching
 
 A data source contract should be deployed independently. Once deployed, its address can be configured into a project's funding cycle metadata to take effect while that funding cycle is active. Additionally, the metadata's `useDataSourceForPay` and/or `useDataSourceForRedeem` should be set to `true` if the respective data source hook should be referenced by the protocol.
