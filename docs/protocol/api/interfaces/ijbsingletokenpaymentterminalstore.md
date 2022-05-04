@@ -63,7 +63,7 @@ interface IJBSingleTokenPaymentTerminalStore {
     uint256 _baseWeightCurrency,
     address _beneficiary,
     string calldata _memo,
-    bytes calldata _metadata
+    bytes memory _metadata
   )
     external
     returns (
