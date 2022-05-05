@@ -24,11 +24,7 @@ function mintTokensOf(
   string calldata _memo,
   bool _preferClaimedTokens,
   bool _useReservedRate
-)
-  external
-  virtual
-  override
-  returns (uint256 beneficiaryTokenCount) { ... }
+) external virtual override returns (uint256 beneficiaryTokenCount) { ... }
 ```
 
 * Arguments:
@@ -178,18 +174,7 @@ function mintTokensOf(
   string calldata _memo,
   bool _preferClaimedTokens,
   bool _useReservedRate
-)
-  external
-  virtual
-  override
-  requirePermissionAllowingOverride(
-    projects.ownerOf(_projectId),
-    _projectId,
-    JBOperations.MINT,
-    directory.isTerminalOf(_projectId, IJBPaymentTerminal(msg.sender))
-  )
-  returns (uint256 beneficiaryTokenCount)
-{
+) external virtual override returns (uint256 beneficiaryTokenCount) {
   // There should be tokens to mint.
   if (_tokenCount == 0) revert ZERO_TOKENS_TO_MINT();
 
