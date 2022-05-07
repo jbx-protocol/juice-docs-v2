@@ -8,7 +8,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/interface
 
 ```
 interface IJBPaymentTerminal is IERC165 {
-  function acceptsToken(address _token) external view returns (bool);
+  function acceptsToken(address _token, uint256 _projectId) external view returns (bool);
 
   function currencyForToken(address _token) external view returns (uint256);
 

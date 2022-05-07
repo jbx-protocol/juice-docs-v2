@@ -52,7 +52,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
     // Return the first terminal which accepts the specified token.
     for (uint256 _i; _i < _terminalsOf[_projectId].length; _i++) {
       IJBPaymentTerminal _terminal = _terminalsOf[_projectId][_i];
-      if (_terminal.acceptsToken(_token)) return _terminal;
+      if (_terminal.acceptsToken(_token, _projectId)) return _terminal;
     }
     ```
 
@@ -105,7 +105,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
   // Return the first terminal which accepts the specified token.
   for (uint256 _i; _i < _terminalsOf[_projectId].length; _i++) {
     IJBPaymentTerminal _terminal = _terminalsOf[_projectId][_i];
-    if (_terminal.acceptsToken(_token)) return _terminal;
+    if (_terminal.acceptsToken(_token, _projectId)) return _terminal;
   }
 
   // Not found.

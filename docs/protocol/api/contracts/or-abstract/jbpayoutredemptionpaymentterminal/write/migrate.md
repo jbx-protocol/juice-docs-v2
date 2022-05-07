@@ -39,7 +39,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
 
     ```
     // The terminal being migrated to must accept the same token as this terminal.
-    if (!_to.acceptsToken(token)) revert TERMINAL_TOKENS_INCOMPATIBLE();
+    if (!_to.acceptsToken(token, _projectId)) revert TERMINAL_TOKENS_INCOMPATIBLE();
     ```
 
     _Internal references:_
@@ -126,7 +126,7 @@ function migrate(uint256 _projectId, IJBPaymentTerminal _to)
   returns (uint256 balance)
 {
   // The terminal being migrated to must accept the same token as this terminal.
-  if (!_to.acceptsToken(token)) revert TERMINAL_TOKENS_INCOMPATIBLE();
+  if (!_to.acceptsToken(token, _projectId)) revert TERMINAL_TOKENS_INCOMPATIBLE();
 
   // Record the migration in the store.
   balance = store.recordMigration(_projectId);

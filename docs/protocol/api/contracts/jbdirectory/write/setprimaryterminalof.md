@@ -45,7 +45,7 @@ function setPrimaryTerminalOf(
 
     ```
     // Can't set the primary terminal for a token if it doesn't accept the token.
-    if (!_terminal.acceptsToken(_token)) revert TOKEN_NOT_ACCEPTED();
+    if (!_terminal.acceptsToken(_token, _projectId)) revert TOKEN_NOT_ACCEPTED();
     ```
 
     _External references:_
@@ -111,7 +111,7 @@ function setPrimaryTerminalOf(
   requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.SET_PRIMARY_TERMINAL)
 {
   // Can't set the primary terminal for a token if it doesn't accept the token.
-  if (!_terminal.acceptsToken(_token)) revert TOKEN_NOT_ACCEPTED();
+  if (!_terminal.acceptsToken(_token, _projectId)) revert TOKEN_NOT_ACCEPTED();
 
   // Add the terminal to the project if it hasn't been already.
   _addTerminalIfNeeded(_projectId, _terminal);
