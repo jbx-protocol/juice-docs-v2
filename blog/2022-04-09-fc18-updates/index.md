@@ -19,9 +19,9 @@ Frontend efforts are already well underway: as of 2022-04-07, the [V2 feature pa
 
 For realtime progress updates, take a look at the [Figma](https://www.figma.com/proto/ODXasKZdY95CmGN0onM13o/vebanny-frontend?page-id=0%3A1&node-id=610%3A314&viewport=241%2C48%2C0.37&scaling=min-zoom&starting-point-node-id=610%3A314).
 
-## Juicebox University
+## Juicebox High 
 
-[Juicebox University](https://info.juicebox.money) is live (and you are on it right now)! Join the [Discord](https://www.discord.gg/juicebox) and send a message in `#documentation` if you're interested in contributing or have ideas for improvements.
+[Juicebox High](https://info.juicebox.money) is live (and you are on it right now)! Join the [Discord](https://www.discord.gg/juicebox) and send a message in `#documentation` if you're interested in contributing or have ideas for improvements.
 
 You can use the new blog with your RSS reader by adding [https://info.juicebox.money/blog/rss.xml](https://info.juicebox.money/blog/rss.xml) or [https://info.juicebox.money/blog/atom.xml](https://info.juicebox.money/blog/atom.xml).
 
