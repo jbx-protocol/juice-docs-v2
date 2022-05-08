@@ -50,11 +50,14 @@ const config = {
     defaultLocale: 'en',
     locales: ['en', 'zh', 'ru', 'pt', 'es', 'tr', 'fr', 'ja'],
   },
-  themeConfig:
+  themeConfig: {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      hideableSidebar: true,
-      autoCollapseSidebarCategories: true,
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
       colorMode: {
         defaultMode: 'dark',
         respectPrefersColorScheme: true,
@@ -164,7 +167,6 @@ const config = {
         defaultLanguage: 'solidity',
         additionalLanguages: ['solidity'],
       },
-
-    }),
+    },
 };
 module.exports = config;
