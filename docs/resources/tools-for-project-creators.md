@@ -28,6 +28,8 @@ Aeolian's [DAO Tooling 101](https://info.juicebox.money/blog/dao-tooling-101/) i
 
 * [Juicebox Protocol Overview](https://dune.xyz/twodam/Juicebox-Protocol-Overview) provides an overview of the entire Juicebox ecosystem.
 
+* [Juicebox Product Metrics](https://dune.com/aeolian/juicebox.money-metrics) is Aeolian's product-centric, slimmed down version of Twodam's Juicebox Project Dashboard.
+
 ## Governance
 
 * [Tally](https://www.tally.xyz/) empowers user owned governance through a voting dashboard, governance tooling, real time research and analysis, and an evergreen wiki.
