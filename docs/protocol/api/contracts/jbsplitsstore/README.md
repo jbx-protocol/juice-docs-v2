@@ -9,8 +9,9 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBSplitsS
 
 #### Addresses
 
-Ethereum mainnet:  not yet.
-<!-- Ethereum mainnet: [`0x1ABea264425cD8e65315e34A50F9C83bC3A43a50`](https://etherscan.io/address/0x1ABea264425cD8e65315e34A50F9C83bC3A43a50) -->
+Ethereum mainnet: [`0x32bb71C6DbD6A1b3A37394565872D0eB7fF3846D`](https://etherscan.io/address/0x32bb71C6DbD6A1b3A37394565872D0eB7fF3846D)
+
+Ethereum rinkeby: [`0x5918B60672f53D504881C63AB04c65338ff185d7`](https://rinkeby.etherscan.io/address/0x5918B60672f53D504881C63AB04c65338ff185d7)
 
 #### Interfaces
 
