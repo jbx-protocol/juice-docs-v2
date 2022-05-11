@@ -8,8 +8,9 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBDirecto
 
 #### Addresses
 
-Ethereum mainnet:  not yet.
-<!-- Ethereum mainnet: [`0x1246a50e3aDaF684Ac566f0c40816fF738F309B3`](https://etherscan.io/address/0x1246a50e3aDaF684Ac566f0c40816fF738F309B3) -->
+Ethereum mainnet: [`0xd73D3Df051f6C7fa9e5bDC2fd71ecD3bc835C808`](https://etherscan.io/address/0xd73D3Df051f6C7fa9e5bDC2fd71ecD3bc835C808)
+
+Ethereum rinkeby: [`0xCAEC2DF60aBEfC165ABF8241ddc6e8D0E91eAb24`](https://rinkeby.etherscan.io/address/0xCAEC2DF60aBEfC165ABF8241ddc6e8D0E91eAb24)
 
 #### Interfaces
 

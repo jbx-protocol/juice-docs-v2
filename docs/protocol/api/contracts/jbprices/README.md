@@ -8,8 +8,9 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBPrices.
 
 #### Addresses
 
-Ethereum mainnet:  not yet.
-<!-- Ethereum mainnet: [`0x8E05bcD2812E1449f0EC3aE24E2C395F533d9A99`](https://etherscan.io/address/0x8E05bcD2812E1449f0EC3aE24E2C395F533d9A99) -->
+Ethereum mainnet: [`0xCDE93bdA2a706Fc652F7e75241bA949aCB9f4Fe5`](https://etherscan.io/address/0xCDE93bdA2a706Fc652F7e75241bA949aCB9f4Fe5)
+
+Ethereum rinkeby: [`0xFF1D73AB28140b574Bb7A90e9fBCeD1eDAFce5c1`](https://rinkeby.etherscan.io/address/0xFF1D73AB28140b574Bb7A90e9fBCeD1eDAFce5c1)
 
 #### Interfaces
 

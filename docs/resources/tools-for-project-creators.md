@@ -22,13 +22,13 @@ Aeolian's [DAO Tooling 101](https://info.juicebox.money/blog/dao-tooling-101/) i
 
 *Items in this section were made using [Dune](https://dune.xyz/home), a powerful tool to query, extract, and visualize blockchain data. [Twodam](https://twitter.com/twodam_eth) is Juicebox's in-house Dune wizard.*
 
-* [Juicebox Project Dashboard](https://dune.xyz/twodam/Juicebox-Projects) provides an overview of project funding and token holders. Simply enter your project handle at the top.
+* [Juicebox Protocol Overview](https://dune.xyz/twodam/Juicebox-Protocol-Overview) provides an overview of the entire Juicebox ecosystem.
 
-* [Juicebox Deeper Analytics](https://dune.com/twodam/JuiceboxProtocol) shows average gas costs for project creation and various onchain actions.
+* [Juicebox Project Dashboard](https://dune.xyz/twodam/Juicebox-Projects) provides an overview of project funding and token holders. Simply enter your project handle at the top.
 
 * [Juicebox Portfolio](https://dune.xyz/twodam/Juicebox-Portfolio) shows how much a wallet has received and contributed to Juicebox projects.
 
-* [Juicebox Protocol Overview](https://dune.xyz/twodam/Juicebox-Protocol-Overview) provides an overview of the entire Juicebox ecosystem.
+* [Juicebox Gas & Fun Facts](https://dune.com/twodam/Juicebox-Gas-and-Fun-Facts) shows average gas costs for project creation and various onchain actions.
 
 * [Juicebox Product Metrics](https://dune.com/aeolian/juicebox.money-metrics) is Aeolian's product-centric, slimmed down version of Twodam's Juicebox Project Dashboard.
 

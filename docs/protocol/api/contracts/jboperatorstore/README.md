@@ -8,8 +8,9 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBOperato
 
 #### Addresses
 
-Ethereum mainnet:  not yet.
-<!-- Ethereum mainnet: [`0x21263a042aFE4bAE34F08Bb318056C181bD96D3b`](https://etherscan.io/address/0x21263a042aFE4bAE34F08Bb318056C181bD96D3b) -->
+Ethereum mainnet: [`0x6F3C5afCa0c9eDf3926eF2dDF17c8ae6391afEfb`](https://etherscan.io/address/0x6F3C5afCa0c9eDf3926eF2dDF17c8ae6391afEfb)
+
+Ethereum rinkeby: [`0xEDB2db4b82A4D4956C3B4aA474F7ddf3Ac73c5AB`](https://rinkeby.etherscan.io/address/0xEDB2db4b82A4D4956C3B4aA474F7ddf3Ac73c5AB)
 
 #### Interfaces
 

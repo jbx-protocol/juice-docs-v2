@@ -6,8 +6,9 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBETHERC2
 
 ### Addresses
 
-Ethereum mainnet:  not yet.
-<!-- Ethereum mainnet: [`0x99dB6b517683237dE9C494bbd17861f3608F3585`](https://etherscan.io/address/0x99dB6b517683237dE9C494bbd17861f3608F3585) -->
+Ethereum mainnet: [`0x9E84bEcA3E4d3cfE5C3b5E1b534363E8D7468ABc`](https://etherscan.io/address/0x9E84bEcA3E4d3cfE5C3b5E1b534363E8D7468ABc)
+
+Ethereum rinkeby: [`0x3247df1bdC849f69Ba7dA4faf71d1e5850A6Fbb8`](https://rinkeby.etherscan.io/address/0x3247df1bdC849f69Ba7dA4faf71d1e5850A6Fbb8)
 
 #### Interfaces
 
