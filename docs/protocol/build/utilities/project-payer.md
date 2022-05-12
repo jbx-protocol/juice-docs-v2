@@ -1,16 +1,12 @@
----
-sidebar_position: 3
----
-
 # Project payer
 
-[`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md) contracts make it easy to route funds to projects' treasuries from other contracts or from within inheriting contracts. This is useful for routing funds to a Juicebox treasury from within other contracts such as an NFT's minting function, or creating contract's that will automatically route any received funds to a project's treasury with preconfigured parameters to send along with the payment.  
+[`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md) contracts make it easy to route funds to projects' treasuries from other contracts or within inheriting contracts. This is useful for routing funds to a Juicebox treasury within other contracts such as an NFT's minting function, or creating contracts that will automatically route any received funds to a project's treasury with preconfigured parameters to send along with the payment.  
 
-The [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md) can be inherited from any contract to facilitate internal transactions to juicebox treasuries in ETH or any ERC-20, assuming the project is using a payment terminal that accepts the tokens. They can also be deployed as stand alone project payer copies using [`JBProjectPayerDeployer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayerdeployer).
+The [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md) can be inherited from any contract to facilitate internal transactions to Juicebox treasuries in ETH or any ERC-20, assuming the project is using a payment terminal that accepts the tokens. They can also be deployed as standalone project payer copies using [`JBProjectPayerDeployer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayerdeployer).
 
 #### Inheriting JBProjectPayer
 
-Inheriting from [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md) will give a contract access to a public [`JBProjectPayer.pay(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/pay.md), a public [`JBProjectPayer.addToBalanceOf(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/addtobalanceof.md) function, an internal [`JBProjectPayer._pay(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md) function, and an internal [`JBProjectPayer._addToBalanceOf(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md) function. These can be used from within the contract to route funds to a juicebox treasury while specifying all relevant parameters to contextualize the payment. Use the internal versions if the inheriting contract has already handled receiving the funds being forwaded.
+Inheriting from [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md) will give a contract access to a public [`JBProjectPayer.pay(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/pay.md) function, a public [`JBProjectPayer.addToBalanceOf(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/addtobalanceof.md) function, an internal [`JBProjectPayer._pay(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md) function, and an internal [`JBProjectPayer._addToBalanceOf(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md) function. These can be used from within the contract to route funds to a Juicebox treasury while specifying all relevant parameters to contextualize the payment. Use the internal versions if the inheriting contract has already handled receiving the funds being forwarded.
 
 Follow instructions in [Getting started](/protocol/build/getting-started.md) to import the `JBProjectPayer` files into a project.
 
@@ -64,11 +60,11 @@ function _addToBalanceOf(
 ) internal virtual  {}
 ```
 
-If your contract does not wish to route payments received via the native `receive` interaction to a juicebox treasury, all default constructor arguments can be left as null values. The contract will revert any payment received.
+If your contract does not wish to route payments received via the native `receive` interaction to a Juicebox treasury, all default constructor arguments can be left as null values. The contract will revert any payment received.
 
 #### Deploying project payers
 
-Instances of the [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md) contract can also be deployed as stand-alone forwarders of payments to juicebox treasuries. A new project payer can be deployed using [`JBProjectPayerDeployer.deployProjectPayer(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayerdeployer/write/deployprojectpayer.md).
+Instances of the [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md) contract can also be deployed as stand-alone forwarders of payments to Juicebox treasuries. A new project payer can be deployed using [`JBProjectPayerDeployer.deployProjectPayer(...)`](/protocol/api/contracts/or-utilities/jbetherc20projectpayerdeployer/write/deployprojectpayer.md).
 
 ```
 function deployProjectPayer(
