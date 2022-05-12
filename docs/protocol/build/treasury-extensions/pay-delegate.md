@@ -3,7 +3,7 @@
 Before implementing, learn about delegates [here](/protocol/learn/glossary/delegate.md).
 #### Specs
 
-A contract can become a treasury pay delegate by adhering to [`IJBPayDelegate`](/protocol/api/interfaces/ijbpaydelegate.md).
+A contract can become a treasury pay delegate by adhering to [`IJBPayDelegate`](/protocol/api/interfaces/ijbpaydelegate.md):
 
 ```
 interface IJBPayDelegate {

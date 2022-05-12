@@ -1,6 +1,7 @@
 # Split allocator
 
 Before implementing, learn about allocators [here](/protocol/learn/glossary/split-allocator.md), and splits [here](/protocol/learn/glossary/splits.md).
+
 #### Specs
 
 A contract can become a split allocator by adhering to [`IJBSplitAllocator`](/protocol/api/interfaces/ijbsplitallocator.md):
@@ -11,7 +12,7 @@ interface IJBSplitAllocator {
 }
 ```
 
-When extending the payout distribution or reserved token distribution functionality with an allocator, the protocol will pass a [`JBSplitAllocationData`](/protocol/api/data-structures/jbsplitallocationdata.md) to the `allocate(...)` function:
+When extending payout distribution or reserved token distribution functionality with an allocator, the protocol will pass a [`JBSplitAllocationData`](/protocol/api/data-structures/jbsplitallocationdata.md) to the `allocate(...)` function:
 
 ```
 struct JBSplitAllocationData {
@@ -46,4 +47,4 @@ In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/protoco
 
 #### Attaching
 
-An allocator contract should be deployed independently. Once deployed, its address can be configured into a project's payout splits or reserved token splits so that any distribution triggered while the funding cycle is active sends the relevant token to the allocator contract's `allocate(...)` hook. 
+New allocator contracts should be deployed independently. Once deployed, its address can be configured into a project's payout splits or reserved token splits so that any distribution triggered while the funding cycle is active sends the relevant token to the allocator contract's `allocate(...)` hook. 
