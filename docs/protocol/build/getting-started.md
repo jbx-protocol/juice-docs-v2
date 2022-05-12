@@ -173,7 +173,7 @@ function splitsOf(
 
 <summary>View fund access constraints</summary>
 
-A project's fund access conatraints can found in the [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller) contract used to launch the project. Its distribution limit of any payment terminal during any funding cycle configuration can be found using [`JBController.distributionLimitOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md). The currency being used for this distribution limit is returned alongside.
+Constraints on accessing a project's funds can found in the [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller) contract used to launch the project. The distribution limit of any payment terminal during any funding cycle configuration can be found using [`JBController.distributionLimitOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md). The currency being used for this distribution limit is returned alongside.
 
 ```
 function distributionLimitOf(
@@ -184,7 +184,7 @@ function distributionLimitOf(
 ) external view override returns (uint256 distributionLimit, uint256 distributionLimitCurrency) { ... }
 ```
 
-Its overflow allowance from any payment terminal during any funding cycle configuration can be found using [`JBController.overflowAllowanceOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/read/overflowallowanceof.md). The currency being used for this overflow allowance is returned alongside. 
+The overflow allowance from any payment terminal during any funding cycle configuration can be found using [`JBController.overflowAllowanceOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/read/overflowallowanceof.md). The currency being used for this overflow allowance is returned alongside. 
 
 ```
 function overflowAllowanceOf(
@@ -201,13 +201,13 @@ function overflowAllowanceOf(
 
 <summary>View terminals and controller</summary>
 
-The [`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md) contract stores addresses of payment terminals where a project is currently accepting funds through. A project's currently set terminals can be found using [`JBDirectory.terminalsOf(...)`](/protocol/api/contracts/jbdirectory/read/terminalsof.md).
+The [`JBDirectory`](/protocol/api/contracts/jbdirectory/README.md) contract stores addresses of payment terminals that a project is currently accepting funds through. A project's currently set terminals can be found using [`JBDirectory.terminalsOf(...)`](/protocol/api/contracts/jbdirectory/read/terminalsof.md).
 
 ```
 function terminalsOf(uint256 _projectId) external view override returns (IJBPaymentTerminal[] memory) { ... }
 ```
 
-If a project has multiple terminals for the same token, the primary terminal that it wishes to accept funds through of that token type can be found using [`JBDirectory.primaryTerminalOf(...)`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md).
+If a project has multiple terminals for the same token, the primary terminal that it wishes to accept that token type through can be found using [`JBDirectory.primaryTerminalOf(...)`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md).
 
 ```
 function primaryTerminalOf(uint256 _projectId, address _token)
@@ -244,7 +244,7 @@ function pay(
 
 <summary>View treasury balance</summary>
 
-A project's treasury balance in a terminal can be found in the store contract. For example, in the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md), the balance can be found using [`JBSingleTokenPaymentTerminalStore.balanceOf(...)`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md).
+In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md)'s and [`JBERC20PaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)'s, a project's treasury balance can be found in its store contract. For example, in the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md), the balance can be found using [`JBSingleTokenPaymentTerminalStore.balanceOf(...)`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md).
 
 ```
 function balanceOf(IJBPaymentTerminal _terminal, uint256 _projectId)
@@ -264,7 +264,7 @@ function currentOverflowOf(IJBSingleTokenPaymentTerminal _terminal, uint256 _pro
   returns (uint256) { ... }
 ```
 
-A terminal store can also resolve the total amount of overflow in all of a project's terminals. For example, in the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore), the project's overall overflow can be found using [`JBSingleTokenPaymentTerminalStore.currentTotalOverflowOf(...)`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/read/currenttotaloverflowof.md). You'll need to send the number of decimals you're expecting the returned fixed point number to include, and the currency it's in terms of.
+A terminal store can also resolve the total amount of overflow in all of a project's terminals. For example, in the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore), the project's overall overflow can be found using [`JBSingleTokenPaymentTerminalStore.currentTotalOverflowOf(...)`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/read/currenttotaloverflowof.md). You will need to send the number of decimals you're expecting the returned fixed point number to include, and the currency it is in terms of.
 
 ```
 function currentTotalOverflowOf(
@@ -298,7 +298,7 @@ function totalSupplyOf(uint256 _projectId) external view returns (uint256) { ...
 
 <summary>View reserved token balance</summary>
 
-A project's undistributed reserved token balance can be found in the project's current controller. For example in the [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md), the used can be found using [`JBController.reservedTokenBalanceOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/read/reservedtokenbalanceof.md).
+A project's undistributed reserved token balance can be found in the project's current controller. For example in the [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md), this balance can be found using [`JBController.reservedTokenBalanceOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/read/reservedtokenbalanceof.md).
 
 ```
 function reservedTokenBalanceOf(uint256 _projectId, uint256 _reservedRate)
@@ -307,7 +307,7 @@ function reservedTokenBalanceOf(uint256 _projectId, uint256 _reservedRate)
   returns (uint256) { ... }
 ```
 
-For projects using the [`JBController`](/protocol/api/contracts/or-controller/jbcontroller), the project token's total supply including any allocated reserved tokens that have yet to be distributed can be found in using [`JBController.totalOutstandingTokensOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md). 
+For projects using [`JBController`](/protocol/api/contracts/or-controller/jbcontroller), the project token's total supply including any allocated reserved tokens that have yet to be distributed can be found in using [`JBController.totalOutstandingTokensOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md). 
 
 ```
 function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
@@ -318,7 +318,7 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
 ```
 </details>
 
-At any point, anyone can distribute a project's funds from a terminal up to its current funding cycle's distribution limit to its preprogrammed payout splits. For example, if the project has added the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal), funds can be distributed by calling its [`JBETHPaymentTerminal.distributePayoutsOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md) transaction. 
+Anyone can distribute a project's funds from a terminal up to its current funding cycle's distribution limit to its preprogrammed payout splits at any time. For example, if the project has added the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal), funds can be distributed by calling [`JBETHPaymentTerminal.distributePayoutsOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md).
 
 ```
 function distributePayoutsOf(
@@ -334,7 +334,7 @@ function distributePayoutsOf(
 
 <summary>View used distribution limit</summary>
 
-Any used distribution limit can be found in the terminal store contract for each terminal. For example, in the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md), the used distribution limit during a funding cycle can be found using [`JBSingleTokenPaymentTerminalStore.usedDistributionLimitOf(...)`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md).
+Any distribution limit used by a project can be found in the terminal store contract for each terminal. For example, in the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md), the distribution limit used during a funding cycle can be found by calling [`JBSingleTokenPaymentTerminalStore.usedDistributionLimitOf(...)`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/useddistributionlimitof.md).
 
 ```
 function usedDistributionLimitOf(
@@ -346,9 +346,7 @@ function usedDistributionLimitOf(
 
 </details>
 
-A project's owner can also distribute additional funds from its treasury's overflow for each of its terminals up until its preconfigured allowance. For example, if the project has added the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal), funds can be distributed by calling its [`JBETHPaymentTerminal.useAllowanceOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/useallowanceof.md) transaction. 
-
-
+A project's owner can distribute additional funds from its treasury's overflow for each of its terminals up until its preconfigured allowance. For example, if the project has added the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal), funds can be distributed by calling its [`JBETHPaymentTerminal.useAllowanceOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/useallowanceof.md) transaction. 
 
 ```
 function useAllowanceOf(
@@ -370,7 +368,7 @@ function useAllowanceOf(
 
 <summary>View used overflow allowance</summary>
 
-Any used overflow allowance can also be found in the terminal store contracts for each terminal. For example, in the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md), the used overflow allowance during a funding cycle can be found using [`JBSingleTokenPaymentTerminalStore.usedOverflowAllowanceOf(...)`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/usedoverflowallowanceof.md).
+Any overflow allowance used can also be found in the terminal store contracts for each terminal. For example, in the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md), the overflow allowance used during a funding cycle can be found using [`JBSingleTokenPaymentTerminalStore.usedOverflowAllowanceOf(...)`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/usedoverflowallowanceof.md).
 
 ```
 function usedOverflowAllowanceOf(
@@ -382,13 +380,13 @@ function usedOverflowAllowanceOf(
 
 </details>
 
-The protocol uses price feeds to convert values from one currency to another when distributing payouts, using overflow allowance, issuing project tokens when payments are received in various currencies, and more. Current currency indexes can be found in [`JBCurrencies`](/protocol/api/libraries/jbcurrencies.md), and new currencies and price feeds can be added in the future.
+The protocol uses price feeds to convert values from one currency to another when distributing payouts, using overflow allowances, issuing project tokens when payments are received in various currencies, and more. Current currency indexes can be found in [`JBCurrencies`](/protocol/api/libraries/jbcurrencies.md). New currencies and price feeds can be added in the future.
 
 <details>
 
 <summary>View price conversions</summary>
 
- The same price feeds the protocol uses internally can be accessed externally through the [`JBPrices`](/protocol/api/contracts/jbprices/README.md) contract using [`JBPrices.priceFor(...)`](/protocol/api/contracts/jbprices/read/pricefor.md). This will revert if a feed is not found for the provided currency pair.
+The same price feeds the protocol uses internally can be accessed externally through the [`JBPrices`](/protocol/api/contracts/jbprices/README.md) contract using [`JBPrices.priceFor(...)`](/protocol/api/contracts/jbprices/read/pricefor.md). This will revert if a feed is not found for the currency pair provided.
 
 ```
 function priceFor(
@@ -400,7 +398,7 @@ function priceFor(
 
 </details>
 
-A project's owner can mint more of its token by calling [`JBController.mintTokensOf(...)`](/protocol/api/contracts/jbtokenstore/write/mintfor.md). Anyone can burn their tokens by calling [`JBController.burnFrom(...)`](/protocol/api/contracts/jbtokenstore/write/burnfrom.md).
+A project's owner can mint more of the project's token by calling [`JBController.mintTokensOf(...)`](/protocol/api/contracts/jbtokenstore/write/mintfor.md). Anyone can burn their tokens by calling [`JBController.burnFrom(...)`](/protocol/api/contracts/jbtokenstore/write/burnfrom.md).
 
 ```
 function mintTokensOf(
@@ -449,7 +447,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
   returns (uint256) { ... }
 ```
 
-Anyone who holds a project's tokens can burn them at one of the project's terminals for a proportional share of the project's overflow. For example, if the project has added the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal), ETH can be reclaimed by redeeming project tokens in its [`JBETHPaymentTerminal.redeemTokensOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md) transaction. The overflow amount is the terminal's balance minus the current funding cycle's distribution limit, and can be set to include the project's balance across all terminals.
+Anyone who holds a project's tokens can redeem them at one of the project's terminals for a proportional share of the project's overflow. For example, if the project has added the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal), ETH can be reclaimed by redeeming project tokens in its [`JBETHPaymentTerminal.redeemTokensOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md) transaction. The overflow amount is the terminal's balance minus the current funding cycle's distribution limit, and can be set to include the project's balance across all terminals.
 
 Redeeming tokens allows a project's token holders to exit the community at any time with their share of the funds.
 
@@ -470,7 +468,7 @@ function redeemTokensOf(
   returns (uint256 reclaimAmount) { ... }
 ```
 
-A project's owner can reconfigure its project's funding cycle at any time by calling [`JBController.reconfigureFundingCyclesOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/write/reconfigurefundingcyclesof.md). If the project is in the middle of a funding cycle, the update will be queued to take effect next cycle. If the current funding cycle has an attached ballot contract, the reconfiguration must be approved by it before taking effect.
+A project's owner can reconfigure the project's funding cycle at any time by calling [`JBController.reconfigureFundingCyclesOf(...)`](/protocol/api/contracts/or-controllers/jbcontroller/write/reconfigurefundingcyclesof.md). If the project is in the middle of a funding cycle with a duration, the update will be queued to take effect next cycle. If the current funding cycle has an attached ballot contract, the reconfiguration must be approved by it before taking effect.
 
 ```
 function reconfigureFundingCyclesOf(
@@ -501,7 +499,7 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
 
 </details>
 
-At any point, anyone can inject funds into a project's treasury via one of its terminals. For example, if the project has added the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal), it can add ETH to its treasury by calling the terminal's [`JBETHPaymentTerminal.addToBalanceOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md) transaction.
+At any point, anyone can inject funds into a project's treasury via one of its terminals. For example, if the project has added the [`JBETHPaymentTerminal`](/protocol/api/contracts/or-payment-terminals/jbethpaymentterminal), someone can add ETH to a treasury by calling the terminal's [`JBETHPaymentTerminal.addToBalanceOf(...)`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md) transaction.
 
 ```
 function addToBalanceOf(
@@ -515,7 +513,7 @@ function addToBalanceOf(
 
 By default the protocol uses an internal accounting mechanism to account for projects' tokens. At any time after the project has been created, its owner can issue ERC-20 tokens for the protocol to use as its community token by calling [`JBController.issueTokenFor(...)`](/protocol/api/contracts/jbtokenstore/write/issuefor.md).
 
-A project can instead bring their own token, so long as it adheres to the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface, uses 18 decimals fixed point accounting, and isn't already being used by another project. They can do so by calling [`JBController.changeTokenFor(...)`](/protocol/api/contracts/jbtokenstore/write/changefor.md) This makes it easy to use ERC-1155's or custom contracts, and to change tokens over time to acheive a more creative design.
+A project can instead bring their own token, so long as the token adheres to the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface, uses 18 decimals fixed point accounting, and isn't already being used by another project. They can do so by calling [`JBController.changeTokenFor(...)`](/protocol/api/contracts/jbtokenstore/write/changefor.md) This makes it easy to use ERC-1155s or custom contracts, or to change tokens over time to achieve a more creative design.
 
 ```
 function issueTokenFor(
@@ -544,20 +542,20 @@ function changeTokenOf(
 
 <summary>View the project's token</summary>
 
-The current token being used by the project can be found in the [`JBTokensStore`](/protocol/api/contracts/jbtokenstore/README.md) contract using [`JBTokenStore.tokenOf(...)`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md). This will return a zero address if the project hasn't yet issued tokens or changed into a custom token. 
+The token currently being used by a project can be found in the [`JBTokensStore`](/protocol/api/contracts/jbtokenstore/README.md) contract by using [`JBTokenStore.tokenOf(...)`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md). This will return a zero address if the project hasn't yet issued tokens or changed into a custom token. 
 
 ```
 function tokenOf(uint256 _projectId) external view override returns (IJBToken) { ... }
 ```
 
-The current project a token is being used for can be found using [`JBTokenStore.projectOf(...)`](/protocol/api/contracts/jbtokenstore/properties/projectof.md).
+The project a token is currently being used for can be found by calling [`JBTokenStore.projectOf(...)`](/protocol/api/contracts/jbtokenstore/properties/projectof.md).
 
 ```
 function projectOf(IJBToken _token) external view override returns (uint256) { ... }
 ```
 </details>
 
-If a project has issued its ERC-20's or is using a custom [`IJBToken`](/protocol/api/interfaces/ijbtoken.md), a holder can claim tokens that are being represented via the internal accounting mechanism into the token by calling [`JBTokenStore.claimFor(...)`](/protocol/api/contracts/jbtokenstore/write/claimfor.md).
+If a project has issued an ERC-20s or is using a custom [`IJBToken`](/protocol/api/interfaces/ijbtoken.md), a holder can claim tokens that are being represented via the internal accounting mechanism into the ERC-20 or custom `IJBToken` by calling [`JBTokenStore.claimFor(...)`](/protocol/api/contracts/jbtokenstore/write/claimfor.md).
 
 ```
 function claimFor(
@@ -571,13 +569,13 @@ function claimFor(
 
 <summary>View a holder's unclaimed project token balance</summary>
 
-The unclaimed balance for each project token holder can be found in the [`JBTokensStore`](/protocol/api/contracts/jbtokenstore/README.md) contract using [`JBTokenStore.unclaimedBalanceOf(...)`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md).
+Each project token holder's unclaimed balance can be found in the [`JBTokensStore`](/protocol/api/contracts/jbtokenstore/README.md) contract using [`JBTokenStore.unclaimedBalanceOf(...)`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md).
 
 ```
 function unclaimedBalanceOf(address _holder, uint256 _projectId) external view override returns (uint256) { ... }
 ```
 
-A project's total supply of unclaimed tokens can be found using [`JBTokenStore.unclaimedTotalSupplyOf(...)`](/protocol/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
+A project's total unclaimed token supply can be found using [`JBTokenStore.unclaimedTotalSupplyOf(...)`](/protocol/api/contracts/jbtokenstore/properties/unclaimedtotalsupplyof.md)
 
 ```
 function unclaimedTotalSupplyOf(uint256 _projectId) external view override returns (uint256) { ... }
