@@ -2,7 +2,7 @@
 slug: juicebox-in-the-words-of-drgorilla
 title: Juicebox in the Words of DrGorilla
 authors: [felixander]
-tags: [dao, interview]
+tags: [dao, interview, juicebox, ethereum]
 ---
 
 
