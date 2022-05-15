@@ -1,4 +1,4 @@
-# JBETHPaymentTerminal
+# JBERC20PaymentTerminal
 
 _Manages all inflows and outflows of an ERC20 into the protocol ecosystem._
 
