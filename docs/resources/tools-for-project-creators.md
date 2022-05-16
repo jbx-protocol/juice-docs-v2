@@ -12,6 +12,8 @@ This list is a work in progress, and is by no means comprehensive.
 Aeolian's [DAO Tooling 101](https://info.juicebox.money/blog/dao-tooling-101/) is another great resource for project creators.
 :::
 
+* The [juice-tools](https://github.com/jbx-protocol/juice-tools) repo contains assets, embeds, and tools for project creators making their own websites!
+
 ## Analytics
 
 * [etherscan](https://etherscan.io/) is a browser-based tool for Ethereum blockchain querying.
@@ -44,7 +46,7 @@ Aeolian's [DAO Tooling 101](https://info.juicebox.money/blog/dao-tooling-101/) i
 
 * [sesh](https://sesh.fyi/) is a Discord bot which can be used for polls and event scheduling.
 
-* [Aeolian's Snapshot Analytics](https://aeolianeth.github.io/snapshot-analytics/) is a high-density tool for seeing the current status of Snapshot votes. For now, this dashboard only works with Juicebox DAO governance.
+* [Aeolian's Snapshot Analytics](https://jbx-protocol.github.io/juice-snapshot-dashboard/) is a high-density tool for seeing the current status of Snapshot votes. For now, this dashboard only works with Juicebox DAO governance. [Visit the repo](https://github.com/jbx-protocol/juice-snapshot-dashboard) to fork!
 
 ## Documentation
 
