@@ -6,6 +6,7 @@ sidebar_position: 1
 
 #### Website
 [juicebox.money](https://juicebox.money/#/) <br/>
+[Testnet juicebox.money](https://rinkeby.juicebox.money/#/) <br/>
 [JuiceboxDAO Project](https://juicebox.money/#/p/juicebox) <br/>
 
 #### Resources
