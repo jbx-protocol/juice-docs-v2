@@ -28,7 +28,8 @@ sidebar_position: 1
 [Docs](https://docs.juicebox.money/) <br/>
 
 #### Governance
-[Snapshot](https://snapshot.org/#/jbdao.eth) <br/>
+[Snapshot](https://vote.juicebox.money/#/jbdao.eth) <br/>
+[Snapshot Delegation](https://vote.juicebox.money/#/delegate/jbdao.eth) <br/>
 [Governance Process](juicebox-dao/governance-process.md) <br/>
 [Juicebox DAO Foundation](juicebox-dao/dao-foundation.md) <br/>
 [Governance Calendar](https://juicebox.notion.site/09936865803248e38c82adbc3ed32137?v=2acc75360e214cd8aaf9a4ef13e35a0e) <br/>
