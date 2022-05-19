@@ -1,0 +1,214 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.protocol.category.Learn": {
+    "message": "Learn",
+    "description": "The label for category Learn in sidebar protocol"
+  },
+  "sidebar.protocol.category.Glossary": {
+    "message": "Glossary",
+    "description": "The label for category Glossary in sidebar protocol"
+  },
+  "sidebar.protocol.category.Build": {
+    "message": "Build",
+    "description": "The label for category Build in sidebar protocol"
+  },
+  "sidebar.protocol.category.Treasury extensions": {
+    "message": "Treasury extensions",
+    "description": "The label for category Treasury extensions in sidebar protocol"
+  },
+  "sidebar.protocol.category.Utilities": {
+    "message": "Utilities",
+    "description": "The label for category Utilities in sidebar protocol"
+  },
+  "sidebar.protocol.category.API": {
+    "message": "API",
+    "description": "The label for category API in sidebar protocol"
+  },
+  "sidebar.protocol.category.Data Structures": {
+    "message": "Data Structures",
+    "description": "The label for category Data Structures in sidebar protocol"
+  },
+  "sidebar.protocol.category.Enums": {
+    "message": "Enums",
+    "description": "The label for category Enums in sidebar protocol"
+  },
+  "sidebar.protocol.category.Libraries": {
+    "message": "Libraries",
+    "description": "The label for category Libraries in sidebar protocol"
+  },
+  "sidebar.protocol.category.Interfaces": {
+    "message": "Interfaces",
+    "description": "The label for category Interfaces in sidebar protocol"
+  },
+  "sidebar.protocol.category.Contracts": {
+    "message": "Contracts",
+    "description": "The label for category Contracts in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBProjects": {
+    "message": "JBProjects",
+    "description": "The label for category JBProjects in sidebar protocol"
+  },
+  "sidebar.protocol.category.Events": {
+    "message": "Events",
+    "description": "The label for category Events in sidebar protocol"
+  },
+  "sidebar.protocol.category.Properties": {
+    "message": "Properties",
+    "description": "The label for category Properties in sidebar protocol"
+  },
+  "sidebar.protocol.category.Read": {
+    "message": "Read",
+    "description": "The label for category Read in sidebar protocol"
+  },
+  "sidebar.protocol.category.Write": {
+    "message": "Write",
+    "description": "The label for category Write in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBTokenStore": {
+    "message": "JBTokenStore",
+    "description": "The label for category JBTokenStore in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBFundingCycleStore": {
+    "message": "JBFundingCycleStore",
+    "description": "The label for category JBFundingCycleStore in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBSplitsStore": {
+    "message": "JBSplitsStore",
+    "description": "The label for category JBSplitsStore in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBPrices": {
+    "message": "JBPrices",
+    "description": "The label for category JBPrices in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBOperatorStore": {
+    "message": "JBOperatorStore",
+    "description": "The label for category JBOperatorStore in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBToken": {
+    "message": "JBToken",
+    "description": "The label for category JBToken in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBDirectory": {
+    "message": "JBDirectory",
+    "description": "The label for category JBDirectory in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBSingleTokenPaymentTerminalStore": {
+    "message": "JBSingleTokenPaymentTerminalStore",
+    "description": "The label for category JBSingleTokenPaymentTerminalStore in sidebar protocol"
+  },
+  "sidebar.protocol.category.| Payment terminals": {
+    "message": "| Payment terminals",
+    "description": "The label for category | Payment terminals in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBERC20PaymentTerminal": {
+    "message": "JBERC20PaymentTerminal",
+    "description": "The label for category JBERC20PaymentTerminal in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBETHPaymentTerminal": {
+    "message": "JBETHPaymentTerminal",
+    "description": "The label for category JBETHPaymentTerminal in sidebar protocol"
+  },
+  "sidebar.protocol.category.| Controllers": {
+    "message": "| Controllers",
+    "description": "The label for category | Controllers in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBController": {
+    "message": "JBController",
+    "description": "The label for category JBController in sidebar protocol"
+  },
+  "sidebar.protocol.category.| Price Feeds": {
+    "message": "| Price Feeds",
+    "description": "The label for category | Price Feeds in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBChainlinkV3PriceFeed": {
+    "message": "JBChainlinkV3PriceFeed",
+    "description": "The label for category JBChainlinkV3PriceFeed in sidebar protocol"
+  },
+  "sidebar.protocol.category.| Ballots": {
+    "message": "| Ballots",
+    "description": "The label for category | Ballots in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBReconfigurationBufferBallot": {
+    "message": "JBReconfigurationBufferBallot",
+    "description": "The label for category JBReconfigurationBufferBallot in sidebar protocol"
+  },
+  "sidebar.protocol.category.| Utilities": {
+    "message": "| Utilities",
+    "description": "The label for category | Utilities in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBETHERC20ProjectPayer": {
+    "message": "JBETHERC20ProjectPayer",
+    "description": "The label for category JBETHERC20ProjectPayer in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBETHERC20ProjectPayerDeployer": {
+    "message": "JBETHERC20ProjectPayerDeployer",
+    "description": "The label for category JBETHERC20ProjectPayerDeployer in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBETHERC20SplitsPayer": {
+    "message": "JBETHERC20SplitsPayer",
+    "description": "The label for category JBETHERC20SplitsPayer in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBETHERC20SplitsPayerDeployer": {
+    "message": "JBETHERC20SplitsPayerDeployer",
+    "description": "The label for category JBETHERC20SplitsPayerDeployer in sidebar protocol"
+  },
+  "sidebar.protocol.category.| Abstract": {
+    "message": "| Abstract",
+    "description": "The label for category | Abstract in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBControllerUtility": {
+    "message": "JBControllerUtility",
+    "description": "The label for category JBControllerUtility in sidebar protocol"
+  },
+  "sidebar.protocol.category.Modifiers": {
+    "message": "Modifiers",
+    "description": "The label for category Modifiers in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBOperatable": {
+    "message": "JBOperatable",
+    "description": "The label for category JBOperatable in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBPayoutRedemptionPaymentTerminal": {
+    "message": "JBPayoutRedemptionPaymentTerminal",
+    "description": "The label for category JBPayoutRedemptionPaymentTerminal in sidebar protocol"
+  },
+  "sidebar.protocol.category.JBSingleTokenPaymentTerminal": {
+    "message": "JBSingleTokenPaymentTerminal",
+    "description": "The label for category JBSingleTokenPaymentTerminal in sidebar protocol"
+  },
+  "sidebar.protocol.category.Protocol v1": {
+    "message": "Protocol v1",
+    "description": "The label for category Protocol v1 in sidebar protocol"
+  },
+  "sidebar.protocol.category.Ticket Booth": {
+    "message": "Ticket Booth",
+    "description": "The label for category Ticket Booth in sidebar protocol"
+  },
+  "sidebar.protocol.category.TerminalV1": {
+    "message": "TerminalV1",
+    "description": "The label for category TerminalV1 in sidebar protocol"
+  },
+  "sidebar.protocol.category.Resources": {
+    "message": "Resources",
+    "description": "The label for category Resources in sidebar protocol"
+  },
+  "sidebar.protocol.category.Developers": {
+    "message": "Developers",
+    "description": "The label for category Developers in sidebar protocol"
+  },
+  "sidebar.protocol.category.Create a v1 Juicebox Project": {
+    "message": "Create a v1 Juicebox Project",
+    "description": "The label for category Create a v1 Juicebox Project in sidebar protocol"
+  },
+  "sidebar.resources.category.Juicebox DAO": {
+    "message": "Juicebox DAO",
+    "description": "The label for category Juicebox DAO in sidebar resources"
+  },
+  "sidebar.resources.category.Guides": {
+    "message": "Guides",
+    "description": "The label for category Guides in sidebar resources"
+  }
+}
