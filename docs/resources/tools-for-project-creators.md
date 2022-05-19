@@ -36,17 +36,19 @@ Aeolian's [DAO Tooling 101](https://info.juicebox.money/blog/dao-tooling-101/) i
 
 ## Governance
 
+* [Snapshot](https://snapshot.org/#/) is an offchain governance tool that enables user-friendly and gasless (free) voting. Used by many Juicebox projects, including [Juicebox DAO](https://snapshot.org/#/jbdao.eth/) itself.
+
+* [Gnosis Safe](https://gnosis-safe.io/) is a platform for securely managing digital assets. Add [juicebox.money](https://www.juicebox.money) to your *Apps* to securely manage a Juicebox project in Gnosis Safe.
+
+* [Nance](https://github.com/jigglyjams/nance) is a powerful governance tool created by [jigglyjams](https://twitter.com/jjjjigglyjams). Juicebox DAO uses Nance to coordinate and automate governance across Notion, Snapshot, and Discord.
+
+* [Aeolian's Snapshot Analytics](https://jbx-protocol.github.io/juice-snapshot-dashboard/) is a high-density tool for seeing the current status of Snapshot votes. For now, this dashboard only works with Juicebox DAO governance. [Visit the repo](https://github.com/jbx-protocol/juice-snapshot-dashboard) to fork!
+
 * [Tally](https://www.tally.xyz/) empowers user owned governance through a voting dashboard, governance tooling, real time research and analysis, and an evergreen wiki.
 
 * [Aragon](https://aragon.org/) provides a suite of tools for onchain and offchain governance, dispute resolution, and DAO management.
 
-* [Gnosis Safe](https://gnosis-safe.io/) is a platform for securely managing digital assets. Add [juicebox.money](https://www.juicebox.money) to your *Apps* to securely manage a Juicebox project in Gnosis Safe.
-
-* [Snapshot](https://snapshot.org/#/) is an offchain governance tool that enables user-friendly and gasless (free) voting. Used by many Juicebox projects, including [Juicebox DAO](https://snapshot.org/#/jbdao.eth/) itself.
-
 * [sesh](https://sesh.fyi/) is a Discord bot which can be used for polls and event scheduling.
-
-* [Aeolian's Snapshot Analytics](https://jbx-protocol.github.io/juice-snapshot-dashboard/) is a high-density tool for seeing the current status of Snapshot votes. For now, this dashboard only works with Juicebox DAO governance. [Visit the repo](https://github.com/jbx-protocol/juice-snapshot-dashboard) to fork!
 
 ## Documentation
 
