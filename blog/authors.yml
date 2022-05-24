@@ -6,7 +6,7 @@ jango:
 
 aeolian:
   name: Aeolian
-  title: PeelDAO Contributor
+  title: Peel Contributor
   url: https://twitter.com/aeolianeth
   image_url: https://pbs.twimg.com/profile_images/1510052173073510401/14_Uoxzy_400x400.jpg
 
@@ -30,7 +30,7 @@ felixander:
 
 peri:
   name: Peripheralist
-  title: PeelDAO Contributor
+  title: Peel Contributor
   url: https://twitter.com/peripheralist
   image_url: https://pbs.twimg.com/profile_images/1363876191938183170/DixgVLiq_400x400.jpg
 
@@ -81,3 +81,9 @@ zhape:
   title: JuiceboxDAO Contributor
   url: https://twitter.com/zhape1112
   image_url: https://pbs.twimg.com/profile_images/1522548586734444544/K661H-eb_400x400.jpg
+
+johnnyd:
+  name: johnnyD
+  title: Peel Contributor
+  url: https://twitter.com/JohnnyD_eth
+  image_url: https://pbs.twimg.com/profile_images/1509621120181444608/lycnkGHp_400x400.jpg
