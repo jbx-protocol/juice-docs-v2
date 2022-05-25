@@ -4,7 +4,6 @@ title: Juicebox in the Words of aeolian
 authors: [felixander]
 tags: [dao, interview, juicebox]
 ---
-2022-05-24-juicebox-in-the-world-of-aeolian
 
 # Juicebox in the words of: aeolian
 
