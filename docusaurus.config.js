@@ -168,5 +168,12 @@ const config = {
         additionalLanguages: ['solidity'],
       },
     },
+    scripts: [
+      {
+        src: "https://energetic-unwavering.juicebox.money/script.js",
+        defer: true,
+        "data-site": "UMYOVGDG",
+      },
+    ],
 };
 module.exports = config;
