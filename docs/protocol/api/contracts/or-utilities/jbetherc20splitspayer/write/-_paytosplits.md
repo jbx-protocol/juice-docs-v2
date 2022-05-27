@@ -19,7 +19,8 @@ function _payToSplits(
   uint256 _splitsGroup,
   address _token,
   uint256 _amount,
-  uint256 _decimals
+  uint256 _decimals,
+  address _defaultBeneficiary
 ) internal virtual returns (uint256 leftoverAmount) { ... }
 ```
 
@@ -30,6 +31,7 @@ function _payToSplits(
   * `_token` is the token the amonut being split is in.
   * `_amount` is the amount of tokens being split, as a fixed point number. If the `_token` is ETH, this is ignored and msg.value is used in its place.
   * `_decimals` is the number of decimals in the `_amount` fixed point number. 
+  * `_defaultBeneficiary` is the address that will benefit from any non-specified beneficiaries in splits.
 * The function is private to this contract.
 * The function returns the amount leftover after all splits were paid.
 
@@ -112,7 +114,7 @@ function _payToSplits(
               _token,
               _splitAmount,
               _decimals,
-              _split.beneficiary != address(0) ? _split.beneficiary : msg.sender,
+              _split.beneficiary != address(0) ? _split.beneficiary : _defaultBeneficiary,
               0,
               _split.preferClaimed,
               defaultMemo,
@@ -122,15 +124,15 @@ function _payToSplits(
           // Transfer the ETH.
           if (_token == JBTokens.ETH)
             Address.sendValue(
-              // Get a reference to the address receiving the tokens. If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the msg.sender.
-              _split.beneficiary != address(0) ? _split.beneficiary : payable(msg.sender),
+              // Get a reference to the address receiving the tokens. If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the `_defaultBeneficiary`.
+              _split.beneficiary != address(0) ? _split.beneficiary : payable(_defaultBeneficiary),
               _splitAmount
             );
             // Or, transfer the ERC20.
           else {
             IERC20(_token).transfer(
-              // Get a reference to the address receiving the tokens. If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the msg.sender.
-              _split.beneficiary != address(0) ? _split.beneficiary : msg.sender,
+              // Get a reference to the address receiving the tokens. If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the `_defaultBeneficiary`.
+              _split.beneficiary != address(0) ? _split.beneficiary : _defaultBeneficiary,
               _splitAmount
             );
           }
@@ -188,6 +190,7 @@ function _payToSplits(
   @param _token The token the amonut being split is in.
   @param _amount The amount of tokens being split, as a fixed point number. If the `_token` is ETH, this is ignored and msg.value is used in its place.
   @param _decimals The number of decimals in the `_amount` fixed point number. 
+  @param _defaultBeneficiary The address that will benefit from any non-specified beneficiaries in splits.
 
   @return leftoverAmount The amount leftover after all splits were paid.
 */
@@ -197,7 +200,8 @@ function _payToSplits(
   uint256 _splitsGroup,
   address _token,
   uint256 _amount,
-  uint256 _decimals
+  uint256 _decimals,
+  address _defaultBeneficiary
 ) internal virtual returns (uint256 leftoverAmount) {
   // Get a reference to the splits.
   JBSplit[] memory _splits = splitsStore.splitsOf(_splitsProjectId, _splitsDomain, _splitsGroup);
@@ -258,7 +262,7 @@ function _payToSplits(
             _token,
             _splitAmount,
             _decimals,
-            _split.beneficiary != address(0) ? _split.beneficiary : msg.sender,
+            _split.beneficiary != address(0) ? _split.beneficiary : _defaultBeneficiary,
             0,
             _split.preferClaimed,
             defaultMemo,
@@ -268,15 +272,15 @@ function _payToSplits(
         // Transfer the ETH.
         if (_token == JBTokens.ETH)
           Address.sendValue(
-            // Get a reference to the address receiving the tokens. If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the msg.sender.
-            _split.beneficiary != address(0) ? _split.beneficiary : payable(msg.sender),
+            // Get a reference to the address receiving the tokens. If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the `_defaultBeneficiary`.
+            _split.beneficiary != address(0) ? _split.beneficiary : payable(_defaultBeneficiary),
             _splitAmount
           );
           // Or, transfer the ERC20.
         else {
           IERC20(_token).transfer(
-            // Get a reference to the address receiving the tokens. If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the msg.sender.
-            _split.beneficiary != address(0) ? _split.beneficiary : msg.sender,
+            // Get a reference to the address receiving the tokens. If there's a beneficiary, send the funds directly to the beneficiary. Otherwise send to the `_defaultBeneficiary`.
+            _split.beneficiary != address(0) ? _split.beneficiary : _defaultBeneficiary,
             _splitAmount
           );
         }

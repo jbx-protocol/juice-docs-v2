@@ -37,12 +37,17 @@ receive() external payable virtual override { ... }
       defaultSplitsGroup,
       JBTokens.ETH,
       address(this).balance,
-      18 // decimals.
+      18, // decimals.
+      defaultBeneficiary != address(0) ? defaultBeneficiary : msg.sender
     );
     ```
 
     _Internal references:_
 
+    * [`defaultSplitsProjectId`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsprojectid.md)
+    * [`defaultSplitsDomain`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsdomain.md)
+    * [`defaultSplitsGroup`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsgroup.md)
+    * [`defaultBeneficiary`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultbeneficiary.md)
     * [`_payToSplits`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md)
 
 2.  If there's no leftover amount, there's nothing left to do.
@@ -126,7 +131,8 @@ receive() external payable virtual override nonReentrant {
     defaultSplitsGroup,
     JBTokens.ETH,
     address(this).balance,
-    18 // decimals.
+    18, // decimals.
+    defaultBeneficiary != address(0) ? defaultBeneficiary : msg.sender
   );
 
   // If there is no leftover amount, nothing left to pay.
