@@ -12,14 +12,14 @@ import TabItem from '@theme/TabItem';
 
 ```
 function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
-  private
+  internal
   returns (uint256 tokenCount) { ... }
 ```
 
 * Arguments:
   * `_projectId` is the ID of the project to which the reserved tokens belong.
   * `_memo` is a memo to pass along to the emitted event.
-* The function is private to this contract.
+* The resulting function is internal to this contract and its inheriters. 
 * The function returns the amount of reserved tokens that were minted.
 
 #### Body
@@ -162,7 +162,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
   @return tokenCount The amount of minted reserved tokens.
 */
 function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
-  private
+  internal
   returns (uint256 tokenCount)
 {
   // Get the current funding cycle to read the reserved rate from.

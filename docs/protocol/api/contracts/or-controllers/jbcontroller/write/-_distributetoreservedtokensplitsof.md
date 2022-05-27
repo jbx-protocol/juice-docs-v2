@@ -16,7 +16,7 @@ function _distributeToReservedTokenSplitsOf(
   uint256 _domain,
   uint256 _group,
   uint256 _amount
-) private returns (uint256 leftoverAmount) { ... }
+) internal returns (uint256 leftoverAmount) { ... }
 ```
 
 * Arguments:
@@ -25,7 +25,7 @@ function _distributeToReservedTokenSplitsOf(
   * `_domain` is the domain of the splits to distribute the reserved tokens between.
   * `_group` is the group of the splits to distribute the reserved tokens between.
   * `_amount` is the total amount of tokens to mint.
-* The function is private to this contract.
+* The resulting function is internal to this contract and its inheriters. 
 * The function returns the leftover amount after all splits have been distributed.
 
 #### Body
@@ -164,7 +164,7 @@ function _distributeToReservedTokenSplitsOf(
   uint256 _domain,
   uint256 _group,
   uint256 _amount
-) private returns (uint256 leftoverAmount) {
+) internal returns (uint256 leftoverAmount) {
   // Set the leftover amount to the initial amount.
   leftoverAmount = _amount;
 

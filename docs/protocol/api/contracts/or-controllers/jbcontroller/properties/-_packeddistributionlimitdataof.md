@@ -27,7 +27,7 @@ _bits 248-255: The currency of amount that a project can distribute._
   _token The token for which distributions are being limited.
 */
 mapping(uint256 => mapping(uint256 => mapping(IJBPaymentTerminal => mapping(address => uint256))))
-  private _packedDistributionLimitDataOf;
+  internal _packedDistributionLimitDataOf;
 ```
 
 * Arguments:
@@ -35,4 +35,4 @@ mapping(uint256 => mapping(uint256 => mapping(IJBPaymentTerminal => mapping(addr
   * `_configuration` is the configuration during which the packed distribution limit data applies.
   * `_terminal` is the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) from which distributions are being limited.
   * `_token` is the token for which distributions are being limited.
-* The resulting view function is private to this contract.
+* The resulting function is internal to this contract and its inheriters. 

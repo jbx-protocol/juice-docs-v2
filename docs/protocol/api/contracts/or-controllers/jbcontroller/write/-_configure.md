@@ -18,7 +18,7 @@ function _configure(
   uint256 _mustStartAtOrAfter,
   JBGroupedSplits[] memory _groupedSplits,
   JBFundAccessConstraints[] memory _fundAccessConstraints
-) private returns (uint256) { ... }
+) internal returns (uint256) { ... }
 ```
 
 * Arguments:
@@ -28,7 +28,7 @@ function _configure(
   * `_mustStartAtOrAfter` is the time before which the configured funding cycle cannot start.
   * `_groupedSplits` is an array of [`JBGroupedSplits`](/protocol/api/data-structures/jbgroupedsplits.md) data structures containing splits to set for any number of groups. The core protocol makes use of groups defined in [`JBSplitsGroups`](/protocol/api/libraries/jbsplitsgroups.md).
   * `_fundAccessConstraints` is an array of [`JBFundAccessConstraints`](/protocol/api/data-structures/jbfundaccessconstraints.md) data structures containing amounts that a project can use from its treasury for each payment terminal. Amounts are fixed point numbers using the same number of decimals as the accompanying terminal. The `distributionLimit` applies for each funding cycle, and the `overflowAllowance` applies for the entirety of the configuration. The `_distributionLimit` and `_overflowAllowance` parameters must fit in a `uint232`.
-* The function is private to this contract.
+* The resulting function is internal to this contract and its inheriters. 
 * The function returns the funding cycle configuration that was successfully updated.
 
 #### Body
@@ -88,18 +88,11 @@ function _configure(
 
     * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.packFundingCycleMetadata(...)`
-5.  For each provided group splits, set the splits for the specified group if there are any.
+5.  Set splits.
 
     ```
-    for (uint256 _i; _i < _groupedSplits.length; _i++)
-      // Set splits for the current group being iterated on if there are any.
-      if (_groupedSplits[_i].splits.length > 0)
-        splitsStore.set(
-          _projectId,
-          _fundingCycle.configuration,
-          _groupedSplits[_i].group,
-          _groupedSplits[_i].splits
-        );
+    // Set splits for the group.
+    splitsStore.set(_projectId, _fundingCycle.configuration, _groupedSplits);
     ```
 
     _External references:_
@@ -188,7 +181,7 @@ function _configure(
   uint256 _mustStartAtOrAfter,
   JBGroupedSplits[] memory _groupedSplits,
   JBFundAccessConstraints[] memory _fundAccessConstraints
-) private returns (uint256) {
+) internal returns (uint256) {
   // Make sure the provided reserved rate is valid.
   if (_metadata.reservedRate > JBConstants.MAX_RESERVED_RATE) revert INVALID_RESERVED_RATE();
 
@@ -208,15 +201,8 @@ function _configure(
     _mustStartAtOrAfter
   );
 
-  for (uint256 _i; _i < _groupedSplits.length; _i++)
-    // Set splits for the current group being iterated on if there are any.
-    if (_groupedSplits[_i].splits.length > 0)
-      splitsStore.set(
-        _projectId,
-        _fundingCycle.configuration,
-        _groupedSplits[_i].group,
-        _groupedSplits[_i].splits
-      );
+  // Set splits for the group.
+  splitsStore.set(_projectId, _fundingCycle.configuration, _groupedSplits);
 
   // Set distribution limits if there are any.
   for (uint256 _i; _i < _fundAccessConstraints.length; _i++) {

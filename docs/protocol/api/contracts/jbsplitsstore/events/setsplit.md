@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`set`](/protocol/api/contracts/jbsplitsstore/write/set.md)
+* [`_set`](/protocol/api/contracts/jbsplitsstore/write/-_set.md)
 
 #### Definition
 

@@ -13,9 +13,9 @@ Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/R
 
   _projectId The ID of the project to get the tracker of.
 */
-mapping(uint256 => int256) private _processedTokenTrackerOf;
+mapping(uint256 => int256) internal _processedTokenTrackerOf;
 ```
 
 * Arguments:
   * `_projectId` is the ID of the project to get the tracker of.
-* The resulting view function is private to this contract. 
+* The resulting function is internal to this contract and its inheriters. 

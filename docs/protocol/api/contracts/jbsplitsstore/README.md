@@ -64,7 +64,7 @@ constructor(
 
 | Function                           | Definition                                                                                                                                                                                                                                                                                         |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`splitsOf`**](/protocol/api/contracts/jbsplitsstore/read/splitsof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>uint256 _domain</code></li><li><code>uint256 _group</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBSplit](/protocol/api/data-structures/jbsplit.md)[] splits</code></li></ul> |
+| [**`splitsOf`**](/protocol/api/contracts/jbsplitsstore/read/splitsof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>uint256 _domain</code></li><li><code>[JBGroupedSplits](/protocol/api/data-structures/jbgroupedsplits.md)[] calldata _groupedSplits</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[JBSplit](/protocol/api/data-structures/jbsplit.md)[] splits</code></li></ul> |
 
 #### Write
 
