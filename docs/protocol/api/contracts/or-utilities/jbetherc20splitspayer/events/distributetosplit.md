@@ -13,6 +13,7 @@ event DistributeToSplit(
   uint256 indexed group,
   JBSplit split,
   uint256 amount,
+  address defaultBeneficiary,
   address caller
 );
 ```
@@ -22,4 +23,5 @@ event DistributeToSplit(
 * `group` is the property that joins multiple splits into one full group.
 * `split` is the [`JBSplit`](/protocol/api/data-structures/jbsplit.md) to which the distribution was made.
 * `amount` is the total token amount that was distributed to the split.
+* `defaultBeneficiary` is the address that'll be sent tokens if the split doesn't specify a recipient.
 * `caller` is the address that issued the transaction within which the event was emitted.

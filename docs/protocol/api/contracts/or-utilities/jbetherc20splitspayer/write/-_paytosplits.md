@@ -148,6 +148,7 @@ function _payToSplits(
         _splitsGroup,
         _split,
         _splitAmount,
+        _defaultBeneficiary,
         msg.sender
       );
     }
@@ -296,6 +297,7 @@ function _payToSplits(
       _splitsGroup,
       _split,
       _splitAmount,
+      _defaultBeneficiary,
       msg.sender
     );
   }
