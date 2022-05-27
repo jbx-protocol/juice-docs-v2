@@ -63,8 +63,11 @@ function processFees(uint256 _projectId)
 2.  Iterate through the array. Take fee's for each [`JBFee`](/protocol/api/data-structures/jbfee.md) data structure. Emit a `ProcessFee` event with the relevant parameters for each fee processed.
 
     ```
+    // Push array length in stack
+    uint256 _heldFeeLength = _heldFees.length;
+
     // Process each fee.
-    for (uint256 _i = 0; _i < _heldFees.length; _i++) {
+    for (uint256 _i = 0; _i < _heldFeeLength;) {
       // Get the fee amount.
       uint256 _amount = _feeAmount(
         _heldFees[_i].amount,
@@ -76,6 +79,10 @@ function processFees(uint256 _projectId)
       _processFee(_amount, _heldFees[_i].beneficiary);
 
       emit ProcessFee(_projectId, _amount, _heldFees[_i].beneficiary, msg.sender);
+
+      unchecked {
+        ++_i;
+      }
     }
     ```
 
@@ -119,8 +126,11 @@ function processFees(uint256 _projectId)
   // Delete the held fees.
   delete _heldFeesOf[_projectId];
 
+  // Push array length in stack
+  uint256 _heldFeeLength = _heldFees.length;
+
   // Process each fee.
-  for (uint256 _i = 0; _i < _heldFees.length; _i++) {
+  for (uint256 _i = 0; _i < _heldFeeLength;) {
     // Get the fee amount.
     uint256 _amount = _feeAmount(
       _heldFees[_i].amount,
@@ -132,6 +142,10 @@ function processFees(uint256 _projectId)
     _processFee(_amount, _heldFees[_i].beneficiary);
 
     emit ProcessFee(_projectId, _amount, true, _heldFees[_i].beneficiary, msg.sender);
+
+    unchecked {
+      ++_i;
+    }
   }
 }
 ```

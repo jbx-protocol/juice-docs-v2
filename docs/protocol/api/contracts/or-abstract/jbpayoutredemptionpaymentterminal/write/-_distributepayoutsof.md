@@ -139,7 +139,9 @@ function _distributePayoutsOf(
 
         ```
         // Leftover distribution amount is also eligible for a fee since the funds are going out of the ecosystem to _beneficiary.
-        _feeEligibleDistributionAmount += _leftoverDistributionAmount;
+        unchecked {
+          _feeEligibleDistributionAmount += _leftoverDistributionAmount;
+        }
         ```
 
     5.  Take the fee if needed.
@@ -171,9 +173,11 @@ function _distributePayoutsOf(
 
         ```
         // Get a reference to how much to distribute to the project owner, which is the leftover amount minus any fees.
-        netLeftoverDistributionAmount = _leftoverDistributionAmount == 0
-          ? 0
-          : _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, fee, _feeDiscount);
+        unchecked {
+          netLeftoverDistributionAmount = _leftoverDistributionAmount == 0
+            ? 0
+            : _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, fee, _feeDiscount);
+        }
         ```
 
         _Internal references:_
@@ -290,7 +294,9 @@ function _distributePayoutsOf(
     );
 
     // Leftover distribution amount is also eligible for a fee since the funds are going out of the ecosystem to _beneficiary.
-    _feeEligibleDistributionAmount += _leftoverDistributionAmount;
+    unchecked {
+      _feeEligibleDistributionAmount += _leftoverDistributionAmount;
+    }
 
     // Take the fee.
     _fee = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT ||
@@ -305,9 +311,11 @@ function _distributePayoutsOf(
       );
 
     // Get a reference to how much to distribute to the project owner, which is the leftover amount minus any fees.
-    netLeftoverDistributionAmount = _leftoverDistributionAmount == 0
-      ? 0
-      : _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, _feeDiscount);
+    unchecked {
+      netLeftoverDistributionAmount = _leftoverDistributionAmount == 0
+        ? 0
+        : _leftoverDistributionAmount - _feeAmount(_leftoverDistributionAmount, _feeDiscount);
+    }
 
     // Transfer any remaining balance to the project owner.
     if (netLeftoverDistributionAmount > 0)

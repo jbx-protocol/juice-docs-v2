@@ -44,7 +44,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/abstract/
   @param _store A contract that stores the terminal's data.
   @param _owner The address that will own this contract.
 */
-constructor(
+constructor( // payable constructor save the gas used to check msg.value==0
   address _token,
   uint256 _decimals,
   uint256 _currency,
@@ -57,7 +57,7 @@ constructor(
   IJBPrices _prices,
   IJBSingleTokenPaymentTerminalStore _store,
   address _owner
-) JBSingleTokenPaymentTerminal(_token, _decimals, _currency) JBOperatable(_operatorStore) {
+) payable JBSingleTokenPaymentTerminal(_token, _decimals, _currency) JBOperatable(_operatorStore) {
   baseWeightCurrency = _baseWeightCurrency;
   payoutSplitsGroup = _payoutSplitsGroup;
   projects = _projects;

@@ -57,16 +57,21 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
 4.  Loop through each held fee, decrementing the amount as held fees are refunded and incrementing the amount of refunded fees. If the entire refund amount has been refunded, add the fee structure back into the project's held fees so that they can be processed or refunded later. If the amount left is greater than the fee structure's amount, decrement the refunded amount and leave the fee structure out of the project's held fees. If only some of the fee structure's amount is needed to cover the rest of the remaining amount, set the amount to 0 after adding the fee structure back into the project's held fees having subtracted the remaining refund amount.
 
     ```
+    // Push length in stack
+    uint256 _heldFeesLength = _heldFees.length;
+
     // Process each fee.
-    for (uint256 _i = 0; _i < _heldFees.length; _i++) {
+    for (uint256 _i = 0; _i < _heldFeesLength;) {
       if (leftoverAmount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
       else if (leftoverAmount >= _heldFees[_i].amount) {
-        leftoverAmount = leftoverAmount - _heldFees[_i].amount;
-        refundedFees += _feeAmount(
-          _heldFees[_i].amount,
-          _heldFees[_i].fee,
-          _heldFees[_i].feeDiscount
-        );
+        unchecked {
+          leftoverAmount = leftoverAmount - _heldFees[_i].amount;
+          refundedFees += _feeAmount(
+            _heldFees[_i].amount,
+            _heldFees[_i].fee,
+            _heldFees[_i].feeDiscount
+          );
+        }
       } else {
         _heldFeesOf[_projectId].push(
           JBFee(
@@ -76,8 +81,16 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
             _heldFees[_i].beneficiary
           )
         );
-        refundedFees += _feeAmount(leftoverAmount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
+
+        unchecked {
+          refundedFees += _feeAmount(leftoverAmount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
+        }
+
         leftoverAmount = 0;
+      }
+
+      unchecked {
+        ++_i;
       }
     }
     ```
@@ -123,16 +136,21 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
   // Get a reference to the leftover amount once all fees have been settled.
   uint256 leftoverAmount = _amount;
 
+  // Push length in stack
+  uint256 _heldFeesLength = _heldFees.length;
+
   // Process each fee.
-  for (uint256 _i = 0; _i < _heldFees.length; _i++) {
+  for (uint256 _i = 0; _i < _heldFeesLength) {
     if (leftoverAmount == 0) _heldFeesOf[_projectId].push(_heldFees[_i]);
     else if (leftoverAmount >= _heldFees[_i].amount) {
-      leftoverAmount = leftoverAmount - _heldFees[_i].amount;
-      refundedFees += _feeAmount(
-        _heldFees[_i].amount,
-        _heldFees[_i].fee,
-        _heldFees[_i].feeDiscount
-      );
+      unchecked {
+        leftoverAmount = leftoverAmount - _heldFees[_i].amount;
+        refundedFees += _feeAmount(
+          _heldFees[_i].amount,
+          _heldFees[_i].fee,
+          _heldFees[_i].feeDiscount
+        );
+      }
     } else {
       _heldFeesOf[_projectId].push(
         JBFee(
@@ -142,8 +160,16 @@ function _refundHeldFees(uint256 _projectId, uint256 _amount)
           _heldFees[_i].beneficiary
         )
       );
-      refundedFees += _feeAmount(leftoverAmount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
+
+      unchecked {
+        refundedFees += _feeAmount(leftoverAmount, _heldFees[_i].fee, _heldFees[_i].feeDiscount);
+      }
+
       leftoverAmount = 0;
+    }
+
+    unchecked {
+      ++_i;
     }
   }
 

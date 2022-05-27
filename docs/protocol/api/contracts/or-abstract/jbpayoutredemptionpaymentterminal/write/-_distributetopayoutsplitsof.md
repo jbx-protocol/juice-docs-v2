@@ -61,7 +61,7 @@ function _distributeToPayoutSplitsOf(
 
     ```
     // Transfer between all splits.
-    for (uint256 _i = 0; _i < _splits.length; _i++) { ... }
+    for (uint256 _i = 0; _i < _splits.length;) { ... }
     ```
 
     1.  Get a reference to the current split being iterated on.
@@ -99,9 +99,11 @@ function _distributeToPayoutSplitsOf(
               _netPayoutAmount = _payoutAmount;
               // This distribution is eligible for a fee since the funds are leaving this contract and the allocator isn't listed as feeless.
             else {
-              _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
-                ? _payoutAmount
-                : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+              unchecked {
+                _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
+                  ? _payoutAmount
+                  : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+              }
 
               // This distribution is eligible for a fee since the funds are leaving the ecosystem.
               feeEligibleDistributionAmount += _payoutAmount;
@@ -163,9 +165,11 @@ function _distributeToPayoutSplitsOf(
                 _netPayoutAmount = _payoutAmount;
                 // This distribution is eligible for a fee since the funds are leaving this contract and the terminal isn't listed as feeless.
               else {
-                _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
-                  ? _payoutAmount
-                  : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+                unchecked {
+                  _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
+                    ? _payoutAmount
+                    : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+                }
 
                 feeEligibleDistributionAmount += _payoutAmount;
               }
@@ -202,9 +206,11 @@ function _distributeToPayoutSplitsOf(
                 );
             }
           } else {
-            _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
-              ? _payoutAmount
-              : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+            unchecked {
+              _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
+                ? _payoutAmount
+                : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+            }
 
             // This distribution is eligible for a fee since the funds are leaving the ecosystem.
             feeEligibleDistributionAmount += _payoutAmount;
@@ -217,8 +223,10 @@ function _distributeToPayoutSplitsOf(
             );
           }
 
-          // Subtract from the amount to be sent to the beneficiary.
-          leftoverAmount = leftoverAmount - _payoutAmount;
+          unchecked {
+            // Subtract from the amount to be sent to the beneficiary.
+            leftoverAmount = leftoverAmount - _payoutAmount;
+          }
         }
         ```
 
@@ -262,6 +270,14 @@ function _distributeToPayoutSplitsOf(
 
         * [`DistributeToPayoutSplit`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md)
 
+    4. Increment the loop counter in the most gas efficient way.
+
+       ```
+       unchecked {
+         ++_i;
+       }
+       ```
+
 </TabItem>
 
 <TabItem value="Code" label="Code">
@@ -293,7 +309,7 @@ function _distributeToPayoutSplitsOf(
   JBSplit[] memory _splits = splitsStore.splitsOf(_projectId, _domain, _group);
 
   // Transfer between all splits.
-  for (uint256 _i = 0; _i < _splits.length; _i++) {
+  for (uint256 _i = 0; _i < _splits.length;) {
     // Get a reference to the split being iterated on.
     JBSplit memory _split = _splits[_i];
 
@@ -316,9 +332,11 @@ function _distributeToPayoutSplitsOf(
           _netPayoutAmount = _payoutAmount;
           // This distribution is eligible for a fee since the funds are leaving this contract and the allocator isn't listed as feeless.
         else {
-          _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
-            ? _payoutAmount
-            : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+          unchecked {
+            _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
+              ? _payoutAmount
+              : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+          }
 
           // This distribution is eligible for a fee since the funds are leaving the ecosystem.
           feeEligibleDistributionAmount += _payoutAmount;
@@ -379,9 +397,11 @@ function _distributeToPayoutSplitsOf(
             _netPayoutAmount = _payoutAmount;
             // This distribution is eligible for a fee since the funds are leaving this contract and the terminal isn't listed as feeless.
           else {
-            _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
-              ? _payoutAmount
-              : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+            unchecked {
+              _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
+                ? _payoutAmount
+                : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+            }
 
             feeEligibleDistributionAmount += _payoutAmount;
           }
@@ -418,9 +438,11 @@ function _distributeToPayoutSplitsOf(
             );
         }
       } else {
-        _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
-          ? _payoutAmount
-          : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+        unchecked {
+          _netPayoutAmount = _feeDiscount == JBConstants.MAX_FEE_DISCOUNT
+            ? _payoutAmount
+            : _payoutAmount - _feeAmount(_payoutAmount, fee, _feeDiscount);
+        }
 
         // This distribution is eligible for a fee since the funds are leaving the ecosystem.
         feeEligibleDistributionAmount += _payoutAmount;
@@ -433,8 +455,10 @@ function _distributeToPayoutSplitsOf(
         );
       }
 
-      // Subtract from the amount to be sent to the beneficiary.
-      leftoverAmount = leftoverAmount - _payoutAmount;
+      unchecked {
+        // Subtract from the amount to be sent to the beneficiary.
+        leftoverAmount = leftoverAmount - _payoutAmount;
+      }
     }
 
     emit DistributeToPayoutSplit(
@@ -445,6 +469,10 @@ function _distributeToPayoutSplitsOf(
       _netPayoutAmount,
       msg.sender
     );
+
+    unchecked {
+      ++_i;
+    }
   }
 }
 ```

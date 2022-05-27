@@ -133,8 +133,10 @@ function _useAllowanceOf(
     5.  Send the net amount to the beneficiary if needed.
 
         ```
-        // The net amount is the withdrawn amount without the fee.
-        netDistributedAmount = _distributedAmount - _fee;
+        unchecked {
+          // The net amount is the withdrawn amount without the fee.
+          netDistributedAmount = _distributedAmount - _fee;
+        }
 
         // Transfer any remaining balance to the beneficiary.
         if (netDistributedAmount > 0) 
@@ -227,8 +229,10 @@ function useAllowanceOf(
       ? 0
       : _takeFeeFrom(_projectId, _fundingCycle, _distributedAmount, _projectOwner, _feeDiscount);
 
-    // The net amount is the withdrawn amount without the fee.
-    netDistributedAmount = _distributedAmount - _fee;
+    unchecked {
+      // The net amount is the withdrawn amount without the fee.
+      netDistributedAmount = _distributedAmount - _fee;
+    }
 
     // Transfer any remaining balance to the beneficiary.
     if (netDistributedAmount > 0) 
