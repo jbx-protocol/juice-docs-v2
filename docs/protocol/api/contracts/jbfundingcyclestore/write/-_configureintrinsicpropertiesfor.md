@@ -81,8 +81,8 @@ function _configureIntrinsicPropertiesFor(
 5.  If the configuration isn't approved, get a reference to the configuration it's based on which must be the latest approved configuration.
 
     ```
-    if (!_isApproved(_projectId, _baseFundingCycle))
-      // If it hasn't been approved, set the ID to be the funding cycle it's based on,
+    if (!_isApproved(_projectId, _baseFundingCycle) || block.timestamp < _baseFundingCycle.start)
+      // If it hasn't been approved or hasn't yet started, set the ID to be the funding cycle it's based on,
       // which carries the latest approved configuration.
       _baseFundingCycle = _getStructFor(_projectId, _baseFundingCycle.basedOn;
     ```
@@ -165,8 +165,8 @@ function _configureIntrinsicPropertiesFor(
   // Get a reference to the funding cycle.
   JBFundingCycle memory _baseFundingCycle = _getStructFor(_projectId, _currentConfiguration);
 
-  if (!_isApproved(_projectId, _baseFundingCycle))
-    // If it hasn't been approved, set the ID to be the funding cycle it's based on,
+  if (!_isApproved(_projectId, _baseFundingCycle) || block.timestamp < _baseFundingCycle.start)
+    // If it hasn't been approved or hasn't yet started, set the ID to be the funding cycle it's based on,
     // which carries the latest approved configuration.
     _baseFundingCycle = _getStructFor(_projectId, _baseFundingCycle.basedOn);
 
