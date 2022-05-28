@@ -64,7 +64,7 @@ const config = {
       },
       announcementBar: {
         id: 'support_us',
-        content: '<strong>These docs are under active development. Join our <a href="https://discord.gg/juicebox">Discord</a> to contribute.</strong>',
+        content: 'A bug in Juicebox v2 was identified on 2022-05-24. View the postmortem and original contracts <a href="/docs/2022-05-24/">here</a> and live updates <a href="https://juicebox.money/#/v2-bug-updates/">here</a>.',
         backgroundColor: '#18B4C7',
         textColor: '#FBF9F6',
         isCloseable: true,
