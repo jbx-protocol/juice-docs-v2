@@ -8,9 +8,9 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBControl
 
 #### Addresses
 
-Ethereum mainnet: [`0x43780E780DF2bD1e4d955d3d4b577a490841241A`](https://etherscan.io/address/0x43780E780DF2bD1e4d955d3d4b577a490841241A)
+Ethereum mainnet: [`0x4e3ef8AFCC2B52E4e704f4c8d9B7E7948F651351`](https://etherscan.io/address/0x4e3ef8AFCC2B52E4e704f4c8d9B7E7948F651351)
 
-Ethereum rinkeby: [`0xb51e584Ee10460E9e5ea29Deab67cd347B0cA2f3`](https://rinkeby.etherscan.io/address/0xb51e584Ee10460E9e5ea29Deab67cd347B0cA2f3)
+Ethereum rinkeby: [`0xd96ecf0E07eB197587Ad4A897933f78A00B21c9a`](https://rinkeby.etherscan.io/address/0xd96ecf0E07eB197587Ad4A897933f78A00B21c9a)
 
 #### Interfaces
 
