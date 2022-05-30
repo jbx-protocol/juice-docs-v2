@@ -6,12 +6,6 @@ _Manages approving funding cycle reconfigurations automatically after a buffer p
 
 https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBReconfigurationBufferBallot.sol
 
-#### Addresses
-
-Ethereum mainnet: [`0x9733F02d3A1068A11B07516fa2f3C3BaEf90e7eF`](https://etherscan.io/address/0x9733F02d3A1068A11B07516fa2f3C3BaEf90e7eF)
-
-Ethereum rinkeby: [`0xf91150aa07a1AC707148420713cefd299b8D094A`](https://rinkeby.etherscan.io/address/0xf91150aa07a1AC707148420713cefd299b8D094A)
-
 #### Interfaces
 
 | Name                                             | Description                                                                                                                              |
