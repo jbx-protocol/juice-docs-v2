@@ -95,14 +95,19 @@ const config = {
             sidebarId: 'resources',
             label: 'Resources',
           },
-          {
+/*          {
             type: 'localeDropdown',
             position: 'right',
-          },
+          },*/
           { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://discord.gg/juicebox',
             label: 'Discord',
+            position: 'right',
+          },
+          {
+            href: 'https://juicebox.money/',
+            label: 'juicebox.money',
             position: 'right',
           },
         ],
