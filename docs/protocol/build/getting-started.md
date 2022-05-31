@@ -34,6 +34,6 @@ From here, you can build the following:
 
 [Project payer](utilities/project-payer.md) - Deploy or inherit from a contract that makes it easy to forward funds to Juicebox projects.
 
-[Splits payer](utilities/splits-payer.md) - Deploy or inherit from a contract that makes it easy to forward funds to group of splits whose members are either addresses, Juicebox projects, or arbitrary contracts that inherit from [`IJBSplitAllocator`](build/treasury-extensions/split-allocator.md).
+[Splits payer](utilities/splits-payer.md) - Deploy or inherit from a contract that makes it easy to forward funds to groups of splits whose members are either addresses, Juicebox projects, or arbitrary contracts that inherit from [`IJBSplitAllocator`](build/treasury-extensions/split-allocator.md).
 
 
