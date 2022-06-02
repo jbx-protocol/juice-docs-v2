@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Overview
 
-The Juicebox protocol facilitates the following functionality:
+The Juicebox protocol is a framework for funding and operating projects openly on Ethereum. It lets you:
 
 #### Deploy an NFT that represents ownership over a project
 <p>
