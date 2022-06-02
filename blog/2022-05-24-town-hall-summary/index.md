@@ -167,7 +167,7 @@ As you can see, it’s just a lot of stuff. If you want to learn what to do, you
 
 
 ## 6. Dune dashboard of Juicebox logbook share by @twodam: 
-New dashboard: Juicebox Logbook
+New dashboard: [Juicebox Logbook](https://dune.com/twodam/Juicebox-Logbook) <br/>
 Display actions across Juicebox protocol with details, support search, sort and filter.
 Check use-cases below:
 * default view, actions sort by time
