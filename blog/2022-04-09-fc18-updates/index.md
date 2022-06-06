@@ -7,7 +7,7 @@ tags: [dao, updates]
 
 ## Juicebox v2
 
-Jango's proposal to [Deploy v2](https://snapshot.org/#/jbdao.eth/proposal/0x98bba73a52fcc2f65252d769b328ab398f955c1bb43259430ff586a568b8e06e) passed by overwhelming majority. You can learn more about v2 on the [docs](https://info.juicebox.money/docs/intro).
+Jango's proposal to [Deploy v2](https://snapshot.org/#/jbdao.eth/proposal/0x98bba73a52fcc2f65252d769b328ab398f955c1bb43259430ff586a568b8e06e) passed by overwhelming majority. You can learn more about v2 on the [docs](https://info.juicebox.money/intro).
 
 Currently, v2 is scheduled to deploy on April 16th.
 
