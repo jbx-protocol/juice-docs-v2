@@ -47,7 +47,7 @@ receive() external payable virtual override { ... }
     * [`defaultSplitsProjectId`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsprojectid.md)
     * [`defaultSplitsDomain`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsdomain.md)
     * [`defaultSplitsGroup`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsgroup.md)
-    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultbeneficiary.md)
+    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
     * [`_payToSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md)
 
 2.  If there's no leftover amount, there's nothing left to do.

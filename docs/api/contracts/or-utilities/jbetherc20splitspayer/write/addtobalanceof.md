@@ -84,7 +84,7 @@ function addToBalanceOf(
     * [`defaultSplitsProjectId`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsprojectid.md)
     * [`defaultSplitsDomain`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsdomain.md)
     * [`defaultSplitsGroup`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultsplitsgroup.md)
-    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/defaultbeneficiary.md)
+    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
     * [`_payToSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/write/-_paytosplits.md)
 3.  If there's any leftover amount, add to balance of the specified project. If no project is specified, send the leftover funds to the beneficiary or the msg.sender.
 
