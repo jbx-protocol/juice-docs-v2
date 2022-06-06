@@ -8,9 +8,9 @@ description: Interfaces the contracts and the user, working as a top-level contr
 
 On this page you'll find the documentation for the constructor and the events, for the read and write functions of the terminal follow the links:
 
-[read.md](/protocol/protocol-v1/terminalv1/read.md)
+[read.md](/protocol-v1/terminalv1/read.md)
 
-[write.md](/protocol/protocol-v1/terminalv1/write.md)
+[write.md](/protocol-v1/terminalv1/write.md)
 
 ## Constructor
 

@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminal`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminal`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/README.md)​‌
 
-Interface: [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md)
+Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -23,7 +23,7 @@ function acceptsToken(address _token, uint256 _projectId) external view override
   * `_projectId` is the project ID to check for token acceptance.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
 * The function returns the flag.
 
 #### Body

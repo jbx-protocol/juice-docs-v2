@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -64,7 +64,7 @@ function _pay(
         uint256 _tokenCount;
         ```
 
-    2.  Keep a reference to the [`JBTokenAmount`](/protocol/api/data-structures/jbtokenamount.md) structure with info about what's being paid.
+    2.  Keep a reference to the [`JBTokenAmount`](/api/data-structures/jbtokenamount.md) structure with info about what's being paid.
 
         ```
         // Bundle the amount info into a JBTokenAmount struct.
@@ -88,11 +88,11 @@ function _pay(
 
         _Internal references:_
 
-        * [`store`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+        * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
 
         _External references:_
 
-        * [`recordPaymentFrom`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/write/recordpaymentfrom.md)
+        * [`recordPaymentFrom`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordpaymentfrom.md)
 
     4.  Mint tokens if needed. Get a reference to the number of tokens sent to the specified beneificiary as opposed to reserved to be distributed to the project's reserved token splits.
 
@@ -112,12 +112,12 @@ function _pay(
 
         _Internal references:_
 
-        * [`directory`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
+        * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
 
         _External references:_
 
-        * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
-        * [`mintTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/minttokensof.md)
+        * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
+        * [`mintTokensOf`](/api/contracts/or-controllers/jbcontroller/write/minttokensof.md)
 
     5.  Make sure the beneficiary is receiving at least as much tokens as the minimum specied.
 
@@ -150,11 +150,11 @@ function _pay(
 
         _External references:_
 
-        * [`didPay`](/protocol/api/interfaces/ijbpaydelegate.md)
+        * [`didPay`](/api/interfaces/ijbpaydelegate.md)
 
         _Event references:_
 
-        * [`DelegateDidPay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/delegatedidpay.md)
+        * [`DelegateDidPay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/delegatedidpay.md)
 
 3.  Emit a `Pay` event with the relevant parameters.
 
@@ -174,7 +174,7 @@ function _pay(
 
     _Event references:_
 
-    * [`Pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/pay.md)
+    * [`Pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/pay.md)
 
 </TabItem>
 
@@ -295,7 +295,7 @@ function _pay(
 
 | Name                          | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Pay`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/pay.md)                                         | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address payer</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 beneficiaryTokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>        |
+| [**`Pay`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/pay.md)                                         | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address payer</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 beneficiaryTokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>        |
 
 </TabItem>
 

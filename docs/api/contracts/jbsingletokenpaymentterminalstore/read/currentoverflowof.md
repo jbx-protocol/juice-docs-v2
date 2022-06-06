@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`IJBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md)
+Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -29,7 +29,7 @@ function currentOverflowOf(IJBSingleTokenPaymentTerminal _terminal, uint256 _pro
   * `_projectId` is the ID of the project to get overflow for.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns the current amount of overflow that project has in the specified terminal.
 
 #### Body
@@ -49,12 +49,12 @@ function currentOverflowOf(IJBSingleTokenPaymentTerminal _terminal, uint256 _pro
 
     _Internal references:_
 
-    * [`_overflowDuring`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
+    * [`_overflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
 
     _External references:_
 
-    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
-    * [`currency`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
 
 </TabItem>
 

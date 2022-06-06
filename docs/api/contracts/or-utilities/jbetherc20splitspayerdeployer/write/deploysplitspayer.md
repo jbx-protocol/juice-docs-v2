@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20SplitsPayerDeployer`](/protocol/api/contracts/or-utilities/jbetherc20splitspayerdeployer/README.md)
+Contract: [`JBETHERC20SplitsPayerDeployer`](/api/contracts/or-utilities/jbetherc20splitspayerdeployer/README.md)
 
-Interface: [`IJBETHERC20SplitsPayerDeployer`](/protocol/api/interfaces/ijbetherc20splitspayerdeployer.md)
+Interface: [`IJBETHERC20SplitsPayerDeployer`](/api/interfaces/ijbetherc20splitspayerdeployer.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -43,7 +43,7 @@ function deploySplitsPayer(
   * `_defaultPreferAddToBalance` is a flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.
   * `_owner` is the address that will own the project payer.
 * The function can be accessed externally by anyone.
-* The function overrides a function definition from the[`IJBETHERC20SplitsPayerDeployer`](/protocol/api/interfaces/ijbetherc20splitspayerdeployer.md) interface.
+* The function overrides a function definition from the[`IJBETHERC20SplitsPayerDeployer`](/api/interfaces/ijbetherc20splitspayerdeployer.md) interface.
 * The function returns the splits payer contract.
 
 #### Body
@@ -69,7 +69,7 @@ function deploySplitsPayer(
 
     _External references:_
 
-    * [`JBETHERC20SplitsPayer`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer)
+    * [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer)
 2.  Emit a `DeploySplitsPayer` event with all relevant parameters.
 
     ```
@@ -92,7 +92,7 @@ function deploySplitsPayer(
 
     _Event references:_
 
-    * [`DeploySplitsPayer`](/protocol/api/contracts/or-utilities/jbetherc20splitspayerdeployer/events/deploysplitspayer.md)
+    * [`DeploySplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayerdeployer/events/deploysplitspayer.md)
 
 </TabItem>
 
@@ -169,7 +169,7 @@ function deploySplitsPayer(
 
 | Name                                | Data                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DeploySplitsPayer`**](/protocol/api/contracts/or-utilities/jbetherc20splitspayerdeployer/events/deploysplitspayer.md)                                                                          | <ul><li><code>[IJBSplitsPayer](/protocol/api/interfaces/ijbsplitspayer.md) indexed splitsPayer</code></li><li><code>uint256 indexed defaultSplitsProjectId</code></li><li><code>uint256 defaultSplitsDomain</code></li><li><code>uint256 defaultSplitsGroup</code></li><li><code>[IJBSplitStore](/protocol/api/interfaces/ijbsplitsstore.md) splitStore</code></li><li><code>uint256 defaultProjectId</code></li><li><code>address defaultBeneficiary</code></li><li><code>bool defaultPreferClaimedTokens</code></li><li><code>string defaultMemo</code></li><li><code>bytes defaultMetadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DeploySplitsPayer`**](/api/contracts/or-utilities/jbetherc20splitspayerdeployer/events/deploysplitspayer.md)                                                                          | <ul><li><code>[IJBSplitsPayer](/api/interfaces/ijbsplitspayer.md) indexed splitsPayer</code></li><li><code>uint256 indexed defaultSplitsProjectId</code></li><li><code>uint256 defaultSplitsDomain</code></li><li><code>uint256 defaultSplitsGroup</code></li><li><code>[IJBSplitStore](/api/interfaces/ijbsplitsstore.md) splitStore</code></li><li><code>uint256 defaultProjectId</code></li><li><code>address defaultBeneficiary</code></li><li><code>bool defaultPreferClaimedTokens</code></li><li><code>string defaultMemo</code></li><li><code>bytes defaultMetadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

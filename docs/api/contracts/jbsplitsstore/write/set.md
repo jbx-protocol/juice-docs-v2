@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSplitsStore`](/protocol/api/contracts/jbsplitsstore/README.md)​‌
+Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
-Interface: [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md)
+Interface: [`IJBSplitsStore`](/api/interfaces/ijbsplitsstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -38,8 +38,8 @@ function set(
   * `_projectId` is the ID of the project for which splits are being added.
   * `_domain` is an identifier within which the splits should be considered active.
   * `_groupedSplits` An array of splits to set for any number of groups. 
-* Through the [`requirePermissionAllowingOverride`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_SPLITS`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId` , or from the current controller of the `_projectId` of the specified.
-* The function overrides a function definition from the [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md) interface.
+* Through the [`requirePermissionAllowingOverride`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_SPLITS`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId` , or from the current controller of the `_projectId` of the specified.
+* The function overrides a function definition from the [`IJBSplitsStore`](/api/interfaces/ijbsplitsstore.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -66,7 +66,7 @@ function set(
 
     _Internal references:_
 
-    * [`_set`](/protocol/api/contracts/jbsplitsstore/write/-_set.md)
+    * [`_set`](/api/contracts/jbsplitsstore/write/-_set.md)
 
 </TabItem>
 

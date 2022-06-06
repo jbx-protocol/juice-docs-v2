@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSplitsStore`](/protocol/api/contracts/jbsplitsstore/README.md)​‌
+Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
-Interface: [`IJBSplitsStore`](/protocol/api/interfaces/ijbsplitsstore.md)
+Interface: [`IJBSplitsStore`](/api/interfaces/ijbsplitsstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -29,7 +29,7 @@ function set(
   * `_projectId` is the ID of the project for which splits are being added.
   * `_domain` is an identifier within which the splits should be considered active.
   * `_group` is an identifier between of splits being set. All splits within this `_group` must add up to within 100%.
-  * `_splits` are the [`JBSplit`](/protocol/api/data-structures/jbsplit.md)s to set.
+  * `_splits` are the [`JBSplit`](/api/data-structures/jbsplit.md)s to set.
 * The resulting function is internal to this contract and its inheriters. 
 * The function doesn't return anything.
 
@@ -44,7 +44,7 @@ function set(
 
     _Internal references:_
 
-    * [`_getStructsFor`](/protocol/api/contracts/jbsplitsstore/read/-_getstructsfor.md)
+    * [`_getStructsFor`](/api/contracts/jbsplitsstore/read/-_getstructsfor.md)
 2.  Loop through each current split to make sure the new splits being set respect any current split bound by a lock constraint.
 
     ```
@@ -120,7 +120,7 @@ function set(
 
         _Library references:_
 
-        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
+        * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.SPLITS_TOTAL_PERCENT`
     5.  Pack common split properties into a storage slot.
 
@@ -145,7 +145,7 @@ function set(
 
         _Internal references:_
 
-        * [`_packedSplitParts1Of`](/protocol/api/contracts/jbsplitsstore/properties/-_packedsplitparts1of.md)
+        * [`_packedSplitParts1Of`](/api/contracts/jbsplitsstore/properties/-_packedsplitparts1of.md)
     6.  Pack less common split properties into another storage slot if needed. Otherwise, delete any content in storage at the index being iterated on.
 
        ```
@@ -169,7 +169,7 @@ function set(
 
        _Internal references:_
 
-       * [`_packedSplitParts2Of`](/protocol/api/contracts/jbsplitsstore/properties/-_packedsplitparts2of.md)
+       * [`_packedSplitParts2Of`](/api/contracts/jbsplitsstore/properties/-_packedsplitparts2of.md)
     7.  For each added split, emit a `SetSplit` event with all relevant parameters.
 
         ```
@@ -178,7 +178,7 @@ function set(
 
         _Event references:_
 
-        * [`SetSplit`](/protocol/api/contracts/jbsplitsstore/events/setsplit.md)
+        * [`SetSplit`](/api/contracts/jbsplitsstore/events/setsplit.md)
 6.  Store the new array length.
 
     ```
@@ -188,7 +188,7 @@ function set(
 
     _Internal references:_
 
-    * [`_splitCountOf`](/protocol/api/contracts/jbsplitsstore/properties/-_splitcountof.md)
+    * [`_splitCountOf`](/api/contracts/jbsplitsstore/properties/-_splitcountof.md)
 
 </TabItem>
 
@@ -315,7 +315,7 @@ function set(
 
 | Name                                    | Data                                                                                                                                                                                                                 |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetSplit`**](/protocol/api/contracts/jbsplitsstore/events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/protocol/api/data-structures/jbsplit.md) split</code></li><li><code>address caller</code></li></ul> |
+| [**`SetSplit`**](/api/contracts/jbsplitsstore/events/setsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md) split</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

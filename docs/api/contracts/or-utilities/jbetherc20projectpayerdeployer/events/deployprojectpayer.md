@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`deployProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayerdeployer/write/deployprojectpayer.md)
+* [`deployProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayerdeployer/write/deployprojectpayer.md)
 
 #### Definition
 
@@ -28,6 +28,6 @@ event DeployProjectPayer(
 * `defaultMemo` is the memo that'll be passed along to the emitted event.
 * `defaultMetadata` are bytes to send along to the project's data source and delegate, if provided.
 * `preferAddToBalance` is a flag indicating if received payments should be forwarded to the project's `addToBalance` function or `pay` function. 
-* `directory` is the [`IJBDirectory`](/protocol/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
+* `directory` is the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
 * `_owner` is the address that owns the project payer contract.
 * `caller` is the address that issued the transaction within which the event was emitted.

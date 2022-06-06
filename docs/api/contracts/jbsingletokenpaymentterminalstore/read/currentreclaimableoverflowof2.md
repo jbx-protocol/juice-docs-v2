@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`IJBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md)
+Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -32,7 +32,7 @@ function currentReclaimableOverflowOf(
   * `_overflow` is the amount of overflow to make the calculation with, as a fixed point number.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns the amount of overflowed tokens that can be reclaimed, as a fixed point number with the same number of decimals as the provided `_overflow`.
 
 #### Body
@@ -60,7 +60,7 @@ function currentReclaimableOverflowOf(
 
     _External references:_
 
-    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 
 4.  Return the reclaimable overflow using the project's current funding cycle and the provided parameters. 
 
@@ -72,7 +72,7 @@ function currentReclaimableOverflowOf(
 
     _Internal references:_
 
-    * [`_reclaimableOverflowDuring`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/read/-_reclaimableoverflowduring.md)
+    * [`_reclaimableOverflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_reclaimableoverflowduring.md)
 
 
 </TabItem>

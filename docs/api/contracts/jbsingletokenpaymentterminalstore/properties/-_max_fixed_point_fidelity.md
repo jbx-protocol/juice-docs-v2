@@ -1,6 +1,6 @@
 # _MAX_FIXED_POINT_FIDELITY
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
 **Ensures a maximum number of decimal points of persisted fidelity on mulDiv operations of fixed point numbers.** 
 

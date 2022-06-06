@@ -2,8 +2,8 @@
 
 Emitted from:
 
-* [`processFees`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/processfees.md)
-* [`_takeFeeFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
+* [`processFees`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/processfees.md)
+* [`_takeFeeFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
 
 #### Definition
 

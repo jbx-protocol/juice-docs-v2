@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20SplitsPayer`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/README.md)
+Contract: [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -46,11 +46,11 @@ function _payToSplits(
     
     _External references:_
 
-    * [`splitsStore`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/properties/splitsstore.md)
+    * [`splitsStore`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/splitsstore.md)
 
     _External references:_
 
-    * [`splitsOf`](/protocol/api/contracts/jbsplitsstore/read/splitsof.md)
+    * [`splitsOf`](/api/contracts/jbsplitsstore/read/splitsof.md)
 2.  At first the leftover amount is the full amount. This will be decremented as the splits are iterated on.
 
     ```
@@ -156,25 +156,25 @@ function _payToSplits(
 
     _Library references:_
 
-    * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
+    * [`JBTokens`](/api/libraries/jbtokens.md)
       * `.ETH`
     * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`
 
     _Internal references:_
 
-    * [`_pay`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
-    * [`_addToBalanceOf`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
+    * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
+    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
 
     _External references:_
 
     * [`approve`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
     * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transfer-address-uint256-)
-    * [`allocate`](/protocol/api/interfaces/ijbsplitallocator.md)
+    * [`allocate`](/api/interfaces/ijbsplitallocator.md)
 
     _Event references:_
 
-    * [`DistributeToSplit`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/events/distributetosplit.md)
+    * [`DistributeToSplit`](/api/contracts/or-utilities/jbetherc20splitspayer/events/distributetosplit.md)
     
 </TabItem>
 
@@ -309,7 +309,7 @@ function _payToSplits(
 
 | Name                                                                          | Data                                                                                          |
 | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [**`DistributeToSplit`**](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/events/distributetosplit.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/protocol/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DistributeToSplit`**](/api/contracts/or-utilities/jbetherc20splitspayer/events/distributetosplit.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

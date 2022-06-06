@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setIsAllowedToSetFirstController`](/protocol/api/contracts/jbdirectory/write/setisallowedtosetfirstcontroller.md)
+* [`setIsAllowedToSetFirstController`](/api/contracts/jbdirectory/write/setisallowedtosetfirstcontroller.md)
 
 Definition:
 

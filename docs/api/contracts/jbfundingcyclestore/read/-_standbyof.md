@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
+Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -37,7 +37,7 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 2.  Get the struct for the latest funding cycle.
 
     ```
@@ -47,7 +47,7 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 3.  If the cycle has started, return 0 since there is not a stored funding cycle in standby.
 
     ```
@@ -69,7 +69,7 @@ function _standbyOf(uint256 _projectId) private view returns (uint256 configurat
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 6.  It's possible that the latest cycle was configured to start at or after a date in the future that comes after another iteration of the currently active funding cycle. If this is the case, there is no immediately queued funding cycle.
 
     ```

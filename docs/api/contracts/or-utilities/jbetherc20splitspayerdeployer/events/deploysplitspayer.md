@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`deploySplitsPayer`](/protocol/api/contracts/or-utilities/jbetherc20splitspayerdeployer/write/deploysplitspayer.md)
+* [`deploySplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayerdeployer/write/deploysplitspayer.md)
 
 #### Definition
 

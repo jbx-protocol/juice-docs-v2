@@ -24,7 +24,7 @@ The protocol runs entirely on public smart contracts explained in detail through
 </p>
 
 #### Project owner risk
-Ownership of each project on the Juicebox protocol belongs to the address possessing a [`JBProjects`](/protocol/api/contracts/jbprojects) NFT with a unique token ID, which also serves as the project's ID. The address that owns this token can reconfigure a project's funding cycles, which empower it to manipulate a project's finances both productively and maliciously.
+Ownership of each project on the Juicebox protocol belongs to the address possessing a [`JBProjects`](/api/contracts/jbprojects) NFT with a unique token ID, which also serves as the project's ID. The address that owns this token can reconfigure a project's funding cycles, which empower it to manipulate a project's finances both productively and maliciously.
 
    * The following values can be reconfigured by a project's owner on a per-funding cycle basis:
 

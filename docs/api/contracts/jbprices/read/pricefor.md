@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPrices`](/protocol/api/contracts/jbprices/README.md)​‌
+Contract: [`JBPrices`](/api/contracts/jbprices/README.md)​‌
 
-Interface: [`IJBPrices`](/protocol/api/interfaces/ijbprices.md)
+Interface: [`IJBPrices`](/api/interfaces/ijbprices.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,7 +28,7 @@ function priceFor(
   * `_decimals` is the number of decimals the returned fixed point price should include.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBPrices`](/protocol/api/interfaces/ijbprices.md) interface.
+* The function overrides a function definition from the [`IJBPrices`](/api/interfaces/ijbprices.md) interface.
 * The function returns the price of the currency in terms of the base, as a fixed point number with the specified number of decimals.
 
 #### Body
@@ -48,7 +48,7 @@ function priceFor(
 
     _Internal references:_
 
-    * [`feedFor`](/protocol/api/contracts/jbprices/properties/feedfor.md)
+    * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 3.  If the feed exists, return the price that it's currently reporting.
 
     ```solidity
@@ -58,7 +58,7 @@ function priceFor(
 
     _External references:_
 
-    * [`currentPrice`](/protocol/api/interfaces/ijbpricefeed.md)
+    * [`currentPrice`](/api/interfaces/ijbpricefeed.md)
 4.  Get a reference to the feed using the inverse pair.
 
     ```
@@ -68,7 +68,7 @@ function priceFor(
 
     _Internal references:_
 
-    * [`feedFor`](/protocol/api/contracts/jbprices/properties/feedfor.md)
+    * [`feedFor`](/api/contracts/jbprices/properties/feedfor.md)
 5.  If the inverse feed exists, return the inverse of the price that it's currently reporting.
 
     ```solidity
@@ -84,7 +84,7 @@ function priceFor(
 
     _External references:_
 
-    * [`currentPrice`](/protocol/api/interfaces/ijbpricefeed.md)
+    * [`currentPrice`](/api/interfaces/ijbpricefeed.md)
 6.  Revert if no feed was found.
 
     ```

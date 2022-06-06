@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBToken`](/protocol/api/contracts/jbtoken/README.md)​‌
+Contract: [`JBToken`](/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](/protocol/api/interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -27,7 +27,7 @@ function balanceOf(address _account, uint256 _projectId)
   * `_projectId` is the ID of the project to which the token belongs. This is ignored.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBToken`](/protocol/api/interfaces/ijbtoken.md) interface.
+* The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
 * The function returns the balance of the `_account` of this ERC20, as a fixed point number with 18 decimals.
 
 #### Body

@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -52,11 +52,11 @@ function _distributeToPayoutSplitsOf(
 
     _Internal references:_
 
-    * [`splitsStore`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/splitsstore.md)
+    * [`splitsStore`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/splitsstore.md)
 
     _External references:_
 
-    * [`splitsOf`](/protocol/api/contracts/jbsplitsstore/read/splitsof.md)
+    * [`splitsOf`](/api/contracts/jbsplitsstore/read/splitsof.md)
 3.  Loop through each split.
 
     ```
@@ -85,7 +85,7 @@ function _distributeToPayoutSplitsOf(
 
         * [`PRBMath`](https://github.com/hifi-finance/prb-math/blob/main/contracts/PRBMath.sol)
           * `.mulDiv(...)`
-        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
+        * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.SPLITS_TOTAL_PERCENT`
     3.  If there's at least some funds to send to the payout, determine where they should go, making sure to only debit a fee if the funds are leaving this contract and not going to a feeless terminal. If the split has an `allocator` set, send the funds to its `allocate` function, passing along any relevant params. Otherwise if a `projectId` is specified in the split, send the payout to that project. Add to the project's balance if the split has a preference to do so, otherwise send a payment and use the split's `beneficiary` as the address that should receive the project's tokens in return, or use the message sender if a beneficiary wasn't provided. If no project was specified, send the funds directly to the `beneficiary` address from the split if one was provided. If the split didn't give any routing information, send the amount to the messag sender. Decrement the `leftoverAmount` once the split is settled.
 
@@ -232,27 +232,27 @@ function _distributeToPayoutSplitsOf(
 
         _Library references:_
 
-        * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
+        * [`JBConstants`](/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT`
-        * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
+        * [`JBTokens`](/api/libraries/jbtokens.md)
           * `.ETH`
 
         _Internal references:_
 
-        * [`fee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
-        * [`decimals`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
-        * [`isFeelessAddress`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessaddress.md)
-        * [`pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
-        * [`_pay`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
-        * [`_feeAmount`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
-        * [`_transferFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
-        * [`_beforeTransferTo`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
-        * [`_addtobalanceof`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_addtobalanceof.md)
+        * [`fee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
+        * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
+        * [`isFeelessAddress`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessaddress.md)
+        * [`pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
+        * [`_pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
+        * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
+        * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
+        * [`_beforeTransferTo`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_beforetransferto.md)
+        * [`_addtobalanceof`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_addtobalanceof.md)
 
         _External references:_
 
-        * [`allocate`](/protocol/api/interfaces/ijbsplitallocator.md)
-        * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
+        * [`allocate`](/api/interfaces/ijbsplitallocator.md)
+        * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
     3.  Emit a `DistributeToPayoutSplit` event for the split being iterated on with the relevant parameters.
 
         ```
@@ -268,7 +268,7 @@ function _distributeToPayoutSplitsOf(
 
         _Event references:_
 
-        * [`DistributeToPayoutSplit`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md)
+        * [`DistributeToPayoutSplit`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md)
 
     4. Increment the loop counter in the most gas efficient way.
 
@@ -491,7 +491,7 @@ function _distributeToPayoutSplitsOf(
 
 | Name                                                                  | Data                                                                                                                                                                                                                                                                                     |
 | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeToPayoutSplit`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/protocol/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                           |
+| [**`DistributeToPayoutSplit`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributetopayoutsplit.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                           |
 
 </TabItem>
 

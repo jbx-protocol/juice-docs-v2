@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
+Contract: [`JBTokenStore`](/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -30,8 +30,8 @@ function transferFrom(
   * `_projectId` is the ID of the project whose tokens are being transferred.
   * `_recipient` is thhe recipient of the tokens.
   * `_amount` is the amount of tokens to transfer.
-* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.TRANSFER`](/protocol/api/libraries/jboperations.md) permission by the token holder. 
-* The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
+* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.TRANSFER`](/api/libraries/jboperations.md) permission by the token holder. 
+* The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -51,7 +51,7 @@ function transferFrom(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 3.  Make sure the holder has enough unclaimed tokens to transfer.
 
     ```
@@ -67,7 +67,7 @@ function transferFrom(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 5.  Add the amount of unclaimed project tokens to the recipient's balance.
 
     ```
@@ -79,7 +79,7 @@ function transferFrom(
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](/protocol/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 6.  Emit a `Transfer` event with the relevant parameters.
 
     ```
@@ -88,7 +88,7 @@ function transferFrom(
 
     _Event references:_
 
-    * [`Transfer`](/protocol/api/contracts/jbtokenstore/events/transfer.md)
+    * [`Transfer`](/api/contracts/jbtokenstore/events/transfer.md)
 
 </TabItem>
 
@@ -149,7 +149,7 @@ function transferFrom(
 
 | Name                                    | Data                                                                                                                                                                                                                        |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Transfer`**](/protocol/api/contracts/jbtokenstore/events/transfer.md)                     | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>address indexed recipient</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                   |
+| [**`Transfer`**](/api/contracts/jbtokenstore/events/transfer.md)                     | <ul><li><code>address indexed holder</code></li><li><code>uint256 indexed projectId</code></li><li><code>address indexed recipient</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                                                   |
 
 </TabItem>
 

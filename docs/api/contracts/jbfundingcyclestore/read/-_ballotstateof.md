@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
+Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,7 +28,7 @@ function _ballotStateOf(
   * `_ballotFundingCycleConfiguration` is the configuration of the funding cycle which is configured with the ballot that should be used.
 * The view function is private to this contract.
 * The view function does not alter state on the blockchain.
-* The function returns the [`JBBallotState`](/protocol/api/enums/jbballotstate.md) of the project.
+* The function returns the [`JBBallotState`](/api/enums/jbballotstate.md) of the project.
 
 #### Body
 
@@ -41,7 +41,7 @@ function _ballotStateOf(
 
     _Enums used:_
 
-    * [`JBBallotState`](/protocol/api/enums/jbballotstate.md)
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
       * `.Approved`
 2.  Get the funding cycle that has a reference of the ballot that should be used.
 
@@ -55,7 +55,7 @@ function _ballotStateOf(
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 3.  If there's no ballot, the funding cycle configuration is implicitly approved. Otherwise if the ballot's duration has not yet expired, it is implicitly active. Otherwise, return the state that the ballot for the provided configuration.
 
     ```
@@ -71,14 +71,14 @@ function _ballotStateOf(
 
     _Enums used:_
 
-    * [`JBBallotState`](/protocol/api/enums/jbballotstate.md)
+    * [`JBBallotState`](/api/enums/jbballotstate.md)
       * `.Approved`
       * `.Active`
 
     _External references:_
 
-    * [`duration`](/protocol/api/interfaces/ijbfundingcycleballot.md)
-    * [`stateOf`](/protocol/api/interfaces/ijbfundingcycleballot.md)
+    * [`duration`](/api/interfaces/ijbfundingcycleballot.md)
+    * [`stateOf`](/api/interfaces/ijbfundingcycleballot.md)
 
 </TabItem>
 

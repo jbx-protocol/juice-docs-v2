@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`IJBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md)
+Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,7 +28,7 @@ function currentTotalOverflowOf(
   * `_currency` is the currency that the total overflow should be in terms of.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns the current total amount of overflow that project has across all terminals.
 
 #### Body
@@ -41,7 +41,7 @@ function currentTotalOverflowOf(
 
     _Internal references:_
 
-    * [`_currentTotalOverflowOf`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/read/-_currenttotaloverflowof.md)
+    * [`_currentTotalOverflowOf`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_currenttotaloverflowof.md)
 
 </TabItem>
 

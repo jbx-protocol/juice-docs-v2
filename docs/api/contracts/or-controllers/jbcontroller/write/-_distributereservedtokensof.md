@@ -33,11 +33,11 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`fundingCycleStore`](/protocol/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
+    * [`fundingCycleStore`](/api/contracts/or-controllers/jbcontroller/properties/fundingcyclestore.md)
 
     _External references:_
 
-    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 2.  Get a reference to the current total supply of tokens issued for the project.
 
     ```
@@ -47,11 +47,11 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`tokenStore`](/protocol/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
+    * [`tokenStore`](/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
 
     _External references:_
 
-    * [`totalSupplyOf`](/protocol/api/contracts/jbtokenstore/read/totalsupplyof.md)
+    * [`totalSupplyOf`](/api/contracts/jbtokenstore/read/totalsupplyof.md)
 3.  Get a reference to the current amount of reserved tokens given the current state of the tracker, the current funding cycle's reserved rate, and the current total token supply.
 
     ```
@@ -65,13 +65,13 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.reservedRate(...)`
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
-    * [`_reservedTokenAmountFrom`](/protocol/api/contracts/or-controllers/jbcontroller/read/-_reservedtokenamountfrom.md)
+    * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
+    * [`_reservedTokenAmountFrom`](/api/contracts/or-controllers/jbcontroller/read/-_reservedtokenamountfrom.md)
 4.  Set the tracker to be equal to the new current total token supply, which is the amount stored plus the amount that will be minted and distributed.
 
     ```
@@ -81,7 +81,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`_processedTokenTrackerOf`](/protocol/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
+    * [`_processedTokenTrackerOf`](/api/contracts/or-controllers/jbcontroller/properties/-_processedtokentrackerof.md)
 5.  Get a reference to the project's owner.
 
     ```
@@ -91,7 +91,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`projects`](/protocol/api/contracts/or-controllers/jbcontroller/properties/projects.md)
+    * [`projects`](/api/contracts/or-controllers/jbcontroller/properties/projects.md)
 
     _External references:_
 
@@ -112,12 +112,12 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Library references:_
 
-    * [`JBSplitsGroups`](/protocol/api/libraries/jbsplitsgroups.md)
+    * [`JBSplitsGroups`](/api/libraries/jbsplitsgroups.md)
       * `.RESERVED_TOKENS`
 
     _Internal references:_
 
-    * [`_distributeToReservedTokenSplitsOf`](/protocol/api/contracts/or-controllers/jbcontroller/write/-_distributetoreservedtokensplitsof.md)
+    * [`_distributeToReservedTokenSplitsOf`](/api/contracts/or-controllers/jbcontroller/write/-_distributetoreservedtokensplitsof.md)
 7.  If there are any leftover reserved tokens, mint them for the project's owner.
 
     ```
@@ -127,7 +127,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Internal references:_
 
-    * [`mintFor`](/protocol/api/contracts/jbtokenstore/write/mintfor.md)
+    * [`mintFor`](/api/contracts/jbtokenstore/write/mintfor.md)
 8.  Emit a `DistributeReservedTokens` event with the relevant parameters.
 
     ```
@@ -145,7 +145,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
     _Event references:_
 
-    * [`DistributeReservedTokens`](/protocol/api/contracts/or-controllers/jbcontroller/events/distributereservedtokens.md)
+    * [`DistributeReservedTokens`](/api/contracts/or-controllers/jbcontroller/events/distributereservedtokens.md)
 
 </TabItem>
 
@@ -216,7 +216,7 @@ function _distributeReservedTokensOf(uint256 _projectId, string memory _memo)
 
 | Name                                        | Data                                                                                                                                                                                                                                                       |
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributeReservedTokens`**](/protocol/api/contracts/or-controllers/jbcontroller/events/distributereservedtokens.md)             | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 beneficiaryTokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
+| [**`DistributeReservedTokens`**](/api/contracts/or-controllers/jbcontroller/events/distributereservedtokens.md)             | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 tokenCount</code></li><li><code>uint256 beneficiaryTokenCount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

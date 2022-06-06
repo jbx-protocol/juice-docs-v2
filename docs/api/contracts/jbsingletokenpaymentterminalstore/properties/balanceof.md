@@ -1,8 +1,8 @@
 # balanceOf
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`IJBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md)
+Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 **The amount of tokens that each project has for each terminal, in terms of the terminal's token.**
 
@@ -26,4 +26,4 @@ mapping(IJBSingleTokenPaymentTerminal => mapping(uint256 => uint256)) public ove
   * `_terminal` is the terminal to which the balance applies.
   * `_projectId` is the ID of the project to get the balance of.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.

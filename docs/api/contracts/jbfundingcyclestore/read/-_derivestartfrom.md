@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​
+Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -20,7 +20,7 @@ function _deriveStartFrom(JBFundingCycle memory _baseFundingCycle, uint256 _must
 ```
 
 * Arguments:
-  * `_baseFundingCycle` is The [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md) to base the calculation on.
+  * `_baseFundingCycle` is The [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) to base the calculation on.
   * `_mustStartAtOrAfter` is a date that the derived start must be on or come after.
 * The view function is private to this contract.
 * The view function does not alter state on the blockchain.

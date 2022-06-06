@@ -1,6 +1,6 @@
 # _packedUserPropertiesOf
 
-Contract: [`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​‌
+Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​‌
 
 **Stores the user defined properties of each funding cycle, packed into one storage slot.**
 

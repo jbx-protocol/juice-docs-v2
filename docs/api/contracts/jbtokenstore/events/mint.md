@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`mintFor`](/protocol/api/contracts/jbtokenstore/write/mintfor.md)
+* [`mintFor`](/api/contracts/jbtokenstore/write/mintfor.md)
 
 #### Definition
 

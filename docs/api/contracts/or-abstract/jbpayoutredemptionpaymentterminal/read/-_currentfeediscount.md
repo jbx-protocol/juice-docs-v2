@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -34,16 +34,16 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
     _Library references:_
 
-    * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
+    * [`JBConstants`](/api/libraries/jbconstants.md)
       * `.MAX_FEE_DISCOUNT`
 
     _Internal references:_
 
-    * [`directory`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
+    * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
 
     _External references:_
 
-    * [`primaryTerminalOf`](/protocol/api/contracts/jbdirectory/read/primaryterminalof.md)
+    * [`primaryTerminalOf`](/api/contracts/jbdirectory/read/primaryterminalof.md)
 2.  If there's a gauge, ask it for the discount. Otherwise, there is no discount. If the gauge reverts, set the discount to 0.
 
     ```
@@ -61,11 +61,11 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
     _Internal references:_
 
-    * [`feeGauge`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/feegauge.md)
+    * [`feeGauge`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/feegauge.md)
 
     _External references:_
 
-    * [`currentDiscountFor`](/protocol/api/interfaces/ijbfeegauge.md)
+    * [`currentDiscountFor`](/api/interfaces/ijbfeegauge.md)
 
 3.  If there gauge provided an invalid discount, set the discount to 0.
 
@@ -76,7 +76,7 @@ function _currentFeeDiscount(uint256 _projectId) private view returns (uint256 f
 
     _Library references:_
 
-    * [`JBConstants`](/protocol/api/libraries/jbconstants.md)
+    * [`JBConstants`](/api/libraries/jbconstants.md)
       * `.MAX_FEE_DISCOUNT`
 
 </TabItem>

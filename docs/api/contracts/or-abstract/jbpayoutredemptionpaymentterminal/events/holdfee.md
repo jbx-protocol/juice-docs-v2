@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`_takeFeeFrom`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
+* [`_takeFeeFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
 
 #### Definition
 
@@ -19,7 +19,7 @@ event HoldFee(
 
 * `projectId` is the ID of the project whos fees are being held.
 * `amount` is the amount that a fee being held was taken from.
-* `fee` is the percent of the fee, out of [`JBConstants.MAX_FEE`](/protocol/api/libraries/jbconstants.md).
+* `fee` is the percent of the fee, out of [`JBConstants.MAX_FEE`](/api/libraries/jbconstants.md).
 * `feeDiscount` is the fee discount that was applicable at the time of holding the fee. 
 * `beneficiary` is the address that should receive any benefits from later processing the fee.
 * `caller` is the address that issued the transaction within which the event was emitted.

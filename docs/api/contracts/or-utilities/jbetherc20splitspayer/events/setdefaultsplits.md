@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setDefaultSplits`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/write/setdefaultsplits.md)
+* [`setDefaultSplits`](/api/contracts/or-utilities/jbetherc20splitspayer/write/setdefaultsplits.md)
 
 #### Definition
 

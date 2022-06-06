@@ -1,8 +1,8 @@
 # unclaimedBalanceOf
 
-Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
+Contract: [`JBTokenStore`](/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 **Each holder's balance of unclaimed tokens for each project.**
 
@@ -23,4 +23,4 @@ mapping(address => mapping(uint256 => uint256)) public override unclaimedBalance
   * `_holder` is the holder of balance.
   * `_projectId` is the ID of the project to which the token belongs.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
+* The resulting function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.

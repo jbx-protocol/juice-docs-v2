@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`pay`](/protocol/api/contracts/or-utilities/jbetherc20splitspayer/write/pay.md)
+* [`pay`](/api/contracts/or-utilities/jbetherc20splitspayer/write/pay.md)
 
 #### Definition
 

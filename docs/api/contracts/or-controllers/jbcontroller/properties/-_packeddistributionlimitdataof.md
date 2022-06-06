@@ -1,6 +1,6 @@
 # _packedDistributionLimitDataOf
 
-Contract: [`JBController`](/protocol/api/contracts/or-controllers/jbcontroller/README.md)​‌
+Contract: [`JBController`](/api/contracts/or-controllers/jbcontroller/README.md)​‌
 
 **Data regarding the distribution limit of a project during a configuration.**
 
@@ -33,6 +33,6 @@ mapping(uint256 => mapping(uint256 => mapping(IJBPaymentTerminal => mapping(addr
 * Arguments:
   * `_projectId` is the ID of the project to get the packed distribution limit data of.
   * `_configuration` is the configuration during which the packed distribution limit data applies.
-  * `_terminal` is the [`IJBPaymentTerminal`](/protocol/api/interfaces/ijbpaymentterminal.md) from which distributions are being limited.
+  * `_terminal` is the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) from which distributions are being limited.
   * `_token` is the token for which distributions are being limited.
 * The resulting function is internal to this contract and its inheriters. 

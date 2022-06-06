@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSplitsStore`](/protocol/api/contracts/jbsplitsstore/README.md)​‌
+Contract: [`JBSplitsStore`](/api/contracts/jbsplitsstore/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -26,7 +26,7 @@ function _getStructsFor(
   * `_group` is the identifying group of the splits.
 * The view function is private to this contract.
 * The view function does not alter state on the blockchain.
-* The function returns an array of [`JBSplit`](/protocol/api/data-structures/jbsplit.md)s.
+* The function returns an array of [`JBSplit`](/api/data-structures/jbsplit.md)s.
 
 #### Body
 
@@ -39,14 +39,14 @@ function _getStructsFor(
 
     _Internal references:_
 
-    * [`_splitCountOf`](/protocol/api/contracts/jbsplitsstore/properties/-_splitcountof.md)
-2.  Inititalize an array of [`JBSplit`](/protocol/api/data-structures/jbsplit.md) with length equal to the number of splits expected.
+    * [`_splitCountOf`](/api/contracts/jbsplitsstore/properties/-_splitcountof.md)
+2.  Inititalize an array of [`JBSplit`](/api/data-structures/jbsplit.md) with length equal to the number of splits expected.
 
     ```
     // Initialize an array to be returned that has the set length.
     JBSplit[] memory _splits = new JBSplit[](_splitCount);
     ```
-3.  For each index, parse out the packed split parts into [`JBSplit`](/protocol/api/data-structures/jbsplit.md) structs and add to the array. The packed splits are stored in two different `uint256` slots, the second of which contains info that is populated way less frequently.
+3.  For each index, parse out the packed split parts into [`JBSplit`](/api/data-structures/jbsplit.md) structs and add to the array. The packed splits are stored in two different `uint256` slots, the second of which contains info that is populated way less frequently.
 
     ```
     // Loop through each split and unpack the values into structs.
@@ -86,8 +86,8 @@ function _getStructsFor(
 
     _Internal references:_
 
-    * [`_packedSplitParts1Of`](/protocol/api/contracts/jbsplitsstore/properties/-_packedsplitparts1of.md)
-    * [`_packedSplitParts2Of`](/protocol/api/contracts/jbsplitsstore/properties/-_packedsplitparts2of.md)
+    * [`_packedSplitParts1Of`](/api/contracts/jbsplitsstore/properties/-_packedsplitparts1of.md)
+    * [`_packedSplitParts2Of`](/api/contracts/jbsplitsstore/properties/-_packedsplitparts2of.md)
 
 4.  Return the array of splits.
 

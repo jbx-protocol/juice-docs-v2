@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBTokenStore`](/protocol/api/contracts/jbtokenstore/README.md)​‌
+Contract: [`JBTokenStore`](/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -26,8 +26,8 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
 * Arguments:
   * `_projectId` is the ID of the project being affected.
   * `_flag` is a flag indicating whether or not claiming should be required.
-* Through the [`requirePermission`](/protocol/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.REQUIRE_CLAIM`](/protocol/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
-* The function overrides a function definition from the [`IJBTokenStore`](/protocol/api/interfaces/ijbtokenstore.md) interface.
+* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.REQUIRE_CLAIM`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -41,7 +41,7 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
 
     _Internal references:_
 
-    * [`tokenOf`](/protocol/api/contracts/jbtokenstore/properties/tokenof.md)
+    * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
 2.  Make sure the project has a token. If it doesn't, there's nowhere to claim tokens onto.
 
     ```
@@ -57,7 +57,7 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
 
     _Internal references:_
 
-    * [`requireClaimFor`](/protocol/api/contracts/jbtokenstore/properties/requireclaimfor.md)
+    * [`requireClaimFor`](/api/contracts/jbtokenstore/properties/requireclaimfor.md)
 4.  Emit a `ShouldRequireClaim` event with the relevant parameters.
 
     ```
@@ -66,7 +66,7 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
 
     _Event references:_
 
-    * [`ShouldRequireClaim`](/protocol/api/contracts/jbtokenstore/events/shouldrequireclaim.md)
+    * [`ShouldRequireClaim`](/api/contracts/jbtokenstore/events/shouldrequireclaim.md)
 
 </TabItem>
 
@@ -115,7 +115,7 @@ function shouldRequireClaimingFor(uint256 _projectId, bool _flag)
 
 | Name                                                        | Data                                                                                                                                |
 | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ShouldRequireClaim`**](/protocol/api/contracts/jbtokenstore/events/shouldrequireclaim.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul>                                                                                                                                           |
+| [**`ShouldRequireClaim`**](/api/contracts/jbtokenstore/events/shouldrequireclaim.md) | <ul><li><code>uint256 indexed projectId</code></li><li><code>bool indexed flag</code></li><li><code>address caller</code></li></ul>                                                                                                                                           |
 
 </TabItem>
 

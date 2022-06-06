@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`addToBalance`](/protocol/api/contracts/or-uti
+* [`addToBalance`](/api/contracts/or-uti
 lities/jbetherc20splitspayer/write/addtobalanceof.md)
 
 #### Definition

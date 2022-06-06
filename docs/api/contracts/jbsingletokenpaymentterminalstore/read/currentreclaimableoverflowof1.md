@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/jbsingletokenpaymentterminalstore/README.md)​‌
 
-Interface: [`IJBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md)
+Interface: [`IJBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -36,7 +36,7 @@ function currentReclaimableOverflowOf(
   * `_useTotalOverflow` is a flag indicating whether the overflow used in the calculation should be summed from all of the project's terminals. If false, overflow should be limited to the amount in the specified `_terminal`.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/protocol/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
+* The resulting function overrides a function definition from the [`JBSingleTokenPaymentTerminalStore`](/api/interfaces/ijbsingletokenpaymentterminalstore.md) interface.
 * The function returns the amount of overflowed tokens that can be reclaimed, as a fixed point number with the same number of decimals as the provided `_terminal`.
 
 #### Body
@@ -50,7 +50,7 @@ function currentReclaimableOverflowOf(
 
     _External references:_
 
-    * [`currentOf`](/protocol/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
 
 2.  Get the amount of overflow to make the calculation with. Use the total overflow of all of the project's terminals if total overflow should be used, otherwise use the overflow of the provided terminal.
 
@@ -69,13 +69,13 @@ function currentReclaimableOverflowOf(
 
     _Internal references:_
 
-    * [`_overflowDuring`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
-    * [`_currentTotalOverflowOf`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/read/-_currenttotaloverflowof.md)
+    * [`_overflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_overflowduring.md)
+    * [`_currentTotalOverflowOf`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_currenttotaloverflowof.md)
 
     _External references:_
 
-    * [`decimals`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
-    * [`currency`](/protocol/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+    * [`decimals`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
+    * [`currency`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
 
 3.  If there's no overflow, there's nothing reclaimable.
 
@@ -94,17 +94,17 @@ function currentReclaimableOverflowOf(
 
     _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/protocol/api/libraries/jbfundingcyclemetadataresolver.md)
+    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.reservedRate(...)`
 
     _Internal references:_
 
-    * [`directory`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/properties/directory.md)
+    * [`directory`](/api/contracts/jbsingletokenpaymentterminalstore/properties/directory.md)
 
     _External references:_
 
-    * [`controllerOf`](/protocol/api/contracts/jbdirectory/properties/controllerof.md)
-    * [`totalOutstandingTokensOf`](/protocol/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md)
+    * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
+    * [`totalOutstandingTokensOf`](/api/contracts/or-controllers/jbcontroller/read/totaloutstandingtokensof.md)
 
 5.  Make sure the provided token count is within the bounds of the total supply.
 
@@ -129,7 +129,7 @@ function currentReclaimableOverflowOf(
 
     _Internal references:_
 
-    * [`_reclaimableOverflowDuring`](/protocol/api/contracts/jbsingletokenpaymentterminalstore/read/-_reclaimableoverflowduring.md)
+    * [`_reclaimableOverflowDuring`](/api/contracts/jbsingletokenpaymentterminalstore/read/-_reclaimableoverflowduring.md)
 
 
 </TabItem>

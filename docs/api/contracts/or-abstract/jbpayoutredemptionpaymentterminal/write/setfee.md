@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/protocol/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -37,7 +37,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
     _Internal references:_
 
-    * [`_FEE_CAP`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_fee_cap.md)
+    * [`_FEE_CAP`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/-_fee_cap.md)
 2.  Store the new fee.
 
     ```
@@ -47,7 +47,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
     _Internal references:_
 
-    * [`fee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
+    * [`fee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
     
 3.  Emit a `SetFee` event with the relevant parameters.
 
@@ -57,7 +57,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
     _Event references:_
 
-    * [`SetFee`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfee.md)
+    * [`SetFee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfee.md)
 
 </TabItem>
 
@@ -98,7 +98,7 @@ function setFee(uint256 _fee) external virtual override onlyOwner {
 
 | Name                                | Data                                                                           |
 | ----------------------------------- | ------------------------------------------------------------------------------ |
-| [**`SetFee`**](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfee.md)                                                 | <ul><li><code>uint256 fee</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                            |
+| [**`SetFee`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfee.md)                                                 | <ul><li><code>uint256 fee</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                            |
 
 </TabItem>
 

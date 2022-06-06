@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
+Contract: [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
 
-Interface: [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md)
+Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -34,7 +34,7 @@ function setDefaultValues(
   * `_defaultPreferAddToBalance` is a flag indicating if received payments should call the `pay` function or the `addToBalance` function of a project.
 * Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
 * The function can be overriden by inheriting contracts.
-* The function overrides a function definition from the [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md) interface.
+* The function overrides a function definition from the [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -48,7 +48,7 @@ function setDefaultValues(
 
     _Internal references:_
 
-    * [`defaultProjectId`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultprojectid.md)
+    * [`defaultProjectId`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultprojectid.md)
 2.  Set the default beneficiary if it has changed.
 
     ```
@@ -58,7 +58,7 @@ function setDefaultValues(
 
     _Internal references:_
 
-    * [`defaultBeneficiary`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
+    * [`defaultBeneficiary`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultbeneficiary.md)
 3.  Set the default claimed token preference if it has changed.
 
     ```
@@ -69,7 +69,7 @@ function setDefaultValues(
 
     _Internal references:_
 
-    * [`defaultPreferClaimedTokens`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
+    * [`defaultPreferClaimedTokens`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferclaimedtokens.md)
 4.  Set the default memo if it has changed.
 
     ```
@@ -80,7 +80,7 @@ function setDefaultValues(
 
     _Internal references:_
 
-    * [`defaultMemo`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmemo.md)
+    * [`defaultMemo`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmemo.md)
 5.  Set the default metadata if it has changed.
 
     ```
@@ -91,7 +91,7 @@ function setDefaultValues(
 
     _Internal references:_
 
-    * [`defaultMetadata`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmetadata.md)
+    * [`defaultMetadata`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultmetadata.md)
 
 5.  Set the default metadata if it has changed.
 
@@ -103,7 +103,7 @@ function setDefaultValues(
 
     _Internal references:_
 
-    * [`defaultPreferAddToBalance`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferaddtobalance.md)
+    * [`defaultPreferAddToBalance`](/api/contracts/or-utilities/jbetherc20projectpayer/properties/defaultpreferaddtobalance.md)
 6.  Emit a `SetDefaultValues` event with all relevant parameters.
 
     ```
@@ -120,7 +120,7 @@ function setDefaultValues(
 
     _Event references:_
 
-    * [`SetDefaultValues`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/events/setdefaultvalues.md)
+    * [`SetDefaultValues`](/api/contracts/or-utilities/jbetherc20projectpayer/events/setdefaultvalues.md)
 
 </TabItem>
 
@@ -186,7 +186,7 @@ function setDefaultValues(
 
 | Name                                | Data                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetDefaultValues`**](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/events/setdefaultvalues.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>bool preferClaimedTokens</code></li><li><code>string memo</code></li><li><code>bytes metadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>address caller</code></li></ul>                  |
+| [**`SetDefaultValues`**](/api/contracts/or-utilities/jbetherc20projectpayer/events/setdefaultvalues.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>bool preferClaimedTokens</code></li><li><code>string memo</code></li><li><code>bytes metadata</code></li><li><code>bool preferAddToBalance</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

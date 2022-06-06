@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​‌
+Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​‌
 
-Interface: [`IJBFundingCycleStore`](/protocol/api/interfaces/ijbfundingcyclestore.md)
+Interface: [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,8 +28,8 @@ function currentOf(uint256 _projectId)
   * `_projectId` is the ID of the project to get the current funding cycle of.
 * The view function can be accessed externally by anyone, and internally by the contract.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBFundingCycleStore`](/protocol/api/interfaces/ijbfundingcyclestore.md) interface.
-* The function returns the project's current [`JBFundingCycle`](/protocol/api/data-structures/jbfundingcycle.md).
+* The function overrides a function definition from the [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md) interface.
+* The function returns the project's current [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md).
 
 #### Body
 
@@ -42,8 +42,8 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 2.  Get a reference to the configuration of an eligible funding cycle if there is one. This eligible cycle might not yet be approved.
 
     ```
@@ -53,7 +53,7 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_eligibleOf`](/protocol/api/contracts/jbfundingcyclestore/read/-_eligibleof.md)
+    * [`_eligibleOf`](/api/contracts/jbfundingcyclestore/read/-_eligibleof.md)
 3.  Create a reference to a funding cycle.
 
     ```
@@ -80,8 +80,8 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
-    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_isApproved`](/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
 5.  If there's not a candidate funding cycle configuration, get a reference the latest stored funding cycle for the project. If it's not approved or if it hasn't yet started, get a reference to the cycle it's based on. A current funding cycle will be one derived from this reference.
 
     ```
@@ -101,9 +101,9 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](/protocol/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
-    * [`_isApproved`](/protocol/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
+    * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_isApproved`](/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
 6.  If the current referenced configuration is 0, there must not be a current cycle so return an empty one.
 
     ```
@@ -113,7 +113,7 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 7.  Create the funding cycle structure using the current reference. The current funding cycle will be one based on this reference.
 
     ```
@@ -123,7 +123,7 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_getStructFor`](/protocol/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 
 8.  If the base has a duration of 0, it must still be current.
 
@@ -141,7 +141,7 @@ function currentOf(uint256 _projectId)
 
     _Internal references:_
 
-    * [`_mockFundingCycleBasedOn`](/protocol/api/contracts/jbfundingcyclestore/read/-_mockfundingcyclebasedon.md)
+    * [`_mockFundingCycleBasedOn`](/api/contracts/jbfundingcyclestore/read/-_mockfundingcyclebasedon.md)
 
 </TabItem>
 

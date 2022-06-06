@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setTokenUriResolver`](/protocol/api/contracts/jbprojects/write/settokenuriresolver.md)
+* [`setTokenUriResolver`](/api/contracts/jbprojects/write/settokenuriresolver.md)
 
 #### Definition
 

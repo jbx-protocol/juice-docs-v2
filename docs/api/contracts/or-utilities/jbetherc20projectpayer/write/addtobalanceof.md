@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20ProjectPayer`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
+Contract: [`JBETHERC20ProjectPayer`](/api/contracts/or-utilities/jbetherc20projectpayer/README.md)
 
-Interface: [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md)
+Interface: [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -34,7 +34,7 @@ function addToBalanceOf(
   * `_metadata` is extra data to pass along to the terminal.
 * The function can be accessed externally by anyone, or internally from this contract or one that inherits it.
 * The function can be overriden by inheriting contracts.
-* The function overrides a function definition from the [`IJBProjectPayer`](/protocol/api/interfaces/ijbprojectpayer.md) interface.
+* The function overrides a function definition from the [`IJBProjectPayer`](/api/interfaces/ijbprojectpayer.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -57,7 +57,7 @@ function addToBalanceOf(
 
     _Library references:_
 
-    * [`JBTokens`](/protocol/api/libraries/jbtokens.md)
+    * [`JBTokens`](/api/libraries/jbtokens.md)
       * `.ETH`
       
     _External references:_
@@ -71,7 +71,7 @@ function addToBalanceOf(
 
     _Internal references:_
 
-    * [`_addToBalanceOf`](/protocol/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
+    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
     
 </TabItem>
 

@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -29,11 +29,11 @@ modifier isTerminalOf(uint256 _projectId) { ... }
 
     _Internal references:_
 
-    * [`directory`](/protocol/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
+    * [`directory`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/directory.md)
 
     _External references:_
 
-    * [`isTerminalOf`](/protocol/api/contracts/jbdirectory/read/isterminalof.md)
+    * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
 
 2.  Continue the rest of the function.
 
