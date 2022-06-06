@@ -6,7 +6,7 @@ sidebar_position: 2
 
 *Juicebox DAO governance runs on a 14 day cycle.* 
 
-![](/img/docs/gov-calendar.png)
+![](/img/gov-calendar.png)
     
 ### Governance Schedule
 
