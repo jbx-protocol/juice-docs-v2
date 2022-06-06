@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # How to Make a Governance Proposal
@@ -16,4 +16,4 @@ sidebar_position: 4
     ![](/img/proposals-db.png)
     
 3. Fill out the template by following the [Proposal Template Guide](proposal-template.md). Once you've answered each question to the best of your ability, change your proposal’s *status* (the first Notion field at the top of the document) from `Draft` to `Discussion`.
-4. A discussion thread for your proposal will be generated in `#💡-proposals-workshop` channel of [Juicebox's Discord server](https://discord.gg/juicebox). From there, community members will help you to prepare the proposal for the next temperature check.
+4. A discussion thread for your proposal will be generated in the `#💡-proposals` channel of [Juicebox's Discord server](https://discord.gg/juicebox). From there, community members will help you to prepare the proposal for the next temperature check.
