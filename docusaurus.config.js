@@ -25,7 +25,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // routeBasePath: '/',
+          routeBasePath: '/',
           // editUrl: 'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
         },
         blog: {
