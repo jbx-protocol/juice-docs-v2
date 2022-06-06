@@ -60,13 +60,6 @@ const config = {
         defaultMode: 'dark',
         respectPrefersColorScheme: true,
       },
-      announcementBar: {
-        id: 'support_us',
-        content: 'A bug in Juicebox v2 was identified on 2022-05-24. View the postmortem and original contracts <a href="/docs/2022-05-24/">here</a> and live updates <a href="https://juicebox.money/#/v2-bug-updates/">here</a>.',
-        backgroundColor: '#18B4C7',
-        textColor: '#FBF9F6',
-        isCloseable: true,
-      },
       tableOfContents: {
         minHeadingLevel: 2,
         maxHeadingLevel: 5,
