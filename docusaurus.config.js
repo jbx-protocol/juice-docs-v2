@@ -86,7 +86,7 @@ const config = {
           {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'protocol',
+            sidebarId: 'base',
             label: 'Docs',
           },
           {
