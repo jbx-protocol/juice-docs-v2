@@ -13,7 +13,7 @@ import ReactPlayer from 'react-player'
 :::tip
 As tokens are redeemed for ETH, the bonding curve continuously increases the value of remaining tokens in the treasury. As a result, the total amount of ETH redeemed will be slightly higher than a flat percentage would suggest. You can calculate the effects of the bonding curve with the following formula:
 
-![Formula](/img/docs/formula.png)
+![Formula](/img/formula.png)
 
 In this formula, **x** represents the amount of tokens being redeemed, **s** represents the total token supply, **o** represents the current overflow, and **r** represents the bonding curve rate.
 :::

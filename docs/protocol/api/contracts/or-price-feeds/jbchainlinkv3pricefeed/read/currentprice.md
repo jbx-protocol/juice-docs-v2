@@ -40,7 +40,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
 
     _External references:_
 
-    * [`latestRoundData`](https://docs.chain.link/docs/price-feeds-api-reference/#latestrounddata)
+    * [`latestRoundData`](https://docs.chain.link/price-feeds-api-reference/#latestrounddata)
 2.  Get the number of decimals being reported by the price feed that the provided price is expected to have.
 
     ```
@@ -54,7 +54,7 @@ function currentPrice(uint256 _decimals) external view override returns (uint256
 
     _External references:_
 
-    * [`decimals`](https://docs.chain.link/docs/price-feeds-api-reference/#decimals)
+    * [`decimals`](https://docs.chain.link/price-feeds-api-reference/#decimals)
 3. Return the fixed point price after normalizing the value to the desired number of decimals.
 
     ```

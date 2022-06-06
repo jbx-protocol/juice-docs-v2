@@ -11,7 +11,7 @@ sidebar_position: 1
 
 #### Resources
 [Notion, Wiki, and Proposals](https://juicebox.notion.site/) <br/>
-[Docs](https://info.juicebox.money/docs/) <br/>
+[Docs](https://info.juicebox.money/) <br/>
 [Dune Dashboards](https://dune.xyz/twodam) <br/>
 [Brand Kit](https://juicebox.notion.site/Brand-Kit-b1036dfdae1448cc82f1b9be863694b5) <br/>
 [Moody's DAO Diligence Database](https://docs.google.com/spreadsheets/d/1zb3gHOdWiAbXDTdBA9ixv2yOJDIzCo_fEwLDdbTvJVo/edit#gid=0) <br/>
@@ -26,7 +26,7 @@ sidebar_position: 1
 
 #### Dev
 [Github](https://github.com/jbx-protocol) <br/>
-[Docs](https://info.juicebox.money/docs/) <br/>
+[Docs](https://info.juicebox.money/) <br/>
 
 #### Governance
 [Snapshot](https://vote.juicebox.money/#/jbdao.eth) <br/>

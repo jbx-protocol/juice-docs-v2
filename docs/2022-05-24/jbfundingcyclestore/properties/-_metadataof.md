@@ -1,7 +1,7 @@
 # _metadataOf
 
 :::caution
-This page describes v2 contracts used before [a bug was identified](/docs/2022-05-24/). View the latest updates [here](https://juicebox.money/#/v2-bug-updates/).
+This page describes v2 contracts used before [a bug was identified](/2022-05-24/). View the latest updates [here](https://juicebox.money/#/v2-bug-updates/).
 :::
 
 Contract: [`JBFundingCycleStore`](/protocol/api/contracts/jbfundingcyclestore/README.md)​‌
