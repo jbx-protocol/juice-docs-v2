@@ -26,8 +26,8 @@ event RedeemTokens(
 * `projectId` is the ID of the project whose tokens were redeemed.
 * `holder` is the address whose tokens were redeemed.
 * `beneficiary` is the address to which any redemption benefits were sent.
-* `tokenCount` is the amount of tokens that were redeemed.
-* `reclaimedAmount` is the amount of tokens that were sent to the beneficiary as a result of the redemption.
+* `tokenCount` is the amount of project tokens that were redeemed.
+* `reclaimedAmount` is the amount of terminal tokens that were sent to the beneficiary as a result of the redemption.
 * `memo` is a note that was attached.
 * `metadata` is extra data sent to the data source, delegate, and emitted event, if provided.
 * `caller` is the address that issued the transaction within which the event was emitted.
