@@ -111,6 +111,12 @@ const config = {
         defaultLanguage: 'solidity',
         additionalLanguages: ['solidity'],
       },
+      metadata: [
+        {
+          name: "google-site-verification",
+          content: "0Jp7zERBL5i76DiM-bODvBGgbjuVMEQGSuwOchP_ZnE",
+        },
+      ],
     },
     scripts: [
       {
