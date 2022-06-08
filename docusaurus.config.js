@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Juicebox High',
-  tagline: 'Welcome to the juiciest repository of higher knowledge',
+  title: 'Juicebox Docs',
+  tagline: 'Welcome to the juiciest repository of knowledge',
   url: 'https://info.juicebox.money',
   baseUrl: '/',
   onBrokenLinks: 'ignore',
