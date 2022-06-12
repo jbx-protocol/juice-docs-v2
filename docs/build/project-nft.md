@@ -8,7 +8,7 @@ Anyone can build on the [`JBProjects`](/api/contracts/jbprojects) NFT contract. 
 
 #### Create a project
 
-To create a project, call [`JBProjects.craeteFor(...)`](/api/contracts/jbprojects/write/createfor.md). The [`JBProjectMetadata`](/api/data-structures/jbprojectmetadata.md) structure allows arbitrary metadata to be mapped to any namespace domain. [juicebox.money](https://juicebox.money) metadata uses a domain of 0 to store its formatted metadata.
+To create a project, call [`JBProjects.createFor(...)`](/api/contracts/jbprojects/write/createfor.md). The [`JBProjectMetadata`](/api/data-structures/jbprojectmetadata.md) structure allows arbitrary metadata to be mapped to any namespace domain. [juicebox.money](https://juicebox.money) metadata uses a domain of 0 to store its formatted metadata.
 
 ```
 function createFor(address _owner, JBProjectMetadata calldata _metadata)
