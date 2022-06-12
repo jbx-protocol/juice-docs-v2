@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Project NFT
 
-Anyone can build on the [`JBProjects`](/api/contracts/jbprojects) NFT contract. This allows developers to write contracts permissioned around community profiles in a standardized way, and allows any project using juicebox payment termianls to easily access your generalized contracts, and vice versa. 
+Anyone can build on the [`JBProjects`](/api/contracts/jbprojects) NFT contract. This allows developers to write new contracts which use `JBProjects` NFTs to manage permissions in a standardized way, and allows any project using Juicebox payment terminals to access your contracts, and vice versa. 
 
 #### Create a project
 
