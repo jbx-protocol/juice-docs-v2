@@ -8,6 +8,8 @@ Anyone can build on the [`JBProjects`](/api/contracts/jbprojects) NFT contract. 
 
 #### Create a project
 
+Instead of calling [`JBController.launchProjectFor(...)`](/api/contracts/or-controllers/jbcontroller/write/launchprojectfor.md) to create a project, configure its first funding cycle, and attach payment terminals and a juicebox controller contract to it in the same transaction, `JBProjects` can be minted independently to represent ownership over projects with subsequent capabilities attached later on.
+
 To create a project, call [`JBProjects.createFor(...)`](/api/contracts/jbprojects/write/createfor.md). The [`JBProjectMetadata`](/api/data-structures/jbprojectmetadata.md) structure allows arbitrary metadata to be mapped to any namespace domain. [juicebox.money](https://juicebox.money) metadata uses a domain of 0 to store its formatted metadata.
 
 ```
@@ -58,4 +60,28 @@ The project can set a new token URI by calling [`JBProjects.setTokenUriResolver(
 
 ```
 function setTokenUriResolver(IJBTokenUriResolver _newResolver) external override onlyOwner { ... }
+```
+
+#### Attaching application-specific functionality
+
+Project owners can configure their first funding cycle for their `JBProject`, attach payment terminals, and set all other standard juicebox properties by calling [`JBController.launchFundingCyclesFor(...)`](/api/contracts/or-controllers/jbcontroller/write/launchfundingcyclesfor.md). 
+
+Most Juicebox protocol contracts are generic utilities for any `JBProject` owner, meaning stored data tends to me mapped from project IDs, and functionality that affects a project tends to be exposed only to the project's owner or a operator address specified by the project's owner.
+
+```
+function launchFundingCyclesFor(
+  uint256 _projectId,
+  JBFundingCycleData calldata _data,
+  JBFundingCycleMetadata calldata _metadata,
+  uint256 _mustStartAtOrAfter,
+  JBGroupedSplits[] calldata _groupedSplits,
+  JBFundAccessConstraints[] memory _fundAccessConstraints,
+  IJBPaymentTerminal[] memory _terminals,
+  string calldata _memo
+)
+  external
+  virtual
+  override
+  requirePermission(projects.ownerOf(_projectId), _projectId, JBOperations.RECONFIGURE)
+  returns (uint256 configuration) { ... }
 ```
