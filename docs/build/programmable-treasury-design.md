@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Project design
+# Programmable treasury design
 
 In order to understand what Juicebox can do for your project, all you have to do is understand how one transaction works: [`JBController.launchProjectFor(...)`](/api/contracts/or-controllers/jbcontroller/write/launchprojectfor.md), which creates a project, configures its first funding cycle, and specifies where it can begin receiving and managing funds from.
 
