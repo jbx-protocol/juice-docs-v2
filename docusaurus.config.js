@@ -50,6 +50,7 @@ const config = {
   },
   themeConfig: {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+      metadata: [{name: 'keywords', content: 'Juicebox, juicebox, crypto, cryptocurrency, ethereum, Ethereum, fundraising, treasury, treasury management, Juicebox DAO, JuiceboxDAO, juiceboxdao, juicebox dao, dao tooling, dao, daos, erc20, nft, decentralized, funding, web3, Web3'}],
       docs: {
         sidebar: {
           hideable: true,
