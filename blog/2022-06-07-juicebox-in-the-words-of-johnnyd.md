@@ -1,5 +1,5 @@
 ---
-slug: juicebox-in-the-world-of-johnnyd
+slug: juicebox-in-the-words-of-johnnyd
 title: Juicebox in the Words of johnnyd
 authors: [felixander]
 tags: [dao, interview, juicebox]
@@ -17,7 +17,7 @@ Hey! It’s been really good. Some good wins, we think, and some good projects t
 
 ### So important. Here’s the million dollar question: what have you found is the ideal way to communicate JB’s value proposition?
 
-It really depends a lot on the projects. I think it’s really important to fish out what a project wants and what needs we’re there to give them. From there we’ll know what JB features that’ll help them the most— whether that be transparency in earning/spending, or the ease of launching an EFC20 token and having that distributed to people upon contributing. Or whether automating payments out of the treasury and restricting/reconfigurations of that spending are the way they want to go. Those are the key points
+It really depends a lot on the projects. I think it’s really important to fish out what a project wants and what needs we’re there to give them. From there we’ll know what JB features that’ll help them the most— whether that be transparency in earning/spending, or the ease of launching an ERC-20 token and having that distributed to people upon contributing. Or whether automating payments out of the treasury and restricting/reconfigurations of that spending are the way they want to go. Those are the key points
 
 ### It strikes me a scalability problem. We seem to have a boutique approach at the moment, almost like a concierge service. As we expand, how do we streamline some of that onboarding without losing that conversation with the user?
 

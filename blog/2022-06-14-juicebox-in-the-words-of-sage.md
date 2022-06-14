@@ -1,9 +1,9 @@
 ---
-slug: juicebox-in-the-world-of-sage
+slug: juicebox-in-the-words-of-sage
 title: Juicebox in the Words of sage
 authors: [felixander]
 tags: [dao, interview, juicebox]
-
+---
 
 # Juicebox in the words of Sage
 
@@ -13,7 +13,7 @@ tags: [dao, interview, juicebox]
 
 ### Hi Sage! What’re you up to right now?
 
-I just ate a frozen burrito. My boyfriend’s sister owned a little sundry shop which just went outta business so they had groceries for free! Yesterday we went and got like 700 bucks worth of bourgie groceries. I have a big thing for frozen burritos.
+I just ate a frozen burrito. My boyfriend’s sister owned a little sundry shop which just went outta business so they had groceries for free! Yesterday we went and got like 700 bucks worth of bougie groceries. I have a big thing for frozen burritos.
 
 ### Haha. I’m reminded of the story of the plumber in France. People are standing at the cathedral admiring the art and architecture, and the plumber just wants to go into the catacombs to see how they laid and routed their pipes. You can have anything, and yet the frozen burrito seems to be the winner!
 
@@ -21,7 +21,7 @@ In addition to everything else! I also like frozen chicken nuggets, which I’m 
 
 ### Walk me through “gourmet” chicken nuggets!
 
-Well they’re “organic” so yeah, whatever that means. I would never buy frozen chicken nuggets, but they were there so I figured I may as well grab them. Th bourgiest thing I got was, hmm…  I got a free thing of 15 dollar fig pomegranate jam.
+Well they’re “organic” so yeah, whatever that means. I would never buy frozen chicken nuggets, but they were there so I figured I may as well grab them. The bougiest thing I got was, hmm…  I got a free thing of 15 dollar fig pomegranate jam.
 
 ### You know, I was once gifted a 40 dollar peanut butter jar.
 
