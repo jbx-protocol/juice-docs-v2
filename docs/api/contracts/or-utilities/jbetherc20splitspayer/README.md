@@ -4,6 +4,8 @@ _Sends ETH or ERC20's to a group of splits as it receives direct payments or has
 
 _Inherit from this contract or borrow from its logic to forward ETH or ERC20's to a group of splits from within other contracts._
 
+#### Code 
+
 https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBETHERC20SplitsPayer.sol
 
 #### Addresses

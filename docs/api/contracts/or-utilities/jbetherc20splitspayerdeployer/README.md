@@ -2,6 +2,8 @@
 
 _Deploys [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer) contracts._
 
+#### Code 
+
 https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBETHERC20SplitsPayerDeployer.sol
 
 #### Addresses
