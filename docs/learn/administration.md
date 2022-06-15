@@ -3,7 +3,7 @@ sidebar_position: 3
 ---
 # Administration
 
-The protocol has very minimal global governance. The following are the only global functions that can be accessed by a privileged administrating address, initially the (JuiceboxDAO multisig)[], a 9 of 14 multisig voted in by JBX members:
+The protocol has very minimal global governance. The following are the only global functions that can be accessed by a privileged administrating address, initially the (JuiceboxDAO multisig)[https://gnosis-safe.io/app/eth:0xAF28bcB48C40dBC86f52D459A6562F658fc94B1e/home], a 9 of 14 multisig voted in by JBX members:
 
 * **[`JBProjects.setTokenUriResolver(...)`](/api/contracts/jbprojects/write/settokenuriresolver.md)**<br/>
   Allows the owner of the [`JBProjects`](/api/contracts/jbprojects/README.md) contract to provide and change the [`IJBTokenUriResolver`](/api/interfaces/ijbtokenuriresolver.md) used to resolve metadata for project NFTs in its [`tokenURI(...)`](/api/contracts/jbprojects/read/tokenuri.md) function.
