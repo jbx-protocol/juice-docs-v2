@@ -30,7 +30,7 @@ From here, you can build the following:
 
 [Project NFT](project-nft.md) - Build for Juicebox projects. 
 
-[Treasury design](treasury-design.md) - Get familiar with the configurable properties available when launching a project. 
+[Programmable treasury](programmable-treasury.md) - Get familiar with the configurable properties available when launching a project. 
 
 [Treasury extensions](treasury-extensions) - Create custom contractual rules defining what happens when a project receives funds, and under what conditions funds can leave the treasury during a funding cycle.
 
