@@ -14,8 +14,6 @@ The Juicebox protocol is a programmable treasury. Projects can use it to configu
 
 The protocol is nuanced, however. The goal of the protocol docs is for you to find any protocol related information that you're looking for. Whether you're auditing, developing your own JB project, creating JB extensions, looking for bug bounties, or just looking to learn some solidity and contract design, these docs should give you just what you're looking for. These docs should allow you to click around and get a real good deep dive, and should just as easily allow you to find overview information.
 
-<ReactPlayer controls url='https://www.youtube.com/watch?v=hPPyuyii1Oo' />
-
 #### Directory
 
 [Learn](learn/overview.md) - General info on how the protocol works. 
