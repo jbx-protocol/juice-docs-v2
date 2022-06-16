@@ -71,25 +71,25 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          /*{
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Docs',
-          },*/
-          {
+         {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'base',
+            sidebarId: 'docs',
             label: 'Docs',
           },
           {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'resources',
-            label: 'Resources',
+            sidebarId: 'dev',
+            label: 'Developers',
           },
-/*          {
+	  {
+	    type: 'docSidebar',
+	    position: 'left',
+	    sidebarId: 'dao',
+	    label: 'Juicebox DAO',
+	  },
+        /*{
             type: 'localeDropdown',
             position: 'right',
           },*/

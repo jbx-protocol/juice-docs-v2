@@ -1,0 +1,25 @@
+# Mint
+
+Emitted from:
+
+* [`mintFor`](/dev/api/contracts/jbtokenstore/write/mintfor.md)
+
+#### Definition
+
+```
+event Mint(
+  address indexed holder,
+  uint256 indexed projectId,
+  uint256 amount,
+  bool tokensWereClaimed,
+  bool preferClaimedTokens,
+  address caller
+)
+```
+
+* `holder` is the address to which the tokens were minted.
+* `projectId` is the ID of the project to which the minted tokens belong.
+* `amount` is the amount of tokens that were minted.
+* `tokensWereClaimed` is a flag indicating if the minted tokens were distributed into the holder's wallet.
+* `preferClaimedTokens` is a flag indicating if the minting had a preference to claim the tokens into the holder's wallet.
+* `caller` is the address that issued the transaction within which the event was emitted.

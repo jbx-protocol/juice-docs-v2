@@ -1,0 +1,24 @@
+# controllerOf
+
+Contract: [`JBDirectory`](/dev/api/contracts/jbdirectory/README.md/)​‌
+
+Interface: [`IJBDirectory`](/dev/api/interfaces/ijbdirectory.md)
+
+**For each project ID, the controller that manages how terminals interact with tokens and funding cycles.**
+
+#### Definition
+
+```
+/** 
+  @notice 
+  For each project ID, the controller that manages how terminals interact with tokens and funding cycles.
+
+  _projectId The ID of the project to get the controller of.
+*/
+mapping(uint256 => address) public override controllerOf;
+```
+
+* Arguments:
+  * `_projectId` is the ID of the project to get the controller of.
+* The resulting view function can be accessed externally by anyone.
+* The resulting function overrides a function definition from the [`IJBDirectory`](/dev/api/interfaces/ijbdirectory.md) interface.
