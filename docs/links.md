@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Hyperlink Directory
+# Links
 
 #### Website
 [juicebox.money](https://juicebox.money/#/) <br/>
