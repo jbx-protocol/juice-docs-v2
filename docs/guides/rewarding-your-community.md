@@ -18,11 +18,13 @@ JuiceBox — Get an Array of wallet addresses
 
 If you’ve run your DAO fundraising via JuiceBox, as the ConstitutionDAO did, they make it pretty easy to export the wallet list as a CSV file:
 
-![Simply click on "Holders"](rewarding-your-community/erc20.png)
+![](/img/rewarding-your-community/erc20.png)
+> *Simply click on "Holders"*
 
 On the holders dialog you’ll be able to select “Amount paid”:
 
-![Clicking the little blue "download" icon on the right will get you a CSV](rewarding-your-community/holders.png)
+![](/img/rewarding-your-community/holders.png)
+> *Clicking the little blue "download" icon on the right will get you a CSV*
 
 Once you’ve got the CSV, you will want to process that into a JavaScript Array list of wallet addresses. Here is a snip of NodeJS to generate the JSON:
 
