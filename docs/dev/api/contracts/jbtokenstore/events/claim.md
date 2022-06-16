@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`claimFor`](/api/contracts/jbtokenstore/write/burnfrom.md)
+* [`claimFor`](/dev/api/contracts/jbtokenstore/write/burnfrom.md)
 
 #### Definition
 

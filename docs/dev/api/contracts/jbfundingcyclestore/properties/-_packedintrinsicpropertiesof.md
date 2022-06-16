@@ -1,6 +1,6 @@
 # _packedIntrinsicPropertiesOf
 
-Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​‌
+Contract: [`JBFundingCycleStore`](/dev/api/contracts/jbfundingcyclestore/README.md)​‌
 
 **Stores the properties added by the mechanism to manage and schedule each funding cycle, packed into one storage slot.**
 

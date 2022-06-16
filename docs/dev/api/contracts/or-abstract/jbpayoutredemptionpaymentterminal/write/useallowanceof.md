@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -42,9 +42,9 @@ function useAllowanceOf(
   * `_token` is the token being distributed. This terminal ignores this property since it only manages one token. 
   * `_minReturnedTokens` is the minimum number of tokens that the `_amount` should be valued at in terms of this terminal's currency, as a fixed point number with the same amount of decimals as this terminal.
   * `_beneficiary` is the address to send the funds to.
-* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.USE_ALLOWANCE`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
+* Through the [`requirePermission`](/dev/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the project's owner, or from an operator that has been given the [`JBOperations.USE_ALLOWANCE`](/dev/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`.
 * The function can be overriden by inheriting contracts.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function returns the amount of tokens that was distributed to the beneficiary, as a fixed point number with the same amount of decimals as the terminal.
 
 #### Body
@@ -57,7 +57,7 @@ function useAllowanceOf(
 
     _Internal references:_
 
-    * [`_useAllowanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_useallowanceof.md)
+    * [`_useAllowanceOf`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_useallowanceof.md)
 
 
 </TabItem>

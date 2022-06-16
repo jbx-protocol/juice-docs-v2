@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBProjectHandles`](/api/contracts/or-utilities/jbprojecthandles/README.md)​‌
+Contract: [`JBProjectHandles`](/dev/api/contracts/or-utilities/jbprojecthandles/README.md)​‌
 
-Interface: [`IJBProjectHandles`](/api/interfaces/ijbprojecthandles.md)
+Interface: [`IJBProjectHandles`](/dev/api/interfaces/ijbprojecthandles.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -24,7 +24,7 @@ function handleOf(uint256 _projectId) external view override returns (string mem
   * `_projectId` is the ID of the project to get the handle of.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBProjectHandles`](/api/interfaces/ijbprojecthandles.md) interface.
+* The function overrides a function definition from the [`IJBProjectHandles`](/dev/api/interfaces/ijbprojecthandles.md) interface.
 * The function returns the project's handle.
 
 #### Body
@@ -38,7 +38,7 @@ function handleOf(uint256 _projectId) external view override returns (string mem
 
     _Internal references:_
 
-    * [`_ensNamePartsOf`](/api/contracts/or-controllers/jbprojecthandles/properties/-_ensnamepartsof.md)
+    * [`_ensNamePartsOf`](/dev/api/contracts/or-controllers/jbprojecthandles/properties/-_ensnamepartsof.md)
 
 2.  If there are no name parts, there's no handle.
 
@@ -56,9 +56,9 @@ function handleOf(uint256 _projectId) external view override returns (string mem
 
     _Internal references:_
 
-    * [`textResolver`](/api/contracts/or-controllers/jbprojecthandles/properties/textresolver.md)
-    * [`TEXT_KEY`](/api/contracts/or-controllers/jbprojecthandles/properties/textkey.md)
-    * [`_namehash`](/api/contracts/or-controllers/jbprojecthandles/read/-_namehash.md)
+    * [`textResolver`](/dev/api/contracts/or-controllers/jbprojecthandles/properties/textresolver.md)
+    * [`TEXT_KEY`](/dev/api/contracts/or-controllers/jbprojecthandles/properties/textkey.md)
+    * [`_namehash`](/dev/api/contracts/or-controllers/jbprojecthandles/read/-_namehash.md)
 
     _External references:_
 
@@ -74,7 +74,7 @@ function handleOf(uint256 _projectId) external view override returns (string mem
 
     _Library references:_
 
-    * [`Strings`](https://docs.openzeppelin.com/contracts/3.x/api/utils#Strings)<br/>
+    * [`Strings`](https://docs.openzeppelin.com/contracts/3.x/dev/api/utils#Strings)<br/>
       * `.toString(...)`
 
 5.  Return a handle formatted from the stored ENS name parts.
@@ -86,7 +86,7 @@ function handleOf(uint256 _projectId) external view override returns (string mem
 
     _Internal references:_
 
-    * [`_formatHandle`](/api/contracts/or-controllers/jbprojecthandles/write/_formathandle.md)
+    * [`_formatHandle`](/dev/api/contracts/or-controllers/jbprojecthandles/write/_formathandle.md)
       
 </TabItem>
 

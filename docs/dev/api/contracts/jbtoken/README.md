@@ -1,6 +1,6 @@
 # JBToken
 
-_An ERC-20 token that can be used by a project in the [`JBTokenStore`](/api/contracts/jbtokenstore)._
+_An ERC-20 token that can be used by a project in the [`JBTokenStore`](/dev/api/contracts/jbtokenstore)._
 
 #### Code
 
@@ -10,15 +10,15 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBToken.s
 
 | Name                                                     | Description                                                                                                                              |
 | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBToken`**](/api/interfaces/ijbtoken.md) | Allows this contract to be used by projects in the JBTokenStore. |
+| [**`IJBToken`**](/dev/api/interfaces/ijbtoken.md) | Allows this contract to be used by projects in the JBTokenStore. |
 
 
 #### Inheritance
 
 | Contract                                                         | Description                                                                                                                                                                        |
 | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ERC20Permit`**](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#ERC20Permit) | General token standard for fungible accounting. |
-| [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable) | Includes convenience functionality for specifying an address that owns the contract, with modifiers that only allow access by the owner. |
+| [**`ERC20Permit`**](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#ERC20Permit) | General token standard for fungible accounting. |
+| [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable) | Includes convenience functionality for specifying an address that owns the contract, with modifiers that only allow access by the owner. |
 
 #### Constructor
 
@@ -39,17 +39,17 @@ constructor(string memory _name, string memory _symbol)
 
 | Function                                                            | Definition                                                                                                                                                                                                                                                                                                      |
 | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`decimals`**](/api/contracts/jbtoken/read/decimals.md)                                 | <p><strong>Returns</strong></p><ul><li><code>uint256 totalSupply</code></li></ul> |
-| [**`totalSupply`**](/api/contracts/jbtoken/read/totalsupply.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 totalSupply</code></li></ul> |
-| [**`balanceOf`**](/api/contracts/jbtoken/read/balanceof.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _account</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 balanceOf</code></li></ul> |
+| [**`decimals`**](/dev/api/contracts/jbtoken/read/decimals.md)                                 | <p><strong>Returns</strong></p><ul><li><code>uint256 totalSupply</code></li></ul> |
+| [**`totalSupply`**](/dev/api/contracts/jbtoken/read/totalsupply.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 totalSupply</code></li></ul> |
+| [**`balanceOf`**](/dev/api/contracts/jbtoken/read/balanceof.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _account</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 balanceOf</code></li></ul> |
 
 #### Write
 
 | Function                                                            | Definition                                                                                                                                                                                                                                                                                                      |
 | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`mint`**](/api/contracts/jbtoken/write/mint.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _account</code></li><li><code>uint256 _amount</code></li></ul> |
-| [**`burn`**](/api/contracts/jbtoken/write/burn.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _account</code></li><li><code>uint256 _amount</code></li></ul> |
-| [**`approve`**](/api/contracts/jbtoken/write/approve.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _spender</code></li><li><code>uint256 _amount</code></li></ul> |
-| [**`transfer`**](/api/contracts/jbtoken/write/transfer.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _to</code></li><li><code>uint256 _amount</code></li></ul> |
-| [**`transferFrom`**](/api/contracts/jbtoken/write/transferfrom.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _from</code></li><li><code>address _to</code></li><li><code>uint256 _amount</code></li></ul> |
-| [**`transferOwnership`**](/api/contracts/jbtoken/write/transferownership.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>address _newOwner</code></li></ul> |
+| [**`mint`**](/dev/api/contracts/jbtoken/write/mint.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _account</code></li><li><code>uint256 _amount</code></li></ul> |
+| [**`burn`**](/dev/api/contracts/jbtoken/write/burn.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _account</code></li><li><code>uint256 _amount</code></li></ul> |
+| [**`approve`**](/dev/api/contracts/jbtoken/write/approve.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _spender</code></li><li><code>uint256 _amount</code></li></ul> |
+| [**`transfer`**](/dev/api/contracts/jbtoken/write/transfer.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _to</code></li><li><code>uint256 _amount</code></li></ul> |
+| [**`transferFrom`**](/dev/api/contracts/jbtoken/write/transferfrom.md)                                 | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>address _from</code></li><li><code>address _to</code></li><li><code>uint256 _amount</code></li></ul> |
+| [**`transferOwnership`**](/dev/api/contracts/jbtoken/write/transferownership.md)                                 | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>address _newOwner</code></li></ul> |

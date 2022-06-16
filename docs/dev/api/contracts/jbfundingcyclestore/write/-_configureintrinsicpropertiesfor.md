@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​
+Contract: [`JBFundingCycleStore`](/dev/api/contracts/jbfundingcyclestore/README.md)​
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -43,9 +43,9 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
-    * [`_initFor`](/api/contracts/jbfundingcyclestore/write/-_initfor.md)
-    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`latestConfigurationOf`](/dev/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`_initFor`](/dev/api/contracts/jbfundingcyclestore/write/-_initfor.md)
+    * [`_getStructFor`](/dev/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 2.  If there's no standby funding cycle, get a reference to the project's eligible funding cycle. The configurable funding cycle will have to be initialized based on the eligible cycle.
 
     ```
@@ -55,7 +55,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_eligibleOf`](/api/contracts/jbfundingcyclestore/read/-_eligibleof.md)
+    * [`_eligibleOf`](/dev/api/contracts/jbfundingcyclestore/read/-_eligibleof.md)
 3.  If there is no eligible funding cycle for the project, get a reference instead to the project's latest funding cycle configuration, which may have been initialized long into the past.
 
     ```
@@ -67,7 +67,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`latestConfigurationOf`](/dev/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 4.  Resolve the funding cycle struct for the currently referenced configuration.
 
     ```
@@ -77,7 +77,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_getStructFor`](/dev/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 5.  If the configuration isn't approved, get a reference to the configuration it's based on which must be the latest approved configuration.
 
     ```
@@ -89,8 +89,8 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_isApproved`](/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
-    * [`_getStructFor`](/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
+    * [`_isApproved`](/dev/api/contracts/jbfundingcyclestore/read/-_isapproved.md)
+    * [`_getStructFor`](/dev/api/contracts/jbfundingcyclestore/read/-_getstructfor.md)
 6. Make sure the configuration isn't the same as the base configuration. Only one configuration can be made to a project's funding cycles per block. 
 
     ```
@@ -110,7 +110,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`duration`](/api/interfaces/ijbfundingcycleballot.md)
+    * [`duration`](/dev/api/interfaces/ijbfundingcycleballot.md)
 8.  Initialize a funding cycle with the correct configuration. Make sure it can only start after the base cycle's ballot has resolved.
 
     ```
@@ -126,7 +126,7 @@ function _configureIntrinsicPropertiesFor(
 
     _Internal references:_
 
-    * [`_initFor`](/api/contracts/jbfundingcyclestore/write/-_initfor.md)
+    * [`_initFor`](/dev/api/contracts/jbfundingcyclestore/write/-_initfor.md)
 
 </TabItem>
 

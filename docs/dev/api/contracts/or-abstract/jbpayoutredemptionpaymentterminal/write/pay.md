@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md)
+Interface: [`IJBPaymentTerminal`](/dev/api/interfaces/ijbpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -38,9 +38,9 @@ function pay(
   * `_metadata` are bytes to send along to the data source, delegate, and emitted event, if provided. 
 * The function can be accessed externally by anyone.
 * The function can be overriden by inheriting contracts.
-* Through the [`isTerminalOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
+* Through the [`isTerminalOf`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/modifiers/isterminalof.md) modifier, this transaction reverts if this terminal is not one of the project's terminals.
 * The function accepts ETH. The transaction reverts if receives ETH but the terminal's token type isn't ETH.
-* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/api/interfaces/ijbpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPaymentTerminal`](/dev/api/interfaces/ijbpaymentterminal.md) interface.
 * The function returns the number of tokens minted for the beneficiary, as a fixed point number with 18 decimals.
 
 #### Body
@@ -61,12 +61,12 @@ function pay(
 
     _Library references:_
 
-    * [`JBTokens`](/api/libraries/jbcurrencies.md)
+    * [`JBTokens`](/dev/api/libraries/jbcurrencies.md)
       * `.ETH`
 
     _Virtual references:_
 
-    * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
+    * [`_transferFrom`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 
 1.  Forward the call to the internal version of the function that is also used by other operations.
 
@@ -86,7 +86,7 @@ function pay(
 
     _Internal references:_
 
-    * [`_pay`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
+    * [`_pay`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md)
 
 </TabItem>
 

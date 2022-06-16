@@ -1,6 +1,6 @@
 # _transferFrom
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 **Transfers tokens.**
 

@@ -48,9 +48,9 @@ struct JBFundingCycleMetadata {
 ```
 
 * `global` is data used globally in non-migratable ecosystem contracts.
-* `reservedRate` is the reserved rate of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_RESERVED_RATE`](/api/libraries/jbconstants.md).
-* `redemptionRate` is the redemption rate of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_REDEMPTION_RATE`](/api/libraries/jbconstants.md).
-* `ballotRedemptionRate` is the redemption rate to use during an active ballot of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_REDEMPTION_RATE`](/api/libraries/jbconstants.md).
+* `reservedRate` is the reserved rate of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_RESERVED_RATE`](/dev/api/libraries/jbconstants.md).
+* `redemptionRate` is the redemption rate of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_REDEMPTION_RATE`](/dev/api/libraries/jbconstants.md).
+* `ballotRedemptionRate` is the redemption rate to use during an active ballot of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_REDEMPTION_RATE`](/dev/api/libraries/jbconstants.md).
 * `pausePay` is a flag indicating if the pay functionality should be paused during the funding cycle.
 * `pauseDistributions` is a flag indicating if the distribute functionality should be paused during the funding cycle.
 * `pauseRedeem` is a flag indicating if the redeem functionality should be paused during the funding cycle.

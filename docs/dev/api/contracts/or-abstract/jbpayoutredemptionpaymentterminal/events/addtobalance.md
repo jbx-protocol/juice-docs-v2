@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`addToBalanceOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
+* [`addToBalanceOf`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
 
 #### Definition
 

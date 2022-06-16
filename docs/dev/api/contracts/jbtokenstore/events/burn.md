@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`burnFrom`](/api/contracts/jbtokenstore/write/burnfrom.md)
+* [`burnFrom`](/dev/api/contracts/jbtokenstore/write/burnfrom.md)
 
 #### Definition
 

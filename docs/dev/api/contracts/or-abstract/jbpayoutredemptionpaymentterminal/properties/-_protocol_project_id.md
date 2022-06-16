@@ -1,6 +1,6 @@
 # _PROTOCOL_PROJECT_ID
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 **The protocol project ID is 1, as it should be the first project launched during the deployment process.** 
 

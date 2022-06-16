@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -42,7 +42,7 @@ function _addToBalanceOf(
 
     _Internal references:_
 
-    * [`_refundHeldFees`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_refundheldfees.md)
+    * [`_refundHeldFees`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_refundheldfees.md)
 2.  Record the added funds.
 
     ```
@@ -52,11 +52,11 @@ function _addToBalanceOf(
 
     _Internal references:_
 
-    * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+    * [`store`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
 
     _External references:_
 
-    * [`recordAddedBalanceFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recordaddedbalancefor.md)
+    * [`recordAddedBalanceFor`](/dev/api/contracts/jbsingletokenpaymentterminalstore/write/recordaddedbalancefor.md)
 3.  Emit a `AddToBalance` event with the relevant parameters.
 
     ```
@@ -65,7 +65,7 @@ function _addToBalanceOf(
 
     _Event references:_
 
-    * [`AddToBalance`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md)
+    * [`AddToBalance`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md)
 
 </TabItem>
 
@@ -105,7 +105,7 @@ function _addToBalanceOf(
 
 | Name                          | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddToBalance`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md)                       | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 amount</code></li><li><code>uint256 refundedFees</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                                                                                                               |
+| [**`AddToBalance`**](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/addtobalance.md)                       | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 amount</code></li><li><code>uint256 refundedFees</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                                                                                                                                                                                                                                                               |
 
 </TabItem>
 

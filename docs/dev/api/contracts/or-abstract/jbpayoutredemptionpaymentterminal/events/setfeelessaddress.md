@@ -3,7 +3,7 @@
 
 Emitted from:
 
-* [`setFeelessAddress`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfeelessaddress.md)
+* [`setFeelessAddress`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/setfeelessaddress.md)
 
 #### Definition
 

@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBProjects`](/api/contracts/jbprojects/README.md)​‌
+Contract: [`JBProjects`](/dev/api/contracts/jbprojects/README.md)​‌
 
-Interface: [`IERC721Metadata`](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#IERC721Metadata)​‌
+Interface: [`IERC721Metadata`](https://docs.openzeppelin.com/contracts/3.x/dev/api/token/erc721#IERC721Metadata)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -22,7 +22,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
   * `_projectId` is the ID of the project to get a URI of.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IERC721Metadata`](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721#IERC721Metadata) interface.
+* The function overrides a function definition from the [`IERC721Metadata`](https://docs.openzeppelin.com/contracts/3.x/dev/api/token/erc721#IERC721Metadata) interface.
 * The function returns the token URI to use for the provided `_projectId`.
 
 #### Body
@@ -36,7 +36,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 
     _Internal references:_
 
-    * [`tokenUriResolver`](/api/contracts/jbprojects/properties/tokenuriresolver.md)
+    * [`tokenUriResolver`](/dev/api/contracts/jbprojects/properties/tokenuriresolver.md)
 2.  Resolve the URI for the project.
 
     ```
@@ -46,7 +46,7 @@ function tokenURI(uint256 _projectId) public view override returns (string memor
 
     _External references:_
 
-    * [`getUri`](/api/interfaces/ijbtokenuriresolver.md)
+    * [`getUri`](/dev/api/interfaces/ijbtokenuriresolver.md)
 
 
 </TabItem>

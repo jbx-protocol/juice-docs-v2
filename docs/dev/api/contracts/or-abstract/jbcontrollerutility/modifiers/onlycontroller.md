@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBControllerUtility`](/api/contracts/or-abstract/jbcontrollerutility/README.md)​‌
+Contract: [`JBControllerUtility`](/dev/api/contracts/or-abstract/jbcontrollerutility/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -30,11 +30,11 @@ modifier onlyController(uint256 _projectId) { ... }
 
     _Internal references:_
 
-    * [`directory`](/api/contracts/or-abstract/jbcontrollerutility/properties/directory.md)
+    * [`directory`](/dev/api/contracts/or-abstract/jbcontrollerutility/properties/directory.md)
 
     _External references:_
 
-    * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
+    * [`controllerOf`](/dev/api/contracts/jbdirectory/properties/controllerof.md)
 
 2.  Continue the rest of the function.
 

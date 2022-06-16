@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBToken`](/api/contracts/jbtoken/README.md)​‌
+Contract: [`JBToken`](/dev/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/dev/api/interfaces/ijbtoken.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,8 +28,8 @@ function burn(
   * `_projectId` is the ID of the project to which the token belongs. This is ignored.
   * `_account` is the account to burn tokens from.
   * `_amount` is the amount of tokens to burn, as a fixed point number with 18 decimals.
-* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
-* The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
+* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
+* The function overrides a function definition from the [`IJBToken`](/dev/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -42,7 +42,7 @@ function burn(
 
     _Inherited references:_
 
-    * [`_burn`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#ERC20-_burn-address-uint256-)
+    * [`_burn`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#ERC20-_burn-address-uint256-)
 
 </TabItem>
 

@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminal`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminal`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/README.md)​‌
 
-Interface: [`IERC165`](https://docs.openzeppelin.com/contracts/2.x/api/introspection#IERC165)
+Interface: [`IERC165`](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#IERC165)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -29,7 +29,7 @@ function supportsInterface(bytes4 _interfaceId)
   * `_interfaceId` is the ID of the interface to check for adherance to.
 * The view function can be accessed externally by anyone, and internally within this contract.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IERC165`](https://docs.openzeppelin.com/contracts/2.x/api/introspection#IERC165) interface.
+* The function overrides a function definition from the [`IERC165`](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#IERC165) interface.
 * The function returns a flag indicating if this contract adheres to the specified interface.
 
 #### Body

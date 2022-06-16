@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​
+Contract: [`JBFundingCycleStore`](/dev/api/contracts/jbfundingcyclestore/README.md)​
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -77,10 +77,10 @@ function _initFor(
 
     _Internal references:_
 
-    * [`_packAndStoreIntrinsicPropertiesOf`](/api/contracts/jbfundingcyclestore/write/-_packandstoreintrinsicpropertiesof.md)
-    * [`_deriveStartFrom`](/api/contracts/jbfundingcyclestore/read/-_derivestartfrom.md)
-    * [`_deriveWeightFrom`](/api/contracts/jbfundingcyclestore/read/-_deriveweightfrom.md)
-    * [`_deriveNumberFrom`](/api/contracts/jbfundingcyclestore/read/-_derivenumberfrom.md)
+    * [`_packAndStoreIntrinsicPropertiesOf`](/dev/api/contracts/jbfundingcyclestore/write/-_packandstoreintrinsicpropertiesof.md)
+    * [`_deriveStartFrom`](/dev/api/contracts/jbfundingcyclestore/read/-_derivestartfrom.md)
+    * [`_deriveWeightFrom`](/dev/api/contracts/jbfundingcyclestore/read/-_deriveweightfrom.md)
+    * [`_deriveNumberFrom`](/dev/api/contracts/jbfundingcyclestore/read/-_derivenumberfrom.md)
 2.  Store the initialized configuration as the latest of the project.
 
     ```
@@ -90,7 +90,7 @@ function _initFor(
 
     _Internal references:_
 
-    * [`latestConfigurationOf`](/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
+    * [`latestConfigurationOf`](/dev/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md)
 3.  Emit an `Init` event with the relevant parameters.
 
     ```
@@ -99,7 +99,7 @@ function _initFor(
 
     _Event references:_
 
-    * [`Init`](/api/contracts/jbfundingcyclestore/events/init.md)
+    * [`Init`](/dev/api/contracts/jbfundingcyclestore/events/init.md)
 
 </TabItem>
 
@@ -174,7 +174,7 @@ function _initFor(
 
 | Name       | Data                                                                                                                                                      |
 | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Init`**](/api/contracts/jbfundingcyclestore/events/init.md)           | <ul><li><code>uint256 indexed configuration</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed basedOn</code></li></ul>                                                                                                                                                                                                 |
+| [**`Init`**](/dev/api/contracts/jbfundingcyclestore/events/init.md)           | <ul><li><code>uint256 indexed configuration</code></li><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed basedOn</code></li></ul>                                                                                                                                                                                                 |
 
 </TabItem>
 

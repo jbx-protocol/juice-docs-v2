@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBETHERC20SplitsPayer`](/api/contracts/or-utilities/jbetherc20splitspayer/README.md)
+Contract: [`JBETHERC20SplitsPayer`](/dev/api/contracts/or-utilities/jbetherc20splitspayer/README.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -46,11 +46,11 @@ function _payToSplits(
     
     _External references:_
 
-    * [`splitsStore`](/api/contracts/or-utilities/jbetherc20splitspayer/properties/splitsstore.md)
+    * [`splitsStore`](/dev/api/contracts/or-utilities/jbetherc20splitspayer/properties/splitsstore.md)
 
     _External references:_
 
-    * [`splitsOf`](/api/contracts/jbsplitsstore/read/splitsof.md)
+    * [`splitsOf`](/dev/api/contracts/jbsplitsstore/read/splitsof.md)
 2.  At first the leftover amount is the full amount. This will be decremented as the splits are iterated on.
 
     ```
@@ -156,25 +156,25 @@ function _payToSplits(
 
     _Library references:_
 
-    * [`JBTokens`](/api/libraries/jbtokens.md)
+    * [`JBTokens`](/dev/api/libraries/jbtokens.md)
       * `.ETH`
-    * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
+    * [`Address`](https://docs.openzeppelin.com/contracts/4.x/dev/api/utils#Address)
       * `.sendValue(...)`
 
     _Internal references:_
 
-    * [`_pay`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
-    * [`_addToBalanceOf`](/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
+    * [`_pay`](/dev/api/contracts/or-utilities/jbetherc20projectpayer/write/-_pay.md)
+    * [`_addToBalanceOf`](/dev/api/contracts/or-utilities/jbetherc20projectpayer/write/-_addtobalanceof.md)
 
     _External references:_
 
-    * [`approve`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
-    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transfer-address-uint256-)
-    * [`allocate`](/api/interfaces/ijbsplitallocator.md)
+    * [`approve`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-approve-address-uint256-)
+    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-transfer-address-uint256-)
+    * [`allocate`](/dev/api/interfaces/ijbsplitallocator.md)
 
     _Event references:_
 
-    * [`DistributeToSplit`](/api/contracts/or-utilities/jbetherc20splitspayer/events/distributetosplit.md)
+    * [`DistributeToSplit`](/dev/api/contracts/or-utilities/jbetherc20splitspayer/events/distributetosplit.md)
     
 </TabItem>
 
@@ -309,7 +309,7 @@ function _payToSplits(
 
 | Name                                                                          | Data                                                                                          |
 | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [**`DistributeToSplit`**](/api/contracts/or-utilities/jbetherc20splitspayer/events/distributetosplit.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                  |
+| [**`DistributeToSplit`**](/dev/api/contracts/or-utilities/jbetherc20splitspayer/events/distributetosplit.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed domain</code></li><li><code>uint256 indexed group</code></li><li><code>[JBSplit](/dev/api/data-structures/jbsplit.md) split</code></li><li><code>uint256 amount</code></li><li><code>address caller</code></li></ul>                  |
 
 </TabItem>
 

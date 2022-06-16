@@ -1,6 +1,6 @@
 # latestConfigurationOf
 
-Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​‌
+Contract: [`JBFundingCycleStore`](/dev/api/contracts/jbfundingcyclestore/README.md)​‌
 
 **The latest funding cycle configuration for each project.**
 
@@ -19,4 +19,4 @@ mapping(uint256 => uint256) public override latestConfigurationOf;
 * Arguments:
   * `_projectId` is the ID of the project to get the latest funding cycle configuration of.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`IJBFundingCycleStore`](/api/interfaces/ijbfundingcyclestore.md) interface.
+* The resulting function overrides a function definition from the [`IJBFundingCycleStore`](/dev/api/interfaces/ijbfundingcyclestore.md) interface.

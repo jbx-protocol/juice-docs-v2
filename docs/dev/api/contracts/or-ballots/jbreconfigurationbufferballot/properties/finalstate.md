@@ -1,8 +1,8 @@
 # finalState
 
-Contract: [`JBReconfigurationBufferBallot`](/api/contracts/or-ballots/jbreconfigurationbufferballot)
+Contract: [`JBReconfigurationBufferBallot`](/dev/api/contracts/or-ballots/jbreconfigurationbufferballot)
 
-Interface: [`IJBReconfigurationBufferBallot`](/api/contracts/interfaces/ijbreconfigurationbufferballot)
+Interface: [`IJBReconfigurationBufferBallot`](/dev/api/contracts/interfaces/ijbreconfigurationbufferballot)
 
 **The finalized state.**
 
@@ -28,4 +28,4 @@ mapping(uint256 => mapping(uint256 => JBBallotState)) public override finalState
   * `_projectId` is the ID of the project to check the final ballot state of.
   * `_configuration` is the configuration of the funding cycle to check the final ballot state of.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`IJBReconfigurationBufferBallot`](/api/contracts/interfaces/ijbreconfigurationbufferballot) interface.
+* The resulting function overrides a function definition from the [`IJBReconfigurationBufferBallot`](/dev/api/contracts/interfaces/ijbreconfigurationbufferballot) interface.

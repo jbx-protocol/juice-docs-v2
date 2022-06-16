@@ -11,7 +11,7 @@ The Juicebox protocol is a framework for funding and operating projects openly o
   Whichever address owns this NFT has administrative privileges to configure treasury parameters within the Juicebox ecosystem.
   </p>
 <p>
-  <a href="/learn/glossary/project">Learn more about projects</a>
+  <a href="/dev/learn/glossary/project">Learn more about projects</a>
   </p>
   
 
@@ -20,7 +20,7 @@ The Juicebox protocol is a framework for funding and operating projects openly o
   Funding cycles define contractual constraints according to which the project will operate.
   </p>
 <p>
-  <a href="/learn/glossary/funding-cycle">Learn more about funding cycles</a><br/>
+  <a href="/dev/learn/glossary/funding-cycle">Learn more about funding cycles</a><br/>
   </p>
 <p>
   The following properties can be configured into a funding cycle:
@@ -51,7 +51,7 @@ The Juicebox protocol is a framework for funding and operating projects openly o
 
 ##### Distribution limit
 <p>
-  The amount of funds that can be distributed out from the project's treasury during a funding cycle. The project owner can pre-program a list of addresses, other Juicebox projects, and contracts that adhere to <a href="/api/interfaces/ijbsplitsallocator.md">IJBSplitsAllocator</a> to split distributions between. Treasury funds in excess of the distribution limit is considered overflow, which can serve as runway or be reclaimed by token holders who redeem their tokens.
+  The amount of funds that can be distributed out from the project's treasury during a funding cycle. The project owner can pre-program a list of addresses, other Juicebox projects, and contracts that adhere to <a href="/dev/api/interfaces/ijbsplitsallocator.md">IJBSplitsAllocator</a> to split distributions between. Treasury funds in excess of the distribution limit is considered overflow, which can serve as runway or be reclaimed by token holders who redeem their tokens.
 </p>
 <p>
   Distributing is a public transaction that anyone can call on a project's behalf. The project owner can also include a split that sends a percentage of the distributed funds to the address who executes this transaction.
@@ -60,7 +60,7 @@ The Juicebox protocol is a framework for funding and operating projects openly o
 The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on funds withdrawn from the network. There are no fees for distributions to other Juicebox projects.
 </p>
 <p>
-  Distribution limits can be specified in any currency that the <a href="/api/contracts/jbprices"><code>JBPrices</code></a> contract has a price feed for.  
+  Distribution limits can be specified in any currency that the <a href="/dev/api/contracts/jbprices"><code>JBPrices</code></a> contract has a price feed for.  
 </p>
 
 <!---->
@@ -76,14 +76,14 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
 The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on funds withdrawn from the network. 
 </p>
 <p>
-  Overflow allowances can be specified in any currency that the <a href="/api/contracts/jbprices"><code>JBPrices</code></a> contract has a price feed for.  
+  Overflow allowances can be specified in any currency that the <a href="/dev/api/contracts/jbprices"><code>JBPrices</code></a> contract has a price feed for.  
 </p>
 
 <!---->
 
 ##### Weight
 <p>
-  A number used to determine how many project tokens should be minted and transferred when payments are received during the funding cycle. In other words, weight is the exchange rate between the project token and a currency (defined by a <a href="/api/contracts/jbpayoutredemptionpaymentterminal">JBPayoutRedemptionPaymentTerminal</a>) during that funding cycle. Project owners can configure this directly, or allow it to be derived automatically from the previous funding cycle's weight and discount rate.
+  A number used to determine how many project tokens should be minted and transferred when payments are received during the funding cycle. In other words, weight is the exchange rate between the project token and a currency (defined by a <a href="/dev/api/contracts/jbpayoutredemptionpaymentterminal">JBPayoutRedemptionPaymentTerminal</a>) during that funding cycle. Project owners can configure this directly, or allow it to be derived automatically from the previous funding cycle's weight and discount rate.
 </p>
 
 <!---->
@@ -96,14 +96,14 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
   The discount rate is not applied during funding cycles where the weight is explicitly reconfigured.
 </p>
 <p>
-  <a href="/learn/glossary/discount-rate">Learn more about discount rates</a>
+  <a href="/dev/learn/glossary/discount-rate">Learn more about discount rates</a>
 </p>
 
 <!---->
 
 ##### Ballot
 <p>
-  The address of a contract that adheres to <a href="/api/interfaces/ijbfundingcycleballot"><code>IJBFundingCycleBallot</code></a>, which can provide custom criteria that prevents funding cycle reconfigurations from taking effect.
+  The address of a contract that adheres to <a href="/dev/api/interfaces/ijbfundingcycleballot"><code>IJBFundingCycleBallot</code></a>, which can provide custom criteria that prevents funding cycle reconfigurations from taking effect.
 </p>
 <p>
   A common implementation is to force reconfigurations to be submitted at least X days before the end of the current funding cycle, giving the community foresight into any misconfigurations or abuses of power before they take effect.
@@ -112,17 +112,17 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
   A more complex implementation might include on-chain governance.
 </p>
 <p>
-  <a href="/learn/glossary/ballot">Learn more ballots</a>
+  <a href="/dev/learn/glossary/ballot">Learn more ballots</a>
 </p>
 
 <!---->
 
 ##### Reserved rate
 <p>
-  The percentage of newly minted tokens that a project wishes to withhold for custom distributions. The project owner can pre-program a list of addresses, other Juicebox project owners, and contracts that adhere to <a href="/api/interfaces/ijbsplitsallocator.md">IJBSplitsAllocator</a> to split reserved tokens between.
+  The percentage of newly minted tokens that a project wishes to withhold for custom distributions. The project owner can pre-program a list of addresses, other Juicebox project owners, and contracts that adhere to <a href="/dev/api/interfaces/ijbsplitsallocator.md">IJBSplitsAllocator</a> to split reserved tokens between.
 </p>
 <p>
-  <a href="/learn/glossary/reserved-tokens">Learn more about reserved rate</a>
+  <a href="/dev/learn/glossary/reserved-tokens">Learn more about reserved rate</a>
 </p>
 
 <!---->
@@ -135,7 +135,7 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
   A rate of 100% suggests a linear proportion, meaning X% of treasury overflow can be reclaimed by redeeming X% of the token supply.
 </p>
 <p>
-  <a href="/learn/glossary/redemption-rate">Learn more about redemption rates</a>
+  <a href="/dev/learn/glossary/redemption-rate">Learn more about redemption rates</a>
 </p>
 
 <!---->
@@ -179,10 +179,10 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
 
 ##### Data source
 <p>
-  The address of a contract that adheres to <a href="/api/interfaces/ijbfundingcycledatasource"><code>IJBFundingCycleDataSource</code></a>, which can be used to extend or override what happens when the treasury receives funds, and what happens when someone tries to redeem their project tokens.
+  The address of a contract that adheres to <a href="/dev/api/interfaces/ijbfundingcycledatasource"><code>IJBFundingCycleDataSource</code></a>, which can be used to extend or override what happens when the treasury receives funds, and what happens when someone tries to redeem their project tokens.
 </p>
 <p>
-  <a href="/learn/glossary/data-source">Learn more about data sources</a>
+  <a href="/dev/learn/glossary/data-source">Learn more about data sources</a>
 </p>
 
 </details>
@@ -200,7 +200,7 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
 
 #### Bring-your-own token
 <p>
-  A project can bring its own token, as long as it adheres to <a href="/api/interfaces/ijbtoken"><code>IJBToken</code></a> and uses fixed point accounting with 18 decimals.<br/>
+  A project can bring its own token, as long as it adheres to <a href="/dev/api/interfaces/ijbtoken"><code>IJBToken</code></a> and uses fixed point accounting with 18 decimals.<br/>
 </p>
 <p>
   This allows a project to use ERC-721's, ERC-1155's, or any other custom contract that'll be called upon when the protocol asks to mint or burn tokens.<br/>
@@ -209,16 +209,16 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
   A project can change its token during any of its funding cycles that are explicitly configured to allow changes.<br/>
 </p>
 <p>
-  By default, the protocol provides a transaction for projects to deploy <a href="/api/contracts/jbtoken"><code>JBToken</code></a> ERC-20 tokens. 
+  By default, the protocol provides a transaction for projects to deploy <a href="/dev/api/contracts/jbtoken"><code>JBToken</code></a> ERC-20 tokens. 
 </p>
 
 #### Splits
 <p>
-  A project can pre-program token distributions to splits. The destination of a split can be an Ethereum address, the project ID of another project's Juicebox treasury (the split will allow you to configure the beneficiary of that project's tokens that get minted in response to the contribution), to the <code>allocate(...)</code> function of any contract that adheres to <a href="/api/interfaces/ijbsplitallocator"><code>IJBSplitAllocator</code></a>, or to the address that initiated the transaction that distributes tokens to the splits.
+  A project can pre-program token distributions to splits. The destination of a split can be an Ethereum address, the project ID of another project's Juicebox treasury (the split will allow you to configure the beneficiary of that project's tokens that get minted in response to the contribution), to the <code>allocate(...)</code> function of any contract that adheres to <a href="/dev/api/interfaces/ijbsplitallocator"><code>IJBSplitAllocator</code></a>, or to the address that initiated the transaction that distributes tokens to the splits.
 </p>
 <p>
-  <a href="/learn/glossary/splits">Learn more about splits</a><br/>
-  <a href="/learn/glossary/split-allocator">Learn more about allocators</a>
+  <a href="/dev/learn/glossary/splits">Learn more about splits</a><br/>
+  <a href="/dev/learn/glossary/split-allocator">Learn more about allocators</a>
 </p>
 
 #### JBX membership fee
@@ -234,11 +234,11 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
 
 #### Custom treasury strategies
 <p>
-  Funding cycles can be configured to use an <a href="/api/interfaces/ijbfundingcycledatasource"><code>IJBFundingCycleDataSource</code></a>, <a href="/api/interfaces/ijbpaydelegate"><code>IJBPayDelegate</code></a>, and <a href="/api/interfaces/ijbredemptiondelegate"><code>IJBRedemptionDelegate</code></a> to extend or override the default protocol's behavior that defines what happens when an address tries to make a payment to the project's treasury, and what happens when someone tries to redeem the project tokens during any particular funding cycle.
+  Funding cycles can be configured to use an <a href="/dev/api/interfaces/ijbfundingcycledatasource"><code>IJBFundingCycleDataSource</code></a>, <a href="/dev/api/interfaces/ijbpaydelegate"><code>IJBPayDelegate</code></a>, and <a href="/dev/api/interfaces/ijbredemptiondelegate"><code>IJBRedemptionDelegate</code></a> to extend or override the default protocol's behavior that defines what happens when an address tries to make a payment to the project's treasury, and what happens when someone tries to redeem the project tokens during any particular funding cycle.
 </p>
 <p>
-  <a href="/learn/glossary/data-source">Learn more about data sources</a><br/>
-  <a href="/learn/glossary/delegate">Learn more about delegates</a>
+  <a href="/dev/learn/glossary/data-source">Learn more about data sources</a><br/>
+  <a href="/dev/learn/glossary/delegate">Learn more about delegates</a>
 </p>
 
 #### Accept multiple tokens
@@ -246,12 +246,12 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
   A project can specify any number of payment terminal contracts where it can receive funds denominated in various tokens. This allows projects to create distinct rules for accepting ETH, any ERC-20, or any asset in general.
 </p>
 <p>
-  Anyone can roll their own contract that adheres to <a href="/api/interfaces/ijbpaymentterminal"><code>IJBPaymentTerminal</code></a> for projects to use, and a project can migrate funds between terminals that use the same token as it wishes.
+  Anyone can roll their own contract that adheres to <a href="/dev/api/interfaces/ijbpaymentterminal"><code>IJBPaymentTerminal</code></a> for projects to use, and a project can migrate funds between terminals that use the same token as it wishes.
 </p>
 
 #### Forkability and migratability
 <p>
-  A project can migrate its treasury's controller to any other contract that adheres to <a href="/api/interfaces/ijbcontroller"><code>IJBController</code></a>. This allows a project to evolve into updated or custom treasury dynamics over time as it wishes.
+  A project can migrate its treasury's controller to any other contract that adheres to <a href="/dev/api/interfaces/ijbcontroller"><code>IJBController</code></a>. This allows a project to evolve into updated or custom treasury dynamics over time as it wishes.
 </p>
 
 #### Operators
@@ -259,5 +259,5 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
   Addresses can specify other addresses that are allowed to operate certain administrative treasury transactions on its behalf.<br/>
 </p>
 <p>
-  <a href="/learn/glossary/operator">Learn more about operators</a>
+  <a href="/dev/learn/glossary/operator">Learn more about operators</a>
 </p>

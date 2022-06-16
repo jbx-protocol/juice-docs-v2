@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`transferFrom`](/api/contracts/jbtokenstore/write/transferfrom.md)
+* [`transferFrom`](/dev/api/contracts/jbtokenstore/write/transferfrom.md)
 
 #### Definition
 

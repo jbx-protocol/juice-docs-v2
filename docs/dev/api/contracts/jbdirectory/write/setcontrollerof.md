@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBDirectory`](/api/contracts/jbdirectory/README.md/)​‌
+Contract: [`JBDirectory`](/dev/api/contracts/jbdirectory/README.md/)​‌
 
-Interface: [`IJBDirectory`](/api/interfaces/ijbdirectory.md)
+Interface: [`IJBDirectory`](/dev/api/interfaces/ijbdirectory.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -37,8 +37,8 @@ function setControllerOf(uint256 _projectId, address _controller)
 * Arguments:
   * `_projectId` is the ID of the project to set a new controller for.
   * `_controller` is the new controller to set.
-* Through the [`requirePermissionAllowingOverride`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_CONTROLLER`](/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, from the project's current controller, or from an allow-listed controller if the project doesn't already have a controller set.
-* The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
+* Through the [`requirePermissionAllowingOverride`](/dev/api/contracts/or-abstract/jboperatable/modifiers/requirepermissionallowingoverride.md) modifier, the function is only accessible by the project's owner, from an operator that has been given the [`JBOperations.SET_CONTROLLER`](/dev/api/libraries/jboperations.md) permission by the project owner for the provided `_projectId`, from the project's current controller, or from an allow-listed controller if the project doesn't already have a controller set.
+* The function overrides a function definition from the [`IJBDirectory`](/dev/api/interfaces/ijbdirectory.md) interface.
 * The function doesn't return anything
 
 #### Body
@@ -52,11 +52,11 @@ function setControllerOf(uint256 _projectId, address _controller)
 
     _Internal references:_
 
-    * [`projects`](/api/contracts/jbdirectory/properties/projects.md)
+    * [`projects`](/dev/api/contracts/jbdirectory/properties/projects.md)
 
     _External references:_
 
-    * [`count`](/api/contracts/jbprojects/properties/count.md)
+    * [`count`](/dev/api/contracts/jbprojects/properties/count.md)
 
 2.  Get a reference to the project's current funding cycle.
 
@@ -67,11 +67,11 @@ function setControllerOf(uint256 _projectId, address _controller)
 
     _Internal references:_
 
-    * [`fundingCycleStore`](/api/contracts/jbdirectory/properties/fundingcyclestore.md)
+    * [`fundingCycleStore`](/dev/api/contracts/jbdirectory/properties/fundingcyclestore.md)
 
     _External references:_
 
-    * [`currentOf`](/api/contracts/jbfundingcyclestore/read/currentof.md)
+    * [`currentOf`](/dev/api/contracts/jbfundingcyclestore/read/currentof.md)
 
 3.  Make sure the project's current funding cycle is set to allow setting its controller, or the request to set the controller is coming from the project's current controller or is setting the first controller.
 
@@ -86,12 +86,12 @@ function setControllerOf(uint256 _projectId, address _controller)
 
     _Library references:_
 
-    * [`JBFundingCycleMetadataResolver`](/api/libraries/jbfundingcyclemetadataresolver.md)
+    * [`JBFundingCycleMetadataResolver`](/dev/api/libraries/jbfundingcyclemetadataresolver.md)
       * `.setControllerAllowed(...)`
 
     _Internal references:_
 
-    * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
+    * [`controllerOf`](/dev/api/contracts/jbdirectory/properties/controllerof.md)
 
 4.  Store the provided controller as the controller of the project.
     ```
@@ -101,7 +101,7 @@ function setControllerOf(uint256 _projectId, address _controller)
 
     _Internal references:_
 
-    * [`controllerOf`](/api/contracts/jbdirectory/properties/controllerof.md)
+    * [`controllerOf`](/dev/api/contracts/jbdirectory/properties/controllerof.md)
 5.  Emit a `SetController` event with the relevant parameters.
 
     ```
@@ -110,7 +110,7 @@ function setControllerOf(uint256 _projectId, address _controller)
 
     _Event references:_
 
-    * [`SetController`](/api/contracts/jbdirectory/events/setcontroller.md)
+    * [`SetController`](/dev/api/contracts/jbdirectory/events/setcontroller.md)
 
 </TabItem>
 
@@ -175,7 +175,7 @@ function setControllerOf(uint256 _projectId, address _controller)
 
 | Name                                              | Data                                                                                                                                                                                                             |
 | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetController`**](/api/contracts/jbdirectory/events/setcontroller.md)           | <ul><li><code>int256 indexed projectId</code></li><li><code>[IJBController](/api/interfaces/ijbcontroller.md)indexed controller</code></li><li><code>address caller</code></li></ul>                                       |
+| [**`SetController`**](/dev/api/contracts/jbdirectory/events/setcontroller.md)           | <ul><li><code>int256 indexed projectId</code></li><li><code>[IJBController](/dev/api/interfaces/ijbcontroller.md)indexed controller</code></li><li><code>address caller</code></li></ul>                                       |
 
 </TabItem>
 

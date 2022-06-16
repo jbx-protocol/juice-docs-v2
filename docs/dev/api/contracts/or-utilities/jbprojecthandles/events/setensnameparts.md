@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setEnsNamePartsOf`](/api/contracts/or-utilities/jbprojecthandles/write/setensnamepartsof.md)
+* [`setEnsNamePartsOf`](/dev/api/contracts/or-utilities/jbprojecthandles/write/setensnamepartsof.md)
 
 #### Definition
 

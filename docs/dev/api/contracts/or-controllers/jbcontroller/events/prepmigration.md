@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`prepMigrationOf`](/api/contracts/or-controllers/jbcontroller/write/prepformigrationof.md)
+* [`prepMigrationOf`](/dev/api/contracts/or-controllers/jbcontroller/write/prepformigrationof.md)
 
 #### Definition
 

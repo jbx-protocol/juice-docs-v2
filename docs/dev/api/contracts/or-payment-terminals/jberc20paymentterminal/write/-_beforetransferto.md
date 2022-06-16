@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -20,7 +20,7 @@ function _beforeTransferTo(address, uint256) internal override { ...}
   * `_to` is the address to which the transfer is going.
   * `_amount` is the amount of the transfer, as a fixed point number with the same number of decimals as this terminal.
 * The resulting function is internal to this contract and its inheriters.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 
 #### Body
 
@@ -32,7 +32,7 @@ function _beforeTransferTo(address, uint256) internal override { ...}
 
     _External references:_
 
-    * [`approve`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
+    * [`approve`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-approve-address-uint256-)
 
 
 </TabItem>

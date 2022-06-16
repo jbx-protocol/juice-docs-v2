@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -24,7 +24,7 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 
 * Arguments:
   * `_feeGauge` is the new fee gauge.
-* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
+* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/dev/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
 * The function can be overriden by inheriting contracts.
 * The function doesn't return anything.
 
@@ -39,7 +39,7 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 
     _Internal references:_
 
-    * [`feeGauge`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/feegauge.md)
+    * [`feeGauge`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/feegauge.md)
 2.  Emit a `SetFeeGauge` event with the relevant parameters.
 
     ```
@@ -48,7 +48,7 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 
     _Event references:_
 
-    * [`SetFeeGauge`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md)
+    * [`SetFeeGauge`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md)
 
 </TabItem>
 
@@ -81,7 +81,7 @@ function setFeeGauge(IJBFeeGauge _feeGauge) external virtual override onlyOwner 
 
 | Name                                          | Data                                                                                                                                                    |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetFeeGauge`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md) | <ul><li><code>[IJBFeeGauge](/api/interfaces/ijbfeegauge.md) indexed feeGauge</code></li><li><code>address caller</code></li></ul> |
+| [**`SetFeeGauge`**](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/setfeegauge.md) | <ul><li><code>[IJBFeeGauge](/dev/api/interfaces/ijbfeegauge.md) indexed feeGauge</code></li><li><code>address caller</code></li></ul> |
 
 </TabItem>
 

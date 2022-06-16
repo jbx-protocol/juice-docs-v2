@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setTerminalsOf`](/api/contracts/jbdirectory/write/setterminalsof.md)
+* [`setTerminalsOf`](/dev/api/contracts/jbdirectory/write/setterminalsof.md)
 
 Definition:
 

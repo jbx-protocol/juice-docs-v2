@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBFundingCycleStore`](/api/contracts/jbfundingcyclestore/README.md)​
+Contract: [`JBFundingCycleStore`](/dev/api/contracts/jbfundingcyclestore/README.md)​
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -21,7 +21,7 @@ function _isApproved(uint256 _projectId, JBFundingCycle memory _fundingCycle)
 
 * Arguments:
   * `_projectId` is the ID of the project to which the funding cycle belongs. 
-  * `_fundingCycle` is the [`JBFundingCycle`](/api/data-structures/jbfundingcycle.md) to get an approval flag for.
+  * `_fundingCycle` is the [`JBFundingCycle`](/dev/api/data-structures/jbfundingcycle.md) to get an approval flag for.
 * The view function is private to this contract.
 * The view function does not alter state on the blockchain.
 * The function returns the approval flag.
@@ -42,12 +42,12 @@ function _isApproved(uint256 _projectId, JBFundingCycle memory _fundingCycle)
 
     _Enums used:_
 
-    * [`JBBallotState`](/api/enums/jbballotstate.md)
+    * [`JBBallotState`](/dev/api/enums/jbballotstate.md)
       * `.Approved`
 
     _Internal references:_
 
-    * [`_ballotStateOf`](/api/contracts/jbfundingcyclestore/read/-_ballotstateof.md)
+    * [`_ballotStateOf`](/dev/api/contracts/jbfundingcyclestore/read/-_ballotstateof.md)
 
 </TabItem>
 

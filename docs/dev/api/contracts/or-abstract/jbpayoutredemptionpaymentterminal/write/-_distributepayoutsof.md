@@ -3,7 +3,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBSingleTokenPaymentTerminalStore`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBSingleTokenPaymentTerminalStore`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -52,11 +52,11 @@ function _distributePayoutsOf(
 
     _Internal references:_
 
-    * [`store`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
+    * [`store`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/store.md)
 
     _External references:_
 
-    * [`recordDistributionFor`](/api/contracts/jbsingletokenpaymentterminalstore/write/recorddistributionfor.md)
+    * [`recordDistributionFor`](/dev/api/contracts/jbsingletokenpaymentterminalstore/write/recorddistributionfor.md)
 2.  Make sure the distributed amount is at least as much as the minimum expected amount.
 
     ```
@@ -74,7 +74,7 @@ function _distributePayoutsOf(
 
     _External references:_
 
-    * [`ownerOf`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#IERC721-ownerOf-uint256-)
+    * [`ownerOf`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc721#IERC721-ownerOf-uint256-)
 4.  The following scoped block is a bit of a hack to prevent a "Stack too deep" error. Define a few variables outside of the scope that'll be set within the scope but later referenced again outside.
 
     ```
@@ -98,13 +98,13 @@ function _distributePayoutsOf(
 
         _Library references:_
 
-        * [`JBConstants`](/api/libraries/jbconstants.md)
+        * [`JBConstants`](/dev/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
 
         _Internal references:_
 
-        * [`isFeelessAddress`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessaddress.md)
-        * [`_currentFeeDiscount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
+        * [`isFeelessAddress`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/isfeelessaddress.md)
+        * [`_currentFeeDiscount`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_currentfeediscount.md)
 
     2.  Get a reference to the amount of distributed funds from which fees should be taken, and the amount leftover after distributing splits.
 
@@ -132,8 +132,8 @@ function _distributePayoutsOf(
 
         _Internal references:_
 
-        * [`payoutSplitsGroup`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/payoutsplitsgroup.md)
-        * [`_distributeToPayoutSplitsOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_distributetopayoutsplitsof.md)
+        * [`payoutSplitsGroup`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/payoutsplitsgroup.md)
+        * [`_distributeToPayoutSplitsOf`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_distributetopayoutsplitsof.md)
 
     4.  Add the leftover distribution amount to the amount from which fees should be taken since those funds will be leaving the ecosystem to the project owner's address.
 
@@ -162,12 +162,12 @@ function _distributePayoutsOf(
 
         _Library references:_
 
-        * [`JBConstants`](/api/libraries/jbconstants.md)
+        * [`JBConstants`](/dev/api/libraries/jbconstants.md)
           * `.MAX_FEE_DISCOUNT(...)`
 
         _Internal references:_
 
-        * [`_takeFeeFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
+        * [`_takeFeeFrom`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_takefeefrom.md)
 
     6.  Calculate what the net value of the leftover distribution will be.
 
@@ -182,8 +182,8 @@ function _distributePayoutsOf(
 
         _Internal references:_
 
-        * [`fee`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
-        * [`_feeAmount`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
+        * [`fee`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/properties/fee.md)
+        * [`_feeAmount`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/-_feeamount.md)
 
     7.  Transfer any leftover amount to the project owner if needed.
 
@@ -195,7 +195,7 @@ function _distributePayoutsOf(
 
         _Virtual references:_
 
-        * [`_transferFrom`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
+        * [`_transferFrom`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_transferfrom.md)
 
 5.  Emit a `DistributePayouts` event with the relevant parameters.
 
@@ -216,7 +216,7 @@ function _distributePayoutsOf(
 
     _Event references:_
 
-    * [`DistributePayouts`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributepayouts.md)
+    * [`DistributePayouts`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributepayouts.md)
 
 </TabItem>
 
@@ -352,7 +352,7 @@ function _distributePayoutsOf(
 
 | Name                                                 | Data                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`DistributePayouts`**](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributepayouts.md)             | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>uint256 beneficiaryDistributionAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                       |
+| [**`DistributePayouts`**](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/events/distributepayouts.md)             | <ul><li><code>uint256 indexed fundingCycleConfiguration</code></li><li><code>uint256 indexed fundingCycleNumber</code></li><li><code>uint256 indexed projectId</code></li><li><code>address beneficiary</code></li><li><code>uint256 amount</code></li><li><code>uint256 distributedAmount</code></li><li><code>uint256 feeAmount</code></li><li><code>uint256 beneficiaryDistributionAmount</code></li><li><code>string memo</code></li><li><code>address caller</code></li></ul>                                                                                       |
 
 </TabItem>
 

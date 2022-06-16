@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBPayoutRedemptionPaymentTerminal`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
+Contract: [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md)​‌
 
-Interface: [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
+Interface: [`IJBPayoutRedemptionPaymentTerminal`](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -43,9 +43,9 @@ function redeemTokensOf(
   * `_beneficiary` is the address to send the terminal tokens to.
   * `_memo` is a memo to pass along to the emitted event.
   * `_metadata` are bytes to send along to the data source, delegate, and emitted event, if provided.
-* Through the [`requirePermission`](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.REDEEM`](/api/libraries/jboperations.md) permission by the token holder.
+* Through the [`requirePermission`](/dev/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md) modifier, the function is only accessible by the token holder, or from an operator that has been given the [`JBOperations.REDEEM`](/dev/api/libraries/jboperations.md) permission by the token holder.
 * The function can be overriden by inheriting contracts.
-* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
+* The resulting function overrides a function definition from the [`IJBPayoutRedemptionPaymentTerminal`](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md) interface.
 * The function returns the amount of terminal tokens that the tokens were redeemed for, as a fixed point number with the same amount of decimals as this terminal.
 
 #### Body
@@ -67,7 +67,7 @@ function redeemTokensOf(
 
     _Internal references:_
 
-    * [`_redeemTokensOf`](/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_redeemtokensof.md)
+    * [`_redeemTokensOf`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_redeemtokensof.md)
 
 </TabItem>
 

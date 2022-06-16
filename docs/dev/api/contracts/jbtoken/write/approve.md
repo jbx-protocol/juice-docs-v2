@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBToken`](/api/contracts/jbtoken/README.md)​‌
+Contract: [`JBToken`](/dev/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/dev/api/interfaces/ijbtoken.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -26,7 +26,7 @@ function approve(
   * `_projectId` is the ID of the project to which the token belongs. This is ignored.
   * `_spender` is the address that will be spending tokens on the `msg.sender`s behalf.
   * `_amount` is the amount the `_spender` is allowed to spend.
-* The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
+* The function overrides a function definition from the [`IJBToken`](/dev/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -39,7 +39,7 @@ function approve(
 
     _Inherited references:_
 
-    * [`_mint`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
+    * [`_mint`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-approve-address-uint256-)
 
 </TabItem>
 

@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBTokenStore`](/api/contracts/jbtokenstore/README.md)​‌
+Contract: [`JBTokenStore`](/dev/api/contracts/jbtokenstore/README.md)​‌
 
-Interface: [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md)
+Interface: [`IJBTokenStore`](/dev/api/interfaces/ijbtokenstore.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -26,7 +26,7 @@ function balanceOf(address _holder, uint256 _projectId)
   * `_projectId` is the project to get the `_holder`s balance of.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBTokenStore`](/api/interfaces/ijbtokenstore.md) interface.
+* The function overrides a function definition from the [`IJBTokenStore`](/dev/api/interfaces/ijbtokenstore.md) interface.
 * The function returns the project token balance of the `_holder`.
 
 #### Body
@@ -40,7 +40,7 @@ function balanceOf(address _holder, uint256 _projectId)
 
     _Internal references:_
 
-    * [`unclaimedBalanceOf`](/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
+    * [`unclaimedBalanceOf`](/dev/api/contracts/jbtokenstore/properties/unclaimedbalanceof.md)
 2.  Get a reference to the project's current token.
 
     ```
@@ -50,7 +50,7 @@ function balanceOf(address _holder, uint256 _projectId)
 
     _Internal references:_
 
-    * [`tokenOf`](/api/contracts/jbtokenstore/properties/tokenof.md)
+    * [`tokenOf`](/dev/api/contracts/jbtokenstore/properties/tokenof.md)
 3.  If the project has a current token, add the holder's balance to the total.
 
     ```
@@ -60,7 +60,7 @@ function balanceOf(address _holder, uint256 _projectId)
 
     _External references:_
 
-    * [`balanceOf`](/api/contracts/jbtoken/read/balanceof.md)
+    * [`balanceOf`](/dev/api/contracts/jbtoken/read/balanceof.md)
 
 </TabItem>
 

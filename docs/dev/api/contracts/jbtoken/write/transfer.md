@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBToken`](/api/contracts/jbtoken/README.md)​‌
+Contract: [`JBToken`](/dev/api/contracts/jbtoken/README.md)​‌
 
-Interface: [`IJBToken`](/api/interfaces/ijbtoken.md)
+Interface: [`IJBToken`](/dev/api/interfaces/ijbtoken.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -26,7 +26,7 @@ function transfer(
   * `_projectId` is the ID of the project to which the token belongs. This is ignored.
   * `_to` is the destination address.
   * `_amount` is the amount of the transfer, as a fixed point number with 18 decimals.
-* The function overrides a function definition from the [`IJBToken`](/api/interfaces/ijbtoken.md) interface.
+* The function overrides a function definition from the [`IJBToken`](/dev/api/interfaces/ijbtoken.md) interface.
 * The function doesn't return anything.
 
 #### Body
@@ -39,7 +39,7 @@ function transfer(
 
     _Inherited references:_
 
-    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transfer-address-uint256-)
+    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-transfer-address-uint256-)
 
 </TabItem>
 

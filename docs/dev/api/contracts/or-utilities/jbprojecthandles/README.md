@@ -16,13 +16,13 @@ Ethereum rinkeby: [``](https://rinkeby.etherscan.io/address/)
 
 | Name                                                 | Description                                                                                                                              |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBProjectHandles`**](/api/interfaces/ijbprojecthandles.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+| [**`IJBProjectHandles`**](/dev/api/interfaces/ijbprojecthandles.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
 #### Inheritance
 
 | Contract                                                                     | Description                                                                                                           |
 | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| [**`JBOperatable`**](/api/contracts/or-abstract/jboperatable/) | Includes convenience functionality for checking a message sender's permissions before executing certain transactions. |
+| [**`JBOperatable`**](/dev/api/contracts/or-abstract/jboperatable/) | Includes convenience functionality for checking a message sender's permissions before executing certain transactions. |
 
 #### Constructor
 
@@ -50,25 +50,25 @@ constructor(
 
 | Name                                                                                                      | Data                                                                                                                                                                                                                                 |
 | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**`SetEnsNameParts`**](/api/contracts/or-utilities/jbprojecthandles/events/setensnameparts.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>string indexed handle</code></li><li><code>string[] parts</code></li><li><code>address caller</code></li></ul>                  |
+| [**`SetEnsNameParts`**](/dev/api/contracts/or-utilities/jbprojecthandles/events/setensnameparts.md)                                                                          | <ul><li><code>uint256 indexed projectId</code></li><li><code>string indexed handle</code></li><li><code>string[] parts</code></li><li><code>address caller</code></li></ul>                  |
 
 #### Properties
 
 | Name                                                                                                        | Definition                                                                                                                                                                 |
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`projects`**](/api/contracts/or-utilities/jbprojecthandles/properties/projects.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>[IJBProjects](/api/interfaces/ijbprojects) projects</code></li></ul>                                                                                                |
+| [**`projects`**](/dev/api/contracts/or-utilities/jbprojecthandles/properties/projects.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>[IJBProjects](/dev/api/interfaces/ijbprojects) projects</code></li></ul>                                                                                                |
 | [**`textResolver`**](https://docs.ens.domains/contract-api-reference/publicresolver#get-text-data)                                                                          | <p><strong>Returns</strong></p><ul><li><code>[ITextResolver](https://docs.ens.domains/contract-api-reference/publicresolver#get-text-data) textResolver</code></li></ul>                                                                                                |
-| [**`TEXT_KEY`**](/api/contracts/or-utilities/jbprojecthandles/properties/textkey.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>string TEXT_KEY</code></li></ul>                                                                                                |
+| [**`TEXT_KEY`**](/dev/api/contracts/or-utilities/jbprojecthandles/properties/textkey.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>string TEXT_KEY</code></li></ul>                                                                                                |
 
 #### Read
 
 | Function                                                       | Definition                                                                                                                                                                                                             |
 | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`handleOf`**](/api/contracts/or-utilities/jbprojecthandles/read/handleof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
-| [**`ensNamePartsOf`**](/api/contracts/or-utilities/jbprojecthandles/read/ensnamepartsof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string[] memory</code></li></ul> |
+| [**`handleOf`**](/dev/api/contracts/or-utilities/jbprojecthandles/read/handleof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
+| [**`ensNamePartsOf`**](/dev/api/contracts/or-utilities/jbprojecthandles/read/ensnamepartsof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string[] memory</code></li></ul> |
 
 #### Write
 
 | Function                                                                                                     | Definition                                                                                                                                                                                                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`setEnsNamePartsFor`**](/api/contracts/or-utilities/jbprojecthandles/write/setensnamepartsfor.md)                                                                        | <p><strong>Traits</strong></p><ul><li><code>[requirePermission](/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>string[] memory _parts</code></li></ul>                                             |
+| [**`setEnsNamePartsFor`**](/dev/api/contracts/or-utilities/jbprojecthandles/write/setensnamepartsfor.md)                                                                        | <p><strong>Traits</strong></p><ul><li><code>[requirePermission](/dev/api/contracts/or-abstract/jboperatable/modifiers/requirepermission.md)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>string[] memory _parts</code></li></ul>                                             |

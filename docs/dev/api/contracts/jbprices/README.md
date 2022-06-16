@@ -16,13 +16,13 @@ Ethereum rinkeby: [`0xFF1D73AB28140b574Bb7A90e9fBCeD1eDAFce5c1`](https://rinkeby
 
 | Name                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBPrices`**](/api/interfaces/ijbprices.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+| [**`IJBPrices`**](/dev/api/interfaces/ijbprices.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
 #### Inheritance
 
 | Contract                                                                  | Description                                                                                                                              |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable) | Includes convenience functionality for checking a message sender's permissions before executing certain transactions. |
+| [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable) | Includes convenience functionality for checking a message sender's permissions before executing certain transactions. |
 
 #### Constructor
 
@@ -42,13 +42,13 @@ constructor(address _owner) {
 
 | Name                               | Data                                                                                                                                                                                    |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`AddFeed`**](/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[IJBPriceFeed](/api/interfaces/ijbpricefeed.md) feed</code></li></ul> |
+| [**`AddFeed`**](/dev/api/contracts/jbprices/events/addfeed.md) | <ul><li><code>uint256 indexed currency</code></li><li><code>uint256 indexed base</code></li><li><code>[IJBPriceFeed](/dev/api/interfaces/ijbpricefeed.md) feed</code></li></ul> |
 
 #### Properties
 
 | Function                                                          | Definition                                                                                                                                                                                                |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`feedFor`**](/api/contracts/jbprices/properties/feedfor.md)                            | <p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBPriceFeed](/api/interfaces/ijbpricefeed.md) feed</code></li></ul> |
+| [**`feedFor`**](/dev/api/contracts/jbprices/properties/feedfor.md)                            | <p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBPriceFeed](/dev/api/interfaces/ijbpricefeed.md) feed</code></li></ul> |
 
 #### Read
 
@@ -60,4 +60,4 @@ constructor(address _owner) {
 
 | Function                             | Definition                                                                                                                                                                                                                               |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`addFeedFor`**](/api/contracts/jbprices/write/addfeed.md) | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li><li><code>[IJBPriceFeed](/api/interfaces/ijbpricefeed.md) _feed</code></li></ul> |
+| [**`addFeedFor`**](/dev/api/contracts/jbprices/write/addfeed.md) | <p><strong>Traits</strong></p><ul><li><code>[onlyOwner](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable-onlyOwner--)</code></li></ul><p><strong>Params</strong></p><ul><li><code>uint256 _currency</code></li><li><code>uint256 _base</code></li><li><code>[IJBPriceFeed](/dev/api/interfaces/ijbpricefeed.md) _feed</code></li></ul> |

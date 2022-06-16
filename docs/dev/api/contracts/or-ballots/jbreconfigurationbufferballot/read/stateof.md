@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBReconfigurationBufferBallot`](/api/contracts/or-ballots/jbreconfigurationbufferballot)
+Contract: [`JBReconfigurationBufferBallot`](/dev/api/contracts/or-ballots/jbreconfigurationbufferballot)
 
-Interface: [`IJBFundingCycleBallot`](/api/contracts/interfaces/ijbreconfigurationbufferballot)
+Interface: [`IJBFundingCycleBallot`](/dev/api/contracts/interfaces/ijbreconfigurationbufferballot)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -28,7 +28,7 @@ function stateOf(
   * `_start` is the start timestamp of the funding cycle to check the state of.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBFundingCycleBallot`](/api/interfaces/ijbfundingcycleballot.md) interface.
+* The function overrides a function definition from the [`IJBFundingCycleBallot`](/dev/api/interfaces/ijbfundingcycleballot.md) interface.
 * The function returns the state of the provided ballot.
 
 #### Body
@@ -43,12 +43,12 @@ function stateOf(
 
     _Enums used:_
 
-    * [`JBBallotState`](/api/enums/jbballotstate.md)
+    * [`JBBallotState`](/dev/api/enums/jbballotstate.md)
       * `.Active`
 
     _Internal references:_
 
-    * [`finalState`](/api/contracts/or-ballots/jbreconfigurationbufferballot/properties/finalstate.md)
+    * [`finalState`](/dev/api/contracts/or-ballots/jbreconfigurationbufferballot/properties/finalstate.md)
 
 2.  If the ballot's duration has not yet passed since the reconfiguration was proposed, the state is failed if the funding cycle is supposed to have already started. Otherwise it is still active.  
 
@@ -61,7 +61,7 @@ function stateOf(
 
     _Enums used:_
 
-    * [`JBBallotState`](/api/enums/jbballotstate.md)
+    * [`JBBallotState`](/dev/api/enums/jbballotstate.md)
       * `.Failed`
       * `.Active`
 
@@ -74,7 +74,7 @@ function stateOf(
 
     _Enums used:_
 
-    * [`JBBallotState`](/api/enums/jbballotstate.md)
+    * [`JBBallotState`](/dev/api/enums/jbballotstate.md)
       * `.Approved`
 
 </TabItem>

@@ -27,7 +27,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
   * `_token` is the token the terminal accepts.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBDirectory`](/api/interfaces/ijbdirectory.md) interface.
+* The function overrides a function definition from the [`IJBDirectory`](/dev/api/interfaces/ijbdirectory.md) interface.
 * The function returns the primary terminal for the project for the specified token.
 
 #### Body
@@ -44,8 +44,8 @@ function primaryTerminalOf(uint256 _projectId, address _token)
 
     _Internal references:_
 
-    * [`_primaryTerminalOf`](/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
-    * [`isTerminalOf`](/api/contracts/jbdirectory/read/isterminalof.md)
+    * [`_primaryTerminalOf`](/dev/api/contracts/jbdirectory/properties/-_primaryterminalof.md)
+    * [`isTerminalOf`](/dev/api/contracts/jbdirectory/read/isterminalof.md)
 2.  Loop through each of the project's terminals looking for one that uses the same token as the one specified. If one is found, return it.
 
     ```
@@ -58,11 +58,11 @@ function primaryTerminalOf(uint256 _projectId, address _token)
 
     _Internal references:_
 
-    * [`_terminalsOf`](/api/contracts/jbdirectory/properties/-_terminalsof.md)
+    * [`_terminalsOf`](/dev/api/contracts/jbdirectory/properties/-_terminalsof.md)
 
     _External references:_
 
-    * [`acceptsToken`](/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
+    * [`acceptsToken`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
 3.  Return an empty terminal if not found.
 
     ```

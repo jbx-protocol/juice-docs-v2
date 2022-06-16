@@ -3,9 +3,9 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Contract: [`JBProjectHandles`](/api/contracts/or-utilities/jbprojecthandles/README.md)​‌
+Contract: [`JBProjectHandles`](/dev/api/contracts/or-utilities/jbprojecthandles/README.md)​‌
 
-Interface: [`IJBProjectHandles`](/api/interfaces/ijbprojecthandles.md)
+Interface: [`IJBProjectHandles`](/dev/api/interfaces/ijbprojecthandles.md)
 
 <Tabs>
 <TabItem value="Step by step" label="Step by step">
@@ -22,7 +22,7 @@ function ensNamePartsOf(uint256 _projectId) external view override returns (stri
   * `_projectId` is the ID of the project to get the ENS name of.
 * The view function can be accessed externally by anyone.
 * The view function does not alter state on the blockchain.
-* The function overrides a function definition from the [`IJBProjectHandles`](/api/interfaces/ijbprojecthandles.md) interface.
+* The function overrides a function definition from the [`IJBProjectHandles`](/dev/api/interfaces/ijbprojecthandles.md) interface.
 * The function returns the ENS name parts of a project.
 
 #### Body
@@ -35,7 +35,7 @@ function ensNamePartsOf(uint256 _projectId) external view override returns (stri
 
     _Internal references:_
 
-    * [`_ensNamePartsOf`](/api/contracts/or-controllers/jbprojecthandles/properties/-_ensnamepartsof.md)
+    * [`_ensNamePartsOf`](/dev/api/contracts/or-controllers/jbprojecthandles/properties/-_ensnamepartsof.md)
       
 </TabItem>
 

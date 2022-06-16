@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`launchProjectFor`](/api/contracts/or-controllers/jbcontroller/write/launchfundingcyclesfor.md)
+* [`launchProjectFor`](/dev/api/contracts/or-controllers/jbcontroller/write/launchfundingcyclesfor.md)
 
 #### Definition
 
