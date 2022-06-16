@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Tools for Project Creators
 
 :::warning

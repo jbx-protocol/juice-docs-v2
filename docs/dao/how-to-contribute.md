@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-# How to Get Paid
+# How to Contribute
 
 ## A Permeable DAO
 
