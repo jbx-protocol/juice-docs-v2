@@ -20,7 +20,7 @@ Day 15 / Day 1 - Funding Cycle Updated - Saturday (19:19 UTC) <br/>
 
 Proposals can be submitted to the [Proposals Database](https://juicebox.notion.site/9d126f9148dc42ee83317d5cd74e4db4?v=50d0bbcb498044059cc0d4d83e8b13fa) at any time. Once a proposal is ready for discussion, authors can change the proposal `Status` from `Draft` to `Discussion`, which will automatically create a discussion thread in the [Juicebox DAO Discord Server](https://www.discord.gg/juicebox).
 
-*For more, see [How to Make a Governance Proposal](how-to-make-a-governance-proposal.md)*
+*For more, see [How to Make a Governance Proposal](proposals.md)*
 
 ## Step 1 - Temperature Check
 

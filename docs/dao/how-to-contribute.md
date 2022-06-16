@@ -1,4 +1,4 @@
----
+-o--
 sidebar_position: 5
 ---
 
@@ -18,7 +18,7 @@ If you’re looking for ways to get started, check the [tasks database](https://
 
 ## How can I get rewarded as a new contributor?
 
-Once you have made some contributions, the next step is to submit a proposal for a Payout Trial Period in the [proposals database](https://www.notion.so/9d126f9148dc42ee83317d5cd74e4db4). These proposals are typically payments of $300-600 for 1-3 cycles, used to gauge contributor fit with the DAO. For more information on making a proposal, look at [How to Make a Governance Proposal](how-to-make-a-governance-proposal.md).
+Once you have made some contributions, the next step is to submit a proposal for a Payout Trial Period in the [proposals database](https://www.notion.so/9d126f9148dc42ee83317d5cd74e4db4). These proposals are typically payments of $300-600 for 1-3 cycles, used to gauge contributor fit with the DAO. For more information on making a proposal, look at [How to Make a Governance Proposal](proposals.md).
 
 ## How can I advance to recurring payouts?
 
@@ -32,7 +32,7 @@ Once you have completed a Payout Trial Period, it is recommended that you fill o
 4. Read the recent message history in relevant Discord channels to familiarize yourself with the high level ongoing projects in the DAO, and details of the areas you wish to contribute to. 
 5. Reach out to active contributors in the channels related to work you’d like to help contribute. Ask what you can help on or propose a new work action.
 6. Participate in the DAO for 1-2 weeks before asking for a payout.
-7. Write a governance proposal for a Trial Payout (see recent trial payout proposals to size the payout). See *[How to Make a Governance Proposal](how-to-make-a-governance-proposal.md)*.
+7. Write a governance proposal for a Trial Payout (see recent trial payout proposals to size the payout). See *[How to Make a Governance Proposal](proposals.md)*.
 8. If you would like to continue after the initial trial payout period, write another trial payout proposal, or a recurring payout proposal. You may want to talk with other contributors first to feel out which makes sense.
 
 *Note: In order to get paid by Juicebox DAO, you will need to have a cryptocurrency wallet. You can read more about wallets [here](https://ethereum.org/en/wallets/).*

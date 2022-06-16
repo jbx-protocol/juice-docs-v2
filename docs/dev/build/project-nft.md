@@ -56,7 +56,7 @@ function setMetadataOf(uint256 _projectId, JBProjectMetadata calldata _metadata)
   requirePermission(ownerOf(_projectId), _projectId, JBOperations.SET_METADATA) { ... }
 ```
 
-The project can set a new token URI by calling [`JBProjects.setTokenUriResolver(...)`](/dev/api/contracts/jbprojects/properties/settokenuriresolver.md).
+The project can set a new token URI by calling [`JBProjects.setTokenUriResolver(...)`](/dev/api/contracts/jbprojects/write/settokenuriresolver.md).
 
 ```
 function setTokenUriResolver(IJBTokenUriResolver _newResolver) external override onlyOwner { ... }
