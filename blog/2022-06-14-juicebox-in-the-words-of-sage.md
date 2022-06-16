@@ -1,6 +1,6 @@
 ---
 slug: juicebox-in-the-words-of-sage
-title: Juicebox in the Words of sage
+title: Juicebox in the Words of Sage
 authors: [felixander]
 tags: [dao, interview, juicebox]
 ---
@@ -81,4 +81,6 @@ So many! If I had to pick a top three, hmm… Waylon Jennings, Garth Brook, Stur
 
 ### Awesome. What’s something you’re looking forward to?
 
-One thing, maybe when gas prices go down, is that my boyfriend and I are planning to take our van out to do a tour and go see some friends in Utah and Idaho and Oregon, and do a dirtbiking trip. It’ll probably go for like a month, but we have some work to do on the van first. The best thing about working for JB is that I can do these things because I work remotely.
+Oh man, well one huge thing is that we’re working on the Bannyverse and that everyone at Wagmi is killing it! Burtula is making super sick backgrounds and animations. You’re writing amazing backstories for all the bannies! Tank and Natasha are building and making the site awesome! And Mieos is doing a killer job directing everything! I can’t wait to launch the site and for everyone to meet and make all the hilarious bannies we’ve got in store!
+
+Another thing on a IRL level, maybe when gas prices go down, is that my boyfriend and I are planning to take our van out to do a tour and go see some friends in Utah and Idaho and Oregon, and do a dirtbiking trip. It’ll probably go for like a month, but we have some work to do on the van first. The best thing about working for JB is that I can do these things because I work remotely.
