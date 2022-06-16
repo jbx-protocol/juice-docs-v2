@@ -88,10 +88,10 @@ DAO members are responsible for proposing and voting on:
 - how the DAO's treasury funds are allocated.
 - changes to the protocol the DAO has agreed to steward.
 - changes to formal processes the DAO has agreed to follow.
-- criteria for membership admission and boundaries for ragequitting.
+- criteria for membership admission and boundaries for quitting.
 
 DAO membership is required by the people and projects who raise funds on the Juicebox protocol, is given to people who are currently stewarding its focus areas, and is open to people who choose to help fund its treasury.
 
 Membership is represented via the JBX token issued using the Juicebox protocol itself.
 
-Members can ragequit by burning any portion of their tokens at any time and take with them a portion of the treasury's funds.
+Members can quit by burning any portion of their tokens at any time and take with them a portion of the treasury's funds.
