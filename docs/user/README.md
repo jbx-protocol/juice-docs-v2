@@ -22,10 +22,3 @@ Juicebox treasuries can evolve over time, allowing people to launch open-ended p
 We have [Discord Town Halls](https://discord.gg) every Tuesday at 22:00 UTC. Stop by and say hello!
 
 *The Juicebox protocol is built and maintained by [Juicebox DAO](/dao/).*
-
-#### Directory
-
-- The [Docs](/) have guides, tutorials, and resources for project creators and people using the Juicebox platform.
-- The [Developer Docs](/dev/) have technical documentation, guides, and resources for developers.
-- The [Juicebox DAO Docs](/dao/) have documents and guides specific to Juicebox DAO and its community.
-- The [Blog](/blog/) has updates, observations, and thoughts about everything Juicebox.
