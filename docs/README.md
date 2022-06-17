@@ -9,6 +9,10 @@ sidebar_position: 1
 
 ![](/img/characters.png)
 
+The *Juicebox protocol* is a collection of smart contracts which allow communities to deploy highly customizable treasuries which can receive and distribute funds, issue tokens, mint NFTs, and do much more—all in powerfully customizable ways. Juicebox treasuries can evolve over time, allowing people to launch open-ended projects and to adjust constraints, extensions, and incentives over time as needed. The protocol is light enough for a group of friends, yet powerful enough for a global network of anons sharing thousands of ETH, ERC-20s, or other assets.
+
+The Juicebox protocol and ecosystem around it enable projects to raise thousands of ETH and to build robust communities around their treasuries and tokens.
+
 - **If you are interested in building a project on Juicebox**, visit [juicebox.money](https://juicebox.money). If you have questions, join the [Juicebox Discord](https://discord.gg/juicebox).
 
 - **If you are interested in becoming a Juicebox DAO member**, visit the [Juicebox project page](https://juicebox.money/#/p/juicebox). Membership is represented via the JBX project token. To get JBX, connect your wallet in the upper right-hand corner of the page. You can then exchange ETH for JBX with `Add juice`. To learn more about being a member, read the [DAO Foundation](dao/foundation.md).
