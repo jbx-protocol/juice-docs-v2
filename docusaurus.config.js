@@ -71,17 +71,17 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-         {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'docs',
-            label: 'Docs',
-          },
           {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'dev',
             label: 'Developers',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'user',
+            label: 'User Docs',
           },
 	  {
 	    type: 'docSidebar',
