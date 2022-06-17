@@ -6,10 +6,10 @@
 
 /* You can override the default Infima variables here. */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap"');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap"'); */
 
 :root {
-  --ifm-font-family-base: 'Lato';
+/*   --ifm-font-family-base: 'Lato'; */
   --ifm-color-info-contrast-background: transparent !important;
   --ifm-link-color: #18B4C7;
   --ifm-background-color: #f7f4ef;
