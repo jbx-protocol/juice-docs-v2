@@ -2,7 +2,6 @@
 slug: /
 sidebar_position: 1
 title: Juicebox Docs
-image: /img/apple.png
 ---
 
 # Intro
