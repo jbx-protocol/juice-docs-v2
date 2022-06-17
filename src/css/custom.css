@@ -5,7 +5,11 @@
  */
 
 /* You can override the default Infima variables here. */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap"');
+
 :root {
+  --ifm-font-family-base: 'Lato';
   --ifm-color-info-contrast-background: transparent !important;
   --ifm-link-color: #18B4C7;
   --ifm-background-color: #f7f4ef;
@@ -18,8 +22,8 @@
   --ifm-color-primary-lighter: #F7B238;
   --ifm-color-primary-lightest: #F8C05E;
   --ifm-code-font-size: 95%;
-  /* sidebar width - should later be made dynamic */
-  --doc-sidebar-width: 325px !important;
+  /* sidebar width - should later be made dynamic
+  --doc-sidebar-width: 325px !important; */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -34,6 +38,12 @@
   --ifm-color-primary-lightest: #FFD386;
 }
 
+article {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;
@@ -46,7 +56,7 @@
 }
 
 h1 {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
 }
 
 h4,

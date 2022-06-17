@@ -2,7 +2,7 @@
 
 ## Multisig Process
 
-The Multisig Process was ratified by JBX holders in [*JBP - 98 Ratify Multisig Process](https://snapshot.org/#/jbdao.eth/proposal/0xaff54a1eebc16329758c925ff0fbbeb73718a0d06918609b1e8bbbf9c7cada68).* Multisig members should be aware of the following stipulations:
+The Multisig Process was ratified by JBX holders in *[JBP - 98 Ratify Multisig Process](https://snapshot.org/#/jbdao.eth/proposal/0xaff54a1eebc16329758c925ff0fbbeb73718a0d06918609b1e8bbbf9c7cada68).* Multisig members should be aware of the following stipulations:
 
 1. **The Juicebox multisig and Juicebox multisig owner accounts must agree to execute the will of JBX token holders, as expressed through the Juicebox Governance Process.**
 2. Existing multisig members must agree to these principles, and prospective multisig members must agree to these principles before being added to the multisig.
