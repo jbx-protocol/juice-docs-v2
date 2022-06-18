@@ -29,7 +29,7 @@ function currentEthOverflowOf(uint256 _projectId) external view override returns
 
 #### Body
 
-1.  This temrinal does not manage overflow.
+1.  This terminal does not manage overflow.
 
     ```
     // This terminal has no overflow.
