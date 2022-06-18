@@ -49,7 +49,7 @@ function pay(
 
     ```
     // Make sure the migration hasn't already been finalized.
-    if (finalized[_projectId]) revert TERMINATED();
+    if (finalized[_projectId]) revert MIGRATION_TERMINATED();
     ```
 
     _Internal references:_
@@ -114,7 +114,7 @@ function pay(
   _metadata; // Prevents unused var compiler and natspec complaints.
 
   // Make sure the migration hasn't already been finalized.
-  if (finalized[_projectId]) revert TERMINATED();
+  if (finalized[_projectId]) revert MIGRATION_TERMINATED();
 
   // Make sure an amount is specified.
   if (_amount == 0) revert INVALID_AMOUNT();
@@ -132,7 +132,7 @@ function pay(
 
 | String                       | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
-| **`TERMINATED`** | Thrown if the project owner has already finalized exchanges. |
+| **`MIGRATION_TERMINATED`** | Thrown if the project owner has already finalized exchanges. |
 | **`INVALID_AMOUNT`** | Thrown if no exchange amount was specified. |
 | **`NO_MSG_VALUE_ALLOWED`** | Thrown if ETH was sent to a non-ETH terminal. |
 

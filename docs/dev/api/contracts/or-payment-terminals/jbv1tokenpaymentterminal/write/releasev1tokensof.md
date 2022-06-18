@@ -47,7 +47,7 @@ function releaseV1TokensOf(uint256 _v1ProjectId, address _beneficiary) external 
 
     ```
     // Make sure v1 token conversion has not yet finalized.
-    if (finalized[_v1ProjectId]) revert TERMINATED();
+    if (finalized[_v1ProjectId]) revert MIGRATION_TERMINATED();
     ```
 
     _Internal references:_
@@ -164,7 +164,7 @@ function releaseV1TokensOf(uint256 _v1ProjectId, address _beneficiary) external 
   if (msg.sender != ticketBooth.projects().ownerOf(_v1ProjectId)) revert NOT_ALLOWED();
 
   // Make sure v1 token conversion has not yet finalized.
-  if (finalized[_v1ProjectId]) revert TERMINATED();
+  if (finalized[_v1ProjectId]) revert MIGRATION_TERMINATED();
 
   // Get a reference to the v1 project's ERC20 tokens.
   ITickets _v1Token = ticketBooth.ticketsOf(_v1ProjectId);
@@ -198,7 +198,7 @@ function releaseV1TokensOf(uint256 _v1ProjectId, address _beneficiary) external 
 | String                       | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
 | **`NOT_ALLOWED`** | Thrown if an address other than the v1 project's owner is attempting to release the v1 token. |
-| **`TERMINATED`** | Thrown if the specified v1 project has already been finalized. |
+| **`MIGRATION_TERMINATED`** | Thrown if the specified v1 project has already been finalized. |
 
 </TabItem>
 

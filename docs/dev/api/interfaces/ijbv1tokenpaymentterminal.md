@@ -1,5 +1,5 @@
 
-# IJBTokenUriResolver
+# IJBV1TokenPaymentTerminal
 
 #### Code
 

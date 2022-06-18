@@ -28,17 +28,32 @@ function acceptsToken(address _token, uint256 _projectId) external view override
 
 #### Body
 
-1.  This terminal should not accept a token if it's been explicitly set by the project, and the exchanging has not yet been finalized. 
+1.  Get a reference to the v1 project that has been attached to the specified v2 project.
 
     ```
-    // Accept the token if it has been set and the exchange hasn't yet finalized.
-    return v1ProjectIdOf[_projectId] == _token && !finalized[_projectId];
+    // Get a reference to the V1 project for the provided project ID.
+    uint256 _v1ProjectId = v1ProjectIdOf[_projectId];
     ```
 
     _Internal references:_
 
     * [`v1ProjectIdOf`](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/properties/v1projectidof.md)
+
+1.  This terminal should not accept a token if it's been explicitly set by the project, and the exchanging has not yet been finalized. 
+
+    ```
+    // Accept the token if it has been set and the exchange hasn't yet finalized.
+    return address(ticketBooth.ticketsOf(_v1ProjectId)) == _token && !finalized[_v1ProjectId];
+    ```
+
+    _Internal references:_
+
     * [`finalized`](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/properties/finalized.md)
+    * [`ticketBooth`](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/properties/ticketbooth.md)
+
+    _External references:_
+    
+    * [`ticketsOf`](https://github.com/jbx-protocol/juice-contracts-v1/blob/a91b55e8d264267c338b089aa9a45b29fd8e8f13/contracts/interfaces/ITicketBooth.sol#L69)
 
 </TabItem>
 
@@ -58,8 +73,11 @@ function acceptsToken(address _token, uint256 _projectId) external view override
   _token; // Prevents unused var compiler and natspec complaints.
   _projectId; // Prevents unused var compiler and natspec complaints.
 
+  // Get a reference to the V1 project for the provided project ID.
+  uint256 _v1ProjectId = v1ProjectIdOf[_projectId];
+
   // Accept the token if it has been set and the exchange hasn't yet finalized.
-  return v1ProjectIdOf[_projectId] == _token && !finalized[_projectId];
+  return address(ticketBooth.ticketsOf(_v1ProjectId)) == _token && !finalized[_v1ProjectId];
 }
 ```
 
