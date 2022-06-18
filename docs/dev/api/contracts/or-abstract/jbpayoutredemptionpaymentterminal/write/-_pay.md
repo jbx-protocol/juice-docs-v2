@@ -35,7 +35,7 @@ function _pay(
   * `_memo` is memo to pass along to the emitted event, and passed along the the funding cycle's data source and delegate. A data source can alter the memo before emitting in the event and forwarding to the delegate.
   * `_metadata` are bytes to send along to the data source, delegate, and emitted event, if provided.
 * The function is private to this contract.
-* The function doesn't return anything.
+* The function returns the number of tokens minted for the beneficiary, as a fixed point number with 18 decimals.
 
 #### Body
 

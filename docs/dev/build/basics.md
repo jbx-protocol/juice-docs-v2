@@ -219,7 +219,7 @@ function pay(
   bool _preferClaimedTokens,
   string calldata _memo,
   bytes calldata _metadata
-) external payable virtual override isTerminalOf(_projectId) { ... }
+) external payable virtual override isTerminalOf(_projectId) returns (uint256) { ... }
 ```
 
 <details>

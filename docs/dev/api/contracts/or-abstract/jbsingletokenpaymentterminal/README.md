@@ -14,13 +14,12 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/abstract/
 
 | Name                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBPayoutRedemptionPaymentTerminal`**](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+| [**`IJBSingleTokenPaymentTerminal`**](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 
 #### Inheritance
 
 | Contract                                                                  | Description                                                                                                                              |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ReentrancyGuard`**](https://docs.openzeppelin.com/contracts/4.x/dev/api/security#ReentrancyGuard) | Contract module that helps prevent reentrant calls to a function. |
 | [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
 
 
