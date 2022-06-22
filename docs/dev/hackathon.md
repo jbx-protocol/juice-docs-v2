@@ -1,0 +1,54 @@
+---
+sidebar_position: 8
+---
+
+# Scaffold JB Hackathon
+
+Make an interesting project using [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth) and [Juicebox v2](https://github.com/jbx-protocol/juice-contracts-v2)! Open to all teams and individuals.
+
+### Overview
+
+- Hackathon starts 12:00 EDT, July 1st.
+- Submissions close at 18:00 EDT, July 3rd.
+- Over $10,000 in rewards, distributed based on a JokeDAO token vote.
+- Collaboration between [Juicebox DAO](https://juicebox.money) and [Buidl Guidl](https://buidlguidl.com/).
+
+### Criteria
+
+Make an interesting project! Criteria is subjective and up to token recipients.
+
+Our wish list:
+- A scaffold-eth starter kit for buidling a Juicebox project frontend.
+- A Juicebox protocol [extension](learn/architecture.md) starter kit.
+- A scaffold-eth NFT branch that sends funds to a Juicebox treasury. *See [tiles.art](https://tiles.art)* 
+- An all-in-one [multisig.lol](https://multisig.lol) + Juicebox interface, with full read/write.
+- A buidl-guidl-centric dapp for managing the group's Juicebox treasury.
+- A [nifty.ink](https://nifty.ink/) fork which sends funds to a Juicebox treasury.
+
+### Rules
+
+All projects must use [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth), [Juicebox v2](https://github.com), and an [open source license](https://opensource.org/licenses).
+
+### Timeline
+
+**12:00 EDT, July 1st:** the hackathon begins!
+
+**18:00 EDT, July 3rd:** [hackathon submissions](https://forms.gle/NG4wUDzAtBS3AQ5w6) close.
+
+**19:00 EDT, July 3rd:** a [JokeDAO](https://jokedao.io) vote will open. Voting tokens will be airdropped to anybody who has donated to [Buidl Guidl](https://)'s Juicebox project. Tokens will also go to JuiceboxDAO/Buidl Guidl contributors.
+
+**19:00 EDT, July 4th:** voting closes. Half of the ETH in Buidl Guidl's Juicebox treasury will be distributed to hackathon entrants--an entrant which receives 10% of votes will receive 10% of the funds!
+
+### Helpful Links
+
+- [Scaffold ETH Docs](https://docs.scaffoldeth.io/scaffold-eth/)
+- [Juicebox Docs](https://info.juicebox.money/dev)
+- The `🏰-hackathon` channel in the [Juicebox Discord server](https://discord.gg/juicebox).
+- [buidlguidl.com](https://buidlguidl.com/) and [juicebox.money](https://juicebox.money/).
+- [@buidlguidl](https://twitter.com/buidlguidl) and [@juiceboxETH](https://twitter.com/juiceboxETH) on Twitter.
+
+### About
+
+[scaffold-eth](https://github.com/scaffold-eth/scaffold-eth) provides an off-the-shelf stack for rapid prototyping on Ethereum, giving developers access to state-of-the-art tools to quickly learn and ship an Ethereum-based dApp.
+
+[Juicebox](https://juicebox.money) helps people confidently run programmable and community funded treasuries from startup to scale, openly on Ethereum.
