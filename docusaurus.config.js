@@ -10,8 +10,8 @@ const config = {
   tagline: 'Welcome to the juiciest repository of knowledge',
   url: 'https://info.juicebox.money',
   baseUrl: '/',
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'ignore',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Juicebox', // Usually your GitHub org/user name.
   projectName: 'Juicebox Protocol', // Usually your repo name.
@@ -49,82 +49,82 @@ const config = {
     locales: ['en', 'zh', 'ru', 'pt', 'es', 'tr', 'fr', 'ja'],
   },
   themeConfig: {
-      image: 'img/apple.png',
-      metadata: [{name: 'keywords', content: 'Juicebox, juicebox, crypto, cryptocurrency, ethereum, Ethereum, fundraising, treasury, treasury management, Juicebox DAO, JuiceboxDAO, juiceboxdao, juicebox dao, dao tooling, dao, daos, erc20, nft, decentralized, funding, web3, Web3'}],
-      docs: {
-        sidebar: {
-          hideable: true,
-          autoCollapseCategories: true,
+    image: 'img/apple.png',
+    metadata: [{ name: 'keywords', content: 'Juicebox, juicebox, crypto, cryptocurrency, ethereum, Ethereum, fundraising, treasury, treasury management, Juicebox DAO, JuiceboxDAO, juiceboxdao, juicebox dao, dao tooling, dao, daos, erc20, nft, decentralized, funding, web3, Web3' }],
+    docs: {
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
+    },
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: true,
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 5,
+    },
+    navbar: {
+      logo: {
+        alt: 'Juicebox Logo',
+        src: 'img/logo.svg',
+      },
+      items: [
+        {
+          type: 'docSidebar',
+          position: 'left',
+          sidebarId: 'dev',
+          label: 'Developers',
         },
-      },
-      colorMode: {
-        defaultMode: 'dark',
-        respectPrefersColorScheme: true,
-      },
-      tableOfContents: {
-        minHeadingLevel: 2,
-        maxHeadingLevel: 5,
-      },
-      navbar: {
-        logo: {
-          alt: 'Juicebox Logo',
-          src: 'img/logo.svg',
+        {
+          type: 'docSidebar',
+          position: 'left',
+          sidebarId: 'user',
+          label: 'User Docs',
         },
-        items: [
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'dev',
-            label: 'Developers',
-          },
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'user',
-            label: 'User Docs',
-          },
-	  {
-	    type: 'docSidebar',
-	    position: 'left',
-	    sidebarId: 'dao',
-	    label: 'Juicebox DAO',
-	  },
+        {
+          type: 'docSidebar',
+          position: 'left',
+          sidebarId: 'dao',
+          label: 'Juicebox DAO',
+        },
         /*{
             type: 'localeDropdown',
             position: 'right',
           },*/
-          { to: '/blog', label: 'Blog', position: 'left' },
-          {
-            href: 'https://discord.gg/juicebox',
-            label: 'Discord',
-            position: 'right',
-          },
-          {
-            href: 'https://juicebox.money/',
-            label: 'juicebox.money',
-            position: 'right',
-          },
-        ],
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        defaultLanguage: 'solidity',
-        additionalLanguages: ['solidity'],
-      },
-      metadata: [
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          name: "google-site-verification",
-          content: "0Jp7zERBL5i76DiM-bODvBGgbjuVMEQGSuwOchP_ZnE",
+          href: 'https://discord.gg/juicebox',
+          label: 'Discord',
+          position: 'right',
+        },
+        {
+          href: 'https://juicebox.money/',
+          label: 'juicebox.money',
+          position: 'right',
         },
       ],
     },
-    scripts: [
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+      defaultLanguage: 'solidity',
+      additionalLanguages: ['solidity'],
+    },
+    metadata: [
       {
-        src: "https://energetic-unwavering.juicebox.money/script.js",
-        defer: true,
-        "data-site": "UMYOVGDG",
+        name: "google-site-verification",
+        content: "0Jp7zERBL5i76DiM-bODvBGgbjuVMEQGSuwOchP_ZnE",
       },
     ],
+  },
+  scripts: [
+    {
+      src: "https://energetic-unwavering.juicebox.money/script.js",
+      defer: true,
+      "data-site": "UMYOVGDG",
+    },
+  ],
 };
 module.exports = config;
