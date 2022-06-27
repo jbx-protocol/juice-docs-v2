@@ -75,7 +75,7 @@ const config = {
           type: 'docSidebar',
           position: 'left',
           sidebarId: 'dev',
-          label: 'Developers',
+          label: 'Technical Docs',
         },
         {
           type: 'docSidebar',
