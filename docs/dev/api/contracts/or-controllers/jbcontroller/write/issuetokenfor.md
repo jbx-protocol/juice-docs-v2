@@ -49,6 +49,14 @@ function issueFor(
     return tokenStore.issueFor(_projectId, _name, _symbol);
     ```
 
+    _Internal references:_
+
+    * [`tokenStore`](/dev/api/contracts/or-controllers/jbcontroller/properties/tokenstore.md)
+
+    _External references:_
+
+    * [`issueFor`](/dev/api/contracts/jbtokenstore/write/issuefor.md)
+    
 </TabItem>
 
 <TabItem value="Code" label="Code">
