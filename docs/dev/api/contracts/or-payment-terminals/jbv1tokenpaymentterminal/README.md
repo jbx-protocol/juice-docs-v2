@@ -23,24 +23,21 @@ Ethereum rinkeby: [``](https://rinkeby.etherscan.io/address/)
 
 ```
 /**
-  @param _operatorStore A contract storing operator assignments.
   @param _projects A contract which mints ERC-721's that represent project ownership and transfers.
   @param _directory A contract storing directories of terminals and controllers for each project.
   @param _ticketBooth The V1 contract where tokens are stored.
 */
 constructor(
-  IJBOperatorStore _operatorStore,
   IJBProjects _projects,
   IJBDirectory _directory,
   ITicketBooth _ticketBooth
-) JBOperatable(_operatorStore) {
+) {
   projects = _projects;
   directory = _directory;
   ticketBooth = _ticketBooth;
 }
 ```
 
-* `_operatorStore` is an [`IJBOperatorStore`](/dev/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
 * `_projects` is an [`IJBProjects`](/dev/api/interfaces/ijbprojects.md) contract which mints ERC-721's that represent project ownership and transfers.
 * `_directory` is an [`IJBDirectory`](/dev/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
 * `_ticketBooth` is an [`ITicketBooth`](https://github.com/jbx-protocol/juice-contracts-v1/blob/main/contracts/interfaces/ITicketBooth.sol) contract that stores project tokens in the v1 Juicebox protocol.
