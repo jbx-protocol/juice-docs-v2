@@ -22,7 +22,7 @@ function launchProjectFor(
 ) external override returns (uint256 projectId) { ... }
 ```
 
-Check out the [Treasury design](/dev/build/treasury-design.md) page for more info on how to build projects treasuries to various specifications.
+Check out the [Treasury design](/dev/build/programmable-treasury.md) page for more info on how to build projects treasuries to various specifications.
 
 <details>
 

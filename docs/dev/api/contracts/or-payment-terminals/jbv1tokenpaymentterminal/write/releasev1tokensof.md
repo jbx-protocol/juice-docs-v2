@@ -202,6 +202,14 @@ function releaseV1TokensOf(uint256 _v1ProjectId, address _beneficiary) external 
 
 </TabItem>
 
+<TabItem value="Events" label="Events">
+
+| Name                          | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`ReleaseV1Tokens`**](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/events/releasev1tokens.md)                                         | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed beneficiary</code></li><li><code>uint256 unclaimedBalance</code></li><li><code>uint256 claimedBalance</code></li><li><code>address caller</code></li></ul>        |
+
+</TabItem>
+
 <TabItem value="Bug bounty" label="Bug bounty">
 
 | Category          | Description                                                                                                                            | Reward |

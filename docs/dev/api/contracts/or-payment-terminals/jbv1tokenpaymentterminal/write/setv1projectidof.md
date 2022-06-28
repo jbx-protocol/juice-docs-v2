@@ -108,6 +108,14 @@ function setV1ProjectId(uint256 _projectId, uint256 _v1ProjectId) external overr
 
 </TabItem>
 
+<TabItem value="Events" label="Events">
+
+| Name                          | Data                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`SetV1ProjectId`**](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/events/setv1projectid.md)                                         | <ul><li><code>uint256 indexed projectId</code></li><li><code>uint256 indexed v1ProjectId</code></li><li><code>address caller</code></li></ul>        |
+
+</TabItem>
+
 <TabItem value="Bug bounty" label="Bug bounty">
 
 | Category          | Description                                                                                                                            | Reward |

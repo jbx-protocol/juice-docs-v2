@@ -80,7 +80,7 @@ function setEnsNamePartsFor(uint256 _projectId, string[] memory _parts)
 
     _Event references:_
 
-    * [`SetEnsNameParts`](/dev/api/contracts/or-utilities/jbprojecthandles/properties/setensnameparts.md)
+    * [`SetEnsNameParts`](/dev/api/contracts/or-utilities/jbprojecthandles/events/setensnameparts.md)
 
 
 </TabItem>
