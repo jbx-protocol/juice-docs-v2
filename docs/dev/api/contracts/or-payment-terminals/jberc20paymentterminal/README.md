@@ -10,7 +10,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/JBERC20Pa
 
 Ethereum mainnet: _Not yet deployed_
 
-#### Inheritance
+#### Interfaces
 
 | Contract                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |

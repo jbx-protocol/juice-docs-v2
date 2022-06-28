@@ -12,12 +12,19 @@ Ethereum mainnet: [``](https://etherscan.io/address/)
 
 Ethereum rinkeby: [``](https://rinkeby.etherscan.io/address/)
 
-#### Inheritance
+#### Interfaces
 
 | Contract                                             | Description                                                                                                                              |
 | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`IJBV1TokenPaymentTerminal`**](/dev/api/interfaces/ijbv1tokenpaymentterminal.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 | [**`IJBPaymentTerminal`**](/dev/api/interfaces/ijbpaymentterminal.md) | A standard for a contract where project can receive payments through. |
+
+#### Inheritance
+
+| Contract                                                                  | Description                                                                                                                              |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
+
 
 #### Constructor
 

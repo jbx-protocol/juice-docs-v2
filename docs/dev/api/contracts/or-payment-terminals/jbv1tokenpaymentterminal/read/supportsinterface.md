@@ -40,7 +40,7 @@ function supportsInterface(bytes4 _interfaceId)
     return
       _interfaceId == type(IJBPaymentTerminal).interfaceId ||
       _interfaceId == type(IJBV1TokenPaymentTerminal).interfaceId ||
-      _interfaceId == type(IJBOperatable).interfaceId;
+      super.supportsInterface(_interfaceId);
     ```
 
 </TabItem>
@@ -61,7 +61,7 @@ function supportsInterface(bytes4 _interfaceId) external pure override returns (
   return
     _interfaceId == type(IJBPaymentTerminal).interfaceId ||
     _interfaceId == type(IJBV1TokenPaymentTerminal).interfaceId ||
-    _interfaceId == type(IJBOperatable).interfaceId;
+    super.supportsInterface(_interfaceId);
 }
 ```
 
