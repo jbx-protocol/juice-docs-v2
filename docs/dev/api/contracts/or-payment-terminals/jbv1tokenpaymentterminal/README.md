@@ -8,9 +8,9 @@ https://github.com/jbx-protocol/juice-v1-token-payment-terminal/blob/main/contra
 
 #### Addresses
 
-Ethereum mainnet: [``](https://etherscan.io/address/)
+Ethereum mainnet: [`0x349384f3ccc2045443b94b20d0af71edaf7fea36`](https://etherscan.io/address/0x349384f3ccc2045443b94b20d0af71edaf7fea36)
 
-Ethereum rinkeby: [``](https://rinkeby.etherscan.io/address/)
+Ethereum rinkeby: [`0x88465c0a24a2e3ac55b7176beb07b3d56ec5cde1`](https://rinkeby.etherscan.io/address/0x88465c0a24a2e3ac55b7176beb07b3d56ec5cde1)
 
 #### Interfaces
 
