@@ -48,7 +48,7 @@ function _pay(
 
     _Internal references:_
 
-    * [`v1ProjectIdOf`](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/properties/v1projectsidof.md)
+    * [`v1ProjectIdOf`](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/properties/v1projectidof.md)
 
 2.  Make sure there is a v1 project ID set.
 

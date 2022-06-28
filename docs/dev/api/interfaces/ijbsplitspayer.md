@@ -40,12 +40,17 @@ interface IJBSplitsPayer is IERC165 {
     address caller
   );
 
-  event DistributeToSplit(
+  event DistributeToSplitGroup(
     uint256 indexed projectId,
     uint256 indexed domain,
     uint256 indexed group,
+    address caller
+  );
+
+  event DistributeToSplit(
     JBSplit split,
     uint256 amount,
+    address defaultBeneficiary,
     address caller
   );
 
