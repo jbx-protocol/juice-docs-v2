@@ -31,8 +31,8 @@ sidebar_position: 2
 #### Governance
 [Snapshot](https://vote.juicebox.money/#/jbdao.eth) <br/>
 [Snapshot Delegation](https://vote.juicebox.money/#/delegate/jbdao.eth) <br/>
-[Governance Process](dao/governance-process.md) <br/>
-[Juicebox DAO Foundation](dao/foundation.md) <br/>
+[Governance Process](/dao/process.md) <br/>
+[Juicebox DAO Foundation](/dao/foundation.md) <br/>
 [Governance Calendar](https://juicebox.notion.site/09936865803248e38c82adbc3ed32137?v=2acc75360e214cd8aaf9a4ef13e35a0e) <br/>
 
 #### Token Addresses
