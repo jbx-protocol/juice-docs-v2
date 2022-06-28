@@ -52,7 +52,7 @@ function _payToSplits(
     
     _Internal references:_
 
-    * [`_payTo`](/dev/api/contracts/or-utilities/jbetherc20projectpayer/write/-_payto.md)
+    * [`_payTo`](/dev/api/contracts/or-utilities/jbetherc20splitspayer/write/-_payto.md)
 
     _External references:_
 

@@ -56,7 +56,7 @@ function setV1ProjectId(uint256 _projectId, uint256 _v1ProjectId) external overr
 
     _Internal references:_
 
-    * [`v1ProjectIdOf`](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/properties/v1projectsidof.md)
+    * [`v1ProjectIdOf`](/dev/api/contracts/or-payment-terminals/jbv1tokenpaymentterminal/properties/v1projectidof.md)
 
 3.  Emit a `SetV1ProjectId` event with the relevant parameters.
 
