@@ -190,7 +190,7 @@ The protocol charges a <a href="#jbx-membership-fee">JBX membership fee</a> on f
 #### Mint tokens
 <p>
   By default, a project starts with 0 tokens and mints them when its treasury receives contributions.<br/>
-  A project can mint and distribute tokens on demand if its current funding cycle is configured to allow minting.<br>
+  A project can mint and distribute tokens on demand if its current funding cycle is configured to allow minting.<br/>
   By default, project tokens are not ERC-20s and thus not compatible with standard market protocols like Uniswap. At any time, you can issue ERC-20s that your token holders can claim. This is optional.
 </p>
 
