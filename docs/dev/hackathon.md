@@ -11,7 +11,7 @@ Make an interesting project using [scaffold-eth](https://github.com/scaffold-eth
 ### Overview
 
 - Hackathon starts 12:00 EDT, July 1st.
-- Submissions close at 18:00 EDT, July 3rd.
+- Submissions close at 18:00 EDT, July 7th.
 - Over $10,000 in rewards, distributed based on a JokeDAO token vote.
 - Collaboration between [Juicebox DAO](https://juicebox.money), [Buidl Guidl](https://buidlguidl.com/), and [JokeDAO](http://jokedao.io/).
 
@@ -35,11 +35,11 @@ All projects must use [scaffold-eth](https://github.com/scaffold-eth/scaffold-et
 
 **12:00 EDT, July 1st:** the hackathon begins!
 
-**18:00 EDT, July 3rd:** [hackathon submissions](https://forms.gle/NG4wUDzAtBS3AQ5w6) close.
+**18:00 EDT, July 7th:** [hackathon submissions](https://forms.gle/NG4wUDzAtBS3AQ5w6) close.
 
-**19:00 EDT, July 3rd:** a [JokeDAO](https://jokedao.io) vote will open. Voting tokens will be airdropped to anybody who has donated to [Buidl Guidl](https://)'s Juicebox project. Voting tokens will also be distributed to active Buidl Guidl, JuiceboxDAO, and JokeDAO contributors.
+**19:00 EDT, July 7th:** a [JokeDAO](https://jokedao.io) vote will open. Voting tokens will be airdropped to anybody who has donated to [Buidl Guidl](https://)'s Juicebox project. Voting tokens will also be distributed to active Buidl Guidl, JuiceboxDAO, and JokeDAO contributors.
 
-**19:00 EDT, July 4th:** voting closes. Half of the ETH in Buidl Guidl's Juicebox treasury will be distributed to hackathon entrants--an entrant which receives 10% of votes will receive 10% of the funds!
+**19:00 EDT, July 8th:** voting closes. Half of the ETH in Buidl Guidl's Juicebox treasury will be distributed to hackathon entrants--an entrant which receives 10% of votes will receive 10% of the funds!
 
 ### Helpful Links
 
