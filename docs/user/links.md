@@ -34,6 +34,7 @@ sidebar_position: 2
 [Governance Process](/dao/process.md) <br/>
 [Juicebox DAO Foundation](/dao/foundation.md) <br/>
 [Governance Calendar](https://juicebox.notion.site/09936865803248e38c82adbc3ed32137?v=2acc75360e214cd8aaf9a4ef13e35a0e) <br/>
+[Juicebox DAO Accounting](https://drive.google.com/drive/folders/1JsMOMXz6Z684DsTsLiJu3mo7jNAwjYwQ)
 
 #### Token Addresses
 
