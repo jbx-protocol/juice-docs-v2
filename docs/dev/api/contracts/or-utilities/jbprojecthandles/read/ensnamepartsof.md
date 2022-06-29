@@ -35,7 +35,7 @@ function ensNamePartsOf(uint256 _projectId) external view override returns (stri
 
     _Internal references:_
 
-    * [`_ensNamePartsOf`](/dev/api/contracts/or-controllers/jbprojecthandles/properties/-_ensnamepartsof.md)
+    * [`_ensNamePartsOf`](/dev/api/contracts/or-utilities/jbprojecthandles/properties/-_ensnamepartsof.md)
       
 </TabItem>
 

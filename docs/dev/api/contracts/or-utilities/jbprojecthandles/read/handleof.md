@@ -38,7 +38,7 @@ function handleOf(uint256 _projectId) external view override returns (string mem
 
     _Internal references:_
 
-    * [`_ensNamePartsOf`](/dev/api/contracts/or-controllers/jbprojecthandles/properties/-_ensnamepartsof.md)
+    * [`_ensNamePartsOf`](/dev/api/contracts/or-utilities/jbprojecthandles/properties/-_ensnamepartsof.md)
 
 2.  If there are no name parts, there's no handle.
 
