@@ -29,7 +29,7 @@ Our wish list:
 
 ### Rules
 
-All projects must use [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth), [Juicebox v2](https://github.com/jbx-protocol/juice-docs-v2), and an [open source license](https://opensource.org/licenses).
+All projects must use [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth), [Juicebox v2](https://github.com/jbx-protocol/juice-contracts-v2), and an [open source license](https://opensource.org/licenses).
 
 ### Timeline
 
