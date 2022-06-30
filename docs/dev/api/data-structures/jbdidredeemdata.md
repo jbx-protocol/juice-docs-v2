@@ -33,7 +33,7 @@ struct JBDidRedeemData {
 * `projectId` is the ID of the project with which the redeemed tokens are associated.
 * `currentFundingCycleConfiguration` is the configuration of the funding cycle during which the redemption is being made.
 * `projectTokenCount` is the number of project tokens being redeemed.
-* `reclaimedAmount` is the amount reclaimed from the treasury. Includes the token being reclaimed, the value, the number of decimals included, and the currency of the amount.
+* `reclaimedAmount` is the [`JBTokenAmount`](/dev/api/data-structures/jbtokenamount.md) reclaimed from the treasury. Includes the token being reclaimed, the value, the number of decimals included, and the currency of the amount.
 * `beneficiary` is the address to which the reclaimed amount will be sent.
 * `memo` is the memo that is being emitted alongside the redemption.
 * `metadata` is extra data to send to the delegate.

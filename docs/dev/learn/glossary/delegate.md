@@ -14,5 +14,6 @@
 * The [`IJBPayDelegate`](/dev/api/interfaces/ijbpaydelegate.md)'s `didPay(...)` hook is triggered in [`JBPayoutRedemptionPaymentTerminal._pay(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md), and the [`IJBRedemptionDelegate`](/dev/api/interfaces/ijbredemptiondelegate.md)'s `didRedeem(...)` hook is triggered in [`JBPayoutRedemptionPaymentTerminal.redeemTokensOf(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md).
 * The redemption delegate hook is called before funds are dispersed.
 
-[Get started building pay delegates](/dev/build/treasury-extensions/pay-delegate.md). <br>
+[Get started building pay delegates](/dev/build/treasury-extensions/pay-delegate.md).
+
 [Get started building redemption delegates](/dev/build/treasury-extensions/redemption-delegate.md).
