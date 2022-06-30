@@ -20,4 +20,4 @@ sidebar_position: 2
 <img src="/img/project-guide/funding0.png" width="60%" style={{display: "block", margin: "auto"}} />
 <p style={{textAlign: "center"}}><i>Funding cycle information on <a href='https://juicebox.money'>juicebox.money</a></i></p>
 <img src="/img/project-guide/funding1.png" width="60%" style={{display: "block", margin: "auto"}} />
-<p style={{textAlign: "center"}}><i>A project with ETH payout amounts on <a href='https://juicebox.money'>juicebox.money</a></i></p><br/>
+<p style={{textAlign: "center"}}><i>A project with ETH payout amounts on <a href='https://juicebox.money'>juicebox.money</a></i></p>
