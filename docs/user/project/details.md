@@ -8,6 +8,10 @@ sidebar_position: 1
 
 **Project Details** are displayed on your [juicebox.money](https://juicebox.money) project page. This section includes your project's title, description, logo, important links, and pay button customization. These details can be updated over time by the project owner.
 
+- You can update these details later.
+- You can use emojis in all of these fields.
+- This information is stored on [IPFS](https://ipfs.io/), using [Pinata](https://www.pinata.cloud/).
+
 ## Options
 
 |Field|Description|
@@ -20,12 +24,6 @@ sidebar_position: 1
 |**Discord link**|<p>A Discord server invite, which will be displayed as a link on your project page. Project creators often link to an official project Discord server. If unnecessary, this field can be left blank.</p>|
 |**Pay button text**|<p>The pay button text on your project page. The default is `Pay`, and `Donate` is a popular alternative.</p>|
 |**Pay disclosure**|<p>The pay disclosure will be shown to people before they pay your project. Project creators often use this to provide context or to display an agreement.</p>|
-
-## Notes
-
-- You can update these details later.
-- You can use emojis in all of these fields.
-- This information is stored on [IPFS](https://ipfs.io/), using [Pinata](https://www.pinata.cloud/).
 
 ## Examples
 
