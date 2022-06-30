@@ -56,9 +56,9 @@ function handleOf(uint256 _projectId) external view override returns (string mem
 
     _Internal references:_
 
-    * [`textResolver`](/dev/api/contracts/or-controllers/jbprojecthandles/properties/textresolver.md)
-    * [`TEXT_KEY`](/dev/api/contracts/or-controllers/jbprojecthandles/properties/textkey.md)
-    * [`_namehash`](/dev/api/contracts/or-controllers/jbprojecthandles/read/-_namehash.md)
+    * [`textResolver`](/dev/api/contracts/or-utilities/jbprojecthandles/properties/textresolver.md)
+    * [`TEXT_KEY`](/dev/api/contracts/or-utilities/jbprojecthandles/properties/textkey.md)
+    * [`_namehash`](/dev/api/contracts/or-utilities/jbprojecthandles/read/-_namehash.md)
 
     _External references:_
 
@@ -86,7 +86,7 @@ function handleOf(uint256 _projectId) external view override returns (string mem
 
     _Internal references:_
 
-    * [`_formatHandle`](/dev/api/contracts/or-controllers/jbprojecthandles/write/_formathandle.md)
+    * [`_formatHandle`](/dev/api/contracts/or-utilities/jbprojecthandles/read/-_formathandle.md)
       
 </TabItem>
 

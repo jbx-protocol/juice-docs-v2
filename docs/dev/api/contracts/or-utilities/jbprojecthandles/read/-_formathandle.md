@@ -1,4 +1,4 @@
-# _formatHandleOf
+# _formatHandle
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
