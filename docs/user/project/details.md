@@ -30,4 +30,4 @@ sidebar_position: 1
 <img src="/img/project-guide/details0.png" width="100%" style={{display: "block", margin: "auto"}} />
 <p style={{textAlign: "center"}}><i>Project page on <a href='https://juicebox.money'>juicebox.money</a></i></p><br/>
 <img src="/img/project-guide/details1.png" width="80%" style={{display: "block", margin: "auto"}} />
-<p style={{textAlign: "center"}}><i>Donation modal on <a href='https://juicebox.money'>juicebox.money</a></i></p>
+<p style={{textAlign: "center"}}><i>Payment page on <a href='https://juicebox.money'>juicebox.money</a></i></p>
