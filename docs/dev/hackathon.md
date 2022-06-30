@@ -43,10 +43,10 @@ All projects must use [scaffold-eth](https://github.com/scaffold-eth/scaffold-et
 
 ### Helpful Links
 
-- Looking for teammates? Join the [Telegram](https://t.me/+3tlE2ae0475hMDcx).
+- Looking for teammates? Join the [Telegram](https://t.me/+3tlE2ae0475hMDcx). Also check the `🏰-hackathon` channel in the [Juicebox Discord server](https://discord.gg/juicebox).
 - [Scaffold ETH Docs](https://docs.scaffoldeth.io/scaffold-eth/)
 - [Juicebox Docs](https://info.juicebox.money/dev). The [Learn](https://info.juicebox.money/dev/learn/overview) and [Build](https://info.juicebox.money/dev/build/getting-started) sections are great starting places.
-- The `🏰-hackathon` channel in the [Juicebox Discord server](https://discord.gg/juicebox).
+- [Juice SDK](https://github.com/jbx-protocol/juice-sdk), a JavaScript SDK for the Juicebox Protocol.
 - [buidlguidl.com](https://buidlguidl.com/) and [juicebox.money](https://juicebox.money/).
 - [@buidlguidl](https://twitter.com/buidlguidl) and [@juiceboxETH](https://twitter.com/juiceboxETH) on Twitter.
 
