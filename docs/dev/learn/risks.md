@@ -138,3 +138,8 @@ If a project enters a funding cycle with a different reserved rate than the prec
 #### Price oracle risk
 
 The protocol uses price oracles to normalize prices throughout the its standard operations. These oracles are smart contract mechanisms external to the core Juicebox protocol. Projects using multiple currencies for certain functionality bare the risk of these external oracle systems misreporting price values. 
+
+#### Large number risk
+
+Under certain circumstances, token holders attempting to burn token amounts greater than (2^256 / 2) - 1, or 57896044618658097711785492504343953926634992332820282019728792003956564819968, will have their transactions reverted due to a arithmetic underflow.
+

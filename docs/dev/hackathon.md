@@ -21,7 +21,7 @@ Make an interesting project! Criteria is subjective and up to token recipients.
 
 Our wish list:
 - A scaffold-eth starter kit for buidling a Juicebox project frontend.
-- A Juicebox protocol [extension](learn/architecture.md) starter kit.
+- A Juicebox protocol [extension](build/treasury-extensions) starter kit. See [this repo](https://github.com/jbx-protocol/juice-extensions-collection).
 - A scaffold-eth NFT branch that sends funds to a Juicebox treasury. *See [tiles.art](https://tiles.art)* 
 - An all-in-one [multisig.lol](https://multisig.lol) + Juicebox interface, with full read/write.
 - A buidl-guidl-centric dapp for managing the group's Juicebox treasury.
