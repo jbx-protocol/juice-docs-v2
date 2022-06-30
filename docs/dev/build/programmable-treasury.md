@@ -47,6 +47,10 @@ Here are some examples, starting with the simplest version:
 
     ```javascript
     {
+      global: {
+        allowSetTerminals: false,
+        allowSetController: false,
+      },
       reservedRate: 0,
       redemptionRate: 0,
       ballotRedemptionRate: 0,
@@ -57,8 +61,6 @@ Here are some examples, starting with the simplest version:
       allowMinting: false, 
       allowTerminalMigration: false, 
       allowControllerMigration: false, 
-      allowSetTerminals: false,
-      allowSetController: false,
       holdFees: false, 
       useTotalOverflowForRedemptions: false,
       useDataSourceForPay: false, 

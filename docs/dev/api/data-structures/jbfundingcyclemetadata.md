@@ -47,7 +47,7 @@ struct JBFundingCycleMetadata {
 }
 ```
 
-* `global` is data used globally in non-migratable ecosystem contracts.
+* `global` is [`JBGlobalFundingCycleMetadata`](/dev/api/data-structures/jbglobalfundingcyclemetadata.md) used globally in non-migratable ecosystem contracts.
 * `reservedRate` is the reserved rate of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_RESERVED_RATE`](/dev/api/libraries/jbconstants.md).
 * `redemptionRate` is the redemption rate of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_REDEMPTION_RATE`](/dev/api/libraries/jbconstants.md).
 * `ballotRedemptionRate` is the redemption rate to use during an active ballot of the funding cycle. This number is a percentage calculated out of [`JBConstants.MAX_REDEMPTION_RATE`](/dev/api/libraries/jbconstants.md).
