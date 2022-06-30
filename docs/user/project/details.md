@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Overview
 
-**Project Details** are displayed on your [juicebox.money](https://juicebox.money) project page. **Project Details** includes your project's title, description, logo, important links, and pay button customization. These details can be updated over time by the project owner.
+**Project Details** are displayed on your [juicebox.money](https://juicebox.money) project page. This section includes your project's title, description, logo, important links, and pay button customization. These details can be updated over time by the project owner.
 
 ## Options
 
