@@ -48,6 +48,7 @@ All projects must use [scaffold-eth](https://github.com/scaffold-eth/scaffold-et
 - [Juicebox Docs](https://info.juicebox.money/dev). The [Learn](https://info.juicebox.money/dev/learn/overview) and [Build](https://info.juicebox.money/dev/build/getting-started) sections are great starting places.
 - [Juice SDK](https://github.com/jbx-protocol/juice-sdk), a JavaScript SDK for the Juicebox Protocol.
 - [buidlguidl.com](https://buidlguidl.com/) and [juicebox.money](https://juicebox.money/).
+- [Buidl Guidl Juicebox Project](https://juicebox.money/#/v2/p/44)!
 - [@buidlguidl](https://twitter.com/buidlguidl) and [@juiceboxETH](https://twitter.com/juiceboxETH) on Twitter.
 
 ### About
