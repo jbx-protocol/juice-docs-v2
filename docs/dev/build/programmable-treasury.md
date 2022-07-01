@@ -33,6 +33,14 @@ This transaction launches a project. It does so by:
 
 Here are some examples, starting with the simplest version:
 
+*   For `_projectMetadata` send the following [`JBProjectMetadata`](/dev/api/data-structures/jbprojectmetadata) values:
+
+    ```javascript
+    {
+      content: "QmbH96jj8RTJgC9526RdsFs5dPvcsRfiRuD9797JXzcvbw",
+      domain: 0
+    }
+    ```
 *   For `_data` send the following [`JBFundingCycleData`](/dev/api/data-structures/jbfundingcycledata.md) values:
 
     ```javascript
@@ -68,6 +76,7 @@ Here are some examples, starting with the simplest version:
       dataSource: 0x0000000000000000000000000000000000000000, 
     }
     ```
+* For `_mustStartAtOrAfter` send current timestamp.
 * For `_groupedSplits` send an empty array.
 * For `_fundAccessConstraints` send an empty array.
 * For `_terminals` send an array only including the contract address of the [`JBETHPaymentTerminal`](/dev/api/contracts/or-terminals/jbethpaymentterminal).
@@ -83,6 +92,7 @@ Under these conditions:
 * Nothing fancy will happen outside of the default token redemption behavior since the configured `_metadata.useDataSourceForRedeem` is `false`.
 * None of the funds in the treasury can be distributed to the project owner since no `_fundAccessConstraints` were specified. This means all funds in the treasury are considered overflow. Since the configured `_metadata.redemptionRate` sent is 0 (which represents 100%), all outstanding tokens can be redeemed/burned to claim a proportional part of the overflow. This lets everyone who contributed funds reclaim their ETH if desired.
 * A new funding cycle with an updated configuration can be triggered at any time by the project owner since the configured `_data.duration` of 0 and `_data.ballot` of `0x0000000000000000000000000000000000000000`. This lets the project owner capture an arbitrary amount of what is in the treasury at any given point by sending a reconfiguration transaction with `_fundAccessConstraints` specified.
+* Your project will have basic project info with the IPFS file on `ipfs://QmbH96jj8RTJgC9526RdsFs5dPvcsRfiRuD9797JXzcvbw` (Juicebox Frontend use domain `0` to locate project metadata through IPFS, such as project name, logo, description, twitter handle and discord link)
 
 #### Fund access constraints
 
