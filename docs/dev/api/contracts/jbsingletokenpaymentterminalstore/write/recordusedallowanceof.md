@@ -79,7 +79,7 @@ function recordUsedAllowanceOf(
 
     * [`controllerOf`](/dev/api/contracts/jbdirectory/properties/controllerof.md)
     * [`overflowAllowanceOf`](/dev/api/contracts/or-controllers/jbcontroller/read/overflowallowanceof.md)
-    * [`token`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
+    * [`token`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
 4.  Make sure there's enough allowance left to accomodate the new used amount.
 
     ```

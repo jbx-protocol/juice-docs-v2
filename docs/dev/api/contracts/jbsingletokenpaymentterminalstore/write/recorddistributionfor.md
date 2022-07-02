@@ -91,7 +91,7 @@ function recordDistributionFor(
     _External references:_
 
     * [`distributionLimitOf`](/dev/api/contracts/or-controllers/jbcontroller/read/distributionlimitof.md)
-    * [`token`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
+    * [`token`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
 
 5.  Make sure the new total amount distributed will be at most the distribution limit.
 

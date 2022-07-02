@@ -38,7 +38,7 @@ struct JBTokenAmount {
 
 The `msg.sender` to the delegate will be the payment terminal that facilitated the payment. 
 
-In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md)'s and [`JBERC20PaymentTerminal`](/dev/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)'s, the pay delegate hook gets called *after* the project's tokens have been minted and distributed. [View the docs](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md). 
+In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md)'s and [`JBERC20PaymentTerminal`](/dev/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)'s, the pay delegate hook gets called *after* the project's tokens have been minted and distributed. [View the docs](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/-_pay.md). 
 
 Make sure to only allow trusted contracts to access the `didPay(...)` transaction.
 

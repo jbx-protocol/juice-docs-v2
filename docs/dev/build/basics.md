@@ -207,7 +207,7 @@ function controllerOf(uint256 _projectId) external view override returns (IJBCon
 
 </details>
 
-Once a project has been created, it can begin accepting funds from anyone through any terminal it has added. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), ETH can be sent to the project by calling its [`JBETHPaymentTerminal.pay(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md) transaction.
+Once a project has been created, it can begin accepting funds from anyone through any terminal it has added. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), ETH can be sent to the project by calling its [`JBETHPaymentTerminal.pay(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md) transaction.
 
 ```
 function pay(
@@ -226,7 +226,7 @@ function pay(
 
 <summary>View treasury balance</summary>
 
-In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md)'s and [`JBERC20PaymentTerminal`](/dev/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)'s, a project's treasury balance can be found in its store contract. For example, in the [`JBSingleTokenPaymentTerminalStore`](/dev/api/contracts/jbsingletokenpaymentterminalstore/README.md), the balance can be found using [`JBSingleTokenPaymentTerminalStore.balanceOf(...)`](/dev/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md).
+In payment terminals based on the [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal), such as [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal/README.md)'s and [`JBERC20PaymentTerminal`](/dev/api/contracts/or-payment-terminals/jberc20paymentterminal/README.md)'s, a project's treasury balance can be found in its store contract. For example, in the [`JBSingleTokenPaymentTerminalStore`](/dev/api/contracts/jbsingletokenpaymentterminalstore/README.md), the balance can be found using [`JBSingleTokenPaymentTerminalStore.balanceOf(...)`](/dev/api/contracts/jbsingletokenpaymentterminalstore/properties/balanceof.md).
 
 ```
 function balanceOf(IJBPaymentTerminal _terminal, uint256 _projectId)
@@ -300,7 +300,7 @@ function totalOutstandingTokensOf(uint256 _projectId, uint256 _reservedRate)
 ```
 </details>
 
-Anyone can distribute a project's funds from a terminal up to its current funding cycle's distribution limit to its preprogrammed payout splits at any time. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), funds can be distributed by calling [`JBETHPaymentTerminal.distributePayoutsOf(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md).
+Anyone can distribute a project's funds from a terminal up to its current funding cycle's distribution limit to its preprogrammed payout splits at any time. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), funds can be distributed by calling [`JBETHPaymentTerminal.distributePayoutsOf(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md).
 
 ```
 function distributePayoutsOf(
@@ -328,7 +328,7 @@ function usedDistributionLimitOf(
 
 </details>
 
-A project's owner can distribute additional funds from its treasury's overflow for each of its terminals up until its preconfigured allowance. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), funds can be distributed by calling its [`JBETHPaymentTerminal.useAllowanceOf(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/useallowanceof.md) transaction. 
+A project's owner can distribute additional funds from its treasury's overflow for each of its terminals up until its preconfigured allowance. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), funds can be distributed by calling its [`JBETHPaymentTerminal.useAllowanceOf(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/useallowanceof.md) transaction. 
 
 ```
 function useAllowanceOf(
@@ -429,7 +429,7 @@ function distributeReservedTokensOf(uint256 _projectId, string memory _memo)
   returns (uint256) { ... }
 ```
 
-Anyone who holds a project's tokens can redeem them at one of the project's terminals for a proportional share of the project's overflow. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), ETH can be reclaimed by redeeming project tokens in its [`JBETHPaymentTerminal.redeemTokensOf(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md) transaction. The overflow amount is the terminal's balance minus the current funding cycle's distribution limit, and can be set to include the project's balance across all terminals.
+Anyone who holds a project's tokens can redeem them at one of the project's terminals for a proportional share of the project's overflow. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), ETH can be reclaimed by redeeming project tokens in its [`JBETHPaymentTerminal.redeemTokensOf(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md) transaction. The overflow amount is the terminal's balance minus the current funding cycle's distribution limit, and can be set to include the project's balance across all terminals.
 
 Redeeming tokens allows a project's token holders to exit the community at any time with their share of the funds.
 
@@ -481,7 +481,7 @@ function currentBallotStateOf(uint256 _projectId) external view override returns
 
 </details>
 
-At any point, anyone can inject funds into a project's treasury via one of its terminals. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), someone can add ETH to a treasury by calling the terminal's [`JBETHPaymentTerminal.addToBalanceOf(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md) transaction.
+At any point, anyone can inject funds into a project's treasury via one of its terminals. For example, if the project has added the [`JBETHPaymentTerminal`](/dev/api/contracts/or-payment-terminals/jbethpaymentterminal), someone can add ETH to a treasury by calling the terminal's [`JBETHPaymentTerminal.addToBalanceOf(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md) transaction.
 
 ```
 function addToBalanceOf(

@@ -62,7 +62,7 @@ function primaryTerminalOf(uint256 _projectId, address _token)
 
     _External references:_
 
-    * [`acceptsToken`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
+    * [`acceptsToken`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
 3.  Return an empty terminal if not found.
 
     ```

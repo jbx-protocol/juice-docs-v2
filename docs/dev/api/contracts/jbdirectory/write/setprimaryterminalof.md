@@ -50,7 +50,7 @@ function setPrimaryTerminalOf(
 
     _External references:_
 
-    * [`acceptsToken`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
+    * [`acceptsToken`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/read/acceptstoken.md)
 2.  Make sure the project's current funding cycle is set to allow setting terminals, or the request to set the terminals is coming from the project's current controller.
 
     ```

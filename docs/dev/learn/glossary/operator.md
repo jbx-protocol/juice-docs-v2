@@ -27,10 +27,10 @@ An address can set operators for its project with [`JBOperatorStore.setOperator(
 * [`JBController.mintTokensOf(...)`](/dev/api/contracts/or-controllers/jbcontroller/write/minttokensof.md)
 * [`JBController.issueTokenFor(...)`](/dev/api/contracts/or-controllers/jbcontroller/write/issuetokenfor.md)
 * [`JBController.changeTokenOf(...)`](/dev/api/contracts/or-controllers/jbcontroller/write/changetokenof.md)
-* [`JBController.migrate(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/migrate.md)
-* [`JBPayoutRedemptionPaymentTerminal.useAllowanceOf(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/useallowanceof.md)
-* [`JBPayoutRedemptionPaymentTerminal.migrate(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/migrate.md)
-* [`JBPayoutRedemptionPaymentTerminal.processFees(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/processfees.md)
+* [`JBController.migrate(...)`](/dev/api/contracts/or-controllers/jbcontroller/write/migrate.md)
+* [`JBPayoutRedemptionPaymentTerminal.useAllowanceOf(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/useallowanceof.md)
+* [`JBPayoutRedemptionPaymentTerminal.migrate(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/migrate.md)
+* [`JBPayoutRedemptionPaymentTerminal.processFees(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/processfees.md)
 * [`JBProjects.setMetadataOf(...)`](/dev/api/contracts/jbprojects/write/setmetadataof.md)
 * [`JBSplitsStore.set(...)`](/dev/api/contracts/jbsplitsstore/write/set.md)
 * [`JBTokenStore.shouldRequireClaimingFor(...)`](/dev/api/contracts/jbtokenstore/write/shouldrequireclaimingfor.md)
@@ -41,6 +41,6 @@ An address can set operators for its project with [`JBOperatorStore.setOperator(
 The following transactions can be used by token holders or operator addresses explicitly allowed by the address that owns the tokens. If the tokens change hands, the operators must be set again by the new holder.
 
 * [`JBController.burnTokensOf(...)`](/dev/api/contracts/or-controllers/jbcontroller/write/burntokensof.md)
-* [`JBPayoutRedemptionPaymentTerminal.redeemTokensOf(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md)
+* [`JBPayoutRedemptionPaymentTerminal.redeemTokensOf(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/redeemtokensof.md)
 * [`JBTokenStore.claimFor(...)`](/dev/api/contracts/jbtokenstore/write/claimfor.md)
 * [`JBTokenStore.transferFrom(...)`](/dev/api/contracts/jbtokenstore/write/transferfrom.md)

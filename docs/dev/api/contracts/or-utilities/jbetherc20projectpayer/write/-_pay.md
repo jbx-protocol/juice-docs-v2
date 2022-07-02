@@ -71,7 +71,7 @@ function _pay(
 
     _External references:_
 
-    * [`decimalsForToken`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
+    * [`decimalsForToken`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
 
 4.  If the token being paid is an ERC20, approve the terminal to spend the amount of tokens from this terminal.
 
@@ -120,7 +120,7 @@ function _pay(
 
     _External references:_
 
-    * [`pay`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
+    * [`pay`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/pay.md)
     
 </TabItem>
 

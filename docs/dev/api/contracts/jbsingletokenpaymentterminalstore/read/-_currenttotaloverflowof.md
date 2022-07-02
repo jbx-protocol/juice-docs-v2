@@ -58,7 +58,7 @@ function _currentTotalOverflowOf(
 
     _External references:_
 
-    * [`currentEthOverflowOf`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/read/currentethoverflowof.md)
+    * [`currentEthOverflowOf`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/read/currentethoverflowof.md)
 4.  If the total overflow is to be returned in a currency other than ETH, make the conversion while maintaining 18 decimals of fidelity.
 
     ```

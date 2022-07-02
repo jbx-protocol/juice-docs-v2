@@ -111,9 +111,9 @@ function recordRedemptionFor(
 
             _External references:_
 
-            * [`token`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
-            * [`decimals`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
-            * [`currency`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+            * [`token`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/properties/token.md)
+            * [`decimals`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
+            * [`currency`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
 
         2.  Get a reference to the amount of overflow the project has. Either the project's total overflow or the overflow local to the msg.sender's balance will be used depending on how the project's funding cycle is configured. 
 

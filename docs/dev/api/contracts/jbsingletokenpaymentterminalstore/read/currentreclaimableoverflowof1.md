@@ -74,8 +74,8 @@ function currentReclaimableOverflowOf(
 
     _External references:_
 
-    * [`decimals`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
-    * [`currency`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
+    * [`decimals`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/properties/decimals.md)
+    * [`currency`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/properties/currency.md)
 
 3.  If there's no overflow, there's nothing reclaimable.
 

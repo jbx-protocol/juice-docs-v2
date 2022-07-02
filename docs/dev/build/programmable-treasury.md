@@ -112,7 +112,7 @@ Here's what happens when basic `_fundAccessConstraints` are specified by sending
 ```
 
 * During each funding cycle with this configuration, the project can receive up to 4.2 ETH worth of tokens from the [`JBETHPaymentTerminal`](/dev/api/contracts/or-terminals/jbethpaymentterminal), since the configured `distributionLimitCurrency` is 1 ([which represents ETH](/dev/api/libraries/jbcurrencies.md)) and the `distributionLimit` is `4200000000000000000`. (The raw value sent has 18 decimal places).
-* Anyone can call the [`JBPayoutRedemptionPaymentTerminal.distributePayoutsOf(...)`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md) transaction to send up to 4.2 ETH per funding cycle to the preconfigured splits. Since no splits were specified, all distributed funds go to the project owner.
+* Anyone can call the [`JBPayoutRedemptionPaymentTerminal.distributePayoutsOf(...)`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/distributepayoutsof.md) transaction to send up to 4.2 ETH per funding cycle to the preconfigured splits. Since no splits were specified, all distributed funds go to the project owner.
 * With each new funding cycle, another 4.2 ETH can be distributed.
 * The project cannot distribute any funds in excess of the distribution limit since there is no `overflowAllowance`.
 
@@ -132,7 +132,7 @@ Here's what happens when using an overflow allowance instead:
 ```
 
 * Until a new reconfiguration transaction is sent, the project owner can send up to 690 USD worth of ETH tokens from the [`JBETHPaymentTerminal`](/dev/api/contracts/or-terminals/jbethpaymentterminal) to any address it chooses since the configured `overflowAllowanceCurrency` is 2 ([which represents USD](/dev/api/libraries/jbcurrencies.md)) and the `overflowAllowance` is `690000000000000000000` (the raw value sent has 18 decimal places).
-* Meanwhile, all of the project's funds in the [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/README.md) are considered overflow since there is no distribution limit.
+* Meanwhile, all of the project's funds in the [`JBPayoutRedemptionPaymentTerminal`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/README.md) are considered overflow since there is no distribution limit.
 * Rolled-over funding cycles (i.e. cycles with the same configuration) do not refresh the allowance.
 * An overflow allowance is a free allowance the project can use without additional pre-programmed stipulations.
 

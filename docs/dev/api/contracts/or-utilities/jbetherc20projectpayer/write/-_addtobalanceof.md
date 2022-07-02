@@ -65,7 +65,7 @@ function _addToBalanceOf(
 
     _External references:_
 
-    * [`decimalsForToken`](/dev/api/contracts/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
+    * [`decimalsForToken`](/dev/api/contracts/or-payment-terminals/or-abstract/jbsingletokenpaymentterminal/read/decimalsfortoken.md)
 
 4.  If the token being paid is an ERC20, approve the terminal to spend the amount of tokens from this terminal.
 
@@ -104,7 +104,7 @@ function _addToBalanceOf(
 
     _External references:_
 
-    * [`addToBalanceOf`](/dev/api/contracts/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
+    * [`addToBalanceOf`](/dev/api/contracts/or-payment-terminals/or-abstract/jbpayoutredemptionpaymentterminal/write/addtobalanceof.md)
     
 </TabItem>
 
