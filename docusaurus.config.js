@@ -46,7 +46,7 @@ const config = {
   ],
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh', 'ru', 'pt', 'es', 'tr', 'fr', 'ja'],
+    locales: ['en', 'zh'],
   },
   themeConfig: {
     image: 'img/apple.png',
@@ -75,33 +75,28 @@ const config = {
           type: 'docSidebar',
           position: 'left',
           sidebarId: 'dev',
-          label: 'Technical Docs',
+          label: 'Developers',
         },
         {
           type: 'docSidebar',
           position: 'left',
           sidebarId: 'user',
-          label: 'User Docs',
+          label: 'Users',
         },
         {
           type: 'docSidebar',
           position: 'left',
           sidebarId: 'dao',
-          label: 'Juicebox DAO',
+          label: 'DAO',
         },
-        /*{
+        {
             type: 'localeDropdown',
             position: 'right',
-          },*/
+        },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://discord.gg/juicebox',
-          label: 'Discord',
-          position: 'right',
-        },
-        {
           href: 'https://juicebox.money/',
-          label: 'juicebox.money',
+          label: 'Juicebox',
           position: 'right',
         },
       ],
