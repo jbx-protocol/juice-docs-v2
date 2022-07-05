@@ -141,5 +141,5 @@ The protocol uses price oracles to normalize prices throughout the its standard 
 
 #### Large number risk
 
-Under certain circumstances, token holders attempting to burn token amounts greater than (2^256 / 2) - 1, or 57896044618658097711785492504343953926634992332820282019728792003956564819968, will have their transactions reverted due to a arithmetic underflow.
+Under certain circumstances, token holders attempting to burn token amounts greater than (2^256 / 2) - 1, or 57896044618658097711785492504343953926634992332820282019728792003956564819968, will have their transactions reverted due to an arithmetic underflow.
 
