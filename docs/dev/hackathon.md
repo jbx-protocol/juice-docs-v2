@@ -38,6 +38,10 @@ All projects must use [scaffold-eth](https://github.com/scaffold-eth/scaffold-et
 
 **12:00 EDT, July 1st:** the hackathon begins!
 
+**12:00 EDT, July 5th:** Hackathon Twitter spaces with [@nnnnicholas](https://twitter.com/nnnnicholas) and [@austingriffith](https://twitter.com/austingriffith).
+
+**13:00 EDT, July 6th:** live build on YouTube with [@nnnnicholas](https://twitter.com/nnnnicholas) and [@austingriffith](https://twitter.com/austingriffith).
+
 **18:00 EDT, July 14th:** [hackathon submissions](https://forms.gle/NG4wUDzAtBS3AQ5w6) close.
 
 **19:00 EDT, July 14th:** a [JokeDAO](https://jokedao.io) vote will open. Voting tokens will be airdropped to anybody who has donated to [Buidl Guidl](https://)'s Juicebox project. Voting tokens will also be distributed to active Buidl Guidl, JuiceboxDAO, and JokeDAO contributors.
