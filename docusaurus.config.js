@@ -51,6 +51,12 @@ const config = {
   themeConfig: {
     image: 'img/apple.png',
     metadata: [{ name: 'keywords', content: 'Juicebox, juicebox, crypto, cryptocurrency, ethereum, Ethereum, fundraising, treasury, treasury management, Juicebox DAO, JuiceboxDAO, juiceboxdao, juicebox dao, dao tooling, dao, daos, erc20, nft, decentralized, funding, web3, Web3' }],
+    announcementBar: {
+      id: 'hackathon',
+      content: 'The Scaffold-eth + Juicebox Hackathon has been extended! <b><a href="/dev/hackathon/">Get started.</a></b>',
+      backgroundColor: '#18B4C7',
+      textColor: '#FEFDFB',
+    },
     docs: {
       sidebar: {
         hideable: true,
