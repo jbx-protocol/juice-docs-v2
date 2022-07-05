@@ -90,7 +90,7 @@ Ownership of each project on the Juicebox protocol belongs to the address posses
 
      #### Custom treasury extensions
     
-     If a project's funding cycles have no data source, delegate, split allocator, or ballot constracts attached, the consequences of each interaction with the protocol are predictable, consistent, and specified within these docs.
+     If a project's funding cycles have no data source, delegate, split allocator, or ballot contracts attached, the consequences of each interaction with the protocol are predictable, consistent, and specified within these docs.
 
      If a project has attached a data source, delegate, split allocator, or ballot contract to a funding cycle, the protocol will access information from them and call functionality within them at specific moments during the execution of various transactions within the regular operation of the protocol.
      
