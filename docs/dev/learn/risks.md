@@ -114,7 +114,7 @@ Ownership of each project on the Juicebox protocol belongs to the address posses
 
      If setting the controller is allowed, projects can bring new rules according to which it'll operate.
      
-     🟢 <strong>Used productively</strong> this can be used to creating totally custom treasury behavior.<br/>
+     🟢 <strong>Used productively</strong> this can be used to create totally custom treasury behavior.<br/>
 
      🔴 <strong>Used maliciously</strong> this can be used to cut off a community of token holders from their treasury, create arbitrary unwanted and extractive behavior, or introduce smart contract bugs. Do not interact with a projects using an untrusted controller.<br/><br/>
 
