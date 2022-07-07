@@ -87,7 +87,7 @@ h5 {
 
 .clean-list li{
     list-style-position: inside;
-    border-bottom: 1px solid rgba(245, 163, 18, 0.4);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
     padding-bottom: 10px;
 }
 
