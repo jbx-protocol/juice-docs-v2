@@ -28,14 +28,12 @@ From here, you can build the following:
 
 [Basics](basics.md) - Interact with the protocol's basic functionality. Useful for building front-ends.  
 
-[Project NFT](project-nft.md) - Build for Juicebox projects. 
+[Pay a project](utilities/project-payer.md) - Deploy or inherit from a contract that makes it easy to forward funds to Juicebox projects.
 
-[Programmable treasury](programmable-treasury.md) - Get familiar with the configurable properties available when launching a project. 
+[Split payments](utilities/splits-payer.md) - Deploy or inherit from a contract that makes it easy to forward funds to groups of splits whose members are either addresses, Juicebox projects, or arbitrary contracts that inherit from [`IJBSplitAllocator`](treasury-extensions/split-allocator.md).
 
-[Treasury extensions](treasury-extensions) - Create custom contractual rules defining what happens when a project receives funds, and under what conditions funds can leave the treasury during a funding cycle.
+[Program a treasury](programmable-treasury.md) - Get familiar with the configurable properties available when launching a project. 
 
-[Project payer](utilities/project-payer.md) - Deploy or inherit from a contract that makes it easy to forward funds to Juicebox projects.
+[Program project permissions](project-nft.md) - Build custom Juicebox Project NFT logic to create your own project access controls.
 
-[Splits payer](utilities/splits-payer.md) - Deploy or inherit from a contract that makes it easy to forward funds to groups of splits whose members are either addresses, Juicebox projects, or arbitrary contracts that inherit from [`IJBSplitAllocator`](treasury-extensions/split-allocator.md).
-
-
+[Program treasury extensions](treasury-extensions) - Create custom contractual rules defining what happens when a project receives funds, and under what conditions funds can leave the treasury during a funding cycle.
