@@ -31,7 +31,7 @@ const config = {
         blog: {
           showReadingTime: true,
           // editUrl: 'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
-          blogSidebarTitle: 'All posts',
+          blogSidebarTitle: 'Articles',
           blogSidebarCount: 'ALL',
           feedOptions: {
             type: 'all',
