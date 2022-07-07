@@ -28,7 +28,7 @@ Ethereum rinkeby: [`0xEDB2db4b82A4D4956C3B4aA474F7ddf3Ac73c5AB`](https://rinkeby
 
 | Function                                           | Definition                                                                                                                                                                                                                                 |
 | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**`permissionsOf`**](/dev/api/contracts/jboperatorstore/properties/permissionsof.md) | <p><strong>Params</strong></p><ul><li><code>address _operator</code></li><li><code>address _account</code></li><li><code>uint256 _domain</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 permissions</code></li></ul> |
+| [**`permissionsOf`**](/dev/api/contracts/jboperatorstore/properties/permissionsof.md) | <p><strong>Params</strong></p><ul><li><code>address _operator</code></li><li><code>address _account</code></li><li><code>uint256 _domain</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256</code></li></ul> |
 
 #### Read
 

@@ -47,7 +47,7 @@ constructor(IJBDirectory _directory) JBControllerUtility(_directory) {}
 
 | Function                                     | Definition                                                                                                                                                    |
 | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`latestConfigurationOf`**](/dev/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 latestConfiguration</code></li></ul> |
+| [**`latestConfigurationOf`**](/dev/api/contracts/jbfundingcyclestore/properties/latestconfigurationof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256</code></li></ul> |
 
 #### Read
 

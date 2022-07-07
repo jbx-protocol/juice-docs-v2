@@ -14,71 +14,87 @@ Ethereum mainnet: _Not yet deployed_
 
 #### Interfaces
 
-| Contract                                             | Description                                                                                                                              |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBPayoutRedemptionPaymentTerminal`**](/dev/api/interfaces/ijbpayoutredemptionpaymentterminal.md) | Generic terminal managing all inflows and outflows of funds into the protocol ecosystem. |
+| Name                                                 | Description                                                                                                                              |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`IJBNFTRewardDataSource`**](/dev/api/interfaces/ijbnftrewarddatasource.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+
+#### Inheritance
+
+| Contract                                                                     | Description                                                                                                           |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| [**`JBOperatable`**](/dev/api/contracts/or-abstract/jboperatable/)                           | Includes convenience functionality for checking a message sender's permissions before executing certain transactions. |
+| [**`ERC721Votes`**](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc721#ERC721Votes) | A checkpointable standard definition for non-fungible tokens (NFTs).                                                                  |
+| [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable) | Includes convenience functionality for specifying an address that owns the contract, with modifiers that only allow access by the owner. |
 
 #### Constructor
 
 ```
 /**
-  @param _token The token that this terminal manages.
-  @param _currency The currency that this terminal's token adheres to for price feeds.
-  @param _baseWeightCurrency The currency to base token issuance on.
-  @param _payoutSplitsGroup The group that denotes payout splits from this terminal in the splits store.
-  @param _operatorStore A contract storing operator assignments.
-  @param _projects A contract which mints ERC-721's that represent project ownership and transfers.
-  @param _directory A contract storing directories of terminals and controllers for each project.
-  @param _splitsStore A contract that stores splits for each project.
-  @param _prices A contract that exposes price feeds.
-  @param _store A contract that stores the terminal's data.
+  @param _projectId The ID of the project for which this NFT should be minted in response to payments made. 
+  @param _directory The directory of terminals and controllers for projects.
+  @param _name The name of the token.
+  @param _symbol The symbol that the token should be represented by.
+  @param _tokenUriResolver A contract responsible for resolving the token URI for each token ID.
+  @param _baseUri The token's base URI, to be used if a URI resolver is not provided. 
+  @param _contractUri A URI where contract metadata can be found. 
+  @param __expectedCaller The address that should be calling the data source.
   @param _owner The address that will own this contract.
 */
 constructor(
-  IERC20Metadata _token,
-  uint256 _currency,
-  uint256 _baseWeightCurrency,
-  uint256 _payoutSplitsGroup,
-  IJBOperatorStore _operatorStore,
-  IJBProjects _projects,
+  uint256 _projectId,
   IJBDirectory _directory,
-  IJBSplitsStore _splitsStore,
-  IJBPrices _prices,
-  IJBSingleTokenPaymentTerminalStore _store,
+  string memory _name,
+  string memory _symbol,
+  IJBTokenUriResolver _tokenUriResolver,
+  string memory _baseUri,
+  string memory _contractUri,
+  address __expectedCaller,
   address _owner
-)
-  JBPayoutRedemptionPaymentTerminal(
-    address(_token),
-    _token.decimals(),
-    _currency,
-    _baseWeightCurrency,
-    _payoutSplitsGroup,
-    _operatorStore,
-    _projects,
-    _directory,
-    _splitsStore,
-    _prices,
-    _store,
-    _owner
-  )
-{}
+) ERC721Rari(_name, _symbol) {
+  projectId = _projectId;
+  directory = _directory;
+  baseUri = _baseUri;
+  tokenUriResolver = _tokenUriResolver;
+  contractUri = _contractUri;
+  _expectedCaller = __expectedCaller;
+
+  // Transfer the ownership to the specified address.
+  if (_owner != address(0)) _transferOwnership(_owner);
+}
 ```
 
-* `_token` is the ERC20 token that this terminal manages.
-* `_currency` is the currency that this terminal's token adheres to for price feeds. From [`JBCurrencies`](/dev/api/libraries/jbcurrencies.md).
-* `_baseWeightCurrency` is the currency to base token issuance on. From [`JBCurrencies`](/dev/api/libraries/jbcurrencies.md).
-* `_payoutSplitsGroup` is the group that denotes payout splits from this terminal in the splits store. From [`JBSplitGroups`](/dev/api/libraries/jbsplitsgroups.md).
-* `_operatorStore` is an [`IJBOperatorStore`](/dev/api/interfaces/ijboperatorstore.md) contract storing operator assignments.
-* `_projects` is an [`IJBProjects`](/dev/api/interfaces/ijbprojects.md) contract which mints ERC-721's that represent project ownership and transfers.
-* `_directory` is an [`IJBDirectory`](/dev/api/interfaces/ijbdirectory.md) contract storing directories of terminals and controllers for each project.
-* `_splitsStore` is an [`IJBSplitsStore`](/dev/api/interfaces/ijbsplitsstore/) contract that stores splits for each project.
-* `_prices` is an [`IJBPrices`](/dev/api/interfaces/ijbprices.md) contract that exposes price feeds.
-* `_store` is a contract that stores the terminal's data.
+* `_projectId` is the ID of the project for which this NFT should be minted in response to payments made. 
+* `_directory` is the directory of terminals and controllers for projects.
+* `_name` is the name of the token.
+* `_symbol` is the symbol that the token should be represented by.
+* `_tokenUriResolver` is a contract responsible for resolving the token URI for each token ID.
+* `_baseUri` is the token's base URI, to be used if a URI resolver is not provided. 
+* `_contractUri` is a URI where contract metadata can be found. 
+* `__expectedCaller` is the address that should be calling the data source.
 * `_owner` is the address that will own this contract.
+
+#### Events
+
+| Name                               | Data                                                                                                                                                                                    |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`SetContractUri`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/events/setcontracturi.md) | <ul><li><code>string indexed contractUri</code></li><li><code>address caller</code></li></ul> |
+| [**`SetBaseUri`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/events/setbaseuri.md) | <ul><li><code>string indexed baseUri</code></li><li><code>address caller</code></li></ul> |
+| [**`SetTokenUriResolver`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/events/settokenuriresolver.md) | <ul><li><code>IToken721UriResolver indexed _newResolver</code></li><li><code>address caller</code></li></ul> |
+
+#### Properties
+
+| Function                                                          | Definition                                                                                                                                                                                                |
+| ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`projectId`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/properties/projectid.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256</code></li></ul> |
+| [**`directory`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/properties/directory.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBDirectory](/dev/api/contracts/interfaces/ijbdirectory.md)</code></li></ul> |
+| [**`baseUri`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/properties/baseuri.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
+| [**`contractUri`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/properties/contracturi.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
+| [**`tokenUriResolver`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/properties/tokenuriresolver.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>IToken721UriResolver</code></li></ul> |
 
 #### Write
 
-| Function                                                  | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**`_transferFrom`**](/dev/api/contracts/or-payment-terminals/jberc20paymentterminal/write/-_transferfrom.md) | <p><strong>Traits</strong></p><ul><li><code>internal</code></li></ul> <p><strong>Params</strong></p><ul><li><code>address _from</code></li><li><code>address payable _to</code></li><li><code>uint256 _amount</code></li></ul>                                                                                                                                                                                                                  |
-| [**`_beforeTransferTo`**](/dev/api/contracts/or-payment-terminals/jberc20paymentterminal/write/-_beforetransferto.md) | <p><strong>Traits</strong></p><ul><li><code>internal</code></li><li><code>virtual</code></li></ul> <p><strong>Params</strong></p><ul><li><code>address _to</code></li><li><code>uint256 _amount</code></li></ul>                                                                                                                                                                                                                  |
+| Function                                 | Definition                                                                                                                                                                                   |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**`setContractUri`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/write/setcontracturi.md) | <p><strong>Params</strong></p><ul><li><code>string calldata _contractMetadataUri</code></li></ul> |
+| [**`setTokenUriResolver`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/write/settokenuriresolver.md) | <p><strong>Params</strong></p><ul><li><code>[IJBTokenUriResolver](/dev/api/contracts/interfaces/ijbtokenuriresolver.md) _newResolver</code></li></ul> |
+| [**`setBaseUri`**](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/write/setbaseuri.md) | <p><strong>Params</strong></p><ul><li><code>string calldata _baseUri</code></li></ul> |

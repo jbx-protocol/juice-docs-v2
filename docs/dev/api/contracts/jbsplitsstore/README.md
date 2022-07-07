@@ -57,8 +57,8 @@ constructor(
 
 | Function                                   | Definition                                                                         |
 | ------------------------------------------ | ---------------------------------------------------------------------------------- |
-| [**`projects`**](/dev/api/contracts/jbsplitsstore/properties/projects.md)   | <p><strong>Returns</strong></p><ul><li><code>IJBProjects projects</code></li></ul> |
-| [**`directory`**](/dev/api/contracts/jbsplitsstore/properties/directory.md) | <p><strong>Returns</strong></p><ul><li><code>IJBPaymentTerminal terminal</code></li></ul> |
+| [**`projects`**](/dev/api/contracts/jbsplitsstore/properties/projects.md)   | <p><strong>Returns</strong></p><ul><li><code>IJBProjects</code></li></ul> |
+| [**`directory`**](/dev/api/contracts/jbsplitsstore/properties/directory.md) | <p><strong>Returns</strong></p><ul><li><code>IJBPaymentTerminal</code></li></ul> |
 
 #### Read
 

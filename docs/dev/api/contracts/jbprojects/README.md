@@ -50,9 +50,9 @@ constructor(IJBOperatorStore _operatorStore)
 
 | Name                                                                                                        | Definition                                                                                                                                                                 |
 | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`count`**](/dev/api/contracts/jbprojects/properties/count.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>uint256 count</code></li></ul>                                                                                                |
-| [**`metadataContentOf`**](/dev/api/contracts/jbprojects/properties/metadatacontentof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>uint256 _domain</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string content</code></li></ul>                    |
-| [**`tokenUriResolver`**](/dev/api/contracts/jbprojects/properties/tokenuriresolver.md) | <p><strong>Returns</strong></p><ul><li><code>[IJBTokenUriResolver](/dev/api/interfaces/ijbtokenuriresolver.md) tokenUriResolver</code></li></ul>                    |
+| [**`count`**](/dev/api/contracts/jbprojects/properties/count.md)                                                                          | <p><strong>Returns</strong></p><ul><li><code>uint256</code></li></ul>                                                                                                |
+| [**`metadataContentOf`**](/dev/api/contracts/jbprojects/properties/metadatacontentof.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _projectId</code></li><li><code>uint256 _domain</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string</code></li></ul>                    |
+| [**`tokenUriResolver`**](/dev/api/contracts/jbprojects/properties/tokenuriresolver.md) | <p><strong>Returns</strong></p><ul><li><code>[IJBTokenUriResolver](/dev/api/interfaces/ijbtokenuriresolver.md)</code></li></ul>                    |
 
 #### Read
 
