@@ -81,7 +81,6 @@ h5 {
 }
 
 .navbar__title {
-  font-weight: normal;
   font-family: monospace;
   font-size: 120%;
 }
@@ -89,5 +88,5 @@ h5 {
 .clean-list li{
     list-style-position: inside;
     border-bottom: 1px solid rgba(254, 186, 174, 0.3);
-    padding-bottom: 7px;
+    padding-bottom: 10px;
 }
