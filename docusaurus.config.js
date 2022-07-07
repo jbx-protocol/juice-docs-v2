@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   organizationName: 'Juicebox', // Usually your GitHub org/user name.
   projectName: 'Juicebox Protocol', // Usually your repo name.
 
@@ -51,15 +51,8 @@ const config = {
   themeConfig: {
     image: 'img/apple.png',
     metadata: [{ name: 'keywords', content: 'Juicebox, juicebox, crypto, cryptocurrency, ethereum, Ethereum, fundraising, treasury, treasury management, Juicebox DAO, JuiceboxDAO, juiceboxdao, juicebox dao, dao tooling, dao, daos, erc20, nft, decentralized, funding, web3, Web3' }],
-    announcementBar: {
-      id: 'hackathon',
-      content: 'The Scaffold-eth + Juicebox Hackathon has been extended! <b><a href="/dev/hackathon/">Get started.</a></b>',
-      backgroundColor: '#18B4C7',
-      textColor: '#FEFDFB',
-    },
     docs: {
       sidebar: {
-        hideable: true,
         autoCollapseCategories: true,
       },
     },
@@ -72,9 +65,10 @@ const config = {
       maxHeadingLevel: 5,
     },
     navbar: {
+      title: 'Juicebox Docs',
       logo: {
         alt: 'Juicebox Logo',
-        src: 'img/logo.svg',
+        src: 'img/favicon.svg',
       },
       items: [
         {

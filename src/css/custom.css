@@ -7,10 +7,9 @@
 /* You can override the default Infima variables here. */
 
 :root {
-  --ifm-color-info-contrast-background: transparent !important;
   --ifm-link-color: #18B4C7;
-  --ifm-background-color: #f7f4ef;
-  --ifm-background-surface-color: #F1EEE9;
+  --ifm-background-color: #FEFDFB;
+  --ifm-background-surface-color: #F5F4EF;
   --ifm-color-primary: #F5A312;
   --ifm-color-primary-dark: #E3950A;
   --ifm-color-primary-darker: #D68C09;
@@ -19,6 +18,8 @@
   --ifm-color-primary-lighter: #F7B238;
   --ifm-color-primary-lightest: #F8C05E;
   --ifm-code-font-size: 95%;
+
+  --ifm-color-info-contrast-background: transparent !important;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -31,6 +32,22 @@
   --ifm-color-primary-light: #FFBE4A;
   --ifm-color-primary-lighter: #FFC359;
   --ifm-color-primary-lightest: #FFD386;
+
+  background-image: radial-gradient(40% 50% at 50% 50%, rgba(50, 200, 219, 0.1) 0%, rgba(27, 27, 29, 0) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+[data-theme='light'] {
+  background-image: radial-gradient(50% 50% at 50% 50%, rgba(254, 186, 174, 0.3) 0%, rgba(254, 253, 251, 0) 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 article {
@@ -61,4 +78,10 @@ h5 {
 
 .menu__link {
   overflow: auto;
+}
+
+.navbar__title {
+  font-weight: normal;
+  font-family: monospace;
+  font-size: 120%;
 }
