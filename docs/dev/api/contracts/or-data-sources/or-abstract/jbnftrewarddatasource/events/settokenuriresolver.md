@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setTokenUriResolver`]((/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/write/settokenuriresolver.md)
+* [`setTokenUriResolver`](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/write/settokenuriresolver.md)
 
 #### Definition
 
