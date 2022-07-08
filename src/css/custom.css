@@ -32,18 +32,6 @@
   --ifm-color-primary-light: #FFBE4A;
   --ifm-color-primary-lighter: #FFC359;
   --ifm-color-primary-lightest: #FFD386;
-
-  background-image: radial-gradient(40% 50% at 50% 50%, rgba(50, 200, 219, 0.1) 0%, rgba(27, 27, 29, 0) 100%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-[data-theme='light'] {
-  background-image: radial-gradient(50% 50% at 50% 50%, rgba(254, 186, 174, 0.2) 0%, rgba(254, 253, 251, 0) 100%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 html {
