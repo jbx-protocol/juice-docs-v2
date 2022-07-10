@@ -110,3 +110,4 @@ contract NFTSplitsPayer is ERC721, JBETHERC20SplitsPayer {
     _payTo(_splitsWithBeneficiary, JBTokens.ETH, msg.value, 18, msg.sender);
   }
 }
+```

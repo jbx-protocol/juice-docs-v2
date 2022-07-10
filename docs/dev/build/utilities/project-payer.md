@@ -99,3 +99,4 @@ contract NFTProjectPayer is ERC721, JBETHERC20ProjectPayer {
     // _addToBalance(_projectId, JBTokens.ETH, msg.value, 18, "I love buffalos", bytes(0));
   }
 }
+```
