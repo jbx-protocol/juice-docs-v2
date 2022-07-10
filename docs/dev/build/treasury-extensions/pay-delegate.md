@@ -46,7 +46,7 @@ Make sure to only allow trusted contracts to access the `didPay(...)` transactio
 
 New delegate contracts should be deployed independently. Once deployed, its address can be returned from a data source hook. See [how to build a data source](/dev/build/treasury-extensions/data-source.md) for more.
 
-#### Example
+#### Examples
 
 ```
 import '@openzeppelin/contracts/token/ERC721/ERC721.sol';

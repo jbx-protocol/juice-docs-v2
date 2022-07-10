@@ -102,7 +102,7 @@ The `redeemParams(...)` function can also revert if it's presented with any cond
 New data source contracts should be deployed independently. Once deployed, its address can be configured into a project's funding cycle metadata to take effect while that funding cycle is active. Additionally, the metadata's `useDataSourceForPay` and/or `useDataSourceForRedeem` should be set to `true` if the respective data source hook should be referenced by the protocol.
 
 
-#### Example
+#### Examples
 
 ```
 import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
