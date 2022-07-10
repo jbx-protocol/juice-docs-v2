@@ -1,6 +1,6 @@
 # JBController
 
-_Stitches together funding cycles and community tokens, making sure all activity is accounted for and correct._
+_Stitches together funding cycles and project tokens, making sure all activity is accounted for and correct._
 
 #### Code
 
