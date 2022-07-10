@@ -2,7 +2,7 @@
 
 Emitted from:
 
-* [`setContractUri`](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/write/setcontracturi.md)
+* [`setContractUri`](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/write/setcontracturi.md)
 
 #### Definition
 

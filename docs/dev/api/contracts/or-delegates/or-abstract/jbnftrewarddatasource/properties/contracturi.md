@@ -1,6 +1,6 @@
 # contractUri
 
-Contract: [`JBNFTRewardDataSource`](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/README.md)​‌
+Contract: [`JBNFTRewardDataSource`](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/README.md)​‌
 
 Interface: [`IJBNFTRewardDataSource`](/dev/api/interfaces/ijbnftrewarddatasource.md)
 

@@ -1,19 +1,19 @@
-# tokenUriResolver
+# directory
 
-Contract: [`JBNFTRewardDataSource`](/dev/api/contracts/or-data-sources/or-abstract/jbnftrewarddatasource/README.md)​‌
+Contract: [`JBNFTRewardDataSource`](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/README.md)​‌
 
 Interface: [`IJBNFTRewardDataSource`](/dev/api/interfaces/ijbnftrewarddatasource.md)
 
-**Custom token URI resolver, superceeds base URI.**
+**The directory of terminals and controllers for projects.**
 
 #### Definition
 
 ```
-/**
-  @notice
-  Custom token URI resolver, superceeds base URI.
-*/
-IJBTokenUriResolver public override tokenUriResolver;
+/** 
+  @notice 
+  The directory of terminals and controllers for projects.
+*/ 
+IJBDirectory public immutable override directory;
 ```
 
 * Once set the value cannot be changed.
