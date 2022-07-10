@@ -1,13 +1,13 @@
-# IJBNFTRewardDataSource
+# IJBNFTRewardDelegate
 
 #### Code
 
-https://github.com/jbx-protocol/juice-nft-rewards/blob/main/contracts/interfaces/IJBNFTRewardDataSource.sol
+https://github.com/jbx-protocol/juice-nft-rewards/blob/main/contracts/interfaces/IJBNFTRewardDelegate.sol
 
 #### Definition
 
 ```
-interface IJBNFTRewardDataSource is ITokenSupplyDetails {
+interface IJBNFTRewardDelegate is ITokenSupplyDetails {
   event SetContractUri(string indexed contractUri, address caller);
 
   event SetBaseUri(string indexed baseUri, address caller);

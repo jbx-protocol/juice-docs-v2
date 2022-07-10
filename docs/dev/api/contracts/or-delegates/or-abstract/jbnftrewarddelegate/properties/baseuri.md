@@ -1,8 +1,8 @@
 # baseUri
 
-Contract: [`JBNFTRewardDataSource`](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/README.md)​‌
+Contract: [`JBNFTRewardDelegate`](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/README.md)​‌
 
-Interface: [`IJBNFTRewardDataSource`](/dev/api/interfaces/ijbnftrewarddatasource.md)
+Interface: [`IJBNFTRewardDelegate`](/dev/api/interfaces/ijbnftrewarddelegate.md)
 
 **The base URI to use for tokens if a URI resolver isn't provided.**
 
@@ -23,4 +23,4 @@ string public override baseUri;
 
 * Once set the value cannot be changed.
 * The resulting view function can be accessed externally by anyone.
-* The resulting function overrides a function definition from the [`IJBNFTRewardDataSource`](/dev/api/interfaces/ijbnftrewarddatasource.md) interface.
+* The resulting function overrides a function definition from the [`IJBNFTRewardDelegate`](/dev/api/interfaces/ijbnftrewarddelegate.md) interface.

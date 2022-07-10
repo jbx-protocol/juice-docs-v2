@@ -1,4 +1,4 @@
-# JBNFTRewardDataSource
+# JBNFTRewardDelegate
 
 _Data source that offers project contributors NFTs._
 
@@ -6,7 +6,7 @@ _This JBFundingCycleDataSource implementation will simply through the weight, re
 
 #### Code
 
-https://github.com/jbx-protocol/juice-nft-rewards/blob/main/contracts/abstract/JBNFTRewardDataSource.sol
+https://github.com/jbx-protocol/juice-nft-rewards/blob/main/contracts/abstract/JBNFTRewardDelegate.sol
 
 #### Addresses
 
@@ -16,7 +16,7 @@ Ethereum mainnet: _Not yet deployed_
 
 | Name                                                 | Description                                                                                                                              |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`IJBNFTRewardDataSource`**](/dev/api/interfaces/ijbnftrewarddatasource.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
+| [**`IJBNFTRewardDelegate`**](/dev/api/interfaces/ijbnftrewarddelegate.md) | General interface for the methods in this contract that interact with the blockchain's state according to the protocol's rules. |
 | [**`IJBFundingCycleDataSource`**](/dev/api/interfaces/ijbfundingcycledatasource.md) | Allows this contract to be attached to a funding cycle to have its methods called during regular protocol operations. |
 | [**`IJBPayDelegate`**](/dev/api/interfaces/ijbpaydelegate.md) | Allows this contract to receive callbacks when a project receives a payment. |
 
@@ -79,34 +79,34 @@ constructor(
 
 | Name                               | Data                                                                                                                                                                                    |
 | ---------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`SetContractUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/events/setcontracturi.md) | <ul><li><code>string indexed contractUri</code></li><li><code>address caller</code></li></ul> |
-| [**`SetBaseUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/events/setbaseuri.md) | <ul><li><code>string indexed baseUri</code></li><li><code>address caller</code></li></ul> |
-| [**`SetTokenUriResolver`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/events/settokenuriresolver.md) | <ul><li><code>IToken721UriResolver indexed _newResolver</code></li><li><code>address caller</code></li></ul> |
+| [**`SetContractUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/events/setcontracturi.md) | <ul><li><code>string indexed contractUri</code></li><li><code>address caller</code></li></ul> |
+| [**`SetBaseUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/events/setbaseuri.md) | <ul><li><code>string indexed baseUri</code></li><li><code>address caller</code></li></ul> |
+| [**`SetTokenUriResolver`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/events/settokenuriresolver.md) | <ul><li><code>IToken721UriResolver indexed _newResolver</code></li><li><code>address caller</code></li></ul> |
 
 #### Properties
 
 | Function                                                          | Definition                                                                                                                                                                                                |
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`projectId`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/properties/projectid.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256</code></li></ul> |
-| [**`directory`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/properties/directory.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBDirectory](/dev/api/interfaces/ijbdirectory.md)</code></li></ul> |
-| [**`baseUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/properties/baseuri.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
-| [**`contractUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/properties/contracturi.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
-| [**`tokenUriResolver`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/properties/tokenuriresolver.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBTokenUriResolver](/dev/api/interfaces/ijbtokenuriresolver.md)</code></li></ul> |
+| [**`projectId`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/properties/projectid.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256</code></li></ul> |
+| [**`directory`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/properties/directory.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBDirectory](/dev/api/interfaces/ijbdirectory.md)</code></li></ul> |
+| [**`baseUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/properties/baseuri.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
+| [**`contractUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/properties/contracturi.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
+| [**`tokenUriResolver`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/properties/tokenuriresolver.md)                            | <p><strong>Traits</strong></p><ul><li><code>immutable</code></li></ul><p><strong>Returns</strong></p><ul><li><code>[IJBTokenUriResolver](/dev/api/interfaces/ijbtokenuriresolver.md)</code></li></ul> |
 
 #### Read
 
 | Function                                 | Definition                                                                                                                                                                                   |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`payParams`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/read/payparams.md) | <p><strong>Params</strong></p><ul><li><code>[JBPayParamsData](/dev/api/data-structures/jbpayparamsdata.md) calldata _data</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 reclaimAmount</code></li><li><code>string memory memo</code></li><li><code>[IJBPayDelegate](/dev/api/interfaces/ijbpaydelegate.md) delegate</code></li></ul> |
-| [**`redeemParams`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/read/redeemparams.md) | <p><strong>Params</strong></p><ul><li><code>[JBRedeemParamsData](/dev/api/data-structures/jbredeemparamsdata.md) calldata _data</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 weight</code></li><li><code>string memory memo</code></li><li><code>[IJBRedemptionDelegate](/dev/api/interfaces/ijbredemptiondelegate.md) delegate</code></li></ul> |
-| [**`supportsInterface`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/read/supportsinterface.md) | <p><strong>Params</strong></p><ul><li><code>bytes4 _interfaceId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool</code></li></ul> |
-| [**`tokenURI`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/read/tokenuri.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _tokenId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
+| [**`payParams`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/read/payparams.md) | <p><strong>Params</strong></p><ul><li><code>[JBPayParamsData](/dev/api/data-structures/jbpayparamsdata.md) calldata _data</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 reclaimAmount</code></li><li><code>string memory memo</code></li><li><code>[IJBPayDelegate](/dev/api/interfaces/ijbpaydelegate.md) delegate</code></li></ul> |
+| [**`redeemParams`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/read/redeemparams.md) | <p><strong>Params</strong></p><ul><li><code>[JBRedeemParamsData](/dev/api/data-structures/jbredeemparamsdata.md) calldata _data</code></li></ul><p><strong>Returns</strong></p><ul><li><code>uint256 weight</code></li><li><code>string memory memo</code></li><li><code>[IJBRedemptionDelegate](/dev/api/interfaces/ijbredemptiondelegate.md) delegate</code></li></ul> |
+| [**`supportsInterface`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/read/supportsinterface.md) | <p><strong>Params</strong></p><ul><li><code>bytes4 _interfaceId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>bool</code></li></ul> |
+| [**`tokenURI`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/read/tokenuri.md) | <p><strong>Params</strong></p><ul><li><code>uint256 _tokenId</code></li></ul><p><strong>Returns</strong></p><ul><li><code>string memory</code></li></ul> |
 
 #### Write
 
 | Function                                 | Definition                                                                                                                                                                                   |
 | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`didPay`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/write/didpay.md) | <p><strong>Params</strong></p><ul><li><code>[JBDidPayData](/dev/api/data-structures/jbdidpaydata.md) _data</code></li></ul> |
-| [**`setContractUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/write/setcontracturi.md) | <p><strong>Params</strong></p><ul><li><code>string calldata _contractMetadataUri</code></li></ul> |
-| [**`setTokenUriResolver`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/write/settokenuriresolver.md) | <p><strong>Params</strong></p><ul><li><code>[IJBTokenUriResolver](/dev/api/interfaces/ijbtokenuriresolver.md) _newResolver</code></li></ul> |
-| [**`setBaseUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddatasource/write/setbaseuri.md) | <p><strong>Params</strong></p><ul><li><code>string calldata _baseUri</code></li></ul> |
+| [**`didPay`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/write/didpay.md) | <p><strong>Params</strong></p><ul><li><code>[JBDidPayData](/dev/api/data-structures/jbdidpaydata.md) _data</code></li></ul> |
+| [**`setContractUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/write/setcontracturi.md) | <p><strong>Params</strong></p><ul><li><code>string calldata _contractMetadataUri</code></li></ul> |
+| [**`setTokenUriResolver`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/write/settokenuriresolver.md) | <p><strong>Params</strong></p><ul><li><code>[IJBTokenUriResolver](/dev/api/interfaces/ijbtokenuriresolver.md) _newResolver</code></li></ul> |
+| [**`setBaseUri`**](/dev/api/contracts/or-delegates/or-abstract/jbnftrewarddelegate/write/setbaseuri.md) | <p><strong>Params</strong></p><ul><li><code>string calldata _baseUri</code></li></ul> |
