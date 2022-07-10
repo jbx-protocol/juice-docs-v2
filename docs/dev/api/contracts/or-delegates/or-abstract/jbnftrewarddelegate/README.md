@@ -1,8 +1,8 @@
 # JBNFTRewardDelegate
 
-_Data source that offers project contributors NFTs._
+_Delegate that offers project contributors NFTs upon payment._
 
-_This JBFundingCycleDataSource implementation will simply through the weight, reclaimAmount, and memos they are called with._
+_Also can be used as a data source._
 
 #### Code
 
