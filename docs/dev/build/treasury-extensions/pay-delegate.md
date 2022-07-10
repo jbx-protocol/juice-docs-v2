@@ -57,6 +57,7 @@ import '@jbx-protocol/contracts-v2/contracts/structs/JBTokenAmount.sol';
 contract NFTPayDelegate is ERC721, IJBFundingCycleDataSource, IJBPayDelegate {
   error INVALID_PAYMENT_EVENT();
 
+  IJBDirectory directory;
   uint256 projectId;
   JBTokenAmount contributionThreshold;
   uint256 supply;
@@ -91,7 +92,8 @@ contract NFTPayDelegate is ERC721, IJBFundingCycleDataSource, IJBPayDelegate {
     return (_data.reclaimAmount.value, _data.memo, IJBRedemptionDelegate(address(0)));
   }
 
-  constructor(uint256 _projectId, JBTokenAmount _contributionThreshold, string calldata _name, string calldata _symbol) ERC721(_name, _symbol) {
+  constructor(IJBDirectory _directory, uint256 _projectId, JBTokenAmount _contributionThreshold, string calldata _name, string calldata _symbol) ERC721(_name, _symbol) {
+    directory = _directory;
     projectId = _projectId;
   },
   
