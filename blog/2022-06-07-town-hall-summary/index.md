@@ -132,7 +132,7 @@ I would like to share what we just thought. So we basically are doing a full sto
 What I would like to propose is that this is our heroes Banny and they're travelling throught the DAO galaxy to DAOs. We would like to know where JuiceboxDAO would like the ship to go to the next DAO, so that we can keep on building covers to next DAO. Let's create a poll here and vote on the DAO that JuiceboxDAO decides what ComicsDAO is gonna do next. 
 
 Another thing is that, we had a big player, this guy is amazing and helps us a lot.
-![](IY9Sqof.jpg)
+![](IY9Sqof.jpeg)
 
 We are having fun creating next cover for other DAO, and we are going to make some jokes for JokeDAO and get partnership to work with them. 
 
