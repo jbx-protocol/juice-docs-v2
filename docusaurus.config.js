@@ -65,7 +65,6 @@ const config = {
       maxHeadingLevel: 5,
     },
     navbar: {
-      title: 'Juicebox Docs',
       logo: {
         alt: 'Juicebox Logo',
         src: 'img/favicon.svg',
@@ -75,19 +74,19 @@ const config = {
           type: 'docSidebar',
           position: 'left',
           sidebarId: 'dev',
-          label: 'Developers',
+          label: 'Docs',
         },
         {
           type: 'docSidebar',
           position: 'left',
           sidebarId: 'user',
-          label: 'Users',
+          label: 'Project Creators',
         },
         {
           type: 'docSidebar',
           position: 'left',
           sidebarId: 'dao',
-          label: 'DAO',
+          label: 'Juicebox DAO',
         },
         {
             type: 'localeDropdown',
