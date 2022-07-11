@@ -4,13 +4,13 @@ sidebar_position: 2
 
 # Juicebox DAO Foundation
 
-#### **Mission statement**
+### Mission statement
 
 *What the DAO works toward*
 
 JuiceboxDAO helps people confidently run programmable and community funded treasuries from startup to scale, openly on Ethereum.
 
-#### Values
+### Values
 
 *Who we are*
 
@@ -21,65 +21,52 @@ JuiceboxDAO helps people confidently run programmable and community funded treas
 - **We're honest.** We are each unique selves, and we communicate our individual ideas openly and with clarity. We express ourselves and exchange feedback with this in mind.
 - **We’re stewards.** We respect the opportunity to help set a tone for what it means to build on the open internet together.
 
-#### **Focus areas**
+#### Focus areas
 
 *Where the DAO focuses its resources*
 
 (No particular order)
 
-##### **Protocol**
-
+**Protocol**  
 Define, optimize, test, monitor, and document the Juicebox protocol.
 
-##### **Community alignment**
-
+**Community alignment**  
 Help members of the JB community get the resources and attention they need to get started and work together.
 
-##### **Web3 ecosystem**
-
+**Web3 ecosystem**  
 Position JB to work with and help other public DAOs, tools, and services to safely widen opportunities for all in Web3.
 
-##### **Onboarding**
-
+**Onboarding**  
 Help people launch their projects on JB and build extensions to the protocol through active Q&A availability, providing useful documentation, and helping shape the information architecture of web clients.
 
-##### **Governance**
-
+**Governance**  
 Plan out how we will make decisions together as the DAO scales, and keep it accountable to its agreed upon decision-making schedule.
 
-##### **Legal**
-
+**Legal**  
 Work towards the legal clarity necessary to make JB a welcoming DAO where anyone can contribute with confidence to any focus area and get compensated for their work.
 
-##### **Data viz**
-
+**Data viz**  
 Give projects rich insights into their community, and provide overview information about the JB protocol.
 
-##### **Frontend**
-
+**Frontend**  
 Develop web clients for the protocol that make the user experience more empowering, reliable, and delightful over time.
 
-##### **Juicebox ecosystem**
-
+**Juicebox ecosystem**  
 Stand up infrastructure to help projects running on the Juicebox protocol grow their decentralized communities and experiment with various treasury strategies.
 
-##### **Visibility & materials**
-
+**Visibility & materials**  
 Create and propagate digital and physical publications, stickers, art, videos, memes, and other stuff that radiate JB vibes and tell our story.
 
-##### **Dev ops**
-
+**Dev ops**  
 Make it as easy as possible for people to build on JB by improving processes, tooling, and documentation for all developers.
 
-##### **Mechanism**
-
+**Mechanism**  
 Build models and tools to analyze Juicebox project configurations. Develop and implement utilities for tokens in the Juicebox ecosystem.
 
-##### **Project Management**
+**Product, project, and program management**  
+Regularly define, assess, prioritize, and publicly communicate the goals and progress of what we’re working towards across focus areas.
 
-Regularly assess, refine, and publicly communicate the goals and progress of Juicebox DAO, contributors, and groups of contributors.
-
-#### **Membership**
+#### Membership
 
 *What does it mean to be a JuiceboxDAO member*
 
