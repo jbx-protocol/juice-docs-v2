@@ -65,9 +65,10 @@ const config = {
       maxHeadingLevel: 5,
     },
     navbar: {
+      title: 'Juicebox',
       logo: {
         alt: 'Juicebox Logo',
-        src: 'img/favicon.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
