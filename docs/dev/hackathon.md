@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # Scaffold JB Hackathon
@@ -22,7 +22,7 @@ Make an interesting project! Criteria is subjective and up to token recipients.
 Our wish list:
 - A scaffold-eth starter kit for buidling a Juicebox project frontend.
 - A Juicebox protocol [extension](build/treasury-extensions) starter kit. See [this repo](https://github.com/jbx-protocol/juice-extensions-collection).
-- A scaffold-eth NFT branch that sends funds to a Juicebox treasury. *See [tiles.art](https://tiles.art)* 
+- A scaffold-eth NFT branch that sends funds to a Juicebox treasury. *See [tiles.art](https://tiles.art)*
 - A [Nouns](https://nouns.wtf) clone: A sequential tokenID nft auction every x hours that pipes funds into a Juicebox treasury.
 - An all-in-one [multisig.lol](https://multisig.lol) + Juicebox interface, with full read/write.
 - A buidl-guidl-centric dapp for managing the group's Juicebox treasury.
