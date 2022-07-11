@@ -8,7 +8,7 @@ tags: [nfts, nft, juicebox, ethereum, juicebox project, crypto, cryptocurrency, 
 # WHY Juicebox for NFT Projects?
 
 
-Juicebox is an extremely flexible and powerful Web3 protocol made to fund and manage shared treasuries. It has been responsible for some of the biggest names in crypto community fundraising, including ConstitutionDAO, AssangeDAO and MoonDAO. Funding and operating an NFT project with Juicebox is an especially effective way to leverage the protocol, providing massive benefits to both owners and their communities. In this article we’ll cover why, and [in a follow-up article, we’ll cover how](how-juicebox-for-nfts).
+Juicebox is an extremely flexible and powerful Web3 protocol made to fund and manage shared treasuries. It has been responsible for some of the biggest names in crypto community fundraising, including ConstitutionDAO, AssangeDAO and MoonDAO. Funding and operating an NFT project with Juicebox is an especially effective way to leverage the protocol, providing massive benefits to both owners and their communities. In this article we’ll cover why, and [in a follow-up article, we’ll cover how](/blog/how-juicebox-for-nfts).
 
 In this article: 
 1. Basics of the Juicebox protocol.

@@ -7,7 +7,7 @@ tags: [nfts, nft, juicebox, ethereum, juicebox project, crypto, cryptocurrency, 
 
 # HOW Juicebox for NFT Projects?
 
-In case you don’t know, Juicebox is the best way to fund and operate any Web3 business, especially NFT projects. If you’d like to know why we’d recommend reading [‘WHY Juicebox for NFT projects’](why-juicebox-for-nfts) if you haven’t already done so first. 
+In case you don’t know, Juicebox is the best way to fund and operate any Web3 business, especially NFT projects. If you’d like to know why we’d recommend reading [‘WHY Juicebox for NFT projects’](/blog/why-juicebox-for-nfts) if you haven’t already done so first. 
 
 For now, we’ll be going deeper into Juicebox lore and fleshing out all the weird and wonderful options, looking at how to leverage them ideally for an NFT project. By the end of it, you’ll have set up a system where: 
 1. Buyers of your NFT will automatically receive a quantifiable stake in your project’s treasury in the form of ERC20 tokens.
