@@ -1,11 +1,11 @@
 ---
-slug: the-power-of-tokenomics-explained
-title: The power of tokenomics explained
+slug: the-power-of-token-minting-explained
+title: The power of token minting explained
 authors: [felixander]
 tags: [dao, news, juicebox]
 ---
 
-# The power of tokenomics explained
+# The power of token minting explained
 
 ## Tokens, a utility you shouldn’t go without
 
@@ -15,7 +15,7 @@ At [Juicebox](https://info.juicebox.money/blog/juicebox-the-token-minting-powerh
 
 ## Governance and so much more
 
-One crucial aspect of token minting is how they relate to governance systems within [DAO](https://info.juicebox.money/blog/dalicious-tips-for-starting-your-first-dao)s. While you may or may not be creating a DAO, you should keep in mind that these very same governance systems can also be used informally to gauge your stakeholder interests in an effective and efficient way.
+One crucial aspect of token minting is how they relate to governance systems within [DAOs](https://info.juicebox.money/blog/dalicious-tips-for-starting-your-first-dao)s. While you may or may not be creating a DAO, you should keep in mind that these very same governance systems can also be used informally to gauge your stakeholder interests in an effective and efficient way.
 
 You can choose to give tokens at your own discretion, or set certain metrics and tokenomic tooling to automatically generate and disburse tokens based on contributions made to your project. The Juicebox difference is in the rich tooling our platform provides project creators.
 
@@ -31,13 +31,13 @@ Now fast forward. Many more people have contributed to your project, and at this
 
 Now let’s say one of your early investors, who has a lot of tokens for your project, wants to move on and get rid of his tokens. Rather than simply ignoring them, he can claim a percent of the overflow in your treasury proportional to how many tokens he has. If he has a lot of tokens, even though he may have initially just given you $2000 in funding, his tokens could be traded in for far more than that if your overflow is sufficiently large.
 
-What’s unique about this system is that it incentivizes contributors to your project to 1) stick around, and 2) be actively invested in your success. Some people will never be interested in trading in tokens, they may see more utility in using the tokens for governance, or simply hanging on to them as a trophy and receipt of their contributions to you. However, for those who are hoping to eventually cash out with more than they invested, the token redeeming exchange allows for this scenario if your project has become sufficiently successful.
+What’s unique about this system is that it incentivizes contributors to your project to 1) stick around, and 2) to be actively invested in your success. Some people will never be interested in trading in tokens; they may see more utility in using the tokens for governance, or simply hanging on to them as a trophy and receipt of their contributions to you. However, for those who are hoping to eventually cash out with more than they invested, the token redeeming exchange allows for this scenario if your project has become sufficiently successful.
 
 Let’s say that first investor burns all his tokens, and gets back $3000. He’s made a profit of one thousand dollars. By redeeming the tokens, he has taken them out of circulation and they have been destroyed. He’s made $1000 in the exchange, and you managed to attract an investor early on when you needed funding more.
 
-## An overview of Juicebox tokenomics tooling
+## An overview of Juicebox tooling
 
-Where Juicebox really shines is in its ability to give project creators full control over the tokenomics they wish to employ in their projects. There is a rich help section along with a glossary on info.juicebox.money, but for a brief overview read on to learn some of the basics.
+Where Juicebox really shines is in its ability to give project creators full control over the tooling they wish to employ in their projects. There is a rich help section along with a glossary on info.juicebox.money, but for a brief overview read on to learn some of the basics.
 
 ### Distribution Limit
 
@@ -59,7 +59,7 @@ The redemption rate is something you set that determines how much value redeemed
 
 ### Weight
 
-The term *weight* simple means how many tokens or other assets, such as NFTs, a contributor will receive for a set amount of contribution. For instance, a contributor who puts $1000 into your project may receive a million tokens (if you so choose).
+The term *weight* simply means how many tokens or other assets, such as NFTs, a contributor will receive for a set amount of contribution. For instance, a contributor who puts $1000 into your project may receive a million tokens (if you so choose).
 
 ### Burning versus Redeeming tokens
 
