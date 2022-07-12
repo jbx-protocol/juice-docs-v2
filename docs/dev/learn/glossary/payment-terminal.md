@@ -9,5 +9,5 @@
 #### What you'll want to know if you're building
 
 * A project can set its terminals using [`JBDirectory.setTerminalsOf(...)`](/dev/api/contracts/jbdirectory/write/setterminalsof.md).
-* If a project uses multiple tokens to manage funds for the same token, it can set the primary one (where other Web3 contracts should send funds to) using [`JBDirectory.setPrimaryTerminalOf(...)`](/dev/api/contracts/jbdirectory/write/setprimaryterminalof.md).
+* If a project uses multiple terminals to manage funds for the same token, it can set the primary one (where other Web3 contracts should send funds to) using [`JBDirectory.setPrimaryTerminalOf(...)`](/dev/api/contracts/jbdirectory/write/setprimaryterminalof.md).
 * To pay a project with a certain token, get its prefered payment terminal using [`JBDirectory.primaryTerminalOf(...)`](/dev/api/contracts/jbdirectory/read/primaryterminalof.md). If no terminal is returned, the project is not currently accepting the specified token.
