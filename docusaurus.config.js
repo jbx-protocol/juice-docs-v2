@@ -26,11 +26,11 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
-          // editUrl: 'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
+          editUrl: 'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
         },
         blog: {
           showReadingTime: true,
-          // editUrl: 'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
+          editUrl: 'https://github.com/jbx-protocol/juice-docs-v2/blob/main',
           blogSidebarTitle: 'Articles',
           blogSidebarCount: 'ALL',
           feedOptions: {
