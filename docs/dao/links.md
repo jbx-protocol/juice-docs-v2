@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 7
 ---
 
-# Links
+# Official Links
 
 #### Website
 [juicebox.money](https://juicebox.money/#/) <br/>

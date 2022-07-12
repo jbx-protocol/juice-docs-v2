@@ -1,3 +1,5 @@
+import ReactPlayer from 'react-player'
+
 # Project Creation Guide
 
 The Juicebox protocol is a framework for funding and operating projects openly on Ethereum. Its contracts allow communities to receive funds, issue tokens for community membership, and configure funding cycles to transparently utilize those funds—all in powerful, customizable ways.
@@ -9,3 +11,7 @@ The NFT which represents your project will be minted to your wallet once you cre
 :::tip
 Consider creating a test project on the [Rinkeby testnet version of Juicebox](https://rinkeby.juicebox.money) before creating a mainnet project. If you need help deciding how to configure your project, ask in the [Juicebox DAO Discord](https://discord.gg/juicebox).
 :::
+
+## Video Guide
+
+<ReactPlayer controls url='https://youtu.be/kWxaFn4iwug' />
