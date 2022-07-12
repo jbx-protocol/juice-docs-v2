@@ -28,7 +28,7 @@ function _pay(
 
 * Arguments:
   * `_projectId` is the ID of the project that is being paid.
-  * `_token` is the token being paid in.
+  * `_token` is the token being paid in. Use `JBTokens.ETH` if paying in ETH.
   * `_amount` is the amount of tokens being paid, as a fixed point number. If the token is ETH, this is ignored and msg.value is used in its place.
   * `_decimals` is the number of decimals in the `_amount` fixed point number. If the token is ETH, this is ignored and 18 is used in its place, which corresponds to the amount of decimals expected in msg.value.
   * `_beneficiary` is the address who will receive tokens from the payment.
