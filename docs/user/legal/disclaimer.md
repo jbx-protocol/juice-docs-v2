@@ -1,9 +1,11 @@
-# Disclaimer
+# Disclaimers
+
+When setting up your website, project handle, description, and payment details you may want to consider adding a few disclaimers so that contributors are clear on what you are offering and what you are not. Removing ambiguity is the easiest and best way to ensure a smoother community experience. Below are a few disclaimers which you may find appropriate for your project.
 
 :::info
-Juicebox seeks to be as diligent as possible in compiling and updating the information on its website. However, there is no guarantee of the correctness and completeness of the information provided here. Juicebox does not guarantee that this information is up to date and such information may be subject to change at any time and without notice.
-
 ANY GOVERNANCE TOKENS RECEIVED BY MEMBERS HAVE NOT BEEN APPROVED OR DISAPPROVED BY THE UNITED STATES SECURITIES AND EXCHANGE COMMISSION, ANY STATE SECURITIES COMMISSION, OR OTHER REGULATORY AUTHORITY, NOR HAVE ANY OF THE FOREGOING AUTHORITIES PASSED UPON THE MERITS OF THIS OFFERING OR UPON THE ACCURACY OR ADEQUACY OF THIS AGREEMENT. ANY REPRESENTATION TO THE CONTRARY IS A CRIMINAL OFFENSE. THIS DOCUMENT DOES NOT CONSTITUTE AN OFFER OR SOLICITATION TO ANYONE IN ANY JURISDICTION IN WHICH SUCH OFFER OR SOLICITATION IS NOT AUTHORIZED.
+:::
 
+:::warning
 ANY GOVERNANCE TOKENS THAT YOU MAY ACQUIRE HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT, STATE SECURITIES LAWS, OR THE LAWS OF ANY COUNTRY OUTSIDE THE UNITED STATES. Juicebox'S POSITION IS THAT THEY SHOULD NOT BE SINCE THE PURPOSE OF Juicebox IS TO BUILD A NOT-FOR-PROFIT INTERNET MUSEUM, PROVIDE NO RIGHTS TO ANY DISTRIBUTION OR PROFITS, AND ARE NON-TRANSFERRABLE EXCEPT BETWEEN MEMBERS.
 :::
