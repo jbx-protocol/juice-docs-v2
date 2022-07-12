@@ -95,7 +95,7 @@ contract NFTProjectPayer is ERC721, JBETHERC20ProjectPayer {
   // Minting an NFT routes funds to the juicebox treasury and mints project tokens for msg.sender. Use addToBalance if you don't want tokens minted.
   function mint(uint256 _tokenId) external payable override {
     _mint(msg.sender, _tokenId);
-    _pay(_projectId, JBTokens.ETH, msg.value, 18, msg.sender, 0, false, "I love buffalos", bytes(0));
+    _pay(_projectId, JBTokens.ETH, msg.value, 18, msg.sender, 0, false, "I love buffalos", bytes(''));
     // _addToBalance(_projectId, JBTokens.ETH, msg.value, 18, "I love buffalos", bytes(0));
   }
 }
