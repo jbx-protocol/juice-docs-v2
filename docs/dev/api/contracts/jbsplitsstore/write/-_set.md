@@ -1,4 +1,4 @@
-# set
+# _set
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -17,7 +17,7 @@ _The new splits must include any currently set splits that are locked._
 #### Definition
 
 ```
-function set(
+function _set(
   uint256 _projectId,
   uint256 _domain,
   uint256 _group,
@@ -207,7 +207,7 @@ function set(
   @param _group An identifier between of splits being set. All splits within this _group must add up to within 100%.
   @param _splits The splits to set.
 */
-function set(
+function _set(
   uint256 _projectId,
   uint256 _domain,
   uint256 _group,
