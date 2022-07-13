@@ -140,7 +140,7 @@ function _payTo(
 
     * [`JBTokens`](/dev/api/libraries/jbtokens.md)
       * `.ETH`
-    * [`Address`](https://docs.openzeppelin.com/contracts/4.x/dev/api/utils#Address)
+    * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`
 
     _Internal references:_
@@ -150,8 +150,8 @@ function _payTo(
 
     _External references:_
 
-    * [`approve`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-approve-address-uint256-)
-    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-transfer-address-uint256-)
+    * [`approve`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
+    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transfer-address-uint256-)
     * [`allocate`](/dev/api/interfaces/ijbsplitallocator.md)
 
     _Event references:_

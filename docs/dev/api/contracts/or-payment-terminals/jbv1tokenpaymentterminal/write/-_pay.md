@@ -108,7 +108,7 @@ function _pay(
 
         _External references:_
       
-        * [`balanceOf`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-balanceOf-address-)
+        * [`balanceOf`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-balanceOf-address-)
 
     3.  Make sure the message sender has enough of a balance between their v1 unclaimed tokens and v1 ERC20 tokens to cover the amount being exchanged for v2 tokens. 
 
@@ -147,7 +147,7 @@ function _pay(
 
     _External references:_
 
-    * [`transferFrom`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-transferFrom-address-address-uint256-)
+    * [`transferFrom`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transferFrom-address-address-uint256-)
 
 6.  If needed, transfer unclaimed tokens from the message sender to this contract. This requires operator permissions for this contract to transfer unclaimed tokens on the message sender's behalf.
 

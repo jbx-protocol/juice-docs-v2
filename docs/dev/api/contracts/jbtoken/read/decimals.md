@@ -33,7 +33,7 @@ function decimals() public view override(ERC20, IJBToken) returns (uint8) { ... 
 
     _Inherited references:_
 
-    * [`decimals`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#ERC20Detailed-decimals--)
+    * [`decimals`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#ERC20Detailed-decimals--)
 
 </TabItem>
 

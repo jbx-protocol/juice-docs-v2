@@ -28,7 +28,7 @@ function addFeedFor(
   * `_currency` is the currency that the price feed is for.
   * `_base` is the currency that the price feed is based on.
   * `_feed` is the [`IJBPriceFeed`](/dev/api/interfaces/ijbpricefeed.md) contract being added.
-* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
+* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable-onlyOwner--) modifier, this function can only be accessed by the address that owns this contract.
 * The function overrides a function definition from the [`IJBPrices`](/dev/api/interfaces/ijbprices.md) interface.
 * The function doesn't return anything.
 

@@ -40,7 +40,7 @@ function releaseV1TokensOf(uint256 _v1ProjectId, address _beneficiary) external 
 
     _External references:_
     
-    * [`ownerOf`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc721#IERC721-ownerOf-uint256-)
+    * [`ownerOf`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#IERC721-ownerOf-uint256-)
     * [`projects`](https://github.com/jbx-protocol/juice-contracts-v1/blob/a91b55e8d264267c338b089aa9a45b29fd8e8f13/contracts/interfaces/ITicketBooth.sol#L71)
 
 2.  Make sure the v1 project has not yet been finalized.
@@ -95,7 +95,7 @@ function releaseV1TokensOf(uint256 _v1ProjectId, address _beneficiary) external 
 
     _External references:_
   
-    * [`balanceOf`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-balanceOf-address-)
+    * [`balanceOf`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-balanceOf-address-)
 
 6.  Mark this v1 project as finalized so that this terminal no longer accepts this v1 token in exchange for any v2 token.
 
@@ -117,7 +117,7 @@ function releaseV1TokensOf(uint256 _v1ProjectId, address _beneficiary) external 
 
     _External references:_
 
-    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-transfer-address-uint256-)
+    * [`transfer`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-transfer-address-uint256-)
 
 8.  Transfer the unclaimed token balance held by this contract to the specified beneficiary.
 

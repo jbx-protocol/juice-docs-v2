@@ -27,7 +27,7 @@ function setFeelessAddress(address _address, bool _flag)
 * Arguments:
   * `_address` is the address that can be paid towards while still bypassing fees.
   * `_flag` is a flag indicating whether the terminal should be feeless or not.
-* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/dev/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
+* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
 * The function can be overriden by inheriting contracts.
 * The function doesn't return anything.
 

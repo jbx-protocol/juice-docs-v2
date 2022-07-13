@@ -39,7 +39,7 @@ function approve(
 
     _Inherited references:_
 
-    * [`_mint`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc20#IERC20-approve-address-uint256-)
+    * [`_mint`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc20#IERC20-approve-address-uint256-)
 
 </TabItem>
 

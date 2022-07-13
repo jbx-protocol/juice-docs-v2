@@ -22,7 +22,7 @@ function setFee(uint256 _fee) external onlyOwner { ... }
 
 * Arguments:
   * `_fee` is the new fee, out of MAX_FEE.
-* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/dev/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
+* Through the [`onlyOwner`](https://docs.openzeppelin.com/contracts/4.x/api/ownership#Ownable-onlyOwner--) modifier, the function can only be accessed by the owner of this contract.
 * The function can be overriden by inheriting contracts.
 * The function doesn't return anything.
 

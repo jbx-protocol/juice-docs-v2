@@ -124,7 +124,7 @@ function _distributeToReservedTokenSplitsOf(
         * [`mintFor`](/dev/api/contracts/jbtokenstore/write/mintfor.md)
         * [`tokenOf`](/dev/api/contracts/jbtokenstore/properties/tokenof.md)
         * [`allocate`](/dev/api/interfaces/ijbsplitallocator.md)
-        * [`ownerOf`](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc721#IERC721-ownerOf-uint256-)
+        * [`ownerOf`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#IERC721-ownerOf-uint256-)
 
 7.  Emit a `DistributeToReservedTokenSplit` event for the split being iterated on with the relevant parameters.
 

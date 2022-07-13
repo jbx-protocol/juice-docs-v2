@@ -95,7 +95,7 @@ receive() external payable virtual override { ... }
 
     _Library references:_
 
-    * [`Address`](https://docs.openzeppelin.com/contracts/4.x/dev/api/utils#Address)
+    * [`Address`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Address)
       * `.sendValue(...)`
     * [`JBTokens`](/dev/api/libraries/jbtokens.md)
       * `.ETH`
