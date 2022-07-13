@@ -20,7 +20,7 @@ _Current feeds can't be modified._
 function addFeedFor(
   uint256 _currency,
   uint256 _base,
-  AggregatorV3Interface _feed
+  IJBPriceFeed _feed
 ) external override onlyOwner { ... }
 ```
 
