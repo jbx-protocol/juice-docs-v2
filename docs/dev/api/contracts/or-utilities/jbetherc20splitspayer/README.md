@@ -24,7 +24,7 @@ _There can be several instances of this contract deployed._
 | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | [**`JBETHERC20ProjectPayer`**](/dev/api/contracts/or-utilities/jbetherc20projectpayer) | Sends ETH or ERC20's to a project treasury as it receives direct payments or has it's functions called. |
 | [**`ReentrancyGuard`**](https://docs.openzeppelin.com/contracts/4.x/api/security#ReentrancyGuard) | Contract module that helps prevent reentrant calls to a function. |
-| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/4.x/api/utils#ERC165)                            |  Introspection on interface adherance.                      |
 
 #### Constructor
 

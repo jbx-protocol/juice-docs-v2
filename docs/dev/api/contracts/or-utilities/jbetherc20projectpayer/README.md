@@ -23,7 +23,7 @@ _There can be several instances of this contract deployed._
 | Contract                                                                     | Description                                                                                                           |
 | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable) | Includes convenience functionality for specifying an address that owns the contract, with modifiers that only allow access by the owner. |
-| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/4.x/api/utils#ERC165)                            |  Introspection on interface adherance.                      |
 
 #### Constructor
 

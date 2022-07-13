@@ -24,7 +24,7 @@ Ethereum rinkeby: [`0xd96ecf0E07eB197587Ad4A897933f78A00B21c9a`](https://rinkeby
 | Contract                                                                          | Description                                                                                                                               |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | [**`JBOperatable`**](/dev/api/contracts/or-abstract/jboperatable/)                            | Includes convenience functionality for checking a message sender's permissions before executing certain transactions.                     |
-| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/4.x/api/utils#ERC165)                            |  Introspection on interface adherance.                      |
 
 #### Constructor
 

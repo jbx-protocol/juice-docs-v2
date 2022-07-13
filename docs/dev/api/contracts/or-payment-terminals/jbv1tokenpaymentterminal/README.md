@@ -23,7 +23,7 @@ Ethereum rinkeby: [`0x349384f3ccc2045443b94b20d0af71edaf7fea36`](https://rinkeby
 
 | Contract                                                                  | Description                                                                                                                              |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/4.x/api/utils#ERC165)                            |  Introspection on interface adherance.                      |
 
 
 #### Constructor

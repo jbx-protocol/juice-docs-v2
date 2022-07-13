@@ -20,7 +20,7 @@ https://github.com/jbx-protocol/juice-contracts-v2/blob/main/contracts/abstract/
 
 | Contract                                                                  | Description                                                                                                                              |
 | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [**`ERC165`**](https://docs.openzeppelin.com/contracts/2.x/dev/api/introspection#ERC165)                            |  Introspection on interface adherance.                      |
+| [**`ERC165`**](https://docs.openzeppelin.com/contracts/4.x/api/utils#ERC165)                            |  Introspection on interface adherance.                      |
 
 
 #### Constructor
