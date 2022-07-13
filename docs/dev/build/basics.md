@@ -28,7 +28,7 @@ Check out the [Treasury design](/dev/build/programmable-treasury.md) page for mo
 
 <summary>View project info</summary>
 
-Launching a project will mint a new NFT in the [`JBProjects`](/dev/api/contracts/jbprojects/README.md) contract. The owner can be found using [`JBProjects.ownerOf(...)`](https://docs.openzeppelin.com/contracts/3.x/dev/api/token/erc721#IERC721-ownerOf-uint256-).
+Launching a project will mint a new NFT in the [`JBProjects`](/dev/api/contracts/jbprojects/README.md) contract. The owner can be found using [`JBProjects.ownerOf(...)`](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#IERC721-ownerOf-uint256-).
 
 ```
 function ownerOf(uint256 _projectId) external returns (address owner) { ... }

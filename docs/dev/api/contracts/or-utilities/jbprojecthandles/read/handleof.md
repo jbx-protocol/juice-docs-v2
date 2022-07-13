@@ -74,7 +74,7 @@ function handleOf(uint256 _projectId) external view override returns (string mem
 
     _Library references:_
 
-    * [`Strings`](https://docs.openzeppelin.com/contracts/3.x/dev/api/utils#Strings)<br/>
+    * [`Strings`](https://docs.openzeppelin.com/contracts/4.x/api/utils#Strings)<br/>
       * `.toString(...)`
 
 5.  Return a handle formatted from the stored ENS name parts.
