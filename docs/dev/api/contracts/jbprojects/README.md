@@ -23,8 +23,9 @@ Ethereum rinkeby: [`0x2d8e361f8F1B5daF33fDb2C99971b33503E60EEE`](https://rinkeby
 | Contract                                                                     | Description                                                                                                           |
 | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | [**`JBOperatable`**](/dev/api/contracts/or-abstract/jboperatable/)                           | Includes convenience functionality for checking a message sender's permissions before executing certain transactions. |
-| [**`ERC721Votes`**](https://docs.openzeppelin.com/contracts/4.x/dev/api/token/erc721#ERC721Votes) | A checkpointable standard definition for non-fungible tokens (NFTs).                                                                  |
-| [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/dev/api/access#Ownable) | Includes convenience functionality for specifying an address that owns the contract, with modifiers that only allow access by the owner. |
+| [**`ERC721Votes`**](https://docs.openzeppelin.com/contracts/4.x/api/token/erc721#ERC721Votes)
+| A checkpointable standard definition for non-fungible tokens (NFTs).                                                                  |
+| [**`Ownable`**](https://docs.openzeppelin.com/contracts/4.x/api/access#Ownable) | Includes convenience functionality for specifying an address that owns the contract, with modifiers that only allow access by the owner. |
 
 #### Constructor
 
