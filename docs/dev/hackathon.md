@@ -5,7 +5,7 @@ sidebar_position: 9
 # Scaffold JB Hackathon
 
 :::note Heads Up!
-Submissions close today at 18:00 EDT. **[Submit your project here](https://forms.gle/NeRyCxDTPt8sJfkp8).** Watch the [project showcase livestream](https://www.youtube.com/watch?v=vMz8evy3FM8) at 18:00 EDT.
+**[JokeDAO voting is live](https://info.juicebox.money/dev/hackathon)!** Vote before 7:00 PM EDT on July 15th!
 :::
 
 Make an interesting project using [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth) and [Juicebox v2](https://github.com/jbx-protocol/juice-contracts-v2)! Open to all teams and individuals.
