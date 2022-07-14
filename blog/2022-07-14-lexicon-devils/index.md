@@ -8,7 +8,6 @@ tags: [lexicon devils, metaverse, architecture, guild, cryptovoxels, voxels, jui
 # Lexicon Devils: A Metaverse Architecture Guild Running on Juicebox  
 
 ## How Lexicon Devils is building the metaverse, getting paid to do it, and managing their treasury on Juicebox.  
-<br>  
 
 Written by [brileigh.eth](http://twitter.com/0xbrileigh) with editing and contributions from [matthewbrooks.eth](http://twitter.com/0xmatthewb)  
 
