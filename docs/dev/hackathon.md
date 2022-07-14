@@ -5,7 +5,7 @@ sidebar_position: 9
 # Scaffold JB Hackathon
 
 :::note Heads Up!
-Submissions close today at 18:00 EDT. **[Submit your project here](https://forms.gle/NeRyCxDTPt8sJfkp8).** Watch the [project showcase livestream](https://youtu.be/J5O34DgiO4w) at 18:00 EDT.
+Submissions close today at 18:00 EDT. **[Submit your project here](https://forms.gle/NeRyCxDTPt8sJfkp8).** Watch the [project showcase livestream](https://www.youtube.com/watch?v=vMz8evy3FM8) at 18:00 EDT.
 :::
 
 Make an interesting project using [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth) and [Juicebox v2](https://github.com/jbx-protocol/juice-contracts-v2)! Open to all teams and individuals.
@@ -46,7 +46,7 @@ All projects must use [scaffold-eth](https://github.com/scaffold-eth/scaffold-et
 
 **13:00 EDT, July 6th:** live build on YouTube with [@nnnnicholas](https://twitter.com/nnnnicholas) and [@austingriffith](https://twitter.com/austingriffith).
 
-**18:00 EDT, July 14th:** [hackathon submissions](https://forms.gle/NeRyCxDTPt8sJfkp8) close, and the [showcase livestream](https://youtu.be/J5O34DgiO4w) starts.
+**18:00 EDT, July 14th:** [hackathon submissions](https://forms.gle/NeRyCxDTPt8sJfkp8) close, and the [showcase livestream](https://www.youtube.com/watch?v=vMz8evy3FM8) starts.
 
 **19:00 EDT, July 14th:** a [JokeDAO](https://jokedao.io) vote will open. Voting tokens will be airdropped to anybody who has donated to [Buidl Guidl](https://)'s Juicebox project. Voting tokens will also be distributed to active Buidl Guidl, JuiceboxDAO, and JokeDAO contributors.
 
