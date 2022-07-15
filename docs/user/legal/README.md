@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
 title: Legal Resources
+sidebar_position: 1
 ---
 
 # DAOs and Legal Entities
@@ -9,14 +9,46 @@ title: Legal Resources
 Any legal, financial, or tax comments within Discord is provided for informational and illustrative purposes only, and is not intended to constitute legal, financial, tax, or other advice. You should not act or refrain from acting based on any information gleaned from any documents, comments, or instructions. Juicebox does not endorse or make any representation as to the capabilities of any tax advisor within our Discord and the provision of contact information is not a recommendation that you hire any such person. Please check with your legal and tax advisors to make the best decisions for your specific circumstances.
 :::
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sapien faucibus et molestie ac feugiat. Neque ornare aenean euismod elementum nisi. Lorem donec massa sapien faucibus et molestie ac. Lectus sit amet est placerat in egestas erat imperdiet. Congue nisi vitae suscipit tellus mauris a diam maecenas. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Vitae auctor eu augue ut lectus arcu bibendum at. Sit amet consectetur adipiscing elit ut aliquam purus sit amet. Massa placerat duis ultricies lacus. Non diam phasellus vestibulum lorem sed risus ultricies tristique nulla. Tempus quam pellentesque nec nam aliquam sem. Aliquet bibendum enim facilisis gravida neque convallis a cras. Ipsum suspendisse ultrices gravida dictum fusce ut. Sit amet aliquam id diam maecenas ultricies mi eget mauris. Arcu risus quis varius quam. Faucibus purus in massa tempor nec feugiat. Fermentum odio eu feugiat pretium nibh ipsum consequat.
+## Introduction
 
-Pretium quam vulputate dignissim suspendisse in est ante. Lorem donec massa sapien faucibus et molestie ac. Nisl pretium fusce id velit ut tortor pretium viverra suspendisse. Mus mauris vitae ultricies leo integer malesuada nunc vel risus. Risus pretium quam vulputate dignissim suspendisse. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Id consectetur purus ut faucibus pulvinar. Venenatis cras sed felis eget velit aliquet. Facilisis mauris sit amet massa vitae tortor condimentum lacinia quis. Eget magna fermentum iaculis eu. Ultricies mi quis hendrerit dolor magna eget est.
+Welcome to the Juicebox Legal Resources section. It is commonly referred to as "wrapping" a DAO when you create a legal entity to formally operate from, or along side of, if at all. This section will discuss a number approaches existing projects, and other DAOs have taken when considering formally incorporating a legal entity while operating a DAO. Ultimately, you will be the one responsible to make the right decision about your circumstances and how it relates to your project.
+
+Please read the above disclaimers carefully and repeatedly. While the information provided may sound authoritative, competent, even shockingly learned, ultimately, this is information on the internet and is provided to you for informational purposes only, you should not rely on this information.
+
+Likely you are interested in creating a Juicebox project and in doing so are generally concerned about the legal ramifications. The right answer differs based on your specific facts and circumstances, nonetheless, the information found here is organized in the following sub-sections:
+
+1. High-level overview of each type of Juicebox projects.
+2. Example legal entities which can be created alongside your Juicebox project.
+3. Examples reference documents for each legal entity, which you may download and modify.
+4. Examples of existing Juicebox project configurations.
+5. Examples of executed agreements and reference to their project.
+6. Large body of legal research around the subject of crypto in general.
+7. References to other online resources.
+
+Included in the above sections are additional facts intended to provide color or background.
 
 :::warning
 Juicebox seeks to be as diligent as possible in compiling and updating the information on its website. However, there is no guarantee of the correctness and completeness of the information provided here. Juicebox does not guarantee that this information is up to date and such information may be subject to change at any time and without notice.
+:::
 
-ANY GOVERNANCE TOKENS RECEIVED BY MEMBERS HAVE NOT BEEN APPROVED OR DISAPPROVED BY THE UNITED STATES SECURITIES AND EXCHANGE COMMISSION, ANY STATE SECURITIES COMMISSION, OR OTHER REGULATORY AUTHORITY, NOR HAVE ANY OF THE FOREGOING AUTHORITIES PASSED UPON THE MERITS OF THIS OFFERING OR UPON THE ACCURACY OR ADEQUACY OF THIS AGREEMENT. ANY REPRESENTATION TO THE CONTRARY IS A CRIMINAL OFFENSE. THIS DOCUMENT DOES NOT CONSTITUTE AN OFFER OR SOLICITATION TO ANYONE IN ANY JURISDICTION IN WHICH SUCH OFFER OR SOLICITATION IS NOT AUTHORIZED.
+## Unincorporated and incorporated entities
 
-ANY GOVERNANCE TOKENS THAT YOU MAY ACQUIRE HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT, STATE SECURITIES LAWS, OR THE LAWS OF ANY COUNTRY OUTSIDE THE UNITED STATES. Juicebox'S POSITION IS THAT THEY SHOULD NOT BE SINCE THE PURPOSE OF Juicebox IS TO BUILD A NOT-FOR-PROFIT INTERNET MUSEUM, PROVIDE NO RIGHTS TO ANY DISTRIBUTION OR PROFITS, AND ARE NON-TRANSFERRABLE EXCEPT BETWEEN MEMBERS.
+## Terminology
+
+Throughout this Legal Reference section there will be a number of terms used to described the activity in which a Juicebox treasury is used. The inherent benefits of programmable money via the blockchain lend themselves to forming, immutable rules and processes for routing, retention, payouts as well as governing how contributors participate. The Juicebox treasury lifecycle is dynamic and scalable, that is to say, the Juicebox treasury easily can manage individual proceeds resulting from the sale of NFTs to sustaining and coordinating tens of thousands of individuals.
+
+At this point, it is assumed you generally understand that the Juicebox treasury is a tool which manages the inflow of Ethereum through a decentralized application (web page hosted on IPFS among other hosting providers) by which the persistent information is stored on Ethereum on smart contracts, both operate in concert to perform the following public good:
+
+-   enable anyone to easily set up a payment channel to receive payments
+-   public, censorship resistent transparent treasury balance, governance, and spending
+-   payout scheduler, also referred to as a funding cycle, releases funds to a previously agreed upon schedule
+-   mechanism to issue tokens to project contributors
+-   mechansim to offer redemption of said tokens against the treasury's overflow balance (the previous statements are in no way implying any profit or revenue)
+
+The distinction of _what type of Ethereum the treasury receives_ will be discussed in following sections, however what is pertinent
+
+This mechanism of managing Ethereum and your project tokens is referred to as a Juicebox project but may also be called treasury, dao, shared wallet, for the purpose of this Legal Resources we will call this component of the DApp the Juicebox treasury or treasury for short. Additionally, in the reference legal documents, we call the entity Treasury for consistency.
+
+:::warning
+Juicebox seeks to be as diligent as possible in compiling and updating the information on its website. However, there is no guarantee of the correctness and completeness of the information provided here. Juicebox does not guarantee that this information is up to date and such information may be subject to change at any time and without notice.
 :::

@@ -1,12 +1,16 @@
 ---
 title: "Glossary"
+sidebar_position: 6
 ---
 
 "Act" has the meaning ascribed to that term in Section 1(a).
 
 "Affiliate" means, with respect to any Person, any other Person controlling, controlled by, or under common control with such Person; in such context, "control" means the possession, directly or indirectly, of the power to direct the management or policies of another, whether through the ownership of voting securities, by contract, or otherwise.
-
 "Agreement" means this Guiding Principles Agreement of Treasury DAO.
+
+"Conflict of Interest"
+
+"Corporate Governance"
 
 "DAO" means Treasury DAO, a Nevada unincorporated nonprofit association.
 
@@ -14,7 +18,14 @@ title: "Glossary"
 
 "Dapp" means an online portal or other interactive software used by the DAO to operate an Internet-native treasury of treasuries which facilitates the accounting and management of cryptocurrency, fungible tokens, and non-fungible tokens ("NFTs"), which are maintained by the DAO, its Members, or another Person.
 
+"Duties"
+
+"Duty of Care"
+
+"Fiduciary Duty"
+
 "Governance Rights" means the entire interest of a Member in the DAO, as measured by a Member's Tokens, including, without limitation, all rights and obligations contemplated or agreed to under this Agreement, and any right to vote on, consent to, or otherwise participate in any decision or action of or by the Members granted by this Agreement or the Act.
+"Limited Liability Company"
 
 "Majority Vote" means the approval of Members holding at least a majority-in-interest of all claimed Tokens.
 
@@ -29,3 +40,5 @@ title: "Glossary"
 "Representative" means a member, manager, officer, director, partner, employee, or agent.
 
 "Service Provider" means the Person appointed by Treasury to perform administrative services, responsibilities, and duties to carry on the DAO's operations.
+
+"Unincorporated Non-Profit"
