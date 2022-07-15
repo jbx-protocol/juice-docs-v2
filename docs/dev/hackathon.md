@@ -5,7 +5,7 @@ sidebar_position: 9
 # Scaffold JB Hackathon
 
 :::note Heads Up!
-**[JokeDAO voting is live](https://info.juicebox.money/dev/hackathon)!** Vote before 7:00 PM EDT on July 15th!
+**[JokeDAO voting is live](https://www.jokedao.io/contest/polygon/0x3Aa9538c6aCD23526fF72f75A9b9160a275379C3)!** Vote before 7:00 PM EDT on July 15th!
 :::
 
 Make an interesting project using [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth) and [Juicebox v2](https://github.com/jbx-protocol/juice-contracts-v2)! Open to all teams and individuals.
