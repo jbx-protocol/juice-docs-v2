@@ -3,6 +3,9 @@ title: "Standalone LLC"
 # sidebar_position:
 ---
 
+[Standalone LLC](papers/Example-LLC-Standalone.docx)
+[Source](https://guide.syndicate.io/web3-investment-clubs/create-a-legal-entity)
+
 LIMITED LIABILITY COMPANY AGREEMENT
 
 [ENTITY NAME]
@@ -24,7 +27,7 @@ SYNDICATE PROVIDES THESE TERMS ON AN “AS IS” BASIS, AND SPECIFICALLY DISCLAI
 LIMITED LIABILITY COMPANY AGREEMENT
 [FULL ENTITY NAME]
 
-    This limited liability company agreement is made as of <DATE> (the “Effective Date”) by and among the Members identified on the signature pages hereto and those Persons who have or may become parties to this Agreement in the future, in accordance with the terms of this Agreement (collectively the “Parties”) of the Company. In consideration of the mutual covenants in this Agreement the Parties agree as follows:
+This limited liability company agreement is made as of [DATE] (the “Effective Date”) by and among the Members identified on the signature pages hereto and those Persons who have or may become parties to this Agreement in the future, in accordance with the terms of this Agreement (collectively the “Parties”) of the Company. In consideration of the mutual covenants in this Agreement the Parties agree as follows:
 
 ARTICLE I
 DEFINITIONS

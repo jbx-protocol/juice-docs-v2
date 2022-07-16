@@ -1,14 +1,17 @@
 ---
 title: "Investment Club LLC"
-# sidebar_position:
+sidebar_position: 2
 ---
+
+[Investment Club LLC](papers/Example-Operating-Agreement-Investment-Club-Series-LLC.docx)
+[Source](https://guide.syndicate.io/web3-investment-clubs/create-a-legal-entity)
 
 [ENTITY LLC NAME ],
 A DELAWARE LIMITED LIABILITY COMPANY
 [SERIES NAME],]
 A SERIES OF [ENTITY LLC NAME ],
 
-     SUBSCRIPTION DOCUMENTS
+SUBSCRIPTION DOCUMENTS
 
 [Note to User: You acknowledge and agree that the making available of this document to you by Syndicate Inc. shall not create any confidential or special relationship between you and Syndicate Inc. or its affiliates (collectively, “Syndicate”) and does not constitute the provision of legal advice or other professional advice by Syndicate or its legal counsel. You should seek advice from an attorney licensed in the relevant jurisdiction(s), as well as a tax professional, before relying on this template document.
 Additionally, the information provided in this document does not constitute tax advice. Any discussion of tax matters is not intended or written to be used, and cannot be used, for the purpose of avoiding penalties under the Internal Revenue Code (or equivalent in the relevant jurisdiction) or promoting, marketing or recommending to another party any transaction or matter.
@@ -127,7 +130,7 @@ This Subscription Agreement (this “Agreement”) is entered into by and betwee
     IN WITNESS WHEREOF, the Subscriber hereby executes this Agreement as of the date set forth below.
 
 Date:
-Subscription Amount: $********\_\_\_********
+Subscription Amount: $**\*\*\*\***\_\_\_**\*\*\*\***
 
 Subscriber:
 (Signature) (Signature)
@@ -135,10 +138,10 @@ Subscriber:
 
 ACCEPTANCE OF SUBSCRIPTION
 (to be filled out only by the Vehicle)
-By signing below, the Administrative Member and the Vehicle hereby accept Subscriber’s Subscription for Interests in the Vehicle with a Subscription Amount of $******\_\_\_\_******, admit the Subscriber as a Member of the Vehicle as of the date set forth below in accordance with the terms of the Subscription Agreement and the Operating Agreement, and authorize this signature page to be attached to the Subscription Agreement related to the Vehicle.
+By signing below, the Administrative Member and the Vehicle hereby accept Subscriber’s Subscription for Interests in the Vehicle with a Subscription Amount of $**\*\***\_\_\_\_**\*\***, admit the Subscriber as a Member of the Vehicle as of the date set forth below in accordance with the terms of the Subscription Agreement and the Operating Agreement, and authorize this signature page to be attached to the Subscription Agreement related to the Vehicle.
 [ADMINISTRATIVE MEMBER Name ], in its capacity as Administrative Member, and for and on behalf of [LLC / SERIES NAME ]
 
-By: ****************\_\_\_\_**************** Date: ************\_************
+By: **\*\***\*\*\*\***\*\***\_\_\_\_**\*\***\*\*\*\***\*\*** Date: \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\***
 Name:
 Title:
 
@@ -150,7 +153,7 @@ Member Signature Page
 
 The undersigned Member hereby executes the Limited Liability Company Operating Agreement of the Company, dated as of the Effective Date, and hereby authorizes this signature page to be attached to a counterpart of that document executed by the Administrative Member of the Company.
 (Print Name of Member)
-Dated: ****\_\_****
+Dated: \***\*\_\_\*\***
 (Signature of Member or Authorized Signatory)
 
 EXHIBIT A
@@ -195,7 +198,7 @@ Associated with Wallet:
     ◻ Joint Tenants with Right of Survivorship (each individual must sign)
     ◻ Tenants-in-Common (each individual must sign)
     ◻ Community Property (one signatory required)
-    ◻ Other: ************\_\_\_************
+    ◻ Other: \***\*\*\*\*\*\*\***\_\_\_\***\*\*\*\*\*\*\***
 13. Does the Subscriber acknowledge that it may not purchase Interests in the Vehicle using assets of an individual retirement account, individual retirement annuity, employee benefit plan or other similar arrangement, such as a “Keogh” plan?
     Yes **\_** No **\_**
     If the Subscriber responded “No ” above, its ability to invest in the Vehicle may be limited.

@@ -1,7 +1,9 @@
 ---
-title: "Secured Promissory Note Template"
+title: "Secured Promissory Note"
 # sidebar_position:
 ---
+
+[Secured Promissory Note](../papers/secured-promissory-note-template.docx)
 
 SECURED PROMISSORY NOTE
 

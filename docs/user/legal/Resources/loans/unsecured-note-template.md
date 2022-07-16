@@ -1,7 +1,9 @@
 ---
-title: "Unsecured Promissory Note Template"
+title: "Unsecured Promissory Note"
 # sidebar_position:
 ---
+
+[Unsecured promissory note template](../papers/unsecured-promissory-note.docx)
 
 UNSECURED PROMISSORY NOTE
 
@@ -88,14 +90,14 @@ Hereinafter known as the “Repayment Period.”
 
 22. ENTIRE AGREEMENT. This Note contains all the terms agreed to by the parties relating to its subject matter, including any attachments or addendums. This Note replaces all previous discussions, understandings, and oral agreements. The Borrower and Lender agree to the terms and conditions and shall be bound until the Borrower repays the Borrowed Money in full.
 
-Lender Signature: ****\*\*\*\*****\_\_\_\_****\*\*\*\***** Date: \***\*\_\_\_\_\*\***
+Lender Signature: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\*** Date: \***\*\_\_\_\_\*\***
 
-Print Name: ****\*\*\*\*****\_\_\_\_****\*\*\*\*****
+Print Name: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\***
 
-Borrower Signature: ****\*\*\*\*****\_\_\_\_****\*\*\*\***** Date: \***\*\_\_\_\_\*\***
+Borrower Signature: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\*** Date: \***\*\_\_\_\_\*\***
 
-Print Name: ****\*\*\*\*****\_\_\_\_****\*\*\*\*****
+Print Name: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\***
 
-Co-Signer Signature (if any): ****\*\*\*\*****\_\_\_\_****\*\*\*\***** Date: \***\*\_\_\_\_\*\***
+Co-Signer Signature (if any): \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\*** Date: \***\*\_\_\_\_\*\***
 
-Print Name: ****\*\*\*\*****\_\_\_\_****\*\*\*\*****
+Print Name: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\***

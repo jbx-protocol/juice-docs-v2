@@ -1,7 +1,9 @@
 ---
-title: "IOU Template"
+title: "IOU"
 # sidebar_position:
 ---
+
+[IOU](../papers/IOU-form-template.docx)
 
 I OWE YOU (IOU)
 
@@ -31,10 +33,10 @@ Hereinafter known as the “Borrowed Money.”
 ☐ - Monthly with any remaining balance payable on [DATE] (“Due Date”).
 ☐ - Quarterly with any remaining balance payable on [DATE] (“Due Date”).
 
-Lender Signature: ************\_\_\_\_************ Date: ****\_\_\_\_****
+Lender Signature: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\*** Date: \***\*\_\_\_\_\*\***
 
-Print Name: ************\_\_\_\_************
+Print Name: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\***
 
-Borrower Signature: ************\_\_\_\_************ Date: ****\_\_\_\_****
+Borrower Signature: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\*** Date: \***\*\_\_\_\_\*\***
 
-Print Name: ************\_\_\_\_************
+Print Name: \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\***

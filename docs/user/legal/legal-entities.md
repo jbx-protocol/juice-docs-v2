@@ -11,7 +11,7 @@ Any legal, financial, or tax comments within Discord is provided for information
 
 Whether your Juicebox treasury requires a formal legal structure is ultimately up to you. However there are a number of options and examples where a Juicebox project may operate without a legal structure. This section seeks to present information on what choices and options available to you. As a friendly reminder, this documentation, Juicebox Discord server, are not replacements from legal, tax, or accounting advice. Please do your own research.
 
-## More reading
+## DAO Framework Papers
 
 -   [DAO Legal Framework Part 1](./papers/dao-legal-framework-part-1.pdf)
 -   [DAO Legal Framework Part 2](./papers/dao-legal-framework-part-2.pdf)
@@ -24,15 +24,20 @@ While not a structure in the layman's sense, a legal structure is a set of rules
 
 ### **Promissory Note (Loan)**
 
-This sentence is intentionally left blanks.
+-   [Simple](resources/loans/note-template.md)
+-   [IOU](resources/loans/iou-template.md)
+-   [Secured Promissory Note](resources/loans/secured-promissory-note-template.md)
+-   [Unsecured Promissory Note](resources/loans/unsecured-promissory-note-template.md)
 
 ### **Living Trust**
 
-This sentence is intentionally left blanks.
+-   [Trust Document](resources/trusts/trust.md)
+-   [Declaration of Trust](resources/trusts/declaration-of-trust.md)
 
 ### **Unincorporated Non-Profit Association**
 
-This sentence is intentionally left blanks.
+-   [Unicorporated Non-Profit Association Act of 2008 (the "Act"), Model Act](https://www.uniformlaws.org/viewdocument/final-act-149?CommunityKey=40227d3a-8b5d-47c2-8cd0-b0ec12da97f9&tab=librarydocuments)
+-   [Nevada Guiding Principals](resources/nv-una.md)
 
 ### **Partnership**
 

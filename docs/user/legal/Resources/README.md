@@ -23,6 +23,11 @@ This section is intentionally blank.
 
 -   [Secured Promissory Note Template](secured-promissory-note-template)
 
+### Trust Agreements
+
+-   [Trust](trust)
+-   [Trust Declaration](declaration-of-trust)
+
 ### Unincorporated Non-Profit
 
 -   [Nevada State](nv-una)
@@ -32,10 +37,6 @@ This section is intentionally blank.
 -   [Investment Club](investment-club)
 -   [Delaware Series LLC](op-llc-series)
 -   [Delaware Standalone](standalone-llc)
-
-#### Other
-
-This section is intentionally blank.
 
 ### S-Corporation
 
@@ -49,6 +50,7 @@ This section is intentionally blank.
 
 This section is intentionally blank.
 
-### Additional Provisions
+#### Additional Agreements
 
-[Examples](./additional-provisions.md)
+-   [Simple Agreement for Future Equity (SAFE)](papers/Rolling-SAFE-Template.docx)
+-   [SAFE Exhibit A](papers/Rolling-SAFE-Exhibit-A.docx)

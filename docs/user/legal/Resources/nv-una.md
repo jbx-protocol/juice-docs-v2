@@ -1,6 +1,6 @@
 ---
 title: "Example Nevada UNA"
-# sidebar_position:
+sidebar_position: 1
 ---
 
 TreasuryDAO

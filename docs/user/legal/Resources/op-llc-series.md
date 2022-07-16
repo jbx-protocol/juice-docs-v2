@@ -1,7 +1,10 @@
 ---
-title: "Operating Agreement LLC"
-# sidebar_position:
+title: "Series LLC"
+sidebar_position: 3
 ---
+
+[Operating Agreement LLC](papers/Example-Operating-Agreement-Investment%20Club-Series%20LLC.docx)
+[Source](https://guide.syndicate.io/web3-investment-clubs/create-a-legal-entity)
 
 LIMITED LIABILITY COMPANY AGREEMENT
 
@@ -375,13 +378,13 @@ IN WITNESS WHEREOF, the undersigned has executed this Agreement effective as of 
 ADMINISTRATIVE MEMBER:
 
 Name: [Print Administrative Member’s Name]
-Date:******\_\_\_\_******
+Date:**\*\***\_\_\_\_**\*\***
 
 Member Signature Page
 
 The undersigned Member hereby executes the Limited Liability Company Operating Agreement of the Company, dated as of the Effective Date, and hereby authorizes this signature page to be attached to a counterpart of that document executed by the Administrative Member of the Company.
 (Print Name of Member)
-Dated: ****\_\_****
+Dated: \***\*\_\_\*\***
 (Signature of Member or Authorized Signatory)
 
 Exhibit A
