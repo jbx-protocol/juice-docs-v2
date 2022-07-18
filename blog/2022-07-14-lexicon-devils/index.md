@@ -87,6 +87,8 @@ As the pinnacle of their monthly Juicebox event series Lexicon Devils is hosting
 
 ### Relevant links  
 
+Listen to Peacenode and Wackozacco tell the story of Lexicon Devils on [episode 8 of The Juicecast](https://anchor.fm/thejuicecast/episodes/Ep--8-Peacenode-and-Wackozacco-from-Lexicon-Devils-e1l3k94)
+
 Visit the [Juicebox parcel in Voxels](http://juicebox.lexicondevils.xyz/)
 
 Visit the [Lexicon Devils HQ in Voxels](https://www.cryptovoxels.com/play?coords=SW@6703W,48N)
