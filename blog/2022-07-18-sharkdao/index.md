@@ -18,7 +18,7 @@ Nouns is an on-chain generative NFT project and experiment in community building
 
 Auction bids for Nouns can easily reach over 100 ETH. As a result, owning a Noun is often limited to those that can afford to win these competitive auctions… unless you’re a member of SharkDAO ⌐◨-◨  
 
-### SharkDAO, a shiver of Nouns enthusiasts  
+### SharkDAO, a shiver of Nouns enthusiasts 🦈  
 
 Did you know that a group of sharks is called a shiver? SharkDAO brings together Nouns enthusiasts with the shared goal of acquiring Nouns and contributing to the Nouns ecosystem. Together they pool funds, participate in Nouns DAO governance, and partner with artists, developers, and DAOs to create Nounish experiences. This has taken the form of [podcasts](https://podcasts.apple.com/us/podcast/meet-the-sharks/id1605492563), [NFT collaborations](https://opensea.io/assets/ethereum/0x495f947276749ce646f68ac8c248420045cb7b5e/95967798888951567848103900867485523214406787411953560656221044242283845648484), and Nouns DAO proposals like [e-sports initiatives](https://nouns.wtf/vote/68) and [CC0 Story Bibles](https://nouns.wtf/vote/70).  
 
@@ -63,7 +63,7 @@ image: SharkDAO and NounsDAO visualization from [sharks.wtf](http://sharks.wtf)
 It all started with a small group of frens helping Nouns DAO test out their auction mechanism before it went live. [Goldy](https://twitter.com/Goldypix), [4156](https://twitter.com/punk4156), [Dropnerd](https://twitter.com/dropnerdETH), [Lithium](https://twitter.com/LithiumXBT), [Kenbot](https://twitter.com/kenbot), [Del Piero](https://twitter.com/iamDelPiero) and [Defi Jesus](https://twitter.com/eldefijesus) were a few of these early swimmers. The Shark Noun was one of the first Nouns that was acquired on testnet by the group and they decided to build around that Shark identity. They launched a [Discord](http://discord.gg/QNbuygdK3A), started bringing in contributors, and began planning how they were going to crowdfund to buy Nouns.
 
 ![A tweet by 4156 after the Rinkeby shark was acquired](rinkeby-shark-4156.png)  
-image: [4156](https://twitter.com/punk4156) announcing that the Rinkeby shark was acquired  
+image: [4156](https://twitter.com/punk4156) announcing that the Rinkeby shark was acquired ([tweet](https://twitter.com/punk4156/status/1417277461100957703?s=20&t=l-tAx4IAz5kLmhNhKFdNyQ))  
 
 > SharkDAO is a meme that jumped from Rinkeby to mainnet.”  
 >  
@@ -77,14 +77,14 @@ image: SharkDAO [project page](https://juicebox.money/#/p/sharkdao) on Juicebox
 
 From there, SharkDAO set up a Juicebox project on Rinkeby. Dropnerd was doing the testing and was still new to signing transactions. “I was very excited to see everything come together so easily without needing to interact with a bunch of smart contracts directly,” he explained. “The UI showed me exactly what was going on which made it a lot easier for the DAO. Looking back I can’t think of another platform where we could have raised 200+ ETH in the first few days without the help of Juicebox.  
 
-### SharkDAO catching the Shark Noun  
+### SharkDAO catching the Shark Noun 🎣  
 
 ![Noun #47: The Shark Noun.](swim-shady.svg)  
-image: Noun 47, the Shark Noun  
+image: [Noun 47](https://nouns.wtf/noun/47), the Shark Noun  
 
 Although new Nouns may seem random and impossible to predict, their traits are actually determined by the previous blockhash. And if you’re particularly clever, you can use the crystal ball to predict and even choose the next Noun that will be generated 🔮  
 
-Before the Shark Noun was generated, founding member [Goldy](https://twitter.com/Goldypix) was eyeing the [Noun Crystal Ball](https://nouns-crystal-ball.netlify.app/) every day for weeks. This magical tool shows you what the next Noun will look like if the auction is settled on the current block by calling the `settleCurentAndCreateNewAuction()` function on the `NounsAuctionHouse` contract.  
+Before the Shark Noun was generated, founding member [Goldy](https://twitter.com/Goldypix) was eyeing the [Noun Crystal Ball](https://nouns-crystal-ball.netlify.app/) every day for weeks. This magical tool shows you what the next Noun will look like if the auction is settled on the current block by calling the `settleCurentAndCreateNewAuction()` function in the `NounsAuctionHouse` contract.  
 
 Usually the winning bidder will settle the auction, but anyone can call `settleCurentAndCreateNewAuction()` at a particular block and help decide what the next Noun will look like. In a glimpse of a moment, Goldy saw the Shark Noun in the Crystal Ball and [submitted the transaction](0xba8560127d046bb5b2c92cae027a8741f3301975ef37752e23e3b3b1e565cd07) before the next block to secure it.    
 
