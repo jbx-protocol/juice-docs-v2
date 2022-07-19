@@ -43,6 +43,17 @@ article {
   margin: auto;
 }
 
+article img {
+  display: block;
+  margin: auto;
+}
+
+.subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 90%;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;

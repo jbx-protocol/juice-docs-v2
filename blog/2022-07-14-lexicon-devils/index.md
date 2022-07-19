@@ -17,7 +17,7 @@ I spent the majority of my childhood exploring the internet and playing classic 
 
 ![Old Town, The Sims](old-town.png)
 
-image: *Old Town* in The Sims (2000)  
+<p class="subtitle">image: Old Town in The Sims (2000)</p>
 
 ### Lexicon Devils origin story  
 
@@ -35,7 +35,7 @@ And who knows, you might even end up making an ultra tropical banana-themed lear
 
 ![The first iteration of the Juicebar and Juicebox Learning Center](juicebox-v1.jpg)
 
-image: The first iteration of the Juicebar and Juicebox Learning Center
+<p class="subtitle">image: The first iteration of the Juicebar and Juicebox Learning Center</p>
 
 ### A home for Banny: iterations of the Juicebox parcel in Voxels  
 
@@ -45,13 +45,13 @@ As part of the growing bannyverse, [WAGMI Studios](https://juicebox.money/#/p/wa
 
 ![The Bannyverse Treasure Hunt](treasure-hunt.jpg)
 
-image: The Bannyverse Treasure Hunt
+<p class="subtitle">image: The Bannyverse Treasure Hunt</p>
 
 Since October 2021, the Juicebox plot in Voxels has gone through many iterations as a center for learning, discovery, and entertainment. It stands out from surrounding parcels with its attention to detail and references to IRL architecture and design. Through pixelated curves and large windows blending the inside and outside, the current [Juicebox v2 build](http://juicebox.lexicondevils.xyz/) combines characteristics of mid-century modern design with a tropical Banny aesthetic. Bringing this all together in one big juicy cocktail, the v2 build is a utopian dream in line with the ethos that anyone can grow and fund their dream project.  
 
 ![v2 of the Juicebox parcel.](juicebox-v2.png)
 
-image: v2 of the Juicebox Learning Center, Transit Center, and Juicebar
+<p class="subtitle">image: v2 of the Juicebox Learning Center, Transit Center, and Juicebar</p>
 
 ### Lexicon Devils' wild and imaginative custom builds  
 
@@ -59,11 +59,12 @@ In addition to building for Juicebox, [Lexicon Devils](https://juicebox.money/#/
 
 ![Dreams Never Die HQ](dreams-never-die.jpg)  
 
-image: Dreams Never Die HQ at [31 Bran Ave](https://www.cryptovoxels.com/play?coords=5968W,1708N)  
+<p class="subtitle">image: Dreams Never Die HQ at <a href="https://www.cryptovoxels.com/play?coords=5968W,1708N">31 Bran Ave</a></p>
 
 ![Custom builds by Wackozacco](wacko-custom-builds.jpg)  
 
-image: Custom builds by [Wackozacco](http://twitter.com/wackozacco420) on Architect Island  
+<p class="subtitle">image: Custom builds by <a href="http://twitter.com/wackozacco420">Wackozacco</a> on Architect Island</p>
+
 left to right: [3 Schism Street](https://www.voxels.com/parcels/7968/visit), [7 Marayaco Ave](https://www.voxels.com/play?coords=N@1081E,1086N,0.5U), [2 Schism Street](https://www.voxels.com/parcels/7963/visit), [29 Marble Road](https://www.voxels.com/play?coords=W@1084E,1137N)  
 
 > *I never would have imagined [becoming a metaverse architect]. I was designing video game skins when I was younger, not really thinking about it. As I was growing up, I felt like I needed to do something more meaningful and then I found out that you could paid for doing stuff like this. It was a re-discovery of a passion and realizing that it can produce value.*
@@ -78,7 +79,7 @@ Whether referencing the physical world or playing with what defies reality, Voxe
 
 ![Lincoln Logs, a popular children's toy](lincoln-logs.jpg)  
 
-image: [Lincoln Logs](https://en.wikipedia.org/wiki/Lincoln_Logs), a popular children’s toy invented in 1916 by John Lloyd Wright, son of well-known architect [Frank Lloyd Wright](https://en.wikipedia.org/wiki/Frank_Lloyd_Wright).  
+<p class="subtitle">image: <a href="https://en.wikipedia.org/wiki/Lincoln_Logs">Lincoln Logs</a>, a popular children’s toy invented in 1916 by John Lloyd Wright, son of well-known architect <a href="https://en.wikipedia.org/wiki/Frank_Lloyd_Wright">Frank Lloyd Wright</a>.</p>
 
 ### FORMING and coming full circle with Juicebox  
 
