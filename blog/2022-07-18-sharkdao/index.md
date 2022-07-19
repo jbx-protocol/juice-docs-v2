@@ -1,8 +1,10 @@
 ---
 slug: 2022-07-18-sharkdao
 title: SharkDAO, A Sub-DAO Raising Funds to Participate in the Nouns Ecosystem
+description: SharkDAO has raised over 1000 ETH on Juicebox, acquired six Nouns, and brought together over 400 sharks.
 authors: [matthew, brileigh]
 tags: [sharkDAO, NFT, nouns, CC0, on-chain, avatar, pfp, governance, juicebox, ethereum, crypto]
+image: https://info.juicebox.money/assets/images/shark-gang-6e867c702af115e10cd93fa2825a667b.png
 ---
 
 # SharkDAO: A sub-DAO raising funds to participate in the Nouns Ecosystem  
@@ -84,7 +86,7 @@ image: [Noun 47](https://nouns.wtf/noun/47), the Shark Noun
 
 Although new Nouns may seem random and impossible to predict, their traits are actually determined by the previous blockhash. And if you’re particularly clever, you can use the crystal ball to predict and even choose the next Noun that will be generated 🔮  
 
-Before the Shark Noun was generated, founding member [Goldy](https://twitter.com/Goldypix) was eyeing the [Noun Crystal Ball](https://nouns-crystal-ball.netlify.app/) every day for weeks. This magical tool shows you what the next Noun will look like if the auction is settled on the current block by calling the `settleCurentAndCreateNewAuction()` function in the `NounsAuctionHouse` contract.  
+Before the Shark Noun was generated, founding member [Goldy](https://twitter.com/Goldypix) was eyeing the [Noun Crystal Ball](https://nouns-crystal-ball.netlify.app/) every day for weeks. This magical tool shows you what the next Noun will look like if the auction is settled on the current block by calling the `settleCurentAndCreateNewAuction()` function in the `NounsAuctionHouse` [contract](https://etherscan.io/address/0xF15a943787014461d94da08aD4040f79Cd7c124e).  
 
 Usually the winning bidder will settle the auction, but anyone can call `settleCurentAndCreateNewAuction()` at a particular block and help decide what the next Noun will look like. In a glimpse of a moment, Goldy saw the Shark Noun in the Crystal Ball and [submitted the transaction](0xba8560127d046bb5b2c92cae027a8741f3301975ef37752e23e3b3b1e565cd07) before the next block to secure it.    
 
@@ -109,7 +111,7 @@ image: Noun 47, the Shark Noun
 
 ### SharkDAO celebrates their shark-versary  
 
-Since their launch on August 8th, 2021, [SharkDAO](https://juicebox.money/#/p/sharkdao) has raised over 1000 ETH on Juicebox, acquired six Nouns, and brought together over 800 sharks. As a sub-DAO, they’ve pushed several proposals over the *fin-ish* line in the Nouniverse including [Nouns-based short films](https://nouns.wtf/vote/20) and [FOMO Nouns](https://nouns.wtf/vote/8). SharkDAO has also [helped provide eye exams and glasses to thousands of kids in need](https://nouns.wtf/vote/104), donated 5 ETH to the [Coral Restoration Foundation](https://www.coralrestoration.org/crypto-donations/), and started a new [Juicebox project](https://juicebox.money/#/p/sharkfrens) to raise 60+ ETH for founding member [Del Piero](https://twitter.com/iamDelPiero)’s son’s leukemia treatment.  
+Since their launch on August 8th, 2021, [SharkDAO](https://juicebox.money/#/p/sharkdao) has raised over 1000 ETH on Juicebox, acquired six Nouns, and brought together over 400 sharks. As a sub-DAO, they’ve pushed several proposals over the *fin-ish* line in the Nouniverse including [Nouns-based short films](https://nouns.wtf/vote/20) and [FOMO Nouns](https://nouns.wtf/vote/8). SharkDAO has also [helped provide eye exams and glasses to thousands of kids in need](https://nouns.wtf/vote/104), donated 5 ETH to the [Coral Restoration Foundation](https://www.coralrestoration.org/crypto-donations/), and started a new [Juicebox project](https://juicebox.money/#/p/sharkfrens) to raise 60+ ETH for founding member [Del Piero](https://twitter.com/iamDelPiero)’s son’s leukemia treatment.  
 
 The Shark Noun has become an icon and remains one of the most recognizable Nouns. In a particularly surreal turn of events, Noun #47 aka Swim Shady was featured in Yuga Labs’ [Otherside promo video](https://twitter.com/yugalabs/status/1505014986556551172?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1505014986556551172%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.todayscrypto.news%2Fotherside-yuga-labs-metaverse-lands-in-april%2F) alongside Cryptopunks, Cool Cats, CrypToadz, World of Women, and Meebits. Not only were Nouns included as one of a handful of projects to represent NFTs a whole, but the Shark Noun was chosen as its iconic ambassador.  
 
