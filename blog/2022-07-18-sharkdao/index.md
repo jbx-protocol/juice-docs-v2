@@ -9,7 +9,7 @@ image: https://info.juicebox.money/assets/images/shark-gang-6e867c702af115e10cd9
 
 # SharkDAO: A sub-DAO raising funds to participate in the Nouns Ecosystem  
 
-## One Noun, every day, forever.  
+***One Noun, every day, forever.***  
 
 ![A series of Nouns generated in the Playground](noun-grid.png)  
 image: A series of Nouns generated in the Playground at [nouns.wtf/playground](https://nouns.wtf/playground)  
