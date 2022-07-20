@@ -11,13 +11,8 @@ Late 2021 appears to be the frontier of DAOs, and best practices and playbooks f
 
 In particular, the DAO stack - the set of software tools required to run a DAO - is beginning to mature. One such example is Juicebox - a DAO treasury protocol - which was recently picked by the [ConstitutionDAO](https://juicebox.money/#/p/constitutiondao) to raise almost ~47million USD in an attempt to buy a copy of the United States Constitution.
 
-In this article, we'll define the fundamental functions of a DAO and describe the tools required to fulfill these functions. The content is a derivative of Juicebox contributor `@nnnnicholas` 's episode on The Fintech Blueprint Podcast; if audio is your thing, check it out!
-
-> I spoke with [@LexSokolin](https://twitter.com/LexSokolin?ref_src=twsrc%5Etfw) about DAOs, NFTs, and the performance art of launching network organisms on this week&#39;s Fintech Blueprint podcast. We talk [@prtyDAO](https://twitter.com/prtyDAO?ref_src=twsrc%5Etfw), [@sharkdao](https://twitter.com/sharkdao?ref_src=twsrc%5Etfw), [@juiceboxETH](https://twitter.com/juiceboxETH?ref_src=twsrc%5Etfw), & [@franquipaola](https://twitter.com/franquipaola?ref_src=twsrc%5Etfw).
-> 
-> apple: [https://t.co/k0fr3JdaE6](https://t.co/k0fr3JdaE6)
-> spotify: [https://t.co/AeiRYPbmU3](https://t.co/AeiRYPbmU3)
-> nnnnicholas.eth⛱👘 (@nnnnicholas) [November 16, 2021](https://twitter.com/nnnnicholas/status/1460661895879348232?ref_src=twsrc%5Etfw)
+In this article, we'll define the fundamental functions of a DAO and describe the tools required to fulfill these functions. The content is a derivative of Juicebox contributor `@nnnnicholas` 's episode on The Fintech Blueprint Podcast; if audio is your thing, [check it out](https://twitter.com/nnnnicholas/status/1460661895879348232?s=20&t=uUoFXuazXWYqRUgHLflMfQ)!
+![](c3kCNED.png)
 
 ## **What's a DAO do?**
 
