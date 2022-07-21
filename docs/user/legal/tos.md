@@ -1,6 +1,6 @@
 ---
-title: "Terms of Service"
-"position": 5
+title: Terms of Service
+sidebar_position: 8
 ---
 
 ## Juicebox Terms of Service
