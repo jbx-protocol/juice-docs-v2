@@ -3,6 +3,8 @@ title: "Tokens in Detail"
 sidebar_position: 5
 ---
 
+// TODO: introduce securities issues here and bring in securities research
+
 # Tokens
 
 This section attempts to provide context and color to the various legal positions regarding what tokens are and are not. Including framing the legal positions for tokens, securities, and other governance and profit mechanics.

@@ -3,6 +3,8 @@ title: "Investment Club LLC"
 sidebar_position: 2
 ---
 
+// TODO: format me with project search and replace terms
+
 [Investment Club LLC](papers/Example-Operating-Agreement-Investment-Club-Series-LLC.docx)
 [Source](https://guide.syndicate.io/web3-investment-clubs/create-a-legal-entity)
 
@@ -23,13 +25,16 @@ TABLE OF CONTENTS
 
 SUBSCRIPTION INSTRUCTIONS 3
 SUBSCRIPTION AGREEMENT 5
+
 SIGNATURE PAGE TO SUBSCRIPTION AGREEMENT 17
 Exhibit A 21
 Exhibit B 24
 Exhibit C 27
 
 SUBSCRIPTION INSTRUCTIONS
+
 Prior to subscribing to [LLC / Series Name ] (the “Vehicle”), prospective members (“Subscribers”) should read: (i) the Limited Liability Company Agreement of [Vehicle / Master LLC Name][and the series addenda for the vehicle ] (as amended, restated, supplemented or otherwise modified from time to time, collectively the “Operating Agreement”); and (ii) these subscription documents (the “Subscription Documents”, which shall include the Subscription Agreement, exhibits, and any documents incorporated by reference). The Subscriber must also provide all of the applicable information and documents and execute the signature page outlined in the checklist below. Capitalized words that are used but not defined in this Agreement have the meaning given them in the Operating Agreement.
+
 SUBSCRIPTION DOCUMENTS CHECKLIST
 ◻ Complete and sign the Subscription Agreement (including additional representation page, if applicable).
 ◻ Review and sign the Operating Agreement Signature Page.
@@ -39,8 +44,11 @@ SUBSCRIPTION DOCUMENTS CHECKLIST
 ◻ Complete and sign the applicable IRS Form:
 ◻ W-9 (for Subscribers who are U.S. persons)
 ◻ W-8BEN (for Individual Subscribers who are not U.S. persons)
+
 The Administrative Member may request additional documents it deems as necessary from any Subscriber.
-Scan and email your completed documents to [Administrative Member’s Name ] (the “Administrative Member”) and [Counsel, if any ], to arrive as soon as possible and in any event no later than [Date ]. Please keep a copy of the executed documents for your records. Documents should include applicable supporting documentation, as specified in the Subscription Documents. Documents should be sent to:
+Scan and email your completed documents to [Administrative Member’s Name ] (the “Administrative Member”) and [Counsel, if any ], to arrive as soon as possible and in any event no later than [Date ]. Please keep a copy of the executed documents for your records. Documents should include applicable supporting documentation, as specified in the Subscription Documents.
+
+Documents should be sent to:
 [Vehicle Name]
 Email: [● ]
 

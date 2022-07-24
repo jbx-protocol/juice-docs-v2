@@ -11,6 +11,12 @@ Much of what transpires at this point is very much in the vein of starting a bus
 
 And then there is this.
 
+// TODO: add stats from Kickstart 
+
+// TODO: add stats from Juicebox
+
+// TODO: Use juicebox project as example in description
+
 ### Project planning details
 
 | Property                               | Search Pattern[^4] |      Optional      | Description                                                                                                                                                 |
@@ -25,7 +31,6 @@ And then there is this.
 | **Discord**                            |                    |                    |                                                                                                                                                             |
 | **Logo**                               |                    |                    |                                                                                                                                                             |
 | **Description or Purpose**             |                    |                    |                                                                                                                                                             |
-
 
 -   Service Provider (if applicable)
 -   Description or Purpose

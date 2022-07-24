@@ -3,6 +3,8 @@ title: "Secured Promissory Note"
 # sidebar_position:
 ---
 
+// TODO: format me
+
 [Secured Promissory Note](../papers/secured-promissory-note-template.docx)
 
 SECURED PROMISSORY NOTE

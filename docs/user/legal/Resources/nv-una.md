@@ -3,11 +3,13 @@ title: "Example Nevada UNA"
 sidebar_position: 1
 ---
 
-TreasuryDAO
+// TODO: format me
+
+JuiceboxDAO
 a Nevada nonprofit
 GUIDING PRINCIPLES
 
-These guiding principles constitute an Agreement (hereinafter the "Agreement") and are entered into by and amongst members of TreasuryDAO (hereinafter “DAO” or “Treasury”), an unincorporated nonprofit association organized under the laws of the State of Nevada. **The following terms apply when you click to view or access DAO's Decentralized Application (or "Dapp") or DAO's other online services, contribute Ethereum via https://juicebox.money (or via any project hosted therein, or https://juicebox.wtf), become a Member of the DAO, receive DAO Tokens, hold Governance Rights for Treasury, interact with or access Treasury's smart contracts in any way, provide services to Treasury, donate or transfer any property to Treasury, or otherwise interact with or access Treasury's services through the Dapp. By doing any of the above, you signify your agreement to these terms.** If you do not agree to be bound by the Agreement in its entirety, you may not access, interact with, or use Treasury. Capitalized terms used herein have the meanings ascribed to them in Section 17.
+These guiding principles constitute an Agreement (hereinafter the "Agreement") and are entered into by and amongst members of JuiceboxDAO (hereinafter “DAO” or “Treasury”), an unincorporated nonprofit association organized under the laws of the State of Nevada. **The following terms apply when you click to view or access DAO's Decentralized Application (or "Dapp") or DAO's other online services, contribute Ethereum via https://juicebox.money (or via any project hosted therein), become a Member of the DAO, receive DAO Tokens, hold Governance Rights for Treasury, interact with or access Treasury's smart contracts in any way, provide services to Treasury, donate or transfer any property to Treasury, or otherwise interact with or access Treasury's services through the Dapp. By doing any of the above, you signify your agreement to these terms.** If you do not agree to be bound by the Agreement in its entirety, you may not access, interact with, or use Treasury. Capitalized terms used herein have the meanings ascribed to them in Section 17.
 
 Organization
 
@@ -18,6 +20,8 @@ Organization
 Membership; Governance Rights and Tokens; Limitations
 
 (a) Governance Rights. Governance Rights in the DAO are represented by cryptographically secured tokens ("Tokens"), with each Token representing a fractional part of the Governance Rights of all Members (or assignees, as the case may be) equal to the quotient of one (1) divided by the total number of Tokens claimed at any time.
+
+// TODO: break out
 
 **(b) Tokens. As of the date hereof, Tokens authorized to represent membership interests in the DAO. The DAO shall provide to each Member One Million (1,000,000) Tokens for each Ethereum donated to the DAO, unless otherwise agreed to by the Members via a vote occurring through the Dapp. Notwithstanding the foregoing or any other provision of this Agreement, the DAO shall provide the members in Exhibit A and members of its technical partners, Two Hundred Thousands (200,000) Tokens, each, for their role in conceiving and supporting the DAO.\***
 

@@ -3,6 +3,8 @@ title: "Past Juicebox Projects"
 sidebar_position: 4
 ---
 
+// TODO: format me, Felixander to create markdown table with summary from Notion
+
 # Previous Juicebox Projects
 
 _Move the following into a concise table._

@@ -3,6 +3,8 @@ title: "Glossary"
 sidebar_position: 6
 ---
 
+// TODO: add all glossary terms from Juicebox Glossary
+
 "Act" has the meaning ascribed to that term in Section 1(a).
 
 "Affiliate" means, with respect to any Person, any other Person controlling, controlled by, or under common control with such Person; in such context, "control" means the possession, directly or indirectly, of the power to direct the management or policies of another, whether through the ownership of voting securities, by contract, or otherwise.

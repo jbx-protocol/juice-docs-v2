@@ -3,6 +3,8 @@ title: "Series LLC"
 sidebar_position: 3
 ---
 
+// TODO: format me
+
 [Operating Agreement LLC](papers/Example-Operating-Agreement-Investment%20Club-Series%20LLC.docx)
 [Source](https://guide.syndicate.io/web3-investment-clubs/create-a-legal-entity)
 

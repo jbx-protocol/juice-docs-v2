@@ -3,6 +3,8 @@ title: "Promissory Note"
 # sidebar_position:
 ---
 
+// TODO: format me
+
 [Standard Promissory Note](../papers/Standard-Promissory-Note-Template.docx)
 
 STANDARD PROMISSORY NOTE

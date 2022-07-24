@@ -1,14 +1,18 @@
+---
+title: "Guiding Principles"
+sidebar_position: 1
+---
 # Guiding Principles
 
-These guiding principles constitute an Agreement (hereinafter the "Agreement") and are entered into by and amongst members of c (hereinafter “DAO” or “mDAO”), an unincorporated nonprofit association organized under the laws of the State of Nevada.
+These guiding principles constitute an Agreement (hereinafter the "Agreement") and are entered into by and amongst members of Juicebox (hereinafter “DAO” or “JBDAO”), an unincorporated nonprofit association organized under the laws of the State of Nevada.
 
-The following terms apply when you click to view or access DAO's Dapp or DAO's other online services (including https://juicebox.money), donate cryptocurrencies such as Ethereum, or transfer one or more ERC-20 or ERC-721 (an "NFT") to the DAO, become a Member of DAO, receive DAO Tokens, hold Governance Rights for mDAO, interact with or access mDAO's smart contracts in any way, provide services to mDAO, donate or transfer any property to mDAO, or otherwise interact with or access mDAO's services through the Dapp. Participating in the DAO's governance may occur on [Snapshot](https://snapshot.org), however for the purpose of this agreement we refer to this as part of the DAO Dapp.
+The following terms apply when you click to view or access DAO's Dapp or DAO's other online services (including https://juicebox.money), donate cryptocurrencies such as Ethereum, or transfer one or more ERC-20 or ERC-721 (an "NFT") to the DAO, become a Member of DAO, receive DAO Tokens, hold Governance Rights for JBDAO, interact with or access JBDAO's smart contracts in any way, provide services to JBDAO, donate or transfer any property to JBDAO, or otherwise interact with or access JBDAO's services through the Dapp. Participating in the DAO's governance may occur on [Snapshot](https://snapshot.org), however for the purpose of this agreement we refer to this as part of the DAO Dapp.
 
-**By doing any of the above, you signify your agreement to these terms. If you do not agree to be bound by the Agreement in its entirety, you may not access, interact with, or use mDAO. Capitalized terms used herein have the meanings ascribed to them in Section 17.**
+**By doing any of the above, you signify your agreement to these terms. If you do not agree to be bound by the Agreement in its entirety, you may not access, interact with, or use JBDAO. Capitalized terms used herein have the meanings ascribed to them in Section 17.**
 
 #### Organization.
 
-(a) Formation. mDAO was formed on July 15, 2021. The obligations of members of the DAO shall be determined pursuant to the Revised Uniform Unincorporated Nonprofit Association Act of 2008 (the "Act"), NRS §§ 81.700 to 81.890 inclusive, and this Agreement.
+(a) Formation. JBDAO was formed on July 15, 2021. The obligations of members of the DAO shall be determined pursuant to the Revised Uniform Unincorporated Nonprofit Association Act of 2008 (the "Act"), NRS §§ 81.700 to 81.890 inclusive, and this Agreement.
 
 #### Purpose.
 
@@ -18,7 +22,7 @@ The following terms apply when you click to view or access DAO's Dapp or DAO's o
 
 (a) Governance Rights. Governance Rights in the DAO are represented by Project Tokens, with each Token representing a fractional part of the Governance Rights of all Members (or assignees, as the case may be) equal to the quotient of one (1) divided by the total number of Tokens claimed at any time.
 
-**(b) Tokens. As of the date hereof, there shall be an allowance of up to Five Billion (5,000,000,000) Tokens authorized to represent membership interests in the DAO, unless otherwise agreed to and by the Members via a vote occurring through the Dapp. The DAO shall grant mDAO Member governance voting weight in linear proportional to contributions by Members to the Gnosis multi-signature wallet (eth:0x143cC0A996De329C1C5723Ee4F15D2a40c1203c6) until the deployment of the beta version of the Dapp, whereupon Member token allocation will be on a bonding curve. While Members may vote with their weighted address, a governance NFT may be issued to individuals who have contributed to DAO governance through proposals or active voting, and individuals who have participated in the community through the mDAO Discord. Individuals who have the mDAO NFT may submit proposals subject to the mDAO Member governance.**
+**(b) Tokens. As of the date hereof, there shall be an allowance of up to Five Billion (5,000,000,000) Tokens authorized to represent membership interests in the DAO, unless otherwise agreed to and by the Members via a vote occurring through the Dapp. The DAO shall grant JBDAO Member governance voting weight in linear proportional to contributions by Members to the Gnosis multi-signature wallet (eth:0x143cC0A996De329C1C5723Ee4F15D2a40c1203c6) until the deployment of the beta version of the Dapp, whereupon Member token allocation will be on a bonding curve. While Members may vote with their weighted address, a governance NFT may be issued to individuals who have contributed to DAO governance through proposals or active voting, and individuals who have participated in the community through the JBDAO Discord. Individuals who have the JBDAO NFT may submit proposals subject to the JBDAO Member governance.**
 
 **Notwithstanding the foregoing or any other provision of this Agreement, the DAO may provide initial members Tokens from the reserved rate for their role in conceiving and supporting the DAO.**
 
@@ -128,9 +132,9 @@ Books and Records; Accounting and Tax Matters. The DAO shall not be obligated to
 
 #### Service Providers.
 
-(a) Appointment and Compensation of Service Providers. mDAO shall have the right to appoint Service Providers to perform administrative services, responsibilities, and duties to carry on the DAO's operations, including maintenance of the Dapp and underlying smart contracts. mDAO shall have the right to provide Service Providers with reasonable compensation.
+(a) Appointment and Compensation of Service Providers. JBDAO shall have the right to appoint Service Providers to perform administrative services, responsibilities, and duties to carry on the DAO's operations, including maintenance of the Dapp and underlying smart contracts. JBDAO shall have the right to provide Service Providers with reasonable compensation.
 
-(b) Limitation of Liability. Notwithstanding anything contained in this Agreement to the contrary, any Service Provider of mDAO shall not be liable for any error of judgment, mistake of law, or for any loss suffered by the DAO, its Members, Persons affiliated with the DAO or its Members, or third parties in connection with the matters to which this Agreement relates or for any services provided by a Service Provider, except for a loss resulting from a Service Provider's willful misfeasance, gross negligence, or reckless disregard in the performance of its duties under this Agreement. Furthermore, Service Providers shall not be liable for: (i) any action taken or omitted in accordance with or in reliance upon written or oral instructions, advice, data, documents, or information (without investigation or verification) received by Service Providers from any Person; (ii) any liability arising from the transfer or use of any Governance Rights or Tokens, including with respect to matters arising under applicable laws or private rights of action; or (iii) any action taken or omitted by the DAO, its Members, any affiliated Persons of the DAO or its Members, or any third party.
+(b) Limitation of Liability. Notwithstanding anything contained in this Agreement to the contrary, any Service Provider of JBDAO shall not be liable for any error of judgment, mistake of law, or for any loss suffered by the DAO, its Members, Persons affiliated with the DAO or its Members, or third parties in connection with the matters to which this Agreement relates or for any services provided by a Service Provider, except for a loss resulting from a Service Provider's willful misfeasance, gross negligence, or reckless disregard in the performance of its duties under this Agreement. Furthermore, Service Providers shall not be liable for: (i) any action taken or omitted in accordance with or in reliance upon written or oral instructions, advice, data, documents, or information (without investigation or verification) received by Service Providers from any Person; (ii) any liability arising from the transfer or use of any Governance Rights or Tokens, including with respect to matters arising under applicable laws or private rights of action; or (iii) any action taken or omitted by the DAO, its Members, any affiliated Persons of the DAO or its Members, or any third party.
 
 #### General Provisions.
 
@@ -172,9 +176,9 @@ THE TOKENS HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED
 
 "Affiliate" means, with respect to any Person, any other Person controlling, controlled by, or under common control with such Person; in such context, "control" means the possession, directly or indirectly, of the power to direct the management or policies of another, whether through the ownership of voting securities, by contract, or otherwise.
 
-"Agreement" means this Guiding Principles Agreement of mDAO DAO.
+"Agreement" means this Guiding Principles Agreement of JBDAO DAO.
 
-"DAO" means mDAO DAO, a Nevada unincorporated nonprofit association.
+"DAO" means JBDAO DAO, a Nevada unincorporated nonprofit association.
 
 "DAO Expenses" has the meaning ascribed to that term in Section 7(b)(i).
 
@@ -194,7 +198,7 @@ THE TOKENS HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED
 
 "Representative" means a member, manager, officer, director, partner, employee, or agent.
 
-"Service Provider" means the Person appointed by mDAO to perform administrative services, responsibilities, and duties to carry on the DAO's operations. The initial Service Provider shall be dao-lawfirm.eth, its predecessor entities, or any future entity of dao-lawfirm.eth.
+"Service Provider" means the Person appointed by JBDAO to perform administrative services, responsibilities, and duties to carry on the DAO's operations. The initial Service Provider shall be dao-lawfirm.eth, its predecessor entities, or any future entity of dao-lawfirm.eth.
 
 ---
 
@@ -202,7 +206,7 @@ THE TOKENS HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED
 
 "Duration" How long each funding cycle lasts (specified in seconds). All funding cycle properties are unchangeable while the cycle is in progress. In other words, any proposed reconfigurations can only take effect during the subsequent cycle. If no reconfigurations were submitted by the project owner, or if proposed changes fail the current cycle's ballot, a copy of the latest funding cycle will automatically start once the current one ends. A cycle with no duration lasts indefinitely, and reconfigurations can start a new funding cycle with the proposed changes right away.
 
-"Distribution limit" The amount of funds that can be distributed out from the project's treasury during a funding cycle. The project owner can pre-program a list of addresses, other mDAO projects, and contracts that adhere to IJBSplitsAllocator to split distributions between. Treasury funds in excess of the distribution limit is considered overflow, which can serve as runway or be reclaimed by token holders who redeem their tokens. Distributing is a public transaction that anyone can call on a project's behalf. The project owner can also include a split that sends a percentage of the distributed funds to the address who executes this transaction. The protocol charges a JBX membership fee on funds withdrawn from the network. There are no fees for distributions to other mDAO projects. Distribution limits can be specified in any currency that the JBPrices contract has a price feed for.
+"Distribution limit" The amount of funds that can be distributed out from the project's treasury during a funding cycle. The project owner can pre-program a list of addresses, other JBDAO projects, and contracts that adhere to IJBSplitsAllocator to split distributions between. Treasury funds in excess of the distribution limit is considered overflow, which can serve as runway or be reclaimed by token holders who redeem their tokens. Distributing is a public transaction that anyone can call on a project's behalf. The project owner can also include a split that sends a percentage of the distributed funds to the address who executes this transaction. The protocol charges a JBX membership fee on funds withdrawn from the network. There are no fees for distributions to other JBDAO projects. Distribution limits can be specified in any currency that the JBPrices contract has a price feed for.
 
 "Overflow allowance" The amount of treasury funds that the project owner can distribute on-demand. This allowance does not reset per-funding cycle. Instead, it lasts until the project owner explicitly proposes a reconfiguration with a new allowance. The protocol charges a JBX membership fee on funds withdrawn from the network. Overflow allowances can be specified in any currency that the JBPrices contract has a price feed for.
 
@@ -212,7 +216,7 @@ THE TOKENS HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED
 
 "Ballot" The address of a contract that adheres to IJBFundingCycleBallot, which can provide custom criteria that prevents funding cycle reconfigurations from taking effect. A common implementation is to force reconfigurations to be submitted at least X days before the end of the current funding cycle, giving the community foresight into any misconfigurations or abuses of power before they take effect. A more complex implementation might include on-chain governance.
 
-"Reserved rate" The percentage of newly minted tokens that a project wishes to withhold for custom distributions. The project owner can pre-program a list of addresses, other mDAO project owners, and contracts that adhere to IJBSplitsAllocator to split reserved tokens between.
+"Reserved rate" The percentage of newly minted tokens that a project wishes to withhold for custom distributions. The project owner can pre-program a list of addresses, other JBDAO project owners, and contracts that adhere to IJBSplitsAllocator to split reserved tokens between.
 
 "Redemption rate" The percentage of a project's treasury funds that can be reclaimed by community members by redeeming the project's tokens during the funding cycle. A rate of 100% suggests a linear proportion, meaning X% of treasury overflow can be reclaimed by redeeming X% of the token supply.
 
@@ -222,6 +226,6 @@ THE TOKENS HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED
 
 "Allow minting tokens, allow changing tokens, allow setting terminals, allow setting the controller, allow terminal migrations, allow controller migration" Projects can allow various bits of treasury functionality on a per-funding cycle basis. These functions are disabled by default.
 
-"Hold fees" By default, JBX membership fees are paid automatically when funds are distributed out of the ecosystem from a project's treasury. During funding cycles configured to hold fees, this fee amount is set aside instead of being immediately processed. Projects can get their held fees returned by adding the same amount of withdrawn funds back to their treasury. Otherwise, Juicebox or the project can process these held fees at any point to get JBX at the current rate. This allows a project to withdraw funds and later add them back into their mDAO treasury without incurring fees. This applies to both distributions from the distribution limit and from the overflow allowance.
+"Hold fees" By default, JBX membership fees are paid automatically when funds are distributed out of the ecosystem from a project's treasury. During funding cycles configured to hold fees, this fee amount is set aside instead of being immediately processed. Projects can get their held fees returned by adding the same amount of withdrawn funds back to their treasury. Otherwise, Juicebox or the project can process these held fees at any point to get JBX at the current rate. This allows a project to withdraw funds and later add them back into their JBDAO treasury without incurring fees. This applies to both distributions from the distribution limit and from the overflow allowance.
 
 "Data source" The address of a contract that adheres to IJBFundingCycleDataSource, which can be used to extend or override what happens when the treasury receives funds, and what happens when someone tries to redeem their project tokens.

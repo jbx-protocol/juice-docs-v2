@@ -1,4 +1,9 @@
-### Unincorporated Non-Profit Association Act of 2008 (the "Act"), Model Act
+---
+title: "Trustless Unincorporated Nonprofit Association Agreement ("TUNAA") cont."
+sidebar_position: 2
+---
+
+//TODO: discuss how laws are created, or propagated, i.e. Unincorporated Non-Profit Association Act of 2008 (the "Act"), Model Act
 
 #### 1. Purpose
 

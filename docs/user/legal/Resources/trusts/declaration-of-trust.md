@@ -3,6 +3,8 @@ title: "Declaration of Trust"
 sidebar_position: 2
 ---
 
+// TODO: format me
+
 [Declaration of Trust](../papers/Declaration-of-trust.docx)
 
 TRUST DECLARATION

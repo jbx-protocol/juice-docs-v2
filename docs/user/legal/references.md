@@ -3,6 +3,9 @@ title: "References"
 sidebar_position: 7
 ---
 
+// TODO: trusts, LLCs, Corp resources from Delaware
+// TODO: registered agent
+
 # Online materials
 
 A fraction of the online materials you may find using Google.
@@ -39,6 +42,7 @@ This section is intentionally blank.
 -   [Nevada, Revised Uniform Unincorporated Nonprofit Association Act of 2008 (the "Act"), NRS §§ 81.700 to 81.890](https://www.leg.state.nv.us/nrs/nrs-081.html)
 -   [South Carolina Uniform Non-Profit Association Act of 2008 (the "Act"), Model Act](https://trackbill.com/bill/south-carolina-house-general-bill-3893-uniform-unincorporated-nonprofit-association/2033570/)
 -   [Delaware Uniform Unincorporated Nonprofit Association Act, Del. Code Ann. Tit. 6, §§ 1901-1916](https://delcode.delaware.gov/title6/c019/index.html)
+
 ### Additional
 
 -   [Filing 2022 IRS Federal Tax ID Application](https://irs-tax-id-ein-gov.com/irs-2021/?utm_medium=cpc&utm_campaign=15581835982&utm_term=irs%20gov%20ein&gclid=CjwKCAjwoMSWBhAdEiwAVJ2ndtIXBtsjFLcHrwQMhU8Idz5DQlbYNQI_aMRLSvuYpeOr1PIMRb5XoRoC9bUQAvD_BwE)
