@@ -1,5 +1,5 @@
 ---
-title: "Agreement for Future Tokens"
+title: Agreement for Future Tokens
 # sidebar_position:
 ---
 

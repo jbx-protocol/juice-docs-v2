@@ -1,5 +1,5 @@
 ---
-title: "Guiding Principles"
+title: Guiding Principles
 sidebar_position: 1
 ---
 # Guiding Principles

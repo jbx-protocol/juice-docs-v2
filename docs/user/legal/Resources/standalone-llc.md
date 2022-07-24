@@ -1,5 +1,5 @@
 ---
-title: "Standalone LLC"
+title: Standalone LLC
 # sidebar_position:
 ---
 

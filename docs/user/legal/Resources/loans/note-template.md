@@ -1,5 +1,5 @@
 ---
-title: "Promissory Note"
+title: Promissory Note
 # sidebar_position:
 ---
 

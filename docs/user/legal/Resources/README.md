@@ -1,5 +1,5 @@
 ---
-title: "Reference Legal Agreements"
+title: Reference Legal Agreements
 sidebar position: 1
 ---
 

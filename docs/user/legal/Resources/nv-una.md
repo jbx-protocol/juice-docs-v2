@@ -1,5 +1,5 @@
 ---
-title: "Example Nevada UNA"
+title: Example Nevada UNA
 sidebar_position: 1
 ---
 

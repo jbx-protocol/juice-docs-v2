@@ -1,5 +1,5 @@
 ---
-title: "Loans"
+title: Loans
 sidebar position: 1
 ---
 

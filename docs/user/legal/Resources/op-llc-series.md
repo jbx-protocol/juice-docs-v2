@@ -1,5 +1,5 @@
 ---
-title: "Series LLC"
+title: Series LLC
 sidebar_position: 3
 ---
 

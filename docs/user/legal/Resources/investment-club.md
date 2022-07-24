@@ -1,5 +1,5 @@
 ---
-title: "Investment Club LLC"
+title: Investment Club LLC
 sidebar_position: 2
 ---
 

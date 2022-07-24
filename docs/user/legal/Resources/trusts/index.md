@@ -1,4 +1,4 @@
 ---
-title: "Trusts"
+title: Trusts
 #sidebar position:
 ---

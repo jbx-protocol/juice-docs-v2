@@ -1,5 +1,5 @@
 ---
-title: "C-Corporations"
+title: C-Corporations
 #sidebar position:
 ---
 

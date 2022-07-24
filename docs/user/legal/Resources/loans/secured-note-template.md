@@ -1,5 +1,5 @@
 ---
-title: "Secured Promissory Note"
+title: Secured Promissory Note
 # sidebar_position:
 ---
 

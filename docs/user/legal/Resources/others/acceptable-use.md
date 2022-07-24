@@ -1,5 +1,5 @@
 ---
-title: "Acceptable Use Policy"
+title: Acceptable Use Policy
 #sidebar position:
 ---
 

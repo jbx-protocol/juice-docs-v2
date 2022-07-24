@@ -1,5 +1,5 @@
 ---
-title: "Declaration of Trust"
+title: Declaration of Trust
 sidebar_position: 2
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Trust"
+title: Trust
 sidebar_position: 1
 ---
 ```
