@@ -1,0 +1,227 @@
+# Guiding Principles
+
+These guiding principles constitute an Agreement (hereinafter the "Agreement") and are entered into by and amongst members of c (hereinafter “DAO” or “mDAO”), an unincorporated nonprofit association organized under the laws of the State of Nevada.
+
+The following terms apply when you click to view or access DAO's Dapp or DAO's other online services (including https://juicebox.money), donate cryptocurrencies such as Ethereum, or transfer one or more ERC-20 or ERC-721 (an "NFT") to the DAO, become a Member of DAO, receive DAO Tokens, hold Governance Rights for mDAO, interact with or access mDAO's smart contracts in any way, provide services to mDAO, donate or transfer any property to mDAO, or otherwise interact with or access mDAO's services through the Dapp. Participating in the DAO's governance may occur on [Snapshot](https://snapshot.org), however for the purpose of this agreement we refer to this as part of the DAO Dapp.
+
+**By doing any of the above, you signify your agreement to these terms. If you do not agree to be bound by the Agreement in its entirety, you may not access, interact with, or use mDAO. Capitalized terms used herein have the meanings ascribed to them in Section 17.**
+
+#### Organization.
+
+(a) Formation. mDAO was formed on July 15, 2021. The obligations of members of the DAO shall be determined pursuant to the Revised Uniform Unincorporated Nonprofit Association Act of 2008 (the "Act"), NRS §§ 81.700 to 81.890 inclusive, and this Agreement.
+
+#### Purpose.
+
+[See Purpose](./purpose.md)
+
+#### Membership; Governance Rights and Tokens; Limitations.
+
+(a) Governance Rights. Governance Rights in the DAO are represented by Project Tokens, with each Token representing a fractional part of the Governance Rights of all Members (or assignees, as the case may be) equal to the quotient of one (1) divided by the total number of Tokens claimed at any time.
+
+**(b) Tokens. As of the date hereof, there shall be an allowance of up to Five Billion (5,000,000,000) Tokens authorized to represent membership interests in the DAO, unless otherwise agreed to and by the Members via a vote occurring through the Dapp. The DAO shall grant mDAO Member governance voting weight in linear proportional to contributions by Members to the Gnosis multi-signature wallet (eth:0x143cC0A996De329C1C5723Ee4F15D2a40c1203c6) until the deployment of the beta version of the Dapp, whereupon Member token allocation will be on a bonding curve. While Members may vote with their weighted address, a governance NFT may be issued to individuals who have contributed to DAO governance through proposals or active voting, and individuals who have participated in the community through the mDAO Discord. Individuals who have the mDAO NFT may submit proposals subject to the mDAO Member governance.**
+
+**Notwithstanding the foregoing or any other provision of this Agreement, the DAO may provide initial members Tokens from the reserved rate for their role in conceiving and supporting the DAO.**
+
+(c) Limitation to the DAO Protocol Configuration. The DAO shall not configure the protocol with the following parameters: Reserved Tokens at 0%, a Redemption Rate of 100%, or a Discount Rate with a value other than 0%. The DAO shall not configure the Token Issuance with any parameters where the Token Redemption Rate is greater than the capital required to purchase the Tokens.
+
+(d) Membership (or Protocol Fee). The DAO shall require Member Projects to pay a membership fee of 5% of all treasury cryptocurrency transferred to Member Project owner wallets, of which the cryptocurrency value will receive DAO Project Tokens (as defined above).
+
+(e) Token Liquidity Pools. The DAO shall not create any Liquidity Pools.
+
+(f) Governance Rights and Token Limitations. Governance Rights and the governance Tokens provide no possibility of profits and losses, no rights to distributions and dividends, and no rights to ownership or management of the DAO. Each Member (or assignees, as the case may be) that receives or holds governance Tokens expressly and unequivocally agrees that the Tokens provide no rights to profits and/or losses, that the Tokens do not entitle their holder to distributions or dividends, and that the Tokens do not make their holder an owner or manager of the DAO.
+
+#### Liability.
+
+(a) No Member Liability. Except as otherwise provided in this Agreement or the Act, no Member (or former Member) shall be personally liable for the obligations of the DAO, including any obligations owed by any such Member in connection with any breach of this Agreement. A debt, obligation, or other liability of the DAO is solely the debt, obligation, or other liability of the DAO. Members (or former Members) are not personally liable, directly or indirectly, by way of contribution or otherwise, for a debt, obligation, or other liability of the DAO solely by reason of being or acting as a Member or acting on behalf of the DAO. The failure of the DAO to observe formalities relating to the exercise of its powers or management of its activities and affairs is not grounds for imposing liability on a Member of the DAO for a debt, obligation, or other liability of the DAO.
+
+(b) Member Limitations. No Member shall have the right or power: (i) to cause the dissolution and winding up of the DAO; or (ii) to demand or receive property, including any ERC-20 or ERC-721 Tokens donated to the DAO, except as agreed to by the Members or otherwise provided herein.
+
+#### Admission of Additional Members.
+
+(a) Subject to the provisions of this Agreement, the Members are authorized to accept additional donations from one or more Members, and to admit other Persons to the DAO as additional Members (each such additional Member and such existing Member is an "Additional Member"). Unless otherwise determined by the Members, any such Additional Members shall be admitted to the DAO only if such Member or Additional Member makes a donation via the Dapp.
+
+(b) Accession to Agreement. Each Person who is to be admitted as an Additional Member pursuant to this Agreement shall agree to be bound by all of the terms of this Agreement as if they were a member from the inception of the DAO.
+
+#### Management.
+
+(a) Except as otherwise expressly required in this Agreement, the affairs of the DAO shall be carried on and managed exclusively by the Members, who shall have sole and absolute discretion with respect thereto. No Member shall be a manager, as defined under the Act.
+
+(b) Whenever any action, including any approval, consent, decision, determination, or resolution is to be taken or given by the Members or the DAO under this Agreement or under the Act, it shall be authorized by a vote of the Members via the Dapp or the DAO's Snapshot Spaces, unless otherwise provided herein. Such an authorization may be evidenced by a vote facilitated via the Dapp or the DAO's Snapshot Spaces and one or more smart contracts, or by a written consent, in accordance with this Agreement. The Members intend that any action (which has been duly approved in accordance with this Agreement) taken by the DAO via a Dapp, a smart contract, or the blockchain shall be a valid action of the Members or the DAO, as applicable, and no Member shall challenge the authority or validity of any such action based solely on such fact.
+
+(c) Except as otherwise expressly required in this Agreement or in the Act, no single Member (in their capacity as a Member) shall have authority to bind the DAO in any way or to enter into any agreement or contract obligating the DAO in any way unless approved via a vote occurring through the Dapp.
+
+(d) To the extent that the Members have approved a document in accordance with the terms of this Agreement and the Act, any Member can be expressly hereby authorized to execute and deliver such document on behalf of the DAO.
+
+(e) Members may appoint a proxy to vote or otherwise act for the Member with regards to the DAO pursuant to the Dapp.
+
+(f) The DAO has the right to delegate certain technical or administrative responsibilities to third parties and provide them with reasonable compensation.
+
+(g) Reliance by Third Parties. Persons dealing with the DAO are entitled to rely conclusively upon the power and authority of the Members (and any Person to whom the Members delegated any such power and authority pursuant to this Agreement) and acknowledge that such Member or designee is authorized to act on behalf of the DAO and may bind the DAO or otherwise enter into a binding contract.
+
+(h) Other Activities. Each Member acknowledges and agrees that in addition to transactions specifically contemplated by this Agreement, and subject to applicable law, the Members, the DAO, and their respective Affiliates and Representatives are each hereby authorized to obtain property or obtain services from, to provide property or provide services to, or otherwise enter into any transaction with any Member, or any Affiliate or Representative of any of the foregoing Persons.
+
+#### Withdrawal Rights; Compulsory Withdrawal.
+
+(a) Limited Right to Withdraw. A Member may withdraw at any time by transferring its Tokens to a third party. Such withdrawal shall be facilitated and executed, in part, using one or more smart contracts and shall be effective as of the date of transfer. Any withdrawal is irrevocable.
+
+(b) Compulsory Withdrawal. Not in limitation of Section 6(a), the Members acting by vote via the Dapp may cause a Member to be compulsorily withdrawn from the DAO to the extent that such Members, in their reasonable discretion, determine it to be necessary, desirable, or appropriate, including, without limitation, to comply with applicable law or regulations, or to avoid a material adverse effect on the DAO or the other Members. For the avoidance of doubt–the Member proposed to be compulsorily withdrawn shall be entitled to vote with respect to any vote of the Members regarding such compulsory withdrawal.
+
+#### Fees and Expenses.
+
+(a) Organizational Expenses. The DAO shall bear all of its organizational expenses and costs, and may amortize these expenses for accounting and/or tax purposes.
+
+(b) Operating Expenses.
+
+(i) The DAO shall bear all costs and expenses relating to its activities, maintenance, and operations, including, without limitation, all fees, expenses, and costs associated (directly or indirectly) with the acquiring, holding, monitoring, and sourcing of NFTs and any extraordinary expenses (including, without limitation, litigation-related and indemnification expenses), legal, regulatory, research, consulting, compliance, auditing, accounting, and other professional fees and expenses, the costs of any administrator, the costs of any reporting to Members, expenses of any administrative proceedings undertaken by the applicable Member in its capacity, expenses incurred in connection with the dissolution, liquidation, and termination of the DAO, and other expenses related to the DAO as determined by the Members by a vote via the Dapp (collectively, and together with organizational expenses, the "DAO Expenses").
+
+(ii) DAO Expenses shall be allocated to and funded by the DAO.
+
+#### Distributions; Dividends; Compensation.
+
+(a) The DAO shall not make any distributions of any kind and it will not pay dividends of any kind to any Member or director/officer or other person who may have an ownership interest in the DAO.
+
+(b) The DAO may pay reasonable compensation or reimburse reasonable expenses to a Member or third-party for services rendered, confer benefits on a Member or third party in conformity with its nonprofit purposes, repurchase a membership and repay a capital contribution made by a Member to the extent authorized by this Agreement, or make distributions of property to Members upon winding up and termination to the extent permitted by this Agreement.
+
+#### Dissolution.
+
+(a) General. The DAO shall be dissolved and its affairs shall be wound up upon the earliest to occur of:
+
+(i) a determination of the Members by Majority Vote; or
+
+(ii) the entry of a decree of judicial dissolution pursuant to the Act.
+
+(b) Upon the dissolution of the DAO, assets shall be distributed for one or more exempt purposes within the meaning of section 501(c)(3) of the Internal Revenue Code or the corresponding section of any future federal tax code and consistent with the goals and purpose of the DAO, or shall be distributed to the federal government, or to a state or local government, for a public purpose. Any such assets not so disposed of shall be disposed of by a court of competent jurisdiction of the county in which the principal office of the corporation is then located, exclusively for such purposes or to such organization or organizations, as said Court shall determine, which are organized and operated exclusively for such purposes.
+
+#### Limitations on Transfers.
+
+(a) Transfers. Governance Rights and Tokens are not transferable, except to other members. Members may vote to allow or disallow the ability of Members to transfer their Governance Rights and/or Tokens by a vote facilitated via the Dapp. Tokens may become freely transferable to Ethereum addresses outside of the DAO ("External Addresses") by a vote of the Members. In the event the Tokens become freely transferable to External Addresses, you agree that holders of the External Address shall automatically be granted Membership rights, subject to this Agreement.
+
+(b) Admission of Substituted Members. If the transferee is not already a Member, any transferee of Tokens transferred in accordance with the provisions of this Section shall be admitted as a Member. The DAO shall not recognize for any purpose any purported transfer of all or any part of a Member's interest or Tokens in the DAO, and no purchaser, assignee, transferee, or other recipient of all or any part of such Tokens shall become a Member hereunder unless:
+
+(i) The transferee of Tokens transferred pursuant to this Section that is admitted to the DAO as a transferee Member shall succeed to the rights and liabilities of the transferor Member with respect to such transferred Tokens.
+
+(ii) Effect of Death, Dissolution, or Bankruptcy. Upon the death, incompetence, bankruptcy, insolvency, liquidation, or dissolution of a Member, the rights and obligations of that Member under this Agreement shall accrue to that Member's successor(s), estate, or legal representative, and each such Person shall be treated as an unadmitted transferee of that Member's Tokens, as described in the Act.
+
+Books and Records; Accounting and Tax Matters. The DAO shall not be obligated to keep any books or records beyond what is made available via the Dapp or available via the Ethereum blockchain.
+
+#### Waiver of Fiduciary Duties.
+
+(a) Except as expressly set forth in this Section, in the event that any Member initiates any Proceeding against the DAO and a judgment or order not subject to further appeal or discretionary review is rendered in respect of such Proceeding, as the case may be, such Member shall be solely liable for all costs and expenses related to the Proceeding.
+
+(b) Limitation by Law. No provision of this Agreement shall be construed to provide for the indemnification for any liability to the extent (but only to the extent) that such indemnification would be in violation of applicable law, but instead shall be construed so as to effectuate the provisions thereof to the fullest extent permitted by law.
+
+(c) Waiver of Fiduciary Duties. To the fullest extent permitted by applicable law, notwithstanding any other provision of this Agreement or otherwise of applicable law, including any in equity or at law, no Member shall have any fiduciary duty to the DAO or to any Member by reason of this Agreement or in its capacity as a Member, except that the Members shall be subject to the implied contractual covenant of good faith and fair dealing and the terms and provisions of this Agreement. The provisions of this Agreement, to the extent that they restrict or eliminate the duties and liabilities of the Members otherwise existing at law or in equity, are agreed by the parties hereto to replace such other duties and liabilities of the Members. Members will exercise any rights under this Agreement consistent with this Agreement.
+
+#### Intellectual Property Rights.
+
+(a) Grant of Rights. Members that join the DAO grant to the DAO a perpetual, non-exclusive, royalty-free license and right, and all ancillary and subsidiary rights therein and thereto, throughout the world, to use, edit, modify, include, incorporate, adapt, record, reproduce, display, and archive any copyrightable work associated with any written copy, source code, illustrations, and artwork (the "Work") in any manner whatsoever, in or out of context, by any and all means and/or devices and in any and all media now or known hereafter–all in connection with the production, exhibition, distribution, exploitation, advertising, marketing, publicity, and promotion of the DAO and its DApp. The term of this license begins whenever an contribution is made through the DApp by a Person entering into this Agreement as a member or is subsequently admitted as a member pursuant to the terms of this Agreement (i.e., any and all Members).
+
+(b) Reservation of Rights. All rights in any copyrightable works not specifically granted to the DAO here are reserved by the donating Member. Specifically, the DAO acknowledges that its use of the Work will not affect the Member's continued and separate copyright ownership in the Work, and that the Member may use and license others to use the Work otherwise and elsewhere.
+
+(c) Representations and Warranties, Indemnification. The Member represents and warrants that it is the owner of the entirety of the rights in and to the Work and that the Member has the full authorization and authority to enter into this Agreement and grant the licenses herein. No other rights, permissions, or consents are necessary for the DAO to use the Work in accordance with the licenses granted herein, and no fees, royalties, or use payments of any kind are due to the Member or third parties in connection with the exercise of the licenses granted herein. The Member guarantees that the Work does not infringe any copyright or trademark, and that the Work does not violate any privacy, personal, proprietary, common law, or statutory right, of any Person. Licensor shall indemnify and hold Licensee (and its agents, Affiliates, assigns, heirs, or other successors in interest) harmless from any claim, loss, liability, damage, or expense (including reasonable attorneys' fees) arising out of any claim, lawsuit, or demand which is inconsistent with or arises out of warranties or representations in this Section.
+
+#### Amendments.
+
+(a) Except as otherwise provided herein, the terms and provisions of this Agreement may be amended only with the prior consent of Members acting by a vote via the Dapp.
+
+(b) Amendments to this Agreement shall be made available via the Dapp.
+
+#### Service Providers.
+
+(a) Appointment and Compensation of Service Providers. mDAO shall have the right to appoint Service Providers to perform administrative services, responsibilities, and duties to carry on the DAO's operations, including maintenance of the Dapp and underlying smart contracts. mDAO shall have the right to provide Service Providers with reasonable compensation.
+
+(b) Limitation of Liability. Notwithstanding anything contained in this Agreement to the contrary, any Service Provider of mDAO shall not be liable for any error of judgment, mistake of law, or for any loss suffered by the DAO, its Members, Persons affiliated with the DAO or its Members, or third parties in connection with the matters to which this Agreement relates or for any services provided by a Service Provider, except for a loss resulting from a Service Provider's willful misfeasance, gross negligence, or reckless disregard in the performance of its duties under this Agreement. Furthermore, Service Providers shall not be liable for: (i) any action taken or omitted in accordance with or in reliance upon written or oral instructions, advice, data, documents, or information (without investigation or verification) received by Service Providers from any Person; (ii) any liability arising from the transfer or use of any Governance Rights or Tokens, including with respect to matters arising under applicable laws or private rights of action; or (iii) any action taken or omitted by the DAO, its Members, any affiliated Persons of the DAO or its Members, or any third party.
+
+#### General Provisions.
+
+(a) Notices. Subject to Section 5, all notices required to be delivered under this Agreement shall be effective only if sent by electronic mail or other form of electronic communication through the Dapp. In computing the period of time for the giving of any notice, the day on which the notice is given shall be excluded, and the day on which the matter noticed is to occur shall be included. If notice is given by electronic means, it shall be deemed given when sent; provided, that the sending party does not have reason to believe that such notice was not delivered.
+
+(b) Further Assurance. Each Member agrees to perform all further acts and to execute, acknowledge, and deliver any document (including tax forms and information) that may reasonably be necessary to carry out the provisions of this Agreement.
+
+(c) Interpretation. Unless otherwise indicated to the contrary herein by the context or use thereof the words, "herein," "hereto," "hereof," and words of similar import refer to this Agreement as a whole and not to any particular section or paragraph hereof; words importing the masculine gender shall include the feminine and neutral genders, and vice versa; and words importing the singular shall include the plural, and vice versa; plural forms of singular defined terms shall have corresponding meanings and singular forms of plural defined terms shall have corresponding meanings; the section headings contained in this Agreement are for reference purposes only and shall not affect the interpretation of this Agreement; references to statutes or regulations include amendments and successor or replacement statutes or regulations.
+
+(d) Severability. If any term or provision of this Agreement or any application of this Agreement shall be declared or held invalid, illegal, or unenforceable, in whole or in part, whether generally or in any particular jurisdiction, such provision shall be deemed amended to the extent, but only to the extent, necessary to cure such invalidity, illegality, or unenforceability, and the validity, legality, and enforceability of the remaining provisions, both generally and in every other jurisdiction, shall not in any way be affected or impaired thereby.
+
+(e) Binding Agreement. This Agreement shall be binding upon and inure to the benefit of the parties and their respective heirs, executors, administrators, successors, permitted assigns, trustees, and legal representatives.
+
+(f) Creditors. None of the provisions of this Agreement shall be for the benefit of, or enforceable by, any creditor of any Member or of the DAO. No creditor who makes a loan to the DAO may have or acquire, as a result of making the loan, any direct or indirect interest in the DAO's property.
+
+(g) Waiver. Any term or condition of this Agreement may be waived at any time by the party or parties entitled to the benefit thereof, but only by a writing signed by the party or parties waiving such term or condition. No waiver of any provision of this Agreement or of any right or benefit arising hereunder shall be deemed to constitute or shall constitute a waiver of any other provision of this Agreement (whether or not similar), nor shall any such waiver constitute a continuing waiver, unless otherwise expressly so provided in writing.
+
+(h) Waiver of Partition; No Bill for DAO Accounting. Each Member hereby irrevocably waives any and all rights that it may have to maintain an action for partition of any of the DAO's property. Each Member covenants that it shall not file a bill for DAO accounting.
+
+(i) Limitation of Liability. Except for any remedies that cannot be excluded or limited by law, no party, or its agent, Affiliate, assigns, heirs, or other successors in interest, will be liable under this Agreement to another party, or that party's agent, Affiliate, assigns, heirs, or other successors in interest, or other third party, for any special, reliance, punitive, indirect, incidental, or consequential damages or lost or imputed profits, lost data, lost property, or any costs and fees. This limitation of liability may not be valid in some jurisdictions. Parties to this Agreement may have rights that cannot be waived under some laws. The DAO and its Members do not seek to limit the DAO's or Members' warranties or remedies to any extent not permitted by law.
+
+(j) Governing Law; Jurisdiction; Venue. Notwithstanding the place where this Agreement may be executed by any of the parties hereto, the parties expressly agree that all of the terms and provisions hereof shall be construed in accordance with and governed by the laws of the State of Nevada, without giving effect to the principles of choice or conflicts of laws thereof that would require that this Agreement be governed by the laws of another state. Each of the parties hereto consents and agrees to the exclusive personal jurisdiction of any state or federal court sitting in Nevada, and waives any objection based on venue or forum non conveniens with respect to any action instituted therein, and agrees that any dispute concerning the conduct of any party in connection with this Agreement shall be heard only in the courts described above.
+
+(k) Arbitration. In consideration of the promises in this agreement, the parties agree that any and all controversies, claims, or disputes with anyone (including the DAO and any employee, officer, director, shareholder or benefit plan of the company in their capacity as such or otherwise) arising out of, relating to, or resulting from this Agreement, shall be subject to binding arbitration under the arbitration rules set forth in Nevada law and thereby agrees to waive any right to a trial by jury, include any statutory claims under state or federal law, including, but not limited to, claims under title vii of the civil rights act of 1964, the Americans with Disabilities Act of 1990, the Age Discrimination in Employment Act of 1967, the Older Workers Benefit Protection Act, the Worker Adjustment and Retraining Notification Act, discrimination or wrongful termination and any statutory claims. The parties further understand that this Agreement to Arbitrate also applies to any disputes that the DAO may have with a Member.
+
+(l) Procedure. The parties agree that any arbitration will be administered by the American Arbitration Association (“AAA”) and that the neutral arbitrator will be selected in a manner consistent with its national rules for the resolution of employment disputes. The parties agree that the Arbitrator shall have the power to decide any motions brought by any party to the arbitration, including motions for summary judgment and/or adjudication and motions to dismiss and demurrers, prior to any arbitration hearing. The parties also agree that the arbitrator shall have the power to award any remedies, including attorneys’ fees and costs, available under applicable law. The parties understand that they shall share equally in paying for the administrative or hearing fees charged by the arbitrator or AAA. The parties agree that the Arbitrator shall administer and conduct any arbitration in a manner consistent with the rules and that to the extent that the AAA’s national rules for the resolution of employment disputes conflict with the rules, the rules shall take precedence. The parties agree that the decision of the Arbitrator shall be in writing.
+
+(m) Entire Agreement. This Agreement (including the exhibits hereto) supersedes any and all other understandings and agreements, either oral or in writing, among the parties with respect to the subject matter hereof and constitutes the sole agreement among the parties with respect thereto, including but not limited to the Original Agreement.
+
+(n) Amendment. This Agreement may not be amended, modified, or revoked, in whole or in part, or any provisions waived, except via a vote occurring through the Dapp.
+
+(o) Securities Laws Matters.
+
+THE TOKENS HAVE NOT BEEN REGISTERED UNDER THE SECURITIES ACT OF 1933, AS AMENDED, STATE SECURITIES LAWS, OR THE LAWS OF ANY COUNTRY OUTSIDE THE UNITED STATES. THEY PROVIDE NO RIGHT TO ANY PROFITS OR LOSSES OF THE DAO NOR IS THERE A REASONABLE EXPECTATION OF PROFIT FROM BUYING OR RECEIVING THE TOKENS. THE TOKENS ONLY PROVIDE THE HOLDER WITH GOVERNANCE RIGHTS THAT ARE SPECIFICALLY LIMITED IN THIS AGREEMENT.
+
+#### Definitions.
+
+"Act" has the meaning ascribed to that term in Section 1(a).
+
+"Affiliate" means, with respect to any Person, any other Person controlling, controlled by, or under common control with such Person; in such context, "control" means the possession, directly or indirectly, of the power to direct the management or policies of another, whether through the ownership of voting securities, by contract, or otherwise.
+
+"Agreement" means this Guiding Principles Agreement of mDAO DAO.
+
+"DAO" means mDAO DAO, a Nevada unincorporated nonprofit association.
+
+"DAO Expenses" has the meaning ascribed to that term in Section 7(b)(i).
+
+"Dapp" means an online portal or other interactive software used by the DAO to build and create Ethereum based treasuries for projects to manage funding cycles, token issuances including the computation of reserved tokens, discount rates, and redemption rates, which is maintained by the DAO, its Members, or another Person. Governance activities which are performed on Snapshot.org or other Snapshot servers, within the DAO's Spaces, are also considered to be Dapp activities.
+
+"Governance Rights" means the entire interest of a Member in the DAO, as measured by a Member's Tokens, including, without limitation, all rights and obligations contemplated or agreed to under this Agreement, and any right to vote on, consent to, or otherwise participate in any decision or action of or by the Members granted by this Agreement or the Act.
+
+"Majority Vote" means the approval of Members holding at least a majority-in-interest of all claimed Tokens.
+
+"Member" means each Person entering into this Agreement as a member or subsequently admitted as a member pursuant to the terms of this Agreement, but does not include any Person that has ceased to be a Member of the DAO. If at any time there is only one Member, then all references to "Members" shall be deemed to mean "Member."
+
+"Non-Fungible Tokens" ("NFT" or "NFTs") means a cryptographic token based on the Ethereum ERC 721, 1155, or similar standard or other blockchain based asset.
+
+"Person" means an individual, corporation, association, partnership, joint venture, limited liability company, estate, trust, or any other legal entity.
+
+"Proceeding" means any action, claim, suit, investigation, or proceeding by or before any court, arbitrator, governmental body, self-regulatory agency, or other agency.
+
+"Representative" means a member, manager, officer, director, partner, employee, or agent.
+
+"Service Provider" means the Person appointed by mDAO to perform administrative services, responsibilities, and duties to carry on the DAO's operations. The initial Service Provider shall be dao-lawfirm.eth, its predecessor entities, or any future entity of dao-lawfirm.eth.
+
+---
+
+"Start timestamp" The timestamp at which the funding cycle is considered active. Projects can configure the start time of their first funding cycle to be in the future, and can ensure reconfigurations don't take effect before a specified timestamp. Once a funding cycle ends, a new one automatically starts right away. If there's an approved reconfiguration queued to start at this time, it will be used. Otherwise, a copy of the rolled over funding cycle will be used.
+
+"Duration" How long each funding cycle lasts (specified in seconds). All funding cycle properties are unchangeable while the cycle is in progress. In other words, any proposed reconfigurations can only take effect during the subsequent cycle. If no reconfigurations were submitted by the project owner, or if proposed changes fail the current cycle's ballot, a copy of the latest funding cycle will automatically start once the current one ends. A cycle with no duration lasts indefinitely, and reconfigurations can start a new funding cycle with the proposed changes right away.
+
+"Distribution limit" The amount of funds that can be distributed out from the project's treasury during a funding cycle. The project owner can pre-program a list of addresses, other mDAO projects, and contracts that adhere to IJBSplitsAllocator to split distributions between. Treasury funds in excess of the distribution limit is considered overflow, which can serve as runway or be reclaimed by token holders who redeem their tokens. Distributing is a public transaction that anyone can call on a project's behalf. The project owner can also include a split that sends a percentage of the distributed funds to the address who executes this transaction. The protocol charges a JBX membership fee on funds withdrawn from the network. There are no fees for distributions to other mDAO projects. Distribution limits can be specified in any currency that the JBPrices contract has a price feed for.
+
+"Overflow allowance" The amount of treasury funds that the project owner can distribute on-demand. This allowance does not reset per-funding cycle. Instead, it lasts until the project owner explicitly proposes a reconfiguration with a new allowance. The protocol charges a JBX membership fee on funds withdrawn from the network. Overflow allowances can be specified in any currency that the JBPrices contract has a price feed for.
+
+"Weight" A number used to determine how many project tokens should be minted and transferred when payments are received during the funding cycle. In other words, weight is the exchange rate between the project token and a currency (defined by a JBPayoutRedemptionPaymentTerminal) during that funding cycle. Project owners can configure this directly, or allow it to be derived automatically from the previous funding cycle's weight and discount rate.
+
+"Discount rate" The percent to automatically decrease the subsequent cycle's weight from the current cycle's weight. The discount rate is not applied during funding cycles where the weight is explicitly reconfigured.
+
+"Ballot" The address of a contract that adheres to IJBFundingCycleBallot, which can provide custom criteria that prevents funding cycle reconfigurations from taking effect. A common implementation is to force reconfigurations to be submitted at least X days before the end of the current funding cycle, giving the community foresight into any misconfigurations or abuses of power before they take effect. A more complex implementation might include on-chain governance.
+
+"Reserved rate" The percentage of newly minted tokens that a project wishes to withhold for custom distributions. The project owner can pre-program a list of addresses, other mDAO project owners, and contracts that adhere to IJBSplitsAllocator to split reserved tokens between.
+
+"Redemption rate" The percentage of a project's treasury funds that can be reclaimed by community members by redeeming the project's tokens during the funding cycle. A rate of 100% suggests a linear proportion, meaning X% of treasury overflow can be reclaimed by redeeming X% of the token supply.
+
+"Ballot redemption rate" A project can specify a custom redemption rate that only applies when a proposed reconfiguration is waiting to take effect. This can be used to automatically allow for more favorable redemption rates during times of potential change.
+
+"Pause payments, pause distributions, pause redemptions, pause burn" Projects can pause various bits of its treasury's functionality on a per-funding cycle basis. These functions are unpaused by default.
+
+"Allow minting tokens, allow changing tokens, allow setting terminals, allow setting the controller, allow terminal migrations, allow controller migration" Projects can allow various bits of treasury functionality on a per-funding cycle basis. These functions are disabled by default.
+
+"Hold fees" By default, JBX membership fees are paid automatically when funds are distributed out of the ecosystem from a project's treasury. During funding cycles configured to hold fees, this fee amount is set aside instead of being immediately processed. Projects can get their held fees returned by adding the same amount of withdrawn funds back to their treasury. Otherwise, Juicebox or the project can process these held fees at any point to get JBX at the current rate. This allows a project to withdraw funds and later add them back into their mDAO treasury without incurring fees. This applies to both distributions from the distribution limit and from the overflow allowance.
+
+"Data source" The address of a contract that adheres to IJBFundingCycleDataSource, which can be used to extend or override what happens when the treasury receives funds, and what happens when someone tries to redeem their project tokens.

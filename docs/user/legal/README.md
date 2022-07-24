@@ -11,12 +11,15 @@ Any legal, financial, or tax comments within Discord is provided for information
 
 ## Introduction
 
-Welcome to the Juicebox Legal Resources section. It is commonly referred to as "wrapping" a DAO when you create a legal entity to formally operate from, or along side of, if at all. This section will discuss a number approaches existing projects, and other DAOs have taken when considering formally incorporating a legal entity while operating a DAO. Ultimately, you will be the one responsible to make the right decision about your circumstances and how it relates to your project.
+Welcome to the Juicebox Legal Resources section. It is commonly referred to as "wrapping" a DAO when you create a legal entity to formally operate from, or along side of, if at all. This section will discuss a number approaches existing projects, general strategies to legally represent your DAO. While this section attempts to provide a foundation for basic understanding of the law, it does so minimally to segue into a number of reasonable solutions. Ultimately, you will be the one responsible to make the right decision about your circumstances and how it relates to your project.
 
-Please read the above disclaimers carefully and repeatedly. While the information provided may sound authoritative, competent, even shockingly learned, ultimately, this is information on the internet and is provided to you for informational purposes only, you should not rely on this information.
+Please read the above disclaimers carefully and repeatedly. While the information provided may sound authoritative, competent, and somewhat researched, ultimately, this is information on the internet and is provided to you for informational purposes only, you should not rely on this information whatsoever. 
+
+### Juicebox projects
 
 Likely you are interested in creating a Juicebox project and in doing so are generally concerned about the legal ramifications. The right answer differs based on your specific facts and circumstances, nonetheless, the information found here is organized in the following sub-sections:
 
+0. Level setting, the law and you.
 1. High-level overview of each type of Juicebox projects.
 2. Example legal entities which can be created alongside your Juicebox project.
 3. Examples reference documents for each legal entity, which you may download and modify.
@@ -30,8 +33,6 @@ Included in the above sections are additional facts intended to provide color or
 :::warning
 Juicebox seeks to be as diligent as possible in compiling and updating the information on its website. However, there is no guarantee of the correctness and completeness of the information provided here. Juicebox does not guarantee that this information is up to date and such information may be subject to change at any time and without notice.
 :::
-
-## Unincorporated and incorporated entities
 
 ## Terminology
 

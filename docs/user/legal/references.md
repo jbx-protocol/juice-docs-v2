@@ -35,10 +35,12 @@ This section is intentionally blank.
 
 ### Unincorporated Non-Profit
 
--   [Revised Uniform Unincorporated Nonprofit Association Act of 2008 (the "Act"), NRS §§ 81.700 to 81.890](https://www.leg.state.nv.us/nrs/nrs-081.html)
 -   [Unicorporated Non-Profit Association Act of 2008 (the "Act"), Model Act](https://www.uniformlaws.org/viewdocument/final-act-149?CommunityKey=40227d3a-8b5d-47c2-8cd0-b0ec12da97f9&tab=librarydocuments)
+-   [Nevada, Revised Uniform Unincorporated Nonprofit Association Act of 2008 (the "Act"), NRS §§ 81.700 to 81.890](https://www.leg.state.nv.us/nrs/nrs-081.html)
 -   [South Carolina Uniform Non-Profit Association Act of 2008 (the "Act"), Model Act](https://trackbill.com/bill/south-carolina-house-general-bill-3893-uniform-unincorporated-nonprofit-association/2033570/)
-
+-   [Delaware Uniform Unincorporated Nonprofit Association Act, Del. Code Ann. Tit. 6, §§ 1901-1916](https://delcode.delaware.gov/title6/c019/index.html)
 ### Additional
 
 -   [Filing 2022 IRS Federal Tax ID Application](https://irs-tax-id-ein-gov.com/irs-2021/?utm_medium=cpc&utm_campaign=15581835982&utm_term=irs%20gov%20ein&gclid=CjwKCAjwoMSWBhAdEiwAVJ2ndtIXBtsjFLcHrwQMhU8Idz5DQlbYNQI_aMRLSvuYpeOr1PIMRb5XoRoC9bUQAvD_BwE)
+
+-   [A Regulatory Classification of Digital Assets: Toward an Operational Howey Test for Cryptocurrencies, ICOs, and Other Digital Assets](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3265295)
