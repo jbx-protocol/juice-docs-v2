@@ -1,5 +1,5 @@
 ---
-title: "Trustless Unincorporated Nonprofit Association Agreement ("TUNAA")"
+title: Trustless Unincorporated Nonprofit Association Agreement ("TUNAA")
 sidebar_position: 1
 ---
 
