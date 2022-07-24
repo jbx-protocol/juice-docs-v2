@@ -3,7 +3,7 @@ title: "References"
 sidebar_position: 7
 ---
 
-```
+```typescript
 // TODO: trusts, LLCs, Corp resources from Delaware
 // TODO: registered agent
 ```

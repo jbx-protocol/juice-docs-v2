@@ -3,7 +3,7 @@ title: "Series LLC"
 sidebar_position: 3
 ---
 
-```
+```typescript
 // TODO: format me
 ```
 

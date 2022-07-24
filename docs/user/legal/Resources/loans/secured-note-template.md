@@ -3,7 +3,7 @@ title: "Secured Promissory Note"
 # sidebar_position:
 ---
 
-```
+```typescript
 // TODO: format me
 ```
 

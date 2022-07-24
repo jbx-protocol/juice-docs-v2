@@ -3,7 +3,7 @@ title: Terms of Service
 sidebar_position: 8
 ---
 
-```
+```typescript
 // TODO: copy disclaimers to those dedicated pages, cite terms of service
 ```
 

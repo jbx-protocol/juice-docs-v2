@@ -2,9 +2,11 @@
 title: "IOU"
 # sidebar_position:
 ---
-```
+
+```typescript
 // TODO: format me
 ```
+
 [IOU](../papers/IOU-form-template.docx)
 
 I OWE YOU (IOU)

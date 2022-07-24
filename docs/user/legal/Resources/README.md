@@ -2,9 +2,11 @@
 title: "Reference Legal Agreements"
 sidebar position: 1
 ---
-```
+
+```typescript
 // TODO: include Delaware filing procedures
 ```
+
 :::info
 This section contains common form agreements which you may find helpful. While its true that you may not be a bar passing doctorate, legal agreements are still valid and enforceable when written in vanilla prose and agreed upon by the parties. Avoiding Latin phrases or terminology which is confusing or at risk of being used incorrectly, and instead state your understanding in plain language is not only preferred but completely legal.
 :::

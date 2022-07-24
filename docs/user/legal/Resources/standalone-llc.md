@@ -3,7 +3,7 @@ title: "Standalone LLC"
 # sidebar_position:
 ---
 
-```
+```typescript
 // TODO: format me
 ```
 

@@ -3,9 +3,9 @@ title: "Glossary"
 sidebar_position: 6
 ---
 
-```
-// TODO: add all glossary terms from Juicebox Glossary
-```
+
+##### // TODO: add all glossary terms from Juicebox Glossary
+
 
 "Act" has the meaning ascribed to that term in Section 1(a).
 

@@ -11,7 +11,7 @@ Much of what transpires at this point is very much in the vein of starting a bus
 
 And then there is this.
 
-```
+```bash
 // TODO: add stats from Kickstart
 
 // TODO: add stats from Juicebox

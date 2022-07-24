@@ -3,7 +3,7 @@ title: "Agreement for Future Tokens"
 # sidebar_position:
 ---
 
-```
+```typescript
 // TODO: format me, add full SAFT
 ```
 

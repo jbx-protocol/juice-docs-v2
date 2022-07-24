@@ -1,9 +1,13 @@
 # How to use Juicebox tokens in a Snapshot strategy
 
-*This takes both claimed ERC-20s or unclaimed tokens into account when setting up Snapshot ballot strateies.*
+::: info
+How to configure quadratic strategy? Look up documentation.
+:::
+
+_This takes both claimed ERC-20s or unclaimed tokens into account when setting up Snapshot ballot strategies._
 
 1. Choose "contract-call".
-2. Stick this in 
+2. Stick this in
 
 ```jsx
 {

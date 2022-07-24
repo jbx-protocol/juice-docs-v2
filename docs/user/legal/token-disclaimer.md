@@ -3,7 +3,7 @@ title: "Tokens in Detail"
 sidebar_position: 5
 ---
 
-```
+```typescript
 // TODO: introduce securities issues here and bring in securities research
 ```
 
