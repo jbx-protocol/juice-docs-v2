@@ -2,9 +2,9 @@
 title: "Example Nevada UNA"
 sidebar_position: 1
 ---
-
+```
 // TODO: format me
-
+```
 JuiceboxDAO
 a Nevada nonprofit
 GUIDING PRINCIPLES

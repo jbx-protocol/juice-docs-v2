@@ -3,7 +3,9 @@ title: "Agreement for Future Tokens"
 # sidebar_position:
 ---
 
+```
 // TODO: format me, add full SAFT
+```
 
 [Simple Agreement for Future Tokens](../papers/Rolling-SAFE-Template.docx)
 

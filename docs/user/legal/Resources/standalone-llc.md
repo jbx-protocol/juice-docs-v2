@@ -3,7 +3,9 @@ title: "Standalone LLC"
 # sidebar_position:
 ---
 
+```
 // TODO: format me
+```
 
 [Standalone LLC](papers/Example-LLC-Standalone.docx)
 [Source](https://guide.syndicate.io/web3-investment-clubs/create-a-legal-entity)

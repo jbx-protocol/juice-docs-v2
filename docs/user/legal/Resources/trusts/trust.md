@@ -2,9 +2,9 @@
 title: "Trust"
 sidebar_position: 1
 ---
-
+```
 // TODO: format me
-
+```
 [Trust Document](papers/Trust.docx)
 
 TREASURYDAO

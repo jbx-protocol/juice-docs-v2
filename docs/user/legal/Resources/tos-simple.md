@@ -2,9 +2,9 @@
 title: "Terms and Conditions"
 # sidebar_position:
 ---
-
+```
 # Terms and Conditions
-
+```
 PLEASE READ THESE TERMS OF SERVICE (HEREINAFTER TERMS) CAREFULLY BEFORE USING THE SERVICES DESCRIBED HEREIN.
 
 The following Terms govern all use of the Services and all content, services and products available at or through the Website and the App.

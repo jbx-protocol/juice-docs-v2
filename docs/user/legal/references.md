@@ -3,8 +3,10 @@ title: "References"
 sidebar_position: 7
 ---
 
+```
 // TODO: trusts, LLCs, Corp resources from Delaware
 // TODO: registered agent
+```
 
 # Online materials
 

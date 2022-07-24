@@ -3,7 +3,9 @@ title: Terms of Service
 sidebar_position: 8
 ---
 
+```
 // TODO: copy disclaimers to those dedicated pages, cite terms of service
+```
 
 ## Juicebox Terms of Service
 
